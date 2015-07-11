@@ -1,13 +1,33 @@
 [user]
-	name = xero
-	email = x@xero.nu
-[credential]
-	helper = cache
-[alias]
-	graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
-	stat = status -sb
-	last = log -1 --stat
-	unstage = reset HEAD --
-	cached = diff --cached
+	name = Vittorio Zaccaria
+	email = vittorio.zaccaria@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[mergetool]
+	keepBackup = true
 [color]
-	ui = auto
+	ui = true
+[alias]
+    log-json = log --pretty=format:'\"%H\": {%n  \"commit\": \"%H\",%n  \"author\": \"%an <%ae>\",%n  \"date\": \"%ad\",%n  \"message\": \"%s\"%n}'
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    cm = !git add -A && git commit -m
+[hub]
+	protocol = https
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[push]
+	default = nothing 
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[http]
+	sslVerify = false
