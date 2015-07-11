@@ -12,18 +12,8 @@ fi
 
 # Customize to your needs...
 
-source /Users/zaccaria/development/github/shellinit/common.zshrc
+# Source my configuration.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto-zack/common.zshrc" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto-zack/common.zshrc"
+fi
 
-# Setup zsh-autosuggestions
-#source /Users/zaccaria/.zsh-autosuggestions/autosuggestions.zsh
-
-# Enable autosuggestions automatically
-#zle-line-init() {
-#zle autosuggest-start
-#}
-
-#zle -N zle-line-init
-
-# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
-# zsh-autosuggestions is designed to be unobtrusive)
-#bindkey '^T' autosuggest-toggle

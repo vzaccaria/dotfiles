@@ -15,7 +15,7 @@ concat-*.*
 ###################
 *~
 octave-workspace
-*.idr~
+*.*~
 *.swp
 .#*
 #*.*#
