@@ -7,8 +7,9 @@
     ░░██████░░██████   ░░██   ░██  ░██ ███░░██████ ██████ 
      ░░░░░░  ░░░░░░     ░░    ░░   ░░ ░░░  ░░░░░░ ░░░░░░  
 
+    ack
     emacs
-    figlet  (figlet fonts)
+    figlet  (fonts)
     fonts
     fun
     git
