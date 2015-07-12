@@ -20,3 +20,7 @@ if [[ -s "${srcdir}/functions.sh" ]]; then
 fi
 
 
+# Setup common vi keybindings
+bindkey -v
+
+
