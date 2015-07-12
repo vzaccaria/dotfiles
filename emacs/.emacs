@@ -265,7 +265,7 @@ scroll-step 1)
 ;;        |___/            
 (defun figlet-region (&optional b e)
   (interactive "r")
-	(shell-command-on-region b e "figlet" (current-buffer) t)
+	(shell-command-on-region b e "toilet -d ~/.figlet -f 3d" (current-buffer) t)
 	  (comment-region (mark) (point)))
 
 (global-set-key (kbd "s-.") 'figlet-region)
