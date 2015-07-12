@@ -12,20 +12,26 @@ prepare:
 
 
 
-.PHONY: k-w60bx7hx
-k-w60bx7hx:  
+.PHONY: k-9fvweq5x
+k-9fvweq5x:  
 	git-hist history.md
 
 
-.PHONY: k-ct9uts7a
-k-ct9uts7a:  
+.PHONY: k-225dg6g8
+k-225dg6g8:  
 	cat README.in.md history.md > README.md
+
+
+.PHONY: k-bpu7hfqf
+k-bpu7hfqf:  
+	hub cm 'update history and readme'
 
 
 .PHONY: all
 all: 
-	make k-w60bx7hx 
-	make k-ct9uts7a  
+	make k-9fvweq5x 
+	make k-225dg6g8 
+	make k-bpu7hfqf  
 
 
 .PHONY: clean
