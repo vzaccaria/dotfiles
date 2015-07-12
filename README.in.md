@@ -17,7 +17,6 @@
     tmux    (use only config file)
     vim     (to be checked, dont use)
     zprezto
-    zsh     (to be fixed)
 
 managing
 ========
