@@ -11,5 +11,6 @@
 
 # Bug fixes
 
+-     remove zsh folder (Sun Jul 12 17:11:45 2015 +0200) - [view](../../commit/f5cadde3eac0c667b2f3984f01229874909806b1) 
 -     remove linux specific parts from darwin code (Sun Jul 12 15:52:51 2015 +0200) - [view](../../commit/5d953bd458b7263892d4ad2c86c27a3f3bd4ce37) 
 -     add zprezto as a submodule (Sun Jul 12 15:52:37 2015 +0200) - [view](../../commit/66c129c9cd39f658d4610f5e8acd32c5b6f14fa7) 
