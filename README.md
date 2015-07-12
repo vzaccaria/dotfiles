@@ -38,8 +38,7 @@ or clone it [from source](https://savannah.gnu.org/git/?group=stow) and
 [build it](http://git.savannah.gnu.org/cgit/stow.git/tree/INSTALL)
 yourself.
 
-History
-=======
+------------------------------------------------------------------------
 
 # New features
 
