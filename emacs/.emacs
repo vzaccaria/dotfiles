@@ -22,6 +22,7 @@
 ;;                                     |___/
 
 (set-terminal-coding-system 'utf-8-unix)
+(require 'whitespace)
 
 ;;  _____       _ _ 
 ;; | ____|_   _(_) |
