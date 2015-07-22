@@ -22,6 +22,8 @@
 ;;                                     |___/
 
 (set-terminal-coding-system 'utf-8-unix)
+(require 'whitespace)
+
 
 ;;  _____       _ _ 
 ;; | ____|_   _(_) |
@@ -76,9 +78,18 @@
 (set-face-attribute 'default nil
                 :family "Hasklig" :height 140 :weight 'normal)
 
-(setq org-agenda-files (list "~/Dropbox/org/work.org"))
+(setq org-agenda-files (list "~/Dropbox/org/work.org"
+							 "~/Dropbox/org/thesis.org"
+							 "~/development/github/screencap/teasy.org"
+							 "~/development/stforge/HS_VHDL/STMicro.org"
+							 "~/development/github/documents/books/infob-book/programma-dettagliato/InfoB.org"))
+
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
+
+(define-key global-map (kbd "s-_") (lambda () (interactive) 
+    (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)=" 1 1 nil)))
+
 (defun gtd ()
      (interactive)
         (find-file "~/Dropbox/org/work.org")
@@ -355,6 +366,16 @@ See URL `http://flowtype.org/'."
   (shell-command-on-region (point-min) (point-max)
 		"pandoc --read markdown --write markdown-simple_tables+pipe_tables-fenced_code_blocks-fenced_code_attributes" (current-buffer) t))
 
+
+(defun beautify-org (&optional b e)
+  (interactive "r")
+  (shell-command-on-region (point-min) (point-max)
+		"pandoc --columns=120 --read org --write org" (current-buffer) t))
+
+
+(add-hook 'org-mode-hook
+ '(lambda ()
+    (define-key org-mode-map (kbd "s-,") 'beautify-org)))
 
 
 (add-hook 'markdown-mode-hook
