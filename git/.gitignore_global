@@ -1,4 +1,9 @@
 
+
+# SVN #
+#######
+.svn
+
 # Build artifacts #
 ###################
 node_modules
@@ -16,6 +21,7 @@ concat-*.*
 *~
 octave-workspace
 *.*~
+*.cpp~
 *.swp
 .#*
 #*.*#

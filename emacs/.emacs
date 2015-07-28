@@ -14,6 +14,8 @@
                                                          
 (setq auto-save-default nil) 
 
+
+
 ;;                           _ _             
 ;;   ___ _ __   ___ ___   __| (_)_ __   __ _ 
 ;;  / _ \ '_ \ / __/ _ \ / _` | | '_ \ / _` |
@@ -53,6 +55,7 @@
  '(inhibit-startup-screen t)
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(markdown-command "pandoc -s")
+ '(org-confirm-babel-evaluate nil)
  '(safe-local-variable-values (quote ((flycheck-clang-language-standard "c++11")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -80,6 +83,7 @@
 
 (setq org-agenda-files (list "~/Dropbox/org/work.org"
 							 "~/Dropbox/org/thesis.org"
+							 "~/Dropbox/org/EDX.org"
 							 "~/development/github/screencap/teasy.org"
 							 "~/development/stforge/HS_VHDL/STMicro.org"
 							 "~/development/github/documents/books/infob-book/programma-dettagliato/InfoB.org"))
@@ -129,13 +133,22 @@
 ;; / __| '_ \| | '_ \| '_ \ / _ \ __/ __|
 ;; \__ \ | | | | |_) | |_) |  __/ |_\__ \
 ;; |___/_| |_|_| .__/| .__/ \___|\__|___/
-;;             |_|   |_|                 
+;;             |_|   |_|
+
 ;;; yasnippet
 ;;; should be loaded before auto complete so that they can work together
 (require 'yasnippet)
 (yas-global-mode 1)
-(setq yas/root-directory "/Users/zaccaria/development/github/yasnippet-snippets")
-(define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
+(add-to-list 'yas-snippet-dirs "~/.yasnippets/mysnippets")
+(add-to-list 'yas-snippet-dirs "~/.yasnippets/yasnippet-snippets")
+(yas-reload-all)
+(add-to-list 'auto-mode-alist '("\\.yasnippet\\'" . snippet-mode))
+
+;; Bind `yas-expand' to SPC.
+(define-key yas-minor-mode-map (kbd "<tab>") nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+
+
 
 ;;; auto complete mod
 ;;; should be loaded after yasnippet so that they can work together
@@ -147,6 +160,8 @@
 ;;; activate, otherwise, auto-complete will
 ;(ac-set-trigger-key "TAB")
 ;(ac-set-trigger-key "<tab>")
+
+
 
 (require 'use-package)
 
@@ -186,10 +201,13 @@
 (defun kill-current-buffer ()
   (interactive)
   (kill-buffer (current-buffer)))
+(global-set-key (kbd "s-b") 'recompile)
+(global-set-key (kbd "s-r") 'recompile)
 (global-set-key (kbd "s-w") 'evil-quit)
 (global-set-key (kbd "s-h") 'helm-M-x)
 (global-set-key (kbd "s-g") 'projectile-ag)
 (global-set-key (kbd "s-/") 'comment-region)
+(global-set-key (kbd "s-e") 'yas-expand)
 
 
 ;; esc quits
@@ -211,7 +229,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
 (global-set-key [escape] 'evil-exit-emacs-state)
 
-(global-set-key (kbd "s-r") 'recompile)
 
 (defun toggle-window-split ()
   (interactive)
@@ -364,7 +381,7 @@ See URL `http://flowtype.org/'."
 (defun beautify-markdown (&optional b e)
   (interactive "r")
   (shell-command-on-region (point-min) (point-max)
-		"pandoc --read markdown --write markdown-simple_tables+pipe_tables-fenced_code_blocks-fenced_code_attributes" (current-buffer) t))
+		"pandoc -s --read markdown --write markdown-simple_tables+pipe_tables-fenced_code_blocks-fenced_code_attributes" (current-buffer) t))
 
 
 (defun beautify-org (&optional b e)
@@ -389,6 +406,8 @@ See URL `http://flowtype.org/'."
 (add-hook 'js-mode-hook
  '(lambda ()
     (define-key js-mode-map (kbd "s-,") 'web-beautify-js)))
+
+		  
 
 ;;         __ _            
 ;;   __ _ / _| |_ ___ _ __ 
@@ -428,6 +447,23 @@ See URL `http://flowtype.org/'."
 (setq helm-bookmark-show-location t)
 (setq helm-buffers-fuzzy-matching t)
 
+
+;;                                                    ██        
+;;                   █████                           ░██        
+;;   ██████  ██████ ██░░░██ ██████████   ██████      ░██  █████ 
+;;  ██░░░░██░░██░░█░██  ░██░░██░░██░░██ ██░░░░██  ██████ ██░░░██
+;; ░██   ░██ ░██ ░ ░░██████ ░██ ░██ ░██░██   ░██ ██░░░██░███████
+;; ░██   ░██ ░██    ░░░░░██ ░██ ░██ ░██░██   ░██░██  ░██░██░░░░ 
+;; ░░██████ ░███     █████  ███ ░██ ░██░░██████ ░░██████░░██████
+;;  ░░░░░░  ░░░     ░░░░░  ░░░  ░░  ░░  ░░░░░░   ░░░░░░  ░░░░░░
+
+
+(org-babel-do-load-languages
+      'org-babel-load-languages
+      '((emacs-lisp . nil)
+		(octave . t)
+		(C . t)))
+
 ;;      _ _              _ 
 ;;   __| (_)_ __ ___  __| |
 ;;  / _` | | '__/ _ \/ _` |
@@ -440,7 +476,7 @@ See URL `http://flowtype.org/'."
           (lambda ()
 			(dired-omit-mode 1)
 			(setq dired-omit-files
-				  (concat dired-omit-files "\\|.o$"))
+				  (concat dired-omit-files "\\|.o$\\|.hi$"))
             ))
 
 ;;;(after 'projectile
