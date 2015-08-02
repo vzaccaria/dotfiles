@@ -1,0 +1,39 @@
+# -*- mode: snippet -*-
+#name : array
+#key: array 
+# --
+
+
+subgraph cluster_0${0:NUM} {
+        label = "${1:VAR}";
+		fontname = "Roboto Condensed Regular"
+        "node0" [
+            label = "[0]|...| <ty${0}> [${3:ITER}] |...| [${2:MAX}]"
+            shape = "record"
+			fontname = "Roboto Condensed Regular"
+            ];
+		"node${0}1" [
+				 label="Array di '${4:STNAME}'"
+				 shape=plaintext
+				 fontname="Roboto Condensed Bold"
+		]
+    }
+
+subgraph cluster_1${0} {
+        label = "${1}[${3}]";
+		fontname = "Roboto Condensed Regular"
+        "node1" [
+            label = "field1|field2"
+            shape = "record"
+			fontname = "Roboto Condensed Regular"
+            ];
+			
+		"node11" [
+				 label="struct '${4}"
+				 shape=plaintext
+				 fontname="Roboto Condensed Bold"
+		]
+    }
+
+
+
