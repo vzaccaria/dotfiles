@@ -28,4 +28,42 @@ md() {
     pandoc -s -f markdown -t man "$*" | man -l -
 }
 
+lift() {
+	case "$1" in
+		find)
+			find . -name $2 -print0
+			;;
+		ag)
+			$* -l --nocolor -0
+			;;
+		locate)
+			$* -0
+			;;
+		head)
+			$* | tr '\n' '\0'
+			;;
+		tail)
+			$* | tr '\n' '\0'
+			;;
+		ls)
+			$* -1 | tr '\n' '\0'
+			;;
+		*)
+			echo "Sorry no lift instance available for $1"
+			;;
+	esac
+}
+
+lifta() {
+	cat $* | tr '\n' '\0'
+}
+
+fmap() {
+	xargs -0 -n 1 -J _ $*
+}
+
+map() {
+	xargs -0 -n 1 -J _ $* | tr '\n' '\0'
+}
+
 
