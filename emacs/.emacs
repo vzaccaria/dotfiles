@@ -86,7 +86,8 @@
 							 "~/Dropbox/org/EDX.org"
 							 "~/development/github/screencap/teasy.org"
 							 "~/development/stforge/HS_VHDL/STMicro.org"
-							 "~/development/github/documents/books/infob-book/programma-dettagliato/InfoB.org"))
+							 "~/development/github/documents/lectures/infob/programma-dettagliato/InfoBProg.org"
+							 "~/development/github/documents/lectures/infob/materiale/InfoBMat.org"))
 
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
@@ -98,18 +99,18 @@
      (interactive)
         (find-file "~/Dropbox/org/work.org")
 	 )
-(setq org-agenda-custom-commands
-      '(("w" tags "READING|DEVELOPMENT" nil)               ;; (1)
-        ;; ("d" tags "DEVELOP" nil)               ;; (2)
-        ;; ("h" todo "PERSONAL-@ERRANDS" nil)         ;; (3)
-        ;; ("p" tags "PROJECT-MAYBE-DONE" nil)        ;; (4)
-        ;; ("m" tags "PROJECT&MAYBE" nil)
-        ;; ("a" "My agenda"
-        ;;  ((org-agenda-list)
-        ;;   (tags-todo "URGENT")                     ;; (5)
-        ;;   (tags "PROJECT-MAYBE-DONE")))            ;; (6)
-        ;; ;; ... put your other custom commands here
-       ))
+;; (setq org-agenda-custom-commands
+;;       '(("w" tags "READING|DEVELOPMENT" nil)               ;; (1)
+;;         ;; ("d" tags "DEVELOP" nil)               ;; (2)
+;;         ;; ("h" todo "PERSONAL-@ERRANDS" nil)         ;; (3)
+;;         ;; ("p" tags "PROJECT-MAYBE-DONE" nil)        ;; (4)
+;;         ;; ("m" tags "PROJECT&MAYBE" nil)
+;;         ;; ("a" "My agenda"
+;;         ;;  ((org-agenda-list)
+;;         ;;   (tags-todo "URGENT")                     ;; (5)
+;;         ;;   (tags "PROJECT-MAYBE-DONE")))            ;; (6)
+;;         ;; ;; ... put your other custom commands here
+;;        ))
                  
 ;;   ___  _     _   
 ;;  / __|| |_ _| |_ 
