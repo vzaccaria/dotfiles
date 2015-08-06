@@ -42,6 +42,10 @@ yourself.
 
 # New features
 
+-     add solarized theme to emacs -- [Aug 6th 15](../../commit/144d93a23a17146445f82f6182efbdfc74d98d48)
+-     add pseudo map reduce -- [Aug 2nd 15](../../commit/f653ca8b666075a0e935e127a176dc503762d55d)
+-     add yasnippet directories and configuragtion -- [Jul 28th 15](../../commit/2ea5d7a2f20356c4209054bbe4e25a1024de3f28)
+-     add export paths to linux -- [Jul 22nd 15](../../commit/d83a286d06e2edcb8d4ddbdabf5df419c9dc2a3e)
 -     add beautify orgmode and refactor agenda in multiple org files -- [Jul 16th 15](../../commit/35d81ceff71bb590d582aa05f2015cc2a8907f3d)
 -     enable local manpages, for my commands -- [Jul 14th 15](../../commit/6c01627c352ebfa2d950683b4b6c211378769b18)
 -     add ack config file -- [Jul 12th 15](../../commit/db7e456ccdbb65d8b596a76744a0890cae40bd8e)
