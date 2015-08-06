@@ -48,6 +48,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
+ '(frame-background-mode (quote dark))
  '(haskell-mode-hook
    (quote
 	(turn-on-haskell-indent turn-on-haskell-indentation turn-on-haskell-unicode-input-method)))
@@ -63,6 +64,19 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;    ██   ██                                 
+;;   ░██  ░██                                 
+;;  ██████░██       █████  ██████████   █████ 
+;; ░░░██░ ░██████  ██░░░██░░██░░██░░██ ██░░░██
+;;   ░██  ░██░░░██░███████ ░██ ░██ ░██░███████
+;;   ░██  ░██  ░██░██░░░░  ░██ ░██ ░██░██░░░░ 
+;;   ░░██ ░██  ░██░░██████ ███ ░██ ░██░░██████
+;;    ░░  ░░   ░░  ░░░░░░ ░░░  ░░  ░░  ░░░░░░ 
+
+(add-to-list 'custom-theme-load-path "~/.emacs-themes/emacs-color-theme-solarized")
+(load-theme 'solarized t)
+
 
 (require 'saveplace)
 (setq save-place-file (concat user-emacs-directory "saveplace.el") ) ; use standard emacs dir
