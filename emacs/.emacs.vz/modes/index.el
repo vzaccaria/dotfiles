@@ -15,6 +15,7 @@
 (load-file "~/.emacs.vz/modes/autocomplete.el")
 (load-file "~/.emacs.vz/modes/flycheck.el")
 (load-file "~/.emacs.vz/modes/helm.el")
+(load-file "~/.emacs.vz/modes/dired.el")
 
 ;; languages
 (load-file "~/.emacs.vz/modes/octave.el")
