@@ -1,0 +1,8 @@
+(require 'helm)
+(require 'helm-config)
+(require 'helm-misc)
+(require 'helm-projectile)
+(require 'helm-locate)
+(setq helm-quick-update t)
+(setq helm-bookmark-show-location t)
+(setq helm-buffers-fuzzy-matching t)

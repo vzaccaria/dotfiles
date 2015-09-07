@@ -1,0 +1,6 @@
+(require 'yasnippet)
+(yas-global-mode 1)
+(add-to-list 'yas-snippet-dirs "~/.yasnippets/mysnippets")
+(add-to-list 'yas-snippet-dirs "~/.yasnippets/yasnippet-snippets")
+(yas-reload-all)
+(add-to-list 'auto-mode-alist '("\\.yasnippet\\'" . snippet-mode))
