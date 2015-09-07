@@ -23,11 +23,12 @@
 (global-set-key [escape] 'evil-exit-emacs-state)
 ;; end `evil'
 
+
 (global-set-key (kbd "s-b") 'recompile)
 (global-set-key (kbd "s-r") 'recompile)
 (global-set-key (kbd "s-w") 'evil-quit)
 (global-set-key (kbd "s-h") 'helm-M-x)
-(global-set-key (kbd "s-g") 'projectile-ag)
+(global-set-key (kbd "s-f") 'projectile-ag)
 (global-set-key (kbd "s-/") 'comment-region)
 (global-set-key (kbd "s-e") 'yas-expand)
 
