@@ -25,6 +25,9 @@ octave-workspace
 *.swp
 .#*
 #*.*#
+pippo*
+pluto*
+paperino*
 
 # Compiled source #
 ###################
