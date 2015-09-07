@@ -16,5 +16,12 @@ towerthis() {
     open -a "Tower" .
 }
 
+# Use coreutils' grealpath
 
+rp() {
+	grealpath $1 | tr -d '\n' | pbcopy
+}
 
+islink() {
+	grealpath -e "/usr/local/bin/$1"
+}

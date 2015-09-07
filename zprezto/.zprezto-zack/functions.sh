@@ -4,6 +4,11 @@ f() {
    find . -name "*$@*"
 }
 
+fe() {
+   find . -name "*\.$@"
+}
+
+
 p() {
    ps -fe | grep -v grep | grep "$@" -i --color=auto;
 }
@@ -11,6 +16,20 @@ p() {
 c() {
    git cm "$@" && git push --all
 }
+
+chore() {
+	git cm "chore: $*"
+}
+
+fix() {
+	git cm "fix: $*"
+}
+
+feat() {
+	git cm "feat: $*"
+}
+
+
 
 dock-connect() {
     docker run -i -t $@ /bin/bash
@@ -66,4 +85,12 @@ map() {
 	xargs -0 -n 1 -J _ $* | tr '\n' '\0'
 }
 
-
+accent() {
+sed -E "\
+s/uo'/uò/g; \
+s/perche'/perchè/g; \
+s/poiche'/poiché/g; \
+s/a'/à/g; \
+s/ e'/è/g; \
+s/cosi'/così/g" "$@"
+}
