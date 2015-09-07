@@ -47,6 +47,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+	("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+ '(flycheck-c/c++-gcc-executable
+   "/Users/zaccaria/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-c++")
  '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
  '(frame-background-mode (quote dark))
  '(haskell-mode-hook
@@ -56,6 +61,7 @@
  '(inhibit-startup-screen t)
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(markdown-command "pandoc -s")
+ '(org-babel-js-cmd "/usr/local/Cellar/iojs/2.5.0/bin/iojs")
  '(org-confirm-babel-evaluate nil)
  '(safe-local-variable-values (quote ((flycheck-clang-language-standard "c++11")))))
 (custom-set-faces
@@ -63,7 +69,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(org-block ((t (:background "#ffffea" :foreground "#93a1a1"))))
+ '(org-block-begin-line ((t (:background "#eaeaff" :foreground "#008ed1" :slant italic))))
+ '(org-code ((t (:background "#ffffea" :foreground "#93a1a1")))))
 
 ;;    ██   ██                                 
 ;;   ░██  ░██                                 
@@ -74,14 +82,54 @@
 ;;   ░░██ ░██  ░██░░██████ ███ ░██ ░██░░██████
 ;;    ░░  ░░   ░░  ░░░░░░ ░░░  ░░  ░░  ░░░░░░ 
 
-(add-to-list 'custom-theme-load-path "~/.emacs-themes/emacs-color-theme-solarized")
-(load-theme 'solarized t)
+;; (add-to-list 'custom-theme-load-path "~/.emacs-themes/emacs-color-theme-solarized")
+;; make the fringe stand out from the background
+(setq solarized-distinct-fringe-background t)
+
+;; Don't change the font for some headings and titles
+(setq solarized-use-variable-pitch nil)
+
+;; make the modeline high contrast
+(setq solarized-high-contrast-mode-line t)
+
+;; Use less bolding
+(setq solarized-use-less-bold t)
+
+;; Use more italics
+(setq solarized-use-more-italic t)
+
+;; Use less colors for indicators such as git:gutter, flycheck and similar
+(setq solarized-emphasize-indicators nil)
+
+;; Don't change size of org-mode headlines (but keep other size-changes)
+(setq solarized-scale-org-headlines nil)
+
+;; Avoid all font-size changes
+(setq solarized-height-minus-1 1)
+(setq solarized-height-plus-1 1)
+(setq solarized-height-plus-2 1)
+(setq solarized-height-plus-3 1)
+(setq solarized-height-plus-4 1)
+(load-theme 'solarized-light t)
+(set-cursor-color 'white)
 
 
 (require 'saveplace)
 (setq save-place-file (concat user-emacs-directory "saveplace.el") ) ; use standard emacs dir
 (setq-default save-place t)
 (require 'iso-transl)
+
+(defface org-block-begin-line
+  '((t (:underline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF")))
+  "Face used for the line delimiting the begin of source blocks.")
+
+(defface org-block-background
+  '((t (:background "#FFFFEA")))
+  "Face used for the source block background.")
+
+(defface org-block-end-line
+  '((t (:overline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF")))
+  "Face used for the line delimiting the end of source blocks.")
 
 ;;                                      _      
 ;;   ___  _ __ __ _ _ __ ___   ___   __| | ___ 
@@ -99,7 +147,9 @@
 							 "~/Dropbox/org/thesis.org"
 							 "~/Dropbox/org/EDX.org"
 							 "~/development/github/screencap/teasy.org"
-							 "~/development/stforge/HS_VHDL/STMicro.org"
+							 "~/Dropbox/org/STMicro.org"
+							 "~/Dropbox/Commuting/Altro/Personal/Chiara/Casa/Viale Varese/Cucina Viale Varese - Settembre 2015/cucina.org"
+							 "~/Dropbox/Commuting/Ricercatore TI 2011/Lezioni/2015-2016 Informatica B/InfoBOrg.org"
 							 "~/development/github/documents/lectures/infob/programma-dettagliato/InfoBProg.org"
 							 "~/development/github/documents/lectures/infob/materiale/InfoBMat.org"))
 
@@ -113,19 +163,64 @@
      (interactive)
         (find-file "~/Dropbox/org/work.org")
 	 )
-;; (setq org-agenda-custom-commands
-;;       '(("w" tags "READING|DEVELOPMENT" nil)               ;; (1)
+(setq org-agenda-custom-commands
+       '(
+		 ("w" "My Agenda"
+		  (
+		   (agenda "")
+		   (todo "")
+		  )
+		 )
 ;;         ;; ("d" tags "DEVELOP" nil)               ;; (2)
 ;;         ;; ("h" todo "PERSONAL-@ERRANDS" nil)         ;; (3)
 ;;         ;; ("p" tags "PROJECT-MAYBE-DONE" nil)        ;; (4)
 ;;         ;; ("m" tags "PROJECT&MAYBE" nil)
 ;;         ;; ("a" "My agenda"
 ;;         ;;  ((org-agenda-list)
-;;         ;;   (tags-todo "URGENT")                     ;; (5)
+;;         ;;   (tags-todo "TODO")                     ;; (5)
 ;;         ;;   (tags "PROJECT-MAYBE-DONE")))            ;; (6)
 ;;         ;; ;; ... put your other custom commands here
-;;        ))
-                 
+))
+
+
+
+;;  ██████                                               
+;; ░█░░░░██                                              
+;; ░█   ░██   █████   ██████   ██████████   █████  ██████
+;; ░██████   ██░░░██ ░░░░░░██ ░░██░░██░░██ ██░░░██░░██░░█
+;; ░█░░░░ ██░███████  ███████  ░██ ░██ ░██░███████ ░██ ░ 
+;; ░█    ░██░██░░░░  ██░░░░██  ░██ ░██ ░██░██░░░░  ░██   
+;; ░███████ ░░██████░░████████ ███ ░██ ░██░░██████░███   
+;; ░░░░░░░   ░░░░░░  ░░░░░░░░ ░░░  ░░  ░░  ░░░░░░ ░░░    
+
+(require 'ox-latex)
+(require 'ox-beamer)
+
+(add-to-list 'org-latex-packages-alist '("" "minted"))
+(setq org-src-preserve-indentation t)
+
+(setq org-latex-minted-options
+   '(
+     ("obeytabs" "true")
+	 ("baselinestretch" "0.95")
+     )
+   )
+
+(setq org-latex-listings 'minted)
+
+(setq org-latex-pdf-process
+        '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
+(setq org-latex-to-pdf-process
+        '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
+
+(defun org-babel-execute:markdown(body params)
+  "Execute BODY according to PARAMS."
+  nil)
+
+
+
 ;;   ___  _     _   
 ;;  / __|| |_ _| |_ 
 ;; | (_|_   _|_   _|
@@ -399,10 +494,16 @@ See URL `http://flowtype.org/'."
 		"pandoc -s --read markdown --write markdown-simple_tables+pipe_tables-fenced_code_blocks-fenced_code_attributes" (current-buffer) t))
 
 
+(defun accentize (&optional b e)
+  (interactive "r")
+  (shell-command-on-region (point-min) (point-max)
+		"sed -E \"s/iu'/iù/g; s/uo'/uò/g; s/perche'/perchè/g; s/poiche'/poiché/g; s/a'/à/g; s/ e'/ è/g; s/c'e'/c'è/g; s/cosi'/così/g\"" (current-buffer) t))
+
+
 (defun beautify-org (&optional b e)
   (interactive "r")
   (shell-command-on-region (point-min) (point-max)
-		"pandoc --columns=120 --read org --write org" (current-buffer) t))
+		"pandoc --columns=80 --read org --write org" (current-buffer) t))
 
 
 (add-hook 'org-mode-hook
@@ -472,12 +573,18 @@ See URL `http://flowtype.org/'."
 ;; ░░██████ ░███     █████  ███ ░██ ░██░░██████ ░░██████░░██████
 ;;  ░░░░░░  ░░░     ░░░░░  ░░░  ░░  ░░  ░░░░░░   ░░░░░░  ░░░░░░
 
+(setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/8024/plantuml.8024.jar")
 
 (org-babel-do-load-languages
       'org-babel-load-languages
-      '((emacs-lisp . nil)
+      '((emacs-lisp . t)
+		(sh . t)
 		(octave . t)
-		(C . t)))
+		(C . t)
+		(js . t)
+		(ledger . t)
+		(ditaa . t)
+		(plantuml . t)))
 
 ;;      _ _              _ 
 ;;   __| (_)_ __ ___  __| |
@@ -510,4 +617,48 @@ See URL `http://flowtype.org/'."
 ;;;                      "*helm-my-buffers*")))
 
 
+
+(defun find-next-unsafe-char (&optional coding-system)
+  "Find the next character in the buffer that cannot be encoded by
+coding-system. If coding-system is unspecified, default to the coding
+system that would be used to save this buffer. With prefix argument,
+prompt the user for a coding system."
+  (interactive "Zcoding-system: ")
+  (if (stringp coding-system) (setq coding-system (intern coding-system)))
+  (if coding-system nil
+    (setq coding-system
+          (or save-buffer-coding-system buffer-file-coding-system)))
+  (let ((found nil) (char nil) (csets nil) (safe nil))
+    (setq safe (coding-system-get coding-system 'safe-chars))
+    ;; some systems merely specify the charsets as ones they can encode:
+    (setq csets (coding-system-get coding-system 'safe-charsets))
+    (save-excursion
+      ;;(message "zoom to <")
+      (let ((end  (point-max))
+            (here (point    ))
+            (char  nil))
+        (while (and (< here end) (not found))
+          (setq char (char-after here))
+          (if (or (eq safe t)
+                  (< char ?\177)
+                  (and safe  (aref safe char))
+                  (and csets (memq (char-charset char) csets)))
+              nil ;; safe char, noop
+            (setq found (cons here char)))
+          (setq here (1+ here))) ))
+    (and found (goto-char (1+ (car found))))
+    found))
+
+
+(defun vz-set-font-square ()
+  "Just sets the font to square"
+  (interactive)
+  (set-face-attribute 'default nil :font "Square")
+ )
+
+(defun vz-set-font-hasklig ()
+  "Just sets the font to square"
+  (interactive)
+  (set-face-attribute 'default nil :font "Hasklig")
+ )
 ;;; .emacs 
