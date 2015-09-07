@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: octsim
+# key: octsim
+# --
+
+**** input													 :B_ignoreheading: 
+	 :PROPERTIES:
+	 :BEAMER_env: ignoreheading
+	 :END:
+\keyboard{} 
+#+name: ${2:id} 
+#+begin_src octave :exports both :results output :cache yes
+#+end_src
+
+**** output 												 :B_ignoreheading: 
+	 :PROPERTIES:
+	 :BEAMER_env: ignoreheading 
+	 :END:
+\screen
+#+RESULTS: ${2:id}
+
