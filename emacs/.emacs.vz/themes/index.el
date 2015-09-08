@@ -1,6 +1,6 @@
 
-(load-file "./themes/solarized.el")
-(load-file "./themes/lang-org.el")
+(load-file "~/.emacs.vz/themes/solarized.el")
+(load-file "~/.emacs.vz/themes/lang-org.el")
 
 ;; Main font
 (set-face-attribute 'default nil
