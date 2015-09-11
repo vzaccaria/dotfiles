@@ -40,6 +40,18 @@
 (global-set-key (kbd "s-d") 'mc/mark-next-like-this)
 (global-set-key (kbd "s-.") 'figlet-region)
 
+(define-key global-map "\C-cm"
+        (lambda () (interactive) (org-capture nil "m")))
+
+(define-key global-map "\C-cl"
+        (lambda () (interactive) (org-capture nil "l")))
+
+(define-key global-map "\C-ci"
+        (lambda () (interactive) (org-capture nil "i")))
+
+(define-key global-map "\C-cd"
+        (lambda () (interactive) (org-capture nil "d")))
+
 
 (add-hook 'org-mode-hook
  '(lambda ()

@@ -70,6 +70,12 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (shell-command-on-region (point-min) (point-max)
 		"pandoc --columns=80 --read org --write org" (current-buffer) t))
 
+(defun beautify-asciidiag (&optional b e)
+  (interactive "r")
+  (shell-command-on-region (point-min) (point-max)
+		"/usr/local/bin/org2kf -a" (current-buffer) t))
+
+
 
 (defun find-next-unsafe-char (&optional coding-system)
   "Find the next character in the buffer that cannot be encoded by
