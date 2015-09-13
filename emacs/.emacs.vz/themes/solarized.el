@@ -26,4 +26,4 @@
 (setq solarized-height-plus-3 1)
 (setq solarized-height-plus-4 1)
 (load-theme 'solarized-light t)
-(set-cursor-color 'white)
+(set-cursor-color 'red)

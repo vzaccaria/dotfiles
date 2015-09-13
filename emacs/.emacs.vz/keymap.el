@@ -1,8 +1,6 @@
-
-
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
-(define-key global-map (kbd "s-_") (lambda () (interactive) 
+(define-key global-map (kbd "s-_") (lambda () (interactive)
     (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)=" 1 1 nil)))
 
 (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
@@ -37,8 +35,11 @@
 (global-set-key (kbd "s-=") 'zoom-in)
 (global-set-key (kbd "s--") 'zoom-out)
 
-(global-set-key (kbd "s-d") 'mc/mark-next-like-this)
+(global-set-key (kbd "s-d") 'iedit-mode)
 (global-set-key (kbd "s-.") 'figlet-region)
+
+(global-set-key (kbd "s-<up>") 'next-buffer)
+(global-set-key (kbd "s-<down>") 'previous-buffer)
 
 (define-key global-map "\C-cm"
         (lambda () (interactive) (org-capture nil "m")))
@@ -68,4 +69,3 @@
 (add-hook 'js-mode-hook
  '(lambda ()
     (define-key js-mode-map (kbd "s-,") 'web-beautify-js)))
-
