@@ -1,0 +1,69 @@
+# -*- mode: snippet -*-
+# name: octave-fun-flowchart
+# key: octave-fun-flowchart
+# --
+
+** Funzione e flowchart
+
+*** text                           :B_column:BMCOL:
+  :PROPERTIES:
+  :BEAMER_env: column
+  :BEAMER_col: 0.5
+  :END:
+
+
+#+name: nomechart
+#+begin_src plantuml :file images/nomechart.png :exports results :cache yes
+skinparam shadowing false
+skinparam dpi 300
+
+start
+:range = [ 0 1 2 3 ];
+:i = 1;
+while (i < 4)
+    :x = range(i);
+    :val = 2^x;
+  :fprintf('2^%g = $%g\n', x, val);
+    :i = i + 1;
+endwhile
+stop
+#+end_src
+
+\centering
+#+ATTR_LATEX: :width 2.5cm
+#+RESULTS[8b3186b56da2f91cf18d6ed9fecb131d0fe33169]: nomechart
+[[file:images/nomechart.png]]
+
+*** image                          :B_column:BMCOL:
+  :PROPERTIES:
+  :BEAMER_env: column
+  :BEAMER_col: 0.5
+  :END:
+
+**** input                           :B_ignoreheading:
+   :PROPERTIES:
+   :BEAMER_env: ignoreheading
+   :END:
+
+
+\keyboard{}
+#+name: nomesource
+#+begin_src octave :exports both :results output
+for x = 0:1:3
+    val = 2^x;
+  fprintf('2^%g = $%g\n', x, val)
+end
+#+end_src
+
+**** output                          :B_ignoreheading:
+   :PROPERTIES:
+   :BEAMER_env: ignoreheading
+   :END:
+
+
+\screen
+#+RESULTS: nomesource
+: 2^0 = $1
+: 2^1 = $2
+: 2^2 = $4
+: 2^3 = $8

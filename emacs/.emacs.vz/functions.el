@@ -22,6 +22,11 @@
   (interactive)
   (kill-buffer (current-buffer)))
 
+(defun kill-current-buffer-if-unmodified ()
+   "Kill current buffer unconditionally."
+   (interactive)
+   (let ((buffer-modified-p nil))
+     (kill-buffer (current-buffer))))
 
 (defun minibuffer-keyboard-quit ()
   "Abort recursive edit.
