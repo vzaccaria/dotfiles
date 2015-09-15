@@ -36,7 +36,7 @@
 (global-set-key (kbd "s--") 'zoom-out)
 
 (global-set-key (kbd "s-d") 'iedit-mode)
-(global-set-key (kbd "s-.") 'figlet-region)
+;; (global-set-key (kbd "s-.") 'figlet-region)
 
 (global-set-key (kbd "s-<up>") 'next-buffer)
 (global-set-key (kbd "s-<down>") 'previous-buffer)
@@ -57,6 +57,11 @@
 (add-hook 'org-mode-hook
  '(lambda ()
     (define-key org-mode-map (kbd "s-,") 'beautify-org)))
+
+(add-hook 'org-mode-hook
+ '(lambda ()
+    (define-key org-mode-map (kbd "s-.") 'org-beamer-export-to-pdf)))
+
 
 (add-hook 'markdown-mode-hook
  '(lambda ()
