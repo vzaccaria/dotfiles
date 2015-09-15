@@ -1,5 +1,3 @@
-
-
 f() {
    find . -name "*$@*"
 }
@@ -18,17 +16,24 @@ c() {
 }
 
 chore() {
-	git cm "chore: $*"
+  git commit -m "chore: $*"
 }
 
 fix() {
-	git cm "fix: $*"
+  git commit -m "fix: $*"
 }
 
 feat() {
-	git cm "feat: $*"
+  git commit -m "feat: $*"
 }
 
+minor() {
+  git commit -m "minor: $*"
+}
+
+amend() {
+  git commit --amend --no-edit
+}
 
 
 dock-connect() {
@@ -36,10 +41,10 @@ dock-connect() {
 }
 
 pcat() {
-	pygmentize -f terminal256 -O style=monokai -g
+  pygmentize -f terminal256 -O style=monokai -g
 }
 pless() {
-	pygmentize -f terminal256 -O style=monokai -g $1 | less -r
+  pygmentize -f terminal256 -O style=monokai -g $1 | less -r
 }
 
 # read markdown files like manpages
@@ -48,41 +53,41 @@ md() {
 }
 
 lift() {
-	case "$1" in
-		find)
-			find . -name $2 -print0
-			;;
-		ag)
-			$* -l --nocolor -0
-			;;
-		locate)
-			$* -0
-			;;
-		head)
-			$* | tr '\n' '\0'
-			;;
-		tail)
-			$* | tr '\n' '\0'
-			;;
-		ls)
-			$* -1 | tr '\n' '\0'
-			;;
-		*)
-			echo "Sorry no lift instance available for $1"
-			;;
-	esac
+  case "$1" in
+    find)
+      find . -name $2 -print0
+      ;;
+    ag)
+      $* -l --nocolor -0
+      ;;
+    locate)
+      $* -0
+      ;;
+    head)
+      $* | tr '\n' '\0'
+      ;;
+    tail)
+      $* | tr '\n' '\0'
+      ;;
+    ls)
+      $* -1 | tr '\n' '\0'
+      ;;
+    *)
+      echo "Sorry no lift instance available for $1"
+      ;;
+  esac
 }
 
 lifta() {
-	cat $* | tr '\n' '\0'
+  cat $* | tr '\n' '\0'
 }
 
 fmap() {
-	xargs -0 -n 1 -J _ $*
+  xargs -0 -n 1 -J _ $*
 }
 
 map() {
-	xargs -0 -n 1 -J _ $* | tr '\n' '\0'
+  xargs -0 -n 1 -J _ $* | tr '\n' '\0'
 }
 
 accent() {
