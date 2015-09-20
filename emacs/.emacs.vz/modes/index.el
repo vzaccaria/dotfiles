@@ -6,6 +6,13 @@
 (require 'evil-iedit-state)
 (require 'projectile)
 (require 'paren)
+(require 'json-mode)
+(require 'tern)
+(require 'rainbow-delimiters)
+(require 'visual-regexp-steroids)
+(require 'magit)
+(require 'osx-pseudo-daemon)
+(require 'sx)
 (projectile-global-mode)
 
 
@@ -25,6 +32,8 @@
 (load-file "~/.emacs.vz/modes/javascript.el")
 (load-file "~/.emacs.vz/modes/jade.el")
 (load-file "~/.emacs.vz/modes/haskell.el")
+(load-file "~/.emacs.vz/modes/fip.el")
+
 
 ;; languages: `protobuf'
 (require 'protobuf-mode)

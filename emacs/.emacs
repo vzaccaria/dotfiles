@@ -26,6 +26,7 @@
  '(markdown-command "pandoc -s")
  '(org-babel-js-cmd "/usr/local/Cellar/iojs/2.5.0/bin/iojs")
  '(org-confirm-babel-evaluate nil)
+ '(org-ioslide-hlevel 2)
  '(safe-local-variable-values
    (quote
     ((flycheck-disabled-checkers quote

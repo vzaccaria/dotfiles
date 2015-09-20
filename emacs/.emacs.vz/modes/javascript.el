@@ -1,5 +1,3 @@
-
-
 ;; disable jshint since we prefer eslint checking
 (setq-default flycheck-disabled-checkers
   (append flycheck-disabled-checkers
@@ -28,14 +26,16 @@ See URL `http://flowtype.org/'."
   :command ("flow" source-original)
   :error-patterns
   ((error line-start
-	  (file-name)
-	  ":"
-	  line
-	  ":"
-	  (minimal-match (one-or-more not-newline))
-	  ": "
-	  (message (minimal-match (and (one-or-more anything) "\n")))
-	  line-end))
+    (file-name)
+    ":"
+    line
+    ":"
+    (minimal-match (one-or-more not-newline))
+    ": "
+    (message (minimal-match (and (one-or-more anything) "\n")))
+    line-end))
   :modes js-mode)
 
 (flycheck-add-next-checker 'javascript-eslint 'javascript-flow)
+
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))

@@ -1,10 +1,9 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (define-key global-map (kbd "s-_") (lambda () (interactive)
-    (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)=" 1 1 nil)))
+                                     (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)=" 1 1 nil)))
 
 (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
-(define-key c-mode-base-map (kbd "s-/") 'comment-region)
 
 (define-key yas-minor-mode-map (kbd "<tab>") nil)
 (define-key yas-minor-mode-map (kbd "TAB") nil)
@@ -20,7 +19,6 @@
 
 (global-set-key [escape] 'evil-exit-emacs-state)
 ;; end `evil'
-
 
 (global-set-key (kbd "s-b") 'recompile)
 (global-set-key (kbd "s-r") 'eval-region)
@@ -40,37 +38,48 @@
 
 (global-set-key (kbd "s-<up>") 'next-buffer)
 (global-set-key (kbd "s-<down>") 'previous-buffer)
+(global-set-key (kbd "s-o") 'fiplr-find-file)
 
 (define-key global-map "\C-cm"
-        (lambda () (interactive) (org-capture nil "m")))
+  (lambda () (interactive) (org-capture nil "m")))
 
 (define-key global-map "\C-cl"
-        (lambda () (interactive) (org-capture nil "l")))
+  (lambda () (interactive) (org-capture nil "l")))
 
 (define-key global-map "\C-ci"
-        (lambda () (interactive) (org-capture nil "i")))
+  (lambda () (interactive) (org-capture nil "i")))
 
 (define-key global-map "\C-cd"
-        (lambda () (interactive) (org-capture nil "d")))
+  (lambda () (interactive) (org-capture nil "d")))
 
+(define-key global-map "\C-co"
+  (lambda () (interactive) (org-capture nil "o")))
+
+(define-key global-map "\C-ct"
+  (lambda () (interactive) (org-capture nil "t")))
+
+
+(add-hook 'emacs-lisp-mode-hook
+          '(lambda ()
+             (define-key emacs-lisp-mode-map (kbd "s-,") 'beautify-lisp)))
 
 (add-hook 'org-mode-hook
- '(lambda ()
-    (define-key org-mode-map (kbd "s-,") 'beautify-org)))
+          '(lambda ()
+             (define-key org-mode-map (kbd "s-,") 'beautify-org)))
 
 (add-hook 'org-mode-hook
- '(lambda ()
-    (define-key org-mode-map (kbd "s-.") 'org-beamer-export-to-pdf)))
+          '(lambda ()
+             (define-key org-mode-map (kbd "s-.") 'org-beamer-export-to-pdf)))
 
 
 (add-hook 'markdown-mode-hook
- '(lambda ()
-    (define-key markdown-mode-map (kbd "s-,") 'beautify-markdown)))
+          '(lambda ()
+             (define-key markdown-mode-map (kbd "s-,") 'beautify-markdown)))
 
 (add-hook 'c-mode-common-hook
- '(lambda ()
-    (define-key c-mode-base-map (kbd "s-,") 'beautify-c)))
+          '(lambda ()
+             (define-key c-mode-base-map (kbd "s-,") 'beautify-c)))
 
 (add-hook 'js-mode-hook
- '(lambda ()
-    (define-key js-mode-map (kbd "s-,") 'web-beautify-js)))
+          '(lambda ()
+             (define-key js-mode-map (kbd "s-,") 'web-beautify-js)))

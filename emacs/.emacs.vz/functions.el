@@ -1,37 +1,41 @@
 (defun vz/open-infob-file ()
-     (interactive)
-        (find-file "/Users/zaccaria/development/github/documents/lectures/infob/materiale/InfoBMat.org"))
+  (interactive)
+  (find-file "/Users/zaccaria/development/github/documents/lectures/infob/materiale/InfoBMat.org"))
+
+(defun vz/open-org-infob-file ()
+  (interactive)
+  (find-file "/Users/zaccaria/Dropbox/Commuting/Ricercatore TI 2011/Lezioni/2015-2016 Informatica B/InfoBOrg.org"))
 
 (defun vz/open-work-file ()
-     (interactive)
-     (find-file "/Users/zaccaria/Dropbox/org/work.org"))
+  (interactive)
+  (find-file "/Users/zaccaria/Dropbox/org/work.org"))
 
 (defun vz/open-thesis-file ()
-     (interactive)
-     (find-file "/Users/zaccaria/Dropbox/org/thesis.org"))
+  (interactive)
+  (find-file "/Users/zaccaria/Dropbox/org/thesis.org"))
 
 (defun vz/open-cucina-file ()
-     (interactive)
-     (find-file "/Users/zaccaria/Dropbox/Commuting/Altro/Personal/Chiara/Casa/Viale Varese/Cucina Viale Varese - Settembre 2015/cucina.org"))
+  (interactive)
+  (find-file "/Users/zaccaria/Dropbox/Commuting/Altro/Personal/Chiara/Casa/Viale Varese/Cucina Viale Varese - Settembre 2015/cucina.org"))
 
 (defun vz/open-st-file ()
-     (interactive)
-     (find-file "/Users/zaccaria/Dropbox/org/STMicro.org"))
+  (interactive)
+  (find-file "/Users/zaccaria/Dropbox/org/STMicro.org"))
 
 (defun kill-current-buffer ()
   (interactive)
   (kill-buffer (current-buffer)))
 
 (defun kill-current-buffer-if-unmodified ()
-   "Kill current buffer unconditionally."
-   (interactive)
-   (let ((buffer-modified-p nil))
-     (kill-buffer (current-buffer))))
+  "Kill current buffer unconditionally."
+  (interactive)
+  (let ((buffer-modified-p nil))
+    (kill-buffer (current-buffer))))
 
 (defun minibuffer-keyboard-quit ()
   "Abort recursive edit.
-In Delete Selection mode, if the mark is active, just deactivate it;
-then it takes a second \\[keyboard-quit] to abort the minibuffer."
+  In Delete Selection mode, if the mark is active, just deactivate it;
+  then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (interactive)
   (if (and delete-selection-mode transient-mark-mode mark-active)
       (setq deactivate-mark  t)
@@ -42,60 +46,62 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (interactive)
   (if (= (count-windows) 2)
       (let* ((this-win-buffer (window-buffer))
-       (next-win-buffer (window-buffer (next-window)))
-       (this-win-edges (window-edges (selected-window)))
-       (next-win-edges (window-edges (next-window)))
-       (this-win-2nd (not (and (<= (car this-win-edges)
-           (car next-win-edges))
-             (<= (cadr this-win-edges)
-           (cadr next-win-edges)))))
-       (splitter
-        (if (= (car this-win-edges)
-         (car (window-edges (next-window))))
-      'split-window-horizontally
-    'split-window-vertically)))
-  (delete-other-windows)
-  (let ((first-win (selected-window)))
-    (funcall splitter)
-    (if this-win-2nd (other-window 1))
-    (set-window-buffer (selected-window) this-win-buffer)
-    (set-window-buffer (next-window) next-win-buffer)
-    (select-window first-win)
-    (if this-win-2nd (other-window 1))))))
+             (next-win-buffer (window-buffer (next-window)))
+             (this-win-edges (window-edges (selected-window)))
+             (next-win-edges (window-edges (next-window)))
+             (this-win-2nd (not (and (<= (car this-win-edges)
+                                         (car next-win-edges))
+                                     (<= (cadr this-win-edges)
+                                         (cadr next-win-edges)))))
+             (splitter
+              (if (= (car this-win-edges)
+                     (car (window-edges (next-window))))
+                  'split-window-horizontally
+                'split-window-vertically)))
+        (delete-other-windows)
+        (let ((first-win (selected-window)))
+          (funcall splitter)
+          (if this-win-2nd (other-window 1))
+          (set-window-buffer (selected-window) this-win-buffer)
+          (set-window-buffer (next-window) next-win-buffer)
+          (select-window first-win)
+          (if this-win-2nd (other-window 1))))))
 
 (defun figlet-region (&optional b e)
   (interactive "r")
   (shell-command-on-region b e "toilet -d ~/.figlet -f 3d" (current-buffer) t)
-    (comment-region (mark) (point)))
+  (comment-region (mark) (point)))
 
 (defun beautify-c ()
   "Indent the currently visited buffer."
   (interactive)
   (indent-region (point-min) (point-max)))
 
+(defun beautify-lisp ()
+  "Indent the currently visited buffer"
+  (interactive)
+  (indent-region (point-min) (point-max)))
 
 (defun beautify-markdown (&optional b e)
   (interactive "r")
   (shell-command-on-region (point-min) (point-max)
-    "pandoc -s --read markdown --write markdown-simple_tables+pipe_tables-fenced_code_blocks-fenced_code_attributes" (current-buffer) t))
+                           "pandoc -s --read markdown --write markdown-simple_tables+pipe_tables-fenced_code_blocks-fenced_code_attributes" (current-buffer) t))
 
 (defun vz/accentize (&optional b e)
   (interactive "r")
   (shell-command-on-region (point-min) (point-max)
-    "sed -E \"s/iu'/iù/g; s/uo'/uò/g; s/perche'/perchè/g; s/poiche'/poiché/g; s/a'/à/g; s/ e'/ è/g; s/c'e'/c'è/g; s/cosi'/così/g\"" (current-buffer) t))
+                           "sed -E \"s/iu'/iù/g; s/uo'/uò/g; s/perche'/perchè/g; s/poiche'/poiché/g; s/a'/à/g; s/ e'/ è/g; s/c'e'/c'è/g; s/cosi'/così/g\"" (current-buffer) t))
 
 
 (defun beautify-org (&optional b e)
   (interactive "r")
   (shell-command-on-region (point-min) (point-max)
-    "pandoc --columns=80 --read org --write org" (current-buffer) t))
+                           "pandoc --columns=80 --read org --write org" (current-buffer) t))
 
 (defun beautify-asciidiag (&optional b e)
   (interactive "r")
   (shell-command-on-region (point-min) (point-max)
-    "/usr/local/bin/org2kf -a" (current-buffer) t))
-
-
+                           "/usr/local/bin/org2kf -a" (current-buffer) t))
 
 (defun vz/find-next-unsafe-char (&optional coding-system)
   "Find the next character in the buffer that cannot be encoded by
@@ -132,21 +138,21 @@ prompt the user for a coding system."
   "Just sets the font to square"
   (interactive)
   (set-face-attribute 'default nil :font "Square")
- )
+  )
 
 (defun vz/set-font-hasklig ()
   "Just sets the font to square"
   (interactive)
   (set-face-attribute 'default nil :font "Hasklig")
- )
+  )
 
 (defun vz/define-checker-for-stm32 ()
   "Sets the correct checker for the PlatformIO env"
   (interactive)
 
-(customize-set-variable 'flycheck-c/c++-gcc-executable "/Users/zaccaria/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++")
-(customize-set-variable 'flycheck-gcc-language-standard "c++11")
-(flycheck-select-checker 'c/c++-gcc))
+  (customize-set-variable 'flycheck-c/c++-gcc-executable "/Users/zaccaria/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++")
+  (customize-set-variable 'flycheck-gcc-language-standard "c++11")
+  (flycheck-select-checker 'c/c++-gcc))
 
 
 ;; for the next function
@@ -165,5 +171,19 @@ current buffer's, reload dir-locals."
       (with-current-buffer buffer
         (when (equal default-directory dir))
         (my-reload-dir-locals-for-current-buffer)))))
+
+(require 'json)
+(defun org-as-json-to-file ()
+  "Export the current Org-mode buffer as JSON to the supplied PATH."
+  (interactive)
+  (let ((tree (org-element-parse-buffer)))
+    (org-element-map tree
+        (append org-element-all-objects org-element-all-elements)
+      (lambda (el) (org-element-put-property el :parent nil)))
+    (org-element-map tree
+        (append org-element-all-objects org-element-all-elements)
+      (lambda (el) (org-element-put-property el :structure nil)))
+    (with-temp-file "./data.json"
+      (insert (json-encode tree)))))
 
 ;;
