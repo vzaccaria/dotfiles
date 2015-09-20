@@ -31,6 +31,10 @@ minor() {
   git commit -m "minor: $*"
 }
 
+refactor() {
+  git commit -m "refactor: $*"
+}
+
 amend() {
   git commit --amend --no-edit
 }
