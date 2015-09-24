@@ -103,3 +103,7 @@ s/a'/à/g; \
 s/ e'/è/g; \
 s/cosi'/così/g" "$@"
 }
+
+org2json() {
+    emacs "$1" -l ~/.emacs --batch --eval="(org-as-json-to-file)"
+}
