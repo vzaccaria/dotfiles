@@ -3,18 +3,17 @@
 
 (add-to-list 'org-latex-classes
              '("beamer"
-               "\\documentclass\[presentation\]\{beamer\}"
+                "\\documentclass\[presentation\]\{beamer\}
+                [NO-DEFAULT-PACKAGES]"
                ("\\section\{%s\}" . "\\section*\{%s\}")
                ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
                ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
+
 
 (require 'ox-beamer)
 (require 'ox-html)
 (require 'ox-md)
 (require 'ox-gfm)
-
-
-(add-to-list 'org-latex-packages-alist '("" "minted"))
 
 (setq org-latex-minted-options
    '(("obeytabs" "true") ("baselinestretch" "0.95")))

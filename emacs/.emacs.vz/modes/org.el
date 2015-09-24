@@ -33,3 +33,6 @@
 
         )
       )
+
+(delete '("\\.pdf\\'" . default) org-file-apps)
+(add-to-list 'org-file-apps '("\\.pdf::\\([0-9]+\\)\\'" . "osascript /Users/zaccaria/dotfiles/emacs/.emacs.vz/skim-gotopage.osa \"%s\" %1"))
