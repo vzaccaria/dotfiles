@@ -5,6 +5,7 @@
       '((emacs-lisp . t)
     (sh . t)
     (octave . t)
+    (R . t)
     (C . t)
     (js . t)
     (ledger . t)
