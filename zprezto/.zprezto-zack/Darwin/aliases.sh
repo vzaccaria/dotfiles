@@ -5,6 +5,7 @@ alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 alias dg='cd ~/development/github'
 alias h='/usr/local/bin/hub'
+alias ric='cd "/Users/zaccaria/Dropbox/Commuting/Ricercatore TI 2011"'
 
 # JavaScriptCore REPL
 jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc";

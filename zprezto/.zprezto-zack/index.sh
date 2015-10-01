@@ -1,10 +1,8 @@
-
-
 srcdir=`dirname $0`
 srcdir=`cd $srcdir; pwd`
 
 if [[ -s "${srcdir}/exports.sh" ]]; then
-  source "${srcdir}/exports.sh"
+    source "${srcdir}/exports.sh"
 fi
 
 if [[ -s "${srcdir}/path.sh" ]]; then
@@ -22,5 +20,3 @@ fi
 
 # Setup common vi keybindings
 bindkey -v
-
-

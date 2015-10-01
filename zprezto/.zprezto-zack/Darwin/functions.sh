@@ -1,5 +1,5 @@
 # GitHub aliases
-eval "$(hub alias -s)"
+eval "$(/usr/local/bin/hub alias -s)"
 
 # Zed magic cd
 . `brew --prefix`/etc/profile.d/z.sh

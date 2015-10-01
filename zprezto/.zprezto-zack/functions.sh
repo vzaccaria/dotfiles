@@ -6,11 +6,6 @@ fe() {
    find . -name "*\.$@"
 }
 
-
-p() {
-   ps -fe | grep -v grep | grep "$@" -i --color=auto;
-}
-
 c() {
    git cm "$@" && git push --all
 }
@@ -52,7 +47,7 @@ pless() {
 }
 
 # read markdown files like manpages
-md() {
+mandown() {
     pandoc -s -f markdown -t man "$*" | man -l -
 }
 
