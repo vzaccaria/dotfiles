@@ -1,0 +1,83 @@
+# bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN # use whatever keys you want
+config defaultToCurrentScreen true
+# Shows app icons and background apps, spreads icons in the same place.
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+# bind g:cmd grid padding:5 0:6,2 1:8,3
+
+# This is the default .slate file.
+# If no ~/.slate file exists this is the file that will be used.
+
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+# Abstract positions
+
+alias full      move  screenOriginX;screenOriginY                 screenSizeX;screenSizeY
+alias lefthalf    move  screenOriginX;screenOriginY                 screenSizeX/2;screenSizeY
+alias righthalf   move  screenOriginX+screenSizeX/2;screenOriginY           screenSizeX/2;screenSizeY
+alias qhalf     move  screenOriginX;screenOriginY                 screenSizeX/4;screenSizeY
+
+alias leftq1		move  screenOriginX;screenOriginY									screenSizeX/4;screenSizeY/2
+alias leftq2		move  screenOriginX+screenSizeX/4;screenOriginY					screenSizeX/4;screenSizeY/2
+alias leftq3		move  screenOriginX;screenOriginY+screenSizeY/2					screenSizeX/4;screenSizeY/2
+alias leftq4		move  screenOriginX+screenSizeX/4;screenOriginY+screenSizeY/2		screenSizeX/4;screenSizeY/2
+
+alias topleft     corner  top-left                  resize:screenSizeX/2;screenSizeY/2
+alias topright    corner  top-right                   resize:screenSizeX/2;screenSizeY/2
+alias bottomleft  corner  bottom-left                 resize:screenSizeX/2;screenSizeY/2
+alias bottomright   corner  bottom-right                resize:screenSizeX/2;screenSizeY/2
+
+# Resize Bindings
+# bind right:alt       resize +10% +0
+# bind left:alt        resize -10% +0
+# bind up:alt          resize +0   -10%
+# bind down:alt        resize +0   +10%
+# bind right:ctrl;alt  resize -10% +0 bottom-right
+# bind left:ctrl;alt   resize +10% +0 bottom-right
+# bind up:ctrl;alt     resize +0   +10% bottom-right
+# bind down:ctrl;alt   resize +0   -10% bottom-right
+
+# # Nudge Bindings
+# bind right:shift;alt nudge +10% +0
+# bind left:shift;alt  nudge -10% +0
+# bind up:shift;alt    nudge +0   -10%
+# bind down:shift;alt  nudge +0   +10%
+
+# Development layout cmd-M
+# layout 1monitorm 'Terminal':REPEAT          ${bottomleft}
+# layout 1monitorm 'Sublime Text 2':REPEAT      ${righthalf}
+# layout 1monitorm 'Google Chrome':MAIN_FIRST     ${topleft} | ${bottomleft}
+# bind m:cmd  ${full} 0
+# bind l:cmd  ${full} 1
+
+# Shortcuts cmd-O for full editor, cmd-K for half and sparrow
+# layout 1monitoro 'Sublime Text 2':REPEAT    ${full}
+# layout 1monitoro 'Sparrow':REPEAT         ${full}
+# layout 1monitoro 'Google Chrome':REPEAT     ${full}
+# bind o:cmd layout 1monitoro
+
+# layout 1monitork 'Terminal':MAIN_FIRST				${leftq3} | ${leftq4}
+# layout 1monitork 'Sublime Text 2':REPEAT      ${righthalf}
+# layout 1monitork 'Google Chrome':MAIN_FIRST     ${topleft} | ${bottomleft}
+# bind k:cmd layout 1monitork
+
+# layout 1monitoro 'Google Chrome':REPEAT ${qhalf}
+# bind o:cmd layout 1monitoro
+
+bind pad1 ${bottomleft}
+bind pad2 push bottom bar-resize:screenSizeY/2
+bind pad3 ${bottomright}
+bind pad4 ${lefthalf}
+bind pad5 ${full}
+bind pad6 ${righthalf}
+bind pad7 ${topleft}
+bind pad8 push top bar-resize:screenSizeY/2
+bind pad9 ${topright}
+
+# layout 1monl 'current':MAIN_FIRST ${lefthalf}  | ${righthalf}
+# layout 1monr 'current':MAIN_FIRST ${righthalf} | ${lefthalf}
+
+# bind k:cmd layout 1monl
