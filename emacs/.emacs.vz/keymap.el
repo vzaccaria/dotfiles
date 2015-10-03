@@ -7,6 +7,8 @@
 
 (define-key yas-minor-mode-map (kbd "<tab>") nil)
 (define-key yas-minor-mode-map (kbd "TAB") nil)
+(define-key magit-mode-map (kbd "<tab>") 'magit-section-toggle)
+(define-key magit-mode-map (kbd "s-c") 'magit-commit)
 
 ;; The following are needed by `evil' mode.
 (define-key evil-normal-state-map [escape] 'keyboard-quit)
@@ -27,6 +29,7 @@
 (global-set-key (kbd "s-f") 'projectile-ag)
 (global-set-key (kbd "s-/") 'comment-region)
 (global-set-key (kbd "s-e") 'yas-expand)
+(global-set-key (kbd "s-i") 'magit-status)
 
 (global-set-key (kbd "s-`") 'toggle-window-split)
 
