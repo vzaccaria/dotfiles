@@ -13,6 +13,7 @@
 (require 'magit)
 (require 'osx-pseudo-daemon)
 (require 'sx)
+(require 'ess-mode)
 (projectile-global-mode)
 
 
