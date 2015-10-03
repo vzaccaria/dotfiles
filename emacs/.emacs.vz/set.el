@@ -20,9 +20,9 @@
 ;; Keep clutter to a minimum
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 
-;; start maximized
-(setq split-height-threshold 0)
-(setq split-width-threshold 0)
+;; Open new window vertically
+(setq split-height-threshold nil)
+(setq split-width-threshold 80)
 
 ;; scroll control
 (setq scroll-margin 5
