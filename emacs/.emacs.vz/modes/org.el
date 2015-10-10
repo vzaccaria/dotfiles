@@ -23,8 +23,8 @@
         ("l" "Posts da leggere" entry (file+headline "~/Dropbox/org/work.org" "Non so")
          "* [ ] %?\n")
 
-        ("d" "Risorse per Informatica B" entry i
-         (file+headline "/Users/zaccaria/development/github/documents/lectures/infob/materiale/InfoBMat.org" "Risorse da organizzare")
+        ("d" "Feedback/note per il corso" entry
+         (file+headline "/Users/zaccaria/development/github/documents/lectures/infob/materiale/InfoBMat.org" "Feedback e note prese durante il corso")
          "*  %?\n")
 
         ("o" "Todo per organizzazione di Informatica B" entry
