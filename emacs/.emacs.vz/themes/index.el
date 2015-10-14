@@ -2,8 +2,8 @@
 (load-file "~/.emacs.vz/themes/lang-org.el")
 
 ;; Main font
-(set-face-attribute 'default nil
-                :family "Hasklig" :height 140 :weight 'normal)
+;; (set-face-attribute 'default nil
+;;                 :family "Hasklig" :height 140 :weight 'normal)
 
 ;; Parenthesis highlight
 

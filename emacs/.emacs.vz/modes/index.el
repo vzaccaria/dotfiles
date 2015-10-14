@@ -14,6 +14,10 @@
 (require 'osx-pseudo-daemon)
 (require 'sx)
 (require 'ess-mode)
+(require 'desktop) ;; session management
+(require 'desktop+) ;; session management
+(require 'bs) ;; buffer management
+(require 'evil-leader)
 (projectile-global-mode)
 
 

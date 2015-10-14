@@ -15,6 +15,7 @@
  '(custom-safe-themes
    (quote
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+ '(desktop-save-mode nil)
  '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
  '(frame-background-mode (quote dark))
  '(haskell-mode-hook

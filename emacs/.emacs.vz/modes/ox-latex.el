@@ -9,6 +9,14 @@
                ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
                ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
 
+(add-to-list 'org-latex-classes
+             '("article"
+                "\\documentclass\{article\}
+                [NO-DEFAULT-PACKAGES]"
+               ("\\section\{%s\}" . "\\section*\{%s\}")
+               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+               ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
+
 
 (require 'ox-beamer)
 (require 'ox-html)
