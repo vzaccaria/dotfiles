@@ -1,10 +1,5 @@
 (setq org-agenda-files
-      (list "~/Dropbox/org/work.org"
-            "~/Dropbox/org/thesis.org"
-            "~/Dropbox/org/EDX.org"
-            "~/Dropbox/org/STMicro.org"
-            "~/Dropbox/org/Missioni.org"
-            "~/development/github/screencap/teasy.org"
+      (list "~/Dropbox/org"
             "/Users/zaccaria/development/github/documents/curriculum/cv2013/curriculum.org"
             "~/Dropbox/Commuting/Altro/Personal/Chiara/Casa/Viale Varese/Cucina Viale Varese - Settembre 2015/cucina.org"
             "~/Dropbox/Commuting/Ricercatore TI 2011/Lezioni/2015-2016 Informatica B/InfoBOrg.org"
