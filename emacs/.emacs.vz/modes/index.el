@@ -18,13 +18,16 @@
 (require 'desktop+) ;; session management
 (require 'bs) ;; buffer management
 (require 'evil-leader)
+
 (projectile-global-mode)
+
+;; load helpers
+(load-file "~/.emacs.vz/modes/helpers.el")
 
 
 ;; core
 (load-file "~/.emacs.vz/modes/org.el")
 (load-file "~/.emacs.vz/modes/evil.el")
-;; (load-file "~/.emacs.vz/modes/autopair.el")
 (load-file "~/.emacs.vz/modes/yasnippet.el")
 (load-file "~/.emacs.vz/modes/autocomplete.el")
 (load-file "~/.emacs.vz/modes/flycheck.el")
@@ -40,3 +43,9 @@
 (load-file "~/.emacs.vz/modes/fip.el")
 (load-file "~/.emacs.vz/modes/ess.el")
 (load-file "~/.emacs.vz/modes/protobuf.el")
+
+;; other minors
+;; Highlight TODO and FIXME in comments
+(package-require 'fic-ext-mode)
+
+(add-something-to-mode-hooks '(c++ tcl emacs-lisp python text markdown latex) 'fic-ext-mode)
