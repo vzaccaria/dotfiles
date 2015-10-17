@@ -7,6 +7,7 @@
 
 ;;; Gotta do UTF-8
 ;;; From: https://github.com/rmm5t/dotfiles/blob/master/emacs.d/personal/utf-8.el
+
 (require 'un-define "un-define" t)
 (set-buffer-file-coding-system 'utf-8 'utf-8-unix)
 (set-default buffer-file-coding-system 'utf-8-unix)
@@ -55,3 +56,9 @@ scroll-step 1)
 (ido-mode t)
 (setq ido-enable-flex-matching t) ; fuzzy matching is a must have
 (setq ido-enable-last-directory-history nil) ; forget latest selected directory names
+
+; use allout minor mode to have outlining everywhere.
+(allout-mode)
+
+; Add proper word wrapping
+(global-visual-line-mode t)

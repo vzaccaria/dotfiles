@@ -38,10 +38,5 @@
 (load-file "~/.emacs.vz/modes/jade.el")
 (load-file "~/.emacs.vz/modes/haskell.el")
 (load-file "~/.emacs.vz/modes/fip.el")
-
-
-;; languages: `protobuf'
-(require 'protobuf-mode)
-(eval-after-load 'flycheck
-  '(require 'flycheck-protobuf))
-(add-to-list 'flycheck-checkers 'protobuf-protoc-reporter t)
+(load-file "~/.emacs.vz/modes/ess.el")
+(load-file "~/.emacs.vz/modes/protobuf.el")

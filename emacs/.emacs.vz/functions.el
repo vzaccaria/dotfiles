@@ -22,6 +22,11 @@
   (interactive)
   (find-file "/Users/zaccaria/Dropbox/org/STMicro.org"))
 
+
+(defun vz/open-keymap-file ()
+  (interactive)
+  (find-file "/Users/zaccaria/.emacs.vz/keymap.el"))
+
 (defun kill-current-buffer ()
   (interactive)
   (kill-buffer (current-buffer)))
@@ -187,7 +192,7 @@ current buffer's, reload dir-locals."
       (insert (json-encode tree)))))
 
 (defvar my-desktop-session-dir
-  (concat (getenv "HOME") "/.emacs.d/desktop-sessions/")
+  (concat (getenv "HOME") "/.emacs.d/desktops/")
   "*Directory to save desktop sessions in")
 
 

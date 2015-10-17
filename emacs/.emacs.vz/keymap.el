@@ -28,6 +28,7 @@
 
 (global-set-key (kbd "s-b") 'recompile)
 (global-set-key (kbd "s-r") 'eval-region)
+(global-set-key (kbd "s-R") 'ess-eval-buffer)
 (global-set-key (kbd "s-w") 'kill-this-buffer)
 (global-set-key (kbd "s-h") 'helm-M-x)
 (global-set-key (kbd "s-f") 'projectile-ag)
