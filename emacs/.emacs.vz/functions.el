@@ -1,3 +1,40 @@
+;;; functions.el --- Summary
+
+;; Copyright (C) 2015  Vittorio Zaccaria <vittorio.zaccaria@gmail.com>
+
+;; Author: Vittorio Zaccaria <vittorio.zaccaria@gmail.com>
+;; Keywords:
+
+;; Permission is hereby granted, free of charge, to any person obtaining a
+;; copy of this software and associated documentation files (the "Software"),
+;; to deal in the Software without restriction, including without limitation
+;; the rights to use, copy, modify, merge, publish, distribute, sublicense,
+;; and/or sell copies of the Software, and to permit persons to whom the
+;; Software is furnished to do so, subject to the following conditions:
+
+;; The above copyright notice and this permission notice shall be included in
+;; all copies or substantial portions of the Software.
+
+;; Except as contained in this notice, the name(s) of the above copyright
+;; holders shall not be used in advertising or otherwise to promote the sale,
+;; use or other dealings in this Software without prior written authorization.
+
+;; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+;; IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+;; FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+;; THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+;; LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+;; FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+;; DEALINGS IN THE SOFTWARE.
+
+;;; Commentary:
+
+;;; Code:
+
+
+
+
+
 (defun vz/open-infob-file ()
   (interactive)
   (find-file "/Users/zaccaria/development/github/documents/lectures/infob/materiale/InfoBMat.org"))
@@ -82,7 +119,7 @@
   (interactive)
   (indent-region (point-min) (point-max)))
 
-(defun beautify-lisp ()
+(defun beautify-lisp (&optional b e)
   "Indent the currently visited buffer"
   (interactive)
   (indent-region (point-min) (point-max)))
@@ -107,6 +144,18 @@
   (interactive "r")
   (shell-command-on-region (point-min) (point-max)
                            "/usr/local/bin/org2kf -a" (current-buffer) t))
+
+
+(defun beautify (&optional b e)
+  (interactive "r")
+  (cond ((derived-mode-p 'org-mode)        (call-interactively 'beautify-org)
+        ((derived-mode-p 'emacs-lisp-mode) (call-interactively 'beautify-lisp))
+        ((derived-mode-p 'markdown-mode)   (call-interactively 'beautify-markdown)
+        ((derived-mode-p 'c-mode)          (call-interactively 'beautify-c)
+        ((derived-mode-p 'js-mode)         (call-interactively 'web-beautify-js)
+        ((derived-mode-p 'html-mode)       (call-interactively 'web-beautify-html)
+        ((derived-mode-p 'web-mode)        (call-interactively 'web-mode-buffer-indent)
+        (t "not implemented")))
 
 (defun vz/find-next-unsafe-char (&optional coding-system)
   "Find the next character in the buffer that cannot be encoded by
@@ -220,3 +269,5 @@ current buffer's, reload dir-locals."
                    nil nil nil my-desktop-session-name-hist))
 
 ;;
+(provide 'functions)
+;;; functions.el ends here

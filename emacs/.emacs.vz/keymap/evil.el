@@ -31,9 +31,6 @@
 
 ;;; Code:
 
-
-
-
 ;; The following are needed by `evil' mode.
 (define-key evil-normal-state-map [escape] 'keyboard-quit)
 (define-key evil-visual-state-map [escape] 'keyboard-quit)
@@ -44,12 +41,13 @@
 (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
 (global-set-key [escape] 'evil-exit-emacs-state)
 
-(define-key evil-normal-state-map (kbd "M-.") (lambda ()
-                        (interactive)
-                        (evil-next-buffer)))
-(define-key evil-normal-state-map (kbd "M-,") (lambda ()
-                        (interactive)
-                        (evil-prev-buffer)))
+;; when in 'bs-show, press
+;; (d) to close the buffer
+(evil-leader/set-leader "SPC")
+(evil-leader/set-key
+  "SPC" 'other-window
+  )
+
 
 (provide 'evil)
 ;;; evil.el ends here

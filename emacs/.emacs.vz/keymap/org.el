@@ -33,22 +33,17 @@
 
 ;;; Org-mode global
 
-(define-key global-map "\C-c l" 'org-store-link)
-
 ;; Orgmode shortcuts
 
-(add-hook 'org-mode-hook
-      '(lambda ()
-       (define-key org-mode-map (kbd "M-,") 'beautify-org)))
-
-(add-hook 'org-mode-hook
-      '(lambda ()
-       (define-key org-mode-map (kbd "M-.") 'org-beamer-export-to-pdf)))
-
-(add-hook 'org-mode-hook
-      '(lambda ()
-       (define-key org-mode-map (kbd "M->") 'org-latex-export-to-pdf)))
-
+(evil-declare-key 'normal org-mode-map
+  "t" 'org-todo
+  "'b" 'org-beamer-export-to-pdf
+  "'l" 'org-latex-export-to-pdf
+  (kbd "TAB") 'org-cycle
+  "-" 'org-ctrl-c-minus ; change bullet style
+  "<" 'org-metaleft ; out-dent
+  ">" 'org-metaright ; indent
+  )
 
 (define-key global-map "\C-cm"
   (lambda () (interactive) (org-capture nil "m")))

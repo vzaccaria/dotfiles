@@ -31,9 +31,6 @@
 
 ;;; Code:
 
-(global-set-key (kbd "M-i") 'magit-status)
-(global-set-key (kbd "M-l") 'magit-log-all)
-
 
 ;; Only when in Magit status!
 (define-key magit-mode-map (kbd "<tab>") 'magit-section-toggle)

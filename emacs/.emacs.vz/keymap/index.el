@@ -1,4 +1,4 @@
-;;; keymap.el --- Summary
+;;; index.el --- Summary
 
 ;; Copyright (C) 2015  Vittorio Zaccaria <vittorio.zaccaria@gmail.com>
 
@@ -34,14 +34,14 @@
 ;;; Code:
 
 
-(load-file "~/.emacs.vz/keymap/index.el")
 (load-file "~/.emacs.vz/keymap/evil.el")
 (load-file "~/.emacs.vz/keymap/magit.el")
+(load-file "~/.emacs.vz/keymap/mouse.el")
 
 
 
 (define-key global-map (kbd "s-_") (lambda () (interactive)
-                   (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)=" 1 1 nil)))
+           (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)=" 1 1 nil)))
 
 (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
 
@@ -49,49 +49,35 @@
 (define-key yas-minor-mode-map (kbd "TAB") nil)
 
 
-
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
 
 ;; to make your life easier; dont add any other character after M-* (!!!)
-(global-set-key (kbd "M-b") 'recompile)
-(global-set-key (kbd "M-r") 'eval-region)
+(global-set-key (kbd "M-`") 'toggle-window-split)
+
 (global-set-key (kbd "M-w") 'kill-this-buffer)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "M-h") 'helm-M-x)
-(global-set-key (kbd "M-f") 'projectile-ag)
 (global-set-key (kbd "M-e") 'yas-expand)
+(global-set-key (kbd "M-r") 'eval-region)
+(global-set-key (kbd "M-u") 'bs-show)
+(global-set-key (kbd "M-i") 'magit-status)
+
+(global-set-key (kbd "M-s") 'evil-write-all)
+(global-set-key (kbd "M-d") 'iedit-mode)
+(global-set-key (kbd "M-f") 'projectile-ag)
+(global-set-key (kbd "M-h") 'helm-M-x)
 (global-set-key (kbd "M-j") 'desktop+-load)
 (global-set-key (kbd "M-J") 'desktop+-create)
+(global-set-key (kbd "M-l") 'magit-log-all)
 
-
-
-(global-set-key (kbd "M-`") 'toggle-window-split)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-c") 'recompile)
+(global-set-key (kbd "M-b") 'beautify)
+(global-set-key (kbd "M-.") 'evil-next-buffer)
+(global-set-key (kbd "M-,") 'evil-prev-buffer)
 
 (global-set-key (kbd "s-=") 'zoom-in)
 (global-set-key (kbd "s--") 'zoom-out)
 
-(global-set-key (kbd "M-d") 'iedit-mode)
-
-;;(global-set-key (kbd "<ESC>-<down>") 'previous-buffer)
-;;(global-set-key (kbd "M-c a") 'org-agenda)
-
-
-
-(add-hook 'emacs-lisp-mode-hook
-      '(lambda ()
-       (define-key emacs-lisp-mode-map (kbd "M-,") 'beautify-lisp)))
-
-
-(add-hook 'markdown-mode-hook
-      '(lambda ()
-       (define-key markdown-mode-map (kbd "M-,") 'beautify-markdown)))
-
-(add-hook 'c-mode-common-hook
-      '(lambda ()
-       (define-key c-mode-base-map (kbd "M-,") 'beautify-c)))
-
-(add-hook 'js-mode-hook
-      '(lambda ()
-       (define-key js-mode-map (kbd "M-,") 'web-beautify-js)))
 
 
 ;; ESS mode hooks
