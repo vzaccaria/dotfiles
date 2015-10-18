@@ -1,9 +1,9 @@
-;;; autocomplete.el ---
+;;; evil.el --- Summary
 
 ;; Copyright (C) 2015  Vittorio Zaccaria <vittorio.zaccaria@gmail.com>
 
 ;; Author: Vittorio Zaccaria <vittorio.zaccaria@gmail.com>
-;; Keywords: convenience
+;; Keywords:
 
 ;; Permission is hereby granted, free of charge, to any person obtaining a
 ;; copy of this software and associated documentation files (the "Software"),
@@ -32,21 +32,24 @@
 ;;; Code:
 
 
-(package-require 'auto-complete)
-(package-require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-(ac-config-default)
 
-(require 'ac-octave)
-(defun ac-octave-mode-setup ()
-  (setq ac-sources '(ac-source-octave)))
 
-(add-hook 'octave-mode-hook
-  '(lambda () (ac-octave-mode-setup)))
+;; The following are needed by `evil' mode.
+(define-key evil-normal-state-map [escape] 'keyboard-quit)
+(define-key evil-visual-state-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+(global-set-key [escape] 'evil-exit-emacs-state)
 
-;;; set the trigger key so that it can work together with yasnippet on tab key,
-;;; if the word exists in yasnippet, pressing tab will cause yasnippet to
-;;; activate, otherwise, auto-complete will
+(define-key evil-normal-state-map (kbd "M-.") (lambda ()
+                        (interactive)
+                        (evil-next-buffer)))
+(define-key evil-normal-state-map (kbd "M-,") (lambda ()
+                        (interactive)
+                        (evil-prev-buffer)))
 
-(provide 'autocomplete)
-;;; autocomplete.el ends here
+(provide 'evil)
+;;; evil.el ends here

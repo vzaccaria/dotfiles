@@ -1,9 +1,9 @@
-;;; autocomplete.el ---
+;;; magit.el ---
 
 ;; Copyright (C) 2015  Vittorio Zaccaria <vittorio.zaccaria@gmail.com>
 
 ;; Author: Vittorio Zaccaria <vittorio.zaccaria@gmail.com>
-;; Keywords: convenience
+;; Keywords:
 
 ;; Permission is hereby granted, free of charge, to any person obtaining a
 ;; copy of this software and associated documentation files (the "Software"),
@@ -31,22 +31,15 @@
 
 ;;; Code:
 
+(global-set-key (kbd "M-i") 'magit-status)
+(global-set-key (kbd "M-l") 'magit-log-all)
 
-(package-require 'auto-complete)
-(package-require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-(ac-config-default)
 
-(require 'ac-octave)
-(defun ac-octave-mode-setup ()
-  (setq ac-sources '(ac-source-octave)))
+;; Only when in Magit status!
+(define-key magit-mode-map (kbd "<tab>") 'magit-section-toggle)
+(define-key magit-mode-map (kbd "M-c") 'magit-commit)
+(define-key magit-mode-map (kbd "M-f") 'magit-commit-instant-fixup)
+(define-key magit-mode-map (kbd "M-a") 'magit-commit-amend)
 
-(add-hook 'octave-mode-hook
-  '(lambda () (ac-octave-mode-setup)))
-
-;;; set the trigger key so that it can work together with yasnippet on tab key,
-;;; if the word exists in yasnippet, pressing tab will cause yasnippet to
-;;; activate, otherwise, auto-complete will
-
-(provide 'autocomplete)
-;;; autocomplete.el ends here
+(provide 'magit)
+;;; magit.el ends here

@@ -1,9 +1,9 @@
-;;; autocomplete.el ---
+;;; org.el --- Summary
 
 ;; Copyright (C) 2015  Vittorio Zaccaria <vittorio.zaccaria@gmail.com>
 
 ;; Author: Vittorio Zaccaria <vittorio.zaccaria@gmail.com>
-;; Keywords: convenience
+;; Keywords:
 
 ;; Permission is hereby granted, free of charge, to any person obtaining a
 ;; copy of this software and associated documentation files (the "Software"),
@@ -31,22 +31,42 @@
 
 ;;; Code:
 
+;;; Org-mode global
 
-(package-require 'auto-complete)
-(package-require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-(ac-config-default)
+(define-key global-map "\C-c l" 'org-store-link)
 
-(require 'ac-octave)
-(defun ac-octave-mode-setup ()
-  (setq ac-sources '(ac-source-octave)))
+;; Orgmode shortcuts
 
-(add-hook 'octave-mode-hook
-  '(lambda () (ac-octave-mode-setup)))
+(add-hook 'org-mode-hook
+      '(lambda ()
+       (define-key org-mode-map (kbd "M-,") 'beautify-org)))
 
-;;; set the trigger key so that it can work together with yasnippet on tab key,
-;;; if the word exists in yasnippet, pressing tab will cause yasnippet to
-;;; activate, otherwise, auto-complete will
+(add-hook 'org-mode-hook
+      '(lambda ()
+       (define-key org-mode-map (kbd "M-.") 'org-beamer-export-to-pdf)))
 
-(provide 'autocomplete)
-;;; autocomplete.el ends here
+(add-hook 'org-mode-hook
+      '(lambda ()
+       (define-key org-mode-map (kbd "M->") 'org-latex-export-to-pdf)))
+
+
+(define-key global-map "\C-cm"
+  (lambda () (interactive) (org-capture nil "m")))
+
+(define-key global-map "\C-cl"
+  (lambda () (interactive) (org-capture nil "l")))
+
+(define-key global-map "\C-ci"
+  (lambda () (interactive) (org-capture nil "i")))
+
+(define-key global-map "\C-cd"
+  (lambda () (interactive) (org-capture nil "d")))
+
+(define-key global-map "\C-co"
+  (lambda () (interactive) (org-capture nil "o")))
+
+(define-key global-map "\C-ct"
+  (lambda () (interactive) (org-capture nil "t")))
+
+(provide 'org)
+;;; org.el ends here
