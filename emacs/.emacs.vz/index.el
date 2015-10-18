@@ -7,3 +7,4 @@
 (load-file "~/.emacs.vz/themes/index.el")
 (load-file "~/.emacs.vz/agenda.el")
 (load-file "~/.emacs.vz/spell.el")
+(load-file "~/.emacs.vz/macros.el")

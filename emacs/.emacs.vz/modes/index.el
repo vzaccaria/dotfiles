@@ -18,6 +18,7 @@
 (require 'desktop+) ;; session management
 (require 'bs) ;; buffer management
 (require 'evil-leader)
+(require 'saveplace)
 
 (projectile-global-mode)
 
@@ -49,3 +50,9 @@
 (package-require 'fic-ext-mode)
 
 (add-something-to-mode-hooks '(c++ tcl emacs-lisp python text markdown latex) 'fic-ext-mode)
+
+;; For licenses (M-x legalese)
+;; To set license (C-u M-x legalese)
+
+(package-require 'legalese)
+(package-require 'helm-dash)

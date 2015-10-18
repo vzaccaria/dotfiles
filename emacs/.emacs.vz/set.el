@@ -48,8 +48,8 @@ scroll-step 1)
 
 ;; (setq whitespace-cleanup-on-save nil)
 (add-hook 'before-save-hook
-          (lambda ()
-            (if whitespace-cleanup-on-save (whitespace-cleanup))))
+		  (lambda ()
+			(if whitespace-cleanup-on-save (whitespace-cleanup))))
 
 ;;; Interactive do, find-file and iswitchb replacement with fuzzy/flex matching.
 
@@ -62,3 +62,6 @@ scroll-step 1)
 
 ; Add proper word wrapping
 (global-visual-line-mode t)
+
+; remember last position in files
+(setq-default save-place t)

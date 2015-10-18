@@ -5,11 +5,11 @@ eval "$(/usr/local/bin/hub alias -s)"
 . `brew --prefix`/etc/profile.d/z.sh
 
 vi() {
-    emacsclient "$@" -c &
+    emacsclient -nw "$@" -c
 }
 
 startemacs() {
-    ~/Applications/Emacs.app/Contents/MacOS/Emacs --eval "(server-start)"
+    emacs --eval "(server-start)"
 }
 
 towerthis() {
