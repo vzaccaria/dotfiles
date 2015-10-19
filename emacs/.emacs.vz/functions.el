@@ -72,7 +72,7 @@
   "Kill current buffer unconditionally."
   (interactive)
   (let ((buffer-modified-p nil))
-    (kill-buffer (current-buffer))))
+	(kill-buffer (current-buffer))))
 
 (defun minibuffer-keyboard-quit ()
   "Abort recursive edit.
@@ -80,34 +80,34 @@
   then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (interactive)
   (if (and delete-selection-mode transient-mark-mode mark-active)
-      (setq deactivate-mark  t)
-    (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
-    (abort-recursive-edit)))
+	  (setq deactivate-mark  t)
+	(when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
+	(abort-recursive-edit)))
 
 (defun toggle-window-split ()
   (interactive)
   (if (= (count-windows) 2)
-      (let* ((this-win-buffer (window-buffer))
-             (next-win-buffer (window-buffer (next-window)))
-             (this-win-edges (window-edges (selected-window)))
-             (next-win-edges (window-edges (next-window)))
-             (this-win-2nd (not (and (<= (car this-win-edges)
-                                         (car next-win-edges))
-                                     (<= (cadr this-win-edges)
-                                         (cadr next-win-edges)))))
-             (splitter
-              (if (= (car this-win-edges)
-                     (car (window-edges (next-window))))
-                  'split-window-horizontally
-                'split-window-vertically)))
-        (delete-other-windows)
-        (let ((first-win (selected-window)))
-          (funcall splitter)
-          (if this-win-2nd (other-window 1))
-          (set-window-buffer (selected-window) this-win-buffer)
-          (set-window-buffer (next-window) next-win-buffer)
-          (select-window first-win)
-          (if this-win-2nd (other-window 1))))))
+	  (let* ((this-win-buffer (window-buffer))
+			 (next-win-buffer (window-buffer (next-window)))
+			 (this-win-edges (window-edges (selected-window)))
+			 (next-win-edges (window-edges (next-window)))
+			 (this-win-2nd (not (and (<= (car this-win-edges)
+										 (car next-win-edges))
+									 (<= (cadr this-win-edges)
+										 (cadr next-win-edges)))))
+			 (splitter
+			  (if (= (car this-win-edges)
+					 (car (window-edges (next-window))))
+				  'split-window-horizontally
+				'split-window-vertically)))
+		(delete-other-windows)
+		(let ((first-win (selected-window)))
+		  (funcall splitter)
+		  (if this-win-2nd (other-window 1))
+		  (set-window-buffer (selected-window) this-win-buffer)
+		  (set-window-buffer (next-window) next-win-buffer)
+		  (select-window first-win)
+		  (if this-win-2nd (other-window 1))))))
 
 (defun figlet-region (&optional b e)
   (interactive "r")
@@ -127,35 +127,35 @@
 (defun beautify-markdown (&optional b e)
   (interactive "r")
   (shell-command-on-region (point-min) (point-max)
-                           "pandoc -s --read markdown --write markdown-simple_tables+pipe_tables-fenced_code_blocks-fenced_code_attributes" (current-buffer) t))
+						   "pandoc -s --read markdown --write markdown-simple_tables+pipe_tables-fenced_code_blocks-fenced_code_attributes" (current-buffer) t))
 
 (defun vz/accentize (&optional b e)
   (interactive "r")
   (shell-command-on-region (point-min) (point-max)
-                           "sed -E \"s/iu'/iù/g; s/uo'/uò/g; s/perche'/perchè/g; s/poiche'/poiché/g; s/a'/à/g; s/ e'/ è/g; s/c'e'/c'è/g; s/cosi'/così/g\"" (current-buffer) t))
+						   "sed -E \"s/iu'/iù/g; s/uo'/uò/g; s/perche'/perchè/g; s/poiche'/poiché/g; s/a'/à/g; s/ e'/ è/g; s/c'e'/c'è/g; s/cosi'/così/g\"" (current-buffer) t))
 
 
 (defun beautify-org (&optional b e)
   (interactive "r")
   (shell-command-on-region (point-min) (point-max)
-                           "pandoc --columns=80 --read org --write org" (current-buffer) t))
+						   "pandoc --columns=80 --read org --write org" (current-buffer) t))
 
 (defun beautify-asciidiag (&optional b e)
   (interactive "r")
   (shell-command-on-region (point-min) (point-max)
-                           "/usr/local/bin/org2kf -a" (current-buffer) t))
+						   "/usr/local/bin/org2kf -a" (current-buffer) t))
 
 
 (defun beautify (&optional b e)
   (interactive "r")
-  (cond ((derived-mode-p 'org-mode)        (call-interactively 'beautify-org)
-        ((derived-mode-p 'emacs-lisp-mode) (call-interactively 'beautify-lisp))
-        ((derived-mode-p 'markdown-mode)   (call-interactively 'beautify-markdown)
-        ((derived-mode-p 'c-mode)          (call-interactively 'beautify-c)
-        ((derived-mode-p 'js-mode)         (call-interactively 'web-beautify-js)
-        ((derived-mode-p 'html-mode)       (call-interactively 'web-beautify-html)
-        ((derived-mode-p 'web-mode)        (call-interactively 'web-mode-buffer-indent)
-        (t "not implemented")))
+  (cond ((derived-mode-p 'org-mode)        (call-interactively 'beautify-org))
+		((derived-mode-p 'emacs-lisp-mode) (call-interactively 'beautify-lisp))
+		((derived-mode-p 'markdown-mode)   (call-interactively 'beautify-markdown))
+		((derived-mode-p 'c-mode)          (call-interactively 'beautify-c))
+		((derived-mode-p 'js-mode)         (call-interactively 'web-beautify-js))
+		((derived-mode-p 'html-mode)       (call-interactively 'web-beautify-html))
+		((derived-mode-p 'web-mode)        (call-interactively 'web-mode-buffer-indent))
+		(t "not implemented")))
 
 (defun vz/find-next-unsafe-char (&optional coding-system)
   "Find the next character in the buffer that cannot be encoded by
@@ -165,28 +165,28 @@ prompt the user for a coding system."
   (interactive "Zcoding-system: ")
   (if (stringp coding-system) (setq coding-system (intern coding-system)))
   (if coding-system nil
-    (setq coding-system
-          (or save-buffer-coding-system buffer-file-coding-system)))
+	(setq coding-system
+		  (or save-buffer-coding-system buffer-file-coding-system)))
   (let ((found nil) (char nil) (csets nil) (safe nil))
-    (setq safe (coding-system-get coding-system 'safe-chars))
-    ;; some systems merely specify the charsets as ones they can encode:
-    (setq csets (coding-system-get coding-system 'safe-charsets))
-    (save-excursion
-      ;;(message "zoom to <")
-      (let ((end  (point-max))
-            (here (point    ))
-            (char  nil))
-        (while (and (< here end) (not found))
-          (setq char (char-after here))
-          (if (or (eq safe t)
-                  (< char ?\177)
-                  (and safe  (aref safe char))
-                  (and csets (memq (char-charset char) csets)))
-              nil ;; safe char, noop
-            (setq found (cons here char)))
-          (setq here (1+ here))) ))
-    (and found (goto-char (1+ (car found))))
-    found))
+	(setq safe (coding-system-get coding-system 'safe-chars))
+	;; some systems merely specify the charsets as ones they can encode:
+	(setq csets (coding-system-get coding-system 'safe-charsets))
+	(save-excursion
+	  ;;(message "zoom to <")
+	  (let ((end  (point-max))
+			(here (point    ))
+			(char  nil))
+		(while (and (< here end) (not found))
+		  (setq char (char-after here))
+		  (if (or (eq safe t)
+				  (< char ?\177)
+				  (and safe  (aref safe char))
+				  (and csets (memq (char-charset char) csets)))
+			  nil ;; safe char, noop
+			(setq found (cons here char)))
+		  (setq here (1+ here))) ))
+	(and found (goto-char (1+ (car found))))
+	found))
 
 (defun vz/set-font-square ()
   "Just sets the font to square"
@@ -214,31 +214,31 @@ prompt the user for a coding system."
   "reload dir locals for the current buffer"
   (interactive)
   (let ((enable-local-variables :all))
-    (hack-dir-local-variables-non-file-buffer)))
+	(hack-dir-local-variables-non-file-buffer)))
 
 (defun vz/reload-dirlocals ()
   "For every buffer with the same `default-directory` as the
 current buffer's, reload dir-locals."
   (interactive)
   (let ((dir default-directory))
-    (dolist (buffer (buffer-list))
-      (with-current-buffer buffer
-        (when (equal default-directory dir))
-        (my-reload-dir-locals-for-current-buffer)))))
+	(dolist (buffer (buffer-list))
+	  (with-current-buffer buffer
+		(when (equal default-directory dir))
+		(my-reload-dir-locals-for-current-buffer)))))
 
 (require 'json)
 (defun org-as-json-to-file ()
   "Export the current Org-mode buffer as JSON to the supplied PATH."
   (interactive)
   (let ((tree (org-element-parse-buffer)))
-    (org-element-map tree
-        (append org-element-all-objects org-element-all-elements)
-      (lambda (el) (org-element-put-property el :parent nil)))
-    (org-element-map tree
-        (append org-element-all-objects org-element-all-elements)
-      (lambda (el) (org-element-put-property el :structure nil)))
-    (with-temp-file "./data.json"
-      (insert (json-encode tree)))))
+	(org-element-map tree
+		(append org-element-all-objects org-element-all-elements)
+	  (lambda (el) (org-element-put-property el :parent nil)))
+	(org-element-map tree
+		(append org-element-all-objects org-element-all-elements)
+	  (lambda (el) (org-element-put-property el :structure nil)))
+	(with-temp-file "./data.json"
+	  (insert (json-encode tree)))))
 
 (defvar my-desktop-session-dir
   (concat (getenv "HOME") "/.emacs.d/desktops/")
@@ -252,7 +252,7 @@ current buffer's, reload dir-locals."
   "Save desktop with a name."
   (interactive)
   (unless name
-    (setq name (my-desktop-get-session-name "Save session as: ")))
+	(setq name (my-desktop-get-session-name "Save session as: ")))
   (make-directory (concat my-desktop-session-dir name) t)
   (desktop-save (concat my-desktop-session-dir name) t))
 
@@ -260,13 +260,13 @@ current buffer's, reload dir-locals."
   "Read desktop with a name."
   (interactive)
   (unless name
-    (setq name (my-desktop-get-session-name "Load session: ")))
+	(setq name (my-desktop-get-session-name "Load session: ")))
   (desktop-read (concat my-desktop-session-dir name)))
 
 (defun my-desktop-get-session-name (prompt)
   (completing-read prompt (and (file-exists-p my-desktop-session-dir)
-                               (directory-files my-desktop-session-dir))
-                   nil nil nil my-desktop-session-name-hist))
+							   (directory-files my-desktop-session-dir))
+				   nil nil nil my-desktop-session-name-hist))
 
 ;;
 (provide 'functions)
