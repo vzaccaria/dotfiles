@@ -5,4 +5,4 @@
 (prefer-coding-system 'utf-8)
 
 ;aspell und flyspell
-(setq-default ispell-program-name "aspell")
+(setq-default ispell-program-name "/usr/local/bin/aspell")

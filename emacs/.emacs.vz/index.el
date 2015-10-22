@@ -34,6 +34,8 @@
 ;;; Code:
 
 
+;;; begin by setting paths in the case this is called in daemon mode.
+(setenv "PATH" (format "%s:%s" "/usr/local/bin" (getenv "PATH")))
 
 (load-file "~/.emacs.vz/packageinit.el")
 (load-file "~/.emacs.vz/modes/index.el")

@@ -9,7 +9,18 @@ vi() {
 }
 
 startemacs() {
-    emacs --eval "(server-start)"
+    /Users/zaccaria/Applications/Emacs.app/Contents/MacOS/Emacs --daemon
+}
+
+stopemacs() {
+    emacsclient -e "(kill-emacs)"
+}
+
+
+restartemacs() {
+    stopemacs
+    sleep 2
+    startemacs
 }
 
 towerthis() {
@@ -65,4 +76,13 @@ function o() {
 # small enough for one screen.
 function tre() {
   tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+}
+
+
+#
+# generate pdf from org (needs a running emacs daemon)
+#
+function orgtopdf() {
+    echo "emacsclient --eval \"(progn (find-file \\\"`grealpath $1`\\\") (org-latex-export-to-pdf))\""
+    emacsclient --eval "(progn (find-file \"`grealpath $1`\") (org-latex-export-to-pdf))"
 }

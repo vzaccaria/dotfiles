@@ -37,6 +37,7 @@
 
 (evil-declare-key 'normal org-mode-map
   "t" 'org-todo
+  "'e" 'yas-expand-from-trigger-key
   "'b" 'org-beamer-export-to-pdf
   "'l" 'org-latex-export-to-pdf
   "'g" 'org-open-at-point

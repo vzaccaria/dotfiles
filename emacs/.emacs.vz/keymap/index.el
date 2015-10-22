@@ -37,6 +37,7 @@
 (load-file "~/.emacs.vz/keymap/evil.el")
 (load-file "~/.emacs.vz/keymap/magit.el")
 (load-file "~/.emacs.vz/keymap/mouse.el")
+(load-file "~/.emacs.vz/keymap/org.el")
 
 
 
@@ -55,6 +56,7 @@
 ;; to make your life easier; dont add any other character after M-* (!!!)
 (global-set-key (kbd "M-`") 'toggle-window-split)
 
+(global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "M-w") 'kill-this-buffer)
 (global-set-key (kbd "M-e") 'yas-expand)
 (global-set-key (kbd "M-r") 'eval-region)
@@ -65,15 +67,12 @@
 (global-set-key (kbd "M-d") 'iedit-mode)
 (global-set-key (kbd "M-f") 'projectile-ag)
 (global-set-key (kbd "M-h") 'helm-M-x)
-(global-set-key (kbd "M-j") 'desktop+-load)
-(global-set-key (kbd "M-J") 'desktop+-create)
-(global-set-key (kbd "M-l") 'magit-log-all)
 
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-c") 'recompile)
 (global-set-key (kbd "M-b") 'beautify)
-(global-set-key (kbd "M-.") 'evil-next-buffer)
-(global-set-key (kbd "M-,") 'evil-prev-buffer)
+(global-set-key (kbd "M-n") 'switch-to-next-buffer)
+(global-set-key (kbd "M-m") 'switch-to-prev-buffer)
 
 (global-set-key (kbd "s-=") 'zoom-in)
 (global-set-key (kbd "s--") 'zoom-out)
