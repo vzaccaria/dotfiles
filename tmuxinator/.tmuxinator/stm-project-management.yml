@@ -1,0 +1,9 @@
+name: stm-project-management
+root: ~/development/stforge/HS_VHDL
+
+windows:
+  - stm-project-management:
+      layout: main-vertical
+      panes:
+        - vi /Users/zaccaria/development/stforge/HS_VHDL/docs/deliverables/151110_1st_deliverable/151110_1st_deliverable.md
+        - vi /Users/zaccaria/Dropbox/org/STMicro.org
