@@ -29,7 +29,7 @@ root: ~/development/github/documents/lectures/infob/materiale
 
 windows:
   - infob:
-      layout: main-horizontal
+      layout: main-vertical
       panes:
         - vi InfoBMat.org
         - vi InfoBProgTimed.org
