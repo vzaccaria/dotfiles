@@ -1,0 +1,10 @@
+name: teasy
+root: ~/development/github/teasy-2.0
+
+windows:
+  - dot-emacs:
+      layout: main-vertical
+      panes:
+        - cd .
+        - vi ~/Dropbox/org/Teasy-2.0.org
+        - cd app

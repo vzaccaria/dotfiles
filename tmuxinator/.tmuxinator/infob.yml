@@ -31,5 +31,5 @@ windows:
   - infob:
       layout: main-vertical
       panes:
-        - vi InfoBMat.org
         - vi InfoBProgTimed.org
+        - vi docs/ex_matlab_batch1.org
