@@ -42,7 +42,7 @@
 
 
 (define-key global-map (kbd "s-_") (lambda () (interactive)
-           (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)=" 1 1 nil)))
+		   (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)=" 1 1 nil)))
 
 (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
 
@@ -66,6 +66,7 @@
 (global-set-key (kbd "M-s") 'evil-write-all)
 (global-set-key (kbd "M-d") 'iedit-mode)
 (global-set-key (kbd "M-f") 'projectile-ag)
+(global-set-key (kbd "M-g") 'org-open-at-point)
 (global-set-key (kbd "M-h") 'helm-M-x)
 
 (global-set-key (kbd "M-x") 'helm-M-x)

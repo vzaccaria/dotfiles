@@ -40,7 +40,7 @@
   "'e" 'yas-expand-from-trigger-key
   "'b" 'org-beamer-export-to-pdf
   "'l" 'org-latex-export-to-pdf
-  "'g" 'org-open-at-point
+  "\C-g" 'org-open-at-point
   (kbd "TAB") 'org-cycle
   "-" 'org-ctrl-c-minus ; change bullet style
   "<" 'org-metaleft ; out-dent

@@ -42,11 +42,11 @@
 (load-file "~/.emacs.vz/set.el")
 (load-file "~/.emacs.vz/functions.el")
 (load-file "~/.emacs.vz/keymap/index.el")
-(load-file "~/.emacs.vz/tabs.el")
 (load-file "~/.emacs.vz/themes/index.el")
 (load-file "~/.emacs.vz/agenda.el")
 (load-file "~/.emacs.vz/spell.el")
 (load-file "~/.emacs.vz/macros.el")
+(load-file "~/.emacs.vz/tabs.el")
 
 (provide 'index)
 ;;; index.el ends here
