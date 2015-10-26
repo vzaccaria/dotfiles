@@ -1,0 +1,11 @@
+name: dot-files
+root: /Users/zaccaria/dotfiles/zprezto/.zprezto-zack/Darwin
+
+
+windows:
+  - dot-emacs:
+      layout: main-vertical
+      panes:
+        - vi ./aliases.sh
+        - vi ./path.sh
+        - vi ./exports.sh
