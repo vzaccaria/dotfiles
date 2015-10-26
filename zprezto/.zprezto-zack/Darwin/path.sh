@@ -8,6 +8,7 @@ path=(\
   /usr/X11/bin \
   /usr/texbin \
   /usr/local/texlive/2013/bin/universal-darwin \
+  /Users/zaccaria/Library/Python/2.7/bin \
   /Users/zaccaria/scripts \
   /Users/zaccaria/bin/oclint/bin \
   /Users/zaccaria/development/github/data-science-toolbox \

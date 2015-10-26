@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+#name : arch
+#key: arch
+# --
+
+\`\`\`
+    A   B
+    I   J
+\`\`\`
+
+
+| node  | label | type                |
+| ----- | ----- | ---                 |
+| A     | a     | rectangle           |
+| B     | b     | circle,fill=gray!10 |
+| I     | i     |                     |
+| J     | j     |                     |
+
+
+| src  | dst  | style  | curve | label | through  | pattern |
+| ---- | ---- | -----  | ----- | ----- | -------- | ------- |
+| A    | B    | =>     |       |       | I        | last    |
+| B    | J    | -latex |       |       |          |         |
