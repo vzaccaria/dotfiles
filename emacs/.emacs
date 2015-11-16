@@ -49,7 +49,7 @@
      ("utf8x"))))
  '(legalese-default-license (quote mit))
  '(markdown-command "pandoc -s")
- '(org-babel-js-cmd "/usr/local/Cellar/iojs/2.5.0/bin/iojs")
+ '(org-babel-js-cmd "/usr/local/Cellar/iojs/3.3.1/bin/iojs --harmony_arrow_functions --harmony_destructuring")
  '(org-confirm-babel-evaluate nil)
  '(org-export-allow-bind-keywords t)
  '(org-ioslide-hlevel 2)

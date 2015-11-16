@@ -36,6 +36,10 @@
 
 ;;; begin by setting paths in the case this is called in daemon mode.
 (setenv "PATH" (format "%s:%s" "/usr/local/bin" (getenv "PATH")))
+(setenv "PATH" (format "%s:%s" "/usr/local/texlive/2013/bin/universal-darwin" (getenv "PATH")))
+(setenv "NODE_PATH" (format "%s:%s" "/usr/local/lib/node_modules" (getenv "NODE_PATH")))
+
+;;; This positioned here should make the mouse work in terminal!
 
 (load-file "~/.emacs.vz/packageinit.el")
 (load-file "~/.emacs.vz/modes/index.el")
@@ -47,6 +51,5 @@
 (load-file "~/.emacs.vz/spell.el")
 (load-file "~/.emacs.vz/macros.el")
 (load-file "~/.emacs.vz/tabs.el")
-
 (provide 'index)
 ;;; index.el ends here
