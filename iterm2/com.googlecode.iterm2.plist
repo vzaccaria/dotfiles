@@ -31791,7 +31791,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>307</string>
+		<string>322</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -31836,15 +31836,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>582 230 445 270 0 0 1280 778 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>834 572 606 456 0 0 1440 878 </string>
+	<string>1314 901 606 456 0 0 1920 1178 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 590 620 392 0 0 1920 1178 </string>
 	<key>NSWindow Frame SUUpdateAlertFrame</key>
 	<string>357 348 566 395 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 23 714 855 0 0 1440 878 </string>
+	<string>0 14 1914 1164 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 644 890 534 0 0 1920 1178 </string>
+	<string>0 23 714 855 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 14 954 1164 0 0 1920 1178 </string>
 	<key>NeverWarnAboutMeta</key>
@@ -32307,7 +32307,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.093278476331360952</real>
+			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -33822,7 +33822,7 @@
 				<real>0.84028750658035278</real>
 			</dict>
 			<key>Guid</key>
-			<string>DB13651D-B1C8-4686-939D-39EA2C10CE2D</string>
+			<string>29B4BB30-15E8-48F2-8C9E-C97FE326380E</string>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>Idle Code</key>
@@ -33868,7 +33868,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Inconsolata 16</string>
+			<string>InconsolataForPowerline 16</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -33937,13 +33937,15 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.093278476331360952</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
 			<true/>
+			<key>Use Non-ASCII Font</key>
+			<false/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
@@ -34034,7 +34036,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-10-26T06:55:33Z</date>
+	<date>2015-10-27T07:17:44Z</date>
 	<key>SUSkippedVersion</key>
 	<string>2.9.20151001</string>
 	<key>SavePasteHistory</key>

@@ -53,6 +53,7 @@
 (package-require 'evil-leader)
 (package-require 'saveplace)
 (package-require 'pomodoro)
+(package-require 'xclip)
 
 (projectile-global-mode)
 
@@ -78,6 +79,9 @@
 (load-file "~/.emacs.vz/modes/fip.el")
 (load-file "~/.emacs.vz/modes/ess.el")
 (load-file "~/.emacs.vz/modes/protobuf.el")
+
+;; Clipboard
+(xclip-mode 1)
 
 ;; other minors
 ;; Highlight TODO and FIXME in comments

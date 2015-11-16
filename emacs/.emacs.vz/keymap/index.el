@@ -36,13 +36,12 @@
 
 (load-file "~/.emacs.vz/keymap/evil.el")
 (load-file "~/.emacs.vz/keymap/magit.el")
-(load-file "~/.emacs.vz/keymap/mouse.el")
 (load-file "~/.emacs.vz/keymap/org.el")
 
 
 
 (define-key global-map (kbd "s-_") (lambda () (interactive)
-		   (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)=" 1 1 nil)))
+       (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)=" 1 1 nil)))
 
 (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
 
@@ -60,9 +59,12 @@
 (global-set-key (kbd "M-w") 'kill-this-buffer)
 (global-set-key (kbd "M-e") 'yas-expand)
 (global-set-key (kbd "M-r") 'eval-region)
+(global-set-key (kbd "M-t") 'beautify)
 (global-set-key (kbd "M-u") 'bs-show)
 (global-set-key (kbd "M-i") 'magit-status)
+(global-set-key (kbd "M-o") 'term-fix-mouse)
 
+(global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "M-s") 'evil-write-all)
 (global-set-key (kbd "M-d") 'iedit-mode)
 (global-set-key (kbd "M-f") 'projectile-ag)
@@ -70,8 +72,9 @@
 (global-set-key (kbd "M-h") 'helm-M-x)
 
 (global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "M-c") 'recompile)
-(global-set-key (kbd "M-b") 'beautify)
+(global-set-key (kbd "M-c") 'pbcopy)
+(global-set-key (kbd "M-v") 'pbpaste)
+(global-set-key (kbd "M-b") 'recompile)
 (global-set-key (kbd "M-n") 'switch-to-next-buffer)
 (global-set-key (kbd "M-m") 'switch-to-prev-buffer)
 

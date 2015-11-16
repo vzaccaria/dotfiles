@@ -22,6 +22,9 @@ if [[ -s "${srcdir}/functions.sh" ]]; then
   source "${srcdir}/functions.sh"
 fi
 
+#echo " * setting up local python environment in ~/local-python"
+#source ~/local-python/bin/activate
+
 echo "Done."
 
 
