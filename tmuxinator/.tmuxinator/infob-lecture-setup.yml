@@ -1,0 +1,10 @@
+name: infob-lecture-setup
+root: ~/development/github/documents/lectures/infob/materiale
+
+windows:
+  - infob-lecture-setup:
+      layout: main-vertical
+      panes:
+        - vi InfoBProgTimed.org
+        - open docs/pdf/le_matlab.pdf && vi temporary/oggi.org
+        - /Users/zaccaria/development/github/screencap/bin/teasy.x eval 'view init svga; view list'

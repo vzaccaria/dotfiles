@@ -1,0 +1,10 @@
+# ~/.tmuxinator/dot-emacs.yml
+
+name: infob-program
+root: ~/development/github/documents/lectures/infob/materiale
+
+windows:
+  - infob-program:
+      layout: main-vertical
+      panes:
+        - make

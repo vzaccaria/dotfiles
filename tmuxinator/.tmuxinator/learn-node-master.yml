@@ -1,0 +1,15 @@
+# ~/.tmuxinator/dot-emacs.yml
+
+name: learn-node-master
+root: ~/development/github/learnnode
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t dot-emacs
+
+windows:
+  - learn-node-master:
+      layout: main-vertical
+      panes:
+        - vi outline.org
+        - cd .
+        - /Users/zaccaria/development/github/screencap/bin/teasy.x

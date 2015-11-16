@@ -1,0 +1,12 @@
+name: email
+root: ~/Desktop
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t dot-emacs
+
+windows:
+  - email:
+      layout: main-vertical
+      panes:
+        - vi ./mail.md
+        - cd ~/Dropbox/Public

@@ -1,0 +1,12 @@
+# ~/.tmuxinator/dot-emacs.yml
+
+name: lab-infob
+root: /Users/zaccaria/development/github/informaticab-2.0/laboratori/c
+
+
+windows:
+  - lab-infob:
+      layout: main-vertical
+      panes:
+        - vi org/lab_c_tutorial.org
+        - cd src

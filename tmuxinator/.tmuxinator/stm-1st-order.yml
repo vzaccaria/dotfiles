@@ -1,0 +1,9 @@
+name: stm-1st-order
+root: ~/development/stforge/HS_VHDL/src
+
+windows:
+  - stm-1st-order:
+      layout: main-vertical
+      panes:
+        - cd .
+        - cd data

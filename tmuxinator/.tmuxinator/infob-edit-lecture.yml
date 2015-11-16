@@ -1,0 +1,11 @@
+# ~/.tmuxinator/dot-emacs.yml
+
+name: infob-edit-lecture
+root: ~/development/github/documents/lectures/infob/materiale
+
+windows:
+  - infob-edit-lecture:
+      layout: main-vertical
+      panes:
+        - vi docs/org/le_linguaggioc.org
+        - cd docs && make && open pdf/le_linguaggioc.pdf -a "Skim"

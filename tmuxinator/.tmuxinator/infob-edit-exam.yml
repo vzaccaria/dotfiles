@@ -1,0 +1,12 @@
+# ~/.tmuxinator/dot-emacs.yml
+
+name: infob-edit-exam
+root: ~/development/github/documents/lectures/infob/materiale/docs/markdown/esami/drafts
+
+windows:
+  - infob-edit-exam:
+      layout: main-vertical
+      panes:
+        - vi 1511_it_1.sol.md
+        - open 1511_it_1.sol.pdf -a "Skim"
+        - watchman 1511_it_1.sol.md 'md2pdf.sh -m 1511_it_1.sol.md'
