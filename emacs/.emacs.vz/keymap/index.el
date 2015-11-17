@@ -54,6 +54,8 @@
 
 ;; to make your life easier; dont add any other character after M-* (!!!)
 (global-set-key (kbd "M-`") 'toggle-window-split)
+(global-set-key (kbd "M-1") 'org-agenda-list)
+(global-set-key (kbd "M-2") 'org-todo-list)
 
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "M-w") 'kill-this-buffer)
