@@ -1,0 +1,13 @@
+name: website-light
+root: ~/development/github/website-light
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t dot-emacs
+
+windows:
+  - website-light:
+      layout: main-vertical
+      panes:
+        - cd src/js
+        - cd src/js && open "http://localhost:8080/#/blog/2013/09/23/a-dumb-easy-model-for-promises.html" -a "Google Chrome"
+        - make

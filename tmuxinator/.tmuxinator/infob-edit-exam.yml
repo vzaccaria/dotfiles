@@ -7,6 +7,6 @@ windows:
   - infob-edit-exam:
       layout: main-vertical
       panes:
-        - vi 1511_it_1.sol.md
-        - open 1511_it_1.sol.pdf -a "Skim"
-        - watchman 1511_it_1.sol.md 'md2pdf.sh -m 1511_it_1.sol.md'
+        - make edit 1511_it.md
+        - make open
+        - make watch

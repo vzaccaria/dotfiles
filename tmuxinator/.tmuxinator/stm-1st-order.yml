@@ -5,5 +5,6 @@ windows:
   - stm-1st-order:
       layout: main-vertical
       panes:
-        - cd .
-        - cd data
+        - cd ~/development/github/org-helper && vi ~/development/github/org-helper/src/index.js
+        - cd ~/development/github/org-helper
+        - vi ~/development/stforge/HS_VHDL/src/data/stm_mask_analysis.org

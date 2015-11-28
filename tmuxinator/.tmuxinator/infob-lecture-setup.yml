@@ -5,6 +5,6 @@ windows:
   - infob-lecture-setup:
       layout: main-vertical
       panes:
-        - vi InfoBProgTimed.org
-        - open docs/pdf/le_matlab.pdf && vi temporary/oggi.org
+        - vi temporary/just-for-tomorrow.md
+        - open temporary/just-for-tomorrow.pdf && vi temporary/oggi.org
         - /Users/zaccaria/development/github/screencap/bin/teasy.x eval 'view init svga; view list'
