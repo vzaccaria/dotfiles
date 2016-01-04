@@ -2,29 +2,39 @@ srcdir=`dirname $0`
 srcdir=`cd $srcdir; pwd`
 echo "Setting up Darwin specific config"
 echo ""
-echo " * exports"
+
+echo "exports"
 if [[ -s "${srcdir}/exports.sh" ]]; then
   source "${srcdir}/exports.sh"
 fi
+echo_ok
 
-echo " * paths "
+echo "paths "
 if [[ -s "${srcdir}/path.sh" ]]; then
   source "${srcdir}/path.sh"
 fi
+echo_ok
 
-echo " * aliases"
+echo "aliases"
 if [[ -s "${srcdir}/aliases.sh" ]]; then
   source "${srcdir}/aliases.sh"
 fi
+echo_ok
 
-echo " * functions"
+echo "functions"
 if [[ -s "${srcdir}/functions.sh" ]]; then
   source "${srcdir}/functions.sh"
 fi
+echo_ok
 
 #echo " * setting up local python environment in ~/local-python"
 #source ~/local-python/bin/activate
 
+if [[ -s "${srcdir}/docker.sh" ]]; then
+  source "${srcdir}/docker.sh"
+fi
+
+echo ""
 echo "Done."
 
 

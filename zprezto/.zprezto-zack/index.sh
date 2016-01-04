@@ -1,6 +1,8 @@
 srcdir=`dirname $0`
 srcdir=`cd $srcdir; pwd`
 
+source "${srcdir}/messages.sh"
+
 if [[ -s "${srcdir}/exports.sh" ]]; then
     source "${srcdir}/exports.sh"
 fi

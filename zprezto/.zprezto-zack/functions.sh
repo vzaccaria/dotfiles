@@ -26,6 +26,22 @@ minor() {
   git commit -m "minor: $*"
 }
 
+feat-local() {
+    git add . && git commit -m "feat: $*"
+}
+
+chore-local() {
+    git add . && git commit -m "chore: $*"
+}
+
+fix-local() {
+    git add . && git commit -m "fix: $*"
+}
+
+minor-local() {
+    git add . && git commit -m "minor: $*"
+}
+
 refactor() {
   git commit -m "refactor: $*"
 }
@@ -34,10 +50,6 @@ amend() {
   git commit --amend --no-edit
 }
 
-
-dock-connect() {
-    docker run -i -t $@ /bin/bash
-}
 
 pcat() {
   pygmentize -f terminal256 -O style=monokai -g
