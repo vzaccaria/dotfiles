@@ -7,6 +7,6 @@ windows:
   - infob:
       layout: main-vertical
       panes:
-        - vi InfoBProgTimed.org
-        - cd docs/org
+        - vi InfoBMat.org
+        - vi "/Users/zaccaria/Dropbox/Commuting/Ricercatore TI 2011/Lezioni/2015-2016 Informatica B/InfoBOrg.org"
         - cd docs/markdown

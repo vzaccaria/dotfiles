@@ -1,10 +1,10 @@
 name: infob-lecture-setup
-root: ~/development/github/documents/lectures/infob/materiale
+root: ~/development/github/documents/lectures/infob/materiale/temporary
 
 windows:
   - infob-lecture-setup:
       layout: main-vertical
       panes:
-        - vi temporary/just-for-tomorrow.md
-        - open temporary/just-for-tomorrow.pdf && vi temporary/oggi.org
-        - /Users/zaccaria/development/github/screencap/bin/teasy.x eval 'view init svga; view list'
+        - vi just-for-tomorrow.md
+        - open le_linguaggioc.pdf && vi oggi.org
+        - open -a "/Users/zaccaria/Applications/Teasy 2.0.app"

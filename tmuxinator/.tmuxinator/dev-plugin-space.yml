@@ -1,0 +1,9 @@
+name: dev-plugin-space
+root: ~/development/github/plugin-space
+
+windows:
+  - dev-plugin-space:
+      layout: main-vertical
+      panes:
+        - cd .
+        - cd .

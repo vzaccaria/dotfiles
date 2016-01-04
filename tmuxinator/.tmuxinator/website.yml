@@ -1,15 +1,14 @@
 # ~/.tmuxinator/dot-emacs.yml
 
 name: website
-root: ~/development/github/website
+root: ~/development/github/vzaccaria.github.io
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t dot-emacs
 
 windows:
-  - dot-emacs:
+  - website:
       layout: main-vertical
       panes:
-        - cd posts
-        - cd _site
+        - cd .
         - cd .

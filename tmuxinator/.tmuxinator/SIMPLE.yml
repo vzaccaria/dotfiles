@@ -1,8 +1,8 @@
-name: stm-1st-order
-root: ~/development/stforge/HS_VHDL/src
+name: SIMPLE
+root: ~/development/github
 
 windows:
-  - stm-1st-order:
+  - SIMPLE:
       layout: main-vertical
       panes:
         - cd .

@@ -1,0 +1,10 @@
+name: infob-lecture-website
+root: ~/development/github/website
+
+windows:
+  - infob-lecture-website:
+      layout: main-vertical
+      panes:
+        - cd posts
+        - vi ~/development/github/documents/lectures/infob/materiale/temporary/just-for-tomorrow.md
+        - cd .

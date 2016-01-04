@@ -1,8 +1,9 @@
-name: stm-1st-order
-root: ~/development/stforge/HS_VHDL/src
+name: dot-tmux
+root: /Users/zaccaria/.tmuxinator
+
 
 windows:
-  - stm-1st-order:
+  - dot-tmux:
       layout: main-vertical
       panes:
         - cd .

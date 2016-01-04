@@ -1,0 +1,9 @@
+name: stm-liquid
+root: ~/development/stforge/HS_VHDL/docs/general-ideas/liquid-types-playground
+
+windows:
+  - stm-liquid:
+      layout: main-vertical
+      panes:
+        - cd .
+        - cd .

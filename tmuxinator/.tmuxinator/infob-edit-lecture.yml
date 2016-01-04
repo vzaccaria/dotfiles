@@ -8,4 +8,4 @@ windows:
       layout: main-vertical
       panes:
         - vi docs/org/le_linguaggioc.org
-        - cd docs && make && open pdf/le_linguaggioc.pdf -a "Skim"
+        - cd docs && open pdf/le_linguaggioc.pdf -a "Skim"
