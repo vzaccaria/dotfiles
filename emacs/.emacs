@@ -20,7 +20,7 @@
  '(frame-background-mode (quote dark))
  '(haskell-mode-hook
    (quote
-    (turn-on-haskell-indent turn-on-haskell-indentation turn-on-haskell-unicode-input-method)) t)
+    (turn-on-haskell-indent turn-on-haskell-indentation)) t)
  '(inferior-octave-program "/usr/local/bin/octave")
  '(inhibit-startup-screen t)
  '(initial-frame-alist (quote ((fullscreen . maximized))))
@@ -49,7 +49,7 @@
      ("utf8x"))))
  '(legalese-default-license (quote mit))
  '(markdown-command "pandoc -s")
- '(org-babel-js-cmd "/usr/local/Cellar/iojs/3.3.1/bin/iojs --harmony_arrow_functions --harmony_destructuring")
+ '(org-babel-js-cmd "/usr/local/bin/babel-node")
  '(org-confirm-babel-evaluate nil)
  '(org-export-allow-bind-keywords t)
  '(org-ioslide-hlevel 2)

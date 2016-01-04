@@ -307,6 +307,17 @@ current buffer's, reload dir-locals."
   (pbcopy)
   (delete-region (region-beginning) (region-end)))
 
+(defun vz/align-code-to-equals ()
+  (interactive)
+  (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)=" 1 1 nil))
+
+(defun vz/align-around-commas ()
+  (interactive)
+  (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)," 1 1 t))
+
+(defun vz/align-around-colons ()
+  (interactive)
+  (align-regexp (region-beginning) (region-end) "\\(\\s-*\\):" 1 1 t))
 
 ;;
 (provide 'functions)
