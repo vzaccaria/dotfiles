@@ -15,14 +15,16 @@ config resizePercentOf screenSize
 
 # Abstract positions
 
-alias full      move  screenOriginX;screenOriginY                 screenSizeX;screenSizeY
+alias full        move  screenOriginX;screenOriginY                 screenSizeX;screenSizeY
 alias lefthalf    move  screenOriginX;screenOriginY                 screenSizeX/2;screenSizeY
-alias righthalf   move  screenOriginX+screenSizeX/2;screenOriginY           screenSizeX/2;screenSizeY
-alias qhalf     move  screenOriginX;screenOriginY                 screenSizeX/4;screenSizeY
+alias leftq       move  screenOriginX;screenOriginY                 screenSizeX/4;screenSizeY
+alias righthalf   move  screenOriginX+screenSizeX/2;screenOriginY   screenSizeX/2;screenSizeY
+alias rightiq     move  screenOriginX+screenSizeX/4;screenOriginY   3*screenSizeX/4;screenSizeY
+alias qhalf       move  screenOriginX;screenOriginY                 screenSizeX/4;screenSizeY
 
-alias leftq1		move  screenOriginX;screenOriginY									screenSizeX/4;screenSizeY/2
-alias leftq2		move  screenOriginX+screenSizeX/4;screenOriginY					screenSizeX/4;screenSizeY/2
-alias leftq3		move  screenOriginX;screenOriginY+screenSizeY/2					screenSizeX/4;screenSizeY/2
+alias leftq1		move  screenOriginX;screenOriginY                               screenSizeX/4;screenSizeY/2
+alias leftq2		move  screenOriginX+screenSizeX/4;screenOriginY                 screenSizeX/4;screenSizeY/2
+alias leftq3		move  screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX/4;screenSizeY/2
 alias leftq4		move  screenOriginX+screenSizeX/4;screenOriginY+screenSizeY/2		screenSizeX/4;screenSizeY/2
 
 alias topleft     corner  top-left                  resize:screenSizeX/2;screenSizeY/2
@@ -70,9 +72,9 @@ alias bottomright   corner  bottom-right                resize:screenSizeX/2;scr
 bind pad1 ${bottomleft}
 bind pad2 push bottom bar-resize:screenSizeY/2
 bind pad3 ${bottomright}
-bind pad4 ${lefthalf}
+bind pad4 ${leftq}
 bind pad5 ${full}
-bind pad6 ${righthalf}
+bind pad6 ${rightiq}
 bind pad7 ${topleft}
 bind pad8 push top bar-resize:screenSizeY/2
 bind pad9 ${topright}
