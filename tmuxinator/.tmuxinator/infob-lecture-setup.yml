@@ -6,5 +6,5 @@ windows:
       layout: main-vertical
       panes:
         - vi just-for-tomorrow.md
-        - open le_linguaggioc.pdf && vi oggi.org
+        - open le_codifica.pdf && vi oggi.org
         - open -a "/Users/zaccaria/Applications/Teasy 2.0.app"

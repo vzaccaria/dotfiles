@@ -1,0 +1,9 @@
+name: docs-camus
+root: "~/Dropbox/CAMUS-MaterialeUtile/2016 - ICWE/"
+
+windows:
+  - docs-camus:
+      layout: main-vertical
+      panes:
+        - cd .
+        - cd .

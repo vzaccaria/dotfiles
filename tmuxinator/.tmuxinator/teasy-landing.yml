@@ -1,0 +1,9 @@
+name: teasy-landing
+root: ~/development/github/teasy-2.0-landing
+
+windows:
+  - teasy-landing:
+      layout: main-vertical
+      panes:
+        - cd .
+        - cd .
