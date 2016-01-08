@@ -79,6 +79,7 @@
 (load-file "~/.emacs.vz/modes/fip.el")
 (load-file "~/.emacs.vz/modes/ess.el")
 (load-file "~/.emacs.vz/modes/protobuf.el")
+(load-file "~/.emacs.vz/modes/auc-latex.el")
 
 ;; Clipboard
 (xclip-mode 1)
