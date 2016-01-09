@@ -11,10 +11,20 @@
 (setq reftex-plug-into-AUCTeX t)
 
 (add-hook 'LaTeX-mode-hook (lambda ()
-                             (push
-                              '("latexmk" "latexmk -pdf %s" TeX-run-TeX nil t
-                                :help "Run latexmk on file")
-                              TeX-command-list)))
+							 (push
+							  '("latexmk" "latexmk -pdf %s" TeX-run-TeX nil t
+								:help "Run latexmk on file")
+							  TeX-command-list)
+;; enable CMD+SHIFT+Click to jump from latex to pdf viewer
+(define-key LaTeX-mode-map [M-S-mouse-1] 'TeX-view)
+
+;; compile with
+(define-key LaTeX-mode-map (read-kbd-macro "M-b") 'vz/latex-compile)
+
+							 ))
+
+
+
 
 (add-hook 'TeX-mode-hook '(lambda () (setq TeX-command-default "latexmk")))
 
@@ -22,26 +32,26 @@
 
 (setq TeX-view-program-selection '((output-pdf "PDF Viewer")))
 (setq TeX-view-program-list
-           '(("PDF Viewer" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
+		   '(("PDF Viewer" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
 
 ;; stop annoying questions about which command to execute
 (setq TeX-command-force "")
 
 (defun vz/latex-compile ()
   (interactive)
-    (command-execute 'save-buffer)
-    (command-execute 'TeX-command-master))
+	(command-execute 'save-buffer)
+	(command-execute 'TeX-command-master))
 
 (defun vz/latex-beautify ()
   (interactive)
   (save-excursion
-    (or (eq (point) (point-max)) (forward-char))
-    (forward-sentence -1)
-    (indent-relative t)
-    (let ((beg (point))
-          (ix (string-match "LaTeX" mode-name)))
-      (forward-sentence)
-      (if (and ix (equal "LaTeX" (substring mode-name ix)))
-          (LaTeX-fill-region-as-paragraph beg (point))
-        (fill-region-as-paragraph beg (point))))))
+	(or (eq (point) (point-max)) (forward-char))
+	(forward-sentence -1)
+	(indent-relative t)
+	(let ((beg (point))
+		  (ix (string-match "LaTeX" mode-name)))
+	  (forward-sentence)
+	  (if (and ix (equal "LaTeX" (substring mode-name ix)))
+		  (LaTeX-fill-region-as-paragraph beg (point))
+		(fill-region-as-paragraph beg (point))))))
 ;;

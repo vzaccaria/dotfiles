@@ -45,11 +45,6 @@
 (define-key yas-minor-mode-map (kbd "<tab>") nil)
 (define-key yas-minor-mode-map (kbd "TAB") nil)
 
-;; enable CMD+SHIFT+Click to jump from latex to pdf viewer
-(define-key LaTeX-mode-map [M-S-mouse-1] 'TeX-view)
-
-;; compile with
-(define-key LaTeX-mode-map (read-kbd-macro "M-b") 'vz/latex-compile)
 
 
 (global-set-key "\C-cl" 'org-store-link)
