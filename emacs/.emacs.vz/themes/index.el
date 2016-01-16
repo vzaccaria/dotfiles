@@ -1,4 +1,4 @@
-(load-theme 'leuven)
+(load-theme 'solarized-dark t)
 (load-file "~/.emacs.vz/themes/lang-org.el")
 
 

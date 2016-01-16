@@ -46,6 +46,8 @@
 (evil-leader/set-leader "SPC")
 (evil-leader/set-key
   "SPC" 'other-window
+  "a"   (lambda () (interactive) (yas-expand-snippet " \\annote[VZ]{`yas-selected-text`}{$0}"))
+  "e"   (lambda () (interactive) (yas-expand-snippet " \\emph{$0} "))
   )
 
 

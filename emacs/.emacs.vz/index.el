@@ -53,5 +53,6 @@
 (load-file "~/.emacs.vz/spell.el")
 (load-file "~/.emacs.vz/macros.el")
 (load-file "~/.emacs.vz/tabs.el")
+(load-file "~/.emacs.vz/check/grammarcheck.el")
 (provide 'index)
 ;;; index.el ends here
