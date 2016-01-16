@@ -1,0 +1,9 @@
+name: dev-vz-biblio2jsonE
+root: ~/development/github/vz-biblio2json/
+
+windows:
+  - dev-vz-biblio2jsonE:
+      layout: main-vertical
+      panes:
+        - cd .
+        - cd .

@@ -5,5 +5,5 @@ windows:
   - stm-liquid:
       layout: main-vertical
       panes:
-        - cd .
-        - cd .
+        - cd ./simple
+        - cd ./simple

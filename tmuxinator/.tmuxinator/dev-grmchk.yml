@@ -1,0 +1,9 @@
+name: gramchk
+root: ~/development/github/gramchk/
+
+windows:
+  - gramchk:
+      layout: main-vertical
+      panes:
+        - cd .
+        - cd .
