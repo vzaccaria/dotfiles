@@ -23,11 +23,11 @@ refactor() {
 }
 
 fix() {
-  git add ${@:1: -1} commit -m "fix: ${@: -1}"
+  git add ${@:1: -1} && git commit -m "fix: ${@: -1}"
 }
 
 feat() {
-  git add ${@:1: -1} commit -m "feat: ${@: -1}"
+  git add ${@:1: -1} && git commit -m "feat: ${@: -1}"
 }
 
 amend() {
