@@ -11,39 +11,23 @@ c() {
 }
 
 chore() {
-  git commit -m "chore: $*"
-}
-
-fix() {
-  git commit -m "fix: $*"
-}
-
-feat() {
-  git commit -m "feat: $*"
+  git add $* && git commit -m "chore: some chore work"
 }
 
 minor() {
-  git commit -m "minor: $*"
-}
-
-feat-local() {
-    git add . && git commit -m "feat: $*"
-}
-
-chore-local() {
-    git add . && git commit -m "chore: $*"
-}
-
-fix-local() {
-    git add . && git commit -m "fix: $*"
-}
-
-minor-local() {
-    git add . && git commit -m "minor: $*"
+  git add $* && git commit -m "minor: some minor work"
 }
 
 refactor() {
-  git commit -m "refactor: $*"
+  git add $* && git commit -m "refactor: make it future proof"
+}
+
+fix() {
+  git add ${@:1: -1} commit -m "fix: ${@: -1}"
+}
+
+feat() {
+  git add ${@:1: -1} commit -m "feat: ${@: -1}"
 }
 
 amend() {

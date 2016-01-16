@@ -1,5 +1,4 @@
-#
- Shortcuts
+# Shortcuts
 alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
