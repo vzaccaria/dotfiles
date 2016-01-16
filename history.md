@@ -1,6 +1,22 @@
 
 # New features
 
+-     initial integration with auctex -- [Jan 16th 16](../../commit/5273893beee09b69eaa5044fd28d336d5863e15c)
+-     add Slate window manager config -- [Oct 3rd 15](../../commit/8330a1959f0c18d91b90cb15dcb5d85e1bf9f4b4)
+-     add magit shortcuts -- [Oct 3rd 15](../../commit/f16ac0ca8c850f44f16a6348d364dbb83d97404f), [Oct 3rd 15](../../commit/2d1bcbba718653485807ddae23ce59bd4f10b1d5)
+-     add R integration -- [Oct 3rd 15](../../commit/27e038c5b741c394d739276e351222130a7f87cf)
+-     add osx configuration commands -- [Sep 30th 15](../../commit/7913696c216aa77df55c9b09f7cae3bb7416c668)
+-     add a few new packages and tweaks -- [Sep 20th 15](../../commit/dbddef6ce226aecec0fd30dd2907cdc6fd870243)
+-     new helpers for python virtual envs and git -- [Sep 20th 15](../../commit/093f1f5c4f9445af2734c6c04b33d834e0208295)
+-     new snippets for org-mode and js-mode -- [Sep 20th 15](../../commit/9237ab6e550fab63b38886b6914ec74cc7b01e1e)
+-     extend git toolbelt -- [Sep 15th 15](../../commit/8d5250ba6d6a4f7a619bdffbd54793cf5db10d52)
+-     extend snippet base -- [Sep 15th 15](../../commit/e002943851b929fbd13b4ae52223d45ebf47f53f)
+-     add capture templates -- [Sep 11th 15](../../commit/22f9d44d354932c067f26e8a6a59143c9ae0c3f4)
+-     add dired -- [Sep 7th 15](../../commit/ce6119ee699e05aa2e699d84e5b29874b68a021d)
+-     refactor .emacs -- [Sep 7th 15](../../commit/ba39bcd84fe29ebd7d5b3deef970806e2a437918)
+-     add realpath and other git aliases -- [Sep 7th 15](../../commit/830047ae493848bd4682a7a43cd49a9f9e99335e)
+-     add json stringify snippet -- [Sep 7th 15](../../commit/639dd9c36563b0c9cbd91c4a67699878ed59d767)
+-     add some common foo names -- [Sep 7th 15](../../commit/fca8eae0a7ddeb595022613a0ba295182f7f4129)
 -     add solarized theme to emacs -- [Aug 6th 15](../../commit/144d93a23a17146445f82f6182efbdfc74d98d48)
 -     add pseudo map reduce -- [Aug 2nd 15](../../commit/f653ca8b666075a0e935e127a176dc503762d55d)
 -     add yasnippet directories and configuragtion -- [Jul 28th 15](../../commit/2ea5d7a2f20356c4209054bbe4e25a1024de3f28)
@@ -17,6 +33,13 @@
 
 # Bug fixes
 
+-     enable latex mode map only in auctex mode -- [Jan 9th 16](../../commit/78d65e1058e84465197858c5b66ab6239a9d9ddc)
+-     use web-mode for js[x] files -- [Oct 3rd 15](../../commit/1a9bc59c5148c2b526d13e1b877a9e40058a98a9)
+-     open new windows vertically (hopefully) -- [Oct 3rd 15](../../commit/e9df240e688804cf12c043519f691f1b650301eb)
+-     an alias was messing up with hub -- [Oct 1st 15](../../commit/40f3a9ffa79af320dbdedf45a622f3fd8cf742b4)
+-     export was not using accented characters and arrows -- [Sep 24th 15](../../commit/6d3177ae6de9abd2cf471aa426fcf974c4b59977)
+-     correct path to theme module -- [Sep 8th 15](../../commit/912c8de2a02b5fe91381c382e333600a35353a24)
+-     change search hotkey -- [Sep 7th 15](../../commit/cbfca7dfb5c529f2b48f04380bf4dda2bb7a04a7)
 -     look locally for manuals -- [Jul 16th 15](../../commit/6c3b51490b5cd0c567776f597d7a54210d09d38a)
 -     remove zsh folder -- [Jul 12th 15](../../commit/c6679587d390df6e65668fcc4fc5f6a11232e93b), [Jul 12th 15](../../commit/f5cadde3eac0c667b2f3984f01229874909806b1)
 -     remove linux specific parts from darwin code -- [Jul 12th 15](../../commit/5d953bd458b7263892d4ad2c86c27a3f3bd4ce37)
