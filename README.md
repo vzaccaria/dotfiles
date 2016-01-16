@@ -74,6 +74,7 @@ yourself.
 
 # Bug fixes
 
+-     forgot to split commands -- [Jan 17th 16](../../commit/2e090c30a7746d603e8bda9985304e78d73d613e)
 -     enable latex mode map only in auctex mode -- [Jan 9th 16](../../commit/78d65e1058e84465197858c5b66ab6239a9d9ddc)
 -     use web-mode for js[x] files -- [Oct 3rd 15](../../commit/1a9bc59c5148c2b526d13e1b877a9e40058a98a9)
 -     open new windows vertically (hopefully) -- [Oct 3rd 15](../../commit/e9df240e688804cf12c043519f691f1b650301eb)
