@@ -1,10 +1,8 @@
 name: infob-lecture-setup
-root: ~/development/github/documents/lectures/infob/materiale/temporary
+root: ~/development/github/materiale-corsi/documents/lectures/infob/materiale/temporary
 
 windows:
   - infob-lecture-setup:
       layout: main-vertical
       panes:
-        - vi just-for-tomorrow.md
-        - open le_codifica.pdf && vi oggi.org
-        - open -a "/Users/zaccaria/Applications/Teasy 2.0.app"
+        - vi oggi.org

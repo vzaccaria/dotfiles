@@ -1,12 +1,12 @@
 # ~/.tmuxinator/dot-emacs.yml
 
 name: infob-program
-root: ~/development/github/documents/lectures/infob/materiale
+root: ~/development/github/materiale-corsi/documents/lectures/infob/materiale
 
 windows:
   - infob-program:
       layout: main-horizontal
       panes:
         - make
-        - open "/Users/zaccaria/development/github/documents/lectures/infob/materiale/courses/2015-2016.json.xlsx"
+        - open "/Users/zaccaria/development/github/materiale-corsi/documents/lectures/infob/materiale/courses/2015-2016.json.xlsx"
         - open "https://docs.google.com/spreadsheets/d/1lKlqEZWDUZuF_6BGA8-z0WstSVY8R3k3EXxyhICk6HI/edit#gid=0&vpid=A1"

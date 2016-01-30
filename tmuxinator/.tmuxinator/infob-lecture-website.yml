@@ -6,5 +6,5 @@ windows:
       layout: main-vertical
       panes:
         - cd posts
-        - vi ~/development/github/documents/lectures/infob/materiale/temporary/just-for-tomorrow.md
+        - vi ~/development/github/materiale-corsi/documents/lectures/infob/materiale/temporary/just-for-tomorrow.md
         - cd .

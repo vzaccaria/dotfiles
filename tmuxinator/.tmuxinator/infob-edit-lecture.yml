@@ -1,7 +1,7 @@
 # ~/.tmuxinator/dot-emacs.yml
 
 name: infob-edit-lecture
-root: ~/development/github/documents/lectures/infob/materiale
+root: ~/development/github/materiale-corsi/documents/lectures/infob/materiale
 
 windows:
   - infob-edit-lecture:

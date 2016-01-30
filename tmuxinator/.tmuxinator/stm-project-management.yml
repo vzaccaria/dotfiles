@@ -6,4 +6,4 @@ windows:
       layout: main-vertical
       panes:
         - vi "/Users/zaccaria/Dropbox/org/STMicro.org"
-        - cd docs
+        - vi ./docs/overview.org
