@@ -1,4 +1,5 @@
 (require 'ox-ioslide)
+(load-file "~/.emacs.vz/modes/ob-mathematica.el")
 
 (org-babel-do-load-languages
       'org-babel-load-languages
@@ -10,6 +11,7 @@
     (js . t)
     (ledger . t)
     (ditaa . t)
-    (plantuml . t)))
+    (plantuml . t)
+    (mathematica . t)))
 
 (setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/8024/plantuml.8024.jar")
