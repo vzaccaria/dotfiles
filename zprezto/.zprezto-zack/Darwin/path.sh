@@ -10,6 +10,7 @@ path=(\
   /usr/local/texlive/2013/bin/universal-darwin \
   /Users/zaccaria/Library/Python/2.7/bin \
   /Users/zaccaria/scripts \
+  /Users/zaccaria/.bin \
   /Users/zaccaria/bin/oclint/bin \
   /Users/zaccaria/development/github/data-science-toolbox \
   /Users/zaccaria/.local/bin \
