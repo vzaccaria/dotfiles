@@ -6,3 +6,4 @@ export LANGUAGE=en_US.UTF-8
 export DEFAULT_CHARSET=UTF-8
 export NODE_PATH=/usr/local/lib/node_modules
 export EDITOR=emacsclient
+export GIT_EDITOR=emacsclient
