@@ -155,6 +155,7 @@
         ((derived-mode-p 'js-mode)         (call-interactively 'web-beautify-js))
         ((derived-mode-p 'html-mode)       (call-interactively 'web-beautify-html))
         ((derived-mode-p 'web-mode)        (call-interactively 'web-mode-buffer-indent))
+        ((derived-mode-p 'haskell-mode)    (call-interactively 'haskell-mode-stylish-buffer))
         (t "not implemented")))
 
 (defun vz/find-next-unsafe-char (&optional coding-system)

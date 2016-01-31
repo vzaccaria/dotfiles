@@ -37,6 +37,7 @@
 (load-file "~/.emacs.vz/keymap/evil.el")
 (load-file "~/.emacs.vz/keymap/magit.el")
 (load-file "~/.emacs.vz/keymap/org.el")
+(load-file "~/.emacs.vz/keymap/haskell.el")
 
 
 
@@ -67,7 +68,7 @@
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "M-s") 'evil-write-all)
 (global-set-key (kbd "M-d") 'iedit-mode)
-(global-set-key (kbd "M-f") 'projectile-ag)
+(global-set-key (kbd "M-f") 'helm-find-files)
 (global-set-key (kbd "M-g") 'helm-org-agenda-files-headings)
 (global-set-key (kbd "M-h") 'helm-M-x)
 (global-set-key (kbd "M-j") 'vz/align-code-to-equals)
