@@ -9,6 +9,7 @@
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'haskell-interactive-mode))
 
+(setq haskell-program-name "stack ghci")
 
 (use-package flycheck-haskell
   :ensure t
