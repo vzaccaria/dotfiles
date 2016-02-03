@@ -86,3 +86,22 @@ function orgtopdf() {
     echo "emacsclient --eval \"(progn (find-file \\\"`grealpath $1`\\\") (org-latex-export-to-pdf))\""
     emacsclient --eval "(progn (find-file \"`grealpath $1`\") (org-latex-export-to-pdf))"
 }
+
+function setUsDictionary() {
+    defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+    defaults write -g NSSpellCheckerAutomaticallyIdentifiesLanguages -bool false
+    defaults write "Apple Global Domain" NSPreferredSpellServerLanguage en_US
+    killall OpenSpell
+    echo "Dictionary -> EN_US (toggle 'Edit > Check spelling while typing' to enable document check)"
+    echo "You might need to reopen the app."
+}
+
+function setItDictionary() {
+    defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+    defaults write -g NSSpellCheckerAutomaticallyIdentifiesLanguages -bool false
+    defaults write "Apple Global Domain" NSPreferredSpellServerLanguage it
+    killall OpenSpell
+    echo "Dictionary -> IT (toggle 'Edit > Check spelling while typing' to enable document check)"
+    echo "You might need to reopen the app."
+
+}
