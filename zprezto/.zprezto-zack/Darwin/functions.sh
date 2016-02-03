@@ -94,7 +94,7 @@ function setUsDictionary() {
     killall OpenSpell
     echo "Dictionary -> EN_US (toggle 'Edit > Check spelling while typing' to enable document check)"
     echo "You might need to reopen the app."
-}
+
 
 function setItDictionary() {
     defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
