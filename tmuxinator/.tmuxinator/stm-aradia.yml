@@ -6,5 +6,5 @@ windows:
       layout: main-vertical
       panes:
         - cd ~/development/stforge/HS_VHDL/docs/general-ideas/architecture/v2.0
-        - cd ~/development/stforge/HS_VHDL/docs/general-ideas/architecture/v2.0/symbolicManipulation/simple
+        - cd ~/development/stforge/HS_VHDL/docs/general-ideas/architecture/v2.0/symbolic
         - vi "/Users/zaccaria/Dropbox/org/STMicro.org"

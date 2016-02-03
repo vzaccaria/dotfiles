@@ -1,12 +1,11 @@
 # ~/.tmuxinator/dot-emacs.yml
 
 name: infob-voti-dev
-root: ~/development/github/materiale-corsi/documents/lectures/infob/materiale/courses/2015-2016/exams/it1
+root: ~/development/github/vz-voti/
 
 windows:
   - infob-voti-dev:
       layout: main-horizontal
       panes:
-        - cd .
         - cd .
         - cd .

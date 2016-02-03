@@ -5,5 +5,5 @@ windows:
   - infob-book:
       layout: main-vertical
       panes:
-        - cd .
+        - cd ~/dotfiles/make/
         - cd .
