@@ -76,6 +76,7 @@
 (load-file "~/.emacs.vz/modes/javascript.el")
 (load-file "~/.emacs.vz/modes/jade.el")
 (load-file "~/.emacs.vz/modes/haskell.el")
+(load-file "~/.emacs.vz/modes/idris.el")
 (load-file "~/.emacs.vz/modes/fip.el")
 (load-file "~/.emacs.vz/modes/ess.el")
 (load-file "~/.emacs.vz/modes/protobuf.el")
