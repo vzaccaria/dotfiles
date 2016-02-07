@@ -3,8 +3,8 @@ PROCREGEXP ?=
 WATCHOBJECT ?=
 WATCHTARGET ?=
 
-.SILENT:
-.IGNORE:
+#.SILENT:
+#.IGNORE:
 
 
 .DEFAULT_GOAL := all
@@ -21,7 +21,7 @@ collapseinto	= $(patsubst %, $1/%, $(notdir $2))
 	touch $@
 
 clean:
-	rm -rf $(BUILDIR) $(INTERMEDIATEDIRS)
+	rm -rf $(BUILDIR)
 
 
 .phony: watch
