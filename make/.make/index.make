@@ -1,3 +1,4 @@
+MAKEROOT ?= ~/.make
 BUILDIR ?= build
 PROCREGEXP ?=
 WATCHOBJECT ?=
@@ -46,4 +47,4 @@ show: show-procs
 
 stop: kill-procs
 
-include ~/.make/build.make
+include $(MAKEROOT)/build.make
