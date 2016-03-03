@@ -31,3 +31,6 @@
 	required = true
 [http]
 	sslVerify = false
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -R
+	show = diff-so-fancy | less --tabs=1,5 -R
