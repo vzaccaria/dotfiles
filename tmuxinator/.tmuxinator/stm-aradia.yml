@@ -5,6 +5,5 @@ windows:
   - stm-aradia:
       layout: main-vertical
       panes:
-        - cd ~/development/stforge/HS_VHDL/docs/general-ideas/architecture/v2.0
-        - cd ~/development/stforge/HS_VHDL/docs/general-ideas/architecture/v2.0/symbolic
-        - vi "/Users/zaccaria/Dropbox/org/STMicro.org"
+        - cd ~/development/stforge/HS_VHDL/docs/general-ideas/architecture/v2.0/idris/
+        - cd ~/development/stforge/HS_VHDL/docs/general-ideas/architecture/v2.0/idris
