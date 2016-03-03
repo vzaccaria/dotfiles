@@ -98,3 +98,7 @@ s/cosi'/così/g" "$@"
 org2json() {
     emacs "$1" -l ~/.emacs --batch --eval="(org-as-json-to-file)"
 }
+
+git-ignore-edit() {
+    vi "$(git root)/.gitignore"
+}

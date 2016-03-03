@@ -8,6 +8,10 @@ vi() {
     emacsclient -nw "$@" -c
 }
 
+emacs-gui() {
+    emacsclient "$@" -c
+}
+
 startemacs() {
     /Users/zaccaria/Applications/Emacs.app/Contents/MacOS/Emacs --daemon
 }
@@ -108,4 +112,13 @@ function setItDictionary() {
 function getCurrentSpellDictionary() {
     echo "Current dictionary: "
     defaults read -g NSPreferredSpellServerLanguage
+}
+
+function stopAdobeProcesses() {
+    launchctl list | grep -o '\S*adobe\S*' | while read x; do launchctl remove $x; done
+    echo 'removing adobe processes...'
+    echo ' '
+    echo 'To remove completely:'
+    echo '> rm /Library/LaunchAgents/*adobe*'
+    echo '> rm ~/Library/LaunchAgents/*adobe*'
 }
