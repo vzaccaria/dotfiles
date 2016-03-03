@@ -1,1 +1,1 @@
-(setq idris-interpreter-path "~/.local/bin/idris")
+(setq idris-interpreter-path "/usr/local/bin/idris")

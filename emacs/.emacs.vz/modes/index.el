@@ -82,6 +82,7 @@
 (load-file "~/.emacs.vz/modes/protobuf.el")
 (load-file "~/.emacs.vz/modes/auc-latex.el")
 (load-file "~/.emacs.vz/modes/sage.el")
+(load-file "~/.emacs.vz/modes/jsdoc.el")
 
 ;; Clipboard
 (xclip-mode 1)

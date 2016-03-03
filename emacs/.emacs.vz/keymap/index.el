@@ -34,10 +34,6 @@
 ;;; Code:
 
 
-(load-file "~/.emacs.vz/keymap/evil.el")
-(load-file "~/.emacs.vz/keymap/magit.el")
-(load-file "~/.emacs.vz/keymap/org.el")
-(load-file "~/.emacs.vz/keymap/haskell.el")
 
 
 
@@ -87,6 +83,11 @@
 (global-set-key (kbd "s--") 'zoom-out)
 
 
+(load-file "~/.emacs.vz/keymap/evil.el")
+(load-file "~/.emacs.vz/keymap/magit.el")
+(load-file "~/.emacs.vz/keymap/org.el")
+(load-file "~/.emacs.vz/keymap/haskell.el")
+(load-file "~/.emacs.vz/keymap/idris.el")
 
 ;; ESS mode hooks
 
