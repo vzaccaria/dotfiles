@@ -34,6 +34,12 @@ if [[ -s "${srcdir}/docker.sh" ]]; then
   source "${srcdir}/docker.sh"
 fi
 
+echo "libvirt"
+if [[ -s "${srcdir}/libvirt.sh" ]]; then
+  source "${srcdir}/libvirt.sh"
+fi
+echo_ok
+
 echo ""
 echo "Done."
 
