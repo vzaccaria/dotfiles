@@ -1,0 +1,3 @@
+- user: name=zaccaria shell=/bin/zsh
+
+- user: name=ghcuser shell=/bin/zsh

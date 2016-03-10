@@ -1,0 +1,15 @@
+---
+
+- name: update repo to install latest GHC
+  apt_repository: repo='ppa:hvr/ghc' state=present
+
+- name: ensure packages are installed
+  action: apt name={{item}} force=yes
+  with_items:
+      - nodejs
+      - vim
+      - zsh
+      - cabal-install-1.22
+      - ghc-7.10.1
+      - stow
+      - zip

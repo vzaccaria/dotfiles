@@ -1,0 +1,51 @@
+---
+
+- hosts: default
+  vars:
+    password: $1$SomeSalt$PKJkgz5lj.BdxRlRkXV3d0
+
+  sudo: true
+
+  roles:
+      - { role: haskell, tags: [haskell, dev] }
+
+  tasks:
+    - name: Dev | ensure utility packages are installed
+      action: apt name="{{item}}" force=yes
+      with_items:
+            - vim
+            - zsh
+            - stow
+            - zip
+
+    - user: name=ghcuser shell=/bin/bash password={{password}}
+
+    - name: Dev | Update path for ghc
+      lineinfile: dest=/home/ghcuser/.profile line="PATH=/home/ghcuser/.stack/programs/x86_64-linux/ghc-7.10.2/bin:/home/ghcuser/.local/bin:$PATH"
+      sudo: yes
+      sudo_user: ghcuser
+
+    - name: Dev | Setting up stack for ghcuser
+      shell: stack setup --resolver lts-3.6
+      sudo: yes
+      sudo_user: ghcuser
+
+    - name: Dev | Install clash-ghc
+      shell: stack install clash-ghc --resolver lts-3.6
+      sudo: yes
+      sudo_user: ghcuser
+
+    - name: Dev | Install clash-prelude
+      shell: stack install clash-prelude --resolver lts-3.6
+      sudo: yes
+      sudo_user: ghcuser
+
+    - name: Dev | Install tasty
+      shell: stack install tasty tasty-hunit tasty-quickcheck --resolver lts-3.6
+      sudo: yes
+      sudo_user: ghcuser
+
+    - name: Dev | Create test directory
+      file: path=/home/ghcuser/test state=directory
+      sudo: yes
+      sudo_user: ghcuser
