@@ -26,7 +26,7 @@ else
 fi
 
 dock-ssh-sysadmin() {
-    docker run -ti --cap-add SYS_ADMIN --device /dev/fuse $@
+    docker run --rm -ti --cap-add SYS_ADMIN --device /dev/fuse $@
 }
 
 
@@ -69,18 +69,18 @@ dock-help() {
 
 dock-ssh() {
     # Pass: image
-    docker run -i -t $@ sh
+    docker run --rm -i -t $@ sh
 }
 
 dock-run-cmd() {
     # Pass: image cmd [args]
-    echo "docker run -i -t $@"
-    docker run -i -t $@
+    echo "docker run --rm -i -t $@"
+    docker run --rm -i -t $@
 }
 
 dock-mount-and-run-cmd() {
     echo "docker run -t -v $1:/opt/dockhost:ro ${@:2}"
-    docker run -t -v $1:/opt/dockhost:ro ${@:2}
+    docker run --rm -t -v $1:/opt/dockhost:ro ${@:2}
 }
 
 rclone2.0-lsd() {

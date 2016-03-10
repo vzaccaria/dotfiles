@@ -1,8 +1,9 @@
-# Shortcuts
+# Shoiirtcuts
 alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
+alias p:
+="cd ~/projects"
 alias dg='cd ~/development/github'
 alias h='/usr/local/bin/hub'
 alias ric='cd "/Users/zaccaria/Dropbox/Commuting/Ricercatore TI 2011"'

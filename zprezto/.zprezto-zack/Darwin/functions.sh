@@ -114,7 +114,7 @@ function getCurrentSpellDictionary() {
     defaults read -g NSPreferredSpellServerLanguage
 }
 
-function stopAdobeProcesses() {
+function killAdobeProcesses() {
     launchctl list | grep -o '\S*adobe\S*' | while read x; do launchctl remove $x; done
     echo 'removing adobe processes...'
     echo ' '
