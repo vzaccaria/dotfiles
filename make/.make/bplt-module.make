@@ -1,4 +1,4 @@
-MAKEROOT ?= ~/.make
+# Use this makefile with: make -I(THISDIRECTORY)
 
 JS_BABEL_SRCDIR ?= src
 JS_DOCS_SRCDIR ?= docs
@@ -11,7 +11,7 @@ JS_VERB_SRC ?= $(wildcard $(JS_DOCS_SRCDIR)/*.md)
 
 MD_README_TGT ?= readme.md
 
-include $(MAKEROOT)/index.make
+include index.make
 
 vpath %.js $(JS_BABEL_SRCDIR)
 JS_BABEL_SRC = $(wildcard $(JS_BABEL_SRCDIR)/*.js)

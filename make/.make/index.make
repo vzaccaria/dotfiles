@@ -1,4 +1,5 @@
-MAKEROOT ?= ~/.make
+# Use this makefile with: make -I(THISDIRECTORY)
+
 BUILDIR ?= build
 PROCREGEXP ?=
 WATCHOBJECT ?=
@@ -47,4 +48,4 @@ show: show-procs
 
 stop: kill-procs
 
-include $(MAKEROOT)/build.make
+include build.make
