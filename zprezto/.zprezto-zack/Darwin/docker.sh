@@ -31,17 +31,21 @@ dock-ssh-sysadmin() {
 
 
 # Download certs from container station
-FW=2.238.147.123
 
 dock-setup-qnappino() {
     export DOCKER_CERT_PATH=/Users/zaccaria/dotfiles/zprezto/.zprezto-zack/Darwin/qnap-certs
+    echo "This command assumes that certs are in $DOCKER_CERT_PATH"
     export DOCKER_HOST=tcp://192.168.1.120:2376 DOCKER_TLS_VERIFY=1
     alias docker='docker --tlsverify'
 }
 
-dock-setup-qnappino-remote() {
+dock-setup-remote-qnappino-bridge() {
+    echo "Setting up tunnel"
+    ssh -N -L 2376:192.168.1.120:2376 zaccaria@vzaccaria.myqnapcloud.com -p 2222
+}
+dock-setup-remote-qnappino-env() {
     export DOCKER_CERT_PATH=/Users/zaccaria/dotfiles/zprezto/.zprezto-zack/Darwin/qnap-certs
-    export DOCKER_HOST=tcp://$FW:2376
+    export DOCKER_HOST=tcp://localhost:2376
     alias docker='docker --tlsverify'       #
 }
 

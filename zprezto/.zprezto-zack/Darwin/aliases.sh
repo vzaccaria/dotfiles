@@ -2,8 +2,7 @@
 alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p:
-="cd ~/projects"
+alias p="cd ~/projects"
 alias dg='cd ~/development/github'
 alias h='/usr/local/bin/hub'
 alias ric='cd "/Users/zaccaria/Dropbox/Commuting/Ricercatore TI 2011"'
@@ -54,6 +53,8 @@ alias sv='open -a "Google Chrome"'
 alias mine='sudo chown -R zaccaria '
 
 alias shellinit-open='cd /Users/zaccaria/dotfiles/zprezto/.zprezto-zack'
+
+alias gvim='emacs-gui'
 
 alias tree='tree -CAFa -I "CVS|*.*.package|.svn|.git|.hg|node_modules|bower_components" --dirsfirst'
 
