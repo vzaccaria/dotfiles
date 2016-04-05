@@ -1,9 +1,0 @@
-name: docs-curriculum
-root: ~/development/github/documents/curriculum/current/other-docs/jsx-coverpage/
-
-windows:
-  - docs-curriculum:
-      layout: main-vertical
-      panes:
-        - cd .
-        - cd .
