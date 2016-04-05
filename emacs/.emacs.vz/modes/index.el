@@ -52,7 +52,7 @@
 (package-require 'bs) ;; buffer management
 (package-require 'evil-leader)
 (package-require 'saveplace)
-(package-require 'pomodoro)
+(package-require 'org-pomodoro)
 (package-require 'xclip)
 
 (projectile-global-mode)
@@ -83,6 +83,7 @@
 (load-file "~/.emacs.vz/modes/auc-latex.el")
 (load-file "~/.emacs.vz/modes/sage.el")
 (load-file "~/.emacs.vz/modes/jsdoc.el")
+(load-file "~/.emacs.vz/modes/livescript-mode.el")
 
 ;; Clipboard
 (xclip-mode 1)
@@ -99,9 +100,6 @@
 (package-require 'legalese)
 (package-require 'helm-dash)
 
-
-;; pomodoro!
-(pomodoro-add-to-mode-line)
 
 (provide 'index)
 ;;; index.el ends here
