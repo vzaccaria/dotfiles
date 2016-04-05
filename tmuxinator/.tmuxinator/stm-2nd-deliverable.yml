@@ -1,5 +1,5 @@
 name: stm-2nd-deliverable
-root: ~/development/stforge/HS_VHDL/docs/deliverables/160301_2nd_deliverable/
+root: ~/development/stforge/polimi-casca/docs/deliverables/160301_2nd_deliverable/
 
 windows:
   - stm-2nd-deliverable:

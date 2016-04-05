@@ -1,0 +1,11 @@
+# ~/.tmuxinator/dot-emacs.yml
+
+name: dev-vz-registro
+root: ~/development/github/vz-registro/
+
+windows:
+  - dev-vz-registro:
+      layout: main-vertical
+      panes:
+        - cd .
+        - cd .

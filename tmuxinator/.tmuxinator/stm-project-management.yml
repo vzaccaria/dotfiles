@@ -1,5 +1,5 @@
 name: stm-project-management
-root: ~/development/stforge/HS_VHDL
+root: ~/development/stforge/polimi-casca
 
 windows:
   - stm-project-management:

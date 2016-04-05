@@ -1,0 +1,9 @@
+name: dev-vzaccaria-github-io
+root: ~/development/github/vzaccaria.github.io
+
+windows:
+  - dev-vzaccaria-github-io:
+      layout: main-vertical
+      panes:
+        - cd .
+        - cd .

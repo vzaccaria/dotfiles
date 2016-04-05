@@ -1,0 +1,9 @@
+name: stm-casca-master
+root: ~/development/stforge/documents/polimi-casca-master/polimi-casca/docs/general-ideas/model
+
+windows:
+  - stm-casca-master:
+      layout: main-vertical
+      panes:
+        - open ~/development/stforge/documents/polimi-casca-master/polimi-casca/docs/general-ideas/model/general_model_of_countermeasure.md
+        - cd .

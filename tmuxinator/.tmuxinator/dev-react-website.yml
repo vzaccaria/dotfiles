@@ -1,9 +1,0 @@
-name: dev-react-website
-root: ~/development/github/react-website/
-
-windows:
-  - dev-react-website:
-      layout: main-vertical
-      panes:
-        - cd .
-        - cd .
