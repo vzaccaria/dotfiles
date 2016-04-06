@@ -64,6 +64,7 @@ dock-build-as() {
 dock-help() {
     echo "Available commands: "
     echo " "
+    echo "* dock-build-as IMGTAG"
     echo "* dock-ssh IMGTAG"
     echo "* dock-run-cmd IMGTAG CMD [ARGS]               "
     echo "* dock-mount-and-run-cmd VOL IMGTAG CMD [ARGS] # Not interactive!"
