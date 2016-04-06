@@ -1,0 +1,9 @@
+name: edx-dockerino
+root: ~/development/github/edx-dockerino
+
+windows:
+  - edx-dockerino:
+      layout: main-vertical
+      panes:
+        - cd .
+        - cd .

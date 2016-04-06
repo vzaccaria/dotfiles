@@ -1,0 +1,9 @@
+name: infoborg-rendiconto-ore-esercitazione
+root: /Users/zaccaria/development/github/materiale-corsi/documents/lectures/infob/materiale/administration/richieste_pagamento
+
+windows:
+  - infoborg-rendiconto-ore-esercitazione:
+      layout: main-vertical
+      panes:
+        - cd .
+        - cd .
