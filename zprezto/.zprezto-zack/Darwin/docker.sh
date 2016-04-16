@@ -49,6 +49,14 @@ dock-setup-remote-qnappino-env() {
     alias docker='docker --tlsverify'       #
 }
 
+dock-remove-exited-containers-tls() {
+   docker --tlsverify  rm $(docker --tlsverify ps -aq)
+}
+
+dock-remove-dangling-images-tls() {
+   docker --tlsverify rmi $(docker --tlsverify images --filter dangling=true --quiet)
+}
+
 dock-remove-exited-containers() {
    docker rm $(docker ps -aq)
 }

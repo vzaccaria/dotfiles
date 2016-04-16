@@ -1,0 +1,11 @@
+# ~/.tmuxinator/dot-emacs.yml
+
+name: dev-vz-train
+root: ~/development/github/vz-train
+
+windows:
+  - dev-vz-train:
+      layout: main-vertical
+      panes:
+        - cd .
+        - cd .

@@ -1,0 +1,9 @@
+name: stm-tcomp2016
+root: ~/development/stforge/documents/polimi-casca-master/polimi-casca/docs/papers/tcomp2016
+
+windows:
+  - stm-tcomp2016:
+      layout: main-vertical
+      panes:
+        - cd .
+        - cd .

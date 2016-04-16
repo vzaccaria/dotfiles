@@ -2,9 +2,14 @@
 (load-file "~/.emacs.vz/themes/lang-org.el")
 
 
+
+(hl-line-mode 0)
+(global-hl-line-mode 0)
+
+(blink-cursor-mode 1)
+
 ;; Highlight current line
-(hl-line-mode 1)
-(global-hl-line-mode 1)
+;;(hl-line-mode 1)
 
 ;; Main font
 ;; (set-face-attribute 'default nil

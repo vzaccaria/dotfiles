@@ -1,8 +1,8 @@
 name: teasy
-root: ~/development/github/teasy-2.0
+root: ~/development/github/teasy
 
 windows:
-  - dot-emacs:
+  - teasy:
       layout: main-vertical
       panes:
         - cd .

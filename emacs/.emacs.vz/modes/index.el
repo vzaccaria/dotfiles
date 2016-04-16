@@ -37,8 +37,6 @@
 (package-require 'saveplace)
 (package-require 'use-package)
 (package-require 'zoom-frm)
-(package-require 'iedit)
-(package-require 'evil-iedit-state)
 (package-require 'projectile)
 (package-require 'paren)
 (package-require 'json-mode)
@@ -54,7 +52,11 @@
 (package-require 'saveplace)
 (package-require 'org-pomodoro)
 (package-require 'xclip)
+(package-require 'commenter)
 
+
+
+;; Global modes..
 (projectile-global-mode)
 
 ;; load helpers
@@ -69,6 +71,8 @@
 (load-file "~/.emacs.vz/modes/flycheck.el")
 (load-file "~/.emacs.vz/modes/helm.el")
 (load-file "~/.emacs.vz/modes/dired.el")
+;; (load-file "~/.emacs.vz/modes/evil-mc.el") dont know what is better :-(
+;; (load-file "~/.emacs.vz/modes/multiple-cursors.el")
 
 ;; languages
 (load-file "~/.emacs.vz/modes/octave.el")
