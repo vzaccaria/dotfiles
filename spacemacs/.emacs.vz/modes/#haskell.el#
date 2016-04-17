@@ -1,0 +1,20 @@
+;;;
+
+(package-require 'haskell-snippets)
+(package-require 'haskell-mode)
+(package-require 'hindent)
+(package-require 'ghc)
+(package-require 'company)
+(package-require 'company-ghc)
+
+(autoload 'ghc-init "ghc" nil t)
+(autoload 'ghc-debug "ghc" nil t)
+
+;;; Load ghc-mod on top.. for interactive suggestions
+(add-hook 'haskell-mode-hook #'hindent-mode)
+(add-hook 'haskell-mode-hook 'company-mode)
+(add-hook 'haskell-mode-hook (lambda () (ghc-init)))
+
+
+(add-to-list 'company-backends 'company-ghc)
+(custom-set-variables '(company-ghc-show-info t))
