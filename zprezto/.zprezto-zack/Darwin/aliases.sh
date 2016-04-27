@@ -1,4 +1,5 @@
 # Shoiirtcuts
+alias t="tree -d -L 3"
 alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"

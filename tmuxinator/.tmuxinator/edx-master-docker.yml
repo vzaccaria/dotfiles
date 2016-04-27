@@ -1,9 +1,0 @@
-name: edx-master-docker
-root: ~/development/github/edx-master-docker
-
-windows:
-  - edx-master-docker:
-      layout: main-vertical
-      panes:
-        - cd .
-        - cd .
