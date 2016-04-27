@@ -2,7 +2,6 @@
 
 
 
-;; (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
 
 ;; (define-key yas-minor-mode-map (kbd "<tab>") nil)
 ;; (define-key yas-minor-mode-map (kbd "TAB") nil)
@@ -20,7 +19,9 @@
 
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "M-w") 'kill-this-buffer)
-(global-set-key (kbd "M-e") 'mc/edit-lines)
+(global-set-key (kbd "M-e") 'personal/show-agenda-all)
+
+
 (global-set-key (kbd "M-r") 'eval-region)
 (global-set-key (kbd "M-t") 'beautify)
 (global-set-key (kbd "M-u") 'bs-show)

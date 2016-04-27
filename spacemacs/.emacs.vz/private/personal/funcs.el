@@ -263,6 +263,18 @@ current buffer's, reload dir-locals."
   (interactive)
   (align-regexp (region-beginning) (region-end) "\\(\\s-*\\):" 1 1 t))
 
+
+(defun org-text-bold () "Wraps the region with asterisks."
+       (interactive)
+       (surround-text "*"))
+(defun org-text-italics () "Wraps the region with slashes."
+       (interactive)
+       (surround-text "/"))
+(defun org-text-code () "Wraps the region with equal signs."
+       (interactive)
+       (surround-text "="))
+
+
 ;;
 (provide 'functions)
 ;;; functions.el ends here
