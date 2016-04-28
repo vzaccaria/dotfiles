@@ -44,6 +44,8 @@
   (add-hook 'org-mode-hook (lambda () 
                              (define-key org-mode-map "\M-e" 'personal/show-agenda-all)))
 
+  (define-key global-map "\C-ct"
+    (lambda () (interactive) (org-capture nil "t")))
 
   (org-babel-do-load-languages
    'org-babel-load-languages
@@ -57,6 +59,23 @@
      ))
 
   (setq org-babel-js-cmd "/usr/local/bin/babel-node --presets es2015,stage-2")
+  (setq org-capture-templates
+        '(
+          ("m" "Send mail to" entry
+           (file+headline "~/Dropbox/org/work.org" "Ricordarsi di ...")
+           "* TODO Send mail to  %?\n  %i\n")
+
+          ("t" "Work todo generico" entry
+           (file+headline "~/Dropbox/org/work.org" "Ricordarsi di ...")
+           "* TODO %?\n  %i\n")
+
+          ("d" "Feedback/note per il corso" entry
+           (file+headline "/Users/zaccaria/development/github/documents/lectures/infob/materiale/InfoBMat.org" "Feedback e note prese durante il corso")
+           "*  %?\n")
+
+          )
+        )
+
   )
 
 (defun personal/post-init-org-bullets ()
