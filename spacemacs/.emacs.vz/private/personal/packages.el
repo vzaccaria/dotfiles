@@ -8,22 +8,17 @@
     ox
     ox-md
     ox-gfm
-    ox-reveal
     ))
 
 
 ;; define initialization here
 (defun personal/post-init-org ()
-  (setq org-agenda-custom-commands '(
-                                     ("w" "My Agenda"
-                                      (
-                                       (agenda "")
+
+  (setq org-agenda-custom-commands '(("w" "My Agenda"
+                                      ((agenda "")
                                        (todo "TODAY")
-                                       (todo "")
-                                       )
-                                      )
-                                     )
-        )
+                                       (todo "")))))
+
   (setq org-columns-default-format "%40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM") 
   (setq org-agenda-todo-list-sublevels nil)
   (setq org-agenda-files
@@ -47,25 +42,22 @@
   (setq org-confirm-babel-evaluate nil)
 
   (add-hook 'org-mode-hook (lambda () 
-    (define-key org-mode-map "\M-e" 'personal/show-agenda-all)
-                             ))
+                             (define-key org-mode-map "\M-e" 'personal/show-agenda-all)))
 
+
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((R . t)
+     (emacs-lisp . t)
+     (sh . t)
+     (haskell . t)
+     (js . t)
+     (C . t)
+     (ditaa . t)
+     ))
+
+  (setq org-babel-js-cmd "/usr/local/bin/babel-node --presets es2015,stage-2")
   )
-
-(defun personal/init-org-babel ()
-  (use-package org-babel
-    :init
-    (org-babel-do-load-languages
-     'org-babel-load-languages
-     '((R . t)
-       (emacs-lisp . t)
-       (sh . t)
-       (haskell . t)
-       (js . t)
-       (C . t)
-       (ditaa . t)
-       ))
-    ))
 
 (defun personal/post-init-org-bullets ()
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
@@ -76,18 +68,6 @@
   (interactive)
   (org-agenda nil "w"))
 
-
-(defun personal/init-ox-reveal ()
-  (use-package ox-reveal
-    :config
-    (progn
-      ;; (setq org-reveal-root "https://cdn.jsdelivr.net/reveal.js/3.0.0")
-      (setq org-reveal-plugins '(classList markdown zoom notes highlight))
-      ;; (setq org-reveal-theme "solarized")
-      ;; (setq org-reveal-highlight-css "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/solarized-light.min.css")
-      )
-    )
-  )
 
 (defun personal/init-ox-latex ()
 
