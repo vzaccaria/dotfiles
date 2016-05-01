@@ -30,32 +30,6 @@ dock-ssh-sysadmin() {
 }
 
 
-# Download certs from container station
-
-dock-setup-qnappino() {
-    export DOCKER_CERT_PATH=/Users/zaccaria/dotfiles/zprezto/.zprezto-zack/Darwin/qnap-certs
-    echo "This command assumes that certs are in $DOCKER_CERT_PATH"
-    export DOCKER_HOST=tcp://192.168.1.120:2376 DOCKER_TLS_VERIFY=1
-    alias docker='docker --tlsverify'
-}
-
-dock-setup-remote-qnappino-bridge() {
-    echo "Setting up tunnel"
-    ssh -N -L 2376:192.168.1.120:2376 zaccaria@vzaccaria.myqnapcloud.com -p 2222
-}
-dock-setup-remote-qnappino-env() {
-    export DOCKER_CERT_PATH=/Users/zaccaria/dotfiles/zprezto/.zprezto-zack/Darwin/qnap-certs
-    export DOCKER_HOST=tcp://localhost:2376
-    alias docker='docker --tlsverify'       #
-}
-
-dock-remove-exited-containers-tls() {
-   docker --tlsverify  rm $(docker --tlsverify ps -aq)
-}
-
-dock-remove-dangling-images-tls() {
-   docker --tlsverify rmi $(docker --tlsverify images --filter dangling=true --quiet)
-}
 
 dock-remove-exited-containers() {
    docker rm $(docker ps -aq)
@@ -63,6 +37,15 @@ dock-remove-exited-containers() {
 
 dock-remove-dangling-images() {
    docker rmi $(docker images --filter dangling=true --quiet)
+}
+
+dock-stop-k8s() {
+    docker ps -a | grep k8 | cut -d ' ' -f 1 | xargs docker stop
+    docker ps -a | grep kubelet | cut -d ' ' -f 1 | xargs docker stop
+}
+
+dock-remove-k8s() {
+    docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs docker rm 
 }
 
 dock-build-as() {

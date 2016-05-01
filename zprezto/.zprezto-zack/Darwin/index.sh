@@ -40,6 +40,12 @@ if [[ -s "${srcdir}/libvirt.sh" ]]; then
 fi
 echo_ok
 
+echo "qnap utils"
+if [[ -s "${srcdir}/qnap-utils.sh" ]]; then
+    source "${srcdir}/qnap-utils.sh"
+fi
+echo_ok
+
 echo ""
 echo "Done."
 
