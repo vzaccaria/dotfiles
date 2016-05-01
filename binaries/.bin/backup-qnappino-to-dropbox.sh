@@ -80,6 +80,7 @@ else
         cmd="$docker_cmd rclone lsd $rfolder"
     else
         warn "Remember, all command line options (e.g, -g) should go before the directory to backup"
+	warn "This backs up only the Multimedia folder."
         if [ -z "$folder" ]; then
             error "You should specify a directory to backup"
             exit 1
