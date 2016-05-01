@@ -34,9 +34,6 @@
 ;;; Code:
 
 
-(load-file "~/.emacs.vz/keymap/evil.el")
-(load-file "~/.emacs.vz/keymap/magit.el")
-(load-file "~/.emacs.vz/keymap/org.el")
 
 
 
@@ -67,10 +64,11 @@
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "M-s") 'evil-write-all)
 (global-set-key (kbd "M-d") 'iedit-mode)
-(global-set-key (kbd "M-f") 'projectile-ag)
+(global-set-key (kbd "M-f") 'helm-projectile-ag)
 (global-set-key (kbd "M-g") 'helm-org-agenda-files-headings)
-(global-set-key (kbd "M-h") 'helm-M-x)
+(global-set-key (kbd "M-h") 'helm-m-x)
 (global-set-key (kbd "M-j") 'vz/align-code-to-equals)
+(global-set-key (kbd "M-l") 'helm-apropos)
 (global-set-key (kbd "M-/") 'evil-search-forward)
 
 
@@ -85,6 +83,11 @@
 (global-set-key (kbd "s--") 'zoom-out)
 
 
+(load-file "~/.emacs.vz/keymap/evil.el")
+(load-file "~/.emacs.vz/keymap/magit.el")
+(load-file "~/.emacs.vz/keymap/org.el")
+(load-file "~/.emacs.vz/keymap/haskell.el")
+(load-file "~/.emacs.vz/keymap/idris.el")
 
 ;; ESS mode hooks
 

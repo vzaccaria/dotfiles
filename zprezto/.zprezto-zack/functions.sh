@@ -98,3 +98,15 @@ s/cosi'/così/g" "$@"
 org2json() {
     emacs "$1" -l ~/.emacs --batch --eval="(org-as-json-to-file)"
 }
+
+git-ignore-edit() {
+    vi "$(git root)/.gitignore"
+}
+
+putfile() {
+    scp -P 2222 "$1" zaccaria@vzaccaria.myqnapcloud.com:~/deposit
+}
+
+getfile() {
+    scp -P 2222 "zaccaria@vzaccaria.myqnapcloud.com:~/deposit/*" .
+}

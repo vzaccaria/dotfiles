@@ -1,0 +1,9 @@
+name: stm-aradia
+root: ~/development/stforge/HS_VHDL
+
+windows:
+  - stm-aradia:
+      layout: main-vertical
+      panes:
+        - cd ~/development/stforge/HS_VHDL/docs/general-ideas/architecture/v2.0/idris/
+        - cd ~/development/stforge/HS_VHDL/docs/general-ideas/architecture/v2.0/idris

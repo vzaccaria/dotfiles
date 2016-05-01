@@ -7,6 +7,6 @@ windows:
   - infob-edit-exam:
       layout: main-vertical
       panes:
-        - make edit 1511_it.md
+        - make edit
         - make open
         - make watch

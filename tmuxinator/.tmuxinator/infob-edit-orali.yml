@@ -1,0 +1,11 @@
+# ~/.tmuxinator/dot-emacs.yml
+
+name: infob-edit-orali
+root: ~/development/github/materiale-corsi/documents/lectures/infob/materiale/docs/markdown/esami/orali
+
+windows:
+  - infob-edit-orali:
+      layout: main-vertical
+      panes:
+        - make edit
+        - cd .

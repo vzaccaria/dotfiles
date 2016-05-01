@@ -1,0 +1,9 @@
+name: dev-gitbook3toedx
+root: ~/development/github/gitbook3toedx
+
+windows:
+  - dev-gitbook3toedx:
+      layout: main-vertical
+      panes:
+        - cd .
+        - cd .

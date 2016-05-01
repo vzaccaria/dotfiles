@@ -8,6 +8,10 @@ vi() {
     emacsclient -nw "$@" -c
 }
 
+emacs-gui() {
+    emacsclient "$@" -c
+}
+
 startemacs() {
     /Users/zaccaria/Applications/Emacs.app/Contents/MacOS/Emacs --daemon
 }
@@ -85,4 +89,36 @@ function tre() {
 function orgtopdf() {
     echo "emacsclient --eval \"(progn (find-file \\\"`grealpath $1`\\\") (org-latex-export-to-pdf))\""
     emacsclient --eval "(progn (find-file \"`grealpath $1`\") (org-latex-export-to-pdf))"
+}
+
+function setUsDictionary() {
+    defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+    defaults write -g NSSpellCheckerAutomaticallyIdentifiesLanguages -bool false
+    defaults write "Apple Global Domain" NSPreferredSpellServerLanguage en_US
+    killall OpenSpell
+    echo "Dictionary -> EN_US (toggle 'Edit > Check spelling while typing' to enable document check)"
+    echo "You might need to reopen the app."
+}
+
+function setItDictionary() {
+    defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+    defaults write -g NSSpellCheckerAutomaticallyIdentifiesLanguages -bool false
+    defaults write "Apple Global Domain" NSPreferredSpellServerLanguage it
+    killall OpenSpell
+    echo "Dictionary -> IT (toggle 'Edit > Check spelling while typing' to enable document check)"
+    echo "You might need to reopen the app."
+}
+
+function getCurrentSpellDictionary() {
+    echo "Current dictionary: "
+    defaults read -g NSPreferredSpellServerLanguage
+}
+
+function stopAdobeProcesses() {
+    launchctl list | grep -o '\S*adobe\S*' | while read x; do launchctl remove $x; done
+    echo 'removing adobe processes...'
+    echo ' '
+    echo 'To remove completely:'
+    echo '> rm /Library/LaunchAgents/*adobe*'
+    echo '> rm ~/Library/LaunchAgents/*adobe*'
 }

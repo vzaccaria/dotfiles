@@ -35,6 +35,7 @@ brew install haskell-stack
 
 brew install coreutils
 brew install dos2unix
+brew install ssh-copy-id
 
 ##########################
 # Dev utils

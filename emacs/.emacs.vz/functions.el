@@ -129,6 +129,11 @@
   (shell-command-on-region (point-min) (point-max)
                            "pandoc -s --read markdown --write markdown-simple_tables+pipe_tables-fenced_code_blocks-fenced_code_attributes" (current-buffer) t))
 
+(defun beautify-haskell (&optional b e)
+  (interactive "r")
+  (shell-command-on-region (point-min) (point-max)
+                           "stack exec stylish-haskell" (current-buffer) t))
+
 (defun vz/accentize (&optional b e)
   (interactive "r")
   (shell-command-on-region (point-min) (point-max)
@@ -155,6 +160,7 @@
         ((derived-mode-p 'js-mode)         (call-interactively 'web-beautify-js))
         ((derived-mode-p 'html-mode)       (call-interactively 'web-beautify-html))
         ((derived-mode-p 'web-mode)        (call-interactively 'web-mode-buffer-indent))
+        ((derived-mode-p 'haskell-mode)    (call-interactively 'haskell-mode-stylish-buffer))
         (t "not implemented")))
 
 (defun vz/find-next-unsafe-char (&optional coding-system)

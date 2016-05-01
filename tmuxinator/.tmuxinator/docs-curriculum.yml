@@ -1,5 +1,5 @@
 name: docs-curriculum
-root: ~/development/github/documents/curriculum/current
+root: ~/development/github/documents/curriculum/current/other-docs/jsx-coverpage/
 
 windows:
   - docs-curriculum:

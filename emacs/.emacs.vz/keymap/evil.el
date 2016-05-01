@@ -50,6 +50,11 @@
   "e"   (lambda () (interactive) (yas-expand-snippet " \\emph{$0} "))
   )
 
+(define-key evil-normal-state-map "u"   'undo-tree-undo)
+(define-key evil-normal-state-map "U"   'undo-tree-visualize)
+(define-key evil-normal-state-map "z"   'undo-tree-redo)
+(global-set-key (kbd "M-z") 'undo-tree-redo)
+
 
 (provide 'evil)
 ;;; evil.el ends here
