@@ -20,11 +20,15 @@ alias gitlog="git log --graph --abbrev-commit --decorate --date=relative --forma
 alias p='hub push --all'
 
 
+colorflag=""
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
-  colorflag="--color"
-else # OS X `ls`
-  colorflag="-G"
+    colorflag="--color"
+fi
+
+if ls -G > /dev/null 2>&1; then
+   colorflag="-G"
 fi
 
 # List all files colorized in long format
