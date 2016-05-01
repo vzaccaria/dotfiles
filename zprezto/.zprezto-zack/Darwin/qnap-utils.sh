@@ -3,6 +3,10 @@ qnap-mosh() {
     mosh --ssh='ssh -p 21101' -p 21102 --server='/opt/bin/mosh-server' admin@qnappino 
 }
 
+qnap-ssh-plain() {
+    ssh -p 21101 admin@qnappino
+    }
+
 qnap-ssh() {
     ssh -p 21101 admin@qnappino -t 'ZDOTDIR=/share/CACHEDEV1_DATA/homes/admin/dotfiles/zprezto /opt/bin/zsh -l'
 }
