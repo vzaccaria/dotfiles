@@ -8,7 +8,12 @@
     ox
     ox-md
     ox-gfm
+    spell-checking
     ))
+
+(defun personal/post-init-spell-checking ()
+    (setq-default ispell-program-name "/usr/local/bin/aspell")
+    )
 
 
 ;; define initialization here
@@ -17,6 +22,7 @@
   (setq org-agenda-custom-commands '(("w" "My Agenda"
                                       ((agenda "")
                                        (todo "TODAY")
+                                       (todo "CHECK")
                                        (todo "")))))
 
   (setq org-columns-default-format "%40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM") 
@@ -32,7 +38,7 @@
               "~/development/github/materiale-corsi/documents/lectures/infob/materiale/InfoBMat.org"))
 
   (setq org-todo-keywords
-        '((sequence "TODO" "TODAY" "|" "DONE" "CANCELLED")
+        '((sequence "TODO" "TODAY" "CHECK" "|" "DONE" "CANCELLED")
           (sequence "TOREIMBURSE" "|" "REIMBURSED"  )))
 
   ;; Using orgmode as a presentation
