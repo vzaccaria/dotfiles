@@ -59,4 +59,4 @@ alias make='gmake'
 alias mk='make -f makefile.mk'
 
 # Silver searcher
-alias ag="ag --ignore '*.map'"
+alias ag="ag --hidden --ignore '*.map'"

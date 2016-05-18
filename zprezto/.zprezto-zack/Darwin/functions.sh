@@ -12,6 +12,11 @@ emacs-gui() {
     emacsclient "$@" -c
 }
 
+gvim() {
+    emacsclient "$@" -c
+}
+
+
 startemacs() {
     /Users/zaccaria/Applications/Emacs.app/Contents/MacOS/Emacs --daemon
 }

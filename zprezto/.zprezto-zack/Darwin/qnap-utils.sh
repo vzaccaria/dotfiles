@@ -1,6 +1,6 @@
 
 qnap-mosh() {
-    mosh --ssh='ssh -p 21101' -p 21102 --server='/opt/bin/mosh-server' admin@qnappino -- /opt/bin/zsh -l
+    mosh --ssh='ssh -p 21101' -p 21102 --server='/opt/bin/mosh-server' admin@vzaccaria.myqnapcloud.com -- /opt/bin/zsh -l
 }
 
 qnap-ssh-plain() {

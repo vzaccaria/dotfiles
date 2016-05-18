@@ -55,7 +55,6 @@ alias mine='sudo chown -R zaccaria '
 
 alias shellinit-open='cd /Users/zaccaria/dotfiles/zprezto/.zprezto-zack'
 
-alias gvim='emacs-gui'
 
 alias tree='tree -CAFa -I "CVS|*.*.package|.svn|.git|.hg|node_modules|bower_components" --dirsfirst'
 
