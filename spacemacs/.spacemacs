@@ -39,8 +39,10 @@ values."
      spell-checking
      syntax-checking
      finance
+     deft
      ;; my personal layer
      personal
+     latex
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -246,6 +248,14 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq deft-directory "~/Dropbox/org")
+  (setq deft-recursive t)
+  ;; I need some programs from these locations:
+  (setenv "PATH" (format "%s:%s" "/usr/local/bin" (getenv "PATH")))
+  (setenv "PATH" (format "%s:%s" "/usr/local/texlive/2013/bin/universal-darwin" (getenv "PATH")))
+  (setenv "PATH" (format "%s:%s" "/Applications/Mathematica.app/Contents/MacOS" (getenv "PATH")))
+  (setenv "PATH" (format "%s:%s" "/Users/zaccaria/.local/bin" (getenv "PATH")))
+  (setenv "NODE_PATH" (format "%s:%s" "/usr/local/lib/node_modules" (getenv "NODE_PATH")))
   )
 
 (defun dotspacemacs/user-config ()
@@ -259,3 +269,18 @@ you should place you code here."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-agenda-files
+   (quote
+    ("/Users/zaccaria/Dropbox/org/EDX.org" "/Users/zaccaria/Dropbox/org/InfoBOrg.org" "/Users/zaccaria/Dropbox/org/Missioni.org" "/Users/zaccaria/Dropbox/org/Rendicontazione.org" "/Users/zaccaria/Dropbox/org/STMicro.org" "/Users/zaccaria/Dropbox/org/Teasy-2.0.org" "/Users/zaccaria/Dropbox/org/Today.org" "/Users/zaccaria/Dropbox/org/curriculum.org" "/Users/zaccaria/Dropbox/org/deft-0.org" "/Users/zaccaria/Dropbox/org/header.org" "/Users/zaccaria/Dropbox/org/thesis.org" "/Users/zaccaria/Dropbox/org/work.org" "/Users/zaccaria/Dropbox/org/howtos/Ansible.org" "/Users/zaccaria/Dropbox/org/howtos/CLaSH.org" "/Users/zaccaria/Dropbox/org/howtos/Devop.org" "/Users/zaccaria/Dropbox/org/howtos/Docker.org" "/Users/zaccaria/Dropbox/org/howtos/EDXDevop.org" "/Users/zaccaria/Dropbox/org/howtos/Emacs.org" "/Users/zaccaria/Dropbox/org/howtos/Github.org" "/Users/zaccaria/Dropbox/org/howtos/Kubernetes.org" "/Users/zaccaria/Dropbox/org/howtos/QNAP.org" "/Users/zaccaria/Dropbox/org/howtos/Stack.org" "/Users/zaccaria/Dropbox/org/howtos/haskellDSL.org" "/Users/zaccaria/Dropbox/org/research/ResearchPlan.org" "/Users/zaccaria/Dropbox/org/research/robotics.org" "/Users/zaccaria/Dropbox/org/research/webtech.org" "/Users/zaccaria/Dropbox/org/other/olio.org" "/Users/zaccaria/Dropbox/org/other/reviews.org" "/Users/zaccaria/Dropbox/Commuting/Altro/Personal/Chiara/Casa/Viale Varese/Casa.org" "~/development/github/materiale-corsi/documents/lectures/infob/programma-dettagliato/InfoBProg.org" "~/development/github/materiale-corsi/documents/lectures/infob/materiale/InfoBMat.org"))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
