@@ -9,12 +9,24 @@
     ox-md
     ox-gfm
     spell-checking
+    flycheck
     ))
 
 (defun personal/post-init-spell-checking ()
     (setq-default ispell-program-name "/usr/local/bin/aspell")
     )
 
+(defun personal/post-init-flycheck ()
+  (flycheck-define-checker grammar-gramcheck
+    "A general purpose grammar checker. It uses LanguageTool."
+
+    :command ("gramchk" "-a" "-x" source-original)
+    :error-parser flycheck-parse-checkstyle
+    :standard-input t
+    :modes (markdown-mode latex-mode))
+
+  (add-to-list 'flycheck-checkers 'grammar-gramcheck)
+  )
 
 ;; define initialization here
 (defun personal/post-init-org ()
@@ -32,7 +44,6 @@
               "~/Dropbox/org/howtos"
               "~/Dropbox/org/research"
               "~/Dropbox/org/other"
-              "/Users/zaccaria/development/github/documents/curriculum/cv2013/curriculum.org"
               "/Users/zaccaria/Dropbox/Commuting/Altro/Personal/Chiara/Casa/Viale Varese/Casa.org"
               "~/development/github/materiale-corsi/documents/lectures/infob/programma-dettagliato/InfoBProg.org"
               "~/development/github/materiale-corsi/documents/lectures/infob/materiale/InfoBMat.org"))

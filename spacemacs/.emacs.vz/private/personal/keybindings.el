@@ -25,14 +25,14 @@
 (global-set-key (kbd "M-r") 'eval-region)
 (global-set-key (kbd "M-t") 'beautify)
 (global-set-key (kbd "M-u") 'bs-show)
-(global-set-key (kbd "M-i") 'magit-status)   
+(global-set-key (kbd "M-i") 'fill-paragraph)
 (global-set-key (kbd "M-o") 'term-fix-mouse)
 
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "M-s") 'evil-write-all)
 (global-set-key (kbd "M-d") 'mc/mark-next-like-this)
 (global-set-key (kbd "M-f") 'helm-projectile-ag)
-(global-set-key (kbd "M-g") 'helm-org-agenda-files-headings)
+(global-set-key (kbd "M-g") 'deft)
 (global-set-key (kbd "M-h") 'helm-m-x)
 (global-set-key (kbd "M-j") 'vz/align-code-to-equals)
 (global-set-key (kbd "M-l") 'helm-apropos)
@@ -46,8 +46,8 @@
 (global-set-key (kbd "M-n") 'switch-to-next-buffer)
 (global-set-key (kbd "M-m") 'switch-to-prev-buffer)
 
-(global-set-key (kbd "s-=") 'zoom-in)
-(global-set-key (kbd "s--") 'zoom-out) 
+(global-set-key (kbd "s-=") 'zoom-frm-in)
+(global-set-key (kbd "s--") 'zoom-frm-out)
 
 
 ;; ESS mode hooks
