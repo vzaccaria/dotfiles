@@ -31,6 +31,7 @@ values."
      org
      javascript
      react
+     haskell
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -40,6 +41,7 @@ values."
      syntax-checking
      finance
      deft
+     prodigy
      ;; my personal layer
      personal
      latex
@@ -103,8 +105,9 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(
                          spacemacs-light
+                         spacemacs-dark
                          solarized-light
                          solarized-dark
                          leuven
