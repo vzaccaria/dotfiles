@@ -14,21 +14,21 @@
     ))
 
 (defun personal/post-init-spell-checking ()
-    (setq-default ispell-program-name "/usr/local/bin/aspell")
-    )
-
-(defun personal/post-init-flycheck ()
-  (flycheck-define-checker grammar-gramcheck
-    "A general purpose grammar checker. It uses LanguageTool."
-
-    :command ("gramchk" "-a" "-x" source-original)
-    :error-parser flycheck-parse-checkstyle
-    :standard-input t
-    :modes (markdown-mode latex-mode))
-
-  (add-to-list 'flycheck-checkers 'grammar-gramcheck)
+  (setq-default ispell-program-name "/usr/local/bin/aspell")
   )
 
+;; (defun personal/post-init-flycheck ()
+;;   (flycheck-define-checker grammar-gramcheck
+;;     "A general purpose grammar checker. It uses LanguageTool."
+
+;;     :command ("gramchk" "-a" "-x" source-original)
+;;     :error-parser flycheck-parse-checkstyle
+;;     :standard-input t
+;;     :modes (markdown-mode latex-mode))
+
+;;   (add-to-list 'flycheck-checkers 'grammar-gramcheck)
+;;   )
+                                        ;
 ;; define initialization here
 (defun personal/post-init-org ()
 
@@ -106,43 +106,6 @@
   (org-agenda nil "w"))
 
 
-(defun personal/init-ox-latex ()
-
-  (use-package ox-latex
-    :config
-    (progn
-
-
-      ;;; remove from the article class the default packages
-      (add-to-list 'org-latex-classes
-                   '("article"
-                     "\\documentclass\{article\}
-                [NO-DEFAULT-PACKAGES]"
-                     ("\\section\{%s\}" . "\\section*\{%s\}")
-                     ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-                     ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
-
-      ;;; same for beamer
-      (add-to-list 'org-latex-classes
-                   '("beamer"
-                     "\\documentclass\[presentation\]\{beamer\}
-                [NO-DEFAULT-PACKAGES]"
-                     ("\\section\{%s\}" . "\\section*\{%s\}")
-                     ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-                     ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
-
-
-      (setq org-latex-minted-options
-            '(("obeytabs" "true") ("baselinestretch" "0.95")))
-
-      (setq org-latex-listings 'minted)
-
-      (setq org-latex-pdf-process
-            '("/usr/local/texlive/2013/bin/universal-darwin/xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-              "/usr/local/texlive/2013/bin/universal-darwin/xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-              "/usr/local/texlive/2013/bin/universal-darwin/xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
-
-      )))
 
 (defun personal/post-init-prodigy ()
   (prodigy-define-service

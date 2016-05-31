@@ -45,6 +45,7 @@ values."
      ;; my personal layer
      personal
      latex
+     emoji
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -259,7 +260,20 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setenv "PATH" (format "%s:%s" "/Applications/Mathematica.app/Contents/MacOS" (getenv "PATH")))
   (setenv "PATH" (format "%s:%s" "/Users/zaccaria/.local/bin" (getenv "PATH")))
   (setenv "NODE_PATH" (format "%s:%s" "/usr/local/lib/node_modules" (getenv "NODE_PATH")))
+  (eval-after-load "flycheck"
+    '(progn
+       (flycheck-define-checker grammar-gramcheck
+                                "A general purpose grammar checker. It uses LanguageTool."
+
+                                :command ("gramchk" "-a" "-x" source-original)
+                                :error-parser flycheck-parse-checkstyle
+                                :standard-input t
+                                :modes (markdown-mode latex-mode))
+
+       (add-to-list 'flycheck-checkers 'grammar-gramcheck)
+    )
   )
+)
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -268,6 +282,36 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
+
+      ;;; remove from the article class the default packages
+  (add-to-list 'org-latex-classes
+               '("article"
+                 "\\documentclass\{article\}
+                [NO-DEFAULT-PACKAGES]"
+                 ("\\section\{%s\}" . "\\section*\{%s\}")
+                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
+
+      ;;; same for beamer
+  (add-to-list 'org-latex-classes
+               '("beamer"
+                 "\\documentclass\[presentation\]\{beamer\}
+                [NO-DEFAULT-PACKAGES]"
+                 ("\\section\{%s\}" . "\\section*\{%s\}")
+                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
+
+
+  (setq org-latex-minted-options
+        '(("obeytabs" "true") ("baselinestretch" "0.95")))
+
+  (setq org-latex-listings 'minted)
+
+  (setq org-latex-pdf-process
+        '("/usr/local/texlive/2013/bin/universal-darwin/xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+          "/usr/local/texlive/2013/bin/universal-darwin/xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+          "/usr/local/texlive/2013/bin/universal-darwin/xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
