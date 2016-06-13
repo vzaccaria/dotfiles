@@ -283,24 +283,7 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
 
-      ;;; remove from the article class the default packages
-  (add-to-list 'org-latex-classes
-               '("article"
-                 "\\documentclass\{article\}
-                [NO-DEFAULT-PACKAGES]"
-                 ("\\section\{%s\}" . "\\section*\{%s\}")
-                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
-
-      ;;; same for beamer
-  (add-to-list 'org-latex-classes
-               '("beamer"
-                 "\\documentclass\[presentation\]\{beamer\}
-                [NO-DEFAULT-PACKAGES]"
-                 ("\\section\{%s\}" . "\\section*\{%s\}")
-                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
-
+  ;;; remove from the article class the default packages
 
   (setq org-latex-minted-options
         '(("obeytabs" "true") ("baselinestretch" "0.95")))

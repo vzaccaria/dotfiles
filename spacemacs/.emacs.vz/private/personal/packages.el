@@ -6,6 +6,7 @@
   '(org
     org-bullets
     ox
+    ox-latex
     ox-md
     ox-gfm
     spell-checking
@@ -74,9 +75,11 @@
      (js . t)
      (C . t)
      (ditaa . t)
+     (plantuml . t)
      ))
 
   (setq org-babel-js-cmd "/usr/local/bin/babel-node --presets es2015,stage-2")
+  (setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/8039/plantuml.8039.jar")
   (setq org-capture-templates
         '(
           ("m" "Send mail to" entry
@@ -93,6 +96,23 @@
 
           )
         )
+  (add-to-list 'org-latex-classes
+               '("article"
+                 "\\documentclass\{article\}
+                [NO-DEFAULT-PACKAGES]"
+                 ("\\section\{%s\}" . "\\section*\{%s\}")
+                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
+
+      ;;; same for beamer
+  (add-to-list 'org-latex-classes
+               '("beamer"
+                 "\\documentclass\[presentation\]\{beamer\}
+                [NO-DEFAULT-PACKAGES]"
+                 ("\\section\{%s\}" . "\\section*\{%s\}")
+                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
+
 
   )
 
