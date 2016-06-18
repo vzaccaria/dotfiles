@@ -33,3 +33,12 @@ dock-setup-remote-qnappino-env() {
     export DOCKER_HOST=tcp://localhost:2376
     export DOCKER_TLS_VERIFY=true
 }
+
+
+export DOCKSHARE_CONTAINER_DIR="/Data"
+export DOCKSHARE_REMOTE_DIR="/share/CACHEDEV1_DATA/Multimedia/Data"
+
+dockshare-run() {
+    docker run --rm -ti -v "${DOCKSHARE_REMOTE_DIR}":"${DOCKSHARE_CONTAINER_DIR}" 
+}
+
