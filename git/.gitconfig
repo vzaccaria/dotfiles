@@ -13,10 +13,6 @@
 	keepBackup = true
 [color]
 	ui = true
-[alias]
-    log-json = log --pretty=format:'\"%H\": {%n  \"commit\": \"%H\",%n  \"author\": \"%an <%ae>\",%n  \"date\": \"%ad\",%n  \"message\": \"%s\"%n}'
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-    cm = !git add -A && git commit -m
 [hub]
 	protocol = https
 [filter "media"]
@@ -36,3 +32,94 @@
 	show = diff-so-fancy | less --tabs=1,5 -R
 [credential]
 	helper = osxkeychain
+
+[alias]
+  log-json = log --pretty=format:'\"%H\": {%n  \"commit\": \"%H\",%n  \"author\": \"%an <%ae>\",%n  \"date\": \"%ad\",%n  \"message\": \"%s\"%n}'
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+  cm = !git add -A && git commit -m
+
+  # Show our defined aliases
+  aliases = !"git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'"
+
+  # Show our tags
+  tags = tag -n1 -l
+
+  # Diffs
+  diff-all = !"for name in $(git diff --name-only $1); do git difftool $1 $name & done"
+  diff-changes = diff --name-status -r
+  diff-stat = diff --stat -b -r
+  diff-staged = diff --cached
+
+  # From https://gist.github.com/492227
+  head = !"git log -n1"
+  heads = !"git log origin/master.. --format='%Cred%h%Creset;%C(yellow)%an%Creset;%H;%Cblue%f%Creset' | git name-rev --stdin --always --name-only | column -t -s';'"
+  lost = !"git fsck | awk '/dangling commit/ {print $3}' | git show --format='SHA1: %C(yellow)%h%Creset %f' --stdin | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
+
+  # Find text in any commit ever
+  grep-all = !"git rev-list --all | xargs git grep '$1'"
+
+  # Given a merge commit, find the span of commits that exist(ed).
+  # Not so useful in itself, but used by other aliases.
+  # Thanks to Rob Miller for the merge-span-* aliaes.
+  merge-span = !"f() { echo $(git log -1 $2 --merges --pretty=format:%P | cut -d' ' -f1)$1$(git log -1 $2 --merges --pretty=format:%P | cut -d' ' -f2); }; f"
+
+  # Find the commits that were introduced by a merge
+  merge-span-log = "!git log `git merge-span .. $1`"
+
+  # Show the changes that were introduced by a merge
+  merge-span-diff = !"git diff `git merge-span ... $1`"
+
+  # Show the changes that were introduced by a merge, in your difftool
+  merge-span-difftool = !"git difftool `git merge-span ... $1`"
+
+  # Interactively rebase all the commits on the current branch
+  rebase-branch = !"git rebase -i `git merge-base master HEAD`"
+
+  # Sort by date for branches; can be useful for spring cleaning
+  refs-by-date = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
+
+  # Find all objects that aren't referenced by any other object (orphans).
+  # To help an orphan, we create a new branch with the orphan's commit hash,
+  # then merge it into our current branch:
+  #
+  #    git branch foo <commit>
+  #    git merge foo
+  #
+  orphans = fsck --full
+
+  # List all blobs by size in bytes.
+  # By [CodeGnome](http://www.codegnome.com/)
+  rev-list-all-objects-sort-by-size = !"git rev-list --all --objects  | awk '{print $1}'| git cat-file --batch-check | fgrep blob | sort -k3nr"
+
+
+  ### LOG ALIASES ###
+
+  log-graph = log --all --graph --decorate
+  log-refs = log --all --graph --decorate --oneline --simplify-by-decoration --no-merges
+  log-timeline = log --format='%h %an %ar - %s'
+  log-local = log --oneline origin..HEAD
+  log-fetched = log --oneline HEAD..origin/master
+
+  # Show log of changes, most recent first
+  log-changes = log --oneline --reverse
+
+  # Show log of new commits after you fetched, with stats, excluding merges
+  log-commits = log ORIG_HEAD.. --stat --no-merges
+
+  # Show log with dates in our local timezone
+  log-local = log --date=local
+
+  # Show the log for my own user email
+  log-me = !git log --author $(git config user.email)
+
+  # Show log as a graph
+  log-graph = log --graph --oneline --decorate
+
+  # Show the date of the first commit
+  log-first-date = !"git log --date-order --date=iso --pretty=%ad --reverse | head -1"
+
+  # Show the recent day
+  log-day = log --since yesterday
+
+  # Summarize your own changes since yesterday, suitable for a daily standup meeting.
+  log-standup = !git log --since yesterday --pretty=short --author $(git config user.email)
