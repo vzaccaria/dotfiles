@@ -1,7 +1,6 @@
 ;;; packages.el --- personal layer packages file for Spacemacs.
 
 
-;; define a org package here
 (defconst personal-packages
   '(org
     org-bullets
@@ -12,24 +11,18 @@
     spell-checking
     flycheck
     prodigy
+    docker
     ))
+
+(defun personal/init-docker ()
+  (use-package docker
+    :defer t
+   ))
 
 (defun personal/post-init-spell-checking ()
   (setq-default ispell-program-name "/usr/local/bin/aspell")
   )
 
-;; (defun personal/post-init-flycheck ()
-;;   (flycheck-define-checker grammar-gramcheck
-;;     "A general purpose grammar checker. It uses LanguageTool."
-
-;;     :command ("gramchk" "-a" "-x" source-original)
-;;     :error-parser flycheck-parse-checkstyle
-;;     :standard-input t
-;;     :modes (markdown-mode latex-mode))
-
-;;   (add-to-list 'flycheck-checkers 'grammar-gramcheck)
-;;   )
-                                        ;
 ;; define initialization here
 (defun personal/post-init-org ()
 
