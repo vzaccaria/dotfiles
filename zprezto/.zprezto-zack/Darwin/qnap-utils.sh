@@ -35,10 +35,28 @@ dock-setup-remote-qnappino-env() {
 }
 
 
+dockshare-help() {
+    echo "# What is it"
+    echo ""
+    echo "Commands to run a docker image on qnappino by mounting a remote qnappino directory locally."
+    echo "Steps:"
+    echo "  1) first mount the remote qnappino directory with dockshare-mount DIR (DIR should be empty)"
+    echo "  2) run the container with "
+    echo ""
+    echo "# Command list:"
+    echo ""
+    echo " * dockshare-mount DIR : mount the remote directory qnappino:${DOCKSHARE_REMOTE_DIR} as local:DIR"
+    echo " * dockshare-run IMAGE : run a container with qnappino:${DOCKSHARE_REMOTE_DIR} mounted as container:${DOCKSHARE_CONTAINER_DIR}"
+}
+
 export DOCKSHARE_CONTAINER_DIR="/Data"
 export DOCKSHARE_REMOTE_DIR="/share/CACHEDEV1_DATA/Multimedia/Data"
 
 dockshare-run() {
     docker run --rm -ti -v "${DOCKSHARE_REMOTE_DIR}":"${DOCKSHARE_CONTAINER_DIR}" 
+}
+
+dockshare-mount() {
+   sshfs -p 21101 admin@vzaccaria.myqnapcloud.com:${DOCKSHARE_REMOTE_DIR} `grealpath $1` -ovolname=Data 
 }
 

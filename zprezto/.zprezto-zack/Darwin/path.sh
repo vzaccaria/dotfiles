@@ -15,4 +15,5 @@ path=(\
   /Users/zaccaria/development/github/data-science-toolbox \
   /Users/zaccaria/.local/bin \
   /Users/zaccaria/.platformio/packages/toolchain-gccarmnoneeabi/bin \
+  /Users/zaccaria/node_modules/.bin \
   $GOPATH/bin)
