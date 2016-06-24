@@ -12,12 +12,18 @@
     flycheck
     prodigy
     docker
+    gnu-apl-mode
     ))
 
 (defun personal/init-docker ()
   (use-package docker
     :defer t
    ))
+
+(defun personal/init-gnu-apl-mode ()
+  (use-package gnu-apl-mode
+    :defer t
+    ))
 
 (defun personal/post-init-spell-checking ()
   (setq-default ispell-program-name "/usr/local/bin/aspell")
