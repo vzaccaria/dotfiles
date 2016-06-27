@@ -1,3 +1,7 @@
+# PRIVATE FILES #
+#################
+*.private
+
 # SVN #
 #######
 .svn
