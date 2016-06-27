@@ -10,6 +10,10 @@ c() {
    git cm "$@" && git push --all
 }
 
+initial() {
+    git add $* && git commit -m "initial commit"
+}
+
 chore() {
   git add $* && git commit -m "chore: some chore work"
 }
