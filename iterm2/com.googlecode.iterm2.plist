@@ -21,7 +21,7 @@
 	<key>ClosingTmuxWindowKillsTmuxWindows_selection</key>
 	<integer>2</integer>
 	<key>CommandSelection</key>
-	<false/>
+	<true/>
 	<key>Control</key>
 	<integer>1</integer>
 	<key>CopySelection</key>
@@ -31271,6 +31271,8 @@
 			<real>1</real>
 		</dict>
 	</dict>
+	<key>DoubleClickPerformsSmartSelection</key>
+	<true/>
 	<key>EnableGrowl</key>
 	<false/>
 	<key>EnableRendezvous</key>
@@ -31791,7 +31793,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>307</string>
+		<string>322</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -31836,15 +31838,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>582 230 445 270 0 0 1280 778 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>195 748 606 456 0 0 1920 1178 </string>
+	<string>195 581 606 456 0 0 1920 1178 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 590 620 392 0 0 1920 1178 </string>
+	<string>410 365 620 392 0 0 1440 878 </string>
 	<key>NSWindow Frame SUUpdateAlertFrame</key>
 	<string>357 348 566 395 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 398 890 480 0 0 1440 878 </string>
+	<string>0 14 1434 864 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 9 1914 1169 0 0 1920 1178 </string>
+	<string>0 10 954 1168 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
 	<string>365 307 890 534 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 11</key>
@@ -35159,6 +35161,8 @@
 			<string></string>
 		</dict>
 	</array>
+	<key>NoSyncConfirmBeta</key>
+	<true/>
 	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
 	<true/>
 	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
@@ -35241,7 +35245,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-06-10T09:20:20Z</date>
+	<date>2016-06-26T18:45:21Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -35313,7 +35317,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20160510</string>
+	<string>3.0.3</string>
 	<key>kCommandHistoryHasEverBeenUsed</key>
 	<true/>
 </dict>
