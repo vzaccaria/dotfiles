@@ -53,7 +53,7 @@ export DOCKSHARE_CONTAINER_DIR="/Data"
 export DOCKSHARE_REMOTE_DIR="/share/CACHEDEV1_DATA/Multimedia/Data"
 
 dockshare-run() {
-    docker run --rm -ti -v "${DOCKSHARE_REMOTE_DIR}":"${DOCKSHARE_CONTAINER_DIR}" 
+    docker run --rm -ti -v "${DOCKSHARE_REMOTE_DIR}":"${DOCKSHARE_CONTAINER_DIR}" $1
 }
 
 dockshare-mount() {
