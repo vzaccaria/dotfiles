@@ -1,13 +1,13 @@
 vi() {
-    /opt/emacs/bin/emacsclient -nw "$@" -c
+    /usr/local/bin/emacsclient -nw "$@" -c
 }
 
 startemacs() {
-    /opt/emacs/bin/emacs --daemon
+    /usr/local/bin/emacs --daemon
 }
 
 stopemacs() {
-    /opt/emacs/bin/emacsclient -e "(kill-emacs)"
+    /usr/local/bin/emacsclient -e "(kill-emacs)"
 }
 
 
