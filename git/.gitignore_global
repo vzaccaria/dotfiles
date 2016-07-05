@@ -30,6 +30,8 @@ octave-workspace
 pippo*
 pluto*
 paperino*
+.RData
+.Rhistory
 
 # Compiled source #
 ###################
@@ -47,6 +49,7 @@ paperino*
 *.dyn_hi
 *.dyn_o
 *.ibc
+*.pyg
 
 
 # Packages #
