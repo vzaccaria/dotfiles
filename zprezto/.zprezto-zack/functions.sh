@@ -107,6 +107,10 @@ git-ignore-edit() {
     vi "$(git root)/.gitignore"
 }
 
+git-chdir-into-root() {
+    cd "$(git rev-parse --show-toplevel)"
+}
+
 putfile() {
     scp -P 2222 "$1" zaccaria@vzaccaria.myqnapcloud.com:~/deposit
 }
