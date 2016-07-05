@@ -1,9 +1,0 @@
-name: edx-jsinput
-root: ~/development/github/edx-jsinput
-
-windows:
-  - edx-jsinput:
-      layout: main-vertical
-      panes:
-        - cd .
-        - cd .

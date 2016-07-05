@@ -1,0 +1,9 @@
+name: stm-3rd-deliverable
+root: ~/development/stforge/polimi-casca/docs/deliverables/160704_3rd_deliverable
+
+windows:
+  - stm-3rd-deliverable:
+      layout: main-vertical
+      panes:
+        - cd .
+        - cd .

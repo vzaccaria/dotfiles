@@ -1,9 +1,0 @@
-name: stm-project-management
-root: ~/development/stforge/polimi-casca
-
-windows:
-  - stm-project-management:
-      layout: main-vertical
-      panes:
-        - vi "/Users/zaccaria/Dropbox/org/STMicro.org"
-        - vi ./docs/overview.org

@@ -1,9 +1,0 @@
-name: dev-exemd-dstruct
-root: ~/development/github/exemd-dstruct
-
-windows:
-  - dev-exemd-dstruct:
-      layout: main-vertical
-      panes:
-        - cd .
-        - cd .

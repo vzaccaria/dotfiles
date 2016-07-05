@@ -1,8 +1,0 @@
-name: stm-general-model
-root: ~/development/stforge/polimi-casca/docs/general-ideas/architecture/v2.0
-
-windows:
-  - stm-general-model:
-      layout: main-vertical
-      panes:
-        - open ~/development/stforge/polimi-casca/docs/general-ideas/architecture/v2.0/general_model_of_countermeasure.md -a "MacDown"

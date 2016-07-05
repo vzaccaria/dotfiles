@@ -1,9 +1,0 @@
-name: exemd
-root: ~/development/github/exemd
-
-windows:
-  - exemd:
-      layout: main-vertical
-      panes:
-        - cd .
-        - cd .

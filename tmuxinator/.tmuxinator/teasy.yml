@@ -1,9 +1,0 @@
-name: teasy
-root: ~/development/github/teasy
-
-windows:
-  - teasy:
-      layout: main-vertical
-      panes:
-        - cd .
-        - cd app

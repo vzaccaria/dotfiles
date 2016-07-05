@@ -1,8 +1,0 @@
-name: curriculum-research-update
-root: ~/development/github/vzaccaria.github.io/data
-
-windows:
-  - curriculum-research-update:
-      layout: main-vertical
-      panes:
-        - vi ~/development/github/vzaccaria.github.io/data/research.yaml

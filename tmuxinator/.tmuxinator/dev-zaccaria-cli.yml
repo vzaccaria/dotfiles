@@ -1,9 +1,0 @@
-name: dev-zaccaria-cli
-root: ~/development/github/zaccaria-cli
-
-windows:
-  - dev-zaccaria-cli:
-      layout: main-vertical
-      panes:
-        - cd .
-        - cd .

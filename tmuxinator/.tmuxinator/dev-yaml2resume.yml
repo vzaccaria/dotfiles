@@ -1,9 +1,0 @@
-name: dev-yaml2resume
-root: ~/development/github/yaml2resume/
-
-windows:
-  - dev-yaml2resume:
-      layout: main-vertical
-      panes:
-        - cd .
-        - cd .

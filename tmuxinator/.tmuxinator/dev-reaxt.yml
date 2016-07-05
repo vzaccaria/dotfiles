@@ -1,9 +1,0 @@
-name: dev-reaxt
-root: ~/development/github/jsx-latex/
-
-windows:
-  - dev-reaxt:
-      layout: main-vertical
-      panes:
-        - cd .
-        - cd .

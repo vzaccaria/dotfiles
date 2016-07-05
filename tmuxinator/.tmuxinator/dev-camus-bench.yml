@@ -1,9 +1,0 @@
-name: dev-camus-bench
-root: /Users/zaccaria/development/github/camus-icwe2016-figures
-
-windows:
-  - dev-camus-bench:
-      layout: main-vertical
-      panes:
-        - cd .
-        - cd .
