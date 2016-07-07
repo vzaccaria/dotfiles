@@ -16,3 +16,6 @@ from the github repo of the author.
 > git submodule update --init    # Update externals
 
 
+# How about updating all the modules?
+
+cd  $HOME/.zprezto && git pull && git submodule update --init --recursive

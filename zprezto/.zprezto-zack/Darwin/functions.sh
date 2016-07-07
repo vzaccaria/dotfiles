@@ -1,5 +1,6 @@
 # GitHub aliases
-eval "$(/usr/local/bin/hub alias -s)"
+# Commented because it (probably) conflicts with zsh autocompletion
+# -- eval "$(/usr/local/bin/hub alias -s)"
 
 # Zed magic cd
 . `brew --prefix`/etc/profile.d/z.sh

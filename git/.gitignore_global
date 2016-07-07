@@ -50,6 +50,7 @@ paperino*
 *.dyn_o
 *.ibc
 *.pyg
+*.toc
 
 
 # Packages #

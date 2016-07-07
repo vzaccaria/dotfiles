@@ -108,7 +108,7 @@ git-ignore-edit() {
 }
 
 git-chdir-into-root() {
-    cd "$(git rev-parse --show-toplevel)"
+    pushd "$(git rev-parse --show-toplevel)"
 }
 
 putfile() {

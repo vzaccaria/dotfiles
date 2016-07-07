@@ -22,3 +22,10 @@ fi
 
 # Setup common vi keybindings
 bindkey -v
+
+# This makes cd=pushd
+setopt AUTO_PUSHD
+
+# Who doesn't want home and end to work?
+bindkey '\e[1~' beginning-of-line
+bindkey '\e[4~' end-of-line
