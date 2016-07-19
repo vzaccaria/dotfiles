@@ -13,6 +13,7 @@
     prodigy
     docker
     gnu-apl-mode
+    haskell
     ))
 
 (defun personal/init-docker ()
@@ -144,3 +145,4 @@
     :tags '(grammar)
     :kill-process-buffer-on-stop t)
   )
+

@@ -24,7 +24,7 @@
 
 (global-set-key (kbd "M-r") 'eval-region)
 (global-set-key (kbd "M-t") 'beautify)
-(global-set-key (kbd "M-u") 'bs-show)
+(global-set-key (kbd "M-u") 'helm-buffers-list)
 (global-set-key (kbd "M-i") 'fill-paragraph)
 (global-set-key (kbd "M-o") 'term-fix-mouse)
 
