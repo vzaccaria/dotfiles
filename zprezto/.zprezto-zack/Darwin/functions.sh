@@ -3,6 +3,7 @@
 # -- eval "$(/usr/local/bin/hub alias -s)"
 
 # Zed magic cd
+# from here: https://github.com/rupa/z
 . `brew --prefix`/etc/profile.d/z.sh
 
 vi() {
