@@ -19,6 +19,10 @@ if [[ -s "${srcdir}/functions.sh" ]]; then
   source "${srcdir}/functions.sh"
 fi
 
+if [[ -s "${srcdir}/z.sh" ]]; then
+  source "${srcdir}/z.sh"
+fi
+
 
 # I dont remember why this is here..
 unsetopt correct_all
