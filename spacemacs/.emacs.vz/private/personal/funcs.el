@@ -263,6 +263,15 @@ current buffer's, reload dir-locals."
   (interactive)
   (align-regexp (region-beginning) (region-end) "\\(\\s-*\\):" 1 1 t))
 
+(defun vz/next-error ()
+  (interactive)
+  (spacemacs/next-error)
+  )
+
+(defun vz/previous-error ()
+  (interactive)
+  (spacemacs/previous-error)
+  )
 
 (defun org-text-bold () "Wraps the region with asterisks."
        (interactive)

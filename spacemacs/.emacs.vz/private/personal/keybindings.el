@@ -42,8 +42,8 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-c") 'pbcopy)
 (global-set-key (kbd "M-v") 'pbpaste)
-(global-set-key (kbd "M-b") 'recompile)
-(global-set-key (kbd "M-n") 'switch-to-next-buffer)
+(global-set-key (kbd "M-B") 'vz/previous-error)
+(global-set-key (kbd "M-b") 'vz/next-error)
 (global-set-key (kbd "M-m") 'switch-to-prev-buffer)
 
 (global-set-key (kbd "s-=") 'zoom-frm-in)
