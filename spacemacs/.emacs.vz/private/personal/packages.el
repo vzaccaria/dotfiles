@@ -31,24 +31,6 @@
   (setq-default ispell-program-name "/usr/local/bin/aspell")
   )
 
-(defun personal/post-init-ox-latex ()
-  (add-to-list 'org-latex-classes
-               '("article"
-                 "\\documentclass\{article\}
-                [NO-DEFAULT-PACKAGES]"
-                 ("\\section\{%s\}" . "\\section*\{%s\}")
-                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
-
-      ;;; same for beamer
-  (add-to-list 'org-latex-classes
-               '("beamer"
-                 "\\documentclass\[presentation\]\{beamer\}
-                [NO-DEFAULT-PACKAGES]"
-                 ("\\section\{%s\}" . "\\section*\{%s\}")
-                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
-  )
 
 ;; define initialization here
 (defun personal/post-init-org ()
@@ -117,6 +99,54 @@
           )
         )
 
+  (setf org-latex-default-packages-alist
+        (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
+
+  (unless (boundp 'org-latex-classes)
+    (setq org-latex-classes nil))
+
+  (add-to-list 'org-latex-classes
+               '("article"
+                 "\\documentclass\{article\}
+                [NO-DEFAULT-PACKAGES]"
+                 ("\\section\{%s\}" . "\\section*\{%s\}")
+                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
+
+      ;;; same for beamer
+  (add-to-list 'org-latex-classes
+               '("beamer"
+                 "\\documentclass\[presentation\]\{beamer\}
+                [NO-DEFAULT-PACKAGES]"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\begin{frame}[fragile]\\frametitle{%s}"
+                  "\\end{frame}"
+                  "\\begin{frame}[fragile]\\frametitle{%s}"
+                  "\\end{frame}")))
+
+
+  ;; duplicated.. dont ask me..
+  (unless (boundp 'org-export-latex-classes)
+    (setq org-export-latex-classes nil))
+
+  (add-to-list 'org-export-latex-classes
+               '("article"
+                 "\\documentclass\{article\}
+                [NO-DEFAULT-PACKAGES]"
+                 ("\\section\{%s\}" . "\\section*\{%s\}")
+                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
+
+      ;;; same for beamer
+  (add-to-list 'org-export-latex-classes
+               '("beamer"
+                 "\\documentclass\[presentation\]\{beamer\}
+                [NO-DEFAULT-PACKAGES]"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\begin{frame}[fragile]\\frametitle{%s}"
+                  "\\end{frame}"
+                  "\\begin{frame}[fragile]\\frametitle{%s}"
+                  "\\end{frame}")))
 
   )
 
