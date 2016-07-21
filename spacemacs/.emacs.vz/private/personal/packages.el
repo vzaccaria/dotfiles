@@ -2,10 +2,11 @@
 
 
 (defconst personal-packages
-  '(org
+  '(
+    ox-latex
+    org
     org-bullets
     ox
-    ox-latex
     ox-md
     ox-gfm
     spell-checking
@@ -28,6 +29,25 @@
 
 (defun personal/post-init-spell-checking ()
   (setq-default ispell-program-name "/usr/local/bin/aspell")
+  )
+
+(defun personal/post-init-ox-latex ()
+  (add-to-list 'org-latex-classes
+               '("article"
+                 "\\documentclass\{article\}
+                [NO-DEFAULT-PACKAGES]"
+                 ("\\section\{%s\}" . "\\section*\{%s\}")
+                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
+
+      ;;; same for beamer
+  (add-to-list 'org-latex-classes
+               '("beamer"
+                 "\\documentclass\[presentation\]\{beamer\}
+                [NO-DEFAULT-PACKAGES]"
+                 ("\\section\{%s\}" . "\\section*\{%s\}")
+                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
   )
 
 ;; define initialization here
@@ -96,22 +116,6 @@
 
           )
         )
-  (add-to-list 'org-latex-classes
-               '("article"
-                 "\\documentclass\{article\}
-                [NO-DEFAULT-PACKAGES]"
-                 ("\\section\{%s\}" . "\\section*\{%s\}")
-                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
-
-      ;;; same for beamer
-  (add-to-list 'org-latex-classes
-               '("beamer"
-                 "\\documentclass\[presentation\]\{beamer\}
-                [NO-DEFAULT-PACKAGES]"
-                 ("\\section\{%s\}" . "\\section*\{%s\}")
-                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
 
 
   )
