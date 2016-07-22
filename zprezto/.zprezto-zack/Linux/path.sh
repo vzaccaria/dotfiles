@@ -9,5 +9,6 @@ path=(\
     /usr/sbin \
     /usr/bin/X11 \
     /usr/local/sbin \
-    /usr/local/bin)
+    /usr/local/bin \
+    /root/.local/bin )
 
