@@ -1,9 +1,9 @@
-export PATH=$PATH:/opt/ghc/7.10.1/bin:/opt/cabal/1.22/bin
-
+echo "Overriding configuration for qnappino"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export DEFAULT_CHARSET=UTF-8
 export EDITOR=emacsclient
 export GIT_EDITOR=emacsclient
-export SHELL=/bin/zsh
+export SHELL=/opt/bin/zsh
+alias vi=vim
