@@ -1,7 +1,5 @@
 FROM    ubuntu:xenial
 
-RUN echo "Updated on July 21st, 2016"
-
 ENV DEBIAN_FRONTEND noninteractive
 ENV SHELL /bin/zsh
 ENTRYPOINT /bin/zsh
@@ -70,3 +68,12 @@ RUN mkdir -p /usr/local/share/fonts               && \
     chmod 777 -R /usr/local/share/fonts           && \
     fc-cache -fv
 
+RUN wget -q -O- https://s3.amazonaws.com/download.fpcomplete.com/ubuntu/fpco.key | apt-key add -
+RUN echo 'deb http://download.fpcomplete.com/ubuntu trusty main' | tee /etc/apt/sources.list.d/fpco.list
+RUN apt-get update && apt-get install stack -y
+RUN stack setup
+RUN apt-get install -y libtinfo-dev
+RUN apt-get install -y libncurses5-dev
+RUN stack install clash-ghc
+RUN stack install clash-prelude
+RUN stack install tasty tasty-hunit tasty-quickcheck
