@@ -60,3 +60,14 @@ dockshare-mount() {
    sshfs -p 21101 admin@vzaccaria.myqnapcloud.com:${DOCKSHARE_REMOTE_DIR} `grealpath $1` -ovolname=Data 
 }
 
+devenv-openx11() {
+    open -a "XQuartz"
+    socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\"
+}
+
+devenv-help() {
+    echo "1. Open X11 locally with devenv-openx11"
+    echo "2. On the remote machine, setup the following display:"
+    echo ""
+    echo "   export DISPLAY=`ip-show-all-local | grep 192.168.1`:0"
+}
