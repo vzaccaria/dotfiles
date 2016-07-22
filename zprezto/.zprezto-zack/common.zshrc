@@ -11,7 +11,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto-zack/${machine}/index.sh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto-zack/${machine}/index.sh"
 fi
 
-host=`uname`
+host=`hostname`
 
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto-zack/${machine}/${host}/index.sh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto-zack/${machine}/${host}/index.sh"
