@@ -11,5 +11,6 @@ vim/.vim/bundle/
 zprezto/.zprezto-zack/#functions.sh#
 qnap-certs
 zprezto/.zprezto
+zprezto/.zhistory
 .zhistory
 .zcompdump
