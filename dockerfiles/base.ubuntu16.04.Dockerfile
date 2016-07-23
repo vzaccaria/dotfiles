@@ -1,6 +1,6 @@
 FROM    ubuntu:xenial
 
-RUN echo "Updated on July 21st, 2016"
+RUN echo "Updated on July 23st, 2016"
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV SHELL /bin/zsh
@@ -40,7 +40,7 @@ WORKDIR /root/dotfiles/zprezto/.zprezto
 RUN git submodule update --init
 WORKDIR /root/dotfiles
 
-RUN stow zprezto tmux-linux spacemacs
+RUN stow zprezto tmux-linux spacemacs-linux
 
 WORKDIR /root
 

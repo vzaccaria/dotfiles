@@ -7,6 +7,8 @@ export EDITOR=emacsclient
 export GIT_EDITOR=emacsclient
 export SHELL=/opt/bin/zsh
 alias vi=vim
+alias ln=ln
+alias make=make
 
 spacemacs() {
 	docker run -ti --rm \
@@ -17,5 +19,5 @@ spacemacs() {
 	-e DISPLAY=$DISPLAY \
 	-e PATH=/root/.local/bin:/opt/bin:/opt/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin \
 	--name spacemacs \
-	vzaccaria/devenv:latest 
+	devenv-latest
 }

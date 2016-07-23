@@ -1,6 +1,6 @@
 
 
-devenv.Dockerfile: ./base.ubuntu16.04.Dockerfile haskell-clash.ubuntu14.04.Dockerfile
+devenv.Dockerfile: ./base.ubuntu16.04.Dockerfile haskell-clash.ubuntu14.04.Dockerfile devenv-finish.Dockerfile
 	cat $^ > $@
 
 build-devenv: devenv.Dockerfile
