@@ -1,4 +1,3 @@
-FROM    ubuntu:trusty
 
 RUN echo "Updated on July 23st, 2016"
 

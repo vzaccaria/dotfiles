@@ -21,8 +21,7 @@ RUN ./configure --build=i686-pc-linux-gnu "CFLAGS=-m32" "CXXFLAGS=-m32" "LDFLAGS
 RUN make -j8
 RUN chmod +x /root/modelsim/ModelSimSetup-13.1.0.162.run 
 RUN /root/modelsim/ModelSimSetup-13.1.0.162.run --mode unattended --installdir /root/altera
-RUN mkdir -p /root/.local/bin
-RUN ln -s /root/modelsim_ase/bin/vsim /root/.local/bin
+RUN ln -s /root/modelsim_ase/bin /root/.local/bin
 RUN echo 'export LD_LIBRARY_PATH=/root/freetype/freetype-2.4.12/objs/.libs' > /root/.local/bin/start_vsim
 RUN chmod +x /root/.local/bin/start_vsim
 
