@@ -66,3 +66,5 @@ alias battery-time-left="pmset -g batt | egrep \"([0-9]+\%).*\" -o --colour=auto
 
 alias no-sleep-for-one-hour="caffeinate -u -t 3600"
 
+alias make='gmake'
+
