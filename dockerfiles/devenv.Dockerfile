@@ -1,4 +1,4 @@
-FROM    ubuntu:xenial
+FROM    ubuntu:trusty
 
 RUN echo "Updated on July 23st, 2016"
 
@@ -25,11 +25,25 @@ RUN apt-get install -y \
     libglu1-mesa \
     ispell \
     screen \
+    silversearcher-ag \
+    software-properties-common \
+    llvm-3.5 \
+    llvm-3.5-dev \
+    clang-3.5 \
     tmux 
 
 
 RUN apt-get install -y nodejs \
     build-essential
+
+RUN apt-get build-dep -y emacs24
+RUN mkdir -p /root/emacs
+WORKDIR /root/emacs
+RUN wget ftp.gnu.org/gnu/emacs/emacs-24.4.tar.xz
+RUN tar -xf emacs-24.4.tar.xz
+WORKDIR /root/emacs/emacs-24.4
+RUN ./configure
+RUN make install
 
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 RUN git clone https://github.com/syl20bnr/spacemacs /root/.emacs.d
@@ -47,6 +61,7 @@ WORKDIR /root
 ##-- Install Emacs
 ##
 
+ENV PATH /usr/local/bin:$PATH
 RUN emacs --insecure -nw -batch -u "${UNAME}" -q -kill
 RUN emacs --insecure -nw -batch -u "${UNAME}" -q -kill
 

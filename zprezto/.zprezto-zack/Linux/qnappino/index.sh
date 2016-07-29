@@ -19,5 +19,17 @@ spacemacs() {
 	-e DISPLAY=$DISPLAY \
 	-e PATH=/root/.local/bin:/opt/bin:/opt/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin \
 	--name spacemacs \
-	devenv-latest
+	devenv-latest \
+	emacs
+}
+
+modelsim() {
+	docker run -ti --rm \
+	-v /etc/localtime:/etc/localtime:ro                     \
+	-v /share/CACHEDEV1_DATA/homes/admin/projects:/projects \
+	-e DISPLAY=$DISPLAY \
+	-e PATH=/root/.local/bin:/opt/bin:/opt/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin \
+	--name modelsim \
+	modelsim-latest \
+	/bin/zsh
 }
