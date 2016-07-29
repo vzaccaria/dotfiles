@@ -1,4 +1,5 @@
-FROM    ubuntu:trusty
+FROM    ubuntu:xenial
+
 
 RUN echo "Updated on July 23st, 2016"
 
@@ -30,20 +31,12 @@ RUN apt-get install -y \
     llvm-3.5 \
     llvm-3.5-dev \
     clang-3.5 \
-    tmux 
+    tmux \
+    unzip \
+    nodejs \
+    build-essential \
+    vim 
 
-
-RUN apt-get install -y nodejs \
-    build-essential
-
-RUN apt-get build-dep -y emacs24
-RUN mkdir -p /root/emacs
-WORKDIR /root/emacs
-RUN wget ftp.gnu.org/gnu/emacs/emacs-24.4.tar.xz
-RUN tar -xf emacs-24.4.tar.xz
-WORKDIR /root/emacs/emacs-24.4
-RUN ./configure
-RUN make install
 
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 RUN git clone https://github.com/syl20bnr/spacemacs /root/.emacs.d
@@ -77,7 +70,6 @@ RUN git config --global user.name "Vittorio Zaccaria"
 ADD https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.zip /tmp/scp.zip
 ADD http://www.ffonts.net/NanumGothic.font.zip /tmp/ng.zip
 
-RUN apt-get install -y unzip
 RUN mkdir -p /usr/local/share/fonts               && \
     unzip /tmp/scp.zip -d /usr/local/share/fonts  && \
     unzip /tmp/ng.zip -d /usr/local/share/fonts   && \
@@ -89,10 +81,3 @@ RUN wget -q -O- https://s3.amazonaws.com/download.fpcomplete.com/ubuntu/fpco.key
 RUN echo 'deb http://download.fpcomplete.com/ubuntu trusty main' | tee /etc/apt/sources.list.d/fpco.list
 RUN apt-get update && apt-get install stack -y
 RUN stack setup
-RUN apt-get install -y libtinfo-dev
-RUN apt-get install -y libncurses5-dev
-RUN stack install clash-ghc
-RUN stack install clash-prelude
-RUN stack install tasty tasty-hunit tasty-quickcheck
-
-CMD emacs
