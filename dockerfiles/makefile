@@ -13,7 +13,7 @@ $(G)/modelsim.Dockerfile: 	$(R)/from.ubuntu14.04.Dockerfile \
 				$(R)/vhdl.Dockerfile
 	cat $^ > $@
 
-build-%: %.Dockerfile
+build-%: $(G)/%.Dockerfile
 	docker --tlsverify build -f $< -t $*-latest .
 
 # push-devenv-%:
