@@ -1,11 +1,21 @@
 
+R=./recipes
+G=./generated
 
-devenv.Dockerfile: ./base.ubuntu16.04.Dockerfile haskell-clash.ubuntu14.04.Dockerfile
+all: $(G)/devenv.Dockerfile $(G)/modelsim.Dockerfile
+
+$(G)/devenv.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile \
+			$(R)/base.Dockerfile \
+			$(R)/haskell.Dockerfile 
 	cat $^ > $@
 
-build-devenv: devenv.Dockerfile
-	docker --tlsverify build -f $< -t devenv-latest .
+$(G)/modelsim.Dockerfile: 	$(R)/from.ubuntu14.04.Dockerfile \
+				$(R)/vhdl.Dockerfile
+	cat $^ > $@
 
-push-devenv-%:
-	docker --tlsverify tag devenv-latest vzaccaria/devenv:$*
-	docker --tlsverify push vzaccaria/devenv
+build-%: $(G)/%.Dockerfile
+	docker --tlsverify build -f $< -t $*-latest .
+
+# push-devenv-%:
+# 	docker --tlsverify tag devenv-latest vzaccaria/devenv:$*
+# 	docker --tlsverify push vzaccaria/devenv
