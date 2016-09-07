@@ -60,6 +60,16 @@ dockshare-mount() {
    sshfs -p 21101 admin@vzaccaria.myqnapcloud.com:${DOCKSHARE_REMOTE_DIR} `grealpath $1` -ovolname=Data 
 }
 
+qnap-mount-backup() {
+   mkdir -p /Volumes/Data
+   sshfs -p 21101 admin@vzaccaria.myqnapcloud.com:/share/CACHEDEV1_DATA/Multimedia/Data /Volumes/Data -ovolname=Data 
+}
+
+qnap-mount-multimedia() {
+   mkdir -p /Volumes/Multimedia
+   sshfs -p 21101 admin@vzaccaria.myqnapcloud.com:/share/CACHEDEV1_DATA/Multimedia /Volumes/Multimedia -ovolname=Multimedia
+}
+
 devenv-openx11() {
     open -a "XQuartz"
     socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\"
@@ -71,3 +81,8 @@ devenv-help() {
     echo ""
     echo "   export DISPLAY=`ip-show-all-local | grep 192.168.1`:0"
 }
+
+# Not working:
+# qnap-mount-multimedia() {
+#     sudo mount -o rw,bg,hard,resvport,intr,noac,nfc,tcp 192.168.1.120:/Multimedia /Volumes/Multimedia/
+# }

@@ -118,14 +118,13 @@
                '("beamer"
                  "\\documentclass\[presentation\]\{beamer\}
                 [NO-DEFAULT-PACKAGES]"
-                 ("\\section{%s}" . "\\section*{%s}")
-                 ("\\begin{frame}[fragile]\\frametitle{%s}"
-                  "\\end{frame}"
-                  "\\begin{frame}[fragile]\\frametitle{%s}"
-                  "\\end{frame}")))
+                 ("\\section\{%s\}" . "\\section*\{%s\}")
+                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
 
 
   ;; duplicated.. dont ask me..
+  ;; the following are needed to compile correctly lecture files.
   (unless (boundp 'org-export-latex-classes)
     (setq org-export-latex-classes nil))
 
@@ -142,12 +141,9 @@
                '("beamer"
                  "\\documentclass\[presentation\]\{beamer\}
                 [NO-DEFAULT-PACKAGES]"
-                 ("\\section{%s}" . "\\section*{%s}")
-                 ("\\begin{frame}[fragile]\\frametitle{%s}"
-                  "\\end{frame}"
-                  "\\begin{frame}[fragile]\\frametitle{%s}"
-                  "\\end{frame}")))
-
+                 ("\\section\{%s\}" . "\\section*\{%s\}")
+                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
   )
 
 (defun personal/post-init-org-bullets ()
