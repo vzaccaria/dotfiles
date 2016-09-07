@@ -32,3 +32,25 @@ modelsim() {
 	modelsim-latest \
 	/bin/zsh
 }
+
+start-lychee() {
+	docker run -it -d -p 8181:80 \
+	-v /share/CACHEDEV1_DATA/Web/Lychee/photos:/photos/ \
+	--name lychee \
+	kdelfour/lychee-docker
+}
+
+start-koken() {
+	docker run -it -d -p 8181:8080 \
+	-v /share/CACHEDEV1_DATA/Web/Koken/www:/usr/share/nginx/www \
+	-v /share/CACHEDEV1_DATA/Web/Koken/mysql:/var/lib/mysql \
+	koken/koken-lemp /sbin/my_init
+}
+
+start-mediagoblin() {
+	docker run -it -d \
+	-p 9543:6543 \
+	-p 9544:22 \
+	mtnate/mediagoblin
+	echo 'ssh root@localhost -p 9544 tail -f /var/log/supervisor/mediagoblin.log'
+}
