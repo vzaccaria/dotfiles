@@ -48,4 +48,4 @@ show: show-procs
 
 stop: kill-procs
 
-include build.make
+include $(MAKEROOT)/build.make

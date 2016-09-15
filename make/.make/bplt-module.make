@@ -11,7 +11,7 @@ JS_VERB_SRC ?= $(wildcard $(JS_DOCS_SRCDIR)/*.md)
 
 MD_README_TGT ?= readme.md
 
-include index.make
+include $(MAKEROOT)/index.make
 
 vpath %.js $(JS_BABEL_SRCDIR)
 JS_BABEL_SRC = $(wildcard $(JS_BABEL_SRCDIR)/*.js)
