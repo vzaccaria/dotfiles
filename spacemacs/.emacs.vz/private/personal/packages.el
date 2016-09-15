@@ -15,6 +15,7 @@
     docker
     gnu-apl-mode
     haskell
+    mu4e
     ))
 
 (defun personal/init-docker ()
@@ -176,3 +177,123 @@
     :kill-process-buffer-on-stop t)
   )
 
+
+(defun personal/post-init-mu4e ()
+  (use-package mu4e
+    :defer t
+    :commands mu4e
+    :config
+    (setq mu4e-maildir "~/mu-mail/")
+    (setq mu4e-get-mail-command "offlineimap")
+    (setq mu4e-trash-folder "/[Gmail].Trash"
+          mu4e-refile-folder "/[Gmail].All Mail"
+          mu4e-sent-folder "/[Gmail].Sent Mail"
+          mu4e-drafts-folder "/[Gmail].Drafts"
+          mu4e-get-mail-command "offlineimap"
+          ;; update every 5 minutes
+          mu4e-update-interval 300
+          mu4e-compose-signature-auto-include nil
+          mu4e-view-show-images t
+          mu4e-view-show-addresses t)
+
+    ;; don't keep message buffers around
+    (setq message-kill-buffer-on-exit t)
+    (setq mu4e-use-fancy-chars t
+          mu4e-headers-draft-mark     '("D" . "⚒ ")  ; draft
+          mu4e-headers-seen-mark      '("S" . "☑ ")  ; seen
+          mu4e-headers-unseen-mark    '("u" . "☐ ")  ; unseen
+          mu4e-headers-flagged-mark   '("F" .  "⚵ ") ; flagged
+          mu4e-headers-new-mark       '("N" .  "✉ ") ; new
+          mu4e-headers-replied-mark   '("R" . "↵ ")  ; replied
+          mu4e-headers-passed-mark    '("P" . "⇉ ")  ; passed
+          mu4e-headers-encrypted-mark '("x" . "⚷ ")  ; encrypted
+          mu4e-headers-signed-mark    '("s" . "✍ ")) ; signed
+
+    (setq mu4e-sent-messages-behavior 'delete)
+
+    (setq mu4e-contexts
+          `( ,(make-mu4e-context
+               :name "Private"
+               :enter-func (lambda () (mu4e-message "Switch to the Private context"))
+               ;; leave-func not defined
+
+               :match-func (lambda (msg)
+                             (let ((email "vittorio.zaccaria@gmail.com"))
+                               (when msg
+                                 (or
+                                  (mu4e-message-contact-field-matches msg :to email)
+                                  (mu4e-message-contact-field-matches msg :cc email)
+                                  (mu4e-message-contact-field-matches msg :from email)
+                                  ))))
+
+
+               :vars '(  ( user-mail-address	. "vittorio.zaccaria@gmail.com"  )
+                         ( user-full-name	    . "Vittorio Zaccaria" )
+                         ))
+
+            ,(make-mu4e-context
+              :name "Work"
+              :enter-func (lambda () (mu4e-message "Switch to Work Context"))
+              ;; leave-func not defined
+
+              :match-func (lambda (msg)
+                            (let ((email "vittorio.zaccaria@polimi.it"))
+                              (when msg
+                                (or
+                                  (mu4e-message-contact-field-matches msg :to email)
+                                  (mu4e-message-contact-field-matches msg :cc email)
+                                  (mu4e-message-contact-field-matches msg :from email)
+                                  ))))
+
+
+              :vars '(  ( user-mail-address	. "vittorio.zaccaria@polimi.it"  )
+                        ( user-full-name	    . "Vittorio Zaccaria" )
+                        ))))
+
+    ;; This sets `mu4e-user-mail-address-list' to the concatenation of all
+    ;; `user-mail-address' values for all contexts. If you have other mail
+    ;; addresses as well, you'll need to add those manually.
+    (setq mu4e-user-mail-address-list
+          (delq nil
+          (mapcar (lambda (context)
+                    (when (mu4e-context-vars context)
+                      (cdr (assq 'user-mail-address (mu4e-context-vars context)))))
+                  mu4e-contexts)))
+
+    (setq message-send-mail-function 'smtpmail-send-it
+          starttls-use-gnutls t
+          smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+          smtpmail-auth-credentials
+          '(("smtp.gmail.com" 587 "vittorio.zaccaria@gmail.com" nil))
+          smtpmail-default-smtp-server "smtp.gmail.com"
+          smtpmail-smtp-server "smtp.gmail.com"
+          smtpmail-smtp-service 587)
+
+    ;; headers view
+    (setq mu4e-headers-results-limit 500
+          mu4e-headers-show-threads t
+          ;; mu4e-headers-skip-duplicates t
+          mu4e-headers-date-format "%d %b %Y"
+          mu4e-headers-time-format "%H:%M"
+          mu4e-headers-fields
+          '( (:human-date     .  15)
+             (:flags          .   5)
+             (:from           .  30)
+             (:subject        .  nil))
+          mu4e-headers-sort-field :date
+          mu4e-headers-sort-direction 'descending)
+
+    (setq mu4e-bookmarks
+          '(
+          ("maildir:/INBOX AND flag:unread"                        "Inbox"               ?i)
+
+          ))
+
+    (setq mu4e-maildir-shortcuts
+          '( ("/INBOX"       . ?I)
+             ("/Sent Mail"   . ?s)
+             ("/Drafts"      . ?d)
+             ("/Trash"       . ?t)
+             ("/All Mail"    . ?a)))
+  )
+)

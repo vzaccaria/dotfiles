@@ -44,6 +44,7 @@ values."
      prodigy
      dockerfile
      ;; my personal layer
+     (mu4e :variables mu4e-installation-path "/usr/local/Cellar/mu/HEAD-8d345ee/share/emacs/site-lisp/mu/mu4e")
      personal
      latex
      emoji
@@ -114,8 +115,8 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         spacemacs-light
                          spacemacs-dark
+                         spacemacs-light
                          solarized-light
                          solarized-dark
                          leuven
@@ -314,7 +315,8 @@ you should place you code here."
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
    (quote
-    ("/Users/zaccaria/Dropbox/org/Casa.org" "/Users/zaccaria/Dropbox/org/EDX.org" "/Users/zaccaria/Dropbox/org/InfoBOrg.org" "/Users/zaccaria/Dropbox/org/ListaViaggio.org" "/Users/zaccaria/Dropbox/org/Missioni.org" "/Users/zaccaria/Dropbox/org/Rendicontazione.org" "/Users/zaccaria/Dropbox/org/STMicro.org" "/Users/zaccaria/Dropbox/org/Teasy-2.0.org" "/Users/zaccaria/Dropbox/org/Today.org" "/Users/zaccaria/Dropbox/org/curriculum.org" "/Users/zaccaria/Dropbox/org/deft-0.org" "/Users/zaccaria/Dropbox/org/header.org" "/Users/zaccaria/Dropbox/org/thesis.org" "/Users/zaccaria/Dropbox/org/work.org" "/Users/zaccaria/Dropbox/org/howtos/Ansible.org" "/Users/zaccaria/Dropbox/org/howtos/CLaSH.org" "/Users/zaccaria/Dropbox/org/howtos/Devop.org" "/Users/zaccaria/Dropbox/org/howtos/Docker.org" "/Users/zaccaria/Dropbox/org/howtos/EDXDevop.org" "/Users/zaccaria/Dropbox/org/howtos/Emacs.org" "/Users/zaccaria/Dropbox/org/howtos/Github.org" "/Users/zaccaria/Dropbox/org/howtos/Kubernetes.org" "/Users/zaccaria/Dropbox/org/howtos/Make.org" "/Users/zaccaria/Dropbox/org/howtos/Python.org" "/Users/zaccaria/Dropbox/org/howtos/QNAP.org" "/Users/zaccaria/Dropbox/org/howtos/ReviewTemplate.org" "/Users/zaccaria/Dropbox/org/howtos/Stack.org" "/Users/zaccaria/Dropbox/org/howtos/haskellDSL.org" "/Users/zaccaria/Dropbox/org/research/ResearchPlan.org" "/Users/zaccaria/Dropbox/org/research/robotics.org" "/Users/zaccaria/Dropbox/org/research/webtech.org" "/Users/zaccaria/Dropbox/org/other/olio.org" "/Users/zaccaria/Dropbox/org/other/reviews.org"))))
+    ("/Users/zaccaria/Dropbox/org/Casa.org" "/Users/zaccaria/Dropbox/org/EDX.org" "/Users/zaccaria/Dropbox/org/InfoBOrg.org" "/Users/zaccaria/Dropbox/org/ListaViaggio.org" "/Users/zaccaria/Dropbox/org/Missioni.org" "/Users/zaccaria/Dropbox/org/Rendicontazione.org" "/Users/zaccaria/Dropbox/org/STMicro.org" "/Users/zaccaria/Dropbox/org/Teasy-2.0.org" "/Users/zaccaria/Dropbox/org/Today.org" "/Users/zaccaria/Dropbox/org/curriculum.org" "/Users/zaccaria/Dropbox/org/deft-0.org" "/Users/zaccaria/Dropbox/org/header.org" "/Users/zaccaria/Dropbox/org/thesis.org" "/Users/zaccaria/Dropbox/org/work.org" "/Users/zaccaria/Dropbox/org/howtos/Ansible.org" "/Users/zaccaria/Dropbox/org/howtos/CLaSH.org" "/Users/zaccaria/Dropbox/org/howtos/Devop.org" "/Users/zaccaria/Dropbox/org/howtos/Docker.org" "/Users/zaccaria/Dropbox/org/howtos/EDXDevop.org" "/Users/zaccaria/Dropbox/org/howtos/Emacs.org" "/Users/zaccaria/Dropbox/org/howtos/Github.org" "/Users/zaccaria/Dropbox/org/howtos/Kubernetes.org" "/Users/zaccaria/Dropbox/org/howtos/Make.org" "/Users/zaccaria/Dropbox/org/howtos/Python.org" "/Users/zaccaria/Dropbox/org/howtos/QNAP.org" "/Users/zaccaria/Dropbox/org/howtos/ReviewTemplate.org" "/Users/zaccaria/Dropbox/org/howtos/Stack.org" "/Users/zaccaria/Dropbox/org/howtos/haskellDSL.org" "/Users/zaccaria/Dropbox/org/research/ResearchPlan.org" "/Users/zaccaria/Dropbox/org/research/robotics.org" "/Users/zaccaria/Dropbox/org/research/webtech.org" "/Users/zaccaria/Dropbox/org/other/olio.org" "/Users/zaccaria/Dropbox/org/other/reviews.org")))
+ '(send-mail-function (quote smtpmail-send-it)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
