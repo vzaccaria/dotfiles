@@ -7,6 +7,7 @@
 . `brew --prefix`/etc/profile.d/z.sh
 
 alias vim=/usr/local/bin/vim
+alias emacsclient=/opt/homebrew-cask/Caskroom/emacs/24.5-1/Emacs.app/Contents/MacOS/bin/emacsclient
 
 vi() {
     emacsclient -nw "$@" -c

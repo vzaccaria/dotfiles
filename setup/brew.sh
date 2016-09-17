@@ -155,9 +155,17 @@ brew install pandoc
 brew install pandoc-citeproc
 brew install asciidoc
 brew install aspell
+brew install ispell
 brew install bibtex2html
 brew install emacs
 brew install languagetool
+
+#######################
+# Mail in Emacs
+#######################
+
+brew install mu --with-emacs 
+brew install offlineimap
 
 
 
