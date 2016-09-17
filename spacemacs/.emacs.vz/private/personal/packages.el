@@ -185,11 +185,13 @@
 ;;     "a m s" 'helm-mu
 ;;     "a m c" 'helm-mu-contacts))
 
-(defun my-mu4e/init-helm-mu ()
+(defun personal/init-helm-mu ()
   (use-package helm-mu
     :defer t
     :commands helm-mu
-    :init (spacemacs/set-leader-keys "oM" 'helm-mu
+    :init
+    (require 'helm-config)
+    (spacemacs/set-leader-keys "oM" 'helm-mu
             "oC" 'helm-mu-contacts))
     )
 
