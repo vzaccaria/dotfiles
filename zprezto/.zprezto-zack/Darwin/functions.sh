@@ -6,6 +6,8 @@
 # from here: https://github.com/rupa/z
 . `brew --prefix`/etc/profile.d/z.sh
 
+alias vim=/usr/local/bin/vim
+
 vi() {
     emacsclient -nw "$@" -c
 }

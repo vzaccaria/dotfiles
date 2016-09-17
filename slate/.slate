@@ -17,15 +17,15 @@ config resizePercentOf screenSize
 
 alias full        move  screenOriginX;screenOriginY                 screenSizeX;screenSizeY
 alias lefthalf    move  screenOriginX;screenOriginY                 screenSizeX/2;screenSizeY
-alias leftq       move  screenOriginX;screenOriginY                 screenSizeX/4;screenSizeY
+alias leftq       move  screenOriginX;screenOriginY                 screenSizeX/2;screenSizeY
 alias righthalf   move  screenOriginX+screenSizeX/2;screenOriginY   screenSizeX/2;screenSizeY
-alias rightiq     move  screenOriginX+screenSizeX/4;screenOriginY   3*screenSizeX/4;screenSizeY
-alias qhalf       move  screenOriginX;screenOriginY                 screenSizeX/4;screenSizeY
+alias rightiq     move  screenOriginX+screenSizeX/2;screenOriginY   screenSizeX/2;screenSizeY
+alias qhalf       move  screenOriginX;screenOriginY                 screenSizeX/2;screenSizeY
 
-alias leftq1		move  screenOriginX;screenOriginY                               screenSizeX/4;screenSizeY/2
-alias leftq2		move  screenOriginX+screenSizeX/4;screenOriginY                 screenSizeX/4;screenSizeY/2
-alias leftq3		move  screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX/4;screenSizeY/2
-alias leftq4		move  screenOriginX+screenSizeX/4;screenOriginY+screenSizeY/2		screenSizeX/4;screenSizeY/2
+alias leftq1		move  screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY/2
+alias leftq2		move  screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY/2
+alias leftq3		move  screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX/2;screenSizeY/2
+alias leftq4		move  screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2		screenSizeX/2;screenSizeY/2
 
 alias topleft     corner  top-left                  resize:screenSizeX/2;screenSizeY/2
 alias topright    corner  top-right                   resize:screenSizeX/2;screenSizeY/2

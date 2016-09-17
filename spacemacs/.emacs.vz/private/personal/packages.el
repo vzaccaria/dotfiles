@@ -16,6 +16,7 @@
     gnu-apl-mode
     haskell
     mu4e
+    helm-mu
     ))
 
 (defun personal/init-docker ()
@@ -178,36 +179,63 @@
   )
 
 
-(defun personal/post-init-mu4e ()
+
+;; (defun personal/init-helm-mu ()
+;;   (spacemacs/set-leader-keys
+;;     "a m s" 'helm-mu
+;;     "a m c" 'helm-mu-contacts))
+
+(defun my-mu4e/init-helm-mu ()
+  (use-package helm-mu
+    :defer t
+    :commands helm-mu
+    :init (spacemacs/set-leader-keys "oM" 'helm-mu
+            "oC" 'helm-mu-contacts))
+    )
+
+
+(defun personal/pre-init-mu4e ()
   (use-package mu4e
     :defer t
     :commands mu4e
     :config
     (setq mu4e-maildir "~/mu-mail/")
-    (setq mu4e-get-mail-command "offlineimap")
+    (setq mu4e-get-mail-command "offlineimap -f INBOX")
     (setq mu4e-trash-folder "/[Gmail].Trash"
           mu4e-refile-folder "/[Gmail].All Mail"
           mu4e-sent-folder "/[Gmail].Sent Mail"
           mu4e-drafts-folder "/[Gmail].Drafts"
-          mu4e-get-mail-command "offlineimap"
           ;; update every 5 minutes
           mu4e-update-interval 300
+          mu4e-split-view 'horizontal 
+          mu4e-headers-auto-update t
+          mu4e-headers-leave-behavior 'apply
+          mu4e-headers-visible-columns 100
           mu4e-compose-signature-auto-include nil
+          mu4e-compose-complete-only-personal t
           mu4e-view-show-images t
           mu4e-view-show-addresses t)
 
     ;; don't keep message buffers around
     (setq message-kill-buffer-on-exit t)
-    (setq mu4e-use-fancy-chars t
-          mu4e-headers-draft-mark     '("D" . "⚒ ")  ; draft
-          mu4e-headers-seen-mark      '("S" . "☑ ")  ; seen
-          mu4e-headers-unseen-mark    '("u" . "☐ ")  ; unseen
-          mu4e-headers-flagged-mark   '("F" .  "⚵ ") ; flagged
-          mu4e-headers-new-mark       '("N" .  "✉ ") ; new
-          mu4e-headers-replied-mark   '("R" . "↵ ")  ; replied
-          mu4e-headers-passed-mark    '("P" . "⇉ ")  ; passed
-          mu4e-headers-encrypted-mark '("x" . "⚷ ")  ; encrypted
-          mu4e-headers-signed-mark    '("s" . "✍ ")) ; signed
+    (setq mu4e-use-fancy-chars  t
+          mu4e-headers-attach-mark '("" . "")
+          mu4e-headers-encrypted-mark '("" . "")
+          mu4e-headers-flagged-mark '("+" . "⚑")
+          mu4e-headers-list-mark '("" . "")
+          mu4e-headers-new-mark '("" . "")
+          mu4e-headers-read-mark '("" . "")
+          mu4e-headers-replied-mark '("" . "↩")
+          mu4e-headers-seen-mark '("" . "")
+          mu4e-headers-unseen-mark '("" . "")
+          mu4e-headers-unread-mark '("" . "✱")
+          mu4e-headers-signed-mark '("" . "")
+          mu4e-headers-from-or-to-prefix '("" . "→ ")
+          mu4e-headers-has-child-prefix '("+" . "└┬")
+          mu4e-headers-first-child-prefix '("|" . "├")
+          mu4e-headers-default-prefix '("" . "├"))
+
+
 
     (setq mu4e-sent-messages-behavior 'delete)
 
@@ -285,12 +313,21 @@
 
     (setq mu4e-bookmarks
           '(
-          ("maildir:/INBOX AND flag:unread"                        "Inbox"               ?i)
+          ("maildir:/INBOX"                        "Inbox"               ?i)
+          ("date:today..now"                       "Today"               ?t)
 
           ))
 
+    (spacemacs|use-package-add-hook mu4e
+      :post-config
+      (progn
+        (add-to-list 'mu4e-view-actions '("gopen in gmail" . djr/mu4e-open-message-in-google) t)
+        (add-to-list 'mu4e-view-actions '("rview related" . djr/mu4e-view-related-search) t)))
+
+
+
     (setq mu4e-maildir-shortcuts
-          '( ("/INBOX"       . ?I)
+          '( ("/INBOX"       . ?i)
              ("/Sent Mail"   . ?s)
              ("/Drafts"      . ?d)
              ("/Trash"       . ?t)

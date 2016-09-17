@@ -18,15 +18,15 @@
 (global-set-key (kbd "M-2") 'org-todo-list)
 
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
-(global-set-key (kbd "M-w") 'kill-this-buffer)
+(global-set-key (kbd "M-w") 'delete-window)
 (global-set-key (kbd "M-e") 'personal/show-agenda-all)
 
 
 (global-set-key (kbd "M-r") 'eval-region)
 (global-set-key (kbd "M-t") 'beautify)
-(global-set-key (kbd "M-u") 'helm-buffers-list)
-(global-set-key (kbd "M-i") 'fill-paragraph)
-(global-set-key (kbd "M-o") 'term-fix-mouse)
+(global-set-key (kbd "M-u") 'helm-mini)
+(global-set-key (kbd "M-i") 'auto-fill-mode)
+(global-set-key (kbd "M-o") 'mu4e-headers-search-bookmark)
 
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "M-s") 'evil-write-all)
@@ -44,7 +44,6 @@
 (global-set-key (kbd "M-v") 'pbpaste)
 (global-set-key (kbd "M-B") 'vz/previous-error)
 (global-set-key (kbd "M-b") 'vz/next-error)
-(global-set-key (kbd "M-m") 'switch-to-prev-buffer)
 
 (global-set-key (kbd "s-=") 'zoom-frm-in)
 (global-set-key (kbd "s--") 'zoom-frm-out)
