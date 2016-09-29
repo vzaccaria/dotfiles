@@ -31,6 +31,15 @@ brew cask install dash # Licensed version: 2.2.6
 brew cask install google-chrome
 brew cask install cakebrew
 
+##########################
+# Fonts
+##########################
+brew cask install \
+     font-fira-code \
+     font-fira-mono \
+     font-fira-mono-for-powerline \
+     font-fira-sans
+
 # Other, not on cask
 # - cobook
 # - 1keyboard
@@ -64,6 +73,7 @@ brew install coreutils
 brew install dos2unix
 brew install ssh-copy-id
 brew install homebrew/dupes/make # Gmake 4.1 !
+brew install gnutls
 
 
 ##########################
@@ -132,6 +142,7 @@ brew install trash
 # Graphics/Diagrams
 ##########################
 
+brew install ghostscript
 brew install imagemagick --with-webp
 brew install plantuml
 brew install graphviz
@@ -154,7 +165,7 @@ brew cask install adobe-photoshop-lightroom
 brew install pandoc
 brew install pandoc-citeproc
 brew install asciidoc
-brew install aspell
+brew install aspell --with-lang-it --with-lang-en
 brew install ispell
 brew install bibtex2html
 brew install emacs
