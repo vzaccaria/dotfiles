@@ -12,6 +12,15 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cj" 'js-doc-insert-function-doc)
 
+(global-set-key (kbd "<f1>")  'vz/open-inbox)
+(global-set-key (kbd "<f2>")  'vz/open-today)
+ 
+(global-set-key (kbd "<f4>")  'personal/show-agenda-all)
+(global-set-key (kbd "<f5>")  'helm-mu)
+(global-set-key (kbd "<f7>")  'vz/open-today)
+(global-set-key (kbd "<f6>")  'vz/open-inbox)
+(global-set-key (kbd "<f12>") 'helm-mu)
+
 ;; to make your life easier; dont add any other character after M-* (!!!)
 (global-set-key (kbd "M-`") 'toggle-window-split)
 (global-set-key (kbd "M-1") 'org-agenda-list)
@@ -25,8 +34,8 @@
 (global-set-key (kbd "M-r") 'eval-region)
 (global-set-key (kbd "M-t") 'beautify)
 (global-set-key (kbd "M-u") 'helm-mini)
-(global-set-key (kbd "M-i") 'auto-fill-mode)
-(global-set-key (kbd "M-o") 'mu4e-headers-search-bookmark)
+(global-set-key (kbd "M-i") 'fill-paragraph)
+(global-set-key (kbd "M-o") 'vz/switch-dictionary)
 
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "M-s") 'evil-write-all)
@@ -47,6 +56,9 @@
 
 (global-set-key (kbd "s-=") 'zoom-frm-in)
 (global-set-key (kbd "s--") 'zoom-frm-out)
+
+(global-set-key (kbd "<mouse-4>") 'down-slightly)
+(global-set-key (kbd "<mouse-5>") 'up-slightly)
 
 
 ;; ESS mode hooks

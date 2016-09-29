@@ -50,9 +50,9 @@
               "~/Dropbox/org/howtos"
               "~/Dropbox/org/research"
               "~/Dropbox/org/other"
-              "/Users/zaccaria/Dropbox/Commuting/Altro/Personal/Chiara/Casa/Viale Varese/Casa.org"
-              "~/development/github/materiale-corsi/documents/lectures/infob/programma-dettagliato/InfoBProg.org"
-              "~/development/github/materiale-corsi/documents/lectures/infob/materiale/InfoBMat.org"))
+              "~/development/github/materiale-corsi/infob/administration/programma-dettagliato/InfoBProg.org"
+              "~/development/github/materiale-corsi/infob/InfoBMat.org"
+              ))
 
   (setq org-todo-keywords
         '((sequence "TODO" "TODAY" "CHECK" "|" "DONE" "CANCELLED")
@@ -83,7 +83,7 @@
      ))
 
   (setq org-babel-js-cmd "/usr/local/bin/babel-node --presets es2015,stage-2")
-  (setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/8039/plantuml.8039.jar")
+  (setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/8046/plantuml.8046.jar")
   (setq org-capture-templates
         '(
           ("m" "Send mail to" entry
@@ -208,13 +208,12 @@
           mu4e-sent-folder "/[Gmail].Sent Mail"
           mu4e-drafts-folder "/[Gmail].Drafts"
           ;; update every 5 minutes
-          mu4e-update-interval 300
+          mu4e-update-interval 120
           mu4e-split-view 'horizontal 
           mu4e-headers-auto-update t
           mu4e-headers-leave-behavior 'apply
           mu4e-headers-visible-columns 100
           mu4e-compose-signature-auto-include nil
-          mu4e-compose-complete-only-personal t
           mu4e-view-show-images t
           mu4e-view-show-addresses t)
 
@@ -242,25 +241,7 @@
     (setq mu4e-sent-messages-behavior 'delete)
 
     (setq mu4e-contexts
-          `( ,(make-mu4e-context
-               :name "Private"
-               :enter-func (lambda () (mu4e-message "Switch to the Private context"))
-               ;; leave-func not defined
-
-               :match-func (lambda (msg)
-                             (let ((email "vittorio.zaccaria@gmail.com"))
-                               (when msg
-                                 (or
-                                  (mu4e-message-contact-field-matches msg :to email)
-                                  (mu4e-message-contact-field-matches msg :cc email)
-                                  (mu4e-message-contact-field-matches msg :from email)
-                                  ))))
-
-
-               :vars '(  ( user-mail-address	. "vittorio.zaccaria@gmail.com"  )
-                         ( user-full-name	    . "Vittorio Zaccaria" )
-                         ))
-
+          `(
             ,(make-mu4e-context
               :name "Work"
               :enter-func (lambda () (mu4e-message "Switch to Work Context"))
@@ -278,7 +259,31 @@
 
               :vars '(  ( user-mail-address	. "vittorio.zaccaria@polimi.it"  )
                         ( user-full-name	    . "Vittorio Zaccaria" )
-                        ))))
+                        ))
+
+            ,(make-mu4e-context
+              :name "Private"
+              :enter-func (lambda () (mu4e-message "Switch to the Private context"))
+              ;; leave-func not defined
+
+              :match-func (lambda (msg)
+                            (let ((email "vittorio.zaccaria@gmail.com"))
+                              (when msg
+                                (or
+                                 (mu4e-message-contact-field-matches msg :to email)
+                                 (mu4e-message-contact-field-matches msg :cc email)
+                                 (mu4e-message-contact-field-matches msg :from email)
+                                 ))))
+
+
+              :vars '(  ( user-mail-address	. "vittorio.zaccaria@gmail.com"  )
+                        ( user-full-name	    . "Vittorio Zaccaria" )
+                        ))
+
+            ))
+
+    (setq mu4e-context-policy 'pick-first)
+    (setq mu4e-compose-context-policy 'pick-first)
 
     ;; This sets `mu4e-user-mail-address-list' to the concatenation of all
     ;; `user-mail-address' values for all contexts. If you have other mail
@@ -289,6 +294,9 @@
                     (when (mu4e-context-vars context)
                       (cdr (assq 'user-mail-address (mu4e-context-vars context)))))
                   mu4e-contexts)))
+
+    ;; make sure the gnutls command line utils are installed
+    ;; package 'gnutls-bin' in Debian/Ubuntu
 
     (setq message-send-mail-function 'smtpmail-send-it
           starttls-use-gnutls t
@@ -327,6 +335,12 @@
         (add-to-list 'mu4e-view-actions '("rview related" . djr/mu4e-view-related-search) t)))
 
 
+    (add-hook 'mu4e-compose-mode-hook
+              (defun my-do-compose-stuff ()
+                "My settings for message composition."
+                (set-fill-column 72)
+                (ispell-change-dictionary "italiano")
+                ))
 
     (setq mu4e-maildir-shortcuts
           '( ("/INBOX"       . ?i)

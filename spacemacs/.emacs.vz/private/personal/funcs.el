@@ -194,7 +194,7 @@ current buffer's, reload dir-locals."
       (set-buffer oldbuf)
       )
     )
-)
+  )
 
 (defun process-org-json ()
   "Process a json generated from an org file."
@@ -299,6 +299,50 @@ current buffer's, reload dir-locals."
                       (url-encode-url msgid))))
     (start-process "" nil "open" url)))
 
+(defun vz/open-inbox ()
+  (interactive)
+  (mu4e-headers-search-bookmark "maildir:/INBOX")
+  )
+
+(defun vz/open-today ()
+  (interactive)
+  (mu4e-headers-search-bookmark "date:today..now")
+  )
+
+(defun vz/spell-it (args)
+  (interactive "P")
+  (flyspell-mode 1)
+  (ispell-change-dictionary "it" nil)
+  (flyspell-buffer)
+  )
+
+(defun vz/spell-en (args)
+  (interactive "P")
+  (flyspell-mode 1)
+  (ispell-change-dictionary "en" nil)
+  (flyspell-buffer)
+  )
+
+(defun vz/switch-dictionary()
+  (interactive)
+  (let* ((dic ispell-current-dictionary)
+         (change (if (string= dic "italiano") "en_US" "italiano")))
+    (ispell-change-dictionary change)
+    (message "Dictionary switched from %s to %s" dic change)))
+
+                                        ;(defun vz/open-today()
+                                        ;  (interactive)
+                                        ;  (mu4e-headers-search-bookmark "date:today..now")
+                                        ;  )
 ;;
+
+(defun up-slightly () (interactive) (scroll-up 5))
+(defun down-slightly () (interactive) (scroll-down 5))
+
+(defun vz/mu4e-justexecute()
+  "Just exec without confirmation."
+  (interactive)
+  (mu4e-mark-execute-all t))
+
 (provide 'functions)
 ;;; functions.el ends here
