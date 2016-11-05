@@ -86,6 +86,7 @@ brew install protobuf
 brew install protobuf-c
 brew install hub
 brew install jq
+brew install watchman
 
 ##########################
 # Other languages
@@ -131,6 +132,7 @@ brew install homebrew/fuse/sshfs
 
 brew install pdf2svg
 brew install svg2pdf
+brew install xpdf ## pdftops
 brew install pstree
 brew install reattach-to-user-namespace # tmux copy and paste
 brew install shellcheck
