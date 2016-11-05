@@ -1,5 +1,5 @@
 name: infob-lecture-setup
-root: ~/development/github/materiale-corsi/documents/lectures/infob/materiale/temporary
+root: /Users/zaccaria/development/github/materiale-corsi/infob/livesetup
 
 windows:
   - infob-lecture-setup:
