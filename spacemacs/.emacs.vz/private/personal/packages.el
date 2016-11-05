@@ -3,31 +3,29 @@
 
 (defconst personal-packages
   '(
-    ox-latex
     org
     org-bullets
-    ox
-    ox-md
-    ox-gfm
     spell-checking
-    flycheck
     prodigy
-    docker
-    gnu-apl-mode
-    haskell
     mu4e
     helm-mu
+    livescript-mode
     ))
 
-(defun personal/init-docker ()
-  (use-package docker
+(defun personal/init-livescript-mode ()
+  (use-package livescript-mode
     :defer t
-   ))
+    :init
+    (progn
+      (add-to-list 'auto-mode-alist '("\\.ls\\'" . livescript-mode))
+      (evil-leader/set-key-for-mode 'livescript-mode
+        "mc" 'livescript-compile-buffer
+        "mC" 'livescript-compile-region
+        "mr" 'livescript-repl)
+      (add-hook 'livescript-mode-hook '(lambda ()
+                                         (setq livescript-command "lsc"))
+                ))))
 
-(defun personal/init-gnu-apl-mode ()
-  (use-package gnu-apl-mode
-    :defer t
-    ))
 
 (defun personal/post-init-spell-checking ()
   (setq-default ispell-program-name "/usr/local/bin/aspell")
@@ -39,8 +37,8 @@
 
   (setq org-agenda-custom-commands '(("w" "My Agenda"
                                       ((agenda "")
-                                       (todo "TODAY")
-                                       (todo "CHECK")
+                                       (todo "URGENT")
+                                       (todo "IMPORTANT")
                                        (todo "")))))
 
   (setq org-columns-default-format "%40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM") 
@@ -55,7 +53,7 @@
               ))
 
   (setq org-todo-keywords
-        '((sequence "TODO" "TODAY" "CHECK" "|" "DONE" "CANCELLED")
+        '((sequence "TODO" "TODAY" "URGENT" "IMPORTANT" "CHECK" "|" "DONE" "CANCELLED")
           (sequence "TOREIMBURSE" "|" "REIMBURSED"  )))
 
   ;; Using orgmode as a presentation
@@ -104,16 +102,53 @@
   (setf org-latex-default-packages-alist
         (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
 
+  (add-to-list 'org-structure-template-alist
+               '("gr" "\\begin{tikzpicture}\n\\graph { a -> {b, c} };\n\\end{tikzpicture}")
+               )
+
+  (add-to-list 'org-structure-template-alist
+               '("fig" "#+attr_latex: :width 0.85\\linewidth :float t")
+               )
+
+  (add-to-list 'org-structure-template-alist
+               '("hp" "#+attr_latex: :options {0.5\\textwidth}\n#+begin_minipage\n\n#+end_minipage")
+               )
+
+  (add-to-list 'org-structure-template-alist
+               '("bhp" " :PROPERTIES:\n :BEAMER_env: column\n :BEAMER_col: 0.5\n :END:\n"))
+
   (unless (boundp 'org-latex-classes)
     (setq org-latex-classes nil))
+
+  (setq org-latex-minted-options
+        '(("frame" "lines") ("linenos=true")))
+
+  (add-to-list 'org-latex-classes
+               '("memoir"
+                 "\\documentclass\{memoir\}
+                [NO-DEFAULT-PACKAGES]"
+                 ("\\chapter{%s}" . "\\chapter*{%s}")
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
+))
+
+  (add-to-list 'org-latex-classes
+               '("IEEETran"
+                 "\\documentclass\{IEEEtran\}
+                [NO-DEFAULT-PACKAGES]"
+                 ("\\section\{%s\}" . "\\section*\{%s\}")
+                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
+                 ))
 
   (add-to-list 'org-latex-classes
                '("article"
                  "\\documentclass\{article\}
                 [NO-DEFAULT-PACKAGES]"
-                 ("\\section\{%s\}" . "\\section*\{%s\}")
-                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
+                 ))
 
       ;;; same for beamer
   (add-to-list 'org-latex-classes
@@ -208,9 +243,10 @@
           mu4e-sent-folder "/[Gmail].Sent Mail"
           mu4e-drafts-folder "/[Gmail].Drafts"
           ;; update every 5 minutes
-          mu4e-update-interval 120
+          mu4e-update-interval 360
           mu4e-split-view 'horizontal 
           mu4e-headers-auto-update t
+          mu4e-hide-index-messages t
           mu4e-headers-leave-behavior 'apply
           mu4e-headers-visible-columns 100
           mu4e-compose-signature-auto-include nil
@@ -342,11 +378,20 @@
                 (ispell-change-dictionary "italiano")
                 ))
 
+    (add-hook 'mu4e-headers-mode-hook
+              (defun my-headers-mode-customization ()
+                "My settings for headers mode"
+                (define-key mu4e-headers-mode-map (kbd "<mouse-1>") 'mu4e-headers-view-message)
+                )
+              )
+
+
     (setq mu4e-maildir-shortcuts
           '( ("/INBOX"       . ?i)
              ("/Sent Mail"   . ?s)
              ("/Drafts"      . ?d)
              ("/Trash"       . ?t)
              ("/All Mail"    . ?a)))
+    )
   )
-)
+

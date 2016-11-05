@@ -15,11 +15,20 @@
 (global-set-key (kbd "<f1>")  'vz/open-inbox)
 (global-set-key (kbd "<f2>")  'vz/open-today)
  
+(global-set-key (kbd "<f10>") 'vz/open-today)
+(global-set-key (kbd "<f11>") 'vz/open-inbox)
+(global-set-key (kbd "<f12>") 'mu4e-headers-search)
+
 (global-set-key (kbd "<f4>")  'personal/show-agenda-all)
-(global-set-key (kbd "<f5>")  'helm-mu)
+(global-set-key (kbd "<f5>")  'mu4e-headers-search)
 (global-set-key (kbd "<f7>")  'vz/open-today)
 (global-set-key (kbd "<f6>")  'vz/open-inbox)
-(global-set-key (kbd "<f12>") 'helm-mu)
+
+
+(global-set-key (kbd "<f16>")  'personal/show-agenda-all)
+(global-set-key (kbd "<f17>")  'mu4e-headers-search)
+(global-set-key (kbd "<f18>")  'vz/open-today)
+(global-set-key (kbd "<f19>")  'vz/open-inbox)
 
 ;; to make your life easier; dont add any other character after M-* (!!!)
 (global-set-key (kbd "M-`") 'toggle-window-split)
@@ -32,7 +41,7 @@
 
 
 (global-set-key (kbd "M-r") 'eval-region)
-(global-set-key (kbd "M-t") 'beautify)
+;; (global-set-key (kbd "M-t") 'beautify)
 (global-set-key (kbd "M-u") 'helm-mini)
 (global-set-key (kbd "M-i") 'fill-paragraph)
 (global-set-key (kbd "M-o") 'vz/switch-dictionary)
@@ -44,6 +53,7 @@
 (global-set-key (kbd "M-g") 'deft)
 (global-set-key (kbd "M-h") 'helm-m-x)
 (global-set-key (kbd "M-j") 'vz/align-code-to-equals)
+(global-set-key (kbd "M-k") 'recompile)
 (global-set-key (kbd "M-l") 'helm-apropos)
 (global-set-key (kbd "M-/") 'evil-search-forward)
 
@@ -59,6 +69,9 @@
 
 (global-set-key (kbd "<mouse-4>") 'down-slightly)
 (global-set-key (kbd "<mouse-5>") 'up-slightly)
+
+(global-set-key (kbd "C-<left>") 'window-left)
+(global-set-key (kbd "C-<right>") 'window-right)
 
 
 ;; ESS mode hooks

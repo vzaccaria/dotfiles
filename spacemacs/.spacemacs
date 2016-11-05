@@ -18,6 +18,9 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     ruby
+     php
+     octave
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -28,10 +31,10 @@ values."
      emacs-lisp
      ;; git
      markdown
-     org
+     (org :variables org-enable-reveal-js-support t)
      javascript
      react
-     haskell
+     (haskell :variables haskell-enable-hindent-style "chris-done")
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -42,7 +45,6 @@ values."
      finance
      deft
      prodigy
-     dockerfile
      ;; my personal layer
      (mu4e :variables mu4e-installation-path "/usr/local/Cellar/mu/HEAD-8d345ee/share/emacs/site-lisp/mu/mu4e")
      personal
@@ -51,6 +53,7 @@ values."
      ess
      purescript
      shell
+     shell-scripts
      typography
      git
      github
@@ -273,14 +276,18 @@ before packages are loaded. If you are unsure, you should try in setting them in
        (flycheck-define-checker grammar-gramcheck
                                 "A general purpose grammar checker. It uses LanguageTool."
 
-                                :command ("gramchk" "-a" "-x" source-original)
+                                :command ("gramchk" "-x" source-original)
                                 :error-parser flycheck-parse-checkstyle
                                 :standard-input t
-                                :modes (markdown-mode latex-mode))
+                                :modes (latex-mode))
 
        (add-to-list 'flycheck-checkers 'grammar-gramcheck)
     )
-  )
+    )
+  (setq org-enable-reveal-js-support t)
+  (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
+  (setq tramp-ssh-controlmaster-options
+        "-o ControlMaster=auto -o ControlPath='tramp.%%r@%%h-%%p' -o ControlPersist=no")
 )
 
 (defun dotspacemacs/user-config ()
@@ -294,14 +301,20 @@ you should place you code here."
   ;;; remove from the article class the default packages
 
   (setq org-latex-minted-options
-        '(("obeytabs" "true") ("baselinestretch" "0.95")))
+        '(("obeytabs" "true")
+          ("baselinestretch" "0.95")
+          ("frame" "lines")
+          ("linenos=true")
+          ))
 
   (setq org-latex-listings 'minted)
 
   (setq org-latex-pdf-process
-        '("/usr/local/texlive/2013/bin/universal-darwin/xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-          "/usr/local/texlive/2013/bin/universal-darwin/xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-          "/usr/local/texlive/2013/bin/universal-darwin/xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+        '("lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+          "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+          "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
+
 
   )
 
@@ -314,6 +327,8 @@ you should place you code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(helm-mu-gnu-sed-program "gsed")
+ '(hindent-reformat-buffer-on-save nil)
+ '(hindent-style "chris-done")
  '(org-agenda-files
    (quote
     ("/Users/zaccaria/Dropbox/org/Casa.org" "/Users/zaccaria/Dropbox/org/EDX.org" "/Users/zaccaria/Dropbox/org/InfoBOrg.org" "/Users/zaccaria/Dropbox/org/ListaViaggio.org" "/Users/zaccaria/Dropbox/org/Missioni.org" "/Users/zaccaria/Dropbox/org/Rendicontazione.org" "/Users/zaccaria/Dropbox/org/STMicro.org" "/Users/zaccaria/Dropbox/org/Teasy-2.0.org" "/Users/zaccaria/Dropbox/org/Today.org" "/Users/zaccaria/Dropbox/org/curriculum.org" "/Users/zaccaria/Dropbox/org/deft-0.org" "/Users/zaccaria/Dropbox/org/header.org" "/Users/zaccaria/Dropbox/org/thesis.org" "/Users/zaccaria/Dropbox/org/work.org" "/Users/zaccaria/Dropbox/org/howtos/Ansible.org" "/Users/zaccaria/Dropbox/org/howtos/CLaSH.org" "/Users/zaccaria/Dropbox/org/howtos/Devop.org" "/Users/zaccaria/Dropbox/org/howtos/Docker.org" "/Users/zaccaria/Dropbox/org/howtos/EDXDevop.org" "/Users/zaccaria/Dropbox/org/howtos/Emacs.org" "/Users/zaccaria/Dropbox/org/howtos/Github.org" "/Users/zaccaria/Dropbox/org/howtos/Kubernetes.org" "/Users/zaccaria/Dropbox/org/howtos/Make.org" "/Users/zaccaria/Dropbox/org/howtos/Python.org" "/Users/zaccaria/Dropbox/org/howtos/QNAP.org" "/Users/zaccaria/Dropbox/org/howtos/ReviewTemplate.org" "/Users/zaccaria/Dropbox/org/howtos/Stack.org" "/Users/zaccaria/Dropbox/org/howtos/haskellDSL.org" "/Users/zaccaria/Dropbox/org/research/ResearchPlan.org" "/Users/zaccaria/Dropbox/org/research/robotics.org" "/Users/zaccaria/Dropbox/org/research/webtech.org" "/Users/zaccaria/Dropbox/org/other/olio.org" "/Users/zaccaria/Dropbox/org/other/reviews.org")))
