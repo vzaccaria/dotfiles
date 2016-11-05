@@ -1,5 +1,6 @@
 # Shoiirtcuts
 alias t="tree -d -L 3"
+alias k='buku --deep -s'
 alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
@@ -68,3 +69,4 @@ alias no-sleep-for-one-hour="caffeinate -u -t 3600"
 
 alias make='gmake'
 
+alias find_big_node_modules_dir='find . -name "node_modules" -prune -exec du -h -k -d 0 {} \;'

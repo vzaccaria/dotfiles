@@ -30,6 +30,10 @@ fix() {
   git add ${@:1: -1} && git commit -m "fix: ${@: -1}"
 }
 
+update() {
+    git add ${@:1: -1} && git commit -m "update: ${@: -1}"
+}
+
 feat() {
   git add ${@:1: -1} && git commit -m "feat: ${@: -1}"
 }
