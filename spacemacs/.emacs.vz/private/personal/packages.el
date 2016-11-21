@@ -78,6 +78,7 @@
      (C . t)
      (ditaa . t)
      (plantuml . t)
+     (latex . t)
      ))
 
   (setq org-babel-js-cmd "/usr/local/bin/babel-node --presets es2015,stage-2")
@@ -107,7 +108,16 @@
                )
 
   (add-to-list 'org-structure-template-alist
+               '("oct" "#+BEGIN_SRC octave\n\n#+END_SRC")
+               )
+
+  (add-to-list 'org-structure-template-alist
                '("fig" "#+attr_latex: :width 0.85\\linewidth :float t")
+               )
+
+  (add-to-list 'org-structure-template-alist
+               '("eq" "#+BEGIN_LaTeX\n\\begin{equation}\n\\end{equation}\n#+END_LaTeX")
+               
                )
 
   (add-to-list 'org-structure-template-alist
