@@ -1,0 +1,65 @@
+#+EMAIL:     vittorio.zaccaria@polimi.it
+#+DESCRIPTION:
+#+KEYWORDS:
+
+#+OPTIONS:   num:nil toc:nil \n:nil @:nil ::nil |:t ^:t -:t f:t *:t <:t ':t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil title:nil
+
+#+LaTeX_CLASS_OPTIONS: [a4,landscape]
+
+#+BIND: org-latex-title-command ""
+
+#+LaTeX_HEADER: \usepackage{fixltx2e}
+#+LaTeX_HEADER: \usepackage{graphicx}
+#+LaTeX_HEADER: \usepackage{longtable}
+#+LaTeX_HEADER: \usepackage{float}
+#+LaTeX_HEADER: \usepackage{wrapfig}
+#+LaTeX_HEADER: \usepackage[landscape]{geometry}
+#+LaTeX_HEADER: \usepackage{rotating}
+#+LaTeX_HEADER: \usepackage[normalem]{ulem}
+#+LaTeX_HEADER: \usepackage{amsmath}
+#+LaTeX_HEADER: \usepackage{textcomp}
+#+LaTeX_HEADER: \usepackage{marvosym}
+#+LaTeX_HEADER: \usepackage{wasysym}
+#+LaTeX_HEADER: \usepackage{amssymb}
+#+LaTeX_HEADER: \usepackage{hyperref}
+#+LaTeX_HEADER: \usepackage{minted}
+#+LaTeX_HEADER: \usepackage{multicol}
+#+LaTeX_HEADER: \usepackage{fontspec,xltxtra,xunicode}
+#+LATEX_HEADER: \setmainfont[Scale=0.8]{Fira Sans}
+#+LATEX_HEADER: \setsansfont{Fira Sans}
+#+LATEX_HEADER: \setmonofont[Scale=0.8]{Source Code Pro}
+#+LATEX_HEADER: \newfontfamily\myunicodefallback{Cambria}
+#+LATEX_HEADER: \usepackage{polyglossia}
+#+LATEX_HEADER: \setmainlanguage{italiano}
+#+LATEX_HEADER: \pagestyle{empty}
+
+#+LATEX_HEADER: \ifthenelse{\lengthtest { \paperwidth = 11in}}
+#+LATEX_HEADER:   { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+#+LATEX_HEADER:   {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+#+LATEX_HEADER:     {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+#+LATEX_HEADER:     {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+#+LATEX_HEADER:   }
+#+LATEX_HEADER:
+#+LATEX_HEADER: \makeatletter
+#+LATEX_HEADER: \renewcommand{\section}{\@startsection{section}{1}{0mm}%
+#+LATEX_HEADER:                                 {-1ex plus -.5ex minus -.2ex}%
+#+LATEX_HEADER:                                 {0.5ex plus .2ex}%x
+#+LATEX_HEADER:                                 {\normalfont\large\bfseries}}
+#+LATEX_HEADER: \renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+#+LATEX_HEADER:                                 {-1explus -.5ex minus -.2ex}%
+#+LATEX_HEADER:                                 {0.5ex plus .2ex}%
+#+LATEX_HEADER:                                 {\normalfont\normalsize\bfseries}}
+#+LATEX_HEADER: \renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+#+LATEX_HEADER:                                 {-1ex plus -.5ex minus -.2ex}%
+#+LATEX_HEADER:                                 {1ex plus .2ex}%
+#+LATEX_HEADER:                                 {\normalfont\small\bfseries}}
+#+LATEX_HEADER:
+#+LATEX_HEADER: \makeatother
+#+LATEX_HEADER: \setlength{\parindent}{0pt}
+#+LATEX_HEADER: \setlength{\parskip}{0pt plus 0.5ex}
+
+#+LATEX_HEADER: \setlength{\premulticols}{1pt}
+#+LATEX_HEADER: \setlength{\postmulticols}{1pt}
+#+LATEX_HEADER: \setlength{\multicolsep}{1pt}
+#+LATEX_HEADER: \setlength{\columnsep}{2pt}
