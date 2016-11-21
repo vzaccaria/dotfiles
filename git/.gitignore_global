@@ -18,6 +18,8 @@ _site
 minified-*.js
 concat-*.*
 *.bfd.js
+_minted-*
+auto
 
 # Temp files      #
 ###################
@@ -65,7 +67,7 @@ paperino*
 *.jar
 *.rar
 *.tar
-*.zip
+# *.zip << Tragedy happens here for keynote files.
 
 # Logs and databases #
 ######################
