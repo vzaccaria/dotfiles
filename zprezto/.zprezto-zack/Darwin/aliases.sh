@@ -9,6 +9,9 @@ alias dg='cd ~/development/github'
 alias h='/usr/local/bin/hub'
 alias ric='cd "/Users/zaccaria/Dropbox/Commuting/Ricercatore TI 2011"'
 
+alias lz='cd "/Users/zaccaria/development/github/materiale-corsi/infob/docs/org"'
+alias lec='cd "/Users/zaccaria/development/github/materiale-corsi/infob/docs/org"'
+
 # JavaScriptCore REPL
 jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc";
 [ -e "${jscbin}" ] && alias jsc="${jscbin}";

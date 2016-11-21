@@ -122,3 +122,7 @@ putfile() {
 getfile() {
     scp -P 2222 "zaccaria@vzaccaria.myqnapcloud.com:~/deposit/*" .
 }
+
+ediff() {
+    emacsclient -t --eval "(ediff \"$1\" \"$2\")"
+}

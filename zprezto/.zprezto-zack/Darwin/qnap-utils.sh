@@ -28,6 +28,11 @@ dock-setup-remote-qnappino-bridge-direct() {
     ssh -N -L 2376:192.168.1.120:2376 admin@qnappino -p 21101
 }
 
+dock-mobile-connect() {
+    dock-setup-remote-qnappino-bridge-direct &
+    dock-setup-remote-qnappino-env
+}
+
 dock-setup-remote-qnappino-env() {
     export DOCKER_CERT_PATH=/Users/zaccaria/dotfiles/zprezto/.zprezto-zack/Darwin/qnap-certs
     export DOCKER_HOST=tcp://localhost:2376
