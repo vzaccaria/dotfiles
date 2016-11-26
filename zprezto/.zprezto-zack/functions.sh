@@ -34,6 +34,10 @@ update() {
     git add ${@:1: -1} && git commit -m "update: ${@: -1}"
 }
 
+u() {
+    git add ${@:1: -1} && git commit -m "update: ${@: -1}"
+}
+
 feat() {
   git add ${@:1: -1} && git commit -m "feat: ${@: -1}"
 }

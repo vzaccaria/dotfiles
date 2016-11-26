@@ -112,7 +112,7 @@
                )
 
   (add-to-list 'org-structure-template-alist
-               '("fig" "#+attr_latex: :width 0.85\\linewidth :float t")
+               '("fg" "#+CAPTION: caption with label \\label{l1}\n#+attr_latex: :width 0.85\\linewidth :float t :placement [h]")
                )
 
   (add-to-list 'org-structure-template-alist

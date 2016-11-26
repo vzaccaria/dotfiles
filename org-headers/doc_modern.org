@@ -35,3 +35,4 @@
 #+LATEX_HEADER: \usetikzlibrary{mindmap}
 #+LATEX_HEADER: \usetikzlibrary{positioning}   
 #+LATEX_HEADER: \usetikzlibrary{snakes}
+#+LATEX_HEADER: \setlength{\parskip}{0pt plus 0.5ex}
