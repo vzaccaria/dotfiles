@@ -41,7 +41,7 @@
 
 
 (global-set-key (kbd "M-r") 'eval-region)
-;; (global-set-key (kbd "M-t") 'beautify)
+(global-set-key (kbd "M-t") 'beautify)
 (global-set-key (kbd "M-u") 'helm-mini)
 (global-set-key (kbd "M-i") 'fill-paragraph)
 (global-set-key (kbd "M-o") 'vz/switch-dictionary)
@@ -76,7 +76,7 @@
 
 ;; ESS mode hooks
 
-;; (define-key comint-mode-map [C-up] 'comint-previous-matching-input-from-input)
+(define-key c-mode-map [M-a] 'mark-whole-buffer)
 ;; (define-key comint-mode-map [C-down] 'comint-next-matching-input-from-input)
 
 (provide 'index)

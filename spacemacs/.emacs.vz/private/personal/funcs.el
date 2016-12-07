@@ -51,10 +51,10 @@
   (shell-command-on-region b e "toilet -d ~/.figlet -f 3d" (current-buffer) t)
   (comment-region (mark) (point)))
 
-(defun beautify-c ()
-  "Indent the currently visited buffer."
-  (interactive)
-  (indent-region (point-min) (point-max)))
+;; (defun beautify-c ()
+;;   "Indent the currently visited buffer."
+;;   (interactive)
+;;   (indent-region (point-min) (point-max)))
 
 (defun beautify-lisp (&optional b e)
   "Indent the currently visited buffer"
@@ -88,7 +88,7 @@
   (cond ((derived-mode-p 'org-mode)        (call-interactively 'beautify-org))
         ((derived-mode-p 'emacs-lisp-mode) (call-interactively 'beautify-lisp))
         ((derived-mode-p 'markdown-mode)   (call-interactively 'beautify-markdown))
-        ((derived-mode-p 'c-mode)          (call-interactively 'beautify-c))
+        ((derived-mode-p 'c-mode)          (call-interactively 'clang-format-buffer))
         ((derived-mode-p 'json-mode)       (call-interactively 'web-beautify-js))
         ((derived-mode-p 'js-mode)         (call-interactively 'web-beautify-js))
         ((derived-mode-p 'html-mode)       (call-interactively 'web-beautify-html))
@@ -137,6 +137,16 @@ prompt the user for a coding system."
   "Just sets the font to square"
   (interactive)
   (set-face-attribute 'default nil :font "Hasklig")
+  )
+
+(defun vz/ag-hidden-files-enable ()
+  (interactive)
+  (customize-set-variable 'helm-ag-base-command "ag --nocolor --nogroup --hidden")
+  )
+
+(defun vz/ag-hidden-files-disable()
+  (interactive)
+  (customize-set-variable 'helm-ag-base-command "ag --nocolor --nogroup")
   )
 
 (defun vz/define-checker-for-stm32 ()

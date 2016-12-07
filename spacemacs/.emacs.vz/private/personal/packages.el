@@ -116,8 +116,16 @@
                )
 
   (add-to-list 'org-structure-template-alist
-               '("eq" "#+BEGIN_LaTeX\n\\begin{equation}\n\\end{equation}\n#+END_LaTeX")
+               '("eu" "#+BEGIN_LaTeX\n\\begin{equation}\n\\end{equation}\n#+END_LaTeX")
                
+               )
+
+  (add-to-list 'org-structure-template-alist
+               '("lf" "#+BEGIN_LaTeX\n\\begin{figure}\n\\end{figure}\n#+END_LaTeX")
+               )
+
+  (add-to-list 'org-structure-template-alist
+               '("tf" "#+BEGIN_LaTeX\n\\begin{figure}\n\\begin{tikzpicture}\n\\end{tikzpicture}\\n\\end{figure}\n#+END_LaTeX")
                )
 
   (add-to-list 'org-structure-template-alist
