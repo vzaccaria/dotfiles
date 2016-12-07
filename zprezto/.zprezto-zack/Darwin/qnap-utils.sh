@@ -83,9 +83,11 @@ devenv-openx11() {
 
 devenv-help() {
     echo "1. Open X11 locally with devenv-openx11"
-    echo "2. On the remote machine, setup the following display:"
+    echo "2. On the remote machine, setup the following display (copied on the clipboard):"
     echo ""
     echo "   export DISPLAY=`ip-show-all-local | grep 192.168.1`:0"
+    echo "export DISPLAY=`ip-show-all-local | grep 192.168.1`:0" | pbcopy
+    
 }
 
 # Not working:

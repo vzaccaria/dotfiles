@@ -74,6 +74,7 @@ brew install dos2unix
 brew install ssh-copy-id
 brew install homebrew/dupes/make # Gmake 4.1 !
 brew install gnutls
+brew install binutils
 
 
 ##########################
@@ -87,6 +88,7 @@ brew install protobuf-c
 brew install hub
 brew install jq
 brew install watchman
+brew install clang-format
 
 ##########################
 # Other languages
