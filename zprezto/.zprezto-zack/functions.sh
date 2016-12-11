@@ -1,9 +1,17 @@
 f() {
-   find . -name "*$@*"
+    name=$1
+    find . -name "*${name}*"
 }
 
 fe() {
-   find . -name "*\.$@"
+    ext=$1
+    find . -name "*\.${ext}"
+}
+
+fex() {
+    ext=$1
+    other=${*:2} 
+    find . -name "*\.${ext}" -exec sh -c "${other}" \;
 }
 
 c() {
@@ -60,41 +68,59 @@ mandown() {
 }
 
 lift() {
-  case "$1" in
-    find)
-      find . -name $2 -print0
-      ;;
-    ag)
-      $* -l --nocolor -0
-      ;;
-    locate)
-      $* -0
-      ;;
-    head)
-      $* | tr '\n' '\0'
-      ;;
-    tail)
-      $* | tr '\n' '\0'
-      ;;
-    ls)
-      $* -1 | tr '\n' '\0'
-      ;;
-    *)
-      echo "Sorry no lift instance available for $1"
-      ;;
-  esac
+    arg=$1
+    opts=${*:2}
+    case "${arg}" in
+        help)
+            echo "# Lift. "
+            echo "Lift a command to produce a sequence of 0 ended names of files."
+            echo ""
+            echo "Typical usage: "
+            echo ""
+            echo " lift cat filenames.txt | map command ... _ ... "
+            echo "                                          ^--- placeholder for filename among the args"
+            echo ""
+            echo " - Use `fmap` instead of `map` to flatten results into a sequence of 0-ended file names "
+            echo " - Available lift instances: find, ag, locate, head, tail, ls "
+            ;;
+        find)
+            find . -name ${opts} -print0
+            ;;
+        ag)
+            ag -l --nocolor -0 ${opts}
+            ;;
+        locate)
+            "$@" -0
+            ;;
+        head)
+            "$@" | tr '\n' '\0'
+            ;;
+        cat)
+            "$@" | tr '\n' '\0'
+            ;;
+        tail)
+            "$@" | tr '\n' '\0'
+            ;;
+        ls)
+            "$@" -1 | tr '\n' '\0'
+            ;;
+        *)
+            echo "Sorry no lift instance available for $1"
+            ;;
+    esac
 }
 
-lifta() {
-  cat $* | tr '\n' '\0'
+
+map() {
+    command=$1
+    args=${*:2}
+    xargs -0 -n 1 -J _ "$command" "$args"
 }
 
 fmap() {
-  xargs -0 -n 1 -J _ $*
-}
-
-map() {
-  xargs -0 -n 1 -J _ $* | tr '\n' '\0'
+    command=$1
+    args=${*:2}
+    xargs -0 -n 1 -J _ "$command" "$args" | tr '\n' '\0'
 }
 
 accent() {
