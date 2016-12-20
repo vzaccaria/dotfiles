@@ -48,6 +48,7 @@ values."
      finance
      deft
      prodigy
+     command-log
      ;; my personal layer
      (mu4e :variables mu4e-installation-path "/usr/local/Cellar/mu/HEAD-8d345ee/share/emacs/site-lisp/mu/mu4e")
      personal

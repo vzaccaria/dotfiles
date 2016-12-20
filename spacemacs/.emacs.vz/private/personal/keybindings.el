@@ -53,8 +53,8 @@
 (global-set-key (kbd "M-g") 'deft)
 (global-set-key (kbd "M-h") 'helm-m-x)
 (global-set-key (kbd "M-j") 'vz/align-code-to-equals)
-(global-set-key (kbd "M-k") 'recompile)
-(global-set-key (kbd "M-l") 'helm-apropos)
+(global-set-key (kbd "M-k") 'vz/recompile)
+(global-set-key (kbd "M-l") 'vz/go-to-interpreter)
 (global-set-key (kbd "M-/") 'evil-search-forward)
 
 
@@ -70,9 +70,15 @@
 (global-set-key (kbd "<mouse-4>") 'down-slightly)
 (global-set-key (kbd "<mouse-5>") 'up-slightly)
 
-(global-set-key (kbd "C-<left>") 'window-left)
-(global-set-key (kbd "C-<right>") 'window-right)
+;;                    V--- set in iterm prefs
+(global-set-key (kbd "M-[ 5 e") 'evil-window-up)
+(global-set-key (kbd "M-[ 5 b") 'evil-window-down)
+(global-set-key (kbd "M-[ 5 d") 'evil-window-left)
+(global-set-key (kbd "M-[ 5 c") 'evil-window-right)
 
+;;                     v--- ESC <up>
+(global-set-key (kbd "\e <up>") 'down-slightly)
+(global-set-key (kbd "\e <down>") 'up-slightly)
 
 ;; ESS mode hooks
 

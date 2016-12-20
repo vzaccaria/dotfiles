@@ -110,14 +110,20 @@
   (add-to-list 'org-structure-template-alist
                '("oct" "#+BEGIN_SRC octave\n\n#+END_SRC")
                )
+  (add-to-list 'org-structure-template-alist
+               '("cs" "#+BEGIN_SRC c\n\n#+END_SRC")
+               )
 
   (add-to-list 'org-structure-template-alist
                '("fg" "#+CAPTION: caption with label \\label{l1}\n#+attr_latex: :width 0.85\\linewidth :float t :placement [h]")
                )
 
   (add-to-list 'org-structure-template-alist
-               '("eu" "#+BEGIN_LaTeX\n\\begin{equation}\n\\end{equation}\n#+END_LaTeX")
-               
+               '("equ" "#+BEGIN_LaTeX\n\\begin{equation}\n\\end{equation}\n#+END_LaTeX")
+               )
+
+  (add-to-list 'org-structure-template-alist
+               '("cases" "#+BEGIN_LaTeX\n\\begin{equation}\nf(x) = \\begin{cases}\n 1 & \\text{for } n = 0 \\\\ \n \\end{cases}\n\\end{equation}\n#+END_LaTeX")
                )
 
   (add-to-list 'org-structure-template-alist

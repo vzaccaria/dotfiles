@@ -81,7 +81,24 @@
   (interactive "r")
   (shell-command-on-region (point-min) (point-max)
                            "/usr/local/bin/org2kf -a" (current-buffer) t))
+(defun vz/show-command-log-and-keys (&optional b e)
+  (interactive "r")
+  (global-command-log-mode t)
+  )
 
+(defun vz/recompile (&optional b e)
+  (interactive "r")
+  (cond
+        ((derived-mode-p 'c-mode)          (call-interactively 'recompile))
+        ((derived-mode-p 'haskell-mode)    (call-interactively 'haskell-process-load-file))
+        (t "not implemented"))) 
+
+(defun vz/go-to-interpreter(&optional b e)
+  (interactive "r"
+  (cond
+   ((derived-mode-p 'haskell-mode)    (call-interactively 'haskell-interactive-switch))
+   ((derived-mode-p 'haskell-interactive-mode)    (call-interactively 'haskell-interactive-switch-back))
+   (t "not implemented"))))
 
 (defun beautify (&optional b e)
   (interactive "r")
