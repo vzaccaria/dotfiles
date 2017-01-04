@@ -2,11 +2,21 @@
 R=./recipes
 G=./generated
 
-all: $(G)/devenv.Dockerfile $(G)/modelsim.Dockerfile $(G)/luxrender.Dockerfile
+all: \
+	$(G)/devenv.Dockerfile \
+	$(G)/modelsim.Dockerfile \
+  $(G)/luxrender.Dockerfile \
+	$(G)/maxima.Dockerfile
 
 $(G)/devenv.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile \
 			$(R)/base.Dockerfile \
 			$(R)/haskell.Dockerfile 
+	cat $^ > $@
+
+$(G)/devenv-gui.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile \
+			$(R)/base.Dockerfile \
+			$(R)/haskell.Dockerfile \
+		  $(R)/vnc.Dockerfile
 	cat $^ > $@
 
 $(G)/modelsim.Dockerfile: 	$(R)/from.ubuntu14.04.Dockerfile \
@@ -16,6 +26,11 @@ $(G)/modelsim.Dockerfile: 	$(R)/from.ubuntu14.04.Dockerfile \
 $(G)/luxrender.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile \
 			$(R)/base.Dockerfile \
 			$(R)/luxrender.Dockerfile
+	cat $^ > $@
+
+$(G)/maxima.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile \
+			$(R)/base.Dockerfile \
+			$(R)/maxima.Dockerfile
 	cat $^ > $@
 
 build-%: $(G)/%.Dockerfile
