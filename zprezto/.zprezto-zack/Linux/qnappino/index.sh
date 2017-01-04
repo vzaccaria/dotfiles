@@ -10,6 +10,18 @@ alias vi=vim
 alias ln=ln
 alias make=make
 
+ubuntu() {
+	  docker run -ti --rm \
+	         -v /etc/localtime:/etc/localtime:ro                     \
+	         -v /share/CACHEDEV1_DATA/homes/admin/projects:/projects \
+	         -v /share/CACHEDEV1_DATA/homes/admin/projects/dot-local:/root/.local \
+	         -e DISPLAY=$DISPLAY \
+	         -e PATH=/root/.local/bin:/opt/bin:/opt/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin \
+	         --name spacemacs \
+	         devenv-gui-latest \
+	         /bin/zsh
+}
+
 spacemacs() {
 	docker run -ti --rm \
 	-v /etc/localtime:/etc/localtime:ro                     \

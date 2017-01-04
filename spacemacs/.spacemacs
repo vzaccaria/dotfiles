@@ -292,7 +292,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq org-enable-reveal-js-support t)
   (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
   (setq tramp-ssh-controlmaster-options
-        "-o ControlMaster=auto -o ControlPath='tramp.%%r@%%h-%%p' -o ControlPersist=no")
+              "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
 )
 
 (defun dotspacemacs/user-config ()

@@ -30,6 +30,7 @@ brew cask install slack
 brew cask install dash # Licensed version: 2.2.6
 brew cask install google-chrome
 brew cask install cakebrew
+brew cask install osxfuse
 
 ##########################
 # Fonts

@@ -77,8 +77,10 @@
 (global-set-key (kbd "M-[ 5 c") 'evil-window-right)
 
 ;;                     v--- ESC <up>
-(global-set-key (kbd "\e <up>") 'down-slightly)
-(global-set-key (kbd "\e <down>") 'up-slightly)
+(global-set-key (kbd "\e <up>")    'evil-window-up)
+(global-set-key (kbd "\e <down>")  'evil-window-down)
+(global-set-key (kbd "\e <left>")  'evil-window-left)
+(global-set-key (kbd "\e <right>") 'evil-window-right)
 
 ;; ESS mode hooks
 

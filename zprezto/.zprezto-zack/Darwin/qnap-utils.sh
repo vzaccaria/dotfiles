@@ -75,6 +75,11 @@ qnap-mount-multimedia() {
    sshfs -p 21101 admin@vzaccaria.myqnapcloud.com:/share/CACHEDEV1_DATA/Multimedia /Volumes/Multimedia -ovolname=Multimedia
 }
 
+photoenv-mount-qnap() {
+   mkdir -p /Volumes/Multimedia
+   sshfs admin@192.168.1.120:/share/CACHEDEV1_DATA/Multimedia /Volumes/Multimedia -ovolname=Multimedia
+}
+
 devenv-openx11() {
     devenv-help
     open -a "XQuartz"
