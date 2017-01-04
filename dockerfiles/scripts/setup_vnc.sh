@@ -10,7 +10,7 @@ xrdb $HOME/.Xresources
 startxfce4 &
 EOF
 
-echo <<EOF
+cat <<EOF
 * Ok - done, useful commands to remember:
 
   USER=root vncserver -depth 16 -geometry 1920x1200 # to run it
