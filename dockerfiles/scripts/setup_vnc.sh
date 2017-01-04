@@ -24,5 +24,7 @@ cat <<EOF
 
   open /System/Library/CoreServices/Screen\ Sharing.app
 
+  using QNAPIP:5901 as address
+
 * I'm finished.
 EOF
