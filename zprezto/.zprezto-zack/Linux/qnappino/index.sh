@@ -12,6 +12,7 @@ alias make=make
 
 ubuntu() {
 	  docker run -ti --rm \
+           -p 5901:5901 \
 	         -v /etc/localtime:/etc/localtime:ro                     \
 	         -v /share/CACHEDEV1_DATA/homes/admin/projects:/projects \
 	         -v /share/CACHEDEV1_DATA/homes/admin/projects/dot-local:/root/.local \
