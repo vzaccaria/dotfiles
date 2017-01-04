@@ -1,4 +1,6 @@
 
+echo "This script will setup vnc from scratch"
+echo ""
 echo "* creating .vnc directory"
 mkdir -p /root/.vnc
 
@@ -9,6 +11,8 @@ cat > /root/.vnc/xstartup <<EOF
 xrdb $HOME/.Xresources
 startxfce4 &
 EOF
+
+chmod +x /root/.vnc/xstartup
 
 cat <<EOF
 * Ok - done, useful commands to remember:
