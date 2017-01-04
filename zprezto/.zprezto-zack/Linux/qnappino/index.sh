@@ -17,7 +17,7 @@ ubuntu() {
 	         -v /share/CACHEDEV1_DATA/homes/admin/projects/dot-local:/root/.local \
 	         -e DISPLAY=$DISPLAY \
 	         -e PATH=/root/.local/bin:/opt/bin:/opt/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin \
-	         --name spacemacs \
+	         --name devenv-gui \
 	         devenv-gui-latest \
 	         /bin/zsh
 }
