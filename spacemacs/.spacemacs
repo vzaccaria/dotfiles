@@ -319,7 +319,7 @@ you should place you code here."
           "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
           "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
-
+  (vz/ag-hidden-files-enable)
 
   )
 

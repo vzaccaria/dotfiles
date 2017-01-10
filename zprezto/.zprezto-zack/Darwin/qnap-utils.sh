@@ -78,6 +78,13 @@ qnap-mount-multimedia() {
 photoenv-mount-qnap() {
    mkdir -p /Volumes/Multimedia
    sshfs admin@192.168.1.120:/share/CACHEDEV1_DATA/Multimedia /Volumes/Multimedia -ovolname=Multimedia
+   open /Applications/Adobe\ Lightroom/Adobe\ Lightroom.app
+}
+
+itunesenv-mount-qnap() {
+    mkdir -p /Volumes/Multimedia
+    sshfs admin@192.168.1.120:/share/CACHEDEV1_DATA/Multimedia /Volumes/Multimedia -ovolname=Multimedia
+    open /Applications/iTunes.app
 }
 
 devenv-openx11() {
@@ -95,7 +102,21 @@ devenv-help() {
     
 }
 
-# Not working:
-# qnap-mount-multimedia() {
-#     sudo mount -o rw,bg,hard,resvport,intr,noac,nfc,tcp 192.168.1.120:/Multimedia /Volumes/Multimedia/
-# }
+
+devenv-gui-start-container_priv() {
+	  docker run -it \
+           -p 5901:5901 \
+	         -v /etc/localtime:/etc/localtime:ro                     \
+	         -v /share/CACHEDEV1_DATA/homes/admin/projects:/projects \
+	         -v /share/CACHEDEV1_DATA/homes/admin/projects/dot-local:/root/.local \
+	         -e PATH=/root/.local/bin:/opt/bin:/opt/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin \
+	         devenv-gui-latest \
+           /root/startx
+}
+
+devenv-gui() {
+    dock-setup-qnappino
+    echo "Starting containerized gui; When startx complete, go to vnc://192.168.1.120:5901"
+    devenv-gui-start-container_priv
+}
+

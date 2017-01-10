@@ -63,6 +63,7 @@
 (global-set-key (kbd "M-v") 'pbpaste)
 (global-set-key (kbd "M-B") 'vz/previous-error)
 (global-set-key (kbd "M-b") 'vz/next-error)
+(global-set-key (kbd "M-n") 'evil-window-vnew)
 
 (global-set-key (kbd "s-=") 'zoom-frm-in)
 (global-set-key (kbd "s--") 'zoom-frm-out)
@@ -70,17 +71,22 @@
 (global-set-key (kbd "<mouse-4>") 'down-slightly)
 (global-set-key (kbd "<mouse-5>") 'up-slightly)
 
-;;                    V--- set in iterm prefs
-(global-set-key (kbd "M-[ 5 e") 'evil-window-up)
-(global-set-key (kbd "M-[ 5 b") 'evil-window-down)
-(global-set-key (kbd "M-[ 5 d") 'evil-window-left)
-(global-set-key (kbd "M-[ 5 c") 'evil-window-right)
+;; Use 'cat -vte' on the command line to see which keys are received by emacs
 
-;;                     v--- ESC <up>
+;; ^[   maps to \e
+;; ^[[A maps to <up>
+
+;;                    Shift + Meta + Arrows
+(global-set-key (kbd "\e [1;10A") 'evil-window-up)
+(global-set-key (kbd "\e [1;10B") 'evil-window-down)
+(global-set-key (kbd "\e [1;10C") 'evil-window-right)
+(global-set-key (kbd "\e [1;10D") 'evil-window-left)
+
+;;                     Meta + Arrows
 (global-set-key (kbd "\e <up>")    'evil-window-up)
 (global-set-key (kbd "\e <down>")  'evil-window-down)
-(global-set-key (kbd "\e <left>")  'evil-window-left)
 (global-set-key (kbd "\e <right>") 'evil-window-right)
+(global-set-key (kbd "\e <left>")  'evil-window-left)
 
 ;; ESS mode hooks
 

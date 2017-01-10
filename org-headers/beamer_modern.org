@@ -68,6 +68,8 @@
 #+LaTeX_HEADER: \usegdlibrary{layered}
 #+LATEX_HEADER: \usetikzlibrary{circuits.ee.IEC}
 
+# And plots!
+#+LATEX_HEADER: \usepackage{pgfplots}
 
 # Import from tikzit!
 #+LATEX_HEADER: \pgfdeclarelayer{edgelayer}

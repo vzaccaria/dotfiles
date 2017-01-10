@@ -1,0 +1,2 @@
+.if '\V[GROFF_NO_SGR]'' \
+.   output x X tty: sgr 1

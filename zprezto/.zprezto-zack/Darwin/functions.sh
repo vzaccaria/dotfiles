@@ -132,3 +132,8 @@ function killAdobeProcesses() {
     echo '> rm /Library/LaunchAgents/*adobe*'
     echo '> rm ~/Library/LaunchAgents/*adobe*'
 }
+
+function manmd() {
+    pandoc -s -f markdown+all_symbols_escapable -t man "$@" | sed 's/\[C\]/\[B\]/g' | groff -T utf8 -man | less 
+}
+

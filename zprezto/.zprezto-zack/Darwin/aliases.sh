@@ -73,3 +73,5 @@ alias no-sleep-for-one-hour="caffeinate -u -t 3600"
 alias make='gmake'
 
 alias find_big_node_modules_dir='find . -name "node_modules" -prune -exec du -h -k -d 0 {} \;'
+
+alias help='manmd ./help.md'
