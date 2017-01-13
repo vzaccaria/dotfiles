@@ -44,11 +44,13 @@
 (global-set-key (kbd "M-t") 'beautify)
 (global-set-key (kbd "M-u") 'helm-mini)
 (global-set-key (kbd "M-i") 'fill-paragraph)
+
+;; org has problems with M-o
 (global-set-key (kbd "M-o") 'vz/switch-dictionary)
 
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "M-s") 'evil-write-all)
-(global-set-key (kbd "M-d") 'mc/mark-next-like-this)
+(global-set-key (kbd "M-d") 'vz/switch-dictionary)
 (global-set-key (kbd "M-f") 'helm-projectile-ag)
 (global-set-key (kbd "M-g") 'deft)
 (global-set-key (kbd "M-h") 'helm-m-x)

@@ -350,6 +350,7 @@ current buffer's, reload dir-locals."
   (let* ((dic ispell-current-dictionary)
          (change (if (string= dic "italiano") "en_US" "italiano")))
     (ispell-change-dictionary change)
+    (flyspell-buffer)
     (message "Dictionary switched from %s to %s" dic change)))
 
                                         ;(defun vz/open-today()

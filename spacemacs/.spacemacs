@@ -49,8 +49,8 @@ values."
      deft
      prodigy
      command-log
+     ;; (mu4e :variables mu4e-installation-path "/usr/local/Cellar/mu/HEAD-8d345ee/share/emacs/site-lisp/mu/mu4e")
      ;; my personal layer
-     (mu4e :variables mu4e-installation-path "/usr/local/Cellar/mu/HEAD-8d345ee/share/emacs/site-lisp/mu/mu4e")
      personal
      latex
      emoji
@@ -62,6 +62,10 @@ values."
      git
      github
      (c-c++ :variables c-c++-enable-clang-support t)
+     (maxima :variables
+             maxima-emacs-installation-path "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/maxima/5.35.1/emacs"
+             maxima-emacs-info-path "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/info" )
+
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -292,7 +296,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq org-enable-reveal-js-support t)
   (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
   (setq tramp-ssh-controlmaster-options
-              "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+        "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+
+
 )
 
 (defun dotspacemacs/user-config ()
@@ -318,6 +324,9 @@ you should place you code here."
         '("lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
           "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
           "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
+  (setq browse-url-mailto-function 'browse-url-generic)
+  (setq browse-url-generic-program "open")
 
   (vz/ag-hidden-files-enable)
 

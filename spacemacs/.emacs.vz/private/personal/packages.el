@@ -37,6 +37,7 @@
 
   (setq org-agenda-custom-commands '(("w" "My Agenda"
                                       ((agenda "")
+                                       (todo "TODAY")
                                        (todo "URGENT")
                                        (todo "IMPORTANT")
                                        (todo "")))))
@@ -124,6 +125,10 @@
 
   (add-to-list 'org-structure-template-alist
                '("cases" "#+BEGIN_LaTeX\n\\begin{equation}\nf(x) = \\begin{cases}\n 1 & \\text{for } n = 0 \\\\ \n \\end{cases}\n\\end{equation}\n#+END_LaTeX")
+               )
+
+  (add-to-list 'org-structure-template-alist
+               '("arr" "#+BEGIN_LaTeX\n\\begin{equation}\n\\begin{array}{rcl}\n a& = &b \\\\\n\\end{array}\n\\end{equation}\n#+END_LaTeX")
                )
 
   (add-to-list 'org-structure-template-alist
