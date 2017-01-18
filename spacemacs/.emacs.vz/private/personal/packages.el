@@ -104,9 +104,6 @@
   (setf org-latex-default-packages-alist
         (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
 
-  (add-to-list 'org-structure-template-alist
-               '("gr" "\\begin{tikzpicture}\n\\graph { a -> {b, c} };\n\\end{tikzpicture}")
-               )
 
   (add-to-list 'org-structure-template-alist
                '("oct" "#+BEGIN_SRC octave\n\n#+END_SRC")
@@ -115,28 +112,41 @@
                '("cs" "#+BEGIN_SRC c\n\n#+END_SRC")
                )
 
+  ;;;
+  ;;; - figcap: caption
+  ;;; - figenv: real figure environment
+  ;;; - tikzgraph: graph inside figure
+
   (add-to-list 'org-structure-template-alist
-               '("fg" "#+CAPTION: caption with label \\label{l1}\n#+attr_latex: :width 0.85\\linewidth :float t :placement [h]")
+               '("figcap" "#+CAPTION: caption with label \\label{l1}\n#+attr_latex: :width 0.85\\linewidth :float t :placement [h]")
                )
 
+  (add-to-list 'org-structure-template-alist
+               '("figenv" "#+BEGIN_LaTeX\n\\begin{figure}\n\n\\end{figure}\n#+END_LaTeX")
+               )
+
+  (add-to-list 'org-structure-template-alist
+               '("tikzgraph" "\\begin{tikzpicture}\n\\graph[layered layout, level distance=1cm]{ a -> {b, c} };\n\\end{tikzpicture}")
+               )
+
+  (add-to-list 'org-structure-template-alist
+               '("tikzchain" "\\begin{tikzpicture}[start chain=going right,node distance=5mm] \n \\node [draw,on chain] {Hello}; \n\\node [draw,on chain] {World}; \n\\end{tikzpicture}")
+               )
+
+  ;;;
+  ;;; - equ: equation 
+  ;;; - equcases: cases inside equation
+  ;;; - equarray: equation array
   (add-to-list 'org-structure-template-alist
                '("equ" "#+BEGIN_LaTeX\n\\begin{equation}\n\\end{equation}\n#+END_LaTeX")
                )
 
   (add-to-list 'org-structure-template-alist
-               '("cases" "#+BEGIN_LaTeX\n\\begin{equation}\nf(x) = \\begin{cases}\n 1 & \\text{for } n = 0 \\\\ \n \\end{cases}\n\\end{equation}\n#+END_LaTeX")
+               '("equcases" "f(x) = \\begin{cases}\n 1 & \\text{for } n = 0 \\\\ \n \\end{cases}\n")
                )
 
   (add-to-list 'org-structure-template-alist
-               '("arr" "#+BEGIN_LaTeX\n\\begin{equation}\n\\begin{array}{rcl}\n a& = &b \\\\\n\\end{array}\n\\end{equation}\n#+END_LaTeX")
-               )
-
-  (add-to-list 'org-structure-template-alist
-               '("lf" "#+BEGIN_LaTeX\n\\begin{figure}\n\\end{figure}\n#+END_LaTeX")
-               )
-
-  (add-to-list 'org-structure-template-alist
-               '("tf" "#+BEGIN_LaTeX\n\\begin{figure}\n\\begin{tikzpicture}\n\\end{tikzpicture}\\n\\end{figure}\n#+END_LaTeX")
+               '("equarray" "\\begin{array}{rcl}\n a& = &b \\\\\n\\end{array}\n")
                )
 
   (add-to-list 'org-structure-template-alist

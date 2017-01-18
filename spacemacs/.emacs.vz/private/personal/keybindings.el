@@ -32,7 +32,7 @@
 
 ;; to make your life easier; dont add any other character after M-* (!!!)
 (global-set-key (kbd "M-`") 'toggle-window-split)
-(global-set-key (kbd "M-1") 'org-agenda-list)
+(global-set-key (kbd "M-1") 'helm-resume)
 (global-set-key (kbd "M-2") 'org-todo-list)
 
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
@@ -66,6 +66,7 @@
 (global-set-key (kbd "M-B") 'vz/previous-error)
 (global-set-key (kbd "M-b") 'vz/next-error)
 (global-set-key (kbd "M-n") 'evil-window-vnew)
+(global-set-key (kbd "M-.") 'helm-resume)
 
 (global-set-key (kbd "s-=") 'zoom-frm-in)
 (global-set-key (kbd "s--") 'zoom-frm-out)
@@ -94,6 +95,11 @@
 
 (define-key c-mode-map [M-a] 'mark-whole-buffer)
 ;; (define-key comint-mode-map [C-down] 'comint-next-matching-input-from-input)
+
+;; Evil normal mode overrides
+(define-key evil-normal-state-map (kbd "M-.") 'helm-resume)
+(define-key evil-normal-state-map (kbd "M-a") 'mark-whole-buffer)
+
 
 (provide 'index)
 ;;; index.el ends here
