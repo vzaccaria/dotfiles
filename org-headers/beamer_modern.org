@@ -66,7 +66,8 @@
 #+LATEX_HEADER: \usetikzlibrary{decorations,decorations.pathmorphing,decorations.pathreplacing}
 #+LaTeX_HEADER: \usegdlibrary{trees}
 #+LaTeX_HEADER: \usegdlibrary{layered}
-#+LATEX_HEADER: \usetikzlibrary{circuits.ee.IEC}
+#+LaTeX_HEADER: \usegdlibrary{force}
+#+LATEX_HEADER: \usetikzlibrary{circuits.logic.US}
 
 # And plots!
 #+LATEX_HEADER: \usepackage{pgfplots}
@@ -91,8 +92,8 @@
 #+LATEX_HEADER: \setmonofont[Scale=0.75]{Menlo}
 #+LATEX_HEADER: \newfontfamily\myunicodefallback{Menlo}
 
-# #+LATEX_HEADER: \definecolor{links}{HTML}{0086F7}
-# #+LATEX_HEADER: \hypersetup{colorlinks,linkcolor=,urlcolor=links}
+#+LATEX_HEADER: \definecolor{links}{HTML}{0086F7}
+#+LATEX_HEADER: \hypersetup{colorlinks,linkcolor=,urlcolor=links}
 
 #+LATEX_HEADER: \newcommand{\keyboard}{{\tikz \node[box, minimum size=0cm] {\faKeyboardO};}}
 #+LATEX_HEADER: \newcommand{\screen}{{\tikz \node[box, minimum size=0cm] {\faTerminal};}}
@@ -110,7 +111,7 @@
 
 #+LaTeX_HEADER: \usepackage{fancyvrb}
 
-#+BEGIN_LaTeX
+#+BEGIN_EXPORT latex
 \tikzstyle{none}=[rectangle, minimum size=1cm]
 \tikzstyle{box}=[rectangle, fill=white, draw=black, minimum size=2cm, rounded corners]
 \tikzstyle{sbox}=[rectangle, fill=white, draw=black, minimum width=4cm, rounded corners]
@@ -148,7 +149,7 @@
 \tikzstyle{ribbonrw}=   [draw=black!20 , line width = 1.0ex , {Triangle Cap[]}-{Triangle Cap[]}]
 
 \tikzstyle{matrix aspect}=[matrix of nodes, nodes={outer sep=0pt,inner sep=3pt},column sep=3em,row sep=5ex]
-#+END_LaTeX
+#+END_EXPORT
 
 #+LATEX_HEADER: % needs latex emoji https://github.com/henningpohl/latex-emoji/blob/master/example.tex
 #+LATEX_HEADER: \usepackage[twitter]{emoji}
