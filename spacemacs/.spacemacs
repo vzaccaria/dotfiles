@@ -358,6 +358,11 @@ you should place you code here."
      (todo . " %i  %-20:c %-25:b")
      (tags . " %i %-12:c")
      (search . " %i %-12:c"))))
+ '(org-html-inline-image-rules
+   (quote
+    (("file" . "\\.\\(jpeg\\|jpg\\|png\\|pdf\\|gif\\|svg\\)\\'")
+     ("http" . "\\.\\(jpeg\\|jpg\\|png\\|gif\\|svg\\)\\'")
+     ("https" . "\\.\\(jpeg\\|jpg\\|png\\|gif\\|svg\\)\\'"))))
  '(psc-ide-add-import-on-completion t t)
  '(psc-ide-rebuild-on-save nil t)
  '(send-mail-function (quote smtpmail-send-it)))

@@ -12,23 +12,10 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cj" 'js-doc-insert-function-doc)
 
-(global-set-key (kbd "<f1>")  'vz/open-inbox)
-(global-set-key (kbd "<f2>")  'vz/open-today)
  
-(global-set-key (kbd "<f10>") 'vz/open-today)
-(global-set-key (kbd "<f11>") 'vz/open-inbox)
-(global-set-key (kbd "<f12>") 'mu4e-headers-search)
-
 (global-set-key (kbd "<f4>")  'personal/show-agenda-all)
-(global-set-key (kbd "<f5>")  'mu4e-headers-search)
-(global-set-key (kbd "<f7>")  'vz/open-today)
-(global-set-key (kbd "<f6>")  'vz/open-inbox)
-
 
 (global-set-key (kbd "<f16>")  'personal/show-agenda-all)
-(global-set-key (kbd "<f17>")  'mu4e-headers-search)
-(global-set-key (kbd "<f18>")  'vz/open-today)
-(global-set-key (kbd "<f19>")  'vz/open-inbox)
 
 ;; to make your life easier; dont add any other character after M-* (!!!)
 (global-set-key (kbd "M-`") 'toggle-window-split)
@@ -56,7 +43,7 @@
 (global-set-key (kbd "M-h") 'helm-m-x)
 (global-set-key (kbd "M-j") 'vz/align-code-to-equals)
 (global-set-key (kbd "M-k") 'vz/recompile)
-(global-set-key (kbd "M-l") 'vz/go-to-interpreter)
+(global-set-key (kbd "M-l") 'org-latex-export-to-latex)
 (global-set-key (kbd "M-/") 'evil-search-forward)
 
 
@@ -99,6 +86,15 @@
 ;; Evil normal mode overrides
 (define-key evil-normal-state-map (kbd "M-.") 'helm-resume)
 (define-key evil-normal-state-map (kbd "M-a") 'mark-whole-buffer)
+
+;; Function key revival
+(define-key org-mode-map (kbd "<f1>")  'org-beamer-export-to-pdf)
+(define-key org-mode-map (kbd "<f2>")  'org-latex-export-to-pdf)
+(define-key org-mode-map (kbd "<f3>")  'org-latex-export-to-latex)
+(define-key org-mode-map (kbd "<f4>")  'vz/org-to-docx)
+(define-key org-mode-map (kbd "∫")  'vz/org-current-word-bold)
+(define-key org-mode-map (kbd "ç")  'vz/org-current-word-code)
+
 
 
 (provide 'index)

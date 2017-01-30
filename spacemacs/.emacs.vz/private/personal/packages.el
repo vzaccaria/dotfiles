@@ -8,8 +8,11 @@
     spell-checking
     prodigy
     mu4e
+    (vz-helm-google :location (recipe :fetcher github :repo "vzaccaria/helm-google"))
+    haskell-emacs
     helm-mu
     livescript-mode
+    ox-extra
     ))
 
 (defun personal/init-livescript-mode ()
@@ -34,6 +37,7 @@
 
 ;; define initialization here
 (defun personal/post-init-org ()
+
 
   (setq org-agenda-custom-commands '(("w" "My Agenda"
                                       ((agenda "")
@@ -76,7 +80,7 @@
      (sh . t)
      (haskell . t)
      (js . t)
-     (C . t)
+     (C . t)  
      (ditaa . t)
      (plantuml . t)
      (latex . t)
@@ -122,7 +126,7 @@
                )
 
   (add-to-list 'org-structure-template-alist
-               '("figenv" "#+BEGIN_LaTeX\n\\begin{figure}\n\n\\end{figure}\n#+END_LaTeX")
+               '("figenv" "#+BEGIN_EXPORT latex\n\\begin{figure}\n\n\\end{figure}\n#+END_EXPORT")
                )
 
   (add-to-list 'org-structure-template-alist
@@ -138,7 +142,7 @@
   ;;; - equcases: cases inside equation
   ;;; - equarray: equation array
   (add-to-list 'org-structure-template-alist
-               '("equ" "#+BEGIN_LaTeX\n\\begin{equation}\n\\end{equation}\n#+END_LaTeX")
+               '("equ" "#+BEGIN_EXPORT latex\n\\begin{equation}\n\\end{equation}\n#+END_EXPORT")
                )
 
   (add-to-list 'org-structure-template-alist
@@ -172,7 +176,7 @@
                  ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                  ("\\paragraph{%s}" . "\\paragraph*{%s}")
                  ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
-))
+                 ))
 
   (add-to-list 'org-latex-classes
                '("IEEETran"
@@ -220,7 +224,38 @@
                  ("\\section\{%s\}" . "\\section*\{%s\}")
                  ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
                  ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
+
+  (setq org-export-default-inline-image-rule
+        '(("file" . "\\.\\(gif\\|jp\\(?:e?g\\)\\|p\\(?:bm\\|df\\|gm\\|ng\\|pm\\)\\|tiff?\\|x\\(?:[bp]m\\)\\)\\'"))
+        )
   )
+
+;;; for writing extensions in haskell
+(defun personal/init-haskell-emacs ()
+  (use-package haskell-emacs
+    :config
+    (progn
+      (setq haskell-emacs-dir "~/.emacs.vz/private/haskell-emacs/")
+      (setq haskell-emacs-build-tool 'stack)
+      )
+    )
+  )
+
+;;; for ignoring headers
+(defun personal/init-ox-extra ()
+  (use-package ox-extra
+    :config
+    (ox-extras-activate '(ignore-headlines))
+    )
+  )
+
+(defun personal/init-vz-helm-google()
+  (use-package vz-helm-google
+    :config
+    :commands vz-helm-google
+    )
+  )
+
 
 (defun personal/post-init-org-bullets ()
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
@@ -266,8 +301,8 @@
     :init
     (require 'helm-config)
     (spacemacs/set-leader-keys "oM" 'helm-mu
-            "oC" 'helm-mu-contacts))
-    )
+      "oC" 'helm-mu-contacts))
+  )
 
 
 (defun personal/pre-init-mu4e ()
@@ -326,10 +361,10 @@
                             (let ((email "vittorio.zaccaria@polimi.it"))
                               (when msg
                                 (or
-                                  (mu4e-message-contact-field-matches msg :to email)
-                                  (mu4e-message-contact-field-matches msg :cc email)
-                                  (mu4e-message-contact-field-matches msg :from email)
-                                  ))))
+                                 (mu4e-message-contact-field-matches msg :to email)
+                                 (mu4e-message-contact-field-matches msg :cc email)
+                                 (mu4e-message-contact-field-matches msg :from email)
+                                 ))))
 
 
               :vars '(  ( user-mail-address	. "vittorio.zaccaria@polimi.it"  )
@@ -365,10 +400,10 @@
     ;; addresses as well, you'll need to add those manually.
     (setq mu4e-user-mail-address-list
           (delq nil
-          (mapcar (lambda (context)
-                    (when (mu4e-context-vars context)
-                      (cdr (assq 'user-mail-address (mu4e-context-vars context)))))
-                  mu4e-contexts)))
+                (mapcar (lambda (context)
+                          (when (mu4e-context-vars context)
+                            (cdr (assq 'user-mail-address (mu4e-context-vars context)))))
+                        mu4e-contexts)))
 
     ;; make sure the gnutls command line utils are installed
     ;; package 'gnutls-bin' in Debian/Ubuntu
@@ -398,10 +433,10 @@
 
     (setq mu4e-bookmarks
           '(
-          ("maildir:/INBOX"                        "Inbox"               ?i)
-          ("date:today..now"                       "Today"               ?t)
+            ("maildir:/INBOX"                        "Inbox"               ?i)
+            ("date:today..now"                       "Today"               ?t)
 
-          ))
+            ))
 
     (spacemacs|use-package-add-hook mu4e
       :post-config

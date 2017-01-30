@@ -64,7 +64,7 @@
 (defun beautify-markdown (&optional b e)
   (interactive "r")
   (shell-command-on-region (point-min) (point-max)
-                           "pandoc -s --read markdown --write markdown-simple_tables+pipe_tables-fenced_code_blocks-fenced_code_attributes" (current-buffer) t))
+                           "pandoc -s --read markdown --write markdown-simple_tables+pipe_tables-fenced_code_blocks-fenced_code_attributes --atx-headers" (current-buffer) t))
 
 (defun vz/accentize (&optional b e)
   (interactive "r")
@@ -81,6 +81,7 @@
   (interactive "r")
   (shell-command-on-region (point-min) (point-max)
                            "/usr/local/bin/org2kf -a" (current-buffer) t))
+
 (defun vz/show-command-log-and-keys (&optional b e)
   (interactive "r")
   (global-command-log-mode t)
@@ -89,9 +90,9 @@
 (defun vz/recompile (&optional b e)
   (interactive)
   (cond
-        ((derived-mode-p 'c-mode)          (call-interactively 'recompile))
-        ((derived-mode-p 'haskell-mode)    (call-interactively 'haskell-process-load-file))
-        (t "not implemented")))
+   ((derived-mode-p 'c-mode)          (call-interactively 'recompile))
+   ((derived-mode-p 'haskell-mode)    (call-interactively 'haskell-process-load-file))
+   (t "not implemented")))
 
 (defun vz/go-to-interpreter(&optional b e)
   (interactive)
@@ -228,6 +229,19 @@ current buffer's, reload dir-locals."
   (concat (getenv "HOME") "/.emacs.d/desktops/")
   "*Directory to save desktop sessions in")
 
+(defun vz/replace-buffer-file-extension-to (ext)
+  "Replace the extension of the current buffer file to `.EXT'."
+  (interactive)
+  (concat (file-name-base (buffer-file-name)) ext))
+
+(defun vz/org-to-docx ()
+  (interactive)
+  (org-md-export-to-markdown)
+   (shell-command (format "%s %s -o %s --reference-docx=./templates/clean-reference.docx"
+                          "pandoc"
+                          (shell-quote-argument (vz/replace-buffer-file-extension-to ".md"))
+                          (shell-quote-argument (vz/replace-buffer-file-extension-to ".docx"))
+  )))
 
 (defvar my-desktop-session-name-hist nil
   "Desktop session name history")
@@ -295,9 +309,19 @@ current buffer's, reload dir-locals."
   (spacemacs/previous-error)
   )
 
+(defun vz/org-current-word-bold ()
+  (interactive)
+  (mark-word)
+  (spacemacs/org-bold))
+
+(defun vz/org-current-word-code ()
+  (interactive)
+  (mark-word)
+  (spacemacs/org-verbose))
 (defun org-text-bold () "Wraps the region with asterisks."
        (interactive)
        (surround-text "*"))
+
 (defun org-text-italics () "Wraps the region with slashes."
        (interactive)
        (surround-text "/"))
@@ -353,10 +377,10 @@ current buffer's, reload dir-locals."
     (flyspell-buffer)
     (message "Dictionary switched from %s to %s" dic change)))
 
-                                        ;(defun vz/open-today()
-                                        ;  (interactive)
-                                        ;  (mu4e-headers-search-bookmark "date:today..now")
-                                        ;  )
+                                        ;(defun vz/open-today() ;
+                                        ;  (interactive) ;
+                                        ;  (mu4e-headers-search-bookmark "date:today..now") ;
+                                        ;  ) ;
 ;;
 
 (defun up-slightly () (interactive) (scroll-up 5))
@@ -366,6 +390,7 @@ current buffer's, reload dir-locals."
   "Just exec without confirmation."
   (interactive)
   (mu4e-mark-execute-all t))
+
 
 (provide 'functions)
 ;;; functions.el ends here
