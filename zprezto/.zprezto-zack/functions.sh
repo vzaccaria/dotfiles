@@ -80,8 +80,10 @@ lift() {
             echo " lift cat filenames.txt | map command ... _ ... "
             echo "                                          ^--- placeholder for filename among the args"
             echo ""
-            echo " - Use `fmap` instead of `map` to flatten results into a sequence of 0-ended file names "
+            echo " - Use fmap instead of map to flatten results into a sequence of 0-ended file names "
             echo " - Available lift instances: find, ag, locate, head, tail, ls "
+            echo " - If you need to execute based on extension, use fex extension command {} "
+            echo "                                                                         ^- placeholder for file"
             ;;
         find)
             find . -name ${opts} -print0

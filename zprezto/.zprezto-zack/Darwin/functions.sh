@@ -7,35 +7,7 @@
 . `brew --prefix`/etc/profile.d/z.sh
 
 alias vim=/usr/local/bin/vim
-alias emacsclient=/opt/homebrew-cask/Caskroom/emacs/24.5-1/Emacs.app/Contents/MacOS/bin/emacsclient
 
-vi() {
-    emacsclient -nw "$@" -c
-}
-
-emacs-gui() {
-    emacsclient "$@" -c
-}
-
-gvim() {
-    emacsclient "$@" -c
-}
-
-
-startemacs() {
-    /Users/zaccaria/Applications/Emacs.app/Contents/MacOS/Emacs --daemon
-}
-
-stopemacs() {
-    emacsclient -e "(kill-emacs)"
-}
-
-
-restartemacs() {
-    stopemacs
-    sleep 2
-    startemacs
-}
 
 towerthis() {
     open -a "Tower" .
@@ -133,7 +105,65 @@ function killAdobeProcesses() {
     echo '> rm ~/Library/LaunchAgents/*adobe*'
 }
 
+function cal-add-laurea-primo-livello() {
+    if [ "$1" = "help" ]; then
+       echo "cal-add-laurea-primo-livello 'MM/DD/YYYY HH:mm' "
+    else
+        gcalcli \
+            --duration 90 \
+            --calendar "Vittorio Zaccaria" \
+            --description "Laurea di primo livello" \
+            --title "Laurea di primo livello" \
+            --where "Sala conferenze - DEIB - Milano (MI)" \
+            --reminder "60" \
+            add \
+            --nocache \
+            --when "$1";
+    fi
+}
+
+
 function manmd() {
     pandoc -s -f markdown+all_symbols_escapable -t man "$@" | sed 's/\[C\]/\[B\]/g' | groff -T utf8 -man | less 
+}
+
+
+alias emacsclient=/opt/homebrew-cask/Caskroom/emacs/24.5-1/Emacs.app/Contents/MacOS/bin/emacsclient
+
+vi() {
+    emacsclient -nw "$@" -c
+}
+
+emacs-gui() {
+    emacsclient "$@" -c
+}
+
+gvim() {
+    emacsclient "$@" -c
+}
+
+
+startemacs() {
+    /Users/zaccaria/Applications/Emacs.app/Contents/MacOS/Emacs --daemon
+}
+
+stopemacs() {
+    emacsclient -e "(kill-emacs)"
+}
+
+
+restartemacs() {
+    stopemacs
+    sleep 2
+    startemacs
+}
+
+function resetemacs() {
+    rm -f /Users/zaccaria/.emacs.d/elpa
+    startemacs
+    stopemacs
+    echo "As per: https://github.com/syl20bnr/spacemacs/issues/3314 you should now:"
+    echo "1. remove org and org-plus-contrib"
+    echo "2. restartemacs"
 }
 
