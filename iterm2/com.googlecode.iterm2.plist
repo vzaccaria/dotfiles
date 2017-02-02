@@ -31850,11 +31850,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>873 385 606 456 0 0 1920 1178 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>867 590 796 473 0 0 1920 1178 </string>
+	<string>603 549 796 473 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 25 1440 853 0 0 1440 878 </string>
+	<string>0 34 1920 1134 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 -2 790 580 0 0 800 578 </string>
+	<string>0 11 954 1167 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
 	<string>365 307 890 534 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 11</key>
@@ -33663,9 +33663,9 @@
 				<key>0xf700-0x220000</key>
 				<dict>
 					<key>Action</key>
-					<integer>10</integer>
+					<integer>11</integer>
 					<key>Text</key>
-					<string>[A</string>
+					<string>0x1b 0x1b 0x5b 0x45</string>
 				</dict>
 				<key>0xf700-0x240000</key>
 				<dict>
@@ -33691,9 +33691,9 @@
 				<key>0xf701-0x220000</key>
 				<dict>
 					<key>Action</key>
-					<integer>10</integer>
+					<integer>11</integer>
 					<key>Text</key>
-					<string>[B</string>
+					<string>0x1b 0x1b 0x5b 0x46</string>
 				</dict>
 				<key>0xf701-0x240000</key>
 				<dict>
@@ -33719,9 +33719,9 @@
 				<key>0xf702-0x220000</key>
 				<dict>
 					<key>Action</key>
-					<integer>10</integer>
+					<integer>11</integer>
 					<key>Text</key>
-					<string>[D</string>
+					<string>0x1b 0x1b 0x5b 0x49</string>
 				</dict>
 				<key>0xf702-0x240000</key>
 				<dict>
@@ -33747,9 +33747,9 @@
 				<key>0xf703-0x220000</key>
 				<dict>
 					<key>Action</key>
-					<integer>10</integer>
+					<integer>11</integer>
 					<key>Text</key>
-					<string>[C</string>
+					<string>0x1b 0x1b 0x5b 0x48</string>
 				</dict>
 				<key>0xf703-0x240000</key>
 				<dict>
@@ -33936,11 +33936,11 @@
 			<key>Ansi 1 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.14145714044570923</real>
+				<real>0.14145712554454803</real>
 				<key>Green Component</key>
-				<real>0.10840655118227005</real>
+				<real>0.10840645432472229</real>
 				<key>Red Component</key>
-				<real>0.81926977634429932</real>
+				<real>0.81926983594894409</real>
 			</dict>
 			<key>Ansi 10 Color</key>
 			<dict>
@@ -34075,11 +34075,11 @@
 			<key>Background Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.15170273184776306</real>
+				<real>0.86405980587005615</real>
 				<key>Green Component</key>
-				<real>0.11783610284328461</real>
+				<real>0.95794391632080078</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.98943418264389038</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -34107,14 +34107,14 @@
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.56363654136657715</real>
+				<real>0.38298487663269043</real>
 				<key>Green Component</key>
-				<real>0.56485837697982788</real>
+				<real>0.35665956139564514</real>
 				<key>Red Component</key>
-				<real>0.50599193572998047</real>
+				<real>0.27671992778778076</real>
 			</dict>
 			<key>Bonjour Service Address</key>
-			<string>192.168.1.105</string>
+			<string>192.168.1.120</string>
 			<key>Bound Hosts</key>
 			<array/>
 			<key>Character Encoding</key>
@@ -34124,15 +34124,15 @@
 			<key>Columns</key>
 			<integer>110</integer>
 			<key>Command</key>
-			<string>ssh 192.168.1.105</string>
+			<string>ftp 192.168.1.120</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.51685798168182373</real>
+				<real>0.43850564956665039</real>
 				<key>Green Component</key>
-				<real>0.50962930917739868</real>
+				<real>0.40717673301696777</real>
 				<key>Red Component</key>
-				<real>0.44058024883270264</real>
+				<real>0.32436618208885193</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -34150,11 +34150,11 @@
 			<key>Cursor Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.19370138645172119</real>
+				<real>0.79781103134155273</real>
 				<key>Green Component</key>
-				<real>0.15575926005840302</real>
+				<real>0.89001238346099854</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.91611063480377197</real>
 			</dict>
 			<key>Cursor Type</key>
 			<integer>2</integer>
@@ -34165,7 +34165,7 @@
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
-			<string>macbook</string>
+			<string>qnappino(FTP)</string>
 			<key>Disable Smcup Rmcup</key>
 			<false/>
 			<key>Disable Window Resizing</key>
@@ -34175,14 +34175,14 @@
 			<key>Foreground Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.51685798168182373</real>
+				<real>0.43850564956665039</real>
 				<key>Green Component</key>
-				<real>0.50962930917739868</real>
+				<real>0.40717673301696777</real>
 				<key>Red Component</key>
-				<real>0.44058024883270264</real>
+				<real>0.32436618208885193</real>
 			</dict>
 			<key>Guid</key>
-			<string>334C885E-AE21-4622-81EA-83EDA6F8D501</string>
+			<string>23926E6F-9F09-44AA-BE8E-F21A9D1FFD89</string>
 			<key>Horizontal Spacing</key>
 			<real>0.87021719691265065</real>
 			<key>Idle Code</key>
@@ -34397,13 +34397,13 @@
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>macbook</string>
+			<string>qnappino(FTP)</string>
 			<key>Non Ascii Font</key>
 			<string>Monaco 9</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Hasklig-Light 36</string>
+			<string>Inconsolata 21</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -34421,20 +34421,20 @@
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.56363654136657715</real>
+				<real>0.38298487663269043</real>
 				<key>Green Component</key>
-				<real>0.56485837697982788</real>
+				<real>0.35665956139564514</real>
 				<key>Red Component</key>
-				<real>0.50599193572998047</real>
+				<real>0.27671992778778076</real>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.19370138645172119</real>
+				<real>0.79781103134155273</real>
 				<key>Green Component</key>
-				<real>0.15575926005840302</real>
+				<real>0.89001238346099854</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.91611063480377197</real>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -34486,11 +34486,11 @@
 			<key>Ansi 1 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.14145714044570923</real>
+				<real>0.14145712554454803</real>
 				<key>Green Component</key>
-				<real>0.10840655118227005</real>
+				<real>0.10840645432472229</real>
 				<key>Red Component</key>
-				<real>0.81926977634429932</real>
+				<real>0.81926983594894409</real>
 			</dict>
 			<key>Ansi 10 Color</key>
 			<dict>
@@ -34625,11 +34625,11 @@
 			<key>Background Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.15170273184776306</real>
+				<real>0.86405980587005615</real>
 				<key>Green Component</key>
-				<real>0.11783610284328461</real>
+				<real>0.95794391632080078</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.98943418264389038</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -34657,14 +34657,14 @@
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.56363654136657715</real>
+				<real>0.38298487663269043</real>
 				<key>Green Component</key>
-				<real>0.56485837697982788</real>
+				<real>0.35665956139564514</real>
 				<key>Red Component</key>
-				<real>0.50599193572998047</real>
+				<real>0.27671992778778076</real>
 			</dict>
 			<key>Bonjour Service Address</key>
-			<string>192.168.1.120</string>
+			<string>192.168.1.105</string>
 			<key>Bound Hosts</key>
 			<array/>
 			<key>Character Encoding</key>
@@ -34674,15 +34674,15 @@
 			<key>Columns</key>
 			<integer>110</integer>
 			<key>Command</key>
-			<string>ftp 192.168.1.120</string>
+			<string>ssh 192.168.1.105</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.51685798168182373</real>
+				<real>0.43850564956665039</real>
 				<key>Green Component</key>
-				<real>0.50962930917739868</real>
+				<real>0.40717673301696777</real>
 				<key>Red Component</key>
-				<real>0.44058024883270264</real>
+				<real>0.32436618208885193</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -34700,11 +34700,11 @@
 			<key>Cursor Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.19370138645172119</real>
+				<real>0.79781103134155273</real>
 				<key>Green Component</key>
-				<real>0.15575926005840302</real>
+				<real>0.89001238346099854</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.91611063480377197</real>
 			</dict>
 			<key>Cursor Type</key>
 			<integer>2</integer>
@@ -34715,7 +34715,7 @@
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
-			<string>qnappino(FTP)</string>
+			<string>macbook</string>
 			<key>Disable Smcup Rmcup</key>
 			<false/>
 			<key>Disable Window Resizing</key>
@@ -34725,14 +34725,14 @@
 			<key>Foreground Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.51685798168182373</real>
+				<real>0.43850564956665039</real>
 				<key>Green Component</key>
-				<real>0.50962930917739868</real>
+				<real>0.40717673301696777</real>
 				<key>Red Component</key>
-				<real>0.44058024883270264</real>
+				<real>0.32436618208885193</real>
 			</dict>
 			<key>Guid</key>
-			<string>876B5D19-05F3-437F-A517-B8F745AE8022</string>
+			<string>0246157C-1774-4C26-B340-DEB5F8B31522</string>
 			<key>Horizontal Spacing</key>
 			<real>0.87021719691265065</real>
 			<key>Idle Code</key>
@@ -34947,13 +34947,13 @@
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>qnappino(FTP)</string>
+			<string>macbook</string>
 			<key>Non Ascii Font</key>
 			<string>Monaco 9</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Hasklig-Light 36</string>
+			<string>Inconsolata 21</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -34971,20 +34971,20 @@
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.56363654136657715</real>
+				<real>0.38298487663269043</real>
 				<key>Green Component</key>
-				<real>0.56485837697982788</real>
+				<real>0.35665956139564514</real>
 				<key>Red Component</key>
-				<real>0.50599193572998047</real>
+				<real>0.27671992778778076</real>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.19370138645172119</real>
+				<real>0.79781103134155273</real>
 				<key>Green Component</key>
-				<real>0.15575926005840302</real>
+				<real>0.89001238346099854</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.91611063480377197</real>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -35108,7 +35108,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-01-24T09:55:23Z</date>
+	<date>2017-02-02T16:13:32Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>

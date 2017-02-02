@@ -292,6 +292,17 @@ before packages are loaded. If you are unsure, you should try in setting them in
                                 :modes (latex-mode))
 
        (add-to-list 'flycheck-checkers 'grammar-gramcheck)
+       (flycheck-define-checker proselint
+         "A linter for prose."
+         :command ("/Users/zaccaria/python-scripts/bin/proselint" source-inplace)
+         :error-patterns
+         ((warning line-start (file-name) ":" line ":" column ": "
+                   (id (one-or-more (not (any " "))))
+                   (message (one-or-more not-newline)
+                            (zero-or-more "\n" (any " ") (one-or-more not-newline)))
+                   line-end))
+         :modes (text-mode markdown-mode gfm-mode))
+       (add-to-list 'flycheck-checkers 'proselint)
     )
     )
   (setq org-enable-reveal-js-support t)

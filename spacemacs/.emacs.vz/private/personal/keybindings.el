@@ -1,4 +1,5 @@
 
+(Utils.init "personal/keybindings")
 
 
 
@@ -61,10 +62,26 @@
 (global-set-key (kbd "<mouse-4>") 'down-slightly)
 (global-set-key (kbd "<mouse-5>") 'up-slightly)
 
+
+;; The following are heavily based on my iTerm2 mappings. Use at your own risk!
 ;; Use 'cat -vte' on the command line to see which keys are received by emacs
 
 ;; ^[   maps to \e
 ;; ^[[A maps to <up>
+
+;; Here we are defining some low-level translation of keys coming from iTerm.
+;; We are then remapping the new "keys" to appropriate functions 
+(define-key key-translation-map "\e\e[E" [(shift-up)])
+(define-key key-translation-map "\e\e[F" [(shift-down)]) 
+(define-key key-translation-map "\e\e[H" [(shift-right)])
+(define-key key-translation-map "\e\e[I" [(shift-left)])
+
+
+;;                    Shift + Arrows
+(global-set-key [(shift-up)] 'evil-backward-paragraph)    ;; 46
+(global-set-key [(shift-down)] 'evil-forward-paragraph)  ;; 47
+(global-set-key [(shift-right)] 'evil-forward-word-end) ;; 48
+(global-set-key [(shift-left)] 'evil-backward-word-end)  ;; 48
 
 ;;                    Shift + Meta + Arrows
 (global-set-key (kbd "\e [1;10A") 'evil-window-up)
@@ -92,10 +109,14 @@
 (define-key org-mode-map (kbd "<f2>")  'org-latex-export-to-pdf)
 (define-key org-mode-map (kbd "<f3>")  'org-latex-export-to-latex)
 (define-key org-mode-map (kbd "<f4>")  'vz/org-to-docx)
+
 (define-key org-mode-map (kbd "∫")  'vz/org-current-word-bold)
 (define-key org-mode-map (kbd "ç")  'vz/org-current-word-code)
 
 
+;; (define-key markdown-mode-map (kbd "∫")  'markdown-insert-bold)
+;; (define-key markdown-mode-map (kbd "ç")  'markdown-insert-code)
 
+(Utils.end "personal/keybindings")
 (provide 'index)
 ;;; index.el ends here
