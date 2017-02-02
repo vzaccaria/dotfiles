@@ -89,7 +89,7 @@
 # #+LATEX_HEADER: \setmainlanguage{italian}
 
 # Unicode fonts (for ASCII art)
-#+LATEX_HEADER: \setmonofont[Scale=0.75]{Menlo}
+#+LATEX_HEADER: \setmonofont[Scale=0.75]{Hasklig}
 #+LATEX_HEADER: \newfontfamily\myunicodefallback{Menlo}
 
 #+LATEX_HEADER: \definecolor{links}{HTML}{0086F7}

@@ -139,6 +139,10 @@ org2json() {
     emacs "$1" -l ~/.emacs --batch --eval="(org-as-json-to-file)"
 }
 
+gi() {
+    echo "$1" >> ./.gitignore
+}
+
 git-ignore-edit() {
     vi "$(git root)/.gitignore"
 }

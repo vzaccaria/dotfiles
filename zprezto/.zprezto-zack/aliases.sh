@@ -11,7 +11,6 @@ alias h="history 400"
 
 # Global git aliases
 alias g='git'
-alias gi='git ignore'				# from `brew git-extras`
 alias ga='git add'
 alias gca='git commit -a -m'
 alias gd='git diff --color-words'
@@ -37,10 +36,10 @@ if ls -G > /dev/null 2>&1; then
 fi
 
 # List all files colorized in long format
-alias l="ls -lF ${colorflag}"
+alias l="ls -ltrF ${colorflag}"
 
 # List all files colorized in long format, including dot files
-alias la="ls -laF ${colorflag}"
+alias la="ls -ltraF ${colorflag}"
 
 # List only directories
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
