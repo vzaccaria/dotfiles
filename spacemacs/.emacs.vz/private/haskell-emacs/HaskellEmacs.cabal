@@ -21,3 +21,5 @@ executable HaskellEmacs
                      , haskell-src-exts
                      , containers
                      , attoparsec
+                     , hashable
+                     , ansi-terminal

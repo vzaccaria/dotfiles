@@ -1,5 +1,5 @@
 -- hash of haskell-emacs: 168affad7374b5ff0679f27969dc6e54826fb629
--- hash of all functions: 25d83b2a2dfd5cb6608585ef682d54443449a9c7
+-- hash of all functions: b311e454a4ccc7d30427a8dfc1ee56d4ca12231a
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE OverloadedStrings #-}
 
@@ -9,6 +9,7 @@
 
 module Main where
 import qualified Matrix
+import qualified Utils
 
 import           Control.Applicative              (optional, (<$>), (<*>))
 import           Control.Arrow                    hiding (app)
@@ -137,7 +138,25 @@ dispatcher = M.fromList $
   ] ++ []++[("Matrix.transpose", transform (\ (x1) -> Matrix.transpose x1)),
  ("Matrix.identity", transform (\ (x1) -> Matrix.identity x1)),
  ("Matrix.isIdentity", transform (\ (x1) -> Matrix.isIdentity x1)),
- ("Matrix.dyadic", transform (\ (x1, x2) -> Matrix.dyadic x1 x2))]
+ ("Matrix.dyadic", transform (\ (x1, x2) -> Matrix.dyadic x1 x2)),
+ ("Utils.displayState",
+  transform (\ (x1, x2, x3) -> Utils.displayState x1 x2 x3)),
+ ("Utils.intIndex", transform (\ (x1) -> Utils.intIndex x1)),
+ ("Utils.c", transform (\ (x1, x2) -> Utils.c x1 x2)),
+ ("Utils.init'", transform (\ (x1) -> Utils.init' x1)),
+ ("Utils.postInit'", transform (\ (x1) -> Utils.postInit' x1)),
+ ("Utils.initn'", transform (\ (x1, x2) -> Utils.initn' x1 x2)),
+ ("Utils.postInitn'",
+  transform (\ (x1, x2) -> Utils.postInitn' x1 x2)),
+ ("Utils.end", transform (\ (x1) -> Utils.end x1)),
+ ("Utils.init", transform (\ (x1) -> Utils.init x1)),
+ ("Utils.postInit", transform (\ (x1) -> Utils.postInit x1)),
+ ("Utils.initn", transform (\ (x1, x2) -> Utils.initn x1 x2)),
+ ("Utils.postInitn",
+  transform (\ (x1, x2) -> Utils.postInitn x1 x2)),
+ ("Utils.message", transform (\ (x1) -> Utils.message x1)),
+ ("Utils.getVar", transform (\ (x1) -> Utils.getVar x1)),
+ ("Utils.getSVar", transform (\ (x1) -> Utils.getSVar x1))]
 
 -- | Transform a curried function to a function which receives and
 -- returns lisp forms.
@@ -165,7 +184,20 @@ arityList :: [(String, Int)]
 arityList = []++[("Matrix.transpose", arity Matrix.transpose),
  ("Matrix.identity", arity Matrix.identity),
  ("Matrix.isIdentity", arity Matrix.isIdentity),
- ("Matrix.dyadic", arity Matrix.dyadic)]
+ ("Matrix.dyadic", arity Matrix.dyadic),
+ ("Utils.displayState", arity Utils.displayState),
+ ("Utils.intIndex", arity Utils.intIndex),
+ ("Utils.c", arity Utils.c), ("Utils.init'", arity Utils.init'),
+ ("Utils.postInit'", arity Utils.postInit'),
+ ("Utils.initn'", arity Utils.initn'),
+ ("Utils.postInitn'", arity Utils.postInitn'),
+ ("Utils.end", arity Utils.end), ("Utils.init", arity Utils.init),
+ ("Utils.postInit", arity Utils.postInit),
+ ("Utils.initn", arity Utils.initn),
+ ("Utils.postInitn", arity Utils.postInitn),
+ ("Utils.message", arity Utils.message),
+ ("Utils.getVar", arity Utils.getVar),
+ ("Utils.getSVar", arity Utils.getSVar)]
 
 -- | Splice user functions into the haskell module.
 formatCode :: (Text, Text, Text) -> Text -> Text
