@@ -128,7 +128,7 @@ function manmd() {
 }
 
 
-alias emacsclient=/opt/homebrew-cask/Caskroom/emacs/24.5-1/Emacs.app/Contents/MacOS/bin/emacsclient
+alias emacsclient=/usr/local/bin/emacsclient
 
 vi() {
     emacsclient -nw "$@" -c
@@ -142,9 +142,13 @@ gvim() {
     emacsclient "$@" -c
 }
 
+emacs-mac() {
+    open /usr/local/opt/emacs-mac/Emacs.app
+}
+
 
 startemacs() {
-    /Users/zaccaria/Applications/Emacs.app/Contents/MacOS/Emacs --daemon
+    /Applications/Emacs.app/Contents/MacOS/Emacs-x86_64-10_9 --daemon
 }
 
 stopemacs() {
