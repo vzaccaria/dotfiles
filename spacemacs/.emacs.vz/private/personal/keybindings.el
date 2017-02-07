@@ -1,5 +1,4 @@
 
-(Utils.init "personal/keybindings")
 
 
 
@@ -38,7 +37,7 @@
 
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "M-s") 'evil-write-all)
-(global-set-key (kbd "M-d") 'vz/switch-dictionary)
+(global-set-key (kbd "M-D") 'vz/switch-dictionary)
 (global-set-key (kbd "M-f") 'helm-projectile-ag)
 (global-set-key (kbd "M-g") 'deft)
 (global-set-key (kbd "M-h") 'helm-m-x)
@@ -97,18 +96,20 @@
 
 ;; ESS mode hooks
 
-(define-key c-mode-map [M-a] 'mark-whole-buffer)
 ;; (define-key comint-mode-map [C-down] 'comint-next-matching-input-from-input)
 
 ;; Evil normal mode overrides
 (define-key evil-normal-state-map (kbd "M-.") 'helm-resume)
 (define-key evil-normal-state-map (kbd "M-a") 'mark-whole-buffer)
+(define-key evil-visual-state-map (kbd "M-a") 'mark-whole-buffer)
+
 
 ;; Function key revival
 (define-key org-mode-map (kbd "<f1>")  'org-beamer-export-to-pdf)
 (define-key org-mode-map (kbd "<f2>")  'org-latex-export-to-pdf)
 (define-key org-mode-map (kbd "<f3>")  'org-latex-export-to-latex)
 (define-key org-mode-map (kbd "<f4>")  'vz/org-to-docx)
+(define-key org-mode-map (kbd "<f5>")  'vz/switch-dictionary)
 
 (define-key org-mode-map (kbd "∫")  'vz/org-current-word-bold)
 (define-key org-mode-map (kbd "ç")  'vz/org-current-word-code)
@@ -117,6 +118,5 @@
 ;; (define-key markdown-mode-map (kbd "∫")  'markdown-insert-bold)
 ;; (define-key markdown-mode-map (kbd "ç")  'markdown-insert-code)
 
-(Utils.end "personal/keybindings")
 (provide 'index)
 ;;; index.el ends here

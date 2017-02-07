@@ -7,20 +7,16 @@
     org-bullets
     spell-checking
     prodigy
-    ;;; mu4e
-    ;;; (vz-helm-google :location (recipe :fetcher github :repo "vzaccaria/helm-google"))
-    ;;; helm-mu
+    evil-multiedit
     livescript-mode
     ox-extra
     ))
 
 (defun personal/init-livescript-mode ()
-  (Utils.init "personal/livescript-mode")
   (use-package livescript-mode
     :defer t
     :init
     (progn
-      (Utils.initn "personal/livescript-mode" "configuring keyboard and file list")
       (add-to-list 'auto-mode-alist '("\\.ls\\'" . livescript-mode))
       (evil-leader/set-key-for-mode 'livescript-mode
         "mc" 'livescript-compile-buffer
@@ -29,20 +25,16 @@
       (add-hook 'livescript-mode-hook '(lambda ()
                                          (setq livescript-command "lsc"))
                 )
-      (Utils.end "personal/livescript-mode")
       )))
 
 
 (defun personal/post-init-spell-checking ()
-  (Utils.postInit "personal/spell-checking")
   (setq-default ispell-program-name "/usr/local/bin/aspell")
-  (Utils.end "personal/spell-checking");
   )
 
 
 ;; define initialization here
 (defun personal/post-init-org ()
-  (Utils.postInit "personal/org")
   (setq org-agenda-custom-commands '(("w" "My Agenda"
                                       ((agenda "")
                                        (todo "TODAY")
@@ -232,18 +224,23 @@
   (setq org-export-default-inline-image-rule
         '(("file" . "\\.\\(gif\\|jp\\(?:e?g\\)\\|p\\(?:bm\\|df\\|gm\\|ng\\|pm\\)\\|tiff?\\|x\\(?:[bp]m\\)\\)\\'"))
         )
-  (Utils.end "personal/org");
   )
 
 
 ;;; for ignoring headers
 (defun personal/init-ox-extra ()
-  (Utils.postInit "personal/ox-extra")
   (use-package ox-extra
     :config
-    (Utils.postInitn "personal/ox-extra" "activating ignore headlines")
     (ox-extras-activate '(ignore-headlines))
-    (Utils.end "personal/ox-extra")
+    )
+  )
+
+(defun personal/init-evil-multiedit ()
+  (use-package evil-multiedit
+    :config
+    (progn
+      (evil-multiedit-default-keybinds)
+      )
     )
   )
 
@@ -256,9 +253,7 @@
 
 
 (defun personal/post-init-org-bullets ()
-  (Utils.postInit "personal/org-bullets")
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-  (Utils.end "personal/org-bullets")
   )
 
 (defun personal/show-agenda-all ()
@@ -269,7 +264,6 @@
 
 
 (defun personal/post-init-prodigy ()
-  (Utils.postInit "personal/prodigy")
   (prodigy-define-service
     :name "After The Deadline"
     :env '(("LANG" "en_US.UTF-8")
@@ -286,7 +280,6 @@
     :command "/usr/local/bin/languagetool-server"
     :tags '(grammar)
     :kill-process-buffer-on-stop t)
-  (Utils.end "personal/prodigy")
   )
 
 
@@ -297,27 +290,21 @@
 ;;     "a m c" 'helm-mu-contacts))
 
 (defun personal/init-helm-mu ()
-  (Utils.init "personal/helm-mu")
   (use-package helm-mu
     :defer t
     :commands helm-mu
     :init
-    (Utils.initn "personal/helm-mu" "requiring helm-config")
     (require 'helm-config)
-    (Utils.initn "personal/helm-mu" "setting up oM and oC shortcuts")
     (spacemacs/set-leader-keys "oM" 'helm-mu
       "oC" 'helm-mu-contacts))
-  (Utils.end "personal/helm-mu")
   )
 
 
 (defun personal/init-mu4e ()
-  (Utils.init "personal/mu4e")
   (use-package mu4e
     :defer t
     :commands mu4e
     :config
-    (Utils.initn "personal/mu4e" "configuring variables")
     (setq mu4e-maildir "~/mu-mail/")
     (setq mu4e-get-mail-command "offlineimap -f INBOX")
     (setq mu4e-trash-folder "/[Gmail].Trash"
@@ -475,6 +462,5 @@
              ("/Trash"       . ?t)
              ("/All Mail"    . ?a)))
     )
-  (Utils.end "personal/mu4e")
   )
 
