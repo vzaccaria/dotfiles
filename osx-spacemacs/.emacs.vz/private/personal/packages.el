@@ -130,7 +130,7 @@
                )
 
   (add-to-list 'org-structure-template-alist
-               '("tikzchain" "\\begin{tikzpicture}[start chain=going right,node distance=5mm] \n \\node [draw,on chain] {Hello}; \n\\node [draw,on chain] {World}; \n\\end{tikzpicture}")
+               '("tikzchain" "\\begin{tikzpicture}[start chain=1 going right,node distance=5mm] \n \\node [draw,on chain=1] {Hello}; \n\\node [draw,on chain] {World}; \n\\end{tikzpicture}")
                )
 
   ;;;

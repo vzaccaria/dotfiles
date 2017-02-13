@@ -1,4 +1,5 @@
-% Created 2017-01-18 Wed 13:14
+% Created 2017-02-13 Mon 15:52
+% Intended LaTeX compiler: pdflatex
 \documentclass[smaller]{beamer}
 
 
@@ -39,7 +40,8 @@
 \usetikzlibrary{decorations,decorations.pathmorphing,decorations.pathreplacing}
 \usegdlibrary{trees}
 \usegdlibrary{layered}
-\usetikzlibrary{circuits.ee.IEC}
+\usegdlibrary{force}
+\usetikzlibrary{circuits.logic.US}
 \usepackage{pgfplots}
 \pgfdeclarelayer{edgelayer}
 \pgfdeclarelayer{nodelayer}
@@ -49,8 +51,10 @@
 \definecolor{vzred}{rgb}{0.765,0.102,0.000}
 \definecolor{vzgreen}{rgb}{0.000,0.561,0.000}
 \definecolor{vzblue}{rgb}{0.000,0.000,0.861}
-\setmonofont[Scale=0.75]{Menlo}
+\setmonofont[Scale=0.75]{Hasklig}
 \newfontfamily\myunicodefallback{Menlo}
+\definecolor{links}{HTML}{0086F7}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
 \newcommand{\keyboard}{{\tikz \node[box, minimum size=0cm] {\faKeyboardO};}}
 \newcommand{\screen}{{\tikz \node[box, minimum size=0cm] {\faTerminal};}}
 \usepackage{fancyvrb}
@@ -66,7 +70,7 @@
  pdftitle={},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 24.5.1 (Org mode 8.3.6)}, 
+ pdfcreator={Emacs 25.2.1 (Org mode 9.0.4)}, 
  pdflang={Italian}}
 \begin{document}
 
@@ -77,7 +81,7 @@
 \tikzstyle{none}=[rectangle, minimum size=1cm]
 \tikzstyle{box}=[rectangle, fill=white, draw=black, minimum size=2cm, rounded corners]
 \tikzstyle{sbox}=[rectangle, fill=white, draw=black, minimum width=4cm, rounded corners]
-\tikzstyle{state}=[circle, fill=white, draw=black, minimum width=2cm, rounded corners]
+\tikzstyle{state}=[circle, scale=.5, fill=white, draw=black, minimum size=2cm, rounded corners]
 \tikzstyle{boxes}=[double copy shadow, fill=white, rectangle, draw=black, minimum size=2cm, rounded corners]
 
 \tikzstyle{container} = [blue dotted]
@@ -111,4 +115,7 @@
 \tikzstyle{ribbonrw}=   [draw=black!20 , line width = 1.0ex , {Triangle Cap[]}-{Triangle Cap[]}]
 
 \tikzstyle{matrix aspect}=[matrix of nodes, nodes={outer sep=0pt,inner sep=3pt},column sep=3em,row sep=5ex]
+
+% Apps and software engineering
+\tikzstyle{app}=[rectangle, fill=vzorange, draw=white, text=white, minimum width=2cm, align=center,scale=0.6, rounded corners]
 \end{document}
