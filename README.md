@@ -1,11 +1,9 @@
-Managing
-========
+# Managing
 
 I manage dotfiles with [gnu stow](http://www.gnu.org/software/stow/), a
 free, portable, lightweight symlink farm manager.
 
-Installing
-==========
+# Installing
 
 stow is available for all linux and most other unix like distributions
 via your package manager.
@@ -24,36 +22,37 @@ yourself.
 
 ### Description
 
--   files `zprezto/.*` correspond to my actual `zprezto` configuration
-    files. They've been copied when I was creating my dotfiles repo.
+-   files `zprezto/.*` correspond to my actual `zprezto`
+    configuration files. They've been copied when I was creating my
+    dotfiles repo.
 -   directory `zprezto/.zprezto` is an actual git submodule directly
-from the github repo of the author.
+    from the github repo of the author.
 
-### How to it up 
+### How to set it up
 
-- Basically, the .zprezto submodule should be updated separately with
+-   Basically, the .zprezto submodule should be updated separately with
 
-> cd zprezto
-> git submodule update --init    # Update zprezto
-> cd .zprezto
-> git submodule update --init    # Update externals
+<!-- -->
 
+``` shell
+cd zprezto git submodule update --init # Update zprezto 
+cd .zprezto git submodule update --init # Update externals
+```
 
 ### How about updating all the modules?
 
-cd  $HOME/.zprezto && git pull && git submodule update --init --recursive
+    cd $HOME/.zprezto && git pull && git submodule update --init --recursive
 
 ## Vim
 
+WARNING: temporary: 
+
 For `vim`, I am using the following vimrc:
 
-``` 
-git clone https://github.com/amix/vimrc.git ~/.vim_runtime
-stow awesome-vimrc
-```
+    git clone https://github.com/amix/vimrc.git ~/.vim_runtime
+    stow awesome-vimrc
 
-
------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 # New features
 
