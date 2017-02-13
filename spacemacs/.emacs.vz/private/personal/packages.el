@@ -9,7 +9,7 @@
     prodigy
     evil-multiedit
     livescript-mode
-    ox-extra
+    (ox-extra :location local)
     ))
 
 (defun personal/init-livescript-mode ()
@@ -227,13 +227,6 @@
   )
 
 
-;;; for ignoring headers
-(defun personal/init-ox-extra ()
-  (use-package ox-extra
-    :config
-    (ox-extras-activate '(ignore-headlines))
-    )
-  )
 
 (defun personal/init-evil-multiedit ()
   (use-package evil-multiedit
@@ -461,6 +454,13 @@
              ("/Drafts"      . ?d)
              ("/Trash"       . ?t)
              ("/All Mail"    . ?a)))
+    )
+  )
+
+(defun personal/init-ox-extra ()
+  (use-package ox-extra
+    :config
+    (ox-extras-activate '(ignore-headlines))
     )
   )
 

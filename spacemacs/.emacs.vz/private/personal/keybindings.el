@@ -94,6 +94,12 @@
 (global-set-key (kbd "\e <right>") 'evil-window-right)
 (global-set-key (kbd "\e <left>")  'evil-window-left)
 
+;; for osx gui                     S + Arrows
+(global-set-key (kbd "s-<up>")    'evil-window-up)
+(global-set-key (kbd "s-<down>")  'evil-window-down)
+(global-set-key (kbd "s-<right>") 'evil-window-right)
+(global-set-key (kbd "s-<left>")  'evil-window-left)
+
 ;; ESS mode hooks
 
 ;; (define-key comint-mode-map [C-down] 'comint-next-matching-input-from-input)
@@ -113,6 +119,8 @@
 
 (define-key org-mode-map (kbd "∫")  'vz/org-current-word-bold)
 (define-key org-mode-map (kbd "ç")  'vz/org-current-word-code)
+(define-key org-mode-map (kbd "s-b")  'spacemacs/org-bold)
+(define-key org-mode-map (kbd "s-k")  'spacemacs/org-verbose)
 
 
 ;; (define-key markdown-mode-map (kbd "∫")  'markdown-insert-bold)
