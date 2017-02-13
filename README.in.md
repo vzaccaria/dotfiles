@@ -35,8 +35,8 @@ yourself.
 <!-- -->
 
 ``` shell
-cd zprezto git submodule update --init # Update zprezto 
-cd .zprezto git submodule update --init # Update externals
+cd zprezto  && git submodule update --init # Update zprezto 
+cd .zprezto && git submodule update --init # Update externals
 ```
 
 ### How about updating all the modules?
