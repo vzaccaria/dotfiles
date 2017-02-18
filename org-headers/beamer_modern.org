@@ -100,6 +100,7 @@
 
 
 #+BEAMER_HEADER: \AtBeginSection[]{\begin{frame}[noframenumbering,plain]{Outline}\tableofcontents[currentsection]\end{frame}}
+#+BEAMER_HEADER: \setbeamerfont{caption}{size=\scriptsize}
 
 #+begin_src emacs-lisp :exports none :results silent
 (setq org-latex-minted-options
@@ -153,6 +154,8 @@
 % Apps and software engineering
 \tikzstyle{app}=[rectangle, draw=black, minimum width=3cm, align=center,scale=0.6, rounded corners, font=\small\scshape]
 \tikzstyle{db}=[cylinder, draw=black, rotate=90, minimum height=2.5cm, minimum width=1cm, align=center,scale=0.6, font=\small\scshape]
+\tikzstyle{format}=[circle, scale=.5, fill=white, draw=black, minimum size=1cm,font=\scshape]
+\tikzstyle{resource}=[circle, scale=.5, fill=black, draw=black, text=white, minimum size=0.5cm,font=\scshape]
 #+END_EXPORT
 
 #+LATEX_HEADER: % needs latex emoji https://github.com/henningpohl/latex-emoji/blob/master/example.tex

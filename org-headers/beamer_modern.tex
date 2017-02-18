@@ -1,4 +1,4 @@
-% Created 2017-02-13 Mon 15:52
+% Created 2017-02-15 Wed 15:59
 % Intended LaTeX compiler: pdflatex
 \documentclass[smaller]{beamer}
 
@@ -65,6 +65,7 @@
 \date{\today}
 \title{}
 \AtBeginSection[]{\begin{frame}[noframenumbering,plain]{Outline}\tableofcontents[currentsection]\end{frame}}
+\setbeamerfont{caption}{size=\scriptsize}
 \hypersetup{
  pdfauthor={Vittorio Zaccaria},
  pdftitle={},
@@ -117,5 +118,8 @@
 \tikzstyle{matrix aspect}=[matrix of nodes, nodes={outer sep=0pt,inner sep=3pt},column sep=3em,row sep=5ex]
 
 % Apps and software engineering
-\tikzstyle{app}=[rectangle, fill=vzorange, draw=white, text=white, minimum width=2cm, align=center,scale=0.6, rounded corners]
+\tikzstyle{app}=[rectangle, draw=black, minimum width=3cm, align=center,scale=0.6, rounded corners, font=\small\scshape]
+\tikzstyle{db}=[cylinder, draw=black, rotate=90, minimum height=2.5cm, minimum width=1cm, align=center,scale=0.6, font=\small\scshape]
+\tikzstyle{format}=[circle, scale=.5, fill=white, draw=black, minimum size=1cm,font=\scshape]
+\tikzstyle{resource}=[circle, scale=.5, fill=black, draw=black, text=white, minimum size=0.5cm,font=\scshape]
 \end{document}

@@ -10,6 +10,7 @@
     evil-multiedit
     livescript-mode
     (ox-extra :location local)
+    (prettier-js :location local)
     ))
 
 (defun personal/init-livescript-mode ()
@@ -461,6 +462,15 @@
   (use-package ox-extra
     :config
     (ox-extras-activate '(ignore-headlines))
+    )
+  )
+
+(defun personal/init-prettier-js ()
+  (use-package prettier-js
+    :config
+    (add-hook 'js-mode-hook
+              (lambda ()
+                (add-hook 'before-save-hook 'prettier-before-save)))
     )
   )
 

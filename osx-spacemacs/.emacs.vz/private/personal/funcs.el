@@ -82,6 +82,7 @@
   (shell-command-on-region (point-min) (point-max)
                            "/usr/local/bin/org2kf -a" (current-buffer) t))
 
+
 (defun vz/show-command-log-and-keys (&optional b e)
   (interactive "r")
   (global-command-log-mode t)
@@ -108,7 +109,8 @@
         ((derived-mode-p 'markdown-mode)   (call-interactively 'beautify-markdown))
         ((derived-mode-p 'c-mode)          (call-interactively 'clang-format-buffer))
         ((derived-mode-p 'json-mode)       (call-interactively 'web-beautify-js))
-        ((derived-mode-p 'js-mode)         (call-interactively 'web-beautify-js))
+        ((derived-mode-p 'js-mode)         (call-interactively 'prettier))
+        ((derived-mode-p 'react-mode)      (call-interactively 'prettier))
         ((derived-mode-p 'html-mode)       (call-interactively 'web-beautify-html))
         ((derived-mode-p 'web-mode)        (call-interactively 'web-mode-buffer-indent))
         ((derived-mode-p 'haskell-mode)    (call-interactively 'hindent-reformat-buffer))
