@@ -19,3 +19,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto-zack/common.zshrc" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto-zack/common.zshrc"
 fi
 
+
+export NVM_DIR="/home/admin/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

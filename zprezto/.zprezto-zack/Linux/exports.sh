@@ -1,4 +1,4 @@
-export PATH=$PATH:/opt/ghc/7.10.1/bin:/opt/cabal/1.22/bin
+export PATH=$PATH:/opt/ghc/7.10.1/bin:/opt/cabal/1.22/bin:/home/admin/node_modules/.bin
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
