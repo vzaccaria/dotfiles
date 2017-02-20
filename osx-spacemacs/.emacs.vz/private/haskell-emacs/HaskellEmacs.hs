@@ -8,9 +8,7 @@
 -- If you want to change this file, you have to clone the github repo and apply the changes in a local repo.
 
 module Main where
-import qualified Matrix
-import qualified Utils
-
+{--<<import>>--}
 import           Control.Applicative              (optional, (<$>), (<*>))
 import           Control.Arrow                    hiding (app)
 import           Control.Concurrent
@@ -135,28 +133,7 @@ dispatcher = M.fromList $
   , ("arityList",   transform $ \() -> toDispatcher arityList)
   , ("formatCode",  transform $ uncurry formatCode)
   , ("getDocumentation", transform $ uncurry getDocumentation)
-  ] ++ []++[("Matrix.transpose", transform (\ (x1) -> Matrix.transpose x1)),
- ("Matrix.identity", transform (\ (x1) -> Matrix.identity x1)),
- ("Matrix.isIdentity", transform (\ (x1) -> Matrix.isIdentity x1)),
- ("Matrix.dyadic", transform (\ (x1, x2) -> Matrix.dyadic x1 x2)),
- ("Utils.displayState",
-  transform (\ (x1, x2, x3) -> Utils.displayState x1 x2 x3)),
- ("Utils.intIndex", transform (\ (x1) -> Utils.intIndex x1)),
- ("Utils.c", transform (\ (x1, x2) -> Utils.c x1 x2)),
- ("Utils.init'", transform (\ (x1) -> Utils.init' x1)),
- ("Utils.postInit'", transform (\ (x1) -> Utils.postInit' x1)),
- ("Utils.initn'", transform (\ (x1, x2) -> Utils.initn' x1 x2)),
- ("Utils.postInitn'",
-  transform (\ (x1, x2) -> Utils.postInitn' x1 x2)),
- ("Utils.end", transform (\ (x1) -> Utils.end x1)),
- ("Utils.init", transform (\ (x1) -> Utils.init x1)),
- ("Utils.postInit", transform (\ (x1) -> Utils.postInit x1)),
- ("Utils.initn", transform (\ (x1, x2) -> Utils.initn x1 x2)),
- ("Utils.postInitn",
-  transform (\ (x1, x2) -> Utils.postInitn x1 x2)),
- ("Utils.message", transform (\ (x1) -> Utils.message x1)),
- ("Utils.getVar", transform (\ (x1) -> Utils.getVar x1)),
- ("Utils.getSVar", transform (\ (x1) -> Utils.getSVar x1))]
+  ] ++ []{--<<export>>--}
 
 -- | Transform a curried function to a function which receives and
 -- returns lisp forms.
@@ -181,23 +158,7 @@ toDispatcher = ("++"++) . prettyPrint . listE . map fun
 
 -- | List of functions and their arities (filled by emacs).
 arityList :: [(String, Int)]
-arityList = []++[("Matrix.transpose", arity Matrix.transpose),
- ("Matrix.identity", arity Matrix.identity),
- ("Matrix.isIdentity", arity Matrix.isIdentity),
- ("Matrix.dyadic", arity Matrix.dyadic),
- ("Utils.displayState", arity Utils.displayState),
- ("Utils.intIndex", arity Utils.intIndex),
- ("Utils.c", arity Utils.c), ("Utils.init'", arity Utils.init'),
- ("Utils.postInit'", arity Utils.postInit'),
- ("Utils.initn'", arity Utils.initn'),
- ("Utils.postInitn'", arity Utils.postInitn'),
- ("Utils.end", arity Utils.end), ("Utils.init", arity Utils.init),
- ("Utils.postInit", arity Utils.postInit),
- ("Utils.initn", arity Utils.initn),
- ("Utils.postInitn", arity Utils.postInitn),
- ("Utils.message", arity Utils.message),
- ("Utils.getVar", arity Utils.getVar),
- ("Utils.getSVar", arity Utils.getSVar)]
+arityList = []{--<<arity>>--}
 
 -- | Splice user functions into the haskell module.
 formatCode :: (Text, Text, Text) -> Text -> Text

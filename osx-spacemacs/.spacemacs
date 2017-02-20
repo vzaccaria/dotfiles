@@ -13,62 +13,74 @@ values."
    dotspacemacs-distribution 'spacemacs
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '("~/.emacs.vz/private")
+   dotspacemacs-configuration-layer-path '("~/.emacs.vz/private/")
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
-   dotspacemacs-configuration-layers
+
+   vz--layers
    '(
-     vimscript
-     hemacs
-     python
-     csv
-     ruby
-     php
-     octave
-     docker
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
-     auto-completion
-     ;; better-defaults
-     emacs-lisp
-     ;; git
+     ;; editing
      markdown
-     (org :variables org-enable-reveal-js-support t)
-     javascript
-     react
-     (haskell :variables haskell-enable-hindent-style "chris-done")
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     yaml
-     osx
+     auto-completion
      spell-checking
-     syntax-checking
+     latex
+
+     ;; productivity
+     docker
+     (org :variables org-enable-reveal-js-support t)
      finance
      deft
      prodigy
      command-log
-     ;; (mu4e :variables mu4e-installation-path "/usr/local/Cellar/mu/HEAD-8d345ee/share/emacs/site-lisp/mu/mu4e")
-     ;; my personal layer
-     personal
-     latex
-     emoji
-     ess
-     purescript
      shell
      shell-scripts
      typography
-     git
-     github
-     (c-c++ :variables c-c++-enable-clang-support t)
+
+     ;; generic data formats
+     yaml
+     csv
+
+     ;; programming languages
+     syntax-checking
+     javascript
+     react
+     python
+     octave
+     emacs-lisp
+     vimscript
+     )
+   )
+
+  (setq
+   vz--darwin-layers
+   '(
+     (haskell :variables haskell-enable-hindent-style "chris-done")
+     (personal :variables
+               personal-bind-osx-keys t
+               personal-bind-unix-keys nil)
+     osx
      (maxima :variables
              maxima-emacs-installation-path "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/maxima/5.35.1/emacs"
              maxima-emacs-info-path "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/info" )
-
+     (c-c++ :variables c-c++-enable-clang-support t)
      )
+
+   vz--gnu/linux-layers
+   '(
+     (personal :variables
+               personal-bind-unix-keys t
+               personal-bind-osx-keys nil)
+     )
+   )
+
+  (cond
+   ((eq system-type 'darwin)
+    (setq vz--layers (append vz--layers vz--darwin-layers)))
+   ((eq system-type 'gnu/linux)
+    (setq vz--layers (append vz--layers vz--gnu/linux-layers))))
+
+  (setq-default
+   dotspacemacs-configuration-layers vz--layers
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -79,7 +91,8 @@ values."
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
-   dotspacemacs-delete-orphan-packages t))
+   dotspacemacs-delete-orphan-packages t)
+  )
 
 (defun dotspacemacs/init ()
   "Initialization function.
@@ -129,9 +142,9 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
+                         spacemacs-dark
                          solarized-dark
                          leuven
-                         spacemacs-dark
                          spacemacs-light
                          solarized-light
                          monokai
@@ -140,7 +153,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Menlo"
+   dotspacemacs-default-font '("Source Code Pro"
                                :size 13
                                :weight normal
                                :width normal
@@ -274,45 +287,57 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (setq deft-directory "~/Dropbox/org")
-  (setq deft-recursive t)
-  ;; I need some programs from these locations:
-  (setenv "PATH" (format "%s:%s" "/usr/local/bin" (getenv "PATH")))
-  (setenv "PATH" (format "%s:%s" "/usr/local/texlive/2013/bin/universal-darwin" (getenv "PATH")))
-  (setenv "PATH" (format "%s:%s" "/Applications/Mathematica.app/Contents/MacOS" (getenv "PATH")))
-  (setenv "PATH" (format "%s:%s" "/Users/zaccaria/.local/bin" (getenv "PATH")))
-  (setenv "NODE_PATH" (format "%s:%s" "/usr/local/lib/node_modules" (getenv "NODE_PATH")))
-  (eval-after-load "flycheck"
-    '(progn
-       (flycheck-define-checker grammar-gramcheck
-                                "A general purpose grammar checker. It uses LanguageTool."
 
-                                :command ("gramchk" "-x" source-original)
-                                :error-parser flycheck-parse-checkstyle
-                                :standard-input t
-                                :modes (latex-mode))
+  (cond
+   ((eq system-type 'darwin)
+    ;;; Darwin specific conf
+    (setq deft-directory "~/Dropbox/org")
+    (setq deft-recursive t)
+    ;; I need some programs from these locations:
+    (setenv "PATH" (format "%s:%s" "/usr/local/bin" (getenv "PATH")))
+    (setenv "PATH" (format "%s:%s" "/usr/local/texlive/2013/bin/universal-darwin" (getenv "PATH")))
+    (setenv "PATH" (format "%s:%s" "/Applications/Mathematica.app/Contents/MacOS" (getenv "PATH")))
+    (setenv "PATH" (format "%s:%s" "/Users/zaccaria/.local/bin" (getenv "PATH")))
+    (setenv "NODE_PATH" (format "%s:%s" "/usr/local/lib/node_modules" (getenv "NODE_PATH")))
+    (eval-after-load "flycheck"
 
-       (add-to-list 'flycheck-checkers 'grammar-gramcheck)
-       (flycheck-define-checker proselint
-         "A linter for prose."
-         :command ("/Users/zaccaria/python-scripts/bin/proselint" source-inplace)
-         :error-patterns
-         ((warning line-start (file-name) ":" line ":" column ": "
-                   (id (one-or-more (not (any " "))))
-                   (message (one-or-more not-newline)
-                            (zero-or-more "\n" (any " ") (one-or-more not-newline)))
-                   line-end))
-         :modes (text-mode markdown-mode gfm-mode))
-       (add-to-list 'flycheck-checkers 'proselint)
-    )
-    )
-  (setq org-enable-reveal-js-support t)
-  (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
-  (setq tramp-ssh-controlmaster-options
-        "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+      ;; Flycheck configuration
+
+      '(progn
+         (flycheck-define-checker grammar-gramcheck
+                                  "A general purpose grammar checker. It uses LanguageTool."
+
+                                  :command ("gramchk" "-x" source-original)
+                                  :error-parser flycheck-parse-checkstyle
+                                  :standard-input t
+                                  :modes (latex-mode))
+
+         (flycheck-define-checker proselint
+                                  "A linter for prose."
+                                  :command ("/Users/zaccaria/python-scripts/bin/proselint" source-inplace)
+                                  :error-patterns
+                                  ((warning line-start (file-name) ":" line ":" column ": "
+                                            (id (one-or-more (not (any " "))))
+                                            (message (one-or-more not-newline)
+                                                     (zero-or-more "\n" (any " ") (one-or-more not-newline)))
+                                            line-end))
+                                  :modes (text-mode markdown-mode gfm-mode))
+
+         (add-to-list 'flycheck-checkers 'proselint)
+         (add-to-list 'flycheck-checkers 'grammar-gramcheck)
+         )
+      )
+    (setq org-enable-reveal-js-support t)
+    (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
+    (setq tramp-ssh-controlmaster-options
+          "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no"))
+   ((eq system-type 'gnu/linux)
+    ;;; Linux specific conf
+    ))
 
 
-)
+
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -338,14 +363,21 @@ you should place you code here."
           "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
           "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
-  (setq browse-url-mailto-function 'browse-url-generic)
-  (setq browse-url-generic-program "open")
+  (cond
+   ((eq system-type 'darwin)
+    (setq browse-url-mailto-function 'browse-url-generic)
+    (setq browse-url-generic-program "open")
+    )
+   ((eq system-type 'gnu/linux)
+    )
+   )
 
-  (vz/ag-hidden-files-enable)
-
+  (customize-set-variable 'helm-ag-base-command "ag --nocolor --nogroup --hidden")
   )
 
- 
+;; Move some of the variables defined below into user-config
+;; as soon as you understand what variables do...
+
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
@@ -362,8 +394,6 @@ you should place you code here."
  '(evil-want-Y-yank-to-eol t)
  '(flycheck-python-pycompile-executable
    "/Applications/Blender.app/Contents/MacOS/../Resources/2.78/python/bin/python3.5m")
- '(helm-ag-base-command "ag --nocolor --nogroup --hidden" t)
- '(helm-mu-gnu-sed-program "gsed")
  '(hindent-reformat-buffer-on-save nil)
  '(hindent-style "chris-done")
  '(org-agenda-files
@@ -381,12 +411,7 @@ you should place you code here."
     (("file" . "\\.\\(jpeg\\|jpg\\|png\\|pdf\\|gif\\|svg\\)\\'")
      ("http" . "\\.\\(jpeg\\|jpg\\|png\\|gif\\|svg\\)\\'")
      ("https" . "\\.\\(jpeg\\|jpg\\|png\\|gif\\|svg\\)\\'"))))
- '(package-selected-packages
-   (quote
-    (vimrc-mode dactyl-mode solarized-theme yapfify yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package typo toc-org tagedit spacemacs-theme spaceline powerline smeargle slim-mode shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rake rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode psci purescript-mode psc-ide prodigy popwin pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode pcre2el pbcopy paradox spinner ox-reveal osx-trash osx-dictionary orgit org-projectile org-present org org-pomodoro alert log4e gntp org-plus-contrib org-download org-bullets open-junk-file neotree multi-term move-text mmm-mode minitest markdown-toc markdown-mode magit-gitflow magit-gh-pulls macrostep lorem-ipsum livid-mode skewer-mode simple-httpd livescript-mode live-py-mode linum-relative link-hint less-css-mode ledger-mode launchctl js2-refactor multiple-cursors js2-mode js-doc intero insert-shebang info+ indent-guide ido-vertical-mode hydra hy-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make projectile helm-hoogle helm-gitignore request helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets haskell-emacs haml-mode google-translate golden-ratio gnuplot gitignore-mode github-search github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh marshal logito pcache ht gh-md flyspell-correct-helm flyspell-correct flycheck-pos-tip flycheck-ledger flycheck-haskell flycheck pkg-info epl flx-ido flx fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-multiedit evil-mc evil-matchit evil-magit magit git-commit with-editor evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu quelpa highlight ess-smart-equals ess-R-object-popup ess-R-data-view eshell-z eshell-prompt-extras esh-help emoji-cheat-sheet-plus emmet-mode elisp-slime-nav dumb-jump drupal-mode dockerfile-mode docker disaster diminish deft cython-mode csv-mode company-web company-tern company-statistics company-shell company-quickhelp company-ghci company-ghc company-emoji company-cabal company-c-headers company-auctex company-anaconda command-log-mode column-enforce-mode coffee-mode cmm-mode cmake-mode clean-aindent-mode clang-format chruby bundler bind-map bind-key auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
- '(psc-ide-add-import-on-completion t t)
- '(psc-ide-rebuild-on-save nil t)
- '(send-mail-function (quote smtpmail-send-it)))
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -159,16 +159,6 @@ prompt the user for a coding system."
   (set-face-attribute 'default nil :font "Hasklig")
   )
 
-(defun vz/ag-hidden-files-enable ()
-  (interactive)
-  (customize-set-variable 'helm-ag-base-command "ag --nocolor --nogroup --hidden")
-  )
-
-(defun vz/ag-hidden-files-disable()
-  (interactive)
-  (customize-set-variable 'helm-ag-base-command "ag --nocolor --nogroup")
-  )
-
 (defun vz/define-checker-for-stm32 ()
   "Sets the correct checker for the PlatformIO env"
   (interactive)
@@ -180,7 +170,6 @@ prompt the user for a coding system."
 (defun vz/define-checker-for-labs()
   "Sets the correct checker for infob labs"
   (interactive)
-
   (customize-set-variable 'flycheck-c/c++-gcc-executable "/usr/local/bin/gcc-5")
   (flycheck-select-checker 'c/c++-gcc))
 
@@ -245,35 +234,6 @@ current buffer's, reload dir-locals."
                           (shell-quote-argument (vz/replace-buffer-file-extension-to ".docx"))
   )))
 
-(defvar my-desktop-session-name-hist nil
-  "Desktop session name history")
-
-(defun my-desktop-save (&optional name)
-  "Save desktop with a name."
-  (interactive)
-  (unless name
-    (setq name (my-desktop-get-session-name "Save session as: ")))
-  (make-directory (concat my-desktop-session-dir name) t)
-  (desktop-save (concat my-desktop-session-dir name) t))
-
-(defun my-desktop-read (&optional name)
-  "Read desktop with a name."
-  (interactive)
-  (unless name
-    (setq name (my-desktop-get-session-name "Load session: ")))
-  (desktop-read (concat my-desktop-session-dir name)))
-
-(defun my-desktop-get-session-name (prompt)
-  (completing-read prompt (and (file-exists-p my-desktop-session-dir)
-                               (directory-files my-desktop-session-dir))
-                   nil nil nil my-desktop-session-name-hist))
-
-(defun term-fix-mouse ()
-  "Fix mouse in tmux term"
-  (interactive)
-  (load-file "~/.emacs.vz/keymap/mouse.el")
-  )
-
 
 (defun pbcopy ()
   (interactive)
@@ -301,16 +261,6 @@ current buffer's, reload dir-locals."
   (interactive)
   (align-regexp (region-beginning) (region-end) "\\(\\s-*\\):" 1 1 t))
 
-(defun vz/next-error ()
-  (interactive)
-  (spacemacs/next-error)
-  )
-
-(defun vz/previous-error ()
-  (interactive)
-  (spacemacs/previous-error)
-  )
-
 (defun vz/org-current-word-bold ()
   (interactive)
   (spacemacs/org-bold))
@@ -319,7 +269,6 @@ current buffer's, reload dir-locals."
   (interactive)
   (mark-word)
   (spacemacs/org-verbose))
-
 
 (defun djr/mu4e-view-related-search (msg)
   "Search for related messages to the current one"
@@ -345,20 +294,6 @@ current buffer's, reload dir-locals."
 (defun vz/open-today ()
   (interactive)
   (mu4e-headers-search-bookmark "date:today..now")
-  )
-
-(defun vz/spell-it (args)
-  (interactive "P")
-  (flyspell-mode 1)
-  (ispell-change-dictionary "it" nil)
-  (flyspell-buffer)
-  )
-
-(defun vz/spell-en (args)
-  (interactive "P")
-  (flyspell-mode 1)
-  (ispell-change-dictionary "en" nil)
-  (flyspell-buffer)
   )
 
 (defun vz/switch-dictionary()

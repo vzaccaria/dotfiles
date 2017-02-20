@@ -50,8 +50,8 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-c") 'pbcopy)
 (global-set-key (kbd "M-v") 'pbpaste)
-(global-set-key (kbd "M-B") 'vz/previous-error)
-(global-set-key (kbd "M-b") 'vz/next-error)
+(global-set-key (kbd "M-B") 'spacemacs/previous-error)
+(global-set-key (kbd "M-b") 'spacemacs/next-error)
 (global-set-key (kbd "M-n") 'evil-window-vnew)
 (global-set-key (kbd "M-.") 'helm-resume)
 
