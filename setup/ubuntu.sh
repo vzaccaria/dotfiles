@@ -11,3 +11,17 @@ nvm install 6.9.5
 nvm use 6.9.5
 nvm alias default 6.9.5
 
+# Powerline Fonts
+git clone https://github.com/powerline/fonts.git
+# cd fonts && ./install.sh
+
+# Tex/Latex with Texlive
+sudo add-apt-repository ppa:jonathonf/texlive
+
+sudo apt-get install texlive-full
+# sudo apt-get install texlive-luatex
+# sudo apt-get install perl-tk
+# sudo apt-get install xzdec
+
+tlmgr init-usertree
+tlmgr gui # --> then install packages
