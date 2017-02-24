@@ -111,6 +111,10 @@
 #+end_src
 
 #+LaTeX_HEADER: \usepackage{fancyvrb}
+#+LaTeX_HEADER: \usepackage{setspace}
+#+LaTeX_HEADER: \usepackage{etoolbox}
+#+LaTeX_HEADER: \appto\verbatim{\tiny\myunicodefallback\baselineskip=-\maxdimen\lineskip=0pt}
+# #+LaTeX_HEADER: \appto\verbatim{\tiny\myunicodefallback\lineskip=0pt}
 
 #+BEGIN_EXPORT latex
 \tikzstyle{none}=[rectangle, minimum size=1cm]

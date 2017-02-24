@@ -105,8 +105,8 @@ function killAdobeProcesses() {
     echo '> rm ~/Library/LaunchAgents/*adobe*'
 }
 
-function cal-add-laurea-primo-livello() {
-    if [ "$1" = "help" ]; then
+function laurea-primo-livello-cal-add() {
+    if [ -z "$1"  ]; then
        echo "cal-add-laurea-primo-livello 'MM/DD/YYYY HH:mm' "
     else
         gcalcli \
@@ -114,6 +114,23 @@ function cal-add-laurea-primo-livello() {
             --calendar "Vittorio Zaccaria" \
             --description "Laurea di primo livello" \
             --title "Laurea di primo livello" \
+            --where "Sala conferenze - DEIB - Milano (MI)" \
+            --reminder "60" \
+            add \
+            --nocache \
+            --when "$1";
+    fi
+}
+
+function sezione-cal-add() {
+    if [ -z "$1" ]; then
+        echo "cal-add-sezione 'MM/DD/YYYY HH:mm' "
+    else
+        gcalcli \
+            --duration 90 \
+            --calendar "Vittorio Zaccaria" \
+            --description "Riunione di sezione" \
+            --title "Riunione di sezione" \
             --where "Sala conferenze - DEIB - Milano (MI)" \
             --reminder "60" \
             add \

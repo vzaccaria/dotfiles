@@ -14,3 +14,5 @@ zprezto/.zprezto
 zprezto/.zhistory
 .zhistory
 .zcompdump
+/org-headers/beamer_modern.pdf
+/org-headers/beamer_modern.tex
