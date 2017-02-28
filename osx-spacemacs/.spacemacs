@@ -48,13 +48,13 @@ values."
      octave
      emacs-lisp
      vimscript
+     (haskell :variables haskell-enable-hindent-style "chris-done")
      )
    )
 
   (setq
    vz--darwin-layers
    '(
-     (haskell :variables haskell-enable-hindent-style "chris-done")
      (personal :variables
                personal-bind-osx-keys t
                personal-bind-unix-keys nil)
@@ -67,7 +67,7 @@ values."
 
    vz--gnu/linux-layers
    '(
-     (personal :variables
+     (personal :variable
                personal-bind-unix-keys t
                personal-bind-osx-keys nil)
      )
