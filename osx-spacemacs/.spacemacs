@@ -67,7 +67,7 @@ values."
 
    vz--gnu/linux-layers
    '(
-     (personal :variable
+     (personal :variables
                personal-bind-unix-keys t
                personal-bind-osx-keys nil)
      )
@@ -393,6 +393,9 @@ you should place you code here."
    "/Applications/Blender.app/Contents/MacOS/../Resources/2.78/python/bin/python3.5m")
  '(hindent-reformat-buffer-on-save nil)
  '(hindent-style "chris-done")
+ '(org-agenda-files
+   (quote
+    ("/Users/zaccaria/Dropbox/org/Casa.org" "/Users/zaccaria/Dropbox/org/EDX.org" "/Users/zaccaria/Dropbox/org/InfoBOrg.org" "/Users/zaccaria/Dropbox/org/ListaViaggio.org" "/Users/zaccaria/Dropbox/org/Missioni.org" "/Users/zaccaria/Dropbox/org/STMicro.org" "/Users/zaccaria/Dropbox/org/Teasy-2.0.org" "/Users/zaccaria/Dropbox/org/Today.org" "/Users/zaccaria/Dropbox/org/curriculum.org" "/Users/zaccaria/Dropbox/org/finance.org" "/Users/zaccaria/Dropbox/org/header.org" "/Users/zaccaria/Dropbox/org/thesis.org" "/Users/zaccaria/Dropbox/org/work.org" "/Users/zaccaria/Dropbox/org/howtos/Ansible.org" "/Users/zaccaria/Dropbox/org/howtos/CLaSH.org" "/Users/zaccaria/Dropbox/org/howtos/Devop.org" "/Users/zaccaria/Dropbox/org/howtos/Docker.org" "/Users/zaccaria/Dropbox/org/howtos/EDXDevop.org" "/Users/zaccaria/Dropbox/org/howtos/Emacs.org" "/Users/zaccaria/Dropbox/org/howtos/Github.org" "/Users/zaccaria/Dropbox/org/howtos/Kubernetes.org" "/Users/zaccaria/Dropbox/org/howtos/MacOSXSetup.org" "/Users/zaccaria/Dropbox/org/howtos/Make.org" "/Users/zaccaria/Dropbox/org/howtos/Maxima.org" "/Users/zaccaria/Dropbox/org/howtos/Python.org" "/Users/zaccaria/Dropbox/org/howtos/QNAP.org" "/Users/zaccaria/Dropbox/org/howtos/ReviewTemplate.org" "/Users/zaccaria/Dropbox/org/howtos/Sage.org" "/Users/zaccaria/Dropbox/org/howtos/Shell.org" "/Users/zaccaria/Dropbox/org/howtos/Stack.org" "/Users/zaccaria/Dropbox/org/howtos/haskellDSL.org" "/Users/zaccaria/Dropbox/org/research/Category.org" "/Users/zaccaria/Dropbox/org/research/planning.org" "/Users/zaccaria/Dropbox/org/research/robotics.org" "/Users/zaccaria/Dropbox/org/research/webtech.org" "/Users/zaccaria/Dropbox/org/other/olio.org" "/Users/zaccaria/Dropbox/org/other/reviews.org" "/Users/zaccaria/Dropbox/org/corsi/InfoBMat.org" "/Users/zaccaria/Dropbox/org/corsi/InfoBProg.org")))
  '(org-agenda-prefix-format
    (quote
     ((agenda . " %i %-12:c%?-12t% s")

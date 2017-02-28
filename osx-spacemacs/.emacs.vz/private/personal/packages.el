@@ -52,8 +52,7 @@
               "~/Dropbox/org/howtos"
               "~/Dropbox/org/research"
               "~/Dropbox/org/other"
-              "~/development/github/materiale-corsi/infob/administration/programma-dettagliato/InfoBProg.org"
-              "~/development/github/materiale-corsi/infob/InfoBMat.org"
+              "~/Dropbox/org/corsi"
               ))
 
   (setq org-todo-keywords
