@@ -117,10 +117,16 @@
 (define-key org-mode-map (kbd "<f4>")  'vz/org-to-docx)
 (define-key org-mode-map (kbd "<f5>")  'vz/switch-dictionary)
 
+
+;; Orgmode utilities
 (define-key org-mode-map (kbd "∫")  'vz/org-current-word-bold)
 (define-key org-mode-map (kbd "ç")  'vz/org-current-word-code)
+
 (define-key org-mode-map (kbd "s-b")  'spacemacs/org-bold)
 (define-key org-mode-map (kbd "s-k")  'spacemacs/org-verbose)
+(define-key org-mode-map (kbd "s-i")  'spacemacs/org-italic)
+(define-key org-mode-map (kbd "s-u")  'spacemacs/org-underline)
+
 
 
 ;; (define-key markdown-mode-map (kbd "∫")  'markdown-insert-bold)

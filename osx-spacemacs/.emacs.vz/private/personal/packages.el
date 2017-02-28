@@ -36,12 +36,14 @@
 
 ;; define initialization here
 (defun personal/post-init-org ()
+  (require 'org-protocol)
   (setq org-agenda-custom-commands '(("w" "My Agenda"
                                       ((agenda "")
-                                       (todo "TODAY")
-                                       (todo "URGENT")
-                                       (todo "IMPORTANT")
-                                       (todo "")))))
+                                       (tags "DEADLINE={.}-TODO=\"DONE\"")
+                                       (tags "PRIORITY=\"A\"/IMPORTANT")
+                                       (tags "TODO=\"IMPORTANT\"&-PRIORITY=\"A\"")
+                                       (tags "TODO=\"TODO\"&-TODO=\"IMPORTANT\"")
+                                       ))))
 
   (setq org-columns-default-format "%40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM") 
   (setq org-agenda-todo-list-sublevels nil)
@@ -55,7 +57,7 @@
               ))
 
   (setq org-todo-keywords
-        '((sequence "TODO" "TODAY" "URGENT" "IMPORTANT" "CHECK" "|" "DONE" "CANCELLED")
+        '((sequence "TODO" "TODAY" "IMPORTANT" "CHECK" "|" "DONE" "CANCELLED")
           (sequence "TOREIMBURSE" "|" "REIMBURSED"  )))
 
   ;; Using orgmode as a presentation
@@ -82,6 +84,9 @@
      (plantuml . t)
      (latex . t)
      ))
+
+
+  (org-add-link-type "papers3" (lambda (link)  (shell-command (concat "open papers3:" link))))
 
   (setq org-babel-js-cmd "/usr/local/bin/babel-node --presets es2015,stage-2")
   (setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/8046/plantuml.8046.jar")
@@ -243,12 +248,7 @@
     )
   )
 
-(defun personal/init-vz-helm-google()
-  (use-package vz-helm-google
-    :config
-    :commands vz-helm-google
-    )
-  )
+
 
 
 (defun personal/post-init-org-bullets ()
