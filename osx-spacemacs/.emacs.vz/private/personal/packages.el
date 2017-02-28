@@ -92,20 +92,19 @@
   (setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/8046/plantuml.8046.jar")
   (setq org-capture-templates
         '(
-          ("m" "Send mail to" entry
-           (file+headline "~/Dropbox/org/work.org" "Ricordarsi di ...")
-           "* TODO Send mail to  %?\n  %i\n")
-
           ("t" "Work todo generico" entry
            (file+headline "~/Dropbox/org/work.org" "Ricordarsi di ...")
            "* TODO %?\n  %i\n")
 
-          ("d" "Feedback/note per il corso" entry
-           (file+headline "/Users/zaccaria/development/github/documents/lectures/infob/materiale/InfoBMat.org" "Feedback e note prese durante il corso")
-           "*  %?\n")
+          ("l" "Da leggere" entry
+           (file+headline "~/Dropbox/org/work.org" "Da categorizzare")
+           "*** [ ] %c\n")
 
+          ("c" "Note/Annotazioni per i corsi" entry
+           (file+headline "~/Dropbox/org/work.org" "Note per i corsi")
+           "** %c - %i (%u)"
           )
-        )
+        ))
 
   (setf org-latex-default-packages-alist
         (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
@@ -137,6 +136,12 @@
 
   (add-to-list 'org-structure-template-alist
                '("tikzchain" "\\begin{tikzpicture}[start chain=1 going right,node distance=5mm] \n \\node [draw,on chain=1] {Hello}; \n\\node [draw,on chain] {World}; \n\\end{tikzpicture}")
+               )
+
+  ;;
+  ;; excen: centered example section
+  (add-to-list 'org-structure-template-alist
+               '("excen" "#+begin_center \n #+attr_latex: :options {0.7\\textwidth} \n #+begin_minipage \n #+BEGIN_EXAMPLE \n #+END_EXAMPLE \n #+end_minipage \n #+end_center \n")
                )
 
   ;;;

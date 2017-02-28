@@ -23,6 +23,7 @@ alias gr='git-chdir-into-root'
 
 alias lb='git branch'
 alias sb='git checkout '
+alias git-untrack='git update-index --assume-unchanged '
 
 colorflag=""
 

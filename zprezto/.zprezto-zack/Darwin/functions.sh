@@ -139,6 +139,22 @@ function sezione-cal-add() {
     fi
 }
 
+function consiglio-dipartimento-cal-add() {
+    if [ -z "$1" ]; then
+        echo "consiglio-dipartimento-cal-add 'MM/DD/YYYY HH:mm' "
+    else
+        gcalcli \
+            --duration 90 \
+            --calendar "Vittorio Zaccaria" \
+            --description "Consiglio di Dipartimento" \
+            --title "Consiglio di Dipartimento" \
+            --where "Sala conferenze - DEIB - Milano (MI)" \
+            --reminder "60" \
+            add \
+            --nocache \
+            --when "$1";
+    fi
+}
 
 function manmd() {
     pandoc -s -f markdown+all_symbols_escapable -t man "$@" | sed 's/\[C\]/\[B\]/g' | groff -T utf8 -man | less 
