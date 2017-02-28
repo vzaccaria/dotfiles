@@ -328,6 +328,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
           "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no"))
    ((eq system-type 'gnu/linux)
     ;;; Linux specific conf
+    (setq deft-directory "~/Dropbox/org")
+    (setq deft-recursive t)
     ))
 
 
