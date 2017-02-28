@@ -52,48 +52,8 @@
               "~/Dropbox/org/howtos"
               "~/Dropbox/org/research"
               "~/Dropbox/org/other"
-              "~/development/github/materiale-corsi/infob/administration/programma-dettagliato/InfoBProg.org"
-              "~/development/github/materiale-corsi/infob/InfoBMat.org"
-              ))
-
-  (setq org-todo-keywords
-        '((sequence "TODO" "TODAY" "IMPORTANT" "CHECK" "|" "DONE" "CANCELLED")
-          (sequence "TOREIMBURSE" "|" "REIMBURSED"  )))
-
-  ;; Using orgmode as a presentation
-  (setq org-hide-emphasis-markers t)
-  (setq org-hide-leading-stars t)
-  (setq org-level-color-stars-only t )
-  (setq org-confirm-babel-evaluate nil)
-
-  (add-hook 'org-mode-hook (lambda () 
-                             (define-key org-mode-map "\M-e" 'personal/show-agenda-all)))
-
-  (define-key global-map "\C-ct"
-    (lambda () (interactive) (org-capture nil "t")))
-
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '(
-     (emacs-lisp . t)
-     (sh . t)
-     (haskell . t)
-     (js . t)
-     (C . t)  
-     (ditaa . t)
-     (plantuml . t)
-     (latex . t)
-     ))
-
-
-  (org-add-link-type "papers3" (lambda (link)  (shell-command (concat "open papers3:" link))))
-
-  (setq org-babel-js-cmd "/usr/local/bin/babel-node --presets es2015,stage-2")
-  (setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/8046/plantuml.8046.jar")
-  (setq org-capture-templates
-        '(
-          ("t" "Work todo generico" entry
-           (file+headline "~/Dropbox/org/work.org" "Ricordarsi di ...")
+              "~/Dropbox/org/corsi/InfoBProg.org"
+              "~/Dropbox/org/corsi di ...")
            "* TODO %?\n  %i\n")
 
           ("l" "Da leggere" entry

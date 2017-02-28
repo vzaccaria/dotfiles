@@ -48,13 +48,13 @@ values."
      octave
      emacs-lisp
      vimscript
+     (haskell :variables haskell-enable-hindent-style "chris-done")
      )
    )
 
   (setq
    vz--darwin-layers
    '(
-     (haskell :variables haskell-enable-hindent-style "chris-done")
      (personal :variables
                personal-bind-osx-keys t
                personal-bind-unix-keys nil)
@@ -67,7 +67,7 @@ values."
 
    vz--gnu/linux-layers
    '(
-     (personal :variables
+     (personal :variable
                personal-bind-unix-keys t
                personal-bind-osx-keys nil)
      )
@@ -395,7 +395,7 @@ you should place you code here."
  '(hindent-style "chris-done")
  '(org-agenda-files
    (quote
-    ("/Users/zaccaria/Dropbox/org/Casa.org" "/Users/zaccaria/Dropbox/org/EDX.org" "/Users/zaccaria/Dropbox/org/InfoBOrg.org" "/Users/zaccaria/Dropbox/org/ListaViaggio.org" "/Users/zaccaria/Dropbox/org/Missioni.org" "/Users/zaccaria/Dropbox/org/finance.org" "/Users/zaccaria/Dropbox/org/STMicro.org" "/Users/zaccaria/Dropbox/org/Teasy-2.0.org" "/Users/zaccaria/Dropbox/org/Today.org" "/Users/zaccaria/Dropbox/org/curriculum.org" "/Users/zaccaria/Dropbox/org/header.org" "/Users/zaccaria/Dropbox/org/thesis.org" "/Users/zaccaria/Dropbox/org/work.org" "/Users/zaccaria/Dropbox/org/howtos/Ansible.org" "/Users/zaccaria/Dropbox/org/howtos/CLaSH.org" "/Users/zaccaria/Dropbox/org/howtos/Devop.org" "/Users/zaccaria/Dropbox/org/howtos/Docker.org" "/Users/zaccaria/Dropbox/org/howtos/EDXDevop.org" "/Users/zaccaria/Dropbox/org/howtos/Emacs.org" "/Users/zaccaria/Dropbox/org/howtos/Github.org" "/Users/zaccaria/Dropbox/org/howtos/Kubernetes.org" "/Users/zaccaria/Dropbox/org/howtos/Make.org" "/Users/zaccaria/Dropbox/org/howtos/Python.org" "/Users/zaccaria/Dropbox/org/howtos/QNAP.org" "/Users/zaccaria/Dropbox/org/howtos/ReviewTemplate.org" "/Users/zaccaria/Dropbox/org/howtos/Stack.org" "/Users/zaccaria/Dropbox/org/howtos/haskellDSL.org" "/Users/zaccaria/Dropbox/org/research/planning.org" "/Users/zaccaria/Dropbox/org/research/robotics.org" "/Users/zaccaria/Dropbox/org/research/webtech.org" "/Users/zaccaria/Dropbox/org/other/olio.org" "/Users/zaccaria/Dropbox/org/other/reviews.org")))
+    ("/home/admin/Dropbox/org/Casa.org" "/home/admin/Dropbox/org/EDX.org" "/home/admin/Dropbox/org/InfoBOrg.org" "/home/admin/Dropbox/org/Missioni.org" "/home/admin/Dropbox/org/STMicro.org" "/home/admin/Dropbox/org/Teasy-2.0.org" "/home/admin/Dropbox/org/Today.org" "/home/admin/Dropbox/org/curriculum.org" "/home/admin/Dropbox/org/finance.org" "/home/admin/Dropbox/org/header.org" "/home/admin/Dropbox/org/infobmateriale.org" "/home/admin/Dropbox/org/listaviaggio.org" "/home/admin/Dropbox/org/thesis.org" "/home/admin/Dropbox/org/work.org" "/home/admin/Dropbox/org/howtos/Ansible.org" "/home/admin/Dropbox/org/howtos/CLaSH.org" "/home/admin/Dropbox/org/howtos/Devop.org" "/home/admin/Dropbox/org/howtos/Docker.org" "/home/admin/Dropbox/org/howtos/EDXDevop.org" "/home/admin/Dropbox/org/howtos/Emacs.org" "/home/admin/Dropbox/org/howtos/Github.org" "/home/admin/Dropbox/org/howtos/Kubernetes.org" "/home/admin/Dropbox/org/howtos/MacOSXSetup.org" "/home/admin/Dropbox/org/howtos/Make.org" "/home/admin/Dropbox/org/howtos/Maxima.org" "/home/admin/Dropbox/org/howtos/Python.org" "/home/admin/Dropbox/org/howtos/QNAP.org" "/home/admin/Dropbox/org/howtos/ReviewTemplate.org" "/home/admin/Dropbox/org/howtos/Sage.org" "/home/admin/Dropbox/org/howtos/Shell.org" "/home/admin/Dropbox/org/howtos/Stack.org" "/home/admin/Dropbox/org/howtos/haskellDSL.org" "/home/admin/Dropbox/org/research/Category.org" "/home/admin/Dropbox/org/research/planning.org" "/home/admin/Dropbox/org/research/robotics.org" "/home/admin/Dropbox/org/research/webtech.org" "/home/admin/Dropbox/org/other/olio.org" "/home/admin/Dropbox/org/other/reviews.org")))
  '(org-agenda-prefix-format
    (quote
     ((agenda . " %i %-12:c%?-12t% s")
@@ -407,8 +407,7 @@ you should place you code here."
    (quote
     (("file" . "\\.\\(jpeg\\|jpg\\|png\\|pdf\\|gif\\|svg\\)\\'")
      ("http" . "\\.\\(jpeg\\|jpg\\|png\\|gif\\|svg\\)\\'")
-     ("https" . "\\.\\(jpeg\\|jpg\\|png\\|gif\\|svg\\)\\'"))))
- )
+     ("https" . "\\.\\(jpeg\\|jpg\\|png\\|gif\\|svg\\)\\'")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
