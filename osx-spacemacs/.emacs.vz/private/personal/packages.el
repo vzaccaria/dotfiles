@@ -74,7 +74,7 @@
 
   (org-babel-do-load-languages
    'org-babel-load-languages
-   '((R . t)
+   '(
      (emacs-lisp . t)
      (sh . t)
      (haskell . t)
@@ -113,6 +113,11 @@
   (add-to-list 'org-structure-template-alist
                '("oct" "#+BEGIN_SRC octave\n\n#+END_SRC")
                )
+
+  (add-to-list 'org-structure-template-alist
+               '("shell" "#+BEGIN_SRC sh \n\n#+END_SRC")
+               )
+
   (add-to-list 'org-structure-template-alist
                '("cs" "#+BEGIN_SRC c\n\n#+END_SRC")
                )

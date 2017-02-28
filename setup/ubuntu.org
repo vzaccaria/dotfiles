@@ -1,23 +1,29 @@
+* Utils
 
-# Utils
+#+BEGIN_SRC sh 
 sudo apt-get install silversearcher-ag
 sudo apt-get install aspell-it
 sudo apt-get install pandoc
+#+END_SRC
 
-# Nodejs
+* Nodejs
+
+#+BEGIN_SRC sh 
 sudo apt-get purge nodejs && sudo apt-get autoremove && sudo apt-get autoclean
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 nvm install 6.9.5
 nvm use 6.9.5
 nvm alias default 6.9.5
+#+END_SRC
 
-# Powerline Fonts
+*  Powerline Fonts
 git clone https://github.com/powerline/fonts.git
 # cd fonts && ./install.sh
 
-# Tex/Latex with Texlive
-sudo add-apt-repository ppa:jonathonf/texlive
+* Tex/Latex with Texlive
 
+#+BEGIN_SRC shell 
+sudo add-apt-repository ppa:jonathonf/texlive
 sudo apt-get install texlive-full
 # sudo apt-get install texlive-luatex
 # sudo apt-get install perl-tk
@@ -25,3 +31,13 @@ sudo apt-get install texlive-full
 
 tlmgr init-usertree
 tlmgr gui # --> then install packages
+#+END_SRC
+
+* Screen setup
+
+#+BEGIN_SRC sh 
+xrandr --output HDMI2 --gamma 0.9:0.9:0.9 --brightness 1
+#+END_SRC
+
+
+
