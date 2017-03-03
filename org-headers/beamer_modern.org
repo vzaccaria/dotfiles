@@ -148,8 +148,8 @@
 #+LATEX_HEADER: \newcommand{\keyboard}{{\tikz \node[box, minimum size=0cm] {\faKeyboardO};}}
 #+LATEX_HEADER: \newcommand{\screen}{{\tikz \node[box, minimum size=0cm] {\faTerminal};}}
 
-
-#+BEAMER_HEADER: \AtBeginSection[]{\begin{frame}[noframenumbering,plain]{Outline}\tableofcontents[currentsection]\end{frame}}
+# <2017-03-02 Thu> deprecated. Add this into your slides if needed
+# #+BEAMER_HEADER: \AtBeginSection[]{\begin{frame}[noframenumbering,plain]{Outline}\tableofcontents[currentsection]\end{frame}}
 #+BEAMER_HEADER: \setbeamerfont{caption}{size=\scriptsize}
 
 #+begin_src emacs-lisp :exports none :results silent

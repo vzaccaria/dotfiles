@@ -200,7 +200,13 @@
 
   (add-to-list 'org-latex-classes
                '("article"
-                 "\\documentclass\{article\}
+                 "\\documentclass[a4]\{article\}
+                [NO-DEFAULT-PACKAGES]"
+                 ))
+
+  (add-to-list 'org-latex-classes
+               '("letter"
+                 "\\documentclass\{letter\}
                 [NO-DEFAULT-PACKAGES]"
                  ))
 

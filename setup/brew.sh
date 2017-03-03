@@ -90,6 +90,7 @@ brew install hub
 brew install jq
 brew install watchman
 brew install clang-format
+brew install httpie # `http` command
 
 ##########################
 # Other languages
