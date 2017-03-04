@@ -15,7 +15,7 @@
     (prettier-js :location local)
     ))
 (defun personal/init-pretty-mode ()
-  (use-package highligh-chars
+  (use-package pretty-mode
     :init
     (progn (global-pretty-mode t)
 
@@ -32,7 +32,7 @@
 )
 
 (defun personal/init-highlight-chars ()
-  (use-package highligh-chars)
+  (use-package highlight-chars)
   )
 
 (defun personal/init-livescript-mode ()
@@ -328,7 +328,7 @@
     (require 'helm-config)
     (spacemacs/set-leader-keys "oM" 'helm-mu
       "oC" 'helm-mu-contacts))
-  )
+  ) 
 
 
 (defun personal/init-mu4e ()
