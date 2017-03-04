@@ -9,9 +9,31 @@
     prodigy
     evil-multiedit
     livescript-mode
+    highlight-chars
+    pretty-mode
     (ox-extra :location local)
     (prettier-js :location local)
     ))
+(defun personal/init-pretty-mode ()
+  (use-package highligh-chars
+    :init
+    (progn (global-pretty-mode t)
+
+           (pretty-deactivate-groups
+            '(:equality :ordering :ordering-double :ordering-triple
+                        :arrows :arrows-twoheaded :punctuation
+                        :logic :sets))
+
+           (pretty-activate-groups
+            '(:sub-and-superscripts :greek :arithmetic-nary))
+           (global-prettify-symbols-mode 1)
+           ;; See here for adding symbols to your major mode: https://ekaschalk.github.io/
+      ))
+)
+
+(defun personal/init-highlight-chars ()
+  (use-package highligh-chars)
+  )
 
 (defun personal/init-livescript-mode ()
   (use-package livescript-mode

@@ -35,3 +35,5 @@
 #+LATEX_HEADER: \usetikzlibrary{positioning}   
 #+LATEX_HEADER: \usetikzlibrary{snakes}
 #+LATEX_HEADER: \setlength{\parskip}{12pt plus 0.5ex}
+#+LaTeX_HEADER: \usepackage{geometry}
+#+LATEX_HEADER: \geometry{top=3cm,left=2cm,right=2cm,bottom=3cm}

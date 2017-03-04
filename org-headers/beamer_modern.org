@@ -150,6 +150,9 @@
 
 # <2017-03-02 Thu> deprecated. Add this into your slides if needed
 # #+BEAMER_HEADER: \AtBeginSection[]{\begin{frame}[noframenumbering,plain]{Outline}\tableofcontents[currentsection]\end{frame}}
+
+#+BEAMER_HEADER: \let\oldfootnote\footnote
+#+BEAMER_HEADER: \renewcommand\footnote[1][]{\oldfootnote[frame,#1]}
 #+BEAMER_HEADER: \setbeamerfont{caption}{size=\scriptsize}
 
 #+begin_src emacs-lisp :exports none :results silent

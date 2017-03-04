@@ -153,8 +153,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font '("Fira Code"
+                               :size 18
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -360,10 +360,13 @@ you should place you code here."
           "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
           "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
-  (cond
+  (cond 
    ((eq system-type 'darwin)
     (setq browse-url-mailto-function 'browse-url-generic)
     (setq browse-url-generic-program "open")
+    ;; On Darwin set up Fira Code Symbol ligatures..
+    ;;; Fira code
+;; This works when using emacs --daemon + emacsclient
     )
    ((eq system-type 'gnu/linux)
     )
@@ -407,7 +410,10 @@ you should place you code here."
    (quote
     (("file" . "\\.\\(jpeg\\|jpg\\|png\\|pdf\\|gif\\|svg\\)\\'")
      ("http" . "\\.\\(jpeg\\|jpg\\|png\\|gif\\|svg\\)\\'")
-     ("https" . "\\.\\(jpeg\\|jpg\\|png\\|gif\\|svg\\)\\'")))))
+     ("https" . "\\.\\(jpeg\\|jpg\\|png\\|gif\\|svg\\)\\'"))))
+ '(package-selected-packages
+   (quote
+    (pretty-mode highlight-chars yapfify yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package typo toc-org tagedit spacemacs-theme spaceline solarized-theme slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs request rainbow-delimiters quelpa pyvenv pytest pyenv-mode py-isort pug-mode prodigy popwin pip-requirements persp-mode pcre2el pbcopy paradox ox-reveal osx-trash osx-dictionary org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc macrostep lorem-ipsum livid-mode livescript-mode live-py-mode linum-relative link-hint less-css-mode ledger-mode launchctl js2-refactor js-doc intero insert-shebang info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-hoogle helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio gnuplot gh-md flyspell-correct-helm flycheck-pos-tip flycheck-ledger flycheck-haskell flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-multiedit evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump dockerfile-mode docker disaster deft dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-shell company-quickhelp company-ghci company-ghc company-cabal company-c-headers company-auctex company-anaconda command-log-mode column-enforce-mode coffee-mode cmm-mode cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

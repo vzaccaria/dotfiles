@@ -4,6 +4,7 @@
 	      "no-console": 0
 	  },
     "env": {
+        "jquery": true,
         "node": true,
         "es6": true
     },
