@@ -65,11 +65,11 @@ values."
      (c-c++ :variables c-c++-enable-clang-support t)
      )
 
-   vz--gnu/linux-layers
+   OBvz--gnu/linux-layers
    '(
-;;     (personal :variables
-;;               personal-bind-unix-keys t
-;;               personal-bind-osx-keys nil)
+     (PERSONAL :variable
+               personal-bind-unix-keys t
+               personal-bind-osx-keys nil)
      )
    )
 
