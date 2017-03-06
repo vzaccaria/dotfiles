@@ -109,7 +109,7 @@
 
   (org-add-link-type "papers3" (lambda (link)  (shell-command (concat "open papers3:" link))))
 
-  (setq org-babel-js-cmd "/usr/local/bin/babel-node --presets es2015,stage-2")
+  (setq org-babel-js-cmd "babel-node --presets es2015,stage-2")
   (setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/8046/plantuml.8046.jar")
   (setq org-capture-templates
         '(
@@ -130,68 +130,50 @@
   (setf org-latex-default-packages-alist
         (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
 
+  (setq org-structure-template-alist
+   '(("s" "#+BEGIN_SRC ?\n\n#+END_SRC")
+     ("e" "#+BEGIN_EXAMPLE\n?\n#+END_EXAMPLE")
+     ("q" "#+BEGIN_QUOTE\n?\n#+END_QUOTE")
+     ("v" "#+BEGIN_VERSE\n?\n#+END_VERSE")
+     ("V" "#+BEGIN_VERBATIM\n?\n#+END_VERBATIM")
+     ("c" "#+BEGIN_CENTER\n?\n#+END_CENTER")
+     ("l" "#+BEGIN_EXPORT latex\n?\n#+END_EXPORT")
+     ("L" "#+LaTeX: ")
+     ("h" "#+BEGIN_EXPORT html\n?\n#+END_EXPORT")
+     ("H" "#+HTML: ")
+     ("a" "#+BEGIN_EXPORT ascii\n?\n#+END_EXPORT")
+     ("A" "#+ASCII: ")
+     ("i" "#+INDEX: ?")
+     ("I" "#+INCLUDE: %file ?")
 
-  (add-to-list 'org-structure-template-alist
-               '("oct" "#+BEGIN_SRC octave\n\n#+END_SRC")
-               )
+     ;;; --- SOURCES ---
+     ("so" "#+BEGIN_SRC octave\n\n#+END_SRC")
+     ("ss" "#+BEGIN_SRC sh    \n\n#+END_SRC")
+     ("sc" "#+BEGIN_SRC c     \n\n#+END_SRC")
+     ("sj" "#+BEGIN_SRC js    \n\n#+END_SRC")
 
-  (add-to-list 'org-structure-template-alist
-               '("shell" "#+BEGIN_SRC sh \n\n#+END_SRC")
-               )
+     ;;; --- FIGURES ---
+     ("fe" "#+BEGIN_EXPORT latex\n\\begin{figure}\n\n\\end{figure}\n#+END_EXPORT")
+     ("fc" "#+CAPTION: caption with label \\label{l1}\n#+attr_latex: :width 0.85\\linewidth :float t :placement [h]")
+     ("tg" "\\begin{tikzpicture}\n\\graph[layered layout, level distance=1cm]{ a -> {b, c} };\n\\end{tikzpicture}")
+     ("tc" "\\begin{tikzpicture}[start chain=1 going right,node distance=5mm] \n \\node [draw,on chain=1] {Hello}; \n\\node [draw,on chain] {World}; \n\\end{tikzpicture}")
 
-  (add-to-list 'org-structure-template-alist
-               '("cs" "#+BEGIN_SRC c\n\n#+END_SRC")
-               )
+     ;;; --- EXAMPLES ---
+     ("ec" "#+begin_center \n #+attr_latex: :options {0.7\\textwidth} \n #+begin_minipage \n #+BEGIN_EXAMPLE \n #+END_EXAMPLE \n #+end_minipage \n #+end_center \n")
 
-  ;;;
-  ;;; - figcap: caption
-  ;;; - figenv: real figure environment
-  ;;; - tikzgraph: graph inside figure
+     ;;; --- EQUATIONS --- 
+     ("equ" "#+BEGIN_EXPORT latex\n\\begin{equation}\n\\end{equation}\n#+END_EXPORT")
+     ("eqc" "f(x) = \\begin{cases}\n 1 & \\text{for } n = 0 \\\\ \n \\end{cases}\n")
+     ("eqa" "\\begin{array}{rcl}\n a& = &b \\\\\n\\end{array}\n")
 
-  (add-to-list 'org-structure-template-alist
-               '("figcap" "#+CAPTION: caption with label \\label{l1}\n#+attr_latex: :width 0.85\\linewidth :float t :placement [h]")
-               )
+     ;;; --- MINI PAGES and COLUMNS
+     ("hp" "#+attr_latex: :options {0.5\\textwidth}\n#+begin_minipage\n\n#+end_minipage")
+     ("b2c" " :PROPERTIES:\n :BEAMER_env: column\n :BEAMER_col: 0.5\n :END:\n")
+     ("b3c" " :PROPERTIES:\n :BEAMER_env: column\n :BEAMER_col: 0.32\n :END:\n"))
+     )
 
-  (add-to-list 'org-structure-template-alist
-               '("figenv" "#+BEGIN_EXPORT latex\n\\begin{figure}\n\n\\end{figure}\n#+END_EXPORT")
-               )
 
-  (add-to-list 'org-structure-template-alist
-               '("tikzgraph" "\\begin{tikzpicture}\n\\graph[layered layout, level distance=1cm]{ a -> {b, c} };\n\\end{tikzpicture}")
-               )
 
-  (add-to-list 'org-structure-template-alist
-               '("tikzchain" "\\begin{tikzpicture}[start chain=1 going right,node distance=5mm] \n \\node [draw,on chain=1] {Hello}; \n\\node [draw,on chain] {World}; \n\\end{tikzpicture}")
-               )
-
-  ;;
-  ;; excen: centered example section
-  (add-to-list 'org-structure-template-alist
-               '("excen" "#+begin_center \n #+attr_latex: :options {0.7\\textwidth} \n #+begin_minipage \n #+BEGIN_EXAMPLE \n #+END_EXAMPLE \n #+end_minipage \n #+end_center \n")
-               )
-
-  ;;;
-  ;;; - equ: equation 
-  ;;; - equcases: cases inside equation
-  ;;; - equarray: equation array
-  (add-to-list 'org-structure-template-alist
-               '("equ" "#+BEGIN_EXPORT latex\n\\begin{equation}\n\\end{equation}\n#+END_EXPORT")
-               )
-
-  (add-to-list 'org-structure-template-alist
-               '("equcases" "f(x) = \\begin{cases}\n 1 & \\text{for } n = 0 \\\\ \n \\end{cases}\n")
-               )
-
-  (add-to-list 'org-structure-template-alist
-               '("equarray" "\\begin{array}{rcl}\n a& = &b \\\\\n\\end{array}\n")
-               )
-
-  (add-to-list 'org-structure-template-alist
-               '("hp" "#+attr_latex: :options {0.5\\textwidth}\n#+begin_minipage\n\n#+end_minipage")
-               )
-
-  (add-to-list 'org-structure-template-alist
-               '("bhp" " :PROPERTIES:\n :BEAMER_env: column\n :BEAMER_col: 0.5\n :END:\n"))
 
   (unless (boundp 'org-latex-classes)
     (setq org-latex-classes nil))
