@@ -97,7 +97,7 @@
    'org-babel-load-languages
    '(
      (emacs-lisp . t)
-     (sh . t)
+     (shell . t)
      (haskell . t)
      (js . t)
      (C . t)  

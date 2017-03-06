@@ -16,7 +16,7 @@ nvm use 6.9.5
 nvm alias default 6.9.5
 #+END_SRC
 
-*  Powerline Fonts
+* Powerline Fonts
 git clone https://github.com/powerline/fonts.git
 # cd fonts && ./install.sh
 
@@ -35,9 +35,16 @@ tlmgr gui # --> then install packages
 
 * Screen setup
 
-#+BEGIN_SRC sh 
-xrandr --output HDMI2 --gamma 0.9:0.9:0.9 --brightness 1
+#+BEGIN_SRC shell
+xrandr --listmonitors
 #+END_SRC
+
+
+#+BEGIN_SRC sh 
+xrandr --output HDMI1 --gamma 0.9:0.9:0.9 --brightness 1
+#+END_SRC
+
+#+RESULTS:
 
 
 
