@@ -249,6 +249,10 @@
   (setq org-export-default-inline-image-rule
         '(("file" . "\\.\\(gif\\|jp\\(?:e?g\\)\\|p\\(?:bm\\|df\\|gm\\|ng\\|pm\\)\\|tiff?\\|x\\(?:[bp]m\\)\\)\\'"))
         )
+
+  (setq org-pomodoro-finished-sound "/Users/zaccaria/dotfiles/osx-spacemacs/.emacs.vz/private/personal/assets/pomodoro0.wav")
+  (setq org-pomodoro-long-break-sound "/Users/zaccaria/dotfiles/osx-spacemacs/.emacs.vz/private/personal/assets/pomodoro0.wav")
+  (setq org-pomodoro-short-break-sound "/Users/zaccaria/dotfiles/osx-spacemacs/.emacs.vz/private/personal/assets/pomodoro0.wav")
   )
 
 

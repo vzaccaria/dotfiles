@@ -3,8 +3,8 @@
 #+DESCRIPTION:
 #+KEYWORDS:
 
-#+LaTeX_CLASS_OPTIONS: [12pt,a4]
-#+LaTeX_CLASS: memoir
+#+LaTeX_CLASS_OPTIONS: [12pt,a4paper]
+#+LaTeX_CLASS: article
 #+LaTeX_HEADER: \usepackage{fixltx2e}
 #+LaTeX_HEADER: \usepackage{graphicx}
 #+LaTeX_HEADER: \usepackage{xcolor}
@@ -22,15 +22,17 @@
 #+LaTeX_HEADER: \usepackage{shellesc}
 #+LaTeX_HEADER: \usepackage{minted}
 #+LaTeX_HEADER: \usepackage{fontspec,xunicode}
-#+LATEX_HEADER: \setmainfont[Scale=0.8]{Fira Sans}
-#+LATEX_HEADER: \setsansfont{Fira Sans}
+#+LATEX_HEADER: \setmainfont[]{Minion Pro}
 #+LATEX_HEADER: \setmonofont[Scale=0.8]{Source Code Pro}
 #+LATEX_HEADER: \newfontfamily\myunicodefallback{Cambria}
-#+LATEX_HEADER: \usepackage{geometry}
 #+LATEX_HEADER: \definecolor{links}{HTML}{0086F7}
 #+LATEX_HEADER: \hypersetup{colorlinks,linkcolor=,urlcolor=links}
 #+LATEX_HEADER: \usepackage{tikz}
 #+LATEX_HEADER: \usetikzlibrary{mindmap}
 #+LATEX_HEADER: \usetikzlibrary{positioning}   
 #+LATEX_HEADER: \usetikzlibrary{snakes}
-#+LATEX_HEADER: \setlength{\parskip}{0pt plus 0.5ex}
+#+LATEX_HEADER: \setlength{\parskip}{12pt plus 0.5ex}
+#+LaTeX_HEADER: \usepackage{geometry}
+#+LATEX_HEADER: \geometry{top=3cm,left=2cm,right=2cm,bottom=3cm}
+
+#+OPTIONS:   toc:nil 

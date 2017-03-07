@@ -108,16 +108,26 @@
   (global-set-key (kbd "\e <right>") 'evil-window-right)
   (global-set-key (kbd "\e <left>")  'evil-window-left)
 
-  (define-key org-mode-map (kbd "M-<up>")    'evil-window-up)
-  (define-key org-mode-map (kbd "M-<down>")  'evil-window-down)
-  (define-key org-mode-map (kbd "M-<right>") 'evil-window-right)
-  (define-key org-mode-map (kbd "M-<left>")  'evil-window-left)
+  (define-key org-mode-map (kbd "\e <up>")   'evil-window-up)
+  (define-key org-mode-map (kbd "\e <down>") 'evil-window-down)
+  (define-key org-mode-map (kbd "\e <right>")'evil-window-right)
+  (define-key org-mode-map (kbd "\e <left>") 'evil-window-left)
 
   ;; for osx gui                     S + Arrows
   (global-set-key (kbd "s-<up>")    'evil-window-up)
   (global-set-key (kbd "s-<down>")  'evil-window-down)
   (global-set-key (kbd "s-<right>") 'evil-window-right)
-  (global-set-key (kbd "s-<left>")  'evil-window-left))
+  (global-set-key (kbd "s-<left>")  'evil-window-left)
+
+  (global-set-key (kbd "M-<up>")    'evil-window-up)
+  (global-set-key (kbd "M-<down>")  'evil-window-down)
+  (global-set-key (kbd "M-<right>") 'evil-window-right)
+  (global-set-key (kbd "M-<left>")  'evil-window-left)
+
+  (define-key org-mode-map (kbd "M-<up>")    'evil-window-up)
+  (define-key org-mode-map (kbd "M-<down>")  'evil-window-down)
+  (define-key org-mode-map (kbd "M-<right>") 'evil-window-right)
+  (define-key org-mode-map (kbd "M-<left>")  'evil-window-left))
 
  ((eq system-type 'gnu/linux)
   (global-set-key (kbd "M-<up>")    'evil-window-up)
