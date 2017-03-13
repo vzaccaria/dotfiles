@@ -28,6 +28,17 @@
             '(:sub-and-superscripts :greek :arithmetic-nary))
            (global-prettify-symbols-mode 1)
            ;; See here for adding symbols to your major mode: https://ekaschalk.github.io/
+           (add-hook
+            'haskell-mode-hook
+            (lambda ()
+              (mapc (lambda (pair) (push pair prettify-symbols-alist))
+                    '(;; Syntax
+                      ("`nd`" .    #x2227)
+                      ("`xr`" .    #x2295)
+                      ("nt" .      #x00ac)
+                      ("_0" .      #x2080)
+                      ("_1" .      #x2081)
+                      ))))
       ))
 )
 
@@ -109,7 +120,7 @@
 
   (org-add-link-type "papers3" (lambda (link)  (shell-command (concat "open papers3:" link))))
 
-  (setq org-babel-js-cmd "babel-node --presets es2015,stage-2")
+  (setq org-babel-js-cmd "node")
   (setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/8046/plantuml.8046.jar")
   (setq org-capture-templates
         '(
@@ -147,10 +158,10 @@
      ("I" "#+INCLUDE: %file ?")
 
      ;;; --- SOURCES ---
-     ("so" "#+BEGIN_SRC octave\n\n#+END_SRC")
-     ("ss" "#+BEGIN_SRC sh    \n\n#+END_SRC")
-     ("sc" "#+BEGIN_SRC c     \n\n#+END_SRC")
-     ("sj" "#+BEGIN_SRC js    \n\n#+END_SRC")
+     ("so" "#+BEGIN_SRC octave    \n\n#+END_SRC")
+     ("ss" "#+BEGIN_SRC sh        \n\n#+END_SRC")
+     ("sc" "#+BEGIN_SRC c         \n\n#+END_SRC")
+     ("sj" "#+BEGIN_SRC js :tangle js/yourfile.js   \n\n#+END_SRC")
 
      ;;; --- FIGURES ---
      ("fe" "#+BEGIN_EXPORT latex\n\\begin{figure}\n\n\\end{figure}\n#+END_EXPORT")

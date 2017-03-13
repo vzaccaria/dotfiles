@@ -31,7 +31,7 @@
 (global-set-key (kbd "M-g") 'deft)
 (global-set-key (kbd "M-h") 'helm-apropos)
 (global-set-key (kbd "M-j") 'vz/align-code-to-equals)
-(global-set-key (kbd "M-k") 'vz/recompile)
+(global-set-key (kbd "M-k") 'recompile)
 (global-set-key (kbd "M-l") 'org-latex-export-to-latex)
 (global-set-key (kbd "M-/") 'evil-search-forward)
 
