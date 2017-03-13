@@ -14,6 +14,8 @@
     (ox-extra :location local)
     (prettier-js :location local)
     ))
+
+
 (defun personal/init-pretty-mode ()
   (use-package pretty-mode
     :init

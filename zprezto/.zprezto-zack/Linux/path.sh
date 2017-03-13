@@ -10,6 +10,7 @@ path=(\
     /usr/bin/X11 \
     /usr/local/sbin \
     /usr/local/bin \
+    /home/admin/.local/bin \
     /root/.local/bin \
     $HOME/node_modules/.bin)
 

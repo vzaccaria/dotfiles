@@ -392,6 +392,7 @@ you should place you code here."
  '(disaster-cc "clang")
  '(disaster-objdump "gobjdump -d -M att -Sl --no-show-raw-insn")
  '(evil-want-Y-yank-to-eol t)
+ '(evilnc-default-hotkeys t)
  '(flycheck-python-pycompile-executable
    "/Applications/Blender.app/Contents/MacOS/../Resources/2.78/python/bin/python3.5m")
  '(hindent-reformat-buffer-on-save nil)
