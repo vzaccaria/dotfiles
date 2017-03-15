@@ -305,7 +305,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
                                   :command ("gramchk" "-x" source-original)
                                   :error-parser flycheck-parse-checkstyle
                                   :standard-input t
-                                  :modes (latex-mode))
+                                  :modes (latex-mode plain-TeX-mode)
+                                  :next-checkers 'tex-lacheck)
+
 
          (flycheck-define-checker proselint
                                   "A linter for prose."
@@ -316,10 +318,15 @@ before packages are loaded. If you are unsure, you should try in setting them in
                                             (message (one-or-more not-newline)
                                                      (zero-or-more "\n" (any " ") (one-or-more not-newline)))
                                             line-end))
-                                  :modes (text-mode markdown-mode gfm-mode))
+                                  :modes (latex-mode text-mode markdown-mode gfm-mode)
+                                  :next-checkers 'tex-lacheck)
 
+         ;; These go into the list of checkers that can be used in every buffer (according to major-mode)
          (add-to-list 'flycheck-checkers 'proselint)
          (add-to-list 'flycheck-checkers 'grammar-gramcheck)
+
+         (add-hook 'plain-TeX-mode-hook 'flycheck-mode)
+         (add-hook 'LaTeX-mode-hook 'flycheck-mode)
          )
       )
     (setq org-enable-reveal-js-support t)

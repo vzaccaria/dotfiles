@@ -86,6 +86,7 @@
               "~/Dropbox/org/research"
               "~/Dropbox/org/other"
               "~/Dropbox/org/corsi"
+              "~/Dropbox/org/personal"
               ))
 
   (setq org-todo-keywords

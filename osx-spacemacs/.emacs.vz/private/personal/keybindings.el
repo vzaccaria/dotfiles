@@ -2,8 +2,6 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cj" 'js-doc-insert-function-doc)
 
-(global-set-key (kbd "<f4>")  'personal/show-agenda-all)
-(global-set-key (kbd "<f16>")  'personal/show-agenda-all)
 
 ;; to make your life easier; dont add any other character after M-* (!!!)
 (global-set-key (kbd "M-`") 'toggle-window-split)
@@ -59,6 +57,15 @@
 (define-key evil-visual-state-map (kbd "M-a") 'mark-whole-buffer)
 
 ;; Function key revival
+(global-set-key (kbd "<f4>")  'personal/show-agenda-all)
+(global-set-key (kbd "<f16>")  'personal/show-agenda-all)
+
+(add-hook 'LaTeX-mode-hook (lambda ()
+                        (define-key LaTeX-mode-map (kbd "<f1>")  'spacemacs/toggle-flycheck-error-list)
+                        (define-key LaTeX-mode-map (kbd "<f2>")  'vz/check-using-proselint)
+                        (define-key LaTeX-mode-map (kbd "<f3>")  'vz/check-using-grammarcheck)
+                        ))
+
 (define-key org-mode-map (kbd "<f1>")  'org-beamer-export-to-pdf)
 (define-key org-mode-map (kbd "<f2>")  'org-latex-export-to-pdf)
 (define-key org-mode-map (kbd "<f3>")  'org-latex-export-to-latex)

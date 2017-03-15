@@ -167,6 +167,15 @@ prompt the user for a coding system."
   (customize-set-variable 'flycheck-gcc-language-standard "c++11")
   (flycheck-select-checker 'c/c++-gcc))
 
+(defun vz/check-using-proselint ()
+  (interactive)
+  (flycheck-select-checker 'proselint)
+  )
+
+(defun vz/check-using-grammarcheck ()
+  (interactive)
+  (flycheck-select-checker 'grammar-gramcheck))
+
 (defun vz/define-checker-for-labs()
   "Sets the correct checker for infob labs"
   (interactive)
