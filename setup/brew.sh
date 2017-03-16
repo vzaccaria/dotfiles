@@ -142,6 +142,8 @@ brew install reattach-to-user-namespace # tmux copy and paste
 brew install shellcheck
 
 brew install trash
+brew install ffmpeg
+brew install gifsicle
 
 
 ##########################
