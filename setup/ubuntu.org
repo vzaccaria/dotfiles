@@ -39,6 +39,10 @@ tlmgr gui # --> then install packages
 xrandr --listmonitors
 #+END_SRC
 
+#+RESULTS:
+| Monitors: |       1 |                       |       |
+|        0: | +*HDMI1 | 1920/518x1200/324+0+0 | HDMI1 |
+
 
 #+BEGIN_SRC sh 
 xrandr --output HDMI1 --gamma 0.9:0.9:0.9 --brightness 1
