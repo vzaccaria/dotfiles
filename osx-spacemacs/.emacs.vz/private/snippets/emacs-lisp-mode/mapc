@@ -2,4 +2,4 @@
 #name: mapc
 #key: mapc
 # --
-(mapc ${1:function} $0)
+(mapc '$0 SEQUENCE)

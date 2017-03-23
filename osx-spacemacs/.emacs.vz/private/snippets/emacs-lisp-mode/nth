@@ -2,4 +2,4 @@
 #name: nth
 #key: nth
 # --
-(nth ${1:index} ${2:list})
+(nth N$0 LIST)
