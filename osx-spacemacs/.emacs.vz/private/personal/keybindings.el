@@ -15,7 +15,7 @@
 
 (global-set-key (kbd "M-r") 'eval-region)
 (global-set-key (kbd "M-t") 'beautify)
-(global-set-key (kbd "M-y") 'helm-keyboard-quit)
+(global-set-key (kbd "M-y") 'company-yasnippet)
 (global-set-key (kbd "M-u") 'helm-mini)
 (global-set-key (kbd "M-i") 'fill-paragraph)
 
