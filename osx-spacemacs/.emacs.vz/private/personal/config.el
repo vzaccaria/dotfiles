@@ -15,7 +15,7 @@
   (setenv "DOCKER_CERT_PATH" "/Users/zaccaria/dotfiles/zprezto/.zprezto-zack/Darwin/qnap-certs")
 
   (setq
-   auto-completion-private-snippets-directory "~/.yasnippets/mysnippets"
+   auto-completion-private-snippets-directory "~/dotfiles/osx-spacemacs/.emacs.vz/private/snippets"
    auto-completion-enable-help-tooltip t
    auto-completion-enable-sort-by-usage t))
 

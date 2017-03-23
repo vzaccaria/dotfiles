@@ -35,11 +35,18 @@
             (lambda ()
               (mapc (lambda (pair) (push pair prettify-symbols-alist))
                     '(;; Syntax
-                      ("`nd`" .    #x2227)
-                      ("`xr`" .    #x2295)
-                      ("nt" .      #x00ac)
-                      ("_0" .      #x2080)
-                      ("_1" .      #x2081)
+                      ("`nd`" .#x2227)
+                      (".&"   .#x2227)
+                      ("`xr`" .#x2295)
+                      (".+"   .#x2295)
+                      ("nt"   .#x00ac)
+                      ("neg"  .#x00ac)
+                      (".|"   .#x2228)
+                      ("_0"   .#x2080)
+                      ("_1"   .#x2081)
+                      (".<>"  .#x20df)
+                      ("top"  .#x22a4)
+                      ("bot"  .#x22a5)
                       ))))
       ))
 )
@@ -75,8 +82,8 @@
   (setq org-agenda-custom-commands '(("w" "My Agenda"
                                       ((agenda "")
                                        (tags "DEADLINE={.}-TODO=\"DONE\"")
-                                       (tags "PRIORITY=\"A\"/IMPORTANT")
-                                       (tags "TODO=\"IMPORTANT\"&-PRIORITY=\"A\"")
+                                       (tags "TODO=\"IMPORTANT\"&-PRIORITY=\"C\"")
+                                       (tags "TODO=\"IMPORTANT\"&PRIORITY=\"C\"")
                                        (tags "TODO=\"TODO\"&-TODO=\"IMPORTANT\"")
                                        ))))
 
@@ -179,6 +186,7 @@
      ("equ" "#+BEGIN_EXPORT latex\n\\begin{equation}\n\\end{equation}\n#+END_EXPORT")
      ("eqc" "f(x) = \\begin{cases}\n 1 & \\text{for } n = 0 \\\\ \n \\end{cases}\n")
      ("eqa" "\\begin{array}{rcl}\n a& = &b \\\\\n\\end{array}\n")
+     ("eql" "#+BEGIN_EXPORT latex\n\\begin{align}\n a& = &b \\\\\n\\end{align}\n#+END_EXPORT")
 
      ;;; --- MINI PAGES and COLUMNS
      ("hp" "#+attr_latex: :options {0.5\\textwidth}\n#+begin_minipage\n\n#+end_minipage")

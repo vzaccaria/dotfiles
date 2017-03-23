@@ -60,6 +60,8 @@
 (global-set-key (kbd "<f4>")  'personal/show-agenda-all)
 (global-set-key (kbd "<f16>")  'personal/show-agenda-all)
 
+(global-set-key (kbd "<f1>") 'spacemacs/toggle-flycheck-error-list)
+
 (add-hook 'LaTeX-mode-hook (lambda ()
                         (define-key LaTeX-mode-map (kbd "<f1>")  'spacemacs/toggle-flycheck-error-list)
                         (define-key LaTeX-mode-map (kbd "<f2>")  'vz/check-using-proselint)
