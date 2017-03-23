@@ -18,37 +18,42 @@ c() {
    git cm "$@" && git push --all
 }
 
-initial() {
-    git add $* && git commit -m "initial commit"
+gitchanged() {
+    git diff --numstat --diff-filter=M $* | awk '{printf("%s\0", $3)}' | map basename _ | paste -s -d, - | sed 's/,/, /g' 
 }
 
-chore() {
-  git add $* && git commit -m "chore: some chore work"
+vg() {
+    com="$1"
+    tgt="${@:2: -1}"
+    msg="${@: -1}"
+
+    mc=$(gitchanged $tgt)
+
+    case "$com" in
+        initial)   msg="initial commit" ;;
+        minor)     msg="minor: apply small changes ($mc)" ;;
+        move)      msg="move/delete files";;
+        fix)       msg="fix: $msg ($mc)" ;;
+        polish)    msg="polish: prettify ($mc)" ;;
+        refactor)  msg="refactor: ($mc)";;
+        feat)      msg="feat: $msg (in $mc)";;
+        generic)   msg="$msg ($mc)" ;;
+        *)
+            ;;
+    esac
+    command="git add $tgt && git commit -m \"$msg\""
+    echo "$command"
+    eval "$command"
 }
 
-minor() {
-  git add $* && git commit -m "minor: some minor work"
-}
-
-refactor() {
-  git add $* && git commit -m "refactor: make it future proof"
-}
-
-fix() {
-  git add ${@:1: -1} && git commit -m "fix: ${@: -1}"
-}
-
-update() {
-    git add ${@:1: -1} && git commit -m "update: ${@: -1}"
-}
-
-u() {
-    git add ${@:1: -1} && git commit -m "update: ${@: -1}"
-}
-
-feat() {
-  git add ${@:1: -1} && git commit -m "feat: ${@: -1}"
-}
+initial()  { vg initial $* "noop" }
+minor()    { vg minor $* "noop" }
+polish()   { vg polish $* "noop" }
+refactor() { vg refactor $* "noop" }
+fix()      { vg fix $* }
+feat()     { vg feat $* }
+generic()  { vg generic $* }
+move()     { vg move $* }
 
 amend() {
   git commit --amend --no-edit
@@ -59,7 +64,7 @@ pcat() {
   pygmentize -f terminal256 -O style=monokai -g
 }
 pless() {
-  pygmentize -f terminal256 -O style=monokai -g $1 | less -r
+  pygmentize -f terminal256 -O style=monokai -g "$1" | less -r
 }
 
 # read markdown files like manpages
@@ -86,10 +91,10 @@ lift() {
             echo "                                                                         ^- placeholder for file"
             ;;
         find)
-            find . -name ${opts} -print0
+            find . -name "${opts}" -print0
             ;;
         ag)
-            ag -l --nocolor -0 ${opts}
+            ag -l --nocolor -0 "${opts}"
             ;;
         locate)
             "$@" -0
@@ -111,6 +116,12 @@ lift() {
             ;;
     esac
 }
+
+
+httpdump() {
+    sudo tcpdump -i "$1" -n -s 0 -w - | grep -a -o -E "Host\: .*|GET \/.*"
+}
+
 
 
 map() {

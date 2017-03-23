@@ -39,6 +39,8 @@ fi
 # List all files colorized in long format
 alias l="ls -ltrF ${colorflag}"
 
+alias ll="ls -ltrF ${colorflag}"
+
 # List all files colorized in long format, including dot files
 alias la="ls -ltraF ${colorflag}"
 
@@ -57,7 +59,6 @@ alias ip-show-all-local="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 # Make
 alias mk='make -f makefile.mk'
