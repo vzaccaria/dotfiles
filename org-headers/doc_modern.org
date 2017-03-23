@@ -1,7 +1,5 @@
 #+AUTHOR:    Vittorio Zaccaria
 #+EMAIL:     vittorio.zaccaria@polimi.it
-#+DESCRIPTION:
-#+KEYWORDS:
 
 #+LaTeX_CLASS_OPTIONS: [12pt,a4]
 #+LaTeX_CLASS: memoir
@@ -22,10 +20,23 @@
 #+LaTeX_HEADER: \usepackage{shellesc}
 #+LaTeX_HEADER: \usepackage{minted}
 #+LaTeX_HEADER: \usepackage{fontspec,xunicode}
-#+LATEX_HEADER: \setmainfont[Scale=0.8]{Fira Sans}
+#+LATEX_HEADER: \setmainfont[]{Minion Pro}
 #+LATEX_HEADER: \setsansfont{Fira Sans}
-#+LATEX_HEADER: \setmonofont[Scale=0.8]{Source Code Pro}
-#+LATEX_HEADER: \newfontfamily\myunicodefallback{Cambria}
+#+LATEX_HEADER: \setmonofont[Scale=0.75]{FiraCode-Regular}
+
+# Unicode fonts (for ASCII art)
+#+LATEX_HEADER: \ifmacosx
+#+LATEX_HEADER: \newfontfamily\myunicodefallback{Menlo}
+#+LATEX_HEADER: \fi
+
+#+LATEX_HEADER: \iflinux
+#+LATEX_HEADER: \newfontfamily\myunicodefallback{Menlo-Regular}
+#+LATEX_HEADER: \fi
+#+LaTeX_HEADER: \usepackage{fancyvrb}
+#+LaTeX_HEADER: \usepackage{setspace}
+#+LaTeX_HEADER: \usepackage{etoolbox}
+#+LaTeX_HEADER: \appto\verbatim{\tiny\myunicodefallback\baselineskip=-\maxdimen\lineskip=0pt}
+
 #+LATEX_HEADER: \usepackage{geometry}
 #+LATEX_HEADER: \definecolor{links}{HTML}{0086F7}
 #+LATEX_HEADER: \hypersetup{colorlinks,linkcolor=,urlcolor=links}
@@ -34,3 +45,5 @@
 #+LATEX_HEADER: \usetikzlibrary{positioning}   
 #+LATEX_HEADER: \usetikzlibrary{snakes}
 #+LATEX_HEADER: \setlength{\parskip}{0pt plus 0.5ex}
+#+LaTeX_HEADER: \usepackage{geometry}
+#+LATEX_HEADER: \geometry{top=3cm,left=2cm,right=2cm,bottom=3cm}
