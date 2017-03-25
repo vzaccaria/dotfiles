@@ -1,3 +1,7 @@
+
+
+if [ -e /home/admin/.nix-profile/etc/profile.d/nix.sh ]; then . /home/admin/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
 vi() {
     /usr/bin/emacsclient -nw "$@" -c
 }
