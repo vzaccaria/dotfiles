@@ -140,6 +140,7 @@ brew install xpdf ## pdftops
 brew install pstree
 brew install reattach-to-user-namespace # tmux copy and paste
 brew install shellcheck
+brew install aha ## HTML from colored output
 
 brew install trash
 brew install ffmpeg
