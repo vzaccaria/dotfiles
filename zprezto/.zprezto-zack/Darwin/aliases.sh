@@ -1,4 +1,4 @@
-# Shoiirtcuts
+# Shortcuts
 alias t="tree -d -L 3"
 alias k='buku --deep -s'
 alias d="cd ~/Dropbox"
@@ -8,6 +8,7 @@ alias p="cd ~/projects"
 alias dg='cd ~/development/github'
 alias h='/usr/local/bin/hub'
 alias ric='cd "/Users/zaccaria/Dropbox/Commuting/Ricercatore TI 2011"'
+alias chiara= 'cd "/Users/zaccaria/Dropbox/Commuting/Altro/Personal/Chiara/"'
 
 alias lz='cd "/Users/zaccaria/development/github/materiale-corsi/infob/docs/org"'
 alias lec='cd "/Users/zaccaria/development/github/materiale-corsi/infob/docs/org"'
