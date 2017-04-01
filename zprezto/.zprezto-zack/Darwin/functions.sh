@@ -133,6 +133,23 @@ sezioneCalAdd() {
     fi
 }
 
+ccsMecCalAdd() {
+    if [ -z "$1" ]; then
+        echo "cal-add-sezione 'MM/DD/YYYY HH:mm' "
+    else
+        gcalcli \
+            --duration 90 \
+            --calendar "Vittorio Zaccaria" \
+            --description "CCS Meccanica" \
+            --title "CCS Meccanica" \
+            --where "Bovisa" \
+            --reminder "60" \
+            add \
+            --nocache \
+            --when "$1";
+    fi
+}
+
 consiglioDipartimentoCalAdd() {
     if [ -z "$1" ]; then
         echo "consiglio-dipartimento-cal-add 'MM/DD/YYYY HH:mm' "

@@ -55,6 +55,8 @@ feat()     { vg feat $* }
 generic()  { vg generic $* }
 move()     { vg move $* }
 
+alias gg='generic .'
+
 amend() {
   git commit --amend --no-edit
 }
@@ -172,4 +174,14 @@ getfile() {
 
 ediff() {
     emacsclient -t --eval "(ediff \"$1\" \"$2\")"
+}
+
+showformula() {
+    template="\\documentclass[border=2pt]{standalone} \\usepackage{amsmath} \\usepackage{varwidth} \\begin{document} \\begin{varwidth}{\linewidth} \\input{$1} \\end{varwidth} \\end{document}"
+    pdflatex -jobname=formula "$template" && rm formula.log formula.aux
+    open formula.pdf
+}
+
+git-diff-to-html() {
+    git diff --color=always $* | diff-so-fancy | aha
 }
