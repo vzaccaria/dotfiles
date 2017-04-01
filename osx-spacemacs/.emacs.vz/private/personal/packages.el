@@ -48,8 +48,8 @@
                       ("top"  .#x22a4)
                       ("bot"  .#x22a5)
                       ))))
-      ))
-)
+           ))
+  )
 
 (defun personal/init-highlight-chars ()
   (use-package highlight-chars)
@@ -89,14 +89,11 @@
 
   (setq org-columns-default-format "%40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM") 
   (setq org-agenda-todo-list-sublevels nil)
+
+  ;; Add files recursively
+  (load-library "find-lisp")
   (setq org-agenda-files
-        (list "~/Dropbox/org"
-              "~/Dropbox/org/howtos"
-              "~/Dropbox/org/research"
-              "~/Dropbox/org/other"
-              "~/Dropbox/org/corsi"
-              "~/Dropbox/org/personal"
-              ))
+        (find-lisp-find-files "~/Dropbox/org" "_ag\.org$"))
 
   (setq org-todo-keywords
         '((sequence "TODO" "TODAY" "IMPORTANT" "CHECK" "|" "DONE" "CANCELLED")
@@ -135,64 +132,68 @@
   (setq org-capture-templates
         '(
           ("t" "Work todo generico" entry
-           (file+headline "~/Dropbox/org/work.org" "Ricordarsi di ...")
+           (file+headline "~/Dropbox/org/institutional/work_ag.org" "Ricordarsi di ...")
            "* TODO %?\n  %i\n")
 
           ("l" "Da leggere" entry
-           (file+headline "~/Dropbox/org/work.org" "Da categorizzare")
+           (file+headline "~/Dropbox/org/institutional/work_ag.org" "Da categorizzare")
            "*** [ ] %c\n")
 
           ("c" "Note/Annotazioni per i corsi" entry
-           (file+headline "~/Dropbox/org/work.org" "Note per i corsi")
+           (file+headline "~/Dropbox/org/institutional/work_ag.org" "Note per i corsi")
            "** %c - %i (%u)"
-          )
-        ))
+           )
+          ))
 
   (setf org-latex-default-packages-alist
         (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
 
   (setq org-structure-template-alist
-   '(("s" "#+BEGIN_SRC ?\n\n#+END_SRC")
-     ("e" "#+BEGIN_EXAMPLE\n?\n#+END_EXAMPLE")
-     ("q" "#+BEGIN_QUOTE\n?\n#+END_QUOTE")
-     ("v" "#+BEGIN_VERSE\n?\n#+END_VERSE")
-     ("V" "#+BEGIN_VERBATIM\n?\n#+END_VERBATIM")
-     ("c" "#+BEGIN_CENTER\n?\n#+END_CENTER")
-     ("l" "#+BEGIN_EXPORT latex\n?\n#+END_EXPORT")
-     ("L" "#+LaTeX: ")
-     ("h" "#+BEGIN_EXPORT html\n?\n#+END_EXPORT")
-     ("H" "#+HTML: ")
-     ("a" "#+BEGIN_EXPORT ascii\n?\n#+END_EXPORT")
-     ("A" "#+ASCII: ")
-     ("i" "#+INDEX: ?")
-     ("I" "#+INCLUDE: %file ?")
+        '(("s" "#+BEGIN_SRC ?\n\n#+END_SRC")
+          ("e" "#+BEGIN_EXAMPLE\n?\n#+END_EXAMPLE")
+          ("q" "#+BEGIN_QUOTE\n?\n#+END_QUOTE")
+          ("v" "#+BEGIN_VERSE\n?\n#+END_VERSE")
+          ("V" "#+BEGIN_VERBATIM\n?\n#+END_VERBATIM")
+          ("c" "#+BEGIN_CENTER\n?\n#+END_CENTER")
+          ("l" "#+BEGIN_EXPORT latex\n?\n#+END_EXPORT")
+          ("L" "#+LaTeX: ")
+          ("h" "#+BEGIN_EXPORT html\n?\n#+END_EXPORT")
+          ("H" "#+HTML: ")
+          ("a" "#+BEGIN_EXPORT ascii\n?\n#+END_EXPORT")
+          ("A" "#+ASCII: ")
+          ("i" "#+INDEX: ?")
+          ("I" "#+INCLUDE: %file ?")
 
      ;;; --- SOURCES ---
-     ("so" "#+BEGIN_SRC octave    \n\n#+END_SRC")
-     ("ss" "#+BEGIN_SRC sh        \n\n#+END_SRC")
-     ("sc" "#+BEGIN_SRC c         \n\n#+END_SRC")
-     ("sj" "#+BEGIN_SRC js :tangle js/yourfile.js   \n\n#+END_SRC")
+          ("so" "#+BEGIN_SRC octave    \n\n#+END_SRC")
+          ("ss" "#+BEGIN_SRC sh        \n\n#+END_SRC")
+          ("sc" "#+BEGIN_SRC c         \n\n#+END_SRC")
+          ("sj" "#+BEGIN_SRC js :tangle js/yourfile.js   \n\n#+END_SRC")
 
      ;;; --- FIGURES ---
-     ("fe" "#+BEGIN_EXPORT latex\n\\begin{figure}\n\n\\end{figure}\n#+END_EXPORT")
-     ("fc" "#+CAPTION: caption with label \\label{l1}\n#+attr_latex: :width 0.85\\linewidth :float t :placement [h]")
-     ("tg" "\\begin{tikzpicture}\n\\graph[layered layout, level distance=1cm]{ a -> {b, c} };\n\\end{tikzpicture}")
-     ("tc" "\\begin{tikzpicture}[start chain=1 going right,node distance=5mm] \n \\node [draw,on chain=1] {Hello}; \n\\node [draw,on chain] {World}; \n\\end{tikzpicture}")
+          ("fe" "#+BEGIN_EXPORT latex\n\\begin{figure}\n\n\\end{figure}\n#+END_EXPORT")
+          ("fc" "#+CAPTION: caption with label \\label{l1}\n#+attr_latex: :width 0.85\\linewidth :float t :placement [h]")
+          ("tg" "\\begin{tikzpicture}\n\\graph[layered layout, level distance=1cm]{ a -> {b, c} };\n\\end{tikzpicture}")
+          ("tc" "\\begin{tikzpicture}[start chain=1 going right,node distance=5mm] \n \\node [draw,on chain=1] {Hello}; \n\\node [draw,on chain] {World}; \n\\end{tikzpicture}")
+
+     ;;; --- GENERIC LATEX
+
+          ("al" "#+attr_latex: :width 0.85\\linewidth :float t :placement [h]")
 
      ;;; --- EXAMPLES ---
-     ("ec" "#+begin_center \n #+attr_latex: :options {0.7\\textwidth} \n #+begin_minipage \n #+BEGIN_EXAMPLE \n #+END_EXAMPLE \n #+end_minipage \n #+end_center \n")
+          ("ec" "#+begin_center \n #+attr_latex: :options {0.7\\textwidth} \n #+begin_minipage \n #+BEGIN_EXAMPLE \n #+END_EXAMPLE \n #+end_minipage \n #+end_center \n")
 
      ;;; --- EQUATIONS --- 
-     ("equ" "#+BEGIN_EXPORT latex\n\\begin{equation}\n\\end{equation}\n#+END_EXPORT")
-     ("eqc" "f(x) = \\begin{cases}\n 1 & \\text{for } n = 0 \\\\ \n \\end{cases}\n")
-     ("eqa" "\\begin{array}{rcl}\n a& = &b \\\\\n\\end{array}\n")
-     ("eql" "#+BEGIN_EXPORT latex\n\\begin{align}\n a& = &b \\\\\n\\end{align}\n#+END_EXPORT")
+          ("equ" "#+BEGIN_EXPORT latex\n\\begin{equation}\n\\end{equation}\n#+END_EXPORT")
+          ("eqc" "f(x) = \\begin{cases}\n 1 & \\text{for } n = 0 \\\\ \n \\end{cases}\n")
+          ("eqa" "\\begin{array}{rcl}\n a& = &b \\\\\n\\end{array}\n")
+          ("eql" "#+BEGIN_EXPORT latex\n\\begin{align}\n a& = &b \\\\\n\\end{align}\n#+END_EXPORT")
 
      ;;; --- MINI PAGES and COLUMNS
-     ("hp" "#+attr_latex: :options {0.5\\textwidth}\n#+begin_minipage\n\n#+end_minipage")
-     ("b2c" " :PROPERTIES:\n :BEAMER_env: column\n :BEAMER_col: 0.5\n :END:\n")
-     ("b3c" " :PROPERTIES:\n :BEAMER_env: column\n :BEAMER_col: 0.32\n :END:\n"))
-     )
+          ("hp" "#+attr_latex: :options {0.5\\textwidth}\n#+begin_minipage\n\n#+end_minipage")
+          ("btc" "***\n :PROPERTIES:\n :BEAMER_env: column\n :BEAMER_col: 0.5\n :END:\n  #+BEGIN_footnotesize \n\n #+END_footnotesize \n")
+          ("brc" "***\n :PROPERTIES:\n :BEAMER_env: column\n :BEAMER_col: 0.32\n :END:\n #+BEGIN_footnotesize \n\n #+END_footnotesize \n"))
+        )
 
 
 
@@ -275,6 +276,30 @@
   (setq org-pomodoro-finished-sound "/Users/zaccaria/dotfiles/osx-spacemacs/.emacs.vz/private/personal/assets/pomodoro0.wav")
   (setq org-pomodoro-long-break-sound "/Users/zaccaria/dotfiles/osx-spacemacs/.emacs.vz/private/personal/assets/pomodoro0.wav")
   (setq org-pomodoro-short-break-sound "/Users/zaccaria/dotfiles/osx-spacemacs/.emacs.vz/private/personal/assets/pomodoro0.wav")
+
+  ;; Override general keybindings for orgmode
+
+  (define-key org-read-date-minibuffer-local-map (kbd "\e [5D")
+    (lambda () (interactive) (org-eval-in-calendar '(calendar-backward-day 1))))
+  (define-key org-read-date-minibuffer-local-map (kbd "\e [5C")
+    (lambda () (interactive) (org-eval-in-calendar '(calendar-forward-day 1))))
+  (define-key org-read-date-minibuffer-local-map (kbd "\e [5E")
+    (lambda () (interactive) (org-eval-in-calendar '(calendar-backward-week 1))))
+  (define-key org-read-date-minibuffer-local-map (kbd "\e [5B")
+    (lambda () (interactive) (org-eval-in-calendar '(calendar-forward-week 1))))
+
+  ;; We want to use arrow keys for moving between windows in org-mode as well
+
+  (define-key org-mode-map (kbd "\e <up>")   'evil-window-up)
+  (define-key org-mode-map (kbd "\e <down>") 'evil-window-down)
+  (define-key org-mode-map (kbd "\e <right>")'evil-window-right)
+  (define-key org-mode-map (kbd "\e <left>") 'evil-window-left)
+
+  (define-key org-mode-map (kbd "M-<up>")    'evil-window-up)
+  (define-key org-mode-map (kbd "M-<down>")  'evil-window-down)
+  (define-key org-mode-map (kbd "M-<right>") 'evil-window-right)
+  (define-key org-mode-map (kbd "M-<left>")  'evil-window-left)
+
   )
 
 

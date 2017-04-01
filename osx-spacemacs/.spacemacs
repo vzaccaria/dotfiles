@@ -362,7 +362,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
 
   ;;; remove from the article class the default packages
-  (add-to-list 'auto-mode-alist '("\\.html\\'" . html-mode))
+  (add-to-list 'auto-mode-alist '("\\.html" . html-mode))
 
   (setq org-latex-minted-options
         '(("obeytabs" "true")
@@ -391,6 +391,19 @@ you should place you code here."
    )
 
   (customize-set-variable 'helm-ag-base-command "ag --nocolor --nogroup --hidden")
+
+  ;; latex ftw
+  ;; (add-to-list 'auto-mode-alist '("\\.tex" . latex-mode))
+  (setq TeX-parse-self t); Enable parse on load.
+  (setq TeX-auto-save t); Enable parse on save.
+  (setq-default TeX-master nil)
+  (setq TeX-PDF-mode t); PDF mode (rather than DVI-mode)
+  (setq reftex-plug-into-AUCTeX t)
+  ;; LaTeX-math-mode http://www.gnu.org/s/auctex/manual/auctex/Mathematics.html
+  ;; (add-hook 'TeX-mode-hook 'LaTeX-math-mode)
+
+  ;; Turn on RefTeX for AUCTeX http://www.gnu.org/s/auctex/manual/reftex/reftex_5.html
+  ;; (add-hook 'TeX-mode-hook 'turn-on-reftex)
   )
 
 ;; Move some of the variables defined below into user-config
