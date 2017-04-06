@@ -11,6 +11,7 @@
     livescript-mode
     highlight-chars
     pretty-mode
+    writeroom-mode
     (ox-extra :location local)
     (prettier-js :location local)
     ))
@@ -313,7 +314,13 @@
     )
   )
 
-
+(defun personal/init-writeroom-mode ()
+  (use-package writeroom-mode
+    :commands (writeroom-mode)
+    :init
+    (evil-leader/set-key "Tw" 'writeroom-mode)
+    :config
+    (setq writeroom-restore-window-config t)))
 
 
 (defun personal/post-init-org-bullets ()

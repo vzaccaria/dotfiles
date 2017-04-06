@@ -176,6 +176,18 @@ prompt the user for a coding system."
   (interactive)
   (flycheck-select-checker 'grammar-gramcheck))
 
+(defun vz/enable-writeroom ()
+  (interactive)
+  (writeroom-mode t)
+  (enable-theme 'spacemacs-light)
+)
+
+(defun vz/disable-writeroom ()
+  (interactive)
+  (writeroom--disable)
+  (enable-theme 'spacemacs-dark)
+)
+
 (defun vz/define-checker-for-labs()
   "Sets the correct checker for infob labs"
   (interactive)
