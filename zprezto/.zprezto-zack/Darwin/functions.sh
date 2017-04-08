@@ -171,6 +171,19 @@ manmd() {
     pandoc -s -f markdown+all_symbols_escapable -t man "$@" | sed 's/\[C\]/\[B\]/g' | groff -T utf8 -man | less 
 }
 
+help() {
+if [ -f ./help.md ]
+then
+    manmd ./help.md
+    else 
+    if [ -f ./readme.md ]
+    then 
+    manmd ./readme.md
+fi
+fi
+}
+
+
 
 alias emacsclient=/usr/local/bin/emacsclient
 
@@ -218,3 +231,11 @@ mov2gif() {
     fi
 }
 
+
+stack-docs() {
+    open "$(stack path --local-doc-root)"
+}
+
+stack-docs-dir() {
+    cd "$(stack path --local-doc-root)"
+}

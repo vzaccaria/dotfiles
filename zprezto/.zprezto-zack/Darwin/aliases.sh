@@ -8,7 +8,8 @@ alias p="cd ~/projects"
 alias dg='cd ~/development/github'
 alias h='/usr/local/bin/hub'
 alias ric='cd "/Users/zaccaria/Dropbox/Commuting/Ricercatore TI 2011"'
-alias chiara= 'cd "/Users/zaccaria/Dropbox/Commuting/Altro/Personal/Chiara/"'
+alias chiara='cd "/Users/zaccaria/Dropbox/Commuting/Altro/Personal/Chiara/"'
+alias personal='cd "/Users/zaccaria/Dropbox/Commuting/Altro/Personal/"'
 
 alias lz='cd "/Users/zaccaria/development/github/materiale-corsi/infob/docs/org"'
 alias lec='cd "/Users/zaccaria/development/github/materiale-corsi/infob/docs/org"'
@@ -75,5 +76,3 @@ alias make='gmake'
 
 alias find_big_node_modules_dir='find . -name "node_modules" -prune -exec du -h -k -d 0 {} \;'
 
-alias help='manmd ./help.md'
-alias readme='manmd ./readme.md'
