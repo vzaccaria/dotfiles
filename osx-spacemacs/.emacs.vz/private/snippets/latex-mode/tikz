@@ -1,0 +1,82 @@
+# -*- mode: snippet -*-
+# name: Complete Tikz template to generate graphics
+# key: tikztemplate
+# --
+
+\documentclass[smaller]{standalone}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{fontawesome}
+\usepackage{shellesc}
+\tolerance=1000
+\usepackage{minted}
+\usepackage{ifplatform}
+\usepackage{tikz}
+\usetikzlibrary{graphdrawing}
+\usetikzlibrary{graphs}
+\usetikzlibrary{mindmap}
+\usetikzlibrary{positioning}
+\usetikzlibrary{snakes}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{shadows}
+\usetikzlibrary{calc}
+\usetikzlibrary{fit}
+\usetikzlibrary{chains}
+\usetikzlibrary{quotes}
+\usetikzlibrary{shapes}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations,decorations.pathmorphing,decorations.pathreplacing}
+\usegdlibrary{trees}
+\usegdlibrary{layered}
+\usegdlibrary{force}
+\usetikzlibrary{circuits.logic.US}
+\usepackage{pgfplots}
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+\definecolor{vzorange}{rgb}{1.000,0.408,0.031}
+\definecolor{vzyellow}{rgb}{1.000,0.808,0.031}
+\definecolor{vzred}{rgb}{0.765,0.102,0.000}
+\definecolor{vzgreen}{rgb}{0.000,0.561,0.000}
+\definecolor{vzblue}{rgb}{0.000,0.000,0.861}
+\setmonofont[Scale=0.75]{FiraCode-Regular}
+\ifmacosx
+\newfontfamily\myunicodefallback{Menlo}
+\fi
+\iflinux
+\newfontfamily\myunicodefallback{Menlo-Regular}
+\fi
+\definecolor{links}{HTML}{0086F7}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+\newcommand{\keyboard}{{\tikz \node[box, minimum size=0cm] {\faKeyboardO};}}
+\newcommand{\screen}{{\tikz \node[box, minimum size=0cm] {\faTerminal};}}
+\usepackage{fancyvrb}
+\usepackage{setspace}
+\usepackage{etoolbox}
+\appto\verbatim{\tiny\myunicodefallback\baselineskip=-\maxdimen\lineskip=0pt}
+% needs latex emoji https://github.com/henningpohl/latex-emoji/blob/master/example.tex
+\usepackage[twitter]{emoji}
+
+\begin{tikzpicture}
+
+
+  \node (a) [align=center] at (0,0) {A}; 
+  \node (b) [align=center] at (3,0) {B}; 
+
+
+\end{tikzpicture}
+\end{document}

@@ -337,7 +337,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
          (add-hook 'plain-TeX-mode-hook 'flycheck-mode)
          (add-hook 'LaTeX-mode-hook 'flycheck-mode)
-         (add-hook 'LaTeX-mode-hook (lambda () (interactive) (vz/enable-writeroom)))
+         (add-hook 'js-mode-hook 'flycheck-mode)
          )
       )
     (setq org-enable-reveal-js-support t)
@@ -390,6 +390,10 @@ you should place you code here."
    ((eq system-type 'gnu/linux)
     )
    )
+
+  
+
+  (add-hook 'before-save-hook 'prettier-before-save)
 
   (customize-set-variable 'helm-ag-base-command "ag --nocolor --nogroup --hidden")
 

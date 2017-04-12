@@ -549,6 +549,10 @@
     (add-hook 'js-mode-hook
               (lambda ()
                 (add-hook 'before-save-hook 'prettier-before-save)))
-    )
+    
+  (add-hook 'js2-mode-hook
+            (lambda ()
+              (add-hook 'before-save-hook 'prettier-before-save)))
+  )
   )
 
