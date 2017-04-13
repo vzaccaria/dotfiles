@@ -55,7 +55,7 @@ feat()     { vg feat $* }
 generic()  { vg generic $* }
 move()     { vg move $* }
 
-alias gg='generic .'
+alias gg='generic'
 
 amend() {
   git commit --amend --no-edit

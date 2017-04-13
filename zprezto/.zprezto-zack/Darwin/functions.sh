@@ -7,6 +7,8 @@
 # from here: https://github.com/rupa/z
 . /usr/local/etc/profile.d/z.sh
 
+. /Users/zaccaria/.nix-profile/etc/profile.d/nix.sh
+
 alias vim=/usr/local/bin/vim
 
 
@@ -171,6 +173,19 @@ manmd() {
     pandoc -s -f markdown+all_symbols_escapable -t man "$@" | sed 's/\[C\]/\[B\]/g' | groff -T utf8 -man | less 
 }
 
+help() {
+if [ -f ./help.md ]
+then
+    manmd ./help.md
+    else 
+    if [ -f ./readme.md ]
+    then 
+    manmd ./readme.md
+fi
+fi
+}
+
+
 
 alias emacsclient=/usr/local/bin/emacsclient
 
@@ -218,6 +233,7 @@ mov2gif() {
     fi
 }
 
+<<<<<<< HEAD
 gitchanged() {
     git diff --numstat --diff-filter=M $* | awk '{printf("%s\0", $3)}' | map basename _ | paste -s -d, - | sed 's/,/, /g' 
 }
@@ -232,4 +248,13 @@ fmap() {
     command=$1
     args=${*:2}
     xargs -0 -n 1 -J _ "$command" "$args" | tr '\n' '\0'
+=======
+
+stack-docs() {
+    open "$(stack path --local-doc-root)"
+}
+
+stack-docs-dir() {
+    cd "$(stack path --local-doc-root)"
+>>>>>>> 4ba0129e55400c47b8d81ec784a993d041dbc4b7
 }

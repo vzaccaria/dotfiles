@@ -4,6 +4,7 @@
 sudo apt-get install silversearcher-ag
 sudo apt-get install aspell-it
 sudo apt-get install pandoc
+sudo apt-get install aha
 #+END_SRC
 
 * Nodejs

@@ -179,6 +179,7 @@ prompt the user for a coding system."
 (defun vz/enable-writeroom ()
   (interactive)
   (writeroom-mode t)
+  (load-theme 'spacemacs-light t)
   (enable-theme 'spacemacs-light)
 )
 

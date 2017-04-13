@@ -166,10 +166,11 @@
           ("I" "#+INCLUDE: %file ?")
 
      ;;; --- SOURCES ---
-          ("so" "#+BEGIN_SRC octave    \n\n#+END_SRC")
-          ("ss" "#+BEGIN_SRC sh        \n\n#+END_SRC")
-          ("sc" "#+BEGIN_SRC c         \n\n#+END_SRC")
-          ("sj" "#+BEGIN_SRC js :tangle js/yourfile.js   \n\n#+END_SRC")
+          ("so"  "#+BEGIN_SRC octave :results none   \n\n#+END_SRC")
+          ("ss"  "#+BEGIN_SRC sh     :results none   \n\n#+END_SRC")
+          ("sc"  "#+BEGIN_SRC c      :results none   \n\n#+END_SRC")
+          ("sj"  "#+BEGIN_SRC js     :results none   \n\n#+END_SRC")
+          ("sjt" "#+BEGIN_SRC js :tangle js/yourfile.js   \n\n#+END_SRC")
 
      ;;; --- FIGURES ---
           ("fe" "#+BEGIN_EXPORT latex\n\\begin{figure}\n\n\\end{figure}\n#+END_EXPORT")
@@ -548,6 +549,10 @@
     (add-hook 'js-mode-hook
               (lambda ()
                 (add-hook 'before-save-hook 'prettier-before-save)))
-    )
+    
+  (add-hook 'js2-mode-hook
+            (lambda ()
+              (add-hook 'before-save-hook 'prettier-before-save)))
+  )
   )
 
