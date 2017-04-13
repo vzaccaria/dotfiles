@@ -4,6 +4,7 @@
 sudo apt-get install silversearcher-ag
 sudo apt-get install aspell-it
 sudo apt-get install pandoc
+sudo apt-get install aha
 #+END_SRC
 
 * Nodejs
@@ -38,6 +39,10 @@ tlmgr gui # --> then install packages
 #+BEGIN_SRC shell
 xrandr --listmonitors
 #+END_SRC
+
+#+RESULTS:
+| Monitors: |       1 |                       |       |
+|        0: | +*HDMI1 | 1920/518x1200/324+0+0 | HDMI1 |
 
 
 #+BEGIN_SRC sh 

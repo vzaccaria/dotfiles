@@ -233,6 +233,22 @@ mov2gif() {
     fi
 }
 
+<<<<<<< HEAD
+gitchanged() {
+    git diff --numstat --diff-filter=M $* | awk '{printf("%s\0", $3)}' | map basename _ | paste -s -d, - | sed 's/,/, /g' 
+}
+
+map() {
+    command=$1
+    args=${*:2}
+    xargs -0 -n 1 -J _ "$command" "$args"
+}
+
+fmap() {
+    command=$1
+    args=${*:2}
+    xargs -0 -n 1 -J _ "$command" "$args" | tr '\n' '\0'
+=======
 
 stack-docs() {
     open "$(stack path --local-doc-root)"
@@ -240,4 +256,5 @@ stack-docs() {
 
 stack-docs-dir() {
     cd "$(stack path --local-doc-root)"
+>>>>>>> 4ba0129e55400c47b8d81ec784a993d041dbc4b7
 }
