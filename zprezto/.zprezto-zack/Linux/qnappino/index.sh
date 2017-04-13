@@ -10,6 +10,10 @@ alias vi=vim
 alias ln=ln
 alias make=make
 
+sen() {
+   docker run -v /var/run/docker.sock:/run/docker.sock -ti -e TERM tomastomecek/sen
+}
+
 ubuntu() {
 	  docker run -ti --rm \
            -p 5901:5901 \
