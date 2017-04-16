@@ -200,6 +200,13 @@ prompt the user for a coding system."
   (customize-set-variable 'flycheck-c/c++-gcc-executable "/usr/local/bin/gcc-5")
   (flycheck-select-checker 'c/c++-gcc))
 
+(defun vz/disable-org-latex-preview-on-nonfile ()
+  (interactive)
+  (if (not (buffer-file-name))
+      (setq-local org-startup-with-latex-preview nil)
+    (setq org-startup-with-latex-preview t))
+  )
+
 ;; for the next function
 (defun my-reload-dir-locals-for-current-buffer ()
   "reload dir locals for the current buffer"
