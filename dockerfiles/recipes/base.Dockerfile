@@ -33,6 +33,9 @@ RUN apt-get install -y \
 
 
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
+WORKDIR /root/dotfiles
+RUN git reset --hard 4ba0129e
+
 RUN git clone https://github.com/syl20bnr/spacemacs /root/.emacs.d
 
 WORKDIR /root/dotfiles/zprezto
@@ -41,7 +44,7 @@ WORKDIR /root/dotfiles/zprezto/.zprezto
 RUN git submodule update --init
 WORKDIR /root/dotfiles
 
-RUN stow zprezto tmux-linux spacemacs-linux
+RUN stow zprezto linux-tmux spacemacs
 
 WORKDIR /root
 
