@@ -100,6 +100,8 @@
 ;; define initialization here
 (defun personal/post-init-org ()
   (require 'org-protocol)
+  (require 'org-drill)
+  (require 'ox)
   (setq org-agenda-custom-commands '(("w" "My Agenda"
                                       ((agenda "")
                                        (tags "DEADLINE={.}-TODO=\"DONE\"")
@@ -321,6 +323,8 @@
   (define-key org-mode-map (kbd "M-<down>")  'evil-window-down)
   (define-key org-mode-map (kbd "M-<right>") 'evil-window-right)
   (define-key org-mode-map (kbd "M-<left>")  'evil-window-left)
+
+  (add-hook 'org-mode-hook #'vz/disable-org-latex-preview-on-nonfile)
 
   )
 

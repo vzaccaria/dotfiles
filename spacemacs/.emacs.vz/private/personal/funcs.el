@@ -162,10 +162,15 @@ prompt the user for a coding system."
 (defun vz/define-checker-for-stm32 ()
   "Sets the correct checker for the PlatformIO env"
   (interactive)
-
   (customize-set-variable 'flycheck-c/c++-gcc-executable "/Users/zaccaria/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++")
   (customize-set-variable 'flycheck-gcc-language-standard "c++11")
   (flycheck-select-checker 'c/c++-gcc))
+
+(defun vz/define-checker-for-ghcjs ()
+  "Sets the correct checker ghcjs projects"
+  (interactive)
+  (customize-set-variable 'flycheck-haskell-ghc-executable "ghcjs")
+  (flycheck-select-checker 'haskell-ghc))
 
 (defun vz/check-using-proselint ()
   (interactive)
@@ -194,6 +199,13 @@ prompt the user for a coding system."
   (interactive)
   (customize-set-variable 'flycheck-c/c++-gcc-executable "/usr/local/bin/gcc-5")
   (flycheck-select-checker 'c/c++-gcc))
+
+(defun vz/disable-org-latex-preview-on-nonfile ()
+  (interactive)
+  (if (not (buffer-file-name))
+      (setq-local org-startup-with-latex-preview nil)
+    (setq org-startup-with-latex-preview t))
+  )
 
 ;; for the next function
 (defun my-reload-dir-locals-for-current-buffer ()
