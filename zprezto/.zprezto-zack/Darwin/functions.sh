@@ -7,7 +7,7 @@
 # from here: https://github.com/rupa/z
 . /usr/local/etc/profile.d/z.sh
 
-. /Users/zaccaria/.nix-profile/etc/profile.d/nix.sh
+source <(jslatex completion zsh)
 
 alias vim=/usr/local/bin/vim
 
