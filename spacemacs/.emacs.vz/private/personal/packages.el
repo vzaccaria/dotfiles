@@ -68,6 +68,8 @@
                        (push '("\\end{equation*}"    . ?🔺) prettify-symbols-alist)
                        (push '("\\begin{eqnarray*}"    . ?🔽) prettify-symbols-alist)
                        (push '("\\end{eqnarray*}"    . ?🔼) prettify-symbols-alist)
+                       (push '("\\begin{eqnarray}"    . ?🔽) prettify-symbols-alist)
+                       (push '("\\end{eqnarray}"    . ?🔼) prettify-symbols-alist)
                        ))
            ))
   )
@@ -104,9 +106,9 @@
   (require 'ox)
   (setq org-agenda-custom-commands '(("w" "My Agenda"
                                       ((agenda "")
-                                       (tags "DEADLINE={.}-TODO=\"DONE\"")
                                        (tags "TODO=\"IMPORTANT\"&-PRIORITY=\"C\"")
                                        (tags "TODO=\"IMPORTANT\"&PRIORITY=\"C\"")
+                                       (tags "DEADLINE={.}-TODO=\"DONE\"")
                                        (tags "TODO=\"TODO\"&-TODO=\"IMPORTANT\"")
                                        ))))
 
@@ -186,6 +188,7 @@
           ("A" "#+ASCII: ")
           ("i" "#+INDEX: ?")
           ("I" "#+INCLUDE: %file ?")
+          ("st" "#+STARTUP: showall indent latexpreview entitiespretty")
 
      ;;; --- SOURCES ---
           ("so"  "#+BEGIN_SRC octave :results none   \n\n#+END_SRC")
@@ -576,6 +579,10 @@
                 (add-hook 'before-save-hook 'prettier-before-save)))
     
   (add-hook 'js2-mode-hook
+            (lambda ()
+              (add-hook 'before-save-hook 'prettier-before-save)))
+
+  (add-hook 'react-mode-hook
             (lambda ()
               (add-hook 'before-save-hook 'prettier-before-save)))
   )

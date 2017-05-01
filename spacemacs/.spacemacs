@@ -60,7 +60,7 @@ values."
      octave
      emacs-lisp
      vimscript
-     (haskell :variables haskell-enable-hindent-style "chris-done")
+     haskell
      ess
      )
    )
@@ -388,7 +388,8 @@ you should place you code here."
     (setq browse-url-generic-program "open")
     ;; On Darwin set up Fira Code Symbol ligatures..
     ;;; Fira code
-;; This works when using emacs --daemon + emacsclient
+    ;; This works when using emacs --daemon + emacsclient
+    (find-file "~/Dropbox/org/dashboard.org")
     )
    ((eq system-type 'gnu/linux)
     )
@@ -397,6 +398,7 @@ you should place you code here."
   
 
   (add-hook 'before-save-hook 'prettier-before-save)
+  (add-hook 'before-save-hook 'beautify-haskell-before-save)
 
   (customize-set-variable 'helm-ag-base-command "ag --nocolor --nogroup --hidden")
 
@@ -462,7 +464,7 @@ you should place you code here."
      ("#F771AC" . 85)
      ("#eee8d5" . 100))))
  '(hindent-reformat-buffer-on-save nil)
- '(hindent-style "chris-done")
+ '(hindent-style "johan-tibell")
  '(hl-bg-colors
    (quote
     ("#DEB542" "#F2804F" "#FF6E64" "#F771AC" "#9EA0E5" "#69B7F0" "#69CABF" "#B4C342")))

@@ -193,6 +193,10 @@ vi() {
     emacsclient -nw "$@" -c
 }
 
+dashboard() {
+    vi ~/Dropbox/org/dashboard.org
+}
+
 gvim() {
     open /usr/local/opt/emacs-mac/Emacs.app
 }
