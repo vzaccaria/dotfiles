@@ -187,6 +187,15 @@ brew install languagetool
 brew install mu --with-emacs 
 brew install offlineimap
 
+######################
+# Other brew assimilated packages
+######################
+
+# For latexindent (emacs beautification of latex)
+# Blah!
+sudo cpan App::cpanminus
+sudo cpanm YAML::Tiny
+sudo perl -MCPAN -e 'install "File::HomeDir"'
 
 
 # Remove outdated versions from the cellar.

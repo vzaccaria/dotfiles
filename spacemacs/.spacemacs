@@ -399,6 +399,7 @@ you should place you code here."
 
   (add-hook 'before-save-hook 'prettier-before-save)
   (add-hook 'before-save-hook 'beautify-haskell-before-save)
+  (add-hook 'before-save-hook 'beautify-latex-before-save)
 
   (customize-set-variable 'helm-ag-base-command "ag --nocolor --nogroup --hidden")
 
