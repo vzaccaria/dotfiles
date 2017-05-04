@@ -83,6 +83,18 @@
                            "/usr/local/bin/org2kf -a" (current-buffer) t))
 
 
+
+(defun beautify-haskell (&optional b e)
+  (interactive "r")
+  (call-interactively 'hindent-reformat-buffer)
+  (call-interactively 'haskell-mode-stylish-buffer)
+  )
+
+(defun beautify-latex (&optional b e)
+  (interactive "r")
+  (call-interactively 'LaTeX-fill-buffer)
+  )
+
 (defun vz/show-command-log-and-keys (&optional b e)
   (interactive "r")
   (global-command-log-mode t)
@@ -113,8 +125,20 @@
         ((derived-mode-p 'react-mode)      (call-interactively 'prettier))
         ((derived-mode-p 'html-mode)       (call-interactively 'web-beautify-html))
         ((derived-mode-p 'web-mode)        (call-interactively 'web-mode-buffer-indent))
-        ((derived-mode-p 'haskell-mode)    (call-interactively 'hindent-reformat-buffer))
+        ((derived-mode-p 'haskell-mode)    (call-interactively 'beautify-haskell))
+        ((derived-mode-p 'LaTeX-mode)      (call-interactively 'beautify-latex))
+        ((derived-mode-p 'latex-mode)      (call-interactively 'beautify-latex))
         (t "not implemented")))
+
+(defun beautify-haskell-before-save ()
+  "Add this to .emacs to run refmt on the current buffer when saving."
+  (interactive)
+  (when (string-equal (symbol-name major-mode) 'haskell-mode) (beautify-haskell)))
+
+(defun beautify-latex-before-save ()
+  "Add this to .emacs to run refmt on the current buffer when saving."
+  (interactive)
+  (when (string-equal (symbol-name major-mode) 'latex-mode) (beautify-latex)))
 
 (defun vz/find-next-unsafe-char (&optional coding-system)
   "Find the next character in the buffer that cannot be encoded by

@@ -7,7 +7,7 @@
 # from here: https://github.com/rupa/z
 . /usr/local/etc/profile.d/z.sh
 
-. /Users/zaccaria/.nix-profile/etc/profile.d/nix.sh
+source <(jslatex completion zsh)
 
 alias vim=/usr/local/bin/vim
 
@@ -191,6 +191,10 @@ alias emacsclient=/usr/local/bin/emacsclient
 
 vi() {
     emacsclient -nw "$@" -c
+}
+
+dashboard() {
+    vi ~/Dropbox/org/dashboard.org
 }
 
 gvim() {

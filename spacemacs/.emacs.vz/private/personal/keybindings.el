@@ -1,7 +1,7 @@
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cj" 'js-doc-insert-function-doc)
-
+(global-set-key (kbd "<backtab>") 'yas/expand)
 
 ;; to make your life easier; dont add any other character after M-* (!!!)
 (global-set-key (kbd "M-`") 'toggle-window-split)

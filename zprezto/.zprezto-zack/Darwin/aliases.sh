@@ -14,6 +14,8 @@ alias personal='cd "/Users/zaccaria/Dropbox/Commuting/Altro/Personal/"'
 alias lz='cd "/Users/zaccaria/development/github/materiale-corsi/infob/docs/org"'
 alias lec='cd "/Users/zaccaria/development/github/materiale-corsi/infob/docs/org"'
 
+alias di='dashboard'
+
 # JavaScriptCore REPL
 jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc";
 [ -e "${jscbin}" ] && alias jsc="${jscbin}";
