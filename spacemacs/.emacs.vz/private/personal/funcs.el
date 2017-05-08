@@ -83,6 +83,18 @@
                            "/usr/local/bin/org2kf -a" (current-buffer) t))
 
 
+
+(defun beautify-haskell (&optional b e)
+  (interactive "r")
+  (call-interactively 'hindent-reformat-buffer)
+  (call-interactively 'haskell-mode-stylish-buffer)
+  )
+
+(defun beautify-latex (&optional b e)
+  (interactive "r")
+  (call-interactively 'LaTeX-fill-buffer)
+  )
+
 (defun vz/show-command-log-and-keys (&optional b e)
   (interactive "r")
   (global-command-log-mode t)
@@ -113,8 +125,20 @@
         ((derived-mode-p 'react-mode)      (call-interactively 'prettier))
         ((derived-mode-p 'html-mode)       (call-interactively 'web-beautify-html))
         ((derived-mode-p 'web-mode)        (call-interactively 'web-mode-buffer-indent))
-        ((derived-mode-p 'haskell-mode)    (call-interactively 'hindent-reformat-buffer))
+        ((derived-mode-p 'haskell-mode)    (call-interactively 'beautify-haskell))
+        ((derived-mode-p 'LaTeX-mode)      (call-interactively 'beautify-latex))
+        ((derived-mode-p 'latex-mode)      (call-interactively 'beautify-latex))
         (t "not implemented")))
+
+(defun beautify-haskell-before-save ()
+  "Add this to .emacs to run refmt on the current buffer when saving."
+  (interactive)
+  (when (string-equal (symbol-name major-mode) 'haskell-mode) (beautify-haskell)))
+
+(defun beautify-latex-before-save ()
+  "Add this to .emacs to run refmt on the current buffer when saving."
+  (interactive)
+  (when (string-equal (symbol-name major-mode) 'latex-mode) (beautify-latex)))
 
 (defun vz/find-next-unsafe-char (&optional coding-system)
   "Find the next character in the buffer that cannot be encoded by
@@ -162,10 +186,15 @@ prompt the user for a coding system."
 (defun vz/define-checker-for-stm32 ()
   "Sets the correct checker for the PlatformIO env"
   (interactive)
-
   (customize-set-variable 'flycheck-c/c++-gcc-executable "/Users/zaccaria/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++")
   (customize-set-variable 'flycheck-gcc-language-standard "c++11")
   (flycheck-select-checker 'c/c++-gcc))
+
+(defun vz/define-checker-for-ghcjs ()
+  "Sets the correct checker ghcjs projects"
+  (interactive)
+  (customize-set-variable 'flycheck-haskell-ghc-executable "ghcjs")
+  (flycheck-select-checker 'haskell-ghc))
 
 (defun vz/check-using-proselint ()
   (interactive)
@@ -194,6 +223,13 @@ prompt the user for a coding system."
   (interactive)
   (customize-set-variable 'flycheck-c/c++-gcc-executable "/usr/local/bin/gcc-5")
   (flycheck-select-checker 'c/c++-gcc))
+
+(defun vz/disable-org-latex-preview-on-nonfile ()
+  (interactive)
+  (if (not (buffer-file-name))
+      (setq-local org-startup-with-latex-preview nil)
+    (setq org-startup-with-latex-preview t))
+  )
 
 ;; for the next function
 (defun my-reload-dir-locals-for-current-buffer ()

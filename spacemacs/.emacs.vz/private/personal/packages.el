@@ -49,6 +49,34 @@
                       ("top"  .#x22a4)
                       ("bot"  .#x22a5)
                       ))))
+           (add-hook 'LaTeX-mode-hook
+                     (lambda ()
+                       (push '("\\item"    . ?●) prettify-symbols-alist)
+                       (push '("\\begin{itemize}"    . ?↴) prettify-symbols-alist)
+                       (push '("\\end{itemize}"    . ?↲) prettify-symbols-alist)
+                       (push '("\\begin{example}"    . ?↴) prettify-symbols-alist)
+                       (push '("\\end{example}"    . ?↲) prettify-symbols-alist)
+                       (push '("\\begin{theorem}"    . ?↴) prettify-symbols-alist)
+                       (push '("\\end{theorem}"    . ?↲) prettify-symbols-alist)
+                       (push '("\\begin{proof}"    . ?↴) prettify-symbols-alist)
+                       (push '("\\end{proof}"    . ?↲) prettify-symbols-alist)
+                       (push '("\\begin{definition}"    . ?↴) prettify-symbols-alist)
+                       (push '("\\end{definition}"    . ?↲) prettify-symbols-alist)
+                       (push '("\\begin{equation}"    . ?↴) prettify-symbols-alist)
+                       (push '("\\end{equation}"    . ?↲) prettify-symbols-alist)
+                       (push '("\\begin{equation*}"    . ?↴) prettify-symbols-alist)
+                       (push '("\\end{equation*}"    . ?↲) prettify-symbols-alist)
+                       (push '("\\begin{eqnarray*}"    . ?↴) prettify-symbols-alist)
+                       (push '("\\end{eqnarray*}"    . ?↲) prettify-symbols-alist)
+                       (push '("\\begin{eqnarray}"    . ?↴) prettify-symbols-alist)
+                       (push '("\\end{eqnarray}"    . ?↲) prettify-symbols-alist)
+                       (push '("\\begin{remark}"    . ?↴) prettify-symbols-alist)
+                       (push '("\\end{remark}"    . ?↲) prettify-symbols-alist)
+                       (push '("\\begin{corollary}"    . ?↴) prettify-symbols-alist)
+                       (push '("\\end{corollary}"    . ?↲) prettify-symbols-alist)
+                       (push '("\\begin{align}"    . ?↴) prettify-symbols-alist)
+                       (push '("\\end{align}"    . ?↲) prettify-symbols-alist)
+                       ))
            ))
   )
 
@@ -80,11 +108,13 @@
 ;; define initialization here
 (defun personal/post-init-org ()
   (require 'org-protocol)
+  (require 'org-drill)
+  (require 'ox)
   (setq org-agenda-custom-commands '(("w" "My Agenda"
                                       ((agenda "")
-                                       (tags "DEADLINE={.}-TODO=\"DONE\"")
                                        (tags "TODO=\"IMPORTANT\"&-PRIORITY=\"C\"")
                                        (tags "TODO=\"IMPORTANT\"&PRIORITY=\"C\"")
+                                       (tags "DEADLINE={.}-TODO=\"DONE\"")
                                        (tags "TODO=\"TODO\"&-TODO=\"IMPORTANT\"")
                                        ))))
 
@@ -164,6 +194,7 @@
           ("A" "#+ASCII: ")
           ("i" "#+INDEX: ?")
           ("I" "#+INCLUDE: %file ?")
+          ("st" "#+STARTUP: showall indent latexpreview entitiespretty")
 
      ;;; --- SOURCES ---
           ("so"  "#+BEGIN_SRC octave :results none   \n\n#+END_SRC")
@@ -302,8 +333,9 @@
   (define-key org-mode-map (kbd "M-<right>") 'evil-window-right)
   (define-key org-mode-map (kbd "M-<left>")  'evil-window-left)
 
-  )
+  (add-hook 'org-mode-hook #'vz/disable-org-latex-preview-on-nonfile)
 
+  )
 
 
 (defun personal/init-evil-multiedit ()
@@ -321,7 +353,9 @@
     :init
     (evil-leader/set-key "Tw" 'writeroom-mode)
     :config
-    (setq writeroom-restore-window-config t)))
+    (setq writeroom-restore-window-config t)
+    (setq writeroom-width 100)
+    ))
 
 
 (defun personal/post-init-org-bullets ()
@@ -551,6 +585,10 @@
                 (add-hook 'before-save-hook 'prettier-before-save)))
     
   (add-hook 'js2-mode-hook
+            (lambda ()
+              (add-hook 'before-save-hook 'prettier-before-save)))
+
+  (add-hook 'react-mode-hook
             (lambda ()
               (add-hook 'before-save-hook 'prettier-before-save)))
   )

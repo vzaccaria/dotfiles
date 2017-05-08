@@ -27,6 +27,12 @@ if [[ -s "${srcdir}/functions.sh" ]]; then
 fi
 echo_ok
 
+echo "qnap utils"
+if [[ -s "${srcdir}/qnap-utils.sh" ]]; then
+    source "${srcdir}/qnap-utils.sh"
+fi
+echo_ok
+
 if [[ -s "${srcdir}/z.sh" ]]; then
   source "${srcdir}/z.sh"
 fi
