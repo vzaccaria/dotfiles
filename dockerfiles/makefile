@@ -5,8 +5,14 @@ G=./generated
 all: \
 	$(G)/devenv.Dockerfile \
 	$(G)/modelsim.Dockerfile \
-  $(G)/luxrender.Dockerfile \
+	$(G)/luxrender.Dockerfile \
 	$(G)/maxima.Dockerfile
+
+$(G)/ghcjs-dev.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile \
+			$(R)/base.Dockerfile \
+			$(R)/haskell.Dockerfile \
+			$(R)/ghcjs.Dockerfile 
+	cat $^ > $@
 
 $(G)/devenv.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile \
 			$(R)/base.Dockerfile \
