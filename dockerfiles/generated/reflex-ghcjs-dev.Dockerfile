@@ -68,12 +68,16 @@ RUN wget -q -O- https://s3.amazonaws.com/download.fpcomplete.com/ubuntu/fpco.key
     echo 'deb http://download.fpcomplete.com/ubuntu trusty main' | tee /etc/apt/sources.list.d/fpco.list && \
     apt-get update && apt-get install stack -y && \
     stack setup
-RUN git clone https://github.com/vzaccaria/ghcjs-template.git /root/starterApp
-WORKDIR /root/starterApp
-RUN stack setup
-RUN stack build gtk2hs-buildtools 
-ENV PATH=/root/.stack/programs/x86_64-linux/ghc-8.0.1/bin:/root/.local/bin:$PATH
-RUN stack install alex happy hscolour
-RUN stack --no-terminal build --stack-yaml=stack-ghcjs.yaml --install-ghc
-RUN mv stack.yaml stack-prebuild.yaml && mv stack-ghcjs.yaml stack.yaml
+ENV U robot
+RUN useradd -ms /bin/zsh $U
+RUN groupadd nixbld && usermod -a -G nixbld $U
+ENV HOME /home/$U
+RUN mkdir -p /nix /opt/reflex-platform && chown -R $U /nix /opt/reflex-platform
+ENV USER $U
+USER $U
+WORKDIR /home/$U
+RUN curl https://nixos.org/nix/install | sh
+RUN git clone https://github.com/russogiuseppe/reflex-platform.git /opt/reflex-platform
+WORKDIR /opt/reflex-platform
+RUN ./try-reflex
 
