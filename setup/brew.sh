@@ -146,6 +146,9 @@ brew install trash
 brew install ffmpeg
 brew install gifsicle
 
+brew install ChrisPenner/tools/tempered # Shell templates
+
+
 
 ##########################
 # Graphics/Diagrams

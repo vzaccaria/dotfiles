@@ -135,6 +135,11 @@
   (interactive)
   (when (string-equal (symbol-name major-mode) 'haskell-mode) (beautify-haskell)))
 
+(defun vz/anable-beautify-latex-before-save ()
+  (interactive)
+  (add-hook 'before-save-hook 'beautify-latex-before-save)
+  )
+
 (defun beautify-latex-before-save ()
   "Add this to .emacs to run refmt on the current buffer when saving."
   (interactive)
