@@ -25,6 +25,7 @@ vg() {
         fix)       msg="fix: $msg ($mc)" ;;
         polish)    msg="polish: prettify ($mc)" ;;
         refactor)  msg="refactor: ($mc)";;
+        sync)      msg="sync: ($mc)";;
         feat)      msg="feat: $msg (in $mc)";;
         generic)   msg="$msg ($mc)" ;;
         *)
@@ -43,6 +44,7 @@ fix()      { vg fix $* }
 feat()     { vg feat $* }
 generic()  { vg generic $* }
 move()     { vg move $* }
+gitsync()     { vg sync $* }
 
 alias gg='generic'
 
