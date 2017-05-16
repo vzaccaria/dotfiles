@@ -38,13 +38,13 @@ vg() {
 
 initial()  { vg initial $* "noop" }
 minor()    { vg minor $* "noop" }
+gitsync()  { vg sync $* "noop" }
 polish()   { vg polish $* "noop" }
 refactor() { vg refactor $* "noop" }
 fix()      { vg fix $* }
 feat()     { vg feat $* }
 generic()  { vg generic $* }
 move()     { vg move $* }
-gitsync()     { vg sync $* }
 
 alias gg='generic'
 
