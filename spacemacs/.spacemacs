@@ -390,12 +390,24 @@ you should place you code here."
     ;;; Fira code
     ;; This works when using emacs --daemon + emacsclient
     (find-file "~/Dropbox/org/dashboard.org")
+    ;; setup latex correlation
+    (setq TeX-view-program-selection '((output-pdf "Skim")))
+    (setq TeX-source-correlate-mode t)
+    (setq TeX-source-correlate-start-server t)
+    (setq TeX-source-correlate-method 'synctex)
+    (setq TeX-view-program-list
+          '(
+            ("Skim" "displayline -b -g %n %o %b")))
     )
    ((eq system-type 'gnu/linux)
+    (setq TeX-view-program-selection '((output-pdf "Zathura")))
+    (setq TeX-source-correlate-mode t)
+    (setq TeX-source-correlate-start-server t)
+    (setq TeX-source-correlate-method 'synctex)
     )
    )
 
-  
+
 
   (add-hook 'before-save-hook 'prettier-before-save)
   (add-hook 'before-save-hook 'beautify-haskell-before-save)
