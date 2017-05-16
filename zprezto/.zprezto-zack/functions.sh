@@ -14,53 +14,6 @@ fex() {
     find . -name "*\.${ext}" -exec sh -c "${other}" \;
 }
 
-c() {
-   git cm "$@" && git push --all
-}
-
-gitchanged() {
-    git diff --numstat --diff-filter=M $* | awk '{printf("%s\0", $3)}' | map basename _ | paste -s -d, - | sed 's/,/, /g' 
-}
-
-vg() {
-    com="$1"
-    tgt="${@:2: -1}"
-    msg="${@: -1}"
-
-    mc=$(gitchanged $tgt)
-
-    case "$com" in
-        initial)   msg="initial commit" ;;
-        minor)     msg="minor: apply small changes ($mc)" ;;
-        move)      msg="move/delete files";;
-        fix)       msg="fix: $msg ($mc)" ;;
-        polish)    msg="polish: prettify ($mc)" ;;
-        refactor)  msg="refactor: ($mc)";;
-        feat)      msg="feat: $msg (in $mc)";;
-        generic)   msg="$msg ($mc)" ;;
-        *)
-            ;;
-    esac
-    command="git add $tgt && git commit -m \"$msg\""
-    echo "$command"
-    eval "$command"
-}
-
-initial()  { vg initial $* "noop" }
-minor()    { vg minor $* "noop" }
-polish()   { vg polish $* "noop" }
-refactor() { vg refactor $* "noop" }
-fix()      { vg fix $* }
-feat()     { vg feat $* }
-generic()  { vg generic $* }
-move()     { vg move $* }
-
-alias gg='generic'
-
-amend() {
-  git commit --amend --no-edit
-}
-
 
 pcat() {
   pygmentize -f terminal256 -O style=monokai -g
@@ -152,17 +105,6 @@ org2json() {
     emacs "$1" -l ~/.emacs --batch --eval="(org-as-json-to-file)"
 }
 
-gi() {
-    echo "$1" >> ./.gitignore
-}
-
-git-ignore-edit() {
-    vi "$(git root)/.gitignore"
-}
-
-git-chdir-into-root() {
-    pushd "$(git rev-parse --show-toplevel)"
-}
 
 putfile() {
     scp -P 2222 "$1" zaccaria@vzaccaria.myqnapcloud.com:~/deposit

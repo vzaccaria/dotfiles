@@ -19,6 +19,9 @@ if [[ -s "${srcdir}/functions.sh" ]]; then
   source "${srcdir}/functions.sh"
 fi
 
+if [[ -s "${srcdir}/github.sh" ]]; then
+    source "${srcdir}/github.sh"
+fi
 
 # Setup common vi keybindings
 bindkey -v

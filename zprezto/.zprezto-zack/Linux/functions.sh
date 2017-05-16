@@ -22,9 +22,6 @@ restartemacs() {
 }
 
 
-gitchanged() {
-    git diff --numstat --diff-filter=M $* | cut -f3 | tr '\n' '\0' | map basename _ | paste -s -d, - | sed 's/,/, /g' 
-}
 
 map() {
     command=$1

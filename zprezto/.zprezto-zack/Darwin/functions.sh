@@ -236,10 +236,6 @@ mov2gif() {
     fi
 }
 
-gitchanged() {
-    git diff --numstat --diff-filter=M $* | awk '{printf("%s\0", $3)}' | map basename _ | paste -s -d, - | sed 's/,/, /g' 
-}
-
 map() {
     command=$1
     args=${*:2}
