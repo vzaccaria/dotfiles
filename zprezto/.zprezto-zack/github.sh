@@ -48,6 +48,10 @@ move()     { vg move $* }
 
 alias gg='generic'
 
+gitSyncForCommuting() {
+    gitchdirintoroot && git add . && git commit -m 'periodic sync' && git push
+}
+
 amend() {
     git commit --amend --no-edit
 }

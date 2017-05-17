@@ -391,13 +391,12 @@ you should place you code here."
     ;; This works when using emacs --daemon + emacsclient
     (find-file "~/Dropbox/org/dashboard.org")
     ;; setup latex correlation
-    (setq TeX-view-program-selection '((output-pdf "Skim")))
+    (setq TeX-view-program-selection '((output-pdf "PDF Viewer")))
     (setq TeX-source-correlate-mode t)
     (setq TeX-source-correlate-start-server t)
     (setq TeX-source-correlate-method 'synctex)
     (setq TeX-view-program-list
-          '(
-            ("Skim" "displayline -b -g %n %o %b")))
+          '(("PDF Viewer" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
     )
    ((eq system-type 'gnu/linux)
     (setq TeX-view-program-selection '((output-pdf "Zathura")))
