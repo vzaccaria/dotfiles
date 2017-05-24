@@ -22,6 +22,8 @@
 ;; org has problems with M-o
 (global-set-key (kbd "M-o") 'vz/switch-dictionary)
 
+(global-set-key (kbd "C-{") 'vz/insert-braces)
+
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "M-s") 'evil-write-all)
 (global-set-key (kbd "M-D") 'vz/switch-dictionary)
@@ -54,6 +56,7 @@
 ;; Evil normal mode overrides
 (define-key evil-normal-state-map (kbd "M-.") 'helm-resume)
 (define-key evil-normal-state-map (kbd "M-a") 'mark-whole-buffer)
+(define-key evil-normal-state-map (kbd "M-{") 'vz/insert-braces)
 (define-key evil-visual-state-map (kbd "M-a") 'mark-whole-buffer)
 
 ;; Function key revival

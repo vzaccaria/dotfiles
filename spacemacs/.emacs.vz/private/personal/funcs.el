@@ -114,6 +114,13 @@
    ((derived-mode-p 'haskell-interactive-mode)    (call-interactively 'haskell-interactive-switch-back))
    (t "not implemented")))
 
+(defun vz/insert-braces ()
+  (interactive)
+  (if (region-active-p)
+      (insert-pair 1 ?{ ?})
+    (insert "{}")
+    (backward-char)))
+
 (defun beautify (&optional b e)
   (interactive "r")
   (cond ((derived-mode-p 'org-mode)        (call-interactively 'beautify-org))
