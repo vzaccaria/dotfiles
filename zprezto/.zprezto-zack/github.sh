@@ -3,11 +3,12 @@
 
 gitchanged() {
     TYPE=`uname`
-    if [ ${TYPE} = "Linux" ]
-    then git diff --numstat --diff-filter=M $* | awk '{printf("%s\0", $3)}' | map basename _ | paste -s -d, - | sed 's/,/, /g';
-    elif [ ${TYPE} = "Darwin"]
-    then git diff --numstat --diff-filter=M $* | cut -f3 | tr '\n' '\0' | map basename _ | paste -s -d, - | sed 's/,/, /g'
-    else echo "Unsupported OS - ${TYPE}"
+    if [ "${TYPE}" = "Linux" ]; then
+        git diff --numstat --diff-filter=M $* | awk '{printf("%s\0", $3)}' | map basename _ | paste -s -d, - | sed 's/,/, /g';
+    elif [ "${TYPE}" = "Darwin" ]; then
+        git diff --numstat --diff-filter=M $* | cut -f3 | tr '\n' '\0' | map basename _ | paste -s -d, - | sed 's/,/, /g';
+    else
+        echo "Unsupported OS - ${TYPE}";
     fi
 }
 
@@ -36,15 +37,41 @@ vg() {
     eval "$command"
 }
 
-initial()  { vg initial $* "noop" }
-minor()    { vg minor $* "noop" }
-gitsync()  { vg sync $* "noop" }
-polish()   { vg polish $* "noop" }
-refactor() { vg refactor $* "noop" }
-fix()      { vg fix $* }
-feat()     { vg feat $* }
-generic()  { vg generic $* }
-move()     { vg move $* }
+initial()  {
+    vg initial $* "noop"
+}
+
+minor()    {
+    vg minor $* "noop"
+}
+
+gitsync()  {
+    vg sync $* "noop"
+}
+
+polish()   {
+    vg polish $* "noop"
+}
+
+refactor() {
+    vg refactor $* "noop"
+}
+
+fix()      {
+    vg fix $*
+}
+
+feat()     {
+    vg feat $*
+}
+
+generic()  {
+    vg generic $*
+}
+
+move()     {
+    vg move $*
+}
 
 alias gg='generic'
 
@@ -55,6 +82,20 @@ gitSyncForCommuting() {
 amend() {
     git commit --amend --no-edit
 }
+
+gitcommutecheck() {
+    TYPE=`uname`
+    if [ "${TYPE}" = "Linux" ]; then 
+        gittestforcommuting ~/projects
+    elif [ "${TYPE}" = "Darwin" ]; then
+        gittestforcommuting ~/development/github ~/development/stforge
+        gittestforcommuting ~/dotfiles --exact
+    else
+        echo "Unsupported OS - ${TYPE}";
+    fi
+}
+
+
 
 gi() {
     echo "$1" >> ./.gitignore

@@ -419,7 +419,20 @@ you should place you code here."
   (setq TeX-auto-save t); Enable parse on save.
   (setq-default TeX-master nil)
   (setq TeX-PDF-mode t); PDF mode (rather than DVI-mode)
+
+  ;; Reftex config
+  ;;
+  ;; Remember if you write: ‘As we have shown in Theorem’ and then press C-c ),
+  ;; RefTeX will know that you are looking for a theorem label and restrict the
+  ;; menu to only these labels without even asking
+  ;;
+  ;; https://www.gnu.org/software/emacs/manual/html_node/reftex/Theorem-and-Axiom.html
+  (setq reftex-label-alist
+  '(("corollary"   ?a "co:"  "~\\ref{%s}" nil ("corollary"   "cor.") -2)
+    ("theorem" ?h "th:" "~\\ref{%s}" t   ("theorem" "th.") -3)))
+
   (setq reftex-plug-into-AUCTeX t)
+
   ;; LaTeX-math-mode http://www.gnu.org/s/auctex/manual/auctex/Mathematics.html
   ;; (add-hook 'TeX-mode-hook 'LaTeX-math-mode)
 
@@ -441,6 +454,7 @@ you should place you code here."
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#d2ceda" "#f2241f" "#67b11d" "#b1951d" "#3a81c3" "#a31db1" "#21b8c7" "#655370"])
+ '(auto-save-default nil)
  '(compilation-message-face (quote default))
  '(cua-global-mark-cursor-color "#2aa198")
  '(cua-normal-cursor-color "#657b83")
@@ -456,7 +470,7 @@ you should place you code here."
  '(fci-rule-color "#eee8d5" t)
  '(flycheck-python-pycompile-executable
    "/Applications/Blender.app/Contents/MacOS/../Resources/2.78/python/bin/python3.5m")
- '(helm-ag-base-command "ag --nocolor --nogroup --hidden" t)
+ '(helm-ag-base-command "ag --nocolor --nogroup --hidden")
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
    (--map
@@ -543,4 +557,5 @@ you should place you code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
+ '(hl-line ((t (:background "#555555")))))
