@@ -341,6 +341,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
          (add-hook 'plain-TeX-mode-hook 'flycheck-mode)
          (add-hook 'LaTeX-mode-hook 'flycheck-mode)
          (add-hook 'js-mode-hook 'flycheck-mode)
+         (add-hook 'shell-mode (lambda () (interactive)
+                                 flycheck-select-checker 'sh-shellcheck))
          )
       )
     (setq org-enable-reveal-js-support t)
