@@ -95,6 +95,18 @@ gitcommutecheck() {
     fi
 }
 
+gitcommutepush() {
+    TYPE=`uname`
+    if [ "${TYPE}" = "Linux" ]; then 
+        gittestforcommuting ~/projects --push
+    elif [ "${TYPE}" = "Darwin" ]; then
+        gittestforcommuting ~/development/github ~/development/stforge --push
+        gittestforcommuting ~/dotfiles --exact --push
+    else
+        echo "Unsupported OS - ${TYPE}";
+    fi
+}
+
 
 
 gi() {
