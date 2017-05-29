@@ -87,6 +87,7 @@
 (defun beautify-haskell (&optional b e)
   (interactive "r")
   (call-interactively 'hindent-reformat-buffer)
+  (call-interactively 'recenter-top-bottom)
   (call-interactively 'haskell-mode-stylish-buffer)
   )
 
