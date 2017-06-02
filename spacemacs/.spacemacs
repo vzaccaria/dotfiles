@@ -373,8 +373,8 @@ you should place you code here."
   (setq org-latex-minted-options
         '(("obeytabs" "true")
           ("baselinestretch" "0.95")
-          ("frame" "lines")
-          ("linenos=true")
+          ;; ("frame" "lines")
+          ;; ("linenos=true")
           ))
 
   (setq org-latex-listings 'minted)

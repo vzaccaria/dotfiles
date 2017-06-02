@@ -234,9 +234,6 @@
   (unless (boundp 'org-latex-classes)
     (setq org-latex-classes nil))
 
-  (setq org-latex-minted-options
-        '(("frame" "lines") ("linenos=true")))
-
   (add-to-list 'org-latex-classes
                '("memoir"
                  "\\documentclass\{memoir\}
