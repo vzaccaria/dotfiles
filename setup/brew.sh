@@ -191,6 +191,11 @@ brew install mu --with-emacs
 brew install offlineimap
 
 ######################
+# Databases
+brew install postgresql
+brew services start postgresql
+
+######################
 # Other brew assimilated packages
 ######################
 

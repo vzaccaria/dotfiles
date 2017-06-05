@@ -245,7 +245,7 @@
                  ("\\paragraph{%s}" . "\\paragraph*{%s}")
                  ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
                  ))
-
+  
   (add-to-list 'org-latex-classes
                '("IEEETran"
                  "\\documentclass\{IEEEtran\}
