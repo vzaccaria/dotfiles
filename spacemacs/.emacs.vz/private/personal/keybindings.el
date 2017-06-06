@@ -132,12 +132,18 @@
   (global-set-key (kbd "M-<right>") 'evil-window-right)
   (global-set-key (kbd "M-<left>")  'evil-window-left))
 
-
+ ;; Linux keybindings
  ((eq system-type 'gnu/linux)
   (global-set-key (kbd "M-<up>")    'evil-window-up)
   (global-set-key (kbd "M-<down>")  'evil-window-down)
   (global-set-key (kbd "M-<right>") 'evil-window-right)
   (global-set-key (kbd "M-<left>")  'evil-window-left)
+
+  ;; tmux specific (CTRL + arrowkeys)
+  (global-set-key (kbd "M-[ a") 'evil-window-up)
+  (global-set-key (kbd "M-[ b") 'evil-window-down)
+  (global-set-key (kbd "M-[ c") 'evil-window-right)
+  (global-set-key (kbd "M-[ d") 'evil-window-left)
   )
  )
 

@@ -2,11 +2,11 @@
 # Maybe add an help for all these commands
 
 gitchanged() {
-    TYPE=`uname`
+    TYPE=$(uname)
     if [ "${TYPE}" = "Linux" ]; then
-        git diff --numstat --diff-filter=M $* | awk '{printf("%s\0", $3)}' | map basename _ | paste -s -d, - | sed 's/,/, /g';
+        git diff --numstat --diff-filter=M "$*" | awk '{printf("%s\0", $3)}' | map basename _ | paste -s -d, - | sed 's/,/, /g';
     elif [ "${TYPE}" = "Darwin" ]; then
-        git diff --numstat --diff-filter=M $* | cut -f3 | tr '\n' '\0' | map basename _ | paste -s -d, - | sed 's/,/, /g';
+        git diff --numstat --diff-filter=M "$*" | cut -f3 | tr '\n' '\0' | map basename _ | paste -s -d, - | sed 's/,/, /g';
     else
         echo "Unsupported OS - ${TYPE}";
     fi
@@ -17,7 +17,7 @@ vg() {
     tgt="${@:2: -1}"
     msg="${@: -1}"
 
-    mc=$(gitchanged $tgt)
+    mc=$(gitchanged "$tgt")
 
     case "$com" in
         initial)   msg="initial commit" ;;
@@ -84,7 +84,7 @@ amend() {
 }
 
 gitcommutecheck() {
-    TYPE=`uname`
+    TYPE=$(uname)
     if [ "${TYPE}" = "Linux" ]; then 
         gittestforcommuting ~/projects --from 100
         gittestforcommuting ~/dotfiles --exact --from 100
@@ -97,7 +97,7 @@ gitcommutecheck() {
 }
 
 gitcommutepush() {
-    TYPE=`uname`
+    TYPE=$(uname)
     if [ "${TYPE}" = "Linux" ]; then 
         gittestforcommuting ~/projects --push --from 100
         gittestforcommuting ~/dotfiles --exact --push  --from 100
@@ -121,4 +121,17 @@ gitignoreedit() {
 
 gitchdirintoroot() {
     pushd "$(git rev-parse --show-toplevel)"
+}
+
+overleafstartedit() {
+    echo "We are now going to fetch the current version of the paper from the overleaf repository."
+    echo "to finish type: overleafstopedit"
+    git pull overleaf master
+}
+
+overleafstopedit() {
+    echo "Pushing towards private github repo"
+    git push
+    echo "Pushing towards overleaf"
+    git push overleaf master
 }
