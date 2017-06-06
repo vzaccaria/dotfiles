@@ -35,6 +35,7 @@
 #+LaTeX_HEADER: \usepackage{fancyvrb}
 #+LaTeX_HEADER: \usepackage{setspace}
 #+LaTeX_HEADER: \usepackage{etoolbox}
+
 #+LaTeX_HEADER: \appto\verbatim{\tiny\myunicodefallback\baselineskip=-\maxdimen\lineskip=0pt}
 
 #+LATEX_HEADER: \usepackage{geometry}

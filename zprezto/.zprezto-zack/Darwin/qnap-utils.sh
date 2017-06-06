@@ -77,7 +77,7 @@ qnap-mount-multimedia() {
 
 photoenv-mount-qnap() {
    mkdir -p /Volumes/Multimedia
-   sshfs admin@192.168.1.120:/share/CACHEDEV1_DATA/Multimedia /Volumes/Multimedia -ovolname=Multimedia
+   sshfs -p 21101 admin@192.168.1.120:/share/CACHEDEV1_DATA/Multimedia /Volumes/Multimedia -ovolname=Multimedia
    open /Applications/Adobe\ Lightroom/Adobe\ Lightroom.app
 }
 

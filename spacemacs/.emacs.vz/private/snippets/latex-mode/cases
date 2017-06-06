@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: cases
+# key: cases
+# --    
+\begin{cases}
+1 & \\text{for } n = 0 \\\\
+0 & otherwise \\\\
+\end{cases}
