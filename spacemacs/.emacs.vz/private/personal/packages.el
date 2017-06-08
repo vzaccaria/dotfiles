@@ -195,6 +195,7 @@
           ("i" "#+INDEX: ?")
           ("I" "#+INCLUDE: %file ?")
           ("st" "#+STARTUP: showall indent latexpreview entitiespretty")
+          ("oh" "#+TITLE:    Title\n#+INCLUDE: beamer_modern.org\n#+STARTUP: showall indent latexpreview entitiespretty")
 
      ;;; --- SOURCES ---
           ("so"  "#+BEGIN_SRC octave :results none   \n\n#+END_SRC")
