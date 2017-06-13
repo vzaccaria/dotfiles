@@ -85,12 +85,11 @@ amend() {
 
 gitcommutecheck() {
     TYPE=$(uname)
-    if [ "${TYPE}" = "Linux" ]; then 
-        gittestforcommuting ~/projects --from 100
-        gittestforcommuting ~/dotfiles --exact --from 100
+    if [ "${TYPE}" = "Linux" ]; then
+        git-verify fdown ~/dotfiles/git-verify-sync-linux.json 
     elif [ "${TYPE}" = "Darwin" ]; then
-        gittestforcommuting ~/development/github ~/development/stforge --from 100
-        gittestforcommuting ~/dotfiles --exact --from 100
+        git-verify ~/development/github ~/development/stforge --from 100
+        git-verify ~/dotfiles --exact --from 100
     else
         echo "Unsupported OS - ${TYPE}";
     fi
@@ -99,11 +98,10 @@ gitcommutecheck() {
 gitcommutepush() {
     TYPE=$(uname)
     if [ "${TYPE}" = "Linux" ]; then 
-        gittestforcommuting ~/projects --push --from 100
-        gittestforcommuting ~/dotfiles --exact --push  --from 100
+        git-verify fup ~/dotfiles/git-verify-sync-linux.json 
     elif [ "${TYPE}" = "Darwin" ]; then
-        gittestforcommuting ~/development/github ~/development/stforge --push --from 100
-        gittestforcommuting ~/dotfiles --exact --push  --from 100
+        git-verify ~/development/github ~/development/stforge --push --from 100
+        git-verify ~/dotfiles --exact --push  --from 100
     else
         echo "Unsupported OS - ${TYPE}";
     fi
