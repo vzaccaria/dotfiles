@@ -47,6 +47,7 @@ values."
      shell
      shell-scripts
      typography
+     git
 
      ;; generic data formats
      yaml
@@ -76,7 +77,6 @@ values."
              maxima-emacs-installation-path "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/maxima/5.35.1/emacs"
              maxima-emacs-info-path "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/info" )
      (c-c++ :variables c-c++-enable-clang-support t)
-     git
      )
 
    vz--gnu/linux-layers
