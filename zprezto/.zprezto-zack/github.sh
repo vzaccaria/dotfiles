@@ -98,7 +98,7 @@ gitcommutecheck() {
 gitcommutepush() {
     TYPE=$(uname)
     if [ "${TYPE}" = "Linux" ]; then 
-        git-verify fup ~/dotfiles/git-verify-sync-linux.json 
+        git-verify fup ~/dotfiles/git-verify-sync-linux.json --push
     elif [ "${TYPE}" = "Darwin" ]; then
         git-verify ~/development/github ~/development/stforge --push --from 100
         git-verify ~/dotfiles --exact --push  --from 100
