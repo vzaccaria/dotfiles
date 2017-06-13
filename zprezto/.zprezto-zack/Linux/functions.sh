@@ -6,6 +6,10 @@ vi() {
     /usr/bin/emacsclient -nw "$@" -c
 }
 
+gvim() {
+    /usr/bin/emacsclient "$@" -c
+}
+
 startemacs() {
     /usr/bin/emacs --daemon
 }
