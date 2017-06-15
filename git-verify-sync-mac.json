@@ -1,0 +1,15 @@
+[{
+        "target": ["/Users/zaccaria/development/github"],
+        "options": {
+            "from": 100,
+            "depth1": true
+        }
+    },
+    {
+        "target": ["/Users/zaccaria/dotfiles"],
+        "options": {
+            "exact": true,
+            "from": 100
+        }
+    }
+]
