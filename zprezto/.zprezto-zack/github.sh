@@ -83,25 +83,34 @@ amend() {
     git commit --amend --no-edit
 }
 
-gitcommutecheck() {
+gitcommutedown() {
     TYPE=$(uname)
     if [ "${TYPE}" = "Linux" ]; then
-        git-verify fdown ~/dotfiles/git-verify-sync-linux.json 
+        git-verify fdown ~/dotfiles/git-verify-sync-linux.json --pull
     elif [ "${TYPE}" = "Darwin" ]; then
-        git-verify ~/development/github ~/development/stforge --from 100
-        git-verify ~/dotfiles --exact --from 100
+        git-verify fdown ~/dotfiles/git-verify-sync-mac.json --pull
     else
         echo "Unsupported OS - ${TYPE}";
     fi
 }
 
-gitcommutepush() {
+gitcommuteup() {
     TYPE=$(uname)
     if [ "${TYPE}" = "Linux" ]; then 
         git-verify fup ~/dotfiles/git-verify-sync-linux.json --push
     elif [ "${TYPE}" = "Darwin" ]; then
-        git-verify ~/development/github ~/development/stforge --push --from 100
-        git-verify ~/dotfiles --exact --push  --from 100
+        git-verify fup ~/dotfiles/git-verify-sync-mac.json --push
+    else
+        echo "Unsupported OS - ${TYPE}";
+    fi
+}
+
+gitcommutecheck() {
+    TYPE=$(uname)
+    if [ "${TYPE}" = "Linux" ]; then 
+        git-verify fup ~/dotfiles/git-verify-sync-linux.json 
+    elif [ "${TYPE}" = "Darwin" ]; then
+        git-verify fup ~/dotfiles/git-verify-sync-mac.json 
     else
         echo "Unsupported OS - ${TYPE}";
     fi
