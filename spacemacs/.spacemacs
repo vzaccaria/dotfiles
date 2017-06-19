@@ -390,6 +390,10 @@ you should place you code here."
 
   (cond 
    ((eq system-type 'darwin)
+    (setq backup-directory-alist
+          `((".*" . , "~/emacs-backup-dir")))
+    (setq auto-save-file-name-transforms
+          `((".*" , "~/emacs-backup-dir" t)))
     (setq browse-url-mailto-function 'browse-url-generic)
     (setq browse-url-generic-program "open")
     ;; On Darwin set up Fira Code Symbol ligatures..
@@ -460,7 +464,6 @@ you should place you code here."
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#d2ceda" "#f2241f" "#67b11d" "#b1951d" "#3a81c3" "#a31db1" "#21b8c7" "#655370"])
- '(auto-save-default nil)
  '(compilation-message-face (quote default))
  '(cua-global-mark-cursor-color "#2aa198")
  '(cua-normal-cursor-color "#657b83")
