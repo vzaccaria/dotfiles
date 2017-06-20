@@ -118,3 +118,5 @@
 
   # Summarize your own changes since yesterday, suitable for a daily standup meeting.
   log-standup = !git log --since yesterday --pretty=short --author $(git config user.email)
+[credential]
+	helper = cache

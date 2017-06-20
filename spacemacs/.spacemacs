@@ -354,7 +354,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
     ;;; Linux specific conf
     (setq deft-directory "~/Dropbox/org")
     (setq deft-recursive t)
-    (add-hook 'js-mode-hook 'flycheck-mode)
+    (add-hook 'js2-mode-hook (lambda () (interactive)
+                               (vz/add-node-modules-path)
+                              ))
     (add-hook 'shell-mode (lambda () (interactive)
                             flycheck-select-checker 'sh-shellcheck))
     ))

@@ -122,6 +122,25 @@
     (insert "{}")
     (backward-char)))
 
+(defvar add-node-modules-path-debug nil
+    "Enable verbose output when non nil.")
+
+(defun vz/add-node-modules-path (&optional b e)
+  (interactive "r")
+  (let* ((root (locate-dominating-file
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (path (and root
+                    (expand-file-name "node_modules/.bin/" root))))
+    (if root
+        (progn
+          (make-local-variable 'exec-path)
+          (add-to-list 'exec-path path)
+          (when add-node-modules-path-debug
+            (message (concat "added " path  " to exec-path"))))
+      (when add-node-modules-path-debug
+        (message (concat "node_modules not found in " root))))))
+
 (defun beautify (&optional b e)
   (interactive "r")
   (cond ((derived-mode-p 'org-mode)        (call-interactively 'beautify-org))
