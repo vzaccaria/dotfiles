@@ -71,9 +71,9 @@
                              (define-key LaTeX-mode-map (kbd "<f3>")  'vz/check-using-grammarcheck)
                              ))
 
-(define-key org-mode-map (kbd "<f1>")  'org-beamer-export-to-pdf)
-(define-key org-mode-map (kbd "<f2>")  'org-latex-export-to-pdf)
-(define-key org-mode-map (kbd "<f3>")  'org-latex-export-to-latex)
+(define-key org-mode-map (kbd "<f2>")  'beautify-org)
+(define-key org-mode-map (kbd "<f3>")  'org-beamer-export-to-latex)
+(define-key org-mode-map (kbd "<f4>")  'org-latex-export-to-latex)
 (define-key org-mode-map (kbd "<f5>")  'vz/switch-dictionary)
 
 

@@ -74,8 +74,8 @@
 
 (defun beautify-org (&optional b e)
   (interactive "r")
-  (shell-command-on-region (point-min) (point-max)
-                           "pandoc --columns=80 --read org --write org" (current-buffer) t))
+  (shell-command-on-region b e
+                           "pandoc --columns=80 --read org --write org" t t))
 
 (defun beautify-asciidiag (&optional b e)
   (interactive "r")
