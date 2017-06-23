@@ -12,6 +12,7 @@
     highlight-chars
     pretty-mode
     writeroom-mode
+    matlab-mode
     (ox-extra :location local)
     (prettier-js :location local)
     ))
@@ -104,6 +105,13 @@
   (setq-default ispell-program-name "/usr/local/bin/aspell")
   )
 
+(defun personal/post-init-matlab-mode ()
+  (add-to-list
+   'auto-mode-alist
+   '("\\.m$" . matlab-mode))
+  (setq matlab-indent-function t)
+  (setq matlab-shell-command "/Applications/MATLAB_R2015b.app/bin/matlab")
+  )
 
 ;; define initialization here
 (defun personal/post-init-org ()
@@ -222,6 +230,9 @@
           ("eqc" "f(x) = \\begin{cases}\n 1 & \\text{for } n = 0 \\\\ \n \\end{cases}\n")
           ("eqa" "\\begin{array}{rcl}\n a& = &b \\\\\n\\end{array}\n")
           ("eql" "#+BEGIN_EXPORT latex\n\\begin{align}\n a& = &b \\\\\n\\end{align}\n#+END_EXPORT")
+
+     ;;; --- MATRICES ---
+          ("mat" "M = \\left(\\begin{array}{ccc}\n a& = &b \\\\\n\\end{array}\\right)\n")
 
      ;;; --- MINI PAGES and COLUMNS
           ("hp" "#+attr_latex: :options {0.5\\textwidth}\n#+begin_minipage\n\n#+end_minipage")
