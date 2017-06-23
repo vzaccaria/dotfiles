@@ -1,17 +1,17 @@
 f() {
     name=$1
-    find . -name "*${name}*"
+    find . -iname "*${name}*"
 }
 
 fe() {
     ext=$1
-    find . -name "*\.${ext}"
+    find . -iname "*\.${ext}"
 }
 
 fex() {
     ext=$1
     other=${*:2} 
-    find . -name "*\.${ext}" -exec sh -c "${other}" \;
+    find . -iname "*\.${ext}" -exec sh -c "${other}" \;
 }
 
 
