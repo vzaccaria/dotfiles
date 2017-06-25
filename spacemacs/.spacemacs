@@ -479,7 +479,7 @@ you should place you code here."
  '(disaster-objdump "gobjdump -d -M att -Sl --no-show-raw-insn")
  '(evil-want-Y-yank-to-eol t)
  '(evilnc-default-hotkeys t)
- '(fci-rule-color "#eee8d5" t)
+ '(fci-rule-color "#eee8d5")
  '(flycheck-python-pycompile-executable
    "/Applications/Blender.app/Contents/MacOS/../Resources/2.78/python/bin/python3.5m")
  '(helm-ag-base-command "ag --nocolor --nogroup --hidden" t)
@@ -509,6 +509,7 @@ you should place you code here."
    (quote
     ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
  '(magit-diff-use-overlays nil)
+ '(magit-log-section-arguments (quote ("--decorate" "-n256")))
  '(mlint-programs
    (quote
     ("mlint" "mac/mlint" "/Applications/MATLAB_R2015b.app/bin/maci64/mlint")))
