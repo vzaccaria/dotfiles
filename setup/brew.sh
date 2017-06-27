@@ -147,7 +147,7 @@ brew install ffmpeg
 brew install gifsicle
 
 brew install ChrisPenner/tools/tempered # Shell templates
-
+brew cask install skim
 
 
 ##########################
@@ -180,8 +180,15 @@ brew install asciidoc
 brew install aspell --with-lang-it --with-lang-en
 brew install ispell
 brew install bibtex2html
-brew install emacs
 brew install languagetool
+
+# Emacs stuff
+brew tap railwaycat/emacsmacport
+brew update
+brew install emacs-mac
+
+# Latex
+brew cask install mactex
 
 #######################
 # Mail in Emacs

@@ -7,7 +7,7 @@ path=(\
   /sbin \
   /usr/X11/bin \
   /usr/texbin \
-  /usr/local/texlive/2013/bin/universal-darwin \
+  /usr/local/texlive/2017/bin/x86_64-darwin \
   /Users/zaccaria/Library/Python/2.7/bin \
   /Users/zaccaria/scripts \
   /Users/zaccaria/.bin \

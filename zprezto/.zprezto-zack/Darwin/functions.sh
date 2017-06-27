@@ -197,11 +197,11 @@ dashboard() {
 }
 
 gvim() {
-    open /usr/local/opt/emacs-mac/Emacs.app
+    /usr/local/bin/emacs 
 }
 
 startemacs() {
-    /Applications/Emacs.app/Contents/MacOS/Emacs-x86_64-10_9 --daemon
+    /usr/local/bin/emacs --daemon
 }
 
 stopemacs() {
@@ -216,7 +216,7 @@ restartemacs() {
 }
 
 resetemacs() {
-    rm -f /Users/zaccaria/.emacs.d/elpa
+    rm -rf /Users/zaccaria/.emacs.d/elpa
     startemacs
     stopemacs
     echo "As per: https://github.com/syl20bnr/spacemacs/issues/3314 you should now:"
