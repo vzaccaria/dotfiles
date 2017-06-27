@@ -35,8 +35,8 @@ alias bottomright   corner  bottom-right            resize:screenSizeX/2;screenS
 # Lecture layout
 alias lectureLeft  move 0;0 800;600
 alias lectureCtrl  move 1088;0 350;800
-bind l:cmd ${lectureLeft} 0
 bind m:cmd ${lectureCtrl} 0
+bind ,:cmd ${lectureLeft} 0
 
 # Resize Bindings
 # bind right:alt       resize +10% +0
@@ -84,6 +84,9 @@ bind pad6 ${rightiq}
 bind pad7 ${topleft}
 bind pad8 push top bar-resize:screenSizeY/2
 bind pad9 ${topright}
+bind k:cmd ${full}
+bind j:cmd ${leftq}
+bind l:cmd ${rightiq}
 
 # layout 1monl 'current':MAIN_FIRST ${lefthalf}  | ${righthalf}
 # layout 1monr 'current':MAIN_FIRST ${righthalf} | ${lefthalf}
