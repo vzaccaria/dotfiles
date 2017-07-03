@@ -317,7 +317,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
          (flycheck-define-checker grammar-gramcheck
                                   "A general purpose grammar checker. It uses LanguageTool."
 
-                                  :command ("gramchk" "-x" source-original)
+                                  :command ("gramchk" "-l" "-x" source-original)
                                   :error-parser flycheck-parse-checkstyle
                                   :standard-input t
                                   :modes (latex-mode plain-TeX-mode)
@@ -326,7 +326,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
          (flycheck-define-checker proselint
                                   "A linter for prose."
-                                  :command ("/Users/zaccaria/python-scripts/bin/proselint" source-inplace)
+                                  :command ("proselint" source-inplace)
                                   :error-patterns
                                   ((warning line-start (file-name) ":" line ":" column ": "
                                             (id (one-or-more (not (any " "))))
@@ -410,6 +410,7 @@ you should place you code here."
     (setq TeX-source-correlate-method 'synctex)
     (setq TeX-view-program-list
           '(("PDF Viewer" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
+    (vz/enable-latex-esc-before-save)
     )
    ((eq system-type 'gnu/linux)
     (setq TeX-view-program-selection '((output-pdf "Zathura")))

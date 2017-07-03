@@ -162,10 +162,20 @@
   (interactive)
   (when (string-equal (symbol-name major-mode) 'haskell-mode) (beautify-haskell)))
 
-(defun vz/anable-beautify-latex-before-save ()
+(defun vz/enable-beautify-latex-before-save ()
   (interactive)
   (add-hook 'before-save-hook 'beautify-latex-before-save)
   )
+
+(defun vz/enable-latex-esc-before-save ()
+  (interactive)
+  (add-hook 'before-save-hook 'latex-esc-before-save)
+  )
+
+(defun latex-esc-before-save ()
+  "Add this to .emacs to run refmt on the current buffer when saving."
+  (interactive)
+  (when (string-equal (symbol-name major-mode) 'latex-mode) (evil-escape)))
 
 (defun beautify-latex-before-save ()
   "Add this to .emacs to run refmt on the current buffer when saving."

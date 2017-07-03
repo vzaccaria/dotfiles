@@ -53,7 +53,8 @@ brew cask install \
 ##########################
 
 brew install virtualbox
-brew cask install dockertoolbox
+brew cask install docker
+brew cask install kitematic
 brew install ansible
 brew install virt
 
@@ -180,7 +181,11 @@ brew install asciidoc
 brew install aspell --with-lang-it --with-lang-en
 brew install ispell
 brew install bibtex2html
+
+# Grammarcheck
 brew install languagetool
+brew cask install java
+
 
 # Emacs stuff
 brew tap railwaycat/emacsmacport

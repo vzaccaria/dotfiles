@@ -87,7 +87,6 @@
 
  ;; -- OSX TERMINAL KEYBINDINGS
  ((eq system-type 'darwin)
-  (setq vz--layers (append vz--layers vz--darwin-layers))
   ;; The following are heavily based on my iTerm2 mappings. Use at your own risk!
   ;; Use 'cat -vte' on the command line to see which keys are received by emacs
 
@@ -101,6 +100,8 @@
   (define-key key-translation-map "\e\e[H" [(shift-right)])
   (define-key key-translation-map "\e\e[I" [(shift-left)])
 
+  ;; Thanks touchbar!
+  (global-set-key (kbd "§") 'evil-escape)    ;; 46   
 
   ;;  Shift + Arrows
   (global-set-key [(shift-up)] 'evil-backward-paragraph)    ;; 46
