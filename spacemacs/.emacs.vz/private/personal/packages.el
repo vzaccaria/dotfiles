@@ -271,7 +271,9 @@
                '("article"
                  "\\documentclass[a4]\{article\}
                 [NO-DEFAULT-PACKAGES]"
-                 ))
+                 ("\\section\{%s\}" . "\\section*\{%s\}")
+                 ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+                 ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
 
   (add-to-list 'org-latex-classes
                '("letter"

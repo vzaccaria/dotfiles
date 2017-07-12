@@ -1,7 +1,7 @@
 #+AUTHOR:    Vittorio Zaccaria
 #+EMAIL:     vittorio.zaccaria@polimi.it
 
-#+LaTeX_CLASS_OPTIONS: [12pt,a4paper]
+#+LaTeX_CLASS_OPTIONS: [8pt,a4paper]
 #+LaTeX_CLASS: article
 #+LaTeX_HEADER: \usepackage{fixltx2e}
 #+LaTeX_HEADER: \usepackage{graphicx}
@@ -22,4 +22,6 @@
 #+LaTeX_HEADER: \usepackage{fancyvrb}
 #+LaTeX_HEADER: \usepackage{setspace}
 #+LaTeX_HEADER: \usepackage{etoolbox}
+#+LaTeX_HEADER: \usepackage{geometry}
+#+LATEX_HEADER: \geometry{top=2cm,left=2cm,right=2cm,bottom=2cm}
 
