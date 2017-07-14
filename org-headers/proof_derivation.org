@@ -1,4 +1,3 @@
-#+AUTHOR:    Vittorio Zaccaria
 #+EMAIL:     vittorio.zaccaria@polimi.it
 
 #+LaTeX_CLASS_OPTIONS: [8pt,a4paper]
