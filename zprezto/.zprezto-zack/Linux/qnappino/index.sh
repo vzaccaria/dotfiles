@@ -14,6 +14,10 @@ sen() {
    docker run -v /var/run/docker.sock:/run/docker.sock -ti -e TERM tomastomecek/sen
 }
 
+startlanguagetool() {
+   docker run -d -p 8010:8010 vzaccaria/languagetool:3.8 
+}
+
 ubuntu() {
 	  docker run -ti --rm \
            -p 5901:5901 \
