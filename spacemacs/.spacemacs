@@ -446,6 +446,8 @@ you should place you code here."
     ("theorem" ?h "th:" "~\\ref{%s}" t   ("theorem" "th.") -3)))
 
   (setq reftex-plug-into-AUCTeX t)
+  (setq reftex-ref-macro-prompt nil)
+
 
   ;; LaTeX-math-mode http://www.gnu.org/s/auctex/manual/auctex/Mathematics.html
   ;; (add-hook 'TeX-mode-hook 'LaTeX-math-mode)

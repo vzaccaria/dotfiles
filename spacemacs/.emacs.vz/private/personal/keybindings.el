@@ -67,8 +67,8 @@
 
 (add-hook 'LaTeX-mode-hook (lambda ()
                              (define-key LaTeX-mode-map (kbd "<f1>")  'spacemacs/toggle-flycheck-error-list)
-                             (define-key LaTeX-mode-map (kbd "<f2>")  'vz/check-using-proselint)
-                             (define-key LaTeX-mode-map (kbd "<f3>")  'vz/check-using-grammarcheck)
+                             (define-key LaTeX-mode-map (kbd "<f2>")  'reftex-reference)
+                             (define-key LaTeX-mode-map (kbd "<f3>")  'reftex-citation)
                              ))
 
 (define-key org-mode-map (kbd "<f2>")  'beautify-org)
