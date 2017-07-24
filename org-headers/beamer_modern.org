@@ -8,17 +8,25 @@
 # - Metropolis beamer theme; available in texlive 2016
 #   
 #       tlmgr init-usertree
-#       tlmgr install beamertheme-metropolis
+#       sudo tlmgr install beamertheme-metropolis
 #
-# - Emoji.sty package
-# 
-#   1. Download from here:  https://github.com/henningpohl/latex-emoji/blob/master/example.tex
+# - Emoji.sty package (AFTER the previous steps)
 #
-#   2. Unpack in directory indicated by this command:
+#   1. Go into this folder
 #   
 #         kpsewhich -var-value=TEXMFHOME
-#   
-#   3. verify with kpsewhich.sty
+# 
+#   2. Download (just the sty file) from here:  https://github.com/henningpohl/latex-emoji.git
+#
+#      wget https://raw.githubusercontent.com/henningpohl/latex-emoji/master/emoji.sty
+# 
+#   3. Run texhash in the same directory
+#
+#      texhash .
+#
+#   3. verify with:
+# 
+#      kpsewhich emoji.sty
 # 
 # - Fira Mono with ligatures (Linux install)
 # 
@@ -217,5 +225,5 @@
 \tikzstyle{resource}=[circle, scale=.5, fill=black, draw=black, text=white, minimum size=0.5cm,font=\scshape]
 #+END_EXPORT
 
-#+LATEX_HEADER: % needs latex emoji https://github.com/henningpohl/latex-emoji/blob/master/example.tex
-#+LATEX_HEADER: \usepackage[twitter]{emoji}
+# #+LATEX_HEADER: % needs latex emoji https://github.com/henningpohl/latex-emoji/blob/master/example.tex
+# #+LATEX_HEADER: \usepackage[twitter]{emoji}
