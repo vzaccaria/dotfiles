@@ -1,7 +1,7 @@
 
 .PHONY: clean
 clean:
-	rm -rf *.aux *.bbl *.blg *.log *.nav *.out *.snm *.toc _minted-* *.pyg *.fls *.fdb_latexmk
+	rm -rf *.aux *.bbl *.blg *.log *.nav *.out *.snm *.toc _minted-* *.pyg *.fls *.fdb_latexmk *.synctex.gz
 
 .PHONY: dist-clean
 dist-clean: clean
