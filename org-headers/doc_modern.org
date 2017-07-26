@@ -19,6 +19,7 @@
 #+LaTeX_HEADER: \usepackage{hyperref}
 #+LaTeX_HEADER: \usepackage{shellesc}
 #+LaTeX_HEADER: \usepackage{minted}
+#+LaTeX_HEADER: \usemintedstyle{friendly}
 #+LATEX_HEADER: \usepackage{breqn}
 #+LaTeX_HEADER: \usepackage{fontspec,xunicode}
 #+LATEX_HEADER: \setmainfont[]{Minion Pro}
