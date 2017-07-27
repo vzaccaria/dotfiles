@@ -19,9 +19,9 @@
 #+LaTeX_HEADER: \usepackage{hyperref}
 #+LaTeX_HEADER: \usepackage{shellesc}
 #+LaTeX_HEADER: \usepackage{minted}
-#+LaTeX_HEADER: \usemintedstyle{friendly}
+#+LaTeX_HEADER: \usemintedstyle{arduino}
 #+LATEX_HEADER: \usepackage{breqn}
-#+LaTeX_HEADER: \usepackage{fontspec,xunicode}
+#+LaTeX_HEADER: \usepackage{fontspec}
 #+LATEX_HEADER: \setmainfont[]{Minion Pro}
 #+LATEX_HEADER: \setsansfont{Fira Sans}
 #+LATEX_HEADER: \setmonofont[Scale=0.75]{FiraCode-Regular}
@@ -38,10 +38,11 @@
 #+LaTeX_HEADER: \usepackage{setspace}
 #+LaTeX_HEADER: \usepackage{etoolbox}
 
-#+LaTeX_HEADER: \appto\verbatim{\tiny\myunicodefallback\baselineskip=-\maxdimen\lineskip=0pt}
+# #+LaTeX_HEADER: \appto\verbatim{\tiny\myunicodefallback\baselineskip=-\maxdimen\lineskip=0pt}
 
 #+LATEX_HEADER: \usepackage{geometry}
 #+LATEX_HEADER: \definecolor{links}{HTML}{0086F7}
+#+LATEX_HEADER: \definecolor{bgl}{rgb}{0.95,0.95,0.95}
 #+LATEX_HEADER: \hypersetup{colorlinks,linkcolor=,urlcolor=links}
 #+LATEX_HEADER: \usepackage{tikz}
 #+LATEX_HEADER: \usetikzlibrary{mindmap}

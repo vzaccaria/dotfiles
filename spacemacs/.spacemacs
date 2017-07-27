@@ -380,8 +380,11 @@ you should place you code here."
   (setq org-latex-minted-options
         '(("obeytabs" "true")
           ("baselinestretch" "0.95")
-          ;; ("frame" "lines")
-          ;; ("linenos=true")
+          ;;("frame" "lines")
+          ;; ("frame" "single")
+          ;; ("framesep" "10pt")
+          ("bgcolor" "bgl")
+          ("linenos=true")
           ))
 
   (setq org-latex-listings 'minted)
