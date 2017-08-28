@@ -167,7 +167,7 @@
   (org-add-link-type "papers3" (lambda (link)  (shell-command (concat "open papers3:" link))))
 
   (setq org-babel-js-cmd "node")
-  (setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/8046/plantuml.8046.jar")
+  (setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/1.2017.14/libexec/plantuml.jar")
   (setq org-capture-templates
         '(
           ("t" "Work todo generico" entry

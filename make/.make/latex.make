@@ -1,4 +1,6 @@
 
+.DEFAULT: all
+
 %.pdf: %.tex
 	jslatex $< lualatex --nobibtex
 
@@ -7,6 +9,7 @@
 
 %.beamer.tex: %.org
 	emacsclient --eval "(progn (find-file \"$<\") (org-beamer-export-to-latex))"
+	mv $*.tex $@
 
 .PHONY: clean
 clean:

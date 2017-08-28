@@ -133,11 +133,14 @@ brew install ledger
 brew install lftp
 
 brew install osxfuse
-brew install homebrew/fuse/sshfs
+brew install sshfs
 
 brew install pdf2svg
 brew install svg2pdf
 brew install xpdf ## pdftops
+brew install https://raw.githubusercontent.com/turforlag/homebrew-cervezas/master/pdftk.rb
+
+
 brew install pstree
 brew install reattach-to-user-namespace # tmux copy and paste
 brew install shellcheck

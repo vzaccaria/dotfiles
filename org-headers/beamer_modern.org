@@ -118,6 +118,7 @@
 #+LaTeX_HEADER: \usegdlibrary{layered}
 #+LaTeX_HEADER: \usegdlibrary{force}
 #+LATEX_HEADER: \usetikzlibrary{circuits.logic.US}
+#+LATEX_HEADER: \usetikzlibrary{circuits.ee.IEC}
 
 # And plots!
 #+LATEX_HEADER: \usepackage{pgfplots}
@@ -151,6 +152,7 @@
 
 
 #+LATEX_HEADER: \definecolor{links}{HTML}{0086F7}
+#+LATEX_HEADER: \definecolor{bgl}{rgb}{0.95,0.95,0.95}
 #+LATEX_HEADER: \hypersetup{colorlinks,linkcolor=,urlcolor=links} 
 
 #+LATEX_HEADER: \newcommand{\keyboard}{{\tikz \node[box, minimum size=0cm] {\faKeyboardO};}}
