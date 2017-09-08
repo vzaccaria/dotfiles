@@ -220,7 +220,7 @@
 
      ;;; --- GENERIC LATEX
 
-          ("al" "#+attr_latex: :width 0.85\\linewidth :float t :placement [h]")
+          ("al" "#+attr_latex: :font \footnotesize :width 0.85\\linewidth :float t :placement [h]")
 
      ;;; --- EXAMPLES ---
           ("ec" "#+begin_center \n #+attr_latex: :options {0.7\\textwidth} \n #+begin_minipage \n #+BEGIN_EXAMPLE \n #+END_EXAMPLE \n #+end_minipage \n #+end_center \n")
