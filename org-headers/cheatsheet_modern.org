@@ -26,10 +26,9 @@
 #+LaTeX_HEADER: \usepackage{minted}
 #+LaTeX_HEADER: \usepackage{multicol}
 #+LaTeX_HEADER: \usepackage{fontspec,xltxtra,xunicode}
-#+LATEX_HEADER: \setmainfont[Scale=0.8]{Fira Sans}
 #+LATEX_HEADER: \setsansfont{Fira Sans}
+#+LATEX_HEADER: \setmainfont[Scale=0.8]{Fira Sans}
 #+LATEX_HEADER: \setmonofont[Scale=0.8]{Source Code Pro}
-#+LATEX_HEADER: \newfontfamily\myunicodefallback{Cambria}
 #+LATEX_HEADER: \usepackage{polyglossia}
 #+LATEX_HEADER: \setmainlanguage{italiano}
 #+LATEX_HEADER: \pagestyle{empty}
@@ -63,3 +62,6 @@
 #+LATEX_HEADER: \setlength{\postmulticols}{1pt}
 #+LATEX_HEADER: \setlength{\multicolsep}{1pt}
 #+LATEX_HEADER: \setlength{\columnsep}{2pt}
+
+#+LaTeX_HEADER: \usepackage{xcolor}
+#+LATEX_HEADER: \definecolor{bgl}{rgb}{0.95,0.95,0.95}
