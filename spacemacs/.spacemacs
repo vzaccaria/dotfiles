@@ -518,6 +518,7 @@ you should place you code here."
     ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
  '(magit-diff-use-overlays nil)
  '(magit-log-section-arguments (quote ("--decorate" "-n256")))
+ '(markdown-command "/usr/local/bin/pandoc")
  '(mlint-programs
    (quote
     ("mlint" "mac/mlint" "/Applications/MATLAB_R2015b.app/bin/maci64/mlint")))
