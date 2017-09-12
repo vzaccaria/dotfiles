@@ -167,7 +167,7 @@
   (org-add-link-type "papers3" (lambda (link)  (shell-command (concat "open papers3:" link))))
 
   (setq org-babel-js-cmd "node")
-  (setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/1.2017.14/libexec/plantuml.jar")
+  (setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/1.2017.16/libexec/plantuml.jar")
   (setq org-capture-templates
         '(
           ("t" "Work todo generico" entry
@@ -220,7 +220,9 @@
 
      ;;; --- GENERIC LATEX
 
-          ("al" "#+attr_latex: :font \footnotesize :width 0.85\\linewidth :float t :placement [h]")
+          ("als" "#+attr_latex: :font \\footnotesize")
+          ("al" "#+attr_latex: :font \\footnotesize :width 0.85\\linewidth :float t :placement [h]")
+          ("alf" "#+attr_latex: :width 0.85\\linewidth :float t :placement [h]")
 
      ;;; --- EXAMPLES ---
           ("ec" "#+begin_center \n #+attr_latex: :options {0.7\\textwidth} \n #+begin_minipage \n #+BEGIN_EXAMPLE \n #+END_EXAMPLE \n #+end_minipage \n #+end_center \n")
@@ -346,7 +348,7 @@
 
   (define-key org-mode-map (kbd "M-p")  'org-preview-latex-fragment)
 
-  (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
+  (setq org-format-latex-options (plist-put org-format-latex-options :scale 0.7))
 
   )
 

@@ -91,6 +91,8 @@
 # ICONS!
 #+LATEX_HEADER: \usepackage{fontawesome}
 
+# UNICODE?
+
 # Needed by LUALATEX and MINTED
 #+LaTeX_HEADER: \usepackage{shellesc}
 #+LaTeX_HEADER: \tolerance=1000
@@ -143,12 +145,13 @@
 
 # Unicode fonts (for ASCII art)
 #+LATEX_HEADER: \ifmacosx
-#+LATEX_HEADER: \newfontfamily\myunicodefallback{Menlo}
+#+LATEX_HEADER: \newfontfamily\myunicodefallback{DejaVu Sans}
 #+LATEX_HEADER: \fi
 
 #+LATEX_HEADER: \iflinux
 #+LATEX_HEADER: \newfontfamily\myunicodefallback{Menlo-Regular}
 #+LATEX_HEADER: \fi
+#+LATEX_HEADER: \newcommand{\uc}[1]{{\myunicodefallback #1}}
 
 
 #+LATEX_HEADER: \definecolor{links}{HTML}{0086F7}
