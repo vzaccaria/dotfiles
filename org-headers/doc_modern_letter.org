@@ -21,10 +21,9 @@
 #+LaTeX_HEADER: \usepackage{hyperref}
 #+LaTeX_HEADER: \usepackage{shellesc}
 #+LaTeX_HEADER: \usepackage{minted}
-#+LaTeX_HEADER: \usepackage{fontspec,xunicode}
+#+LaTeX_HEADER: \usepackage{fontspec}
 #+LATEX_HEADER: \setmainfont[]{Minion Pro}
 #+LATEX_HEADER: \setmonofont[Scale=0.8]{Source Code Pro}
-#+LATEX_HEADER: \newfontfamily\myunicodefallback{Cambria}
 #+LATEX_HEADER: \definecolor{links}{HTML}{0086F7}
 #+LATEX_HEADER: \hypersetup{colorlinks,linkcolor=,urlcolor=links}
 #+LATEX_HEADER: \usepackage{tikz}
