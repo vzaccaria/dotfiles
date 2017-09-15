@@ -27,12 +27,12 @@
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "M-s") 'evil-write-all)
 (global-set-key (kbd "M-D") 'vz/switch-dictionary)
-(global-set-key (kbd "M-f") 'helm-projectile-ag)
+(global-set-key (kbd "M-f") 'helm-projectile-ag) ;; search local repo
 (global-set-key (kbd "M-g") 'deft)
 (global-set-key (kbd "M-h") 'helm-apropos)
 (global-set-key (kbd "M-j") 'vz/align-code-to-equals)
 (global-set-key (kbd "M-k") 'recompile)
-(global-set-key (kbd "M-l") 'org-latex-export-to-latex)
+(global-set-key (kbd "M-l") 'helm-ag) ;; Search in local directory
 (global-set-key (kbd "M-/") 'evil-search-forward)
 
 
