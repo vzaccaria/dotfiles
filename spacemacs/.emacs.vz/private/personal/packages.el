@@ -120,6 +120,7 @@
   (require 'ox)
   (setq org-agenda-custom-commands '(("w" "My Agenda"
                                       ((agenda "")
+                                       (tags "TODO=\"TODAY\"")
                                        (tags "TODO=\"IMPORTANT\"&-PRIORITY=\"C\"")
                                        (tags "TODO=\"IMPORTANT\"&PRIORITY=\"C\"")
                                        (tags "DEADLINE={.}-TODO=\"DONE\"")
