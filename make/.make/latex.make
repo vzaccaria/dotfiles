@@ -1,11 +1,13 @@
 
 .DEFAULT: all
 
+%.ref.pdf: %.tex
+	jslatex $< lualatex
+	mv $*.pdf $*.ref.pdf
+
 %.pdf: %.tex
 	jslatex $< lualatex --nobibtex
 
-%.ref.pdf: %.tex
-	jslatex $< lualatex
 
 %.tex: %.org
 	emacsclient --eval "(progn (find-file \"$<\") (org-latex-export-to-latex))"

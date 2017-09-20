@@ -145,17 +145,19 @@
 
 # Unicode fonts (for ASCII art)
 #+LATEX_HEADER: \ifmacosx
-#+LATEX_HEADER: \newfontfamily\myunicodefallback{DejaVu Sans}
+#+LATEX_HEADER: \newfontfamily\myunicodefallback{Menlo}
+#+LATEX_HEADER: \newfontfamily\myunicodefallbackb{DejaVu Sans}
 #+LATEX_HEADER: \fi
 
 #+LATEX_HEADER: \iflinux
 #+LATEX_HEADER: \newfontfamily\myunicodefallback{Menlo-Regular}
+#+LATEX_HEADER: \newfontfamily\myunicodefallbackb{DejaVu Sans}
 #+LATEX_HEADER: \fi
-#+LATEX_HEADER: \newcommand{\uc}[1]{{\myunicodefallback #1}}
+#+LATEX_HEADER: \newcommand{\uc}[1]{{\myunicodefallbackb #1}}
 
 
 #+LATEX_HEADER: \definecolor{links}{HTML}{0086F7}
-#+LATEX_HEADER: \definecolor{bgl}{rgb}{0.95,0.95,0.95}
+#+LATEX_HEADER: \definecolor{bgl}{rgb}{0.95,0.95,0.95} 
 #+LATEX_HEADER: \hypersetup{colorlinks,linkcolor=,urlcolor=links} 
 
 #+LATEX_HEADER: \newcommand{\keyboard}{{\tikz \node[box, minimum size=0cm] {\faKeyboardO};}}
