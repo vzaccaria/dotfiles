@@ -121,6 +121,7 @@
 #+LaTeX_HEADER: \usegdlibrary{force}
 #+LATEX_HEADER: \usetikzlibrary{circuits.logic.US}
 #+LATEX_HEADER: \usetikzlibrary{circuits.ee.IEC}
+#+LATEX_HEADER: \usepackage{stmaryrd}
 
 # And plots!
 #+LATEX_HEADER: \usepackage{pgfplots}
@@ -154,6 +155,7 @@
 #+LATEX_HEADER: \newfontfamily\myunicodefallbackb{DejaVu Sans}
 #+LATEX_HEADER: \fi
 #+LATEX_HEADER: \newcommand{\uc}[1]{{\myunicodefallbackb #1}}
+#+LATEX_HEADER: \newcommand{\rpr}[1]{{\llbracket \texttt{#1} \rrbracket}}
 
 
 #+LATEX_HEADER: \definecolor{links}{HTML}{0086F7}
