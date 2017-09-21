@@ -52,14 +52,4 @@
 #+LaTeX_HEADER: \usepackage{geometry}
 #+LATEX_HEADER: \geometry{top=3cm,left=2cm,right=2cm,bottom=3cm}
 
-#+LATEX_HEADER: \newcommand{\cprog}[2]{
-#+LATEX_HEADER: Si scriva un programma in linguaggio C che, ricevuti in ingresso i seguenti dati: 
-#+LATEX_HEADER: \texttt{#1}, elabori i seguenti valori: \texttt{#2}. 
-#+LATEX_HEADER: Si assuma che i dati in ingresso siano 
-#+LATEX_HEADER: introdotti da tastiera e che i valori elaborati siano stampati a video.}
-#+LATEX_HEADER: \newenvironment{cprogvin}{\vspace{0.2cm}\textsc{dati in ingresso}\vspace{-0.2cm}\begin{itemize}}{\end{itemize}}
-#+LATEX_HEADER: \newenvironment{cprogvout}{\vspace{0.2cm}\textsc{dati da elaborare}\vspace{-0.2cm}\begin{itemize}}{\end{itemize}}
-#+LATEX_HEADER: \newcommand{\cprogvar}[2]{\item \texttt{#1}: {#2}} 
-#+LATEX_HEADER: \newcommand{\cprogese}{\textsc{esempio}}
-#+LATEX_HEADER: \newcommand{\cprogext}{\textsc{ulteriori vincoli e spiegazioni}}
  
