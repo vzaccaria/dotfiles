@@ -1,0 +1,13 @@
+#+LaTeX_CLASS_OPTIONS: [12pt,a4paper]
+#+LaTeX_CLASS: article
+
+#+INCLUDE:   ./header_universal.org
+
+#+LATEX_HEADER: \setmainfont[]{Minion Pro}
+#+LATEX_HEADER: \setmonofont[Scale=0.75]{FiraCode-Regular}
+
+#+LATEX_HEADER: \setlength{\parskip}{0pt plus 0.5ex}
+#+LaTeX_HEADER: \usepackage{geometry}
+#+LATEX_HEADER: \geometry{top=3cm,left=2cm,right=2cm,bottom=3cm}
+
+#+OPTIONS:   toc:nil 
