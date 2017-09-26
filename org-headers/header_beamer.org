@@ -1,8 +1,9 @@
 
 #+startup: BEAMER
 #+LaTeX_CLASS:         beamer
-#+LaTeX_CLASS_OPTIONS: [smaller]
-#+LaTeX_HEADER: \usetheme{metropolis}
+#+LaTeX_CLASS_OPTIONS: [smaller,lualatex]
+
+#+LATEX_HEADER: \usetheme{metropolis}
 
 #+INCLUDE:   ./header_universal.org
 

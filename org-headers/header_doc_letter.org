@@ -1,5 +1,9 @@
 #+LaTeX_CLASS_OPTIONS: [12pt,a4paper]
 #+LaTeX_CLASS: article
+#+BEAMER_THEME: metropolis 
+
+
+#+LATEX_HEADER: \usepackage{beamerarticle}
 
 #+INCLUDE:   ./header_universal.org
 

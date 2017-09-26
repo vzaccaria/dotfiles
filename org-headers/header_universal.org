@@ -20,8 +20,9 @@
 #+LaTeX_HEADER: \usepackage{amssymb}
 #+LaTeX_HEADER: \usepackage{hyperref}
 #+LaTeX_HEADER: \usepackage{xcolor}
+#+LATEX_HEADER: \usepackage{stmaryrd}
 
-# ICONS!
+# # ICONS!
 #+LATEX_HEADER: \usepackage{fontawesome}
 
 
@@ -53,7 +54,6 @@
 #+LaTeX_HEADER: \usegdlibrary{force}
 #+LATEX_HEADER: \usetikzlibrary{circuits.logic.US}
 #+LATEX_HEADER: \usetikzlibrary{circuits.ee.IEC}
-#+LATEX_HEADER: \usepackage{stmaryrd}
 
 # And plots!
 #+LATEX_HEADER: \usepackage{pgfplots}
