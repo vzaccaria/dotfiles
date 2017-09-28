@@ -100,6 +100,7 @@
 #+LATEX_HEADER: \newcommand{\rpr}[1]{{\llbracket \texttt{#1} \rrbracket}}
 #+LATEX_HEADER: \newcommand{\rprtwo}[1]{${\llbracket \texttt{#1} \rrbracket}_2$}
 #+LATEX_HEADER: \newcommand{\rprten}[1]{${\llbracket \texttt{#1} \rrbracket}_{10}$}
+#+LATEX_HEADER: \newcommand{\rprctwo}[1]{${\llbracket \texttt{#1} \rrbracket}_{C2}$}
 
 
 #+LaTeX_HEADER: \usepackage{fancyvrb}
