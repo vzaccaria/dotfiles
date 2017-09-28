@@ -30,6 +30,10 @@ cdf() { # short for `cdfinder`
   cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || exit
 }
 
+scopusgetfromeid() {
+    open "http://www.scopus.com/record/display.url?eid=$1&origin=resultslist"
+}
+
 
 # Compare original and gzipped file size
 gz() {
