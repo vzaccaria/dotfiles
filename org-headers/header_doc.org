@@ -5,7 +5,7 @@
 #+INCLUDE:   ./header_universal.org
 
 #+LATEX_HEADER: \setmainfont[]{Minion Pro}
-#+LATEX_HEADER: \setmonofont{FiraCode-Regular}
+#+LATEX_HEADER: \setmonofont[Scale=0.75]{FiraCode-Regular}
 
 #+LATEX_HEADER: \setlength{\parskip}{0pt plus 0.5ex}
 #+LaTeX_HEADER: \usepackage{geometry}
