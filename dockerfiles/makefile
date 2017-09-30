@@ -4,6 +4,7 @@ G=./generated
 
 all: \
 	$(G)/devenv.Dockerfile \
+	$(G)/devenv-gui.Dockerfile \
 	$(G)/modelsim.Dockerfile \
 	$(G)/luxrender.Dockerfile \
 	$(G)/maxima.Dockerfile

@@ -41,17 +41,7 @@ dock-setup-remote-qnappino-env() {
 
 
 dockshare-help() {
-    echo "# What is it"
-    echo ""
-    echo "Commands to run a docker image on qnappino by mounting a remote qnappino directory locally."
-    echo "Steps:"
-    echo "  1) first mount the remote qnappino directory with dockshare-mount DIR (DIR should be empty)"
-    echo "  2) run the container with "
-    echo ""
-    echo "# Command list:"
-    echo ""
-    echo " * dockshare-mount DIR : mount the remote directory qnappino:${DOCKSHARE_REMOTE_DIR} as local:DIR"
-    echo " * dockshare-run IMAGE : run a container with qnappino:${DOCKSHARE_REMOTE_DIR} mounted as container:${DOCKSHARE_CONTAINER_DIR}"
+    manmd ~/dotfiles/docs/devenv.md
 }
 
 export DOCKSHARE_CONTAINER_DIR="/Data"
@@ -94,12 +84,11 @@ devenv-openx11() {
 }
 
 devenv-help() {
-    echo "1. Open X11 locally with devenv-openx11"
-    echo "2. On the remote machine, setup the following display (copied on the clipboard):"
-    echo ""
-    echo "   export DISPLAY=`ip-show-all-local | grep 192.168.1`:0"
-    echo "export DISPLAY=`ip-show-all-local | grep 192.168.1`:0" | pbcopy
-    
+    manmd ~/dotfiles/docs/devenv.md
+}
+
+devenv-gui-connect-to-running-instance() {
+    echo "Click here: vnc://192.168.1.120:5901"
 }
 
 
