@@ -22,8 +22,8 @@ Run the following command:
 
     devenv-gui 
 
-When the container is running, type `./startx` and then open
-vnc://192.168.1.120:5901
+It launches the container and runs vnc with `docker exec`. When setup is
+finished then open vnc://192.168.1.120:5901
 
 ## Using Docker and VNC / Running
 
