@@ -13,5 +13,10 @@
 #+LATEX_HEADER: \setlength{\parskip}{0pt plus 0.5ex}
 #+LaTeX_HEADER: \usepackage{geometry}
 #+LATEX_HEADER: \geometry{top=3cm,left=2cm,right=2cm,bottom=3cm}
+#+LATEX_HEADER: \BeforeBeginEnvironment{minted}{\bigskip}
+#+LATEX_HEADER: \AfterEndEnvironment{minted}{\medskip}
+#+LATEX_HEADER: \renewcommand{\keyboard}{}
+#+LATEX_HEADER: \renewcommand{\screen}{}
+
 
 #+OPTIONS:   toc:nil 
