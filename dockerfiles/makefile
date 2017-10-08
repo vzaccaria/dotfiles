@@ -32,6 +32,10 @@ $(G)/devenv-gui.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile \
 		  $(R)/vnc.Dockerfile
 	cat $^ > $@
 
+$(G)/anki-gui.Dockerfile: $(G)/devenv-gui.Dockerfile \
+		  $(R)/anki.Dockerfile
+	cat $^ > $@
+
 $(G)/modelsim.Dockerfile: 	$(R)/from.ubuntu14.04.Dockerfile \
 				$(R)/vhdl.Dockerfile
 	cat $^ > $@

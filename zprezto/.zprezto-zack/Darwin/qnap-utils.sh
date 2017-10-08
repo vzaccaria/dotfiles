@@ -109,3 +109,15 @@ devenv-gui() {
     devenv-gui-start-container_priv
 }
 
+anki-gui-start() {
+    echo "Starting containerized gui; When startx complete, go to vnc://192.168.1.120:5901"
+    img=`docker run -dt \
+           -p 5901:5901 \
+	         -v /etc/localtime:/etc/localtime:ro                     \
+	         -v /share/CACHEDEV1_DATA/homes/admin/projects:/projects \
+	         -v /share/CACHEDEV1_DATA/homes/admin/projects/dot-local:/root/.local \
+	         -e PATH=/root/.local/bin:/opt/bin:/opt/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin \
+	         anki-gui-latest`
+    docker exec -d "$img" /root/startx
+}
+
