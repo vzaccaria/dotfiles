@@ -52,7 +52,13 @@ dockshare-run() {
 }
 
 dockshare-mount() {
+   echo "to unmount: umount $1"
    sshfs -p 21101 admin@vzaccaria.myqnapcloud.com:${DOCKSHARE_REMOTE_DIR} `grealpath $1` -ovolname=Data 
+}
+
+dockshare-mount-local() {
+    echo "to unmount: umount $1"
+    sshfs -p 21101 admin@192.168.1.120:${DOCKSHARE_REMOTE_DIR} `grealpath $1` -ovolname=Data 
 }
 
 qnap-mount-backup() {
