@@ -1,5 +1,9 @@
 name: dev-vzaccaria-github-io
-root: ~/development/github/vzaccaria.github.io
+root: /Users/zaccaria/development/github/org-websites/vzaccaria.github.io
+
+attach: false
+post: tmux -CC attach
+
 
 windows:
   - dev-vzaccaria-github-io:

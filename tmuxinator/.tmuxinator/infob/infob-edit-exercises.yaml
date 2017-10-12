@@ -1,0 +1,13 @@
+name: infob-edit-exercises
+root: /Users/zaccaria/development/github/org-institutional/materiale-corsi/infob/livesetup/live-ex
+
+attach: false
+post: tmux -CC attach
+
+windows:
+  - infob-edit-exercises:
+      layout: main-vertical
+      panes:
+        - cd . && vi esercizi-live.org
+        - cd . && make edit
+        - cd .
