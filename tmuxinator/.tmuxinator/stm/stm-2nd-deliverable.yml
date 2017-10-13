@@ -1,0 +1,13 @@
+name: stm-2nd-deliverable
+root: /Users/zaccaria/development/github/org-crypto/polimi-casca/docs/deliverables/171009_2nd_deliverable
+
+attach: false
+post: tmux -CC attach
+
+windows:
+  - stm-2nd-deliverable:
+      layout: main-vertical
+      panes:
+        - cd . && vi deliverable.tex
+        - cd . && make edit
+        - cd .
