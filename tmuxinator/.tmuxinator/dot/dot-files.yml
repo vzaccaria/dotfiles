@@ -1,6 +1,8 @@
 name: dot-files
 root: /Users/zaccaria/dotfiles/zprezto/.zprezto-zack/Darwin
 
+attach: false
+post: tmux -CC attach
 
 windows:
   - dot-emacs:
