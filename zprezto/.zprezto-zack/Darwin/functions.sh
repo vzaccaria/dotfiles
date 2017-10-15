@@ -201,7 +201,7 @@ dashboard() {
 }
 
 gvim() {
-    /usr/local/bin/emacs 
+    /Applications/Emacs.app/Contents/MacOS/bin/emacsclient "$@" -c
 }
 
 startemacs() {
