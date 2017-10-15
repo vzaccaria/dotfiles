@@ -168,7 +168,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Hack"
+   dotspacemacs-default-font '("Fira Code"
                                :size 12 
                                :weight normal
                                :width normal
@@ -315,26 +315,26 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
       '(progn
          (flycheck-define-checker grammar-gramcheck
-                                  "A general purpose grammar checker. It uses LanguageTool."
+           "A general purpose grammar checker. It uses LanguageTool."
 
-                                  :command ("gramchk" "check" source-original)
-                                  :error-parser flycheck-parse-checkstyle
-                                  :standard-input t
-                                  :modes (latex-mode plain-TeX-mode)
-                                  :next-checkers 'tex-lacheck)
+           :command ("gramchk" "check" source-original)
+           :error-parser flycheck-parse-checkstyle
+           :standard-input t
+           :modes (latex-mode plain-TeX-mode)
+           :next-checkers 'tex-lacheck)
 
 
          (flycheck-define-checker proselint
-                                  "A linter for prose."
-                                  :command ("proselint" source-inplace)
-                                  :error-patterns
-                                  ((warning line-start (file-name) ":" line ":" column ": "
-                                            (id (one-or-more (not (any " "))))
-                                            (message (one-or-more not-newline)
-                                                     (zero-or-more "\n" (any " ") (one-or-more not-newline)))
-                                            line-end))
-                                  :modes (latex-mode text-mode markdown-mode gfm-mode)
-                                  :next-checkers 'tex-lacheck)
+           "A linter for prose."
+           :command ("proselint" source-inplace)
+           :error-patterns
+           ((warning line-start (file-name) ":" line ":" column ": "
+                     (id (one-or-more (not (any " "))))
+                     (message (one-or-more not-newline)
+                              (zero-or-more "\n" (any " ") (one-or-more not-newline)))
+                     line-end))
+           :modes (latex-mode text-mode markdown-mode gfm-mode)
+           :next-checkers 'tex-lacheck)
 
          ;; These go into the list of checkers that can be used in every buffer (according to major-mode)
          (add-to-list 'flycheck-checkers 'proselint)
@@ -357,7 +357,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
     (setq deft-recursive t)
     (add-hook 'js2-mode-hook (lambda () (interactive)
                                (vz/add-node-modules-path)
-                              ))
+                               ))
     (add-hook 'shell-mode (lambda () (interactive)
                             flycheck-select-checker 'sh-shellcheck))
     ))
@@ -403,7 +403,47 @@ you should place you code here."
     (setq browse-url-mailto-function 'browse-url-generic)
     (setq browse-url-generic-program "open")
     ;; On Darwin set up Fira Code Symbol ligatures..
-    ;;; Fira code
+
+    (defun my-correct-symbol-bounds (pretty-alist)
+      "Prepend a TAB character to each symbol in this alist,
+this way compose-region called by prettify-symbols-mode
+will use the correct width of the symbols
+instead of the width measured by char-width."
+      (mapcar (lambda (el)
+                (setcdr el (string ?\t (cdr el)))
+                el)
+              pretty-alist))
+
+    (defun my-ligature-list (ligatures codepoint-start)
+      "Create an alist of strings to replace with
+codepoints starting from codepoint-start."
+      (let ((codepoints (-iterate '1+ codepoint-start (length ligatures))))
+        (-zip-pair ligatures codepoints)))
+
+    (setq my-fira-code-ligatures
+          (let* ((ligs '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\"
+                         "{-" "[]" "::" ":::" ":=" "!!" "!=" "!==" "-}"
+                         "--" "---" "-->" "->" "->>" "-<" "-<<" "-~"
+                         "#{" "#[" "##" "###" "####" "#(" "#?" "#_" "#_("
+                         ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*"
+                         "/**" "/=" "/==" "/>" "//" "///" "&&" "||" "||="
+                         "|=" "|>" "^=" "$>" "++" "+++" "+>" "=:=" "=="
+                         "===" "==>" "=>" "=>>" "<=" "=<<" "=/=" ">-" ">="
+                         ">=>" ">>" ">>-" ">>=" ">>>" "<*" "<*>" "<|" "<|>"
+                         "<$" "<$>" "<!--" "<-" "<--" "<->" "<+" "<+>" "<="
+                         "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<" "<~"
+                         "<~~" "</" "</>" "~@" "~-" "~=" "~>" "~~" "~~>" "%%"
+                         "x" ":" "+" "+" "*")))
+            (my-correct-symbol-bounds (my-ligature-list ligs #Xe100))))
+
+    (defun my-set-fira-code-ligatures ()
+      "Add fira-code ligatures for use with prettify-symbols-mode."
+      (setq prettify-symbols-alist
+            (append my-fira-code-ligatures prettify-symbols-alist))
+      (prettify-symbols-mode))
+
+    (add-hook 'haskell-mode-hook 'my-set-fira-code-ligatures)
+
     ;; This works when using emacs --daemon + emacsclient
     (find-file "~/Dropbox/org/dashboard.org")
     ;; setup latex correlation
@@ -445,8 +485,8 @@ you should place you code here."
   ;;
   ;; https://www.gnu.org/software/emacs/manual/html_node/reftex/Theorem-and-Axiom.html
   (setq reftex-label-alist
-  '(("corollary"   ?a "co:"  "~\\ref{%s}" nil ("corollary"   "cor.") -2)
-    ("theorem" ?h "th:" "~\\ref{%s}" t   ("theorem" "th.") -3)))
+        '(("corollary"   ?a "co:"  "~\\ref{%s}" nil ("corollary"   "cor.") -2)
+          ("theorem" ?h "th:" "~\\ref{%s}" t   ("theorem" "th.") -3)))
 
   (setq reftex-plug-into-AUCTeX t)
   (setq reftex-ref-macro-prompt nil)
