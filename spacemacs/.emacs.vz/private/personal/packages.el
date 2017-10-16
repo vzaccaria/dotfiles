@@ -212,6 +212,7 @@
           ("sc"  "#+BEGIN_SRC c      :results none   \n\n#+END_SRC")
           ("sj"  "#+BEGIN_SRC js     :results none   \n\n#+END_SRC")
           ("sjt" "#+BEGIN_SRC js :tangle js/yourfile.js   \n\n#+END_SRC")
+          ("ssi" "#+BEGIN_SRC shell :results file :file tempo.png :exports results\n cat <<EOF | nomnoml \n [<start>st]->[<state>plunder] \n [plunder]->[<choice>more loot] \n [more loot]->[st] \n [more loot] no ->[<end>e] \n EOF \n #+END_SRC \n #+attr_latex: :width 0.25\linewidth :float t :placement [h] \n #+RESULTS: \n ")
 
      ;;; --- FIGURES ---
           ("fe" "#+BEGIN_EXPORT latex\n\\begin{figure}\n\n\\end{figure}\n#+END_EXPORT")
