@@ -1,0 +1,13 @@
+name: infob-edit-lecture
+root: /Users/zaccaria/development/github/org-institutional/materiale-corsi/infob/docs/org
+
+attach: false
+post: tmux -CC attach
+
+windows:
+  - infob-edit-lecture:
+      layout: main-vertical
+      panes:
+        - cd . && make edit
+        - cd . && make watch-edit
+        - cd .
