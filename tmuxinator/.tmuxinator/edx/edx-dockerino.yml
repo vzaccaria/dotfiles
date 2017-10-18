@@ -1,5 +1,9 @@
 name: edx-dockerino
-root: ~/development/github/edx-dockerino
+root: /Users/zaccaria/development/github/org-edx/edx-dockerino
+
+attach: false
+post: tmux -CC attach
+
 
 windows:
   - edx-dockerino:
@@ -7,3 +11,4 @@ windows:
       panes:
         - cd .
         - cd .
+        - cd . && DEBUG=* ./index.js serve
