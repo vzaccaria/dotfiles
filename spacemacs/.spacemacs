@@ -556,6 +556,15 @@ codepoints starting from codepoint-start."
  '(hl-fg-colors
    (quote
     ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
+ '(ledger-reports
+   (quote
+    (("FRA" "ledger -f /Users/zaccaria/Dropbox/org/institutional/administration/finance/fondi.ledger reg Assets\\:Fondi\\:Ateneo\\:Fondo\\ Ricerca\\ Ateneo")
+     ("STMicroelectronics" "ledger -f /Users/zaccaria/Dropbox/org/institutional/administration/finance/fondi.ledger reg Assets\\:Fondi\\:STMicroelectronics")
+     ("fondi esercitazioni" "ledger -f /Users/zaccaria/Dropbox/org/institutional/administration/finance/fondi.ledger reg Assets\\:Fondi\\:Ateneo\\:Esercitazioni")
+     ("bal" "%(binary) -f %(ledger-file) bal")
+     ("reg" "%(binary) -f %(ledger-file) reg")
+     ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")
+     ("account" "%(binary) -f %(ledger-file) reg %(account)"))))
  '(magit-diff-use-overlays nil)
  '(magit-log-section-arguments (quote ("--decorate" "-n256")))
  '(markdown-command "/usr/local/bin/pandoc")
