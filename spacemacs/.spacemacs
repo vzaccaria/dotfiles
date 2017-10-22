@@ -336,16 +336,34 @@ before packages are loaded. If you are unsure, you should try in setting them in
            :modes (latex-mode text-mode markdown-mode gfm-mode)
            :next-checkers 'tex-lacheck)
 
+         (flycheck-define-checker verilog-check
+           "A linter for verilog using verilator."
+           :command ("/usr/local/bin/perl" "/usr/local/bin/verilator" "--lint-only" "-Wall" source)
+           :error-patterns
+           ((warning line-start "%Warning-" (zero-or-more not-newline) ": "
+                     (file-name) ":" line ": " (message) line-end)
+            (error line-start "%Error: " (file-name) ":"
+                   line ": " (message) line-end))
+           :modes verilog-mode)
+
          ;; These go into the list of checkers that can be used in every buffer (according to major-mode)
          (add-to-list 'flycheck-checkers 'proselint)
          (add-to-list 'flycheck-checkers 'grammar-gramcheck)
+         (add-to-list 'flycheck-checkers 'verilog-check)
 
          (add-hook 'plain-TeX-mode-hook 'flycheck-mode)
          (add-hook 'LaTeX-mode-hook 'flycheck-mode)
          (add-hook 'js-mode-hook 'flycheck-mode)
+         (add-hook 'verilog-mode-hook 'flycheck-mode)
+
          (add-hook 'shell-mode (lambda () (interactive)
                                  flycheck-select-checker 'sh-shellcheck))
-         )
+         (add-hook 'verilog-mode (lambda () (interactive)
+                              (flycheck-mode)
+                              (flycheck-disable-checker 'verilog-verilator)
+                              (flycheck-select-checker 'verilog-check)))
+      )
+
       )
     (setq org-enable-reveal-js-support t)
     (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
