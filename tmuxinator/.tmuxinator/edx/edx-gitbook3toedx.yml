@@ -1,5 +1,8 @@
 name: dev-gitbook3toedx
-root: ~/development/github/gitbook3toedx
+root: /Users/zaccaria/development/github/org-edx/gitbook3toedx
+
+attach: false
+post: tmux -CC attach
 
 windows:
   - dev-gitbook3toedx:
