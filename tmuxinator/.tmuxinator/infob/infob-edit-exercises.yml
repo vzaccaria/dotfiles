@@ -8,6 +8,6 @@ windows:
   - infob-edit-exercises:
       layout: main-vertical
       panes:
-        - cd . && vi esercizi-live.org
+        - cd . && gvim esercizi-live.org
         - cd . && make edit
         - cd .

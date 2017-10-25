@@ -353,11 +353,20 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
          (add-hook 'plain-TeX-mode-hook 'flycheck-mode)
          (add-hook 'LaTeX-mode-hook 'flycheck-mode)
+
          (add-hook 'js-mode-hook 'flycheck-mode)
-         (add-hook 'verilog-mode-hook 'flycheck-mode)
+
+         (add-hook 'javascript-mode-hook 'flycheck-mode)
+
+         (add-hook 'javascript-mode '(lambda () (interactive)
+                                       (flycheck-select-checker 'javascript-eslint)
+                                       ))
 
          (add-hook 'shell-mode (lambda () (interactive)
                                  flycheck-select-checker 'sh-shellcheck))
+
+         (add-hook 'verilog-mode-hook 'flycheck-mode)
+
          (add-hook 'verilog-mode (lambda () (interactive)
                               (flycheck-mode)
                               (flycheck-disable-checker 'verilog-verilator)

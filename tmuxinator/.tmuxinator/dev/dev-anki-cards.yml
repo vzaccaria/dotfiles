@@ -1,0 +1,13 @@
+name: dev-anki-cards
+root: /Users/zaccaria/development/github/org-study/anki-cards
+
+attach: false
+post: tmux -CC attach
+
+windows:
+  - dev-anki-cards:
+      layout: main-vertical
+      panes:
+        - cd . && make watch 
+        - cd . && make edit
+        - cd .
