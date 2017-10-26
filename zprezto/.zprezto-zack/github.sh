@@ -29,6 +29,7 @@ vg() {
         sync)      msg="sync: ($mc)";;
         feat)      msg="feat: $msg (in $mc)";;
         generic)   msg="$msg ($mc)" ;;
+        update)    msg="update with $msg ($mc)" ;;
         *)
         ;;
     esac
@@ -68,6 +69,12 @@ feat()     {
 generic()  {
     vg generic $*
 }
+
+update()  {
+    vg update $*
+}
+
+alias u='update'
 
 move()     {
     vg move $*
