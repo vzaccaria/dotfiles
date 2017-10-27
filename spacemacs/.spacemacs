@@ -619,6 +619,7 @@ codepoints starting from codepoint-start."
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(prettier-target-mode "js2-mode")
+ '(safe-local-variable-values (quote ((TeX-command-extra-options . "-shell-escape"))))
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
  '(term-default-bg-color "#fdf6e3")
  '(term-default-fg-color "#657b83")
