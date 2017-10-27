@@ -75,6 +75,9 @@ update()  {
 }
 
 alias u='update'
+uu() {
+    update . "$*"
+}
 
 move()     {
     vg move $*

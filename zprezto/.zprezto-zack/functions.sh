@@ -27,6 +27,9 @@ mandown() {
     pandoc -s -f markdown -t man "$*" | man -l -
 }
 
+alias lifthelp='manmd ~/dotfiles/docs/functional-shell.md'
+alias functionalshellhelp='manmd ~/dotfiles/docs/functional-shell.md'
+
 lift() {
     arg=$1
     opts=${*:2}
@@ -47,6 +50,12 @@ lift() {
             ;;
         find)
             find . -name "${opts}" -print0
+            ;;
+        f)
+            find . -iname "*${opts}*" -print0
+            ;;
+        fex)
+            find . -iname "*\.${opts}" -print0
             ;;
         ag)
             ag -l --nocolor -0 "${opts}"
