@@ -23,6 +23,10 @@ if [[ -s "${srcdir}/github.sh" ]]; then
     source "${srcdir}/github.sh"
 fi
 
+if [[ -s "${srcdir}/functional.sh" ]]; then
+    source "${srcdir}/functional.sh"
+fi
+
 # Setup common vi keybindings
 bindkey -v
 
