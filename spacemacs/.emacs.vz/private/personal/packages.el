@@ -223,6 +223,9 @@
      ;;; --- SOURCES: wave files (needs phantomjs)
           ("ssw" "#+NAME: segnale\n#+BEGIN_SRC js :exports none\n { signal: [\n { name: \"clk\",         wave: \"p.....|...\" },\n { name: \"Data\",        wave: \"x.345x|=.x\", data: [\"head\", \"body\", \"tail\", \"data\"] },\n { name: \"Request\",     wave: \"0.1..0|1.0\" },\n {},\n { name: \"Acknowledge\", wave: \"1.....|01.\" }\n]} \n#+END_SRC\n\n# if you change the verilog module, reevaluate with C-c \n #+BEGIN_SRC shell :results silent :exports none :noweb yes\ncat <<EOF | netlistsvg wave | ps2pdf - | pdfcrop - images/bool_wave.pdf \n<<segnale>>\n #+END_SRC  \n \n #+attr_latex: :width 0.55\\linewidth :float t :placement [h] \n [[file:images/bool_wave.pdf]] \n")
 
+     ;;; --- SOURCES: gantt chart with mermaid
+          ("ssg", " cat <<EOF | mmdc -i /dev/stdin -o ./gantt.pdf \n gantt\n       dateFormat  YYYY-MM-DD\n       title Allocazione tempo su progetti \n       \n       Section\n       First deliverable         :done,    2017-03-29,2017-07-29 \n       Second deliverable        :active,  2017-07-29,2017-11-29 \n       Third  deliverable        :         2017-11-29,2018-03-29 \n\n       section Other\n       (symbolic)            :active,  2017-09-01,2017-12-31 \n EOF \n")
+
      ;;; --- FIGURES ---
           ("fe" "#+BEGIN_EXPORT latex\n\\begin{figure}\n\n\\end{figure}\n#+END_EXPORT")
           ("fc" "#+CAPTION: caption with label \\label{l1}\n#+attr_latex: :width 0.85\\linewidth :float t :placement [h]")
