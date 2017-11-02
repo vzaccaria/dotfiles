@@ -7,7 +7,8 @@ all: \
 	$(G)/devenv-gui.Dockerfile \
 	$(G)/modelsim.Dockerfile \
 	$(G)/luxrender.Dockerfile \
-	$(G)/maxima.Dockerfile
+	$(G)/maxima.Dockerfile \
+	$(G)/chipwhisperer-env.Dockerfile
 
 $(G)/reflex-ghcjs-dev.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile \
 			$(R)/base.Dockerfile \
@@ -32,6 +33,10 @@ $(G)/devenv-gui.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile \
 		  $(R)/vnc.Dockerfile
 	cat $^ > $@
 
+$(G)/chipwhisperer-env.Dockerfile: $(G)/devenv-gui.Dockerfile \
+		  $(R)/chipwhisperer.Dockerfile
+	cat $^ > $@
+
 $(G)/anki-gui.Dockerfile: $(G)/devenv-gui.Dockerfile \
 		  $(R)/anki.Dockerfile
 	cat $^ > $@
@@ -52,6 +57,9 @@ $(G)/maxima.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile \
 
 build-%: $(G)/%.Dockerfile
 	docker --tlsverify build -f $< -t $*-latest .
+
+build-mac-%: $(G)/%.Dockerfile
+	docker build -f $< -t $*-latest .
 
 reflex-ghcjs-build: build-reflex-ghcjs-dev
 ghcjs-dev-build: build-ghcjs-dev

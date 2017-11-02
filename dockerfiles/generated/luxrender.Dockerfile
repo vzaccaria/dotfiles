@@ -4,6 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV SHELL /bin/zsh
 ENTRYPOINT /bin/zsh
 
+RUN apt-get update && apt-get install -y locales
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
@@ -36,7 +37,7 @@ RUN apt-get install -y \
 
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 WORKDIR /root/dotfiles
-RUN git reset --hard df0534b 
+RUN git reset --hard 4ba0129e
 
 RUN git clone https://github.com/syl20bnr/spacemacs /root/.emacs.d
 
@@ -46,7 +47,7 @@ WORKDIR /root/dotfiles/zprezto/.zprezto
 RUN git submodule update --init
 WORKDIR /root/dotfiles
 
-RUN stow zprezto tmux-linux spacemacs
+RUN stow zprezto linux-tmux spacemacs
 
 WORKDIR /root
 
