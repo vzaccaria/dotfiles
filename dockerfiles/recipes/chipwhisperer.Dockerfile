@@ -9,3 +9,6 @@ RUN pip install pyqtgraph
 RUN git clone https://github.com/newaetech/chipwhisperer.git && \
     cd chipwhisperer/software && \
     python setup.py develop
+COPY ./scripts/99-cwlite.rules /etc/udev/rules.d/
+RUN usermod -a -G plugdev root
+# RUN udevadm control --reload-rules
