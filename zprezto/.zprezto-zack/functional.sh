@@ -44,15 +44,16 @@ lift() {
 
 
 
-
-map() {
-    command=$1
-    args=${*:2}
-    xargs -0 -n 1 -J _ "$command" "$args"
-}
+alias map='xargs -0 -n 1 -I {}'
 
 fmap() {
     command=$1
     args=${*:2}
-    xargs -0 -n 1 -J _ "$command" "$args" | tr '\n' '\0'
+    xargs -0 -n 1 -I {} $command $args | tr '\n' '\0'
 }
+
+reduce() {
+    tr '\0' ' '
+}
+
+

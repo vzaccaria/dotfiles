@@ -240,17 +240,6 @@ mov2gif() {
     fi
 }
 
-map() {
-    command=$1
-    args=${*:2}
-    xargs -0 -n 1 -J _ "$command" "$args"
-}
-
-fmap() {
-    command=$1
-    args=${*:2}
-    xargs -0 -n 1 -J _ "$command" "$args" | tr '\n' '\0'
-}
 
 stack-docs() {
     open "$(stack path --local-doc-root)"

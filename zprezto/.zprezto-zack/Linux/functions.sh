@@ -27,15 +27,4 @@ restartemacs() {
 
 
 
-map() {
-    command=$1
-    args=${*:2}
-    xargs -0 -n 1 -I _ "$command" "$args"
-}
-
-fmap() {
-    command=$1
-    args=${*:2}
-    xargs -0 -n 1 -I _ "$command" "$args" | tr '\n' '\0'
-}
 

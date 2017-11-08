@@ -16,9 +16,9 @@ Available lift instances:
 
 # Map command
 
-Maps a command to strings, each substituted into placeholder `_`:
+Maps a command to strings, each substituted into placeholder `{}`:
 
-    lift cat filenames.txt | map command ... _ ...
+    lift cat filenames.txt | map command ... {} ...
 
 Use fmap instead of map to flatten results into a sequence of 0-ended
 file names
