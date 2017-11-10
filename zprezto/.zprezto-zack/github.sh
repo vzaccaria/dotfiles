@@ -140,6 +140,10 @@ gitchdirintoroot() {
     pushd "$(git rev-parse --show-toplevel)"
 }
 
+git-track-origin-master-as-master() {
+    git branch --set-upstream-to=origin/master master
+}
+
 overleafstartedit() {
     echo "We are now going to fetch the current version of the paper from the overleaf repository."
     echo "to finish type: overleafstopedit"

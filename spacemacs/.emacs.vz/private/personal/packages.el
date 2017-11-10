@@ -225,6 +225,8 @@
 
      ;;; --- SOURCES: gantt chart with mermaid
           ("ssg", " cat <<EOF | mmdc -i /dev/stdin -o ./gantt.pdf \n gantt\n       dateFormat  YYYY-MM-DD\n       title Allocazione tempo su progetti \n       \n       Section\n       First deliverable         :done,    2017-03-29,2017-07-29 \n       Second deliverable        :active,  2017-07-29,2017-11-29 \n       Third  deliverable        :         2017-11-29,2018-03-29 \n\n       section Other\n       (symbolic)            :active,  2017-09-01,2017-12-31 \n EOF \n")
+     ;;; --- SOURCES: data structures
+          ("ssds" "# if you change the verilog module, reevaluate with C-c \n #+BEGIN_SRC shell :results silent :exports none :noweb yes\ncat <<EOF | struct2pdf --output images/struct-twitter.pdf \nvariableName: twitterdb\nvariableContent:\n  type: struct\n  typeName: utenti\n  fields: \n     - name: numero_utenti\n     - name: dati_utente\n       type: array\n       follow: [ iterator ] \n       range: \n          min: 0\n          iterator: u\n          max: 100\n       of: \n          type: struct\n          typeName: utente\n          fields: \n             - name: nome\n             - name: data_iscrizione \n             - name: numero_messaggi\n             - name: messaggi\n               type: array\n               follow: [ iterator ]\n               range: \n                  min: 0\n                  iterator: m \n               of:\n                  type: struct\n                  typeName: tweet\n                  fields: \n                      - name: contenuto\n                      - name: numero_hashtags\n                      - name: hashtags\n                        type: array\n                        range: \n                          min: 0\n                          iterator: h \n                        of:\n                          type: struct\n                          typeName: stringa\n                        \n       \nEOF\n #+END_SRC  \n \n#+attr_latex: :width 0.85\\linewidth \n[[file:images/struct-twitter.pdf]] \n")
 
      ;;; --- FIGURES ---
           ("fe" "#+BEGIN_EXPORT latex\n\\begin{figure}\n\n\\end{figure}\n#+END_EXPORT")
@@ -251,7 +253,8 @@
           ("mat" "M = \\left(\\begin{array}{ccc}\n a& = &b \\\\\n\\end{array}\\right)\n")
 
      ;;; --- MINI PAGES and COLUMNS
-          ("hp" "#+attr_latex: :options {0.5\\textwidth}\n#+begin_minipage\n\n#+end_minipage")
+          ("hp" "#+BEGIN_EXPORT latex\n\\begin{minipage}[t]{0.55\\textwidth}\n#+END_EXPORT\n#+BEGIN_EXPORT latex\n\\end{minipage}\n#+END_EXPORT\n\\hspace{0.9cm}\n#+BEGIN_EXPORT latex\n\\begin{minipage}[t]{0.40\\textwidth}\n#+END_EXPORT\n#+BEGIN_EXPORT latex\n\\end{minipage}\n#+END_EXPORT\n"
+           )
           ("btc" "***\n :PROPERTIES:\n :BEAMER_env: column\n :BEAMER_col: 0.5\n :END:\n  #+BEGIN_footnotesize \n\n #+END_footnotesize \n")
           ("brc" "***\n :PROPERTIES:\n :BEAMER_env: column\n :BEAMER_col: 0.32\n :END:\n #+BEGIN_footnotesize \n\n #+END_footnotesize \n"))
         )
