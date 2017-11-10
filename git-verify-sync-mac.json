@@ -3,7 +3,7 @@
         "options": {
             "from": -1,
             "depth1": true,
-            "onlyFailing": true
+            "suppressSuccess": true
         }
     },
     {
