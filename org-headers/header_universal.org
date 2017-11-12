@@ -95,6 +95,50 @@
 
 # Helpful macros for lectures ..
 
+#+LATEX_HEADER: \tikzstyle{none}=[rectangle, minimum size=1cm]
+#+LATEX_HEADER: \tikzstyle{box}=[rectangle, fill=white, draw=black, minimum size=2cm, rounded corners]
+#+LATEX_HEADER: \tikzstyle{sbox}=[rectangle, fill=white, draw=black, minimum width=4cm, rounded corners]
+#+LATEX_HEADER: \tikzstyle{state}=[circle, scale=.5, fill=white, draw=black, minimum size=2cm, rounded corners]
+#+LATEX_HEADER: \tikzstyle{boxes}=[double copy shadow, fill=white, rectangle, draw=black, minimum size=2cm, rounded corners]
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \tikzstyle{container} = [blue dotted]
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \tikzstyle{arrow}=[-latex]
+#+LATEX_HEADER: \tikzstyle{doublearrow}=[latex-latex]
+#+LATEX_HEADER: \tikzstyle{invarrow}=[latex-]
+#+LATEX_HEADER: \tikzstyle{measure}=[|<->|]
+#+LATEX_HEADER: 
+#+LATEX_HEADER: % Indicate the type of an arrow
+#+LATEX_HEADER: \tikzstyle{arrowlabel}     =[above, scale=.7, color=black!40]
+#+LATEX_HEADER: \tikzstyle{arrowlabelabove}=[above, scale=.7, color=black!40]
+#+LATEX_HEADER: \tikzstyle{arrowlabelbelow}=[below, scale=.7, color=black!40]
+#+LATEX_HEADER: 
+#+LATEX_HEADER: % Indicate a value of an arrow
+#+LATEX_HEADER: \tikzstyle{varrowlabel}     =[above, scale=.5, color=black, font=\ttfamily\bfseries]
+#+LATEX_HEADER: \tikzstyle{varrowlabelabove}=[above, scale=.5, color=black, font=\ttfamily\bfseries]
+#+LATEX_HEADER: \tikzstyle{varrowlabelbelow}=[below, scale=.5, color=black, font=\ttfamily\bfseries]
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \tikzstyle{leftlabel}      =[scale=.7, align=left]
+#+LATEX_HEADER: \tikzstyle{rightlabel}     =[scale=.7, align=right]
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \tikzstyle{stepdescr}=[circle, scale=.4, draw=black!40]
+#+LATEX_HEADER: \tikzstyle{descr}=[scale=.5, color=black!40]
+#+LATEX_HEADER: \tikzstyle{descrconnect}=[vzorange, -{Circle[]}, thick]
+#+LATEX_HEADER: \tikzstyle{setconnect}=[vzorange, {Parenthesis[scale=3,reversed]}-{Circle[]}, thick]
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \tikzstyle{blue dotted}=[draw=blue!50!white, line width=1pt, dash pattern=on 1pt off 4pt on 6pt off 4pt, inner sep=4mm, rectangle, rounded corners]
+#+LATEX_HEADER: \tikzstyle{ribbonread}= [draw=black!20 , line width = 1.0ex , {Triangle Cap[]}-{Triangle Cap[reversed]} ]
+#+LATEX_HEADER: \tikzstyle{ribbonwrite}=[draw=black!20 , line width = 1.0ex , {Triangle Cap[reversed]}-{Triangle Cap[]} ]
+#+LATEX_HEADER: \tikzstyle{ribbonrw}=   [draw=black!20 , line width = 1.0ex , {Triangle Cap[]}-{Triangle Cap[]}]
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \tikzstyle{matrix aspect}=[matrix of nodes, nodes={outer sep=0pt,inner sep=3pt},column sep=3em,row sep=5ex]
+#+LATEX_HEADER: 
+#+LATEX_HEADER: % Apps and software engineering
+#+LATEX_HEADER: \tikzstyle{app}=[rectangle, draw=black, minimum width=3cm, align=center,scale=0.6, rounded corners, font=\small\scshape]
+#+LATEX_HEADER: \tikzstyle{db}=[cylinder, draw=black, rotate=90, minimum height=2.5cm, minimum width=1cm, align=center,scale=0.6, font=\small\scshape]
+#+LATEX_HEADER: \tikzstyle{format}=[circle, scale=.5, fill=white, draw=black, minimum size=1cm,font=\scshape]
+#+LATEX_HEADER: \tikzstyle{resource}=[circle, scale=.5, fill=black, draw=black, text=white, minimum size=0.5cm,font=\scshape]
+
 #+LATEX_HEADER: \newcommand{\keyboard}{{\tikz \node[box, minimum size=0cm] {\faKeyboardO};}}
 #+LATEX_HEADER: \newcommand{\screen}{{\tikz \node[box, minimum size=0cm] {\faTerminal};}}
 #+LATEX_HEADER: \newcommand{\rpr}[1]{{\llbracket \texttt{#1} \rrbracket}}
@@ -107,50 +151,4 @@
 #+LaTeX_HEADER: \usepackage{setspace}
 #+LaTeX_HEADER: \usepackage{etoolbox}
 #+LaTeX_HEADER: \appto\verbatim{\tiny\myunicodefallback\baselineskip=-\maxdimen\lineskip=0pt}
-
-#+BEGIN_EXPORT latex
-\tikzstyle{none}=[rectangle, minimum size=1cm]
-\tikzstyle{box}=[rectangle, fill=white, draw=black, minimum size=2cm, rounded corners]
-\tikzstyle{sbox}=[rectangle, fill=white, draw=black, minimum width=4cm, rounded corners]
-\tikzstyle{state}=[circle, scale=.5, fill=white, draw=black, minimum size=2cm, rounded corners]
-\tikzstyle{boxes}=[double copy shadow, fill=white, rectangle, draw=black, minimum size=2cm, rounded corners]
-
-\tikzstyle{container} = [blue dotted]
-
-\tikzstyle{arrow}=[-latex]
-\tikzstyle{doublearrow}=[latex-latex]
-\tikzstyle{invarrow}=[latex-]
-\tikzstyle{measure}=[|<->|]
-
-% Indicate the type of an arrow
-\tikzstyle{arrowlabel}     =[above, scale=.7, color=black!40]
-\tikzstyle{arrowlabelabove}=[above, scale=.7, color=black!40]
-\tikzstyle{arrowlabelbelow}=[below, scale=.7, color=black!40]
-
-% Indicate a value of an arrow
-\tikzstyle{varrowlabel}     =[above, scale=.5, color=black, font=\ttfamily\bfseries]
-\tikzstyle{varrowlabelabove}=[above, scale=.5, color=black, font=\ttfamily\bfseries]
-\tikzstyle{varrowlabelbelow}=[below, scale=.5, color=black, font=\ttfamily\bfseries]
-
-\tikzstyle{leftlabel}      =[scale=.7, align=left]
-\tikzstyle{rightlabel}     =[scale=.7, align=right]
-
-\tikzstyle{stepdescr}=[circle, scale=.4, draw=black!40]
-\tikzstyle{descr}=[scale=.5, color=black!40]
-\tikzstyle{descrconnect}=[vzorange, -{Circle[]}, thick]
-\tikzstyle{setconnect}=[vzorange, {Parenthesis[scale=3,reversed]}-{Circle[]}, thick]
-
-\tikzstyle{blue dotted}=[draw=blue!50!white, line width=1pt, dash pattern=on 1pt off 4pt on 6pt off 4pt, inner sep=4mm, rectangle, rounded corners]
-\tikzstyle{ribbonread}= [draw=black!20 , line width = 1.0ex , {Triangle Cap[]}-{Triangle Cap[reversed]} ]
-\tikzstyle{ribbonwrite}=[draw=black!20 , line width = 1.0ex , {Triangle Cap[reversed]}-{Triangle Cap[]} ]
-\tikzstyle{ribbonrw}=   [draw=black!20 , line width = 1.0ex , {Triangle Cap[]}-{Triangle Cap[]}]
-
-\tikzstyle{matrix aspect}=[matrix of nodes, nodes={outer sep=0pt,inner sep=3pt},column sep=3em,row sep=5ex]
-
-% Apps and software engineering
-\tikzstyle{app}=[rectangle, draw=black, minimum width=3cm, align=center,scale=0.6, rounded corners, font=\small\scshape]
-\tikzstyle{db}=[cylinder, draw=black, rotate=90, minimum height=2.5cm, minimum width=1cm, align=center,scale=0.6, font=\small\scshape]
-\tikzstyle{format}=[circle, scale=.5, fill=white, draw=black, minimum size=1cm,font=\scshape]
-\tikzstyle{resource}=[circle, scale=.5, fill=black, draw=black, text=white, minimum size=0.5cm,font=\scshape]
-#+END_EXPORT
 
