@@ -1,0 +1,11 @@
+languagetool:
+  ignoredSuggestions:
+    - smashup
+    - Axis
+    - smashups
+    - Mecca
+    - convertible
+    - Ex
+    - cryptography
+    - combinatorial
+    - satisfiability
