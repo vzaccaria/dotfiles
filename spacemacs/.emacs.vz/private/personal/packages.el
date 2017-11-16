@@ -162,6 +162,7 @@
      (ditaa . t)
      (plantuml . t)
      (latex . t)
+     (gnuplot . t)
      ))
 
 
