@@ -323,6 +323,14 @@ before packages are loaded. If you are unsure, you should try in setting them in
            :modes (latex-mode plain-TeX-mode)
            :next-checkers 'tex-lacheck)
 
+         (flycheck-define-checker grammar-gramcheck-markdown
+           "A general purpose grammar checker. "
+
+           :command ("gramchk" "--rulefile" "/Users/zaccaria/dotfiles/.gramchk.yml" "check" source-original)
+           :error-parser flycheck-parse-checkstyle
+           :standard-input nil 
+           :modes (markdown-mode)
+           )
 
          (flycheck-define-checker proselint
            "A linter for prose."
@@ -349,12 +357,13 @@ before packages are loaded. If you are unsure, you should try in setting them in
          ;; These go into the list of checkers that can be used in every buffer (according to major-mode)
          (add-to-list 'flycheck-checkers 'proselint)
          (add-to-list 'flycheck-checkers 'grammar-gramcheck)
+         (add-to-list 'flycheck-checkers 'grammar-gramcheck-markdown)
          (add-to-list 'flycheck-checkers 'verilog-check)
 
          (add-hook 'plain-TeX-mode-hook 'flycheck-mode)
          (add-hook 'LaTeX-mode-hook 'flycheck-mode)
-
          (add-hook 'js-mode-hook 'flycheck-mode)
+         (add-hook 'markdown-mode-hook 'flycheck-mode)
 
          (add-hook 'javascript-mode-hook 'flycheck-mode)
 
@@ -463,13 +472,31 @@ codepoints starting from codepoint-start."
                          "x" ":" "+" "+" "*")))
             (my-correct-symbol-bounds (my-ligature-list ligs #Xe100))))
 
+    (setq my-hasklig-ligatures
+          (let* ((ligs '("&&" "***" "*>" "\\\\" "||" "|>" "::"
+                         "==" "===" "==>" "=>" "=<<" "!!" ">>"
+                         ">>=" ">>>" ">>-" ">-" "->" "-<" "-<<"
+                         "<*" "<*>" "<|" "<|>" "<$>" "<>" "<-"
+                         "<<" "<<<" "<+>" ".." "..." "++" "+++"
+                         "/=" ":::" ">=>" "->>" "<=>" "<=<" "<->")))
+            (my-correct-symbol-bounds (my-ligature-list ligs #Xe100))))
+
+    ;; nice glyphs for haskell with hasklig
+    (defun my-set-hasklig-ligatures ()
+      "Add hasklig ligatures for use with prettify-symbols-mode."
+      (setq prettify-symbols-alist
+            (append my-hasklig-ligatures prettify-symbols-alist))
+      (prettify-symbols-mode))
+
+    (add-hook 'haskell-mode-hook 'my-set-hasklig-ligatures)
+
     (defun my-set-fira-code-ligatures ()
       "Add fira-code ligatures for use with prettify-symbols-mode."
       (setq prettify-symbols-alist
             (append my-fira-code-ligatures prettify-symbols-alist))
       (prettify-symbols-mode))
 
-    (add-hook 'haskell-mode-hook 'my-set-fira-code-ligatures)
+    ;; (add-hook 'haskell-mode-hook 'my-set-fira-code-ligatures)
 
     ;; This works when using emacs --daemon + emacsclient
     (find-file "~/Dropbox/org/dashboard.org")
