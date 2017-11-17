@@ -317,11 +317,10 @@ before packages are loaded. If you are unsure, you should try in setting them in
          (flycheck-define-checker grammar-gramcheck
            "A general purpose grammar checker. It uses LanguageTool."
 
-           :command ("gramchk" "--rulefile" "/Users/zaccaria/dotfiles/.gramchk.yml" "--latex" "check" source-original)
+           :command ("gramchk" "--rulefile" "/Users/zaccaria/dotfiles/.gramchk.yml" "check" source-original "--latex")
            :error-parser flycheck-parse-checkstyle
            :standard-input nil 
-           :modes (latex-mode plain-TeX-mode)
-           :next-checkers 'tex-lacheck)
+           :modes (latex-mode plain-TeX-mode))
 
          (flycheck-define-checker grammar-gramcheck-markdown
            "A general purpose grammar checker. "
