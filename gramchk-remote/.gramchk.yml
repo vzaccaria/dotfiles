@@ -1,0 +1,10 @@
+languagetool:
+  url: 'http://192.168.1.120:8010/v2/check'
+  disabledRules:
+    - WHITESPACE_RULE
+    - COMMA_PARENTHESIS_WHITESPACE
+  ignoredSuggestions: []
+  language: en-us
+atd:
+  url: 'http://127.0.0.1:1049'
+
