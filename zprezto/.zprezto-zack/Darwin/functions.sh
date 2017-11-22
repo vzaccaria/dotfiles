@@ -66,11 +66,6 @@ tre() {
 #
 # generate pdf from org (needs a running emacs daemon)
 #
-orgtopdf() {
-    filename=$(grealpath "$1")
-    echo "emacsclient --eval \"(progn (find-file \\\"$filename\\\") (org-latex-export-to-pdf))\""
-    emacsclient --eval "(progn (find-file \"$filename\") (org-latex-export-to-pdf))"
-}
 
 setUsDictionary() {
     defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
