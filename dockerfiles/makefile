@@ -10,39 +10,44 @@ all: \
 	$(G)/maxima.Dockerfile \
 	$(G)/chipwhisperer-env.Dockerfile
 
-$(G)/reflex-ghcjs-dev.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile \
-			$(R)/base.Dockerfile \
-			$(R)/haskell.Dockerfile \
-			$(R)/reflex-ghcjs.Dockerfile 
-	cat $^ > $@
-
-$(G)/ghcjs-dev.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile \
-			$(R)/base.Dockerfile \
-			$(R)/haskell.Dockerfile \
-			$(R)/ghcjs.Dockerfile 
-	cat $^ > $@
-
 $(G)/devenv.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile \
 			$(R)/base.Dockerfile \
 			$(R)/haskell.Dockerfile 
 	cat $^ > $@
 
-$(G)/devenv-gui.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile \
-			$(R)/base.Dockerfile \
-			$(R)/haskell.Dockerfile \
+$(G)/reflex-ghcjs-dev.Dockerfile: \
+			$(G)/devenv.Dockerfile \
+			$(R)/reflex-ghcjs.Dockerfile 
+	cat $^ > $@
+
+$(G)/ghcjs-dev.Dockerfile: \
+			$(G)/devenv.Dockerfile \
+			$(R)/ghcjs.Dockerfile 
+	cat $^ > $@
+
+$(G)/devenv-gui.Dockerfile: \
+			$(G)/devenv.Dockerfile \
 		  $(R)/vnc.Dockerfile
 	cat $^ > $@
 
-$(G)/chipwhisperer-env.Dockerfile: $(G)/devenv-gui.Dockerfile \
+$(G)/devenv-gui-lh.Dockerfile: \
+			$(G)/devenv-gui.Dockerfile \
+		  $(R)/liquidhaskell.Dockerfile
+	cat $^ > $@
+
+$(G)/chipwhisperer-env.Dockerfile: \
+			$(G)/devenv-gui.Dockerfile \
 		  $(R)/chipwhisperer.Dockerfile
 	cat $^ > $@
 
-$(G)/anki-gui.Dockerfile: $(G)/devenv-gui.Dockerfile \
+$(G)/anki-gui.Dockerfile: \
+			$(G)/devenv-gui.Dockerfile \
 		  $(R)/anki.Dockerfile
 	cat $^ > $@
 
-$(G)/modelsim.Dockerfile: 	$(R)/from.ubuntu14.04.Dockerfile \
-				$(R)/vhdl.Dockerfile
+$(G)/modelsim.Dockerfile: \
+			$(R)/from.ubuntu14.04.Dockerfile \
+			$(R)/vhdl.Dockerfile
 	cat $^ > $@
 
 $(G)/luxrender.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile \
