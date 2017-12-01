@@ -33,9 +33,9 @@ RUN apt-get install -y \
     vim 
 
 
+RUN echo "Update dot files on Dec 1st, 2017 "
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 WORKDIR /root/dotfiles
-RUN git reset --hard 4ba0129e
 
 RUN git clone https://github.com/syl20bnr/spacemacs /root/.emacs.d
 

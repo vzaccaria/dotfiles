@@ -9,7 +9,8 @@ ENV PATH /root/.local/bin:$PATH
 WORKDIR /root
 RUN apt-get install -y z3
 RUN stack install hlint
-COPY ./scripts/setup_liquid_haskell.org ./
+RUN wget https://raw.githubusercontent.com/ndmitchell/hlint/master/.hlint.yaml --no-check-certificate
+
 
 
 
