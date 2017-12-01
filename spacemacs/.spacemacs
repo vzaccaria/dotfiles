@@ -395,6 +395,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
                                ))
     (add-hook 'shell-mode (lambda () (interactive)
                             flycheck-select-checker 'sh-shellcheck))
+
     ))
 
 
@@ -506,8 +507,7 @@ codepoints starting from codepoint-start."
     (setq TeX-source-correlate-method 'synctex)
     (setq TeX-view-program-list
           '(("PDF Viewer" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
-    (vz/enable-latex-esc-before-save)
-    )
+    (vz/enable-latex-esc-before-save))
    ((eq system-type 'gnu/linux)
     (setq TeX-view-program-selection '((output-pdf "Zathura")))
     (setq TeX-source-correlate-mode t)

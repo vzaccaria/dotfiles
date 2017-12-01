@@ -15,7 +15,9 @@
     matlab-mode
     (ox-extra :location local)
     (prettier-js :location local)
+    (flycheck-liquidhs :location local)
     ))
+
 
 
 (defun personal/init-pretty-mode ()
@@ -613,20 +615,29 @@
     )
   )
 
+(defun personal/init-flycheck-liquidhs ()
+  (use-package flycheck-liquidhs
+    :config
+    (progn
+      (eq system-type 'gnu/linux)
+      (add-hook 'haskell-mode-hook
+                '(lambda () (flycheck-select-checker 'haskell-liquid)))
+      ))
+  )
+
 (defun personal/init-prettier-js ()
   (use-package prettier-js
     :config
     (add-hook 'js-mode-hook
               (lambda ()
                 (add-hook 'before-save-hook 'prettier-before-save)))
-    
-  (add-hook 'js2-mode-hook
-            (lambda ()
-              (add-hook 'before-save-hook 'prettier-before-save)))
+    (add-hook 'js2-mode-hook
+              (lambda ()
+                (add-hook 'before-save-hook 'prettier-before-save)))
 
-  (add-hook 'react-mode-hook
-            (lambda ()
-              (add-hook 'before-save-hook 'prettier-before-save)))
-  )
+    (add-hook 'react-mode-hook
+              (lambda ()
+                (add-hook 'before-save-hook 'prettier-before-save)))
+    )
   )
 
