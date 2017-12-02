@@ -619,9 +619,9 @@
   (use-package flycheck-liquidhs
     :config
     (progn
-      (eq system-type 'gnu/linux)
-      (add-hook 'haskell-mode-hook
-                '(lambda () (flycheck-select-checker 'haskell-liquid)))
+      (cond ((eq system-type 'gnu/linux)
+             (add-hook 'haskell-mode-hook
+                       '(lambda () (flycheck-select-checker 'haskell-liquid)))))
       ))
   )
 
