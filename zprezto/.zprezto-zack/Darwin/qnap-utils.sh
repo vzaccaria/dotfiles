@@ -111,6 +111,10 @@ devenv-gui-start-with-tag() {
     echo "Click here: vnc://192.168.1.120:5901"
 }
 
+de() {
+    open "vnc://192.168.1.120:5901"
+}
+
 devenv-gui() {
     dock-setup-qnappino
     devenv-gui-start-with-tag devenv-gui-latest
