@@ -6,111 +6,120 @@
 (setq is-darwin (eq system-type 'gnu/linux))
 
 (defun dotspacemacs/layers ()
-  "Configuration Layers declaration.
-You should not put any user code in this function besides modifying the variable
-values."
+  "Spacemacs layers declarations and package configurations."
+  (dotspacemacs/layers/config)
+  (dotspacemacs/layers/packages))
+
+(defun dotspacemacs/layers/config ()
   (setq-default
-   ;; Base distribution to use. This is a layer contained in the directory
-   ;; `+distribution'. For now available distributions are `spacemacs-base'
-   ;; or `spacemacs'. (default 'spacemacs)
    dotspacemacs-distribution 'spacemacs
-   ;; List of additional paths where to look for configuration layers.
-   ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
+   dotspacemacs-enable-lazy-installation 'unused
+   dotspacemacs-ask-for-lazy-installation t
+
    dotspacemacs-configuration-layer-path '("~/.emacs.vz/private/")
-   ;; List of configuration layers to load. If it is the symbol `all' instead
-   ;; of a list then all discovered layers will be installed.
+   dotspacemacs-configuration-layers (append dotspacemacs/layers/core
+                                             dotspacemacs/layers/langs
+                                             dotspacemacs/layers/extra
+                                             dotspacemacs/layers/local)
+   ))
 
-   vz--layers
-   '(
-     ;; editing
-     markdown
-     (auto-completion :variables
-                      auto-completion-return-key-behavior 'complete
-                      auto-completion-tab-key-behavior 'cycle
-                      auto-completion-complete-with-key-sequence nil
-                      auto-completion-complete-with-key-sequence-delay 0.1
-                      auto-completion-enable-snippets-in-popup t
-                      auto-completion-enable-help-tooltip t
-                      auto-completion-enable-sort-by-usage t
-                      auto-completion-private-snippets-directory "~/dotfiles/spacemacs/.emacs.vz/private/snippets"
-                      spacemacs-default-company-backends '(company-files company-yasnippet)
-                      )
-     spell-checking
-     (latex :variables
-            latex-enable-auto-fill t
-            latex-enable-folding t)
-
-     ;; productivity
-     docker
-     (org :variables org-enable-reveal-js-support t)
-     finance
-     deft
-     prodigy
-     command-log
-     shell
-     shell-scripts
-     typography
-     git
-
-     ;; generic data formats
-     yaml
-     csv
-
-     ;; programming languages
-     syntax-checking
-     javascript
-     react
-     python
-     octave
-     emacs-lisp
-     vimscript
-     haskell
-     ess
-     )
-   )
-
-  (setq
-   vz--darwin-layers
-   '(
-     (personal :variables
-               personal-bind-osx-keys t
-               personal-bind-unix-keys nil)
-     osx
-     (maxima :variables
-             maxima-emacs-installation-path "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/maxima/5.35.1/emacs"
-             maxima-emacs-info-path "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/info" )
-     (c-c++ :variables c-c++-enable-clang-support t)
-     extra-langs
-     )
-
-   vz--gnu/linux-layers
-   '(
-     (personal :variables
-               personal-bind-unix-keys t
-               personal-bind-osx-keys nil)
-     )
-   )
-
-  (cond
-   ((eq system-type 'darwin)
-    (setq vz--layers (append vz--layers vz--darwin-layers)))
-   ((eq system-type 'gnu/linux)
-    (setq vz--layers (append vz--layers vz--gnu/linux-layers))))
-
+(defun dotspacemacs/layers/packages ()
   (setq-default
-   dotspacemacs-configuration-layers vz--layers
-   ;; List of additional packages that will be installed without being
-   ;; wrapped in a layer. If you need some configuration for these
-   ;; packages, then consider creating a layer. You can also put the
-   ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
-   ;; A list of packages and/or extensions that will not be install and loaded.
+   dotspacemacs-additional-packages '(
+                                      solarized-theme
+                                      nord-theme
+                                      helm-projectile
+                                      )
    dotspacemacs-excluded-packages '()
-   ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
-   ;; are declared in a layer which is not a member of
-   ;; the list `dotspacemacs-configuration-layers'. (default t)
-   dotspacemacs-delete-orphan-packages t)
+   dotspacemacs-frozen-packages '()
+   dotspacemacs-install-packages 'used-but-keep-unused
+   ))
+
+(defvar dotspacemacs/layers/core
+  '(better-defaults
+    git
+    syntax-checking
+    (auto-completion :variables
+                     auto-completion-return-key-behavior 'complete
+                     auto-completion-tab-key-behavior 'cycle
+                     auto-completion-complete-with-key-sequence nil
+                     auto-completion-complete-with-key-sequence-delay 0.1
+                     auto-completion-enable-snippets-in-popup t
+                     auto-completion-enable-help-tooltip t
+                     auto-completion-enable-sort-by-usage t
+                     auto-completion-private-snippets-directory "~/dotfiles/spacemacs/.emacs.vz/private/snippets"
+                     spacemacs-default-company-backends '(company-files company-yasnippet)
+                     )
+    helm
+    (org :variables org-enable-reveal-js-support t)
+    (shell :variables
+           shell-default-shell 'eshell)
+    shell-scripts
+    (version-control :variables
+                     version-control-global-margin t
+                     version-control-diff-tool 'git-gutter+)
+    )
+  "Layers I consider core to Spacemacs. Loaded for all OSes")
+
+
+(defvar dotspacemacs/layers/langs
+  '(
+    javascript
+    react
+    python
+    octave
+    emacs-lisp
+    vimscript
+    haskell
+    (c-c++ :variables c-c++-enable-clang-support t)
+
+    yaml
+    csv
+    html
+    markdown
+
+    spell-checking
+
+    (latex :variables
+           latex-enable-auto-fill t
+           latex-enable-folding t)
+    )
   )
+
+(defvar dotspacemacs/layers/extra
+  '(gnus
+    graphviz
+    ranger
+    treemacs
+    (ibuffer :variables
+              ibuffer-group-buffers-by 'projects)
+    docker
+    finance
+    deft
+    prodigy
+    command-log
+    typography
+    )
+  "Miscellaneous layers")
+
+(defvar dotspacemacs/layers/local
+  '(
+    ;; (macros :location local)    ; All local layers inherit these macros
+    ;; (config :location local)    ; Org, Avy, Evil, Misc... config
+    ;; (display :location local)   ; Pretty-eshell/code/outlines... pkgs
+    ;; (langs :location local)     ; Language config
+    (personal :location local
+              :variables
+              personal-bind-osx-keys (if is-linuxp nil t)
+              personal-bind-unix-keys (if is-linuxp t nil))
+    (maxima :variables
+            maxima-emacs-installation-path
+            "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/maxima/5.35.1/emacs"
+            maxima-emacs-info-path
+            "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/info" )
+    )
+  "Local layers housed in '~/.emacs.vz/private'.")
+
 
 (defun dotspacemacs/init ()
   "Spacemacs core settings."
@@ -579,7 +588,7 @@ codepoints starting from codepoint-start."
      ("https" . "\\.\\(jpeg\\|jpg\\|png\\|gif\\|svg\\)\\'"))))
  '(package-selected-packages
    (quote
-    (powerline spinner alert log4e gntp markdown-mode skewer-mode simple-httpd multiple-cursors js2-mode hydra parent-mode projectile haml-mode flyspell-correct flycheck pkg-info epl flx smartparens iedit anzu evil goto-chg undo-tree highlight json-mode tablist docker-tramp json-snatcher json-reformat diminish web-completion-data dash-functional tern pos-tip ghc haskell-mode company bind-map bind-key yasnippet packed auctex anaconda-mode pythonic f s helm avy helm-core auto-complete popup wolfram-mode thrift stan-mode scad-mode qml-mode matlab-mode arduino-mode smeargle orgit magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit magit-popup git-commit with-editor dash async winum fuzzy monokai-theme writeroom-mode visual-fill-column ess-smart-equals ess-R-object-popup ess-R-data-view ctable ess julia-mode pretty-mode highlight-chars yapfify yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package typo toc-org tagedit spacemacs-theme spaceline solarized-theme slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs request rainbow-delimiters quelpa pyvenv pytest pyenv-mode py-isort pug-mode prodigy popwin pip-requirements persp-mode pcre2el pbcopy paradox ox-reveal osx-trash osx-dictionary org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc macrostep lorem-ipsum livid-mode livescript-mode live-py-mode linum-relative link-hint less-css-mode ledger-mode launchctl js2-refactor js-doc intero insert-shebang info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-hoogle helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio gnuplot gh-md flyspell-correct-helm flycheck-pos-tip flycheck-ledger flycheck-haskell flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-multiedit evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump dockerfile-mode docker disaster deft dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-shell company-quickhelp company-ghci company-ghc company-cabal company-c-headers company-auctex company-anaconda command-log-mode column-enforce-mode coffee-mode cmm-mode cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
+    (wgrep unfill smex ranger org-category-capture nord-theme mwim ivy-hydra ibuffer-projectile graphviz-dot-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flyspell-correct-ivy diff-hl counsel-projectile counsel swiper ivy define-word powerline spinner alert log4e gntp markdown-mode skewer-mode simple-httpd multiple-cursors js2-mode hydra parent-mode projectile haml-mode flyspell-correct flycheck pkg-info epl flx smartparens iedit anzu evil goto-chg undo-tree highlight json-mode tablist docker-tramp json-snatcher json-reformat diminish web-completion-data dash-functional tern pos-tip ghc haskell-mode company bind-map bind-key yasnippet packed auctex anaconda-mode pythonic f s helm avy helm-core auto-complete popup wolfram-mode thrift stan-mode scad-mode qml-mode matlab-mode arduino-mode smeargle orgit magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit magit-popup git-commit with-editor dash async winum fuzzy monokai-theme writeroom-mode visual-fill-column ess-smart-equals ess-R-object-popup ess-R-data-view ctable ess julia-mode pretty-mode highlight-chars yapfify yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package typo toc-org tagedit spacemacs-theme spaceline solarized-theme slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs request rainbow-delimiters quelpa pyvenv pytest pyenv-mode py-isort pug-mode prodigy popwin pip-requirements persp-mode pcre2el pbcopy paradox ox-reveal osx-trash osx-dictionary org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc macrostep lorem-ipsum livid-mode livescript-mode live-py-mode linum-relative link-hint less-css-mode ledger-mode launchctl js2-refactor js-doc intero insert-shebang info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-hoogle helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio gnuplot gh-md flyspell-correct-helm flycheck-pos-tip flycheck-ledger flycheck-haskell flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-multiedit evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump dockerfile-mode docker disaster deft dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-shell company-quickhelp company-ghci company-ghc company-cabal company-c-headers company-auctex company-anaconda command-log-mode column-enforce-mode coffee-mode cmm-mode cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(prettier-target-mode "js2-mode")
@@ -622,5 +631,6 @@ codepoints starting from codepoint-start."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:foreground "#DCDCCC" :background "#3F3F3F"))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
