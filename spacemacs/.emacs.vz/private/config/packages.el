@@ -62,8 +62,13 @@
 (defun config/flycheck-config-javascript ()
   (add-hook 'js-mode-hook '(lambda ()
                                     (flycheck-mode)
-                                     (flycheck-select-checker 'javascript-eslint)
-                                     ))
+                                    (flycheck-select-checker 'javascript-eslint)
+                                    ))
+
+  (add-hook 'js2-mode-hook '(lambda ()
+                             (flycheck-mode)
+                             (flycheck-select-checker 'javascript-eslint)
+                             ))
   )
 
 (defun config/flycheck-config-shell ()
