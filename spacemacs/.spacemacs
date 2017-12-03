@@ -39,6 +39,8 @@
   '(better-defaults
     git
     syntax-checking
+    helm
+    shell-scripts
     (auto-completion :variables
                      auto-completion-return-key-behavior 'complete
                      auto-completion-tab-key-behavior 'cycle
@@ -50,11 +52,9 @@
                      auto-completion-private-snippets-directory "~/dotfiles/spacemacs/.emacs.vz/private/snippets"
                      spacemacs-default-company-backends '(company-files company-yasnippet)
                      )
-    helm
     (org :variables org-enable-reveal-js-support t)
     (shell :variables
            shell-default-shell 'eshell)
-    shell-scripts
     (version-control :variables
                      version-control-global-margin t
                      version-control-diff-tool 'git-gutter+)
@@ -105,7 +105,7 @@
 (defvar dotspacemacs/layers/local
   '(
     ;; (macros :location local)    ; All local layers inherit these macros
-    ;; (config :location local)    ; Org, Avy, Evil, Misc... config
+    (config :location local)
     ;; (display :location local)   ; Pretty-eshell/code/outlines... pkgs
     ;; (langs :location local)     ; Language config
     (personal :location local
@@ -255,80 +255,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
     ;;; Darwin specific conf
     (setq deft-directory "~/Dropbox/org")
     (setq deft-recursive t)
-    ;; I need some programs from these locations:
-    (eval-after-load "flycheck"
-
-      ;; Flycheck configuration
-
-      '(progn
-         (flycheck-define-checker grammar-gramcheck
-           "A general purpose grammar checker. It uses LanguageTool."
-
-           :command ("gramchk" "--configfile" "/Users/zaccaria/.gramchk.yml" "check" source-original)
-           :error-parser flycheck-parse-checkstyle
-           :standard-input nil
-           :modes (latex-mode plain-TeX-mode))
-
-         (flycheck-define-checker grammar-gramcheck-markdown
-           "A general purpose grammar checker. "
-
-           :command ("gramchk" "--configfile" "/Users/zaccaria/.gramchk.yml" "check" source-original)
-           :error-parser flycheck-parse-checkstyle
-           :standard-input nil
-           :modes (markdown-mode)
-           )
-
-         (flycheck-define-checker proselint
-           "A linter for prose."
-           :command ("proselint" source-inplace)
-           :error-patterns
-           ((warning line-start (file-name) ":" line ":" column ": "
-                     (id (one-or-more (not (any " "))))
-                     (message (one-or-more not-newline)
-                              (zero-or-more "\n" (any " ") (one-or-more not-newline)))
-                     line-end))
-           :modes (latex-mode text-mode markdown-mode gfm-mode)
-           :next-checkers 'tex-lacheck)
-
-         (flycheck-define-checker verilog-check
-           "A linter for verilog using verilator."
-           :command ("/usr/local/bin/perl" "/usr/local/bin/verilator" "--lint-only" "-Wall" source)
-           :error-patterns
-           ((warning line-start "%Warning-" (zero-or-more not-newline) ": "
-                     (file-name) ":" line ": " (message) line-end)
-            (error line-start "%Error: " (file-name) ":"
-                   line ": " (message) line-end))
-           :modes verilog-mode)
-
-         ;; These go into the list of checkers that can be used in every buffer (according to major-mode)
-         (add-to-list 'flycheck-checkers 'proselint)
-         (add-to-list 'flycheck-checkers 'grammar-gramcheck)
-         (add-to-list 'flycheck-checkers 'grammar-gramcheck-markdown)
-         (add-to-list 'flycheck-checkers 'verilog-check)
-
-         (add-hook 'plain-TeX-mode-hook 'flycheck-mode)
-         (add-hook 'LaTeX-mode-hook 'flycheck-mode)
-         (add-hook 'js-mode-hook 'flycheck-mode)
-         (add-hook 'markdown-mode-hook 'flycheck-mode)
-
-         (add-hook 'javascript-mode-hook 'flycheck-mode)
-
-         (add-hook 'javascript-mode '(lambda () (interactive)
-                                       (flycheck-select-checker 'javascript-eslint)
-                                       ))
-
-         (add-hook 'shell-mode (lambda () (interactive)
-                                 flycheck-select-checker 'sh-shellcheck))
-
-         (add-hook 'verilog-mode-hook 'flycheck-mode)
-
-         (add-hook 'verilog-mode (lambda () (interactive)
-                              (flycheck-mode)
-                              (flycheck-disable-checker 'verilog-verilator)
-                              (flycheck-select-checker 'verilog-check)))
-      )
-
-      )
     (setq org-enable-reveal-js-support t)
     (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
     (setq tramp-ssh-controlmaster-options
@@ -337,16 +263,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
     ;;; Linux specific conf
     (setq deft-directory "~/Dropbox/org")
     (setq deft-recursive t)
-    (add-hook 'js2-mode-hook (lambda () (interactive)
-                               (vz/add-node-modules-path)
-                               ))
-    (add-hook 'shell-mode (lambda () (interactive)
-                            flycheck-select-checker 'sh-shellcheck))
-
     ))
-
-
-
   )
 
 (defun dotspacemacs/user-config ()

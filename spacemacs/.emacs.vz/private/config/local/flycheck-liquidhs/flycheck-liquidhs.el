@@ -84,10 +84,6 @@ See URL 'https://github.com/ucsd-progsys/liquidhaskell'."
 (make-liquid-checker haskell-liquid ("liquid" source-inplace))
 (make-liquid-checker haskell-stack-liquid ("stack" "exec" "--" "liquid" source-inplace))
 
-(add-to-list 'flycheck-checkers
-             (if flycheck-liquid-use-stack
-                 'haskell-stack-liquid
-               'haskell-liquid))
 
 (provide 'flycheck-liquidhs)
 ;;; flycheck-liquidhs.el ends here

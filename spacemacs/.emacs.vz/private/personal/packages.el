@@ -15,7 +15,6 @@
     matlab-mode
     (ox-extra :location local)
     (prettier-js :location local)
-    (flycheck-liquidhs :location local)
     ))
 
 
@@ -129,7 +128,7 @@
                                        (tags "TODO=\"TODO\"&-TODO=\"IMPORTANT\"")
                                        ))))
 
-  (setq org-columns-default-format "%40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM") 
+  (setq org-columns-default-format "%40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM")
   (setq org-agenda-todo-list-sublevels nil)
 
   ;; Add files recursively
@@ -147,7 +146,7 @@
   (setq org-level-color-stars-only t )
   (setq org-confirm-babel-evaluate nil)
 
-  (add-hook 'org-mode-hook (lambda () 
+  (add-hook 'org-mode-hook (lambda ()
                              (define-key org-mode-map "\M-e" 'personal/show-agenda-all)))
 
   (define-key global-map "\C-ct"
@@ -160,7 +159,7 @@
      (shell . t)
      (haskell . t)
      (js . t)
-     (C . t)  
+     (C . t)
      (ditaa . t)
      (plantuml . t)
      (latex . t)
@@ -216,8 +215,8 @@
           ("sj"  "#+BEGIN_SRC js     :results none   \n\n#+END_SRC")
           ("sjt" "#+BEGIN_SRC js :tangle js/yourfile.js   \n\n#+END_SRC")
 
-     ;;; --- SOURCES: nomnoml 
-          ("ssi" "#+BEGIN_SRC shell :results file :file tempo.pdf :exports results\n cat <<EOF | nomnoml -f svg | svg2pdf 
+     ;;; --- SOURCES: nomnoml
+          ("ssi" "#+BEGIN_SRC shell :results file :file tempo.pdf :exports results\n cat <<EOF | nomnoml -f svg | svg2pdf
  \n [<start>st]->[<state>plunder] \n [plunder]->[<choice>more loot] \n [more loot]->[st] \n [more loot] no ->[<end>e] \n EOF \n #+END_SRC \n #+attr_latex: :width 0.25\\linewidth :float t :placement [h] \n #+RESULTS: \n ")
 
      ;;; --- SOURCES: netlist from verilog module (needs mine netlistsvg, ps2pdf, yosys, pdfcrop)
@@ -249,7 +248,7 @@
      ;;; --- EXAMPLES ---
           ("ec" "#+begin_center \n #+attr_latex: :options {0.7\\textwidth} \n #+begin_minipage \n #+BEGIN_EXAMPLE \n #+END_EXAMPLE \n #+end_minipage \n #+end_center \n")
 
-     ;;; --- EQUATIONS --- 
+     ;;; --- EQUATIONS ---
           ("equ" "#+BEGIN_EXPORT latex\n\\begin{equation}\n\\end{equation}\n#+END_EXPORT")
           ("eqc" "f(x) = \\begin{cases}\n 1 & \\text{for } n = 0 \\\\ \n \\end{cases}\n")
           ("eqa" "\\begin{array}{rcl}\n a& = &b \\\\\n\\end{array}\n")
@@ -282,7 +281,7 @@
                  ("\\paragraph{%s}" . "\\paragraph*{%s}")
                  ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
                  ))
-  
+
   (add-to-list 'org-latex-classes
                '("IEEETran"
                  "\\documentclass\{IEEEtran\}
@@ -441,7 +440,7 @@
     (require 'helm-config)
     (spacemacs/set-leader-keys "oM" 'helm-mu
       "oC" 'helm-mu-contacts))
-  ) 
+  )
 
 
 (defun personal/init-mu4e ()
@@ -457,7 +456,7 @@
           mu4e-drafts-folder "/[Gmail].Drafts"
           ;; update every 5 minutes
           mu4e-update-interval 360
-          mu4e-split-view 'horizontal 
+          mu4e-split-view 'horizontal
           mu4e-headers-auto-update t
           mu4e-hide-index-messages t
           mu4e-headers-leave-behavior 'apply
@@ -615,15 +614,6 @@
     )
   )
 
-(defun personal/init-flycheck-liquidhs ()
-  (use-package flycheck-liquidhs
-    :config
-    (progn
-      (cond ((eq system-type 'gnu/linux)
-             (add-hook 'haskell-mode-hook
-                       '(lambda () (flycheck-select-checker 'haskell-liquid)))))
-      ))
-  )
 
 (defun personal/init-prettier-js ()
   (use-package prettier-js
@@ -640,4 +630,3 @@
                 (add-hook 'before-save-hook 'prettier-before-save)))
     )
   )
-
