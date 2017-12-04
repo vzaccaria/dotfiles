@@ -5,7 +5,6 @@
    syntax-checking
    markdown
    latex
-   verilog
    javascript
    shell
    haskell

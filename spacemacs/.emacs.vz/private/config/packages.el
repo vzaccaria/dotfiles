@@ -7,6 +7,10 @@
         (flycheck-liquidhs :location local)
         ))
 
+(setq is-darwin (eq system-type 'darwin))
+(setq is-linuxp (eq system-type 'gnu/linux))
+
+
 (defun config/post-init-flycheck ()
   (config/flycheck-config-latex)
   (config/flycheck-config-markdown)
@@ -92,7 +96,7 @@
   )
 
 (defun config/flycheck-config-haskell ()
-  (when (is-linuxp) (config/flycheck-config-haskell-use-haskell-liquid))
+  (when is-linuxp (config/flycheck-config-haskell-use-haskell-liquid))
   )
 
 (defun config/init-flycheck-liquidhs ()

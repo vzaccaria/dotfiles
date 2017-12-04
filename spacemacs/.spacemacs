@@ -2,8 +2,8 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
-(setq is-linuxp (eq system-type 'darwin))
-(setq is-darwin (eq system-type 'gnu/linux))
+(setq is-darwin (eq system-type 'darwin))
+(setq is-linuxp (eq system-type 'gnu/linux))
 
 (defun dotspacemacs/layers ()
   "Spacemacs layers declarations and package configurations."
@@ -90,7 +90,6 @@
   '(gnus
     graphviz
     ranger
-    treemacs
     (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
     docker
