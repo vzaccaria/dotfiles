@@ -53,17 +53,17 @@ dockshare-run() {
 
 dockshare-mount() {
    echo "to unmount: umount $1"
-   sshfs -p 21101 admin@vzaccaria.myqnapcloud.com:${DOCKSHARE_REMOTE_DIR} `grealpath $1` -ovolname=Data 
+   sshfs -p 21101 admin@vzaccaria.myqnapcloud.com:${DOCKSHARE_REMOTE_DIR} `grealpath $1` -ovolname=Data
 }
 
 dockshare-mount-local() {
     echo "to unmount: umount $1"
-    sshfs -p 21101 admin@192.168.1.120:${DOCKSHARE_REMOTE_DIR} `grealpath $1` -ovolname=Data 
+    sshfs -p 21101 admin@192.168.1.120:${DOCKSHARE_REMOTE_DIR} `grealpath $1` -ovolname=Data
 }
 
 qnap-mount-backup() {
    mkdir -p /Volumes/Data
-   sshfs -p 21101 admin@vzaccaria.myqnapcloud.com:/share/CACHEDEV1_DATA/Multimedia/Data /Volumes/Data -ovolname=Data 
+   sshfs -p 21101 admin@vzaccaria.myqnapcloud.com:/share/CACHEDEV1_DATA/Multimedia/Data /Volumes/Data -ovolname=Data
 }
 
 qnap-mount-multimedia() {
@@ -111,6 +111,21 @@ devenv-gui-start-with-tag() {
     echo "Click here: vnc://192.168.1.120:5901"
 }
 
+devenv-gui-start-with-tag-local() {
+    tag=$1
+    img=`docker run -dt \
+           -p 5901:5901 \
+	         -v /etc/localtime:/etc/localtime:ro                     \
+	         -e PATH=/root/.local/bin:/opt/bin:/opt/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin \
+	         $tag`
+    docker exec -d "$img" /root/startx
+    echo "Click here: vnc://127.0.0.1:5901"
+}
+
+de-local() {
+    open "vnc://127.0.0.1:5901"
+}
+
 de() {
     open "vnc://192.168.1.120:5901"
 }
@@ -120,5 +135,3 @@ devenv-gui() {
     devenv-gui-start-with-tag devenv-gui-latest
     echo "Click here: vnc://192.168.1.120:5901"
 }
-
-
