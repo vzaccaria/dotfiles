@@ -224,7 +224,7 @@
   (setq-default
    dotspacemacs-default-package-repository nil
    dotspacemacs-elpa-https nil
-   dotspacemacs-elpa-timeout 5
+   dotspacemacs-elpa-timeout 30
    dotspacemacs-check-for-update nil
    dotspacemacs-elpa-subdirectory nil
    ))

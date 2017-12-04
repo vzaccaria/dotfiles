@@ -12,17 +12,17 @@ all: \
 
 $(G)/devenv.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile \
 			$(R)/base.Dockerfile \
-			$(R)/haskell.Dockerfile 
+			$(R)/haskell.Dockerfile
 	cat $^ > $@
 
 $(G)/reflex-ghcjs-dev.Dockerfile: \
 			$(G)/devenv.Dockerfile \
-			$(R)/reflex-ghcjs.Dockerfile 
+			$(R)/reflex-ghcjs.Dockerfile
 	cat $^ > $@
 
 $(G)/ghcjs-dev.Dockerfile: \
 			$(G)/devenv.Dockerfile \
-			$(R)/ghcjs.Dockerfile 
+			$(R)/ghcjs.Dockerfile
 	cat $^ > $@
 
 $(G)/devenv-gui.Dockerfile: \
@@ -68,6 +68,7 @@ build-mac-%: $(G)/%.Dockerfile
 
 reflex-ghcjs-build: build-reflex-ghcjs-dev
 ghcjs-dev-build: build-ghcjs-dev
+lh-build: build-mac-devenv-gui-lh
 
 # push-devenv-%:
 # 	docker --tlsverify tag devenv-latest vzaccaria/devenv:$*

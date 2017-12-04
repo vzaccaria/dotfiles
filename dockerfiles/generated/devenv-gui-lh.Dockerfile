@@ -32,10 +32,10 @@ RUN apt-get install -y \
     unzip \
     nodejs \
     build-essential \
-    vim 
+    vim
 
 
-RUN echo "Update dot files on Dec 1st, 2017 "
+RUN echo "Update dot files on Dec 4st, 2017 "
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 WORKDIR /root/dotfiles
 
@@ -64,7 +64,7 @@ RUN mkdir -p /usr/local/share/fonts               && \
     emacs --insecure -nw -batch -u "${UNAME}" -q -kill && \
     npm install -g tern js-beautify && \
     git config --global user.email "vittorio.zaccaria@gmail.com" && \
-    git config --global user.name "Vittorio Zaccaria" 
+    git config --global user.name "Vittorio Zaccaria"
 RUN wget -q -O- https://s3.amazonaws.com/download.fpcomplete.com/ubuntu/fpco.key | apt-key add - && \
     echo 'deb http://download.fpcomplete.com/ubuntu trusty main' | tee /etc/apt/sources.list.d/fpco.list && \
     apt-get update && apt-get install stack -y && \
@@ -103,9 +103,3 @@ WORKDIR /root
 RUN apt-get install -y z3
 RUN stack install hlint
 RUN wget https://raw.githubusercontent.com/ndmitchell/hlint/master/.hlint.yaml --no-check-certificate
-
-
-
-
-
-
