@@ -98,6 +98,7 @@
     prodigy
     command-log
     typography
+    osx
     )
   "Miscellaneous layers")
 
@@ -156,7 +157,7 @@
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
-   dotspacemacs-fullscreen-at-startup (if is-linuxp nil t)
+   dotspacemacs-fullscreen-at-startup nil
    dotspacemacs-fullscreen-use-non-native nil
    dotspacemacs-maximized-at-startup nil
    dotspacemacs-active-transparency 90
