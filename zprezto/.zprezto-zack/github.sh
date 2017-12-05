@@ -1,12 +1,16 @@
 
 # Maybe add an help for all these commands
 
+imap() {
+    xargs -0 -n 1 -I {} $*
+}
+
 gitchanged() {
     TYPE=$(uname)
     if [ "${TYPE}" = "Linux" ]; then
-        git diff --numstat --diff-filter=M "$*" | awk '{printf("%s\0", $3)}' | map basename _ | paste -s -d, - | sed 's/,/, /g';
+        git diff --numstat --diff-filter=M "$*" | awk '{printf("%s\0", $3)}' | imap basename {} | paste -s -d, - | sed 's/,/, /g';
     elif [ "${TYPE}" = "Darwin" ]; then
-        git diff --numstat --diff-filter=M "$*" | cut -f3 | tr '\n' '\0' | map basename _ | paste -s -d, - | sed 's/,/, /g';
+        git diff --numstat --diff-filter=M "$*" | cut -f3 | tr '\n' '\0' | imap basename {} | paste -s -d, - | sed 's/,/, /g';
     else
         echo "Unsupported OS - ${TYPE}";
     fi
@@ -106,7 +110,7 @@ gitcommutedown() {
 
 gitcommuteup() {
     TYPE=$(uname)
-    if [ "${TYPE}" = "Linux" ]; then 
+    if [ "${TYPE}" = "Linux" ]; then
         git-verify fup ~/dotfiles/git-verify-sync-linux.json --push
     elif [ "${TYPE}" = "Darwin" ]; then
         git-verify fup ~/dotfiles/git-verify-sync-mac.json --push
@@ -117,10 +121,10 @@ gitcommuteup() {
 
 gitcommutecheck() {
     TYPE=$(uname)
-    if [ "${TYPE}" = "Linux" ]; then 
-        git-verify fup ~/dotfiles/git-verify-sync-linux.json 
+    if [ "${TYPE}" = "Linux" ]; then
+        git-verify fup ~/dotfiles/git-verify-sync-linux.json
     elif [ "${TYPE}" = "Darwin" ]; then
-        git-verify fup ~/dotfiles/git-verify-sync-mac.json 
+        git-verify fup ~/dotfiles/git-verify-sync-mac.json
     else
         echo "Unsupported OS - ${TYPE}";
     fi

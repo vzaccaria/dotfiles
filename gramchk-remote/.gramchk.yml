@@ -5,6 +5,7 @@ languagetool:
     - COMMA_PARENTHESIS_WHITESPACE
   ignoredSuggestions: []
   language: en-us
+  disabled: true
 atd:
   url: 'http://127.0.0.1:1049'
-
+  disabled: true
