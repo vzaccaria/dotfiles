@@ -1,5 +1,6 @@
 (setq config-packages
       '(
+        deft
         ;; Owner of
         (flycheck-misc :location local)
         ))
@@ -18,6 +19,11 @@
     (config/flycheck-config-shell)
     (config/flycheck-config-haskell)
     )
+  )
+
+(defun config/post-init-deft ()
+  (setq deft-directory "~/Dropbox/org")
+  (setq deft-recursive t)
   )
 
 

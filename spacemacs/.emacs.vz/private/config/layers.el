@@ -8,4 +8,5 @@
    javascript
    shell
    haskell
+   deft
    ))
