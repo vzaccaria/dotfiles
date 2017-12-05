@@ -1,8 +1,5 @@
 (setq config-packages
       '(
-        ;; Core
-        flycheck
-
         ;; Owner of
         (flycheck-misc :location local)
         ))
@@ -11,7 +8,7 @@
 (setq is-linuxp (eq system-type 'gnu/linux))
 
 
-(defun config/post-init-flycheck ()
+(defun config/init-flycheck-misc ()
   (use-package flycheck-misc
     :config
     (config/flycheck-config-latex)
