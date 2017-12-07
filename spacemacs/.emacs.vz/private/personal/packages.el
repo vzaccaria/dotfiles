@@ -119,6 +119,7 @@
   (require 'org-protocol)
   (require 'org-drill)
   (require 'ox)
+  (require 'ox-reveal)
   (setq org-agenda-custom-commands '(("w" "My Agenda"
                                       ((agenda "")
                                        (tags "TODO=\"TODAY\"")
