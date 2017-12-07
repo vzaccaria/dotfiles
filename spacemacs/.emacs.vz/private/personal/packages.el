@@ -14,6 +14,7 @@
     writeroom-mode
     matlab-mode
     (ox-extra :location local)
+    (ox-reveal :location local)
     (prettier-js :location local)
     ))
 
@@ -119,7 +120,6 @@
   (require 'org-protocol)
   (require 'org-drill)
   (require 'ox)
-  (require 'ox-reveal)
   (setq org-agenda-custom-commands '(("w" "My Agenda"
                                       ((agenda "")
                                        (tags "TODO=\"TODAY\"")
@@ -615,6 +615,10 @@
     )
   )
 
+(defun personal/init-ox-reveal ()
+  (use-package ox-reveal
+    )
+  )
 
 (defun personal/init-prettier-js ()
   (use-package prettier-js
