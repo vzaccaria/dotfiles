@@ -6,103 +6,97 @@
 
 #+BEGIN_EXPORT html
 
-<style media="screen">
+<style type="text/less">
 .reveal {
   background-color: white;
-}
 
-.reveal h1,
-.reveal h2,
-.reveal h3 {
-  font-size: 2.5em;
-  color: #888;
-}
+  h1, h2, h3 {
+    text-align: left;
+    font-size: 2.5rem;
+    color: #888;
 
-.reveal ul,
-.reveal p {
-  display: block;
-  text-align: left;
-  color: #222;
-  margin-left: 0px;
-  margin-bottom: 2rem;
-  font-size: 2rem;
+    &.title {
+      font-size:1.5em;
+      color: #222;
+    }
+
+    &.author {
+    font-size:1.1em;
+    color: #777;
+    letter-spacing: 1px;
+    }
+
+    &.date {
+    font-size:0.6em;
+    color: #999;
+    letter-spacing: 1px;
+    }
+
   }
 
-.reveal li {
-  margin-bottom: 1rem;
-}
+  ul, p {
+    text-align: left;
+    display: block;
+    color: #222;
+    margin-left: 0px;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    &.date {
+    font-size:0.5em;
+    }
+  }
 
-.reveal blockquote {
+  li {
+    margin-bottom: 1rem;
+  }
+
+  th {
+    margin-bottom: 1em;
+    font-size: 3rem;
+    font-family: 'League Gothic';
+  }
+
+  td {
+    color: #333;
+    font-size: 1.8rem;
+  }
+
+  blockquote {
     margin: 0px;
     box-shadow: none;
     border-left: solid #ddd;
-    font-size: 1.5rem;
     width: 100%;
-}
-.reveal blockquote p {
-    margin: 0px;
-}
-.reveal h1.title{
- font-size:1.5em;
- text-align: left;
-  color: #222;
+    & p {
+      font-size: 0.7em;
+      margin: 0px;
+    }
+  }
 
-}
-.reveal h2.author {
- font-size:1.1em;
- text-align: left;
- color: #777;
- letter-spacing: 1px;
-}
+  pre {
+    font-size: 1.5rem;
+    border: none;
+    box-shadow: none;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    code {
+      font-family: "Hasklig";
+      background: white;
+      color: black;
+    }
+  }
 
-.reveal h2.date {
- font-size:0.6em;
- text-align: left;
- color: #999;
- letter-spacing: 1px;
+  .vz-link {
+    padding: 0.5rem;
+    font-size: 1rem;
+    &::before {
+      content: "visit: https://jsbin.com/"
+    }
+  }
 }
-
-.reveal h3,
-.reveal th {
- text-align: left;
- margin-bottom: 1em;
- font-size: 3rem;
-}
-.reveal th {
- font-family: 'League Gothic';
-}
-.reveal td {
- color: #333;
- font-size: 1.8rem;
-}
-
-.reveal p.date {
- font-size:0.5em;
- text-align: left;
-}
-
-.reveal pre {
- font-size: 1.5rem;
- border: none;
- box-shadow: none;
- margin-top: 1.5em;
- margin-bottom: 1.5em;
-}
-
-.reveal code {
- font-family: "Hasklig";
-}
-
-.reveal pre code {
-  background: white;
-  color: black;
-}
-
-.reveal {
-  font-family: "Lato";
-}
-
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.js"></script>
 #+END_EXPORT
 
-#+MACRO: jsbin @@html: <a class="jsbin-embed" href="http://jsbin.com/$1/embed?js,console&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>@@
+#+MACRO: jsbin   @@html: <a class="vz-link" href="http://jsbin.com/$1">$1</a><a class="jsbin-embed" href="http://jsbin.com/$1/embed?js,console&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>@@
+#+MACRO: jsbino  @@html: <a class="vz-link" href="http://jsbin.com/$1">$1</a><a class="jsbin-embed" href="http://jsbin.com/$1/embed?js,console,output&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>@@
+#+MACRO: jsbinho @@html: <a class="vz-link" href="http://jsbin.com/$1">$1</a><a class="jsbin-embed" href="http://jsbin.com/$1/embed?html,js,output&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>@@
