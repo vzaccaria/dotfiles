@@ -220,6 +220,9 @@
           ("ssi" "#+BEGIN_SRC shell :results file :file tempo.pdf :exports results\n cat <<EOF | nomnoml -f svg | svg2pdf
  \n [<start>st]->[<state>plunder] \n [plunder]->[<choice>more loot] \n [more loot]->[st] \n [more loot] no ->[<end>e] \n EOF \n #+END_SRC \n #+attr_latex: :width 0.25\\linewidth :float t :placement [h] \n #+RESULTS: \n ")
 
+          ("ssgrid" "#+BEGIN_SRC shell :results silent :exports none\ngridpdf 10 10
+\n#+END_SRC \n[[file:./grid_ese_10x10.pdf]] \n ")
+
      ;;; --- SOURCES: netlist from verilog module (needs mine netlistsvg, ps2pdf, yosys, pdfcrop)
           ("ssv" "#+NAME: halfadder\n#+BEGIN_SRC verilog :exports none\nmodule singleAdder(\n   input  a,\n   input  b,\n   input  cin,\n   output s,\n   output cout );\n   assign s = a ^ b ^ cin;\n   assign cout = (a & b)  |  (a & cin)  |  (b & cin);\nendmodule\n#+END_SRC\n\n# if you change the verilog module, reevaluate with C-c\n#+BEGIN_SRC sh :results silent :exports none :noweb yes\ncat <<EOF | netlistsvg netlist --verilog | ps2pdf - | pdfcrop - images/bool_half_adder.pdf\n<<halfadder>>\nEOF \n#+END_SRC \n\n#+attr_latex: :width 0.55\\linewidth :float t :placement [h]\n[[file:images/bool_half_adder.pdf]]\n")
 

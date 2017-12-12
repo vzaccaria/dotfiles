@@ -7,37 +7,45 @@
 #+BEGIN_EXPORT html
 
 <style type="text/less">
+@background-color: #fafafa;
+@code-color: darken(@background-color, 5%);
+@accent-color: #eb811a;
+@text-color: #222;
+@ftext-color: lighten(@text-color, 30%);
+
 .reveal {
-  background-color: white;
+  background-color: @background-color;
 
   h1, h2, h3 {
     text-align: left;
     font-size: 2.5rem;
-    color: #888;
+    color: @ftext-color;
 
     &.title {
       font-size:1.5em;
-      color: #222;
+      color: @text-color;
     }
 
     &.author {
     font-size:1.1em;
-    color: #777;
+    color: @ftext-color;
     letter-spacing: 1px;
     }
 
     &.date {
     font-size:0.6em;
-    color: #999;
+    color: @ftext-color;
     letter-spacing: 1px;
     }
-
+  }
+  h2 {
+  color: @accent-color;
   }
 
   ul, p {
     text-align: left;
     display: block;
-    color: #222;
+    color: @text-color;
     margin-left: 0px;
     margin-bottom: 2rem;
     font-size: 2rem;
@@ -57,7 +65,7 @@
   }
 
   td {
-    color: #333;
+    color: @text-color;
     font-size: 1.8rem;
   }
 
@@ -80,16 +88,27 @@
     margin-bottom: 1.5em;
     code {
       font-family: "Hasklig";
-      background: white;
+      background: @code-color;
       color: black;
     }
   }
+  code {
+    font-family: "Hasklig";
+    background: @code-color;
+    border-radius: 0.2rem;
+    font-size: 1.5rem;
+  }
 
   .vz-link {
-    padding: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
     font-size: 1rem;
+    text-decoration: underline;
     &::before {
-      content: "visit: https://jsbin.com/"
+      content: "https://jsbin.com/"
+    }
+    &::after{
+      content: "/edit"
     }
   }
 }
@@ -97,6 +116,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.js"></script>
 #+END_EXPORT
 
-#+MACRO: jsbin   @@html: <a class="vz-link" href="http://jsbin.com/$1">$1</a><a class="jsbin-embed" href="http://jsbin.com/$1/embed?js,console&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>@@
-#+MACRO: jsbino  @@html: <a class="vz-link" href="http://jsbin.com/$1">$1</a><a class="jsbin-embed" href="http://jsbin.com/$1/embed?js,console,output&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>@@
-#+MACRO: jsbinho @@html: <a class="vz-link" href="http://jsbin.com/$1">$1</a><a class="jsbin-embed" href="http://jsbin.com/$1/embed?html,js,output&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>@@
+#+MACRO: jsbin   @@html: <a class="vz-link" href="https://jsbin.com/$1/edit?js,console">$1</a>@@
+#+MACRO: jsbino  @@html: <a class="vz-link" href="https://jsbin.com/$1/edit?js,console,output">$1</a>@@
+#+MACRO: jsbinho @@html: <a class="vz-link" href="https://jsbin.com/$1/edit?html,js,output">$1</a>@@
+
+# #+MACRO: jsbin   @@html: <a class="vz-link" href="https://jsbin.com/$1/edit">$1</a><a class="jsbin-embed" href="https://jsbin.com/$1/embed?js,console&height=15rem">Demo</a><script src="https://static.jsbin.com/js/embed.js"></script>@@
+# #+MACRO: jsbino  @@html: <a class="vz-link" href="https://jsbin.com/$1/edit">$1</a><a class="jsbin-embed" href="https://jsbin.com/$1/embed?js,console,output&height=15rem">Demo</a><script src="https://static.jsbin.com/js/embed.js"></script>@@
+# #+MACRO: jsbinho @@html: <a class="vz-link" href="https://jsbin.com/$1/edit">$1</a><a class="jsbin-embed" href="https://jsbin.com/$1/embed?html,js,output&height=15rem">Demo</a><script src="https://static.jsbin.com/js/embed.js"></script>@@
