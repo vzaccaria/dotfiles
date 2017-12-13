@@ -5,8 +5,6 @@
 
 ;; to make your life easier; dont add any other character after M-* (!!!)
 (global-set-key (kbd "M-`") 'toggle-window-split)
-(global-set-key (kbd "M-1") 'helm-resume)
-(global-set-key (kbd "M-2") 'org-todo-list)
 
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "M-w") 'delete-window)
@@ -60,10 +58,6 @@
 (define-key evil-visual-state-map (kbd "M-a") 'mark-whole-buffer)
 
 ;; Function key revival
-(global-set-key (kbd "<f4>")  'personal/show-agenda-all)
-(global-set-key (kbd "<f16>")  'personal/show-agenda-all)
-
-(global-set-key (kbd "<f1>") 'spacemacs/toggle-flycheck-error-list)
 
 (add-hook 'LaTeX-mode-hook (lambda ()
                              (define-key LaTeX-mode-map (kbd "<f1>")  'spacemacs/toggle-flycheck-error-list)
@@ -71,10 +65,9 @@
                              (define-key LaTeX-mode-map (kbd "<f3>")  'reftex-citation)
                              ))
 
-(define-key org-mode-map (kbd "<f2>")  'beautify-org)
-(define-key org-mode-map (kbd "<f3>")  'org-beamer-export-to-latex)
-(define-key org-mode-map (kbd "<f4>")  'org-latex-export-to-latex)
-(define-key org-mode-map (kbd "<f5>")  'vz/switch-dictionary)
+(define-key org-mode-map (kbd "<f1>") (lambda () (interactive) (org-overview)))
+(define-key org-mode-map (kbd "<f2>") (lambda () (interactive) (org-content 2)))
+(define-key org-mode-map (kbd "<f3>") (lambda () (interactive) (org-content 3)))
 
 
 ;; Orgmode utilities
@@ -94,14 +87,14 @@
   ;; ^[[A maps to <up>
 
   ;; Here we are defining some low-level translation of keys coming from iTerm.
-  ;; We are then remapping the new "keys" to appropriate functions 
+  ;; We are then remapping the new "keys" to appropriate functions
   (define-key key-translation-map "\e\e[E" [(shift-up)])
-  (define-key key-translation-map "\e\e[F" [(shift-down)]) 
+  (define-key key-translation-map "\e\e[F" [(shift-down)])
   (define-key key-translation-map "\e\e[H" [(shift-right)])
   (define-key key-translation-map "\e\e[I" [(shift-left)])
 
   ;; Thanks touchbar!
-  (global-set-key (kbd "§") 'evil-escape)    ;; 46   
+  (global-set-key (kbd "§") 'evil-escape)    ;; 46
 
   ;;  Shift + Arrows
   (global-set-key [(shift-up)] 'evil-backward-paragraph)    ;; 46
@@ -121,7 +114,7 @@
   (global-set-key (kbd "\e <right>") 'evil-window-right)
   (global-set-key (kbd "\e <left>")  'evil-window-left)
 
-  
+
   ;; OSX Gui keybindings                     S + Arrows
   (global-set-key (kbd "s-<up>")    'evil-window-up)
   (global-set-key (kbd "s-<down>")  'evil-window-down)
