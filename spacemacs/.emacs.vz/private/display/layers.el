@@ -3,4 +3,6 @@
    ;; Personal layers
    config
    macros
+   latex
+   haskell
    ))

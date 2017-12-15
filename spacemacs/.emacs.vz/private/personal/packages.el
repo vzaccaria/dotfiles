@@ -10,7 +10,6 @@
     evil-multiedit
     livescript-mode
     highlight-chars
-    pretty-mode
     writeroom-mode
     matlab-mode
     (ox-extra :location local)
@@ -20,68 +19,6 @@
 
 
 
-(defun personal/init-pretty-mode ()
-  (use-package pretty-mode
-    :init
-    (progn (global-pretty-mode t)
-
-           (pretty-deactivate-groups
-            '(:equality :ordering :ordering-double :ordering-triple
-                        :arrows :arrows-twoheaded :punctuation
-                        :logic :sets))
-
-           (pretty-activate-groups
-            '(:sub-and-superscripts :greek :arithmetic-nary))
-           (global-prettify-symbols-mode 1)
-           ;; See here for adding symbols to your major mode: https://ekaschalk.github.io/
-           (add-hook
-            'haskell-mode-hook
-            (lambda ()
-              (mapc (lambda (pair) (push pair prettify-symbols-alist))
-                    '(;; Syntax
-                      ("`nd`" .#x2227)
-                      (".&"   .#x2227)
-                      ("`xr`" .#x2295)
-                      (".+"   .#x2295)
-                      ("nt"   .#x00ac)
-                      ("neg"  .#x00ac)
-                      (".|"   .#x2228)
-                      ("_0"   .#x2080)
-                      ("_1"   .#x2081)
-                      (".<>"  .#x20df)
-                      ("top"  .#x22a4)
-                      ("bot"  .#x22a5)
-                      ))))
-           (add-hook 'LaTeX-mode-hook
-                     (lambda ()
-                       (push '("\\item"    . ?●) prettify-symbols-alist)
-                       (push '("\\begin{itemize}"    . ?↴) prettify-symbols-alist)
-                       (push '("\\end{itemize}"    . ?↲) prettify-symbols-alist)
-                       (push '("\\begin{example}"    . ?↴) prettify-symbols-alist)
-                       (push '("\\end{example}"    . ?↲) prettify-symbols-alist)
-                       (push '("\\begin{theorem}"    . ?↴) prettify-symbols-alist)
-                       (push '("\\end{theorem}"    . ?↲) prettify-symbols-alist)
-                       (push '("\\begin{proof}"    . ?↴) prettify-symbols-alist)
-                       (push '("\\end{proof}"    . ?↲) prettify-symbols-alist)
-                       (push '("\\begin{definition}"    . ?↴) prettify-symbols-alist)
-                       (push '("\\end{definition}"    . ?↲) prettify-symbols-alist)
-                       (push '("\\begin{equation}"    . ?↴) prettify-symbols-alist)
-                       (push '("\\end{equation}"    . ?↲) prettify-symbols-alist)
-                       (push '("\\begin{equation*}"    . ?↴) prettify-symbols-alist)
-                       (push '("\\end{equation*}"    . ?↲) prettify-symbols-alist)
-                       (push '("\\begin{eqnarray*}"    . ?↴) prettify-symbols-alist)
-                       (push '("\\end{eqnarray*}"    . ?↲) prettify-symbols-alist)
-                       (push '("\\begin{eqnarray}"    . ?↴) prettify-symbols-alist)
-                       (push '("\\end{eqnarray}"    . ?↲) prettify-symbols-alist)
-                       (push '("\\begin{remark}"    . ?↴) prettify-symbols-alist)
-                       (push '("\\end{remark}"    . ?↲) prettify-symbols-alist)
-                       (push '("\\begin{corollary}"    . ?↴) prettify-symbols-alist)
-                       (push '("\\end{corollary}"    . ?↲) prettify-symbols-alist)
-                       (push '("\\begin{align}"    . ?↴) prettify-symbols-alist)
-                       (push '("\\end{align}"    . ?↲) prettify-symbols-alist)
-                       ))
-           ))
-  )
 
 (defun personal/init-highlight-chars ()
   (use-package highlight-chars)
