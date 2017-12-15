@@ -37,7 +37,7 @@
 #+LaTeX_HEADER: \usetikzlibrary{graphdrawing}
 #+LaTeX_HEADER: \usetikzlibrary{graphs}
 #+LATEX_HEADER: \usetikzlibrary{mindmap}
-#+LATEX_HEADER: \usetikzlibrary{positioning}   
+#+LATEX_HEADER: \usetikzlibrary{positioning}
 #+LATEX_HEADER: \usetikzlibrary{snakes}
 #+LATEX_HEADER: \usetikzlibrary{arrows.meta}
 #+LATEX_HEADER: \usetikzlibrary{shadows}
@@ -70,7 +70,7 @@
 #+LATEX_HEADER: \definecolor{vzblue}{rgb}{0.000,0.000,0.861}
 
 
-# # Just for the italian accents accents 
+# # Just for the italian accents accents
 # #+LATEX_HEADER: \usepackage{polyglossia}
 # #+LATEX_HEADER: \setmainlanguage{italian}
 
@@ -90,8 +90,7 @@
 
 
 #+LATEX_HEADER: \definecolor{links}{HTML}{0086F7}
-#+LATEX_HEADER: \definecolor{bgl}{rgb}{0.95,0.95,0.95} 
-#+LATEX_HEADER: \hypersetup{colorlinks,linkcolor=,urlcolor=links} 
+#+LATEX_HEADER: \hypersetup{colorlinks,linkcolor=,urlcolor=links}
 
 # Helpful macros for lectures ..
 
@@ -100,39 +99,39 @@
 #+LATEX_HEADER: \tikzstyle{sbox}=[rectangle, fill=white, draw=black, minimum width=4cm, rounded corners]
 #+LATEX_HEADER: \tikzstyle{state}=[circle, scale=.5, fill=white, draw=black, minimum size=2cm, rounded corners]
 #+LATEX_HEADER: \tikzstyle{boxes}=[double copy shadow, fill=white, rectangle, draw=black, minimum size=2cm, rounded corners]
-#+LATEX_HEADER: 
+#+LATEX_HEADER:
 #+LATEX_HEADER: \tikzstyle{container} = [blue dotted]
-#+LATEX_HEADER: 
+#+LATEX_HEADER:
 #+LATEX_HEADER: \tikzstyle{arrow}=[-latex]
 #+LATEX_HEADER: \tikzstyle{doublearrow}=[latex-latex]
 #+LATEX_HEADER: \tikzstyle{invarrow}=[latex-]
 #+LATEX_HEADER: \tikzstyle{measure}=[|<->|]
-#+LATEX_HEADER: 
+#+LATEX_HEADER:
 #+LATEX_HEADER: % Indicate the type of an arrow
 #+LATEX_HEADER: \tikzstyle{arrowlabel}     =[above, scale=.7, color=black!40]
 #+LATEX_HEADER: \tikzstyle{arrowlabelabove}=[above, scale=.7, color=black!40]
 #+LATEX_HEADER: \tikzstyle{arrowlabelbelow}=[below, scale=.7, color=black!40]
-#+LATEX_HEADER: 
+#+LATEX_HEADER:
 #+LATEX_HEADER: % Indicate a value of an arrow
 #+LATEX_HEADER: \tikzstyle{varrowlabel}     =[above, scale=.5, color=black, font=\ttfamily\bfseries]
 #+LATEX_HEADER: \tikzstyle{varrowlabelabove}=[above, scale=.5, color=black, font=\ttfamily\bfseries]
 #+LATEX_HEADER: \tikzstyle{varrowlabelbelow}=[below, scale=.5, color=black, font=\ttfamily\bfseries]
-#+LATEX_HEADER: 
+#+LATEX_HEADER:
 #+LATEX_HEADER: \tikzstyle{leftlabel}      =[scale=.7, align=left]
 #+LATEX_HEADER: \tikzstyle{rightlabel}     =[scale=.7, align=right]
-#+LATEX_HEADER: 
+#+LATEX_HEADER:
 #+LATEX_HEADER: \tikzstyle{stepdescr}=[circle, scale=.4, draw=black!40]
 #+LATEX_HEADER: \tikzstyle{descr}=[scale=.5, color=black!40]
 #+LATEX_HEADER: \tikzstyle{descrconnect}=[vzorange, -{Circle[]}, thick]
 #+LATEX_HEADER: \tikzstyle{setconnect}=[vzorange, {Parenthesis[scale=3,reversed]}-{Circle[]}, thick]
-#+LATEX_HEADER: 
+#+LATEX_HEADER:
 #+LATEX_HEADER: \tikzstyle{blue dotted}=[draw=blue!50!white, line width=1pt, dash pattern=on 1pt off 4pt on 6pt off 4pt, inner sep=4mm, rectangle, rounded corners]
 #+LATEX_HEADER: \tikzstyle{ribbonread}= [draw=black!20 , line width = 1.0ex , {Triangle Cap[]}-{Triangle Cap[reversed]} ]
 #+LATEX_HEADER: \tikzstyle{ribbonwrite}=[draw=black!20 , line width = 1.0ex , {Triangle Cap[reversed]}-{Triangle Cap[]} ]
 #+LATEX_HEADER: \tikzstyle{ribbonrw}=   [draw=black!20 , line width = 1.0ex , {Triangle Cap[]}-{Triangle Cap[]}]
-#+LATEX_HEADER: 
+#+LATEX_HEADER:
 #+LATEX_HEADER: \tikzstyle{matrix aspect}=[matrix of nodes, nodes={outer sep=0pt,inner sep=3pt},column sep=3em,row sep=5ex]
-#+LATEX_HEADER: 
+#+LATEX_HEADER:
 #+LATEX_HEADER: % Apps and software engineering
 #+LATEX_HEADER: \tikzstyle{app}=[rectangle, draw=black, minimum width=3cm, align=center,scale=0.6, rounded corners, font=\small\scshape]
 #+LATEX_HEADER: \tikzstyle{db}=[cylinder, draw=black, rotate=90, minimum height=2.5cm, minimum width=1cm, align=center,scale=0.6, font=\small\scshape]
@@ -151,4 +150,3 @@
 #+LaTeX_HEADER: \usepackage{setspace}
 #+LaTeX_HEADER: \usepackage{etoolbox}
 #+LaTeX_HEADER: \appto\verbatim{\tiny\myunicodefallback\baselineskip=-\maxdimen\lineskip=0pt}
-
