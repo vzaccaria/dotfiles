@@ -9,8 +9,6 @@
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "M-w") 'delete-window)
 (global-set-key (kbd "M-e") 'personal/show-agenda-all)
-
-
 (global-set-key (kbd "M-r") 'eval-region)
 (global-set-key (kbd "M-t") 'beautify)
 (global-set-key (kbd "M-y") 'company-yasnippet)
@@ -29,7 +27,7 @@
 (global-set-key (kbd "M-g") 'deft)
 (global-set-key (kbd "M-h") 'helm-apropos)
 (global-set-key (kbd "M-j") 'vz/align-code-to-equals)
-(global-set-key (kbd "M-k") 'recompile)
+(global-set-key (kbd "M-k") 'magit-log-all)
 (global-set-key (kbd "M-l") 'helm-ag) ;; Search in local directory
 (global-set-key (kbd "M-/") 'evil-search-forward)
 
@@ -55,7 +53,9 @@
 (define-key evil-normal-state-map (kbd "M-.") 'helm-resume)
 (define-key evil-normal-state-map (kbd "M-a") 'mark-whole-buffer)
 (define-key evil-normal-state-map (kbd "M-{") 'vz/insert-braces)
-(define-key evil-visual-state-map (kbd "M-a") 'mark-whole-buffer)
+
+(define-key evil-visual-state-map (kbd "a") 'mark-whole-buffer)
+(define-key evil-visual-state-map (kbd "v") 'er/expand-region)
 
 ;; Function key revival
 
@@ -63,6 +63,9 @@
                              (define-key LaTeX-mode-map (kbd "<f1>")  'spacemacs/toggle-flycheck-error-list)
                              (define-key LaTeX-mode-map (kbd "<f2>")  'reftex-reference)
                              (define-key LaTeX-mode-map (kbd "<f3>")  'reftex-citation)
+                             (define-key LaTeX-mode-map (kbd "M-b") 'latex/font-bold)
+                             (define-key LaTeX-mode-map (kbd "M-i") 'latex/font-emphasis)
+                             (define-key LaTeX-mode-map (kbd "M-k") 'latex/font-code)
                              ))
 
 (define-key org-mode-map (kbd "<f1>") (lambda () (interactive) (org-overview)))
