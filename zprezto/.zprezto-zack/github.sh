@@ -25,7 +25,7 @@ vg() {
 
     case "$com" in
         initial)   msg="initial commit" ;;
-        minor)     msg="minor: apply small changes ($mc)" ;;
+        minor)     msg="minor: changes ($mc)" ;;
         move)      msg="move/delete files";;
         fix)       msg="fix: $msg ($mc)" ;;
         polish)    msg="polish: prettify ($mc)" ;;
@@ -33,7 +33,7 @@ vg() {
         sync)      msg="sync: ($mc)";;
         feat)      msg="feat: $msg (in $mc)";;
         generic)   msg="$msg ($mc)" ;;
-        update)    msg="update with $msg ($mc)" ;;
+        update)    msg="update: $msg ($mc)" ;;
         *)
         ;;
     esac
@@ -79,8 +79,16 @@ update()  {
 }
 
 alias u='update'
-uu() {
+ud() {
     update . "$*"
+}
+
+fx() {
+    fix . "$*"
+}
+
+ft() {
+    feat . "$*"
 }
 
 move()     {
