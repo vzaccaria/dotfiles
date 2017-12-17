@@ -10,7 +10,6 @@
     evil-multiedit
     livescript-mode
     highlight-chars
-    writeroom-mode
     matlab-mode
     (ox-extra :location local)
     (ox-reveal :location local)
@@ -325,15 +324,6 @@
     )
   )
 
-(defun personal/init-writeroom-mode ()
-  (use-package writeroom-mode
-    :commands (writeroom-mode)
-    :init
-    (evil-leader/set-key "Tw" 'writeroom-mode)
-    :config
-    (setq writeroom-restore-window-config t)
-    (setq writeroom-width 100)
-    ))
 
 
 (defun personal/post-init-org-bullets ()

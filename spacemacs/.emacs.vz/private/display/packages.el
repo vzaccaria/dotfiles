@@ -4,8 +4,18 @@
         (pretty-fonts :location local)
         (pretty-code :location local)
         (pretty-magit :location local)
-
+        writeroom-mode
         ))
+
+(defun display/init-writeroom-mode ()
+  (use-package writeroom-mode
+    :commands (writeroom-mode)
+    :init
+    (evil-leader/set-key "Tw" 'writeroom-mode)
+    :config
+    (setq writeroom-restore-window-config t)
+    (setq writeroom-width 100)
+    ))
 
 (defun display/init-pretty-fonts ()
   (use-package pretty-fonts
@@ -16,7 +26,7 @@
        '(;; Fira Code Ligatures
          (pretty-fonts-fira-font prog-mode-hook org-mode-hook)
          ;; Custom replacements not possible with `pretty-code' package
-         (pretty-fonts-hy-mode hy-mode-hook)))
+         ))
 
       (pretty-fonts-set-fontsets
        '(("fontawesome"
@@ -49,7 +59,7 @@
     :config
     (progn
       (when (display-graphic-p)
-      (pretty-magit "feature" ? (:foreground "slate gray" :height 1.2))
+      (pretty-magit "feat" ? (:foreground "slate gray" :height 1.2))
       (pretty-magit "minor" ? (:foreground "slate gray" :height 1.2))
       (pretty-magit "update"  ? (:foreground "#375E97" :height 1.2))
       (pretty-magit "fix"     ? (:foreground "#FB6542" :height 1.2))

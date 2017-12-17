@@ -167,6 +167,24 @@
   (add-hook 'before-save-hook 'beautify-latex-before-save)
   )
 
+(defun vz/latex-refresh-writeroom ()
+  (interactive)
+    (TeX-fold-buffer)
+    (preview-cache-preamble-off)
+    (preview-buffer)
+    )
+
+(defun vz/latex-on-save-refresh-writeroom ()
+  (add-hook 'before-save-hook 'vz/latex-refresh-writeroom)
+  )
+
+
+(defun vz/latex-enable-writeroom ()
+  (interactive)
+  (writeroom-mode t)
+  (vz/latex-refresh-writeroom)
+  )
+
 (defun vz/enable-latex-esc-before-save ()
   (interactive)
   (add-hook 'before-save-hook 'latex-esc-before-save)
@@ -257,18 +275,7 @@ prompt the user for a coding system."
   (interactive)
   (flycheck-select-checker 'grammar-gramcheck))
 
-(defun vz/enable-writeroom ()
-  (interactive)
-  (load-theme 'spacemacs-light t)
-  (enable-theme 'spacemacs-light)
-  (writeroom-mode t)
-)
 
-(defun vz/disable-writeroom ()
-  (interactive)
-  (writeroom--disable)
-  (enable-theme 'spacemacs-dark)
-)
 
 (defun vz/define-checker-for-labs()
   "Sets the correct checker for infob labs"

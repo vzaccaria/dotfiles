@@ -147,6 +147,7 @@
 (defun dotspacemacs/init/display ()
   (setq-default
    dotspacemacs-themes '(
+                         spacemacs-light
                          zenburn
                          nord
                          solarized-light
@@ -356,133 +357,136 @@ you should place you code here."
 
   ;; Do not write anything past this comment. This is where Emacs will
   ;; auto-generate custom variable definitions.
-  (custom-set-variables
-   ;; custom-set-variables was added by Custom.
-   ;; If you edit it by hand, you could mess it up, so be careful.
-   ;; Your init file should contain only one such instance.
-   ;; If there is more than one, they won't work right.
-   '(ansi-color-faces-vector
-     [default default default italic underline success warning error])
-   '(ansi-color-names-vector
-     ["#d2ceda" "#f2241f" "#67b11d" "#b1951d" "#3a81c3" "#a31db1" "#21b8c7" "#655370"])
-   '(compilation-message-face (quote default))
-   '(cua-global-mark-cursor-color "#2aa198")
-   '(cua-normal-cursor-color "#657b83")
-   '(cua-overwrite-cursor-color "#b58900")
-   '(cua-read-only-cursor-color "#859900")
-   '(custom-enabled-themes (quote (leuven)))
-   '(custom-safe-themes
-     (quote
-      ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
-   '(disaster-cc "clang")
-   '(disaster-objdump "gobjdump -d -M att -Sl --no-show-raw-insn")
-   '(evil-want-Y-yank-to-eol t)
-   '(evilnc-default-hotkeys t)
-   '(fci-rule-color "#eee8d5" t)
-   '(flycheck-python-pycompile-executable
-     "/Applications/Blender.app/Contents/MacOS/../Resources/2.78/python/bin/python3.5m")
-   '(helm-ag-base-command "ag --nocolor --nogroup --hidden" t)
-   '(helm-ag-use-agignore t)
-   '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
-   '(highlight-symbol-colors
-     (--map
-      (solarized-color-blend it "#fdf6e3" 0.25)
-      (quote
-       ("#b58900" "#2aa198" "#dc322f" "#6c71c4" "#859900" "#cb4b16" "#268bd2"))))
-   '(highlight-symbol-foreground-color "#586e75")
-   '(highlight-tail-colors
-     (quote
-      (("#eee8d5" . 0)
-       ("#B4C342" . 20)
-       ("#69CABF" . 30)
-       ("#69B7F0" . 50)
-       ("#DEB542" . 60)
-       ("#F2804F" . 70)
-       ("#F771AC" . 85)
-       ("#eee8d5" . 100))))
-   '(hindent-reformat-buffer-on-save nil)
-   '(hindent-style "johan-tibell")
-   '(hl-bg-colors
-     (quote
-      ("#DEB542" "#F2804F" "#FF6E64" "#F771AC" "#9EA0E5" "#69B7F0" "#69CABF" "#B4C342")))
-   '(hl-fg-colors
-     (quote
-      ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
-   '(ledger-reports
-     (quote
-      (("FRA" "ledger -f /Users/zaccaria/Dropbox/org/institutional/administration/finance/fondi.ledger reg Assets\\:Fondi\\:Ateneo\\:Fondo\\ Ricerca\\ Ateneo")
-       ("STMicroelectronics" "ledger -f /Users/zaccaria/Dropbox/org/institutional/administration/finance/fondi.ledger reg Assets\\:Fondi\\:STMicroelectronics")
-       ("fondi esercitazioni" "ledger -f /Users/zaccaria/Dropbox/org/institutional/administration/finance/fondi.ledger reg Assets\\:Fondi\\:Ateneo\\:Esercitazioni")
-       ("bal" "%(binary) -f %(ledger-file) bal")
-       ("reg" "%(binary) -f %(ledger-file) reg")
-       ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")
-       ("account" "%(binary) -f %(ledger-file) reg %(account)"))))
-   '(magit-diff-use-overlays nil)
-   '(magit-log-section-arguments (quote ("--decorate" "-n256")))
-   '(markdown-command "/usr/local/bin/pandoc")
-   '(mlint-programs
-     (quote
-      ("mlint" "mac/mlint" "/Applications/MATLAB_R2015b.app/bin/maci64/mlint")))
-   '(nrepl-message-colors
-     (quote
-      ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
-   '(org-agenda-prefix-format
-     (quote
-      ((agenda . " %i %-12:c%?-12t% s")
-       (timeline . "  % s")
-       (todo . " %i  %-20:c %-25:b")
-       (tags . " %i %-12:c")
-       (search . " %i %-12:c"))))
-   '(org-html-inline-image-rules
-     (quote
-      (("file" . "\\.\\(jpeg\\|jpg\\|png\\|pdf\\|gif\\|svg\\)\\'")
-       ("http" . "\\.\\(jpeg\\|jpg\\|png\\|gif\\|svg\\)\\'")
-       ("https" . "\\.\\(jpeg\\|jpg\\|png\\|gif\\|svg\\)\\'"))))
-   '(package-selected-packages
-     (quote
-      (wgrep unfill smex ranger org-category-capture nord-theme mwim ivy-hydra ibuffer-projectile graphviz-dot-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flyspell-correct-ivy diff-hl counsel-projectile counsel swiper ivy define-word powerline spinner alert log4e gntp markdown-mode skewer-mode simple-httpd multiple-cursors js2-mode hydra parent-mode projectile haml-mode flyspell-correct flycheck pkg-info epl flx smartparens iedit anzu evil goto-chg undo-tree highlight json-mode tablist docker-tramp json-snatcher json-reformat diminish web-completion-data dash-functional tern pos-tip ghc haskell-mode company bind-map bind-key yasnippet packed auctex anaconda-mode pythonic f s helm avy helm-core auto-complete popup wolfram-mode thrift stan-mode scad-mode qml-mode matlab-mode arduino-mode smeargle orgit magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit magit-popup git-commit with-editor dash async winum fuzzy monokai-theme writeroom-mode visual-fill-column ess-smart-equals ess-R-object-popup ess-R-data-view ctable ess julia-mode pretty-mode highlight-chars yapfify yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package typo toc-org tagedit spacemacs-theme spaceline solarized-theme slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs request rainbow-delimiters quelpa pyvenv pytest pyenv-mode py-isort pug-mode prodigy popwin pip-requirements persp-mode pcre2el pbcopy paradox ox-reveal osx-trash osx-dictionary org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc macrostep lorem-ipsum livid-mode livescript-mode live-py-mode linum-relative link-hint less-css-mode ledger-mode launchctl js2-refactor js-doc intero insert-shebang info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-hoogle helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio gnuplot gh-md flyspell-correct-helm flycheck-pos-tip flycheck-ledger flycheck-haskell flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-multiedit evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump dockerfile-mode docker disaster deft dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-shell company-quickhelp company-ghci company-ghc company-cabal company-c-headers company-auctex company-anaconda command-log-mode column-enforce-mode coffee-mode cmm-mode cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
-   '(pos-tip-background-color "#eee8d5")
-   '(pos-tip-foreground-color "#586e75")
-   '(prettier-target-mode "js2-mode")
-   '(safe-local-variable-values (quote ((TeX-command-extra-options . "-shell-escape"))))
-   '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
-   '(term-default-bg-color "#fdf6e3")
-   '(term-default-fg-color "#657b83")
-   '(vc-annotate-background nil)
-   '(vc-annotate-background-mode nil)
-   '(vc-annotate-color-map
-     (quote
-      ((20 . "#dc322f")
-       (40 . "#c37300")
-       (60 . "#b97d00")
-       (80 . "#b58900")
-       (100 . "#a18700")
-       (120 . "#9b8700")
-       (140 . "#948700")
-       (160 . "#8d8700")
-       (180 . "#859900")
-       (200 . "#5a942c")
-       (220 . "#439b43")
-       (240 . "#2da159")
-       (260 . "#16a870")
-       (280 . "#2aa198")
-       (300 . "#009fa7")
-       (320 . "#0097b7")
-       (340 . "#008fc7")
-       (360 . "#268bd2"))))
-   '(vc-annotate-very-old-color nil)
-   '(weechat-color-list
-     (quote
-      (unspecified "#fdf6e3" "#eee8d5" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#657b83" "#839496")))
-   '(xterm-color-names
-     ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#073642"])
-   '(xterm-color-names-bright
-     ["#fdf6e3" "#cb4b16" "#93a1a1" "#839496" "#657b83" "#6c71c4" "#586e75" "#002b36"]))
-  (custom-set-faces
-   ;; custom-set-faces was added by Custom.
-   ;; If you edit it by hand, you could mess it up, so be careful.
-   ;; Your init file should contain only one such instance.
-   ;; If there is more than one, they won't work right.
-   '(default ((t (:foreground "#DCDCCC" :background "#3F3F3F"))))
-   '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
-   '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#d2ceda" "#f2241f" "#67b11d" "#b1951d" "#3a81c3" "#a31db1" "#21b8c7" "#655370"])
+ '(compilation-message-face (quote default))
+ '(cua-global-mark-cursor-color "#2aa198")
+ '(cua-normal-cursor-color "#657b83")
+ '(cua-overwrite-cursor-color "#b58900")
+ '(cua-read-only-cursor-color "#859900")
+ '(custom-enabled-themes (quote (spacemacs-light)))
+ '(custom-safe-themes
+   (quote
+    ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
+ '(disaster-cc "clang")
+ '(disaster-objdump "gobjdump -d -M att -Sl --no-show-raw-insn")
+ '(evil-want-Y-yank-to-eol t)
+ '(evilnc-default-hotkeys t)
+ '(fci-rule-color "#eee8d5" t)
+ '(flycheck-python-pycompile-executable
+   "/Applications/Blender.app/Contents/MacOS/../Resources/2.78/python/bin/python3.5m")
+ '(helm-ag-base-command "ag --nocolor --nogroup --hidden" t)
+ '(helm-ag-use-agignore t)
+ '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
+ '(highlight-symbol-colors
+   (--map
+    (solarized-color-blend it "#fdf6e3" 0.25)
+    (quote
+     ("#b58900" "#2aa198" "#dc322f" "#6c71c4" "#859900" "#cb4b16" "#268bd2"))))
+ '(highlight-symbol-foreground-color "#586e75")
+ '(highlight-tail-colors
+   (quote
+    (("#eee8d5" . 0)
+     ("#B4C342" . 20)
+     ("#69CABF" . 30)
+     ("#69B7F0" . 50)
+     ("#DEB542" . 60)
+     ("#F2804F" . 70)
+     ("#F771AC" . 85)
+     ("#eee8d5" . 100))))
+ '(hindent-reformat-buffer-on-save nil)
+ '(hindent-style "johan-tibell")
+ '(hl-bg-colors
+   (quote
+    ("#DEB542" "#F2804F" "#FF6E64" "#F771AC" "#9EA0E5" "#69B7F0" "#69CABF" "#B4C342")))
+ '(hl-fg-colors
+   (quote
+    ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
+ '(ledger-reports
+   (quote
+    (("FRA" "ledger -f /Users/zaccaria/Dropbox/org/institutional/administration/finance/fondi.ledger reg Assets\\:Fondi\\:Ateneo\\:Fondo\\ Ricerca\\ Ateneo")
+     ("STMicroelectronics" "ledger -f /Users/zaccaria/Dropbox/org/institutional/administration/finance/fondi.ledger reg Assets\\:Fondi\\:STMicroelectronics")
+     ("fondi esercitazioni" "ledger -f /Users/zaccaria/Dropbox/org/institutional/administration/finance/fondi.ledger reg Assets\\:Fondi\\:Ateneo\\:Esercitazioni")
+     ("bal" "%(binary) -f %(ledger-file) bal")
+     ("reg" "%(binary) -f %(ledger-file) reg")
+     ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")
+     ("account" "%(binary) -f %(ledger-file) reg %(account)"))))
+ '(magit-diff-use-overlays nil)
+ '(magit-log-section-arguments (quote ("--decorate" "-n256")))
+ '(markdown-command "/usr/local/bin/pandoc")
+ '(mlint-programs
+   (quote
+    ("mlint" "mac/mlint" "/Applications/MATLAB_R2015b.app/bin/maci64/mlint")))
+ '(nrepl-message-colors
+   (quote
+    ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
+ '(org-agenda-prefix-format
+   (quote
+    ((agenda . " %i %-12:c%?-12t% s")
+     (timeline . "  % s")
+     (todo . " %i  %-20:c %-25:b")
+     (tags . " %i %-12:c")
+     (search . " %i %-12:c"))))
+ '(org-html-inline-image-rules
+   (quote
+    (("file" . "\\.\\(jpeg\\|jpg\\|png\\|pdf\\|gif\\|svg\\)\\'")
+     ("http" . "\\.\\(jpeg\\|jpg\\|png\\|gif\\|svg\\)\\'")
+     ("https" . "\\.\\(jpeg\\|jpg\\|png\\|gif\\|svg\\)\\'"))))
+ '(package-selected-packages
+   (quote
+    (wgrep unfill smex ranger org-category-capture nord-theme mwim ivy-hydra ibuffer-projectile graphviz-dot-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flyspell-correct-ivy diff-hl counsel-projectile counsel swiper ivy define-word powerline spinner alert log4e gntp markdown-mode skewer-mode simple-httpd multiple-cursors js2-mode hydra parent-mode projectile haml-mode flyspell-correct flycheck pkg-info epl flx smartparens iedit anzu evil goto-chg undo-tree highlight json-mode tablist docker-tramp json-snatcher json-reformat diminish web-completion-data dash-functional tern pos-tip ghc haskell-mode company bind-map bind-key yasnippet packed auctex anaconda-mode pythonic f s helm avy helm-core auto-complete popup wolfram-mode thrift stan-mode scad-mode qml-mode matlab-mode arduino-mode smeargle orgit magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit magit-popup git-commit with-editor dash async winum fuzzy monokai-theme writeroom-mode visual-fill-column ess-smart-equals ess-R-object-popup ess-R-data-view ctable ess julia-mode pretty-mode highlight-chars yapfify yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package typo toc-org tagedit spacemacs-theme spaceline solarized-theme slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs request rainbow-delimiters quelpa pyvenv pytest pyenv-mode py-isort pug-mode prodigy popwin pip-requirements persp-mode pcre2el pbcopy paradox ox-reveal osx-trash osx-dictionary org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc macrostep lorem-ipsum livid-mode livescript-mode live-py-mode linum-relative link-hint less-css-mode ledger-mode launchctl js2-refactor js-doc intero insert-shebang info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-hoogle helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio gnuplot gh-md flyspell-correct-helm flycheck-pos-tip flycheck-ledger flycheck-haskell flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-multiedit evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump dockerfile-mode docker disaster deft dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-shell company-quickhelp company-ghci company-ghc company-cabal company-c-headers company-auctex company-anaconda command-log-mode column-enforce-mode coffee-mode cmm-mode cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
+ '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
+ '(pos-tip-background-color "#eee8d5")
+ '(pos-tip-foreground-color "#586e75")
+ '(prettier-target-mode "js2-mode")
+ '(safe-local-variable-values (quote ((TeX-command-extra-options . "-shell-escape"))))
+ '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
+ '(term-default-bg-color "#fdf6e3")
+ '(term-default-fg-color "#657b83")
+ '(vc-annotate-background nil)
+ '(vc-annotate-background-mode nil)
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#dc322f")
+     (40 . "#c37300")
+     (60 . "#b97d00")
+     (80 . "#b58900")
+     (100 . "#a18700")
+     (120 . "#9b8700")
+     (140 . "#948700")
+     (160 . "#8d8700")
+     (180 . "#859900")
+     (200 . "#5a942c")
+     (220 . "#439b43")
+     (240 . "#2da159")
+     (260 . "#16a870")
+     (280 . "#2aa198")
+     (300 . "#009fa7")
+     (320 . "#0097b7")
+     (340 . "#008fc7")
+     (360 . "#268bd2"))))
+ '(vc-annotate-very-old-color nil)
+ '(weechat-color-list
+   (quote
+    (unspecified "#fdf6e3" "#eee8d5" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#657b83" "#839496")))
+ '(xterm-color-names
+   ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#073642"])
+ '(xterm-color-names-bright
+   ["#fdf6e3" "#cb4b16" "#93a1a1" "#839496" "#657b83" "#6c71c4" "#586e75" "#002b36"]))
+
+;; (custom-set-faces
+;;  ;; custom-set-faces was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(default ((t (:foreground "#DCDCCC" :background "#3F3F3F" :family "Hasklig" :foundry "nil" :slant normal :weight normal :height 160 :width normal))))
+;;  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+;;  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))

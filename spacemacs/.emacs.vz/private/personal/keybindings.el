@@ -29,7 +29,7 @@
 (global-set-key (kbd "M-j") 'vz/align-code-to-equals)
 (global-set-key (kbd "M-k") 'magit-log-all)
 (global-set-key (kbd "M-l") 'helm-ag) ;; Search in local directory
-(global-set-key (kbd "M-/") 'evil-search-forward)
+(global-set-key (kbd "M-/") 'vz/latex-enable-writeroom)
 
 
 (global-set-key (kbd "M-z") 'helm-keyboard-quit)
@@ -63,9 +63,9 @@
                              (define-key LaTeX-mode-map (kbd "<f1>")  'spacemacs/toggle-flycheck-error-list)
                              (define-key LaTeX-mode-map (kbd "<f2>")  'reftex-reference)
                              (define-key LaTeX-mode-map (kbd "<f3>")  'reftex-citation)
-                             (define-key LaTeX-mode-map (kbd "M-b") 'latex/font-bold)
-                             (define-key LaTeX-mode-map (kbd "M-i") 'latex/font-emphasis)
+                             (define-key LaTeX-mode-map (kbd "M-b") 'latex/font-emphasis)
                              (define-key LaTeX-mode-map (kbd "M-k") 'latex/font-code)
+                             (define-key LaTeX-mode-map (kbd "M-r") 'vz/latex-refresh-writeroom)
                              ))
 
 (define-key org-mode-map (kbd "<f1>") (lambda () (interactive) (org-overview)))
