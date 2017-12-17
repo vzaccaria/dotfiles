@@ -9,13 +9,9 @@
 
 (defun display/init-pretty-fonts ()
   (use-package pretty-fonts
-    :init
-    (progn
-      (defconst pretty-fonts-hy-mode
-        '(("\\(self\\)"   ?⊙))))
-
     :config
     (progn
+      (when (display-graphic-p)
       (pretty-fonts-set-kwds
        '(;; Fira Code Ligatures
          (pretty-fonts-fira-font prog-mode-hook org-mode-hook)
@@ -45,19 +41,20 @@
           ;; 𝕊    ⨂      ∅      ⟻    ⟼     ⊙      𝕋       𝔽
           #x1d54a #x2a02 #x2205 #x27fb #x27fc #x2299 #x1d54b #x1d53d
           ;; 𝔹    𝔇       𝔗
-          #x1d539 #x1d507 #x1d517))))))
+          #x1d539 #x1d507 #x1d517)))))))
 
 
 (defun display/init-pretty-magit ()
   (use-package pretty-magit
     :config
     (progn
+      (when (display-graphic-p)
       (pretty-magit "feature" ? (:foreground "slate gray" :height 1.2))
       (pretty-magit "minor" ? (:foreground "slate gray" :height 1.2))
       (pretty-magit "update"  ? (:foreground "#375E97" :height 1.2))
       (pretty-magit "fix"     ? (:foreground "#FB6542" :height 1.2))
       (pretty-magit "master"  ?⊙ (:box t :height 1.2) t)
-      (pretty-magit "origin"  ?  (:box t :height 1.2) t))))
+      (pretty-magit "origin"  ?  (:box t :height 1.2) t)))))
 
 
 
