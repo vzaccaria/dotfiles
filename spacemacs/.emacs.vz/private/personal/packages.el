@@ -310,7 +310,7 @@
 
   (define-key org-mode-map (kbd "M-p")  'org-preview-latex-fragment)
 
-  (setq org-format-latex-options (plist-put org-format-latex-options :scale 0.7))
+  (setq org-format-latex-options (plist-put org-format-latex-options :scale 2))
 
   )
 
