@@ -240,7 +240,11 @@
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-startup-recent-list-size 5
    dotspacemacs-loading-progress-bar t
-   ))
+   )
+  (defconst vz/hostname
+    (string-trim (with-output-to-string
+                   (call-process "hostname" nil standard-output nil))))
+  )
 
 
 (defun dotspacemacs/user-init ()
