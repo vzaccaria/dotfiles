@@ -2,8 +2,6 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
-(setq is-darwin (eq system-type 'darwin))
-(setq is-linuxp (eq system-type 'gnu/linux))
 
 (defun dotspacemacs/layers ()
   "Spacemacs layers declarations and package configurations."
@@ -110,8 +108,8 @@
     ;; (langs :location local)     ; Language config
     (personal :location local
               :variables
-              personal-bind-osx-keys (if is-linuxp nil t)
-              personal-bind-unix-keys (if is-linuxp t nil))
+              personal-bind-osx-keys (if vz/is-linux nil t)
+              personal-bind-unix-keys (if vz/is-linux t nil))
     (maxima :variables
             maxima-emacs-installation-path
             "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/maxima/5.35.1/emacs"
@@ -244,6 +242,10 @@
   (defconst vz/hostname
     (string-trim (with-output-to-string
                    (call-process "hostname" nil standard-output nil))))
+  (defconst vz/is-darwin (eq system-type 'darwin))
+  (defconst vz/is-linux (eq system-type 'gnu/linux))
+  (defconst vz/is-home-mac (string-equal vz/hostname "macbook.local"))
+  (defconst vz/is-work-mac (string-equal vz/hostname "Vittorios-MacBook-Pro.local"))
   )
 
 

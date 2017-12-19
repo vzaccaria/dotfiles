@@ -71,9 +71,7 @@
 
       (add-hook 'haskell-mode-hook (lambda ()
                                      (when
-                                         (and (display-graphic-p)
-                                              (not
-                                               (string-equal vz/hostname "Vittorios-MacBook-Pro.local")))
+                                         (and (display-graphic-p) vz/is-home-mac)
                                        (pretty-code-set-hasklig-ligatures)
                                        )
                                      ))

@@ -5,8 +5,6 @@
         (flycheck-misc :location local)
         ))
 
-(setq is-darwin (eq system-type 'darwin))
-(setq is-linuxp (eq system-type 'gnu/linux))
 
 
 (defun config/init-flycheck-misc ()
@@ -28,5 +26,5 @@
 
 
 (defun config/flycheck-config-haskell ()
-  (when is-linuxp (config/flycheck-config-haskell-use-haskell-liquid))
+  (when vz/is-linux (config/flycheck-config-haskell-use-haskell-liquid))
   )
