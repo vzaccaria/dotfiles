@@ -127,6 +127,7 @@
   (setf org-latex-default-packages-alist
         (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
 
+  ;; USE THIS TO CREATE STRINGS: http://tomeko.net/online_tools/cpp_text_escape.php?lang=en
   (setq org-structure-template-alist
         '(("s" "#+BEGIN_SRC ?\n\n#+END_SRC")
           ("e" "#+BEGIN_EXAMPLE\n?\n#+END_EXAMPLE")
@@ -137,7 +138,7 @@
           ("l" "#+BEGIN_EXPORT latex\n?\n#+END_EXPORT")
           ("L" "#+LaTeX: ")
           ("h" "#+BEGIN_EXPORT html\n?\n#+END_EXPORT")
-          ("n" "*** Note                                                            :notes:\n")
+          ("n" "*** Appunti                                                        :B_note:\n:PROPERTIES:\n:BEAMER_env: note\n:END:\n")
           ("H" "#+HTML: ")
           ("a" "#+BEGIN_EXPORT ascii\n?\n#+END_EXPORT")
           ("A" "#+ASCII: ")

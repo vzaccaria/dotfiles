@@ -1,22 +1,24 @@
-#+LaTeX_CLASS_OPTIONS: [12pt,a4paper]
-#+LaTeX_CLASS: article
-#+BEAMER_THEME: metropolis 
+#+LaTeX_CLASS_OPTIONS: [handout,notes=show]
+#+LaTeX_CLASS: beamer
+#+BEAMER_THEME: metropolis
+#+OPTIONS:   H:2 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t ':t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
 
-
-#+LATEX_HEADER: \usepackage{beamerarticle}
+#+LATEX_HEADER: \usepackage{pgfpages}
+#+LATEX_HEADER: \pgfpagesuselayout{4 on 1}[a4paper,border shrink=3mm,landscape]
 
 #+INCLUDE:   ./header_universal.org
 
-#+LATEX_HEADER: \setmainfont[]{Minion Pro}
-#+LATEX_HEADER: \setmonofont[Scale=0.75]{FiraCode-Regular}
+# #+LATEX_HEADER: \setmainfont[]{Minion Pro}
+# #+LATEX_HEADER: \setmonofont[Scale=0.75]{FiraCode-Regular}
 
-#+LATEX_HEADER: \setlength{\parskip}{0pt plus 0.5ex}
-#+LaTeX_HEADER: \usepackage{geometry}
-#+LATEX_HEADER: \geometry{top=3cm,left=2cm,right=2cm,bottom=3cm}
-#+LATEX_HEADER: \BeforeBeginEnvironment{minted}{\bigskip}
-#+LATEX_HEADER: \AfterEndEnvironment{minted}{\medskip}
-#+LATEX_HEADER: \renewcommand{\keyboard}{}
-#+LATEX_HEADER: \renewcommand{\screen}{}
+# #+LATEX_HEADER: \setlength{\parskip}{0pt plus 0.5ex}
+# #+LaTeX_HEADER: \usepackage{geometry}
+# #+LATEX_HEADER: \geometry{top=3cm,left=2cm,right=2cm,bottom=3cm}
+# #+LATEX_HEADER: \BeforeBeginEnvironment{minted}{\bigskip}
+# #+LATEX_HEADER: \AfterEndEnvironment{minted}{\medskip}
+# #+LATEX_HEADER: \renewcommand{\keyboard}{}
+# #+LATEX_HEADER: \renewcommand{\screen}{}
 
 
-#+OPTIONS:   toc:nil 
+#+OPTIONS:   toc:nil
