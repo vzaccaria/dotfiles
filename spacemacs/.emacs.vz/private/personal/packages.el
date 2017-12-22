@@ -137,6 +137,7 @@
           ("l" "#+BEGIN_EXPORT latex\n?\n#+END_EXPORT")
           ("L" "#+LaTeX: ")
           ("h" "#+BEGIN_EXPORT html\n?\n#+END_EXPORT")
+          ("n" "*** Note                                                            :notes:\n")
           ("H" "#+HTML: ")
           ("a" "#+BEGIN_EXPORT ascii\n?\n#+END_EXPORT")
           ("A" "#+ASCII: ")
