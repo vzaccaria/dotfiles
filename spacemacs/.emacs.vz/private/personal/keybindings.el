@@ -22,7 +22,6 @@
 
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "M-s") 'evil-write-all)
-(global-set-key (kbd "M-D") 'vz/switch-dictionary)
 (global-set-key (kbd "M-f") 'helm-projectile-ag) ;; search local repo
 (global-set-key (kbd "M-g") 'deft)
 (global-set-key (kbd "M-h") 'helm-apropos)
@@ -60,24 +59,14 @@
 ;; Function key revival
 
 (add-hook 'LaTeX-mode-hook (lambda ()
-                             (define-key LaTeX-mode-map (kbd "<f1>")  'spacemacs/toggle-flycheck-error-list)
-                             (define-key LaTeX-mode-map (kbd "<f2>")  'reftex-reference)
-                             (define-key LaTeX-mode-map (kbd "<f3>")  'reftex-citation)
-                             (define-key LaTeX-mode-map (kbd "M-b") 'latex/font-emphasis)
-                             (define-key LaTeX-mode-map (kbd "M-k") 'latex/font-code)
-                             (define-key LaTeX-mode-map (kbd "M-r") 'vz/latex-refresh-writeroom)
-                             ))
+     (define-key LaTeX-mode-map (kbd "<f1>")  'spacemacs/toggle-flycheck-error-list)
+     (define-key LaTeX-mode-map (kbd "<f2>")  'reftex-reference)
+     (define-key LaTeX-mode-map (kbd "<f3>")  'reftex-citation)
+     (define-key LaTeX-mode-map (kbd "M-b") 'latex/font-emphasis)
+     (define-key LaTeX-mode-map (kbd "M-k") 'latex/font-code)
+     (define-key LaTeX-mode-map (kbd "M-r") 'vz/latex-refresh-writeroom)
+     ))
 
-(define-key org-mode-map (kbd "<f1>") (lambda () (interactive) (org-overview)))
-(define-key org-mode-map (kbd "<f2>") (lambda () (interactive) (org-content 2)))
-(define-key org-mode-map (kbd "<f3>") (lambda () (interactive) (org-content 3)))
-
-
-;; Orgmode utilities
-(define-key org-mode-map (kbd "s-b")  'spacemacs/org-bold)
-(define-key org-mode-map (kbd "s-k")  'spacemacs/org-verbose)
-(define-key org-mode-map (kbd "s-i")  'spacemacs/org-italic)
-(define-key org-mode-map (kbd "s-u")  'spacemacs/org-underline)
 
 (cond
 
