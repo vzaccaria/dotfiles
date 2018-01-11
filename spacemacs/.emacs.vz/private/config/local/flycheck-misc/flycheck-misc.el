@@ -1,10 +1,20 @@
 (require 'flycheck)
 
+(defun config/flycheck-config-latex-linux ()
+  (flycheck-define-checker grammar-gramcheck
+    "A general purpose grammar checker. It uses LanguageTool."
+    :command ("gramchk" "check" source-original)
+    :error-parser flycheck-parse-checkstyle
+    :standard-input nil
+    :modes (latex-mode plain-TeX-mode))
+  (add-to-list 'flycheck-checkers 'grammar-gramcheck)
+  (add-hook 'plain-TeX-mode-hook 'flycheck-mode)
+  (add-hook 'LaTeX-mode-hook 'flycheck-mode)
+  )
 
 (defun config/flycheck-config-latex ()
   (flycheck-define-checker grammar-gramcheck
     "A general purpose grammar checker. It uses LanguageTool."
-
     :command ("gramchk" "--configfile" "/Users/zaccaria/.gramchk.yml" "check" source-original)
     :error-parser flycheck-parse-checkstyle
     :standard-input nil
@@ -13,6 +23,7 @@
   (add-hook 'plain-TeX-mode-hook 'flycheck-mode)
   (add-hook 'LaTeX-mode-hook 'flycheck-mode)
   )
+
 
 (defun config/flycheck-config-markdown ()
   (flycheck-define-checker grammar-gramcheck-markdown
@@ -38,28 +49,28 @@
     :modes verilog-mode)
   (add-to-list 'flycheck-checkers 'verilog-check)
   (add-hook 'verilog-mode-hook (lambda () (interactive)
-                            (flycheck-mode)
-                            (flycheck-disable-checker 'verilog-verilator)
-                            (flycheck-select-checker 'verilog-check)))
+                                 (flycheck-mode)
+                                 (flycheck-disable-checker 'verilog-verilator)
+                                 (flycheck-select-checker 'verilog-check)))
   )
 
 (defun config/flycheck-config-javascript ()
   (add-hook 'js-mode-hook '(lambda ()
-                                    (flycheck-select-checker 'javascript-eslint)
-                                    ))
-
-  (add-hook 'js2-mode-hook '(lambda ()
                              (flycheck-select-checker 'javascript-eslint)
                              ))
+
+  (add-hook 'js2-mode-hook '(lambda ()
+                              (flycheck-select-checker 'javascript-eslint)
+                              ))
   )
 
 (defun config/flycheck-config-shell ()
-   (add-hook 'shell-mode-hook  (lambda ()
-                          (interactive)
-                          (flycheck-select-checker 'sh-shellcheck)
-                          )
+  (add-hook 'shell-mode-hook  (lambda ()
+                                (interactive)
+                                (flycheck-select-checker 'sh-shellcheck)
+                                )
+            )
   )
-   )
 
 
 (defgroup flycheck-liquid nil
@@ -75,11 +86,11 @@
 (defmacro make-liquid-checker (name command)
   (let ((default-reporter
           `((message
-            (one-or-more " ") (one-or-more not-newline)
-            (zero-or-more "\n"
-                          (one-or-more " ")
-                          (zero-or-more not-newline)))
-          line-end)))
+             (one-or-more " ") (one-or-more not-newline)
+             (zero-or-more "\n"
+                           (one-or-more " ")
+                           (zero-or-more not-newline)))
+            line-end)))
 
     `(flycheck-define-checker ,name
        "A Haskell refinement type checker using liquidhaskell.

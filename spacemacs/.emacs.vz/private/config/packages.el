@@ -10,7 +10,10 @@
 (defun config/init-flycheck-misc ()
   (use-package flycheck-misc
     :config
-    (config/flycheck-config-latex)
+    (if vz/is-darwin
+        (config/flycheck-config-latex)
+      (config/flycheck-config-latex-linux)
+      )
     (config/flycheck-config-markdown)
     (config/flycheck-config-verilog)
     (config/flycheck-config-javascript)
