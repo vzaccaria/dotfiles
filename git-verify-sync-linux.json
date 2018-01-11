@@ -1,7 +1,7 @@
 [{
         "target": ["/home/admin/projects"],
         "options": {
-            "from": 100
+            "from": -1
         }
     },
     {
