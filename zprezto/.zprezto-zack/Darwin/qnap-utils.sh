@@ -116,6 +116,7 @@ devenv-gui-start-with-tag-local() {
     img=`docker run -dt \
            -p 5901:5901 \
 	         -e PATH=/root/.local/bin:/opt/bin:/opt/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin \
+           -v ~/development/github:/development/github \
 	         $tag`
     docker exec -d "$img" /root/startx
     echo "Click here: vnc://127.0.0.1:5901"
