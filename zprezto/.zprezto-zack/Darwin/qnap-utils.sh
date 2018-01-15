@@ -115,7 +115,6 @@ devenv-gui-start-with-tag-local() {
     tag=$1
     img=`docker run -dt \
            -p 5901:5901 \
-	         -v /etc/localtime:/etc/localtime:ro                     \
 	         -e PATH=/root/.local/bin:/opt/bin:/opt/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin \
 	         $tag`
     docker exec -d "$img" /root/startx
