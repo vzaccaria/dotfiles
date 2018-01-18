@@ -1,36 +1,8 @@
 
 # This is the universal style-file, updated with the latest goodies for beamer and other docs.
 
+#+INCLUDE: ./header_xelatex.org
 
-#+AUTHOR:    Vittorio Zaccaria
-#+EMAIL:     vittorio.zaccaria@polimi.it
-
-
-#+LaTeX_HEADER: \usepackage{fixltx2e}
-#+LaTeX_HEADER: \usepackage{graphicx}
-#+LaTeX_HEADER: \usepackage{longtable}
-#+LaTeX_HEADER: \usepackage{float}
-#+LaTeX_HEADER: \usepackage{wrapfig}
-#+LaTeX_HEADER: \usepackage{rotating}
-#+LaTeX_HEADER: \usepackage[normalem]{ulem}
-#+LaTeX_HEADER: \usepackage{amsmath}
-#+LaTeX_HEADER: \usepackage{textcomp}
-#+LaTeX_HEADER: \usepackage{marvosym}
-#+LaTeX_HEADER: \usepackage{wasysym}
-#+LaTeX_HEADER: \usepackage{amssymb}
-#+LaTeX_HEADER: \usepackage{hyperref}
-#+LaTeX_HEADER: \usepackage{xcolor}
-#+LATEX_HEADER: \usepackage{stmaryrd}
-
-# # ICONS!
-#+LATEX_HEADER: \usepackage{fontawesome}
-
-
-# Needed by LUALATEX and MINTED
-#+LaTeX_HEADER: \usepackage{shellesc}
-#+LaTeX_HEADER: \tolerance=1000
-#+LaTeX_HEADER: \usepackage{minted}
-#+LaTeX_HEADER: \usepackage{ifplatform}
 
 # TIKZ!
 #+LaTeX_HEADER: \usepackage{tikz}
@@ -70,29 +42,6 @@
 #+LATEX_HEADER: \definecolor{vzblue}{rgb}{0.000,0.000,0.861}
 
 
-# # Just for the italian accents accents
-# #+LATEX_HEADER: \usepackage{polyglossia}
-# #+LATEX_HEADER: \setmainlanguage{italian}
-
-#+LATEX_HEADER: \setmonofont[Scale=0.75]{FiraCode-Regular}
-
-# Unicode fonts (for ASCII art)
-#+LATEX_HEADER: \ifmacosx
-#+LATEX_HEADER: \newfontfamily\myunicodefallback{Menlo}
-#+LATEX_HEADER: \newfontfamily\myunicodefallbackb{DejaVu Sans}
-#+LATEX_HEADER: \fi
-
-#+LATEX_HEADER: \iflinux
-#+LATEX_HEADER: \newfontfamily\myunicodefallback{Menlo-Regular}
-#+LATEX_HEADER: \newfontfamily\myunicodefallbackb{DejaVu Sans}
-#+LATEX_HEADER: \fi
-#+LATEX_HEADER: \newcommand{\uc}[1]{{\myunicodefallbackb #1}}
-
-
-#+LATEX_HEADER: \definecolor{links}{HTML}{0086F7}
-#+LATEX_HEADER: \hypersetup{colorlinks,linkcolor=,urlcolor=links}
-
-# Helpful macros for lectures ..
 
 #+LATEX_HEADER: \tikzstyle{none}=[rectangle, minimum size=1cm]
 #+LATEX_HEADER: \tikzstyle{box}=[rectangle, fill=white, draw=black, minimum size=2cm, rounded corners]
@@ -140,13 +89,3 @@
 
 #+LATEX_HEADER: \newcommand{\keyboard}{{\tikz \node[box, minimum size=0cm] {\faKeyboardO};}}
 #+LATEX_HEADER: \newcommand{\screen}{{\tikz \node[box, minimum size=0cm] {\faTerminal};}}
-#+LATEX_HEADER: \newcommand{\rpr}[1]{{\llbracket \texttt{#1} \rrbracket}}
-#+LATEX_HEADER: \newcommand{\rprtwo}[1]{${\llbracket \texttt{#1} \rrbracket}_2$}
-#+LATEX_HEADER: \newcommand{\rprten}[1]{${\llbracket \texttt{#1} \rrbracket}_{10}$}
-#+LATEX_HEADER: \newcommand{\rprctwo}[1]{${\llbracket \texttt{#1} \rrbracket}_{C2}$}
-
-
-#+LaTeX_HEADER: \usepackage{fancyvrb}
-#+LaTeX_HEADER: \usepackage{setspace}
-#+LaTeX_HEADER: \usepackage{etoolbox}
-#+LaTeX_HEADER: \appto\verbatim{\tiny\myunicodefallback\baselineskip=-\maxdimen\lineskip=0pt}
