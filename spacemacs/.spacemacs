@@ -82,6 +82,7 @@
            latex-enable-auto-fill t
            latex-enable-folding t)
     )
+    (bibtex)
   )
 
 (defvar dotspacemacs/layers/extra
