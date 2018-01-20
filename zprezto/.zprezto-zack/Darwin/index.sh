@@ -9,11 +9,6 @@ if [[ -s "${srcdir}/exports.sh" ]]; then
 fi
 echo_ok
 
-echo "paths "
-if [[ -s "${srcdir}/path.sh" ]]; then
-  source "${srcdir}/path.sh"
-fi
-echo_ok
 
 echo "aliases"
 if [[ -s "${srcdir}/aliases.sh" ]]; then

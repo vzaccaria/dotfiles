@@ -9,3 +9,15 @@
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+machine=`uname`
+
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto-zack/${machine}/path.sh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zprezto-zack/${machine}/path.sh"
+fi
+
+host=`hostname`
+
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto-zack/${machine}/${host}/path.sh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zprezto-zack/${machine}/${host}/path.sh"
+fi

@@ -29,5 +29,5 @@
 
 
 (defun config/flycheck-config-haskell ()
-  (when vz/is-linux (config/flycheck-config-haskell-use-haskell-liquid))
+  (when vz/is-linux (config/flycheck-config-haskell-use-haskell-stack-liquid))
   )

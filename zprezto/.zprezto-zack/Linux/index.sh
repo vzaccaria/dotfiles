@@ -9,12 +9,6 @@ if [[ -s "${srcdir}/exports.sh" ]]; then
 fi
 echo_ok
 
-echo "Path"
-if [[ -s "${srcdir}/path.sh" ]]; then
-  source "${srcdir}/path.sh"
-fi
-echo_ok
-
 echo "Aliases"
 if [[ -s "${srcdir}/aliases.sh" ]]; then
   source "${srcdir}/aliases.sh"
@@ -40,13 +34,3 @@ fi
 
 # I dont remember why this is here..
 unsetopt correct_all
-
- 
-
-
-
-
-
-
-
-
