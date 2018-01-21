@@ -68,13 +68,15 @@
 
   )
 
+(defun personal/org-init-links ()
+  (org-add-link-type "papers3" (lambda (link)  (shell-command (concat "open papers3:" link))))
+  )
 (defun personal/org-init-display ()
   (setq org-columns-default-format "%40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM")
   ;; Using orgmode as a presentation
   (setq org-hide-emphasis-markers t)
   (setq org-hide-leading-stars t)
   (setq org-level-color-stars-only t )
-  (org-add-link-type "papers3" (lambda (link)  (shell-command (concat "open papers3:" link))))
   )
 
 (defun personal/org-init-snippets ()
