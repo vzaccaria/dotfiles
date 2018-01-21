@@ -19,7 +19,12 @@
                                              dotspacemacs/layers/langs
                                              dotspacemacs/layers/extra
                                              dotspacemacs/layers/local)
-   ))
+   )
+  (if vz/is-darwin
+      (setq-default dotspacemacs-configuration-layers
+                    (append dotspacemacs-configuration-layers dotspacemacs/layers/osx)))
+  )
+
 
 (defun dotspacemacs/layers/packages ()
   (setq-default
@@ -59,6 +64,12 @@
     )
   "Layers I consider core to Spacemacs. Loaded for all OSes")
 
+(defvar dotspacemacs/layers/osx
+  '(
+    (bibtex)
+    (nixos)
+    )
+  "Layers I consider core to Spacemacs. Loaded for all OSes")
 
 (defvar dotspacemacs/layers/langs
   '(
@@ -81,8 +92,6 @@
     (latex :variables
            latex-enable-auto-fill t
            latex-enable-folding t)
-    (bibtex)
-    (nixos)
     )
   )
 
