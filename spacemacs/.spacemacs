@@ -246,6 +246,7 @@
                    (call-process "hostname" nil standard-output nil))))
   (defconst vz/is-darwin (eq system-type 'darwin))
   (defconst vz/is-linux (eq system-type 'gnu/linux))
+  (defconst vz/is-linux-station (string-equal vz/hostname "ubuntu_1604"))
   (defconst vz/is-home-mac (string-equal vz/hostname "macbook.local"))
   (defconst vz/is-work-mac (string-equal vz/hostname "Vittorios-MacBook-Pro.local"))
   )

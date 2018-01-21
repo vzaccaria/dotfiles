@@ -107,7 +107,7 @@ devenv-gui-start-with-tag() {
 	         -v /share/CACHEDEV1_DATA/homes/admin/projects/dot-local:/root/.local \
 	         -e PATH=/root/.local/bin:/opt/bin:/opt/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin \
 	         devenv-gui-${tag}-latest`
-    docker exec -d "$img" /root/startx
+    docker exec -d "$img" --hostname ${tag} /root/startx
     echo "Click here: vnc://192.168.1.120:5901"
 }
 
@@ -118,7 +118,7 @@ devenv-gui-start-with-tag-local() {
 	         -e PATH=/root/.local/bin:/opt/bin:/opt/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin \
            -v ~/development/github:/development/github \
 	         devenv-gui-${tag}-latest`
-    docker exec -d "$img" /root/startx
+    docker exec -d "$img" --hostname ${tag} /root/startx
     echo "Click here: vnc://127.0.0.1:5901"
 }
 
@@ -128,10 +128,4 @@ de-local() {
 
 de() {
     open "vnc://192.168.1.120:5901"
-}
-
-devenv-gui() {
-    dock-setup-qnappino
-    devenv-gui-start-with-tag devenv-gui-latest
-    echo "Click here: vnc://192.168.1.120:5901"
 }
