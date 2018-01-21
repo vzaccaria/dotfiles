@@ -17,7 +17,6 @@ RUN apt-get install -y \
     zsh \
     stow \
     git \
-    emacs \
     libglu1-mesa \
     ispell \
     screen \
@@ -31,6 +30,10 @@ RUN apt-get install -y \
     nodejs \
     build-essential \
     vim
+
+RUN add-apt-repository -y ppa:kelleyk/emacs
+RUN apt-get update
+RUN apt-get install -y emacs25
 
 
 RUN echo "Update dot files on Jan 19, 2018 "
