@@ -13,16 +13,15 @@
    dotspacemacs-distribution 'spacemacs
    dotspacemacs-enable-lazy-installation 'unused
    dotspacemacs-ask-for-lazy-installation t
+   dotspacemacs-configuration-layer-path '("~/.emacs.vz/private/"))
 
-   dotspacemacs-configuration-layer-path '("~/.emacs.vz/private/")
-   dotspacemacs-configuration-layers (append dotspacemacs/layers/core
-                                             dotspacemacs/layers/langs
-                                             dotspacemacs/layers/extra
-                                             dotspacemacs/layers/local)
-   )
-  (if vz/is-darwin
-      (setq-default dotspacemacs-configuration-layers
-                    (append dotspacemacs-configuration-layers dotspacemacs/layers/osx)))
+  (cond (vz/is-darwin
+         (setq-default dotspacemacs-configuration-layers (append
+                                                          dotspacemacs/layers/common
+                                                          dotspacemacs/layers/osx)))
+        (t ;; when none of the matches above is true
+         (setq-default dotspacemacs-configuration-layers dotspacemas/layers/common))
+        )
   )
 
 
@@ -37,6 +36,7 @@
    dotspacemacs-frozen-packages '()
    dotspacemacs-install-packages 'used-but-keep-unused
    ))
+
 
 (defvar dotspacemacs/layers/core
   '(better-defaults
@@ -67,7 +67,6 @@
 (defvar dotspacemacs/layers/osx
   '(
     (bibtex)
-    (nixos)
     )
   "Layers I consider core to Spacemacs. Loaded for all OSes")
 
@@ -129,6 +128,11 @@
     )
   "Local layers housed in '~/.emacs.vz/private'.")
 
+(defvar dotspacemacs/layers/common 
+	(append dotspacemacs/layers/core
+                dotspacemacs/layers/langs
+                dotspacemacs/layers/extra
+                dotspacemacs/layers/local))
 
 (defun dotspacemacs/init ()
   "Spacemacs core settings."
@@ -277,8 +281,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
           "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no"))
    ))
 
-  (defun dotspacemacs/user-config ()
-    "Configuration function for user code.
+(defun dotspacemacs/user-config ()
+  "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration.
 This is the place where most of your configurations should be done. Unless it is
@@ -286,95 +290,95 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
 
   ;;; remove from the article class the default packages
-    (add-to-list 'auto-mode-alist '("\\.html" . html-mode))
+  (add-to-list 'auto-mode-alist '("\\.html" . html-mode))
 
-    (setq org-latex-minted-options
-          '(("obeytabs" "true")
-            ("baselinestretch" "0.95")
-            ;;("frame" "lines")
-            ;; ("frame" "single")
-            ;; ("framesep" "10pt")
-            ("bgcolor" "bgl")
-            ("linenos=true")
-            ))
+  (setq org-latex-minted-options
+        '(("obeytabs" "true")
+          ("baselinestretch" "0.95")
+          ;;("frame" "lines")
+          ;; ("frame" "single")
+          ;; ("framesep" "10pt")
+          ("bgcolor" "bgl")
+          ("linenos=true")
+          ))
 
-    (setq org-latex-listings 'minted)
+  (setq org-latex-listings 'minted)
 
-    (setq org-latex-pdf-process
-          '("lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-            "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-            "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+  (setq org-latex-pdf-process
+        '("lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+          "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+          "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
-    (cond
-     ((eq system-type 'darwin)
-      (setq backup-directory-alist
-            `((".*" . , "~/emacs-backup-dir")))
-      (setq auto-save-file-name-transforms
-            `((".*" , "~/emacs-backup-dir" t)))
-      (setq browse-url-mailto-function 'browse-url-generic)
-      (setq browse-url-generic-program "open")
-      ;; On Darwin set up Fira Code Symbol ligatures..
-
-
-      ;; This works when using emacs --daemon + emacsclient
-      (find-file "~/Dropbox/org/dashboard.org")
-      ;; setup latex correlation
-      (setq TeX-view-program-selection '((output-pdf "PDF Viewer")))
-      (setq TeX-source-correlate-mode t)
-      (setq TeX-source-correlate-start-server t)
-      (setq TeX-source-correlate-method 'synctex)
-      (setq TeX-view-program-list
-            '(("PDF Viewer" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
-      (vz/enable-latex-esc-before-save))
-     ((eq system-type 'gnu/linux)
-      (setq TeX-view-program-selection '((output-pdf "Zathura")))
-      (setq TeX-source-correlate-mode t)
-      (setq TeX-source-correlate-start-server t)
-      (setq TeX-source-correlate-method 'synctex)
-      )
-     )
+  (cond
+   ((eq system-type 'darwin)
+    (setq backup-directory-alist
+          `((".*" . , "~/emacs-backup-dir")))
+    (setq auto-save-file-name-transforms
+          `((".*" , "~/emacs-backup-dir" t)))
+    (setq browse-url-mailto-function 'browse-url-generic)
+    (setq browse-url-generic-program "open")
+    ;; On Darwin set up Fira Code Symbol ligatures..
 
 
-
-    (add-hook 'before-save-hook 'prettier-before-save)
-    (add-hook 'before-save-hook 'beautify-haskell-before-save)
-
-    (customize-set-variable 'helm-ag-base-command "ag --nocolor --nogroup --hidden")
-
-    ;; latex ftw
-    ;; (add-to-list 'auto-mode-alist '("\\.tex" . latex-mode))
-    (setq TeX-parse-self t); Enable parse on load.
-    (setq TeX-auto-save t); Enable parse on save.
-    (setq-default TeX-master nil)
-    (setq TeX-PDF-mode t); PDF mode (rather than DVI-mode)
-
-    ;; Reftex config
-    ;;
-    ;; Remember if you write: ‘As we have shown in Theorem’ and then press C-c ),
-    ;; RefTeX will know that you are looking for a theorem label and restrict the
-    ;; menu to only these labels without even asking
-    ;;
-    ;; https://www.gnu.org/software/emacs/manual/html_node/reftex/Theorem-and-Axiom.html
-    (setq reftex-label-alist
-          '(("corollary"   ?a "co:"  "~\\ref{%s}" nil ("corollary"   "cor.") -2)
-            ("theorem" ?h "th:" "~\\ref{%s}" t   ("theorem" "th.") -3)))
-
-    (setq reftex-plug-into-AUCTeX t)
-    (setq reftex-ref-macro-prompt nil)
-
-
-    ;; LaTeX-math-mode http://www.gnu.org/s/auctex/manual/auctex/Mathematics.html
-    ;; (add-hook 'TeX-mode-hook 'LaTeX-math-mode)
-
-    ;; Turn on RefTeX for AUCTeX http://www.gnu.org/s/auctex/manual/reftex/reftex_5.html
-    ;; (add-hook 'TeX-mode-hook 'turn-on-reftex)
+    ;; This works when using emacs --daemon + emacsclient
+    (find-file "~/Dropbox/org/dashboard.org")
+    ;; setup latex correlation
+    (setq TeX-view-program-selection '((output-pdf "PDF Viewer")))
+    (setq TeX-source-correlate-mode t)
+    (setq TeX-source-correlate-start-server t)
+    (setq TeX-source-correlate-method 'synctex)
+    (setq TeX-view-program-list
+          '(("PDF Viewer" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
+    (vz/enable-latex-esc-before-save))
+   ((eq system-type 'gnu/linux)
+    (setq TeX-view-program-selection '((output-pdf "Zathura")))
+    (setq TeX-source-correlate-mode t)
+    (setq TeX-source-correlate-start-server t)
+    (setq TeX-source-correlate-method 'synctex)
     )
+   )
 
-  ;; Move some of the variables defined below into user-config
-  ;; as soon as you understand what variables do...
 
-  ;; Do not write anything past this comment. This is where Emacs will
-  ;; auto-generate custom variable definitions.
+
+  (add-hook 'before-save-hook 'prettier-before-save)
+  (add-hook 'before-save-hook 'beautify-haskell-before-save)
+
+  (customize-set-variable 'helm-ag-base-command "ag --nocolor --nogroup --hidden")
+
+  ;; latex ftw
+  ;; (add-to-list 'auto-mode-alist '("\\.tex" . latex-mode))
+  (setq TeX-parse-self t); Enable parse on load.
+  (setq TeX-auto-save t); Enable parse on save.
+  (setq-default TeX-master nil)
+  (setq TeX-PDF-mode t); PDF mode (rather than DVI-mode)
+
+  ;; Reftex config
+  ;;
+  ;; Remember if you write: ‘As we have shown in Theorem’ and then press C-c ),
+  ;; RefTeX will know that you are looking for a theorem label and restrict the
+  ;; menu to only these labels without even asking
+  ;;
+  ;; https://www.gnu.org/software/emacs/manual/html_node/reftex/Theorem-and-Axiom.html
+  (setq reftex-label-alist
+        '(("corollary"   ?a "co:"  "~\\ref{%s}" nil ("corollary"   "cor.") -2)
+          ("theorem" ?h "th:" "~\\ref{%s}" t   ("theorem" "th.") -3)))
+
+  (setq reftex-plug-into-AUCTeX t)
+  (setq reftex-ref-macro-prompt nil)
+
+
+  ;; LaTeX-math-mode http://www.gnu.org/s/auctex/manual/auctex/Mathematics.html
+  ;; (add-hook 'TeX-mode-hook 'LaTeX-math-mode)
+
+  ;; Turn on RefTeX for AUCTeX http://www.gnu.org/s/auctex/manual/reftex/reftex_5.html
+  ;; (add-hook 'TeX-mode-hook 'turn-on-reftex)
+  )
+
+;; Move some of the variables defined below into user-config
+;; as soon as you understand what variables do...
+
+;; Do not write anything past this comment. This is where Emacs will
+;; auto-generate custom variable definitions.
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

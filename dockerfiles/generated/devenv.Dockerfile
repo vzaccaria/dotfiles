@@ -19,7 +19,6 @@ RUN apt-get install -y \
     zsh \
     stow \
     git \
-    emacs \
     libglu1-mesa \
     ispell \
     screen \
@@ -34,12 +33,17 @@ RUN apt-get install -y \
     build-essential \
     vim
 
+RUN add-apt-repository -y ppa:kelleyk/emacs
+RUN apt-get update
+RUN apt-get install -y emacs25
+
 
 RUN echo "Update dot files on Jan 19, 2018 "
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 WORKDIR /root/dotfiles
 
 RUN git clone https://github.com/syl20bnr/spacemacs /root/.emacs.d
+RUN cd /root/.emacs.d && git checkout tags/v0.200.9
 
 WORKDIR /root/dotfiles/zprezto
 RUN git submodule update --init

@@ -41,6 +41,7 @@ RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 WORKDIR /root/dotfiles
 
 RUN git clone https://github.com/syl20bnr/spacemacs /root/.emacs.d
+RUN cd /root/.emacs.d && git checkout tags/v0.200.9
 
 WORKDIR /root/dotfiles/zprezto
 RUN git submodule update --init
