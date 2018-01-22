@@ -18,9 +18,20 @@
   (cond (vz/is-darwin
          (setq-default dotspacemacs-configuration-layers (append
                                                           dotspacemacs/layers/common
+                                                          dotspacemacs/layers/langs-osx
+                                                          dotspacemacs/layers/extra
                                                           dotspacemacs/layers/osx)))
+        (vz/is-linux-station
+         (setq-default dotspacemacs-configuration-layers (append
+                                                          dotspacemacs/layers/common
+                                                          dotspacemacs/layers/langs-linux-station
+                                                          dotspacemacs/layers/extra
+                                                          )))
+
         (t ;; when none of the matches above is true
-         (setq-default dotspacemacs-configuration-layers dotspacemas/layers/common))
+         (setq-default dotspacemacs-configuration-layers (append
+                                                          dotspacemacs/layers/langs-linux
+                                                          dotspacemacs/layers/common)))
         )
   )
 
@@ -70,7 +81,7 @@
     )
   "Layers I consider core to Spacemacs. Loaded for all OSes")
 
-(defvar dotspacemacs/layers/langs
+(defvar dotspacemacs/layers/langs-osx
   '(
     javascript
     react
@@ -93,6 +104,41 @@
            latex-enable-folding t)
     )
   )
+
+(defvar dotspacemacs/layers/langs-linux-station
+  '(
+    javascript
+    react
+    python
+    octave
+    emacs-lisp
+    vimscript
+    haskell
+    (c-c++ :variables c-c++-enable-clang-support t)
+
+    yaml
+    csv
+    html
+    markdown
+
+    spell-checking
+
+    (latex :variables
+           latex-enable-auto-fill t
+           latex-enable-folding t)
+    )
+  )
+
+(defvar dotspacemacs/layers/langs-linux-generic
+  '(
+    haskell
+    (c-c++ :variables c-c++-enable-clang-support t)
+
+    yaml
+    csv
+    html
+    markdown
+  ))
 
 (defvar dotspacemacs/layers/extra
   '(gnus
@@ -128,11 +174,9 @@
     )
   "Local layers housed in '~/.emacs.vz/private'.")
 
-(defvar dotspacemacs/layers/common 
+(defvar dotspacemacs/layers/common
 	(append dotspacemacs/layers/core
-                dotspacemacs/layers/langs
-                dotspacemacs/layers/extra
-                dotspacemacs/layers/local))
+          dotspacemacs/layers/local))
 
 (defun dotspacemacs/init ()
   "Spacemacs core settings."

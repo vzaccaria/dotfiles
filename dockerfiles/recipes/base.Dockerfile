@@ -2,6 +2,8 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV SHELL /bin/zsh
 ENTRYPOINT /bin/zsh
 
+RUN echo "Rebuild on Jan 20, 2018 "
+
 RUN apt-get update && apt-get install -y locales
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
@@ -36,7 +38,6 @@ RUN apt-get update
 RUN apt-get install -y emacs25
 
 
-RUN echo "Update dot files on Jan 19, 2018 "
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 WORKDIR /root/dotfiles
 
