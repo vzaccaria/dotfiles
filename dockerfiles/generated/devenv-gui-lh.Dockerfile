@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV SHELL /bin/zsh
 ENTRYPOINT /bin/zsh
 
-RUN echo "Rebuild on Jan 20, 2018 "
+RUN echo "Rebuild on Jan 20, 2018, v0"
 
 RUN apt-get update && apt-get install -y locales
 RUN locale-gen en_US.UTF-8
