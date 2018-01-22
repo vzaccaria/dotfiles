@@ -30,7 +30,7 @@
 
         (t ;; when none of the matches above is true
          (setq-default dotspacemacs-configuration-layers (append
-                                                          dotspacemacs/layers/langs-linux
+                                                          dotspacemacs/layers/langs-linux-generic
                                                           dotspacemacs/layers/common)))
         )
   )
