@@ -39,6 +39,7 @@ RUN add-apt-repository -y ppa:kelleyk/emacs
 RUN apt-get update
 RUN apt-get install -y emacs25
 
+RUN echo "Rebuild on Jan 20, 2018, v1"
 
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 WORKDIR /root/dotfiles
