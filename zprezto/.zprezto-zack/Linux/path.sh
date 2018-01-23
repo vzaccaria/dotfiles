@@ -1,4 +1,5 @@
 path=(\
+    /root/.local/bin \
     /opt/bin \
     /opt/sbin \
     /share/CACHEDEV1_DATA/.qpkg/container-station/bin \
@@ -11,5 +12,4 @@ path=(\
     /usr/local/sbin \
     /usr/local/bin \
     /home/admin/.local/bin \
-    /root/.local/bin \
     $HOME/node_modules/.bin)

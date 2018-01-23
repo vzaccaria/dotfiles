@@ -39,13 +39,13 @@ RUN add-apt-repository -y ppa:kelleyk/emacs
 RUN apt-get update
 RUN apt-get install -y emacs25
 
-RUN echo "Rebuild on Jan 20, 2018, v1"
+RUN echo "Rebuild on Jan 20, 2018, v2"
 
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 WORKDIR /root/dotfiles
 
 RUN git clone https://github.com/syl20bnr/spacemacs /root/.emacs.d
-RUN cd /root/.emacs.d && git checkout tags/v0.200.9
+RUN cd /root/.emacs.d && git checkout tags/v0.200.11
 
 WORKDIR /root/dotfiles/zprezto
 RUN git submodule update --init
