@@ -40,6 +40,12 @@ RUN apt-get update
 RUN apt-get install -y emacs25
 
 RUN echo "Rebuild on Jan 20, 2018, v2"
+RUN add-apt-repository -y ppa:cpick/hub
+RUN apt-get update
+RUN apt-get install -y hub
+RUN hub config --global hub.protocol https
+
+RUN wget https://github.com/github/hub/releases/download/v2.2.8/hub-linux-amd64-2.2.8.tgz
 
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 WORKDIR /root/dotfiles
