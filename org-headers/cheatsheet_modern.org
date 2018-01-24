@@ -5,7 +5,7 @@
 #+OPTIONS:   num:nil toc:nil \n:nil @:nil ::nil |:t ^:t -:t f:t *:t <:t ':t
 #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil title:nil
 
-#+LaTeX_CLASS_OPTIONS: [a4,landscape]
+#+LaTeX_CLASS_OPTIONS: [a4paper,landscape]
 
 #+BIND: org-latex-title-command ""
 
