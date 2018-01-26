@@ -13,71 +13,25 @@
 @text-color: #222;
 @ftext-color: lighten(@text-color, 30%);
 
-.reveal {
+
+body {
   background-color: @background-color;
+  font-family: "Fira Sans";
 
   h1, h2, h3 {
     text-align: left;
-    font-size: 2.5rem;
-    color: @ftext-color;
-
-    &.title {
-      font-size:1.5em;
-      color: @text-color;
-    }
-
-    &.author {
-    font-size:1.1em;
-    color: @ftext-color;
-    letter-spacing: 1px;
-    }
-
-    &.date {
-    font-size:0.6em;
-    color: @ftext-color;
-    letter-spacing: 1px;
-    }
+    font-size: 1.2rem;
+    color: @accent-color;
+    margin-bottom: -1rem;
   }
-  h2 {
-  color: @accent-color;
-  }
+
 
   ul, p {
     text-align: left;
     display: block;
     color: @text-color;
     margin-left: 0px;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    &.date {
-    font-size:0.5em;
-    }
-  }
-
-  li {
-    margin-bottom: 1rem;
-  }
-
-  th {
-    margin-bottom: 1em;
-    font-size: 3rem;
-    font-family: 'League Gothic';
-  }
-
-  td {
-    color: @text-color;
-    font-size: 1.8rem;
-  }
-
-  blockquote {
-    margin: 0px;
-    box-shadow: none;
-    border-left: solid #ddd;
-    width: 100%;
-    & p {
-      font-size: 0.7em;
-      margin: 0px;
-    }
+    font-size: 1rem;
   }
 
   pre {
@@ -113,7 +67,9 @@
   }
 }
 </style>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.js"></script>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
 #+END_EXPORT
 
 #+MACRO: jsbin   @@html: <a class="vz-link" href="https://jsbin.com/$1/edit?js,console">$1</a>@@
