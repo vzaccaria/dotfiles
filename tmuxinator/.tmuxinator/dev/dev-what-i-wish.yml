@@ -1,0 +1,13 @@
+name: dev-what-i-wish
+root: /Users/zaccaria/development/github/org-writing/what_i_wish_i_knew
+
+attach: false
+post: tmux -CC attach
+
+
+windows:
+  - dev-what-i-wish:
+      layout: main-vertical
+      panes:
+        - vi haskell_dsl.org
+        - make && open haskell_dsl.pdf && watchman haskell_dsl.org 'make'
