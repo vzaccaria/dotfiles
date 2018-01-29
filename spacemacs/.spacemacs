@@ -339,6 +339,8 @@ you should place you code here."
   (add-to-list 'auto-mode-alist '("Makefile" . makefile-gmake-mode))
   (add-to-list 'auto-mode-alist '("makefile\\.mk" . makefile-gmake-mode))
 
+  (global-company-mode)
+
   (setq org-latex-minted-options
         '(("obeytabs" "true")
           ("baselinestretch" "0.95")
