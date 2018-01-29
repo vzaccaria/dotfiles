@@ -1,9 +1,0 @@
-name: SIMPLE
-root: ~/development/github
-
-windows:
-  - SIMPLE:
-      layout: main-vertical
-      panes:
-        - cd .
-        - cd .

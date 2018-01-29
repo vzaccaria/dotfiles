@@ -1,9 +1,0 @@
-name: edx-test-course
-root: ~/development/github/edx-test-course
-
-windows:
-  - edx-test-course:
-      layout: main-vertical
-      panes:
-        - cd .
-        - cd .

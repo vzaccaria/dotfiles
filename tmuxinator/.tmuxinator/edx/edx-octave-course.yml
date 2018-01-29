@@ -1,9 +1,0 @@
-name: infob-octave-edx
-root: ~/development/github/gitbook-octave
-
-windows:
-  - infob-octave-edx:
-      layout: main-vertical
-      panes:
-        - cd .
-        - cd .

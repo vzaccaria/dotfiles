@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: annote
-# key: no
-# --
-\annote[VZ]{`yas-selected-text`}{$0}
