@@ -76,12 +76,12 @@ RUN mkdir -p /usr/local/share/fonts               && \
     npm install -g tern js-beautify && \
     git config --global user.email "vittorio.zaccaria@gmail.com" && \
     git config --global user.name "Vittorio Zaccaria"
-RUN wget -q -O- https://s3.amazonaws.com/download.fpcomplete.com/ubuntu/fpco.key | apt-key add - && \
-    echo 'deb http://download.fpcomplete.com/ubuntu trusty main' | tee /etc/apt/sources.list.d/fpco.list && \
-    apt-get update && apt-get install stack -y
-ENV PATH /root/.local/bin:$PATH
-RUN stack upgrade
-RUN stack setup
+RUN curl -L https://github.com/commercialhaskell/stack/releases/download/v1.6.3/stack-1.6.3-linux-x86_64-static.tar.gz | \
+    tar xz --wildcards --strip-components=1 -C /usr/local/bin '*/stack'
+RUN apt-get -y install libgmp-dev
+RUN stack --resolver=lts-10.0 --install-ghc setup
+RUN stack install hlint
+RUN wget https://raw.githubusercontent.com/ndmitchell/hlint/master/.hlint.yaml --no-check-certificate
 RUN \
     apt-get update && \
     apt-get install -y \
@@ -105,20 +105,8 @@ RUN mkdir Desktop .vnc && \
 RUN apt-get install -y expect
 CMD ["/root/startx"]
 
-RUN git clone --recursive https://github.com/ucsd-progsys/liquidhaskell.git
-
-WORKDIR /root/liquidhaskell
-RUN stack install --install-ghc
-RUN stack test liquidhaskell --no-run-tests
-RUN stack install
-ENV PATH /root/.local/bin:$PATH
-WORKDIR /root
 RUN apt-get install -y z3
-RUN stack install hlint
-RUN wget https://raw.githubusercontent.com/ndmitchell/hlint/master/.hlint.yaml --no-check-certificate
-
-
-
-
-
-
+RUN git clone --recursive https://github.com/ucsd-progsys/liquidhaskell.git
+WORKDIR /root/liquidhaskell
+RUN stack install
+RUN stack test liquidhaskell --no-run-tests
