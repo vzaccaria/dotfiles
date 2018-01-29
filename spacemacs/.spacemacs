@@ -335,6 +335,9 @@ you should place you code here."
 
   ;;; remove from the article class the default packages
   (add-to-list 'auto-mode-alist '("\\.html" . html-mode))
+  (add-to-list 'auto-mode-alist '("makefile" . makefile-gmake-mode))
+  (add-to-list 'auto-mode-alist '("Makefile" . makefile-gmake-mode))
+  (add-to-list 'auto-mode-alist '("makefile\\.mk" . makefile-gmake-mode))
 
   (setq org-latex-minted-options
         '(("obeytabs" "true")
