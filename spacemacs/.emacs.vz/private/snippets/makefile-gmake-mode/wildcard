@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: wildcard
-# key: wl
+# key: wild_
 # --
-$(wildcard $0)
+${1:FILES} ?= $(wildcard *.${2:ext})

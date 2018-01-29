@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: patsubst
-# key: ps
+# key: pat_
 # --
-$(patsubst ${1:from},${2:to},${3:src})
+$(patsubst %.${1:fext}, %.${2:text}, ${3:files})
