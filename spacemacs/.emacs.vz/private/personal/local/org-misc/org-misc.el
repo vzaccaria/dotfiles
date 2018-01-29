@@ -165,7 +165,12 @@
         (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
 
 
-
+  (setq bibtex-completion-display-formats
+        '((article       . "${=has-notes=:1}${=has-pdf=:1} ${=type=:3} ${year:4} ${author:24}  ${title:*} ${journal:16}")
+          (inbook        . "${=has-notes=:1}${=has-pdf=:1} ${=type=:3} ${year:4} ${author:24}  ${title:*} ${chapter:16}")
+          (incollection  . "${=has-notes=:1}${=has-pdf=:1} ${=type=:3} ${year:4} ${author:24}  ${title:*} ${booktitle:16}")
+          (inproceedings . "${=has-notes=:1}${=has-pdf=:1} ${=type=:3} ${year:4} ${author:24}  ${title:*} ${booktitle:16}")
+          (t             . "${=has-notes=:1}${=has-pdf=:1} ${=type=:3} ${year:4} ${author:24}  ${title:*}")))
 
 
   (unless (boundp 'org-latex-classes)
