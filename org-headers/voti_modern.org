@@ -1,0 +1,48 @@
+#+EMAIL:     vittorio.zaccaria@polimi.it
+#+DESCRIPTION:
+#+KEYWORDS:
+
+#+OPTIONS:   num:nil toc:nil \n:nil @:nil ::nil |:t ^:t -:t f:t *:t <:t ':t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil title:nil
+
+#+LaTeX_CLASS_OPTIONS: [a4paper]
+
+#+BIND: org-latex-title-command ""
+
+#+LaTeX_HEADER: \usepackage{fixltx2e}
+#+LaTeX_HEADER: \usepackage{graphicx}
+#+LaTeX_HEADER: \usepackage{longtable}
+#+LaTeX_HEADER: \usepackage{float}
+#+LaTeX_HEADER: \usepackage{wrapfig}
+#+LaTeX_HEADER: \usepackage{geometry}
+#+LaTeX_HEADER: \usepackage{rotating}
+#+LaTeX_HEADER: \usepackage[normalem]{ulem}
+#+LaTeX_HEADER: \usepackage{amsmath}
+#+LaTeX_HEADER: \usepackage{textcomp}
+#+LaTeX_HEADER: \usepackage{marvosym}
+#+LaTeX_HEADER: \usepackage{wasysym}
+#+LaTeX_HEADER: \usepackage{amssymb}
+#+LaTeX_HEADER: \usepackage{hyperref}
+#+LaTeX_HEADER: \usepackage{minted}
+#+LaTeX_HEADER: \usepackage{multicol}
+#+LaTeX_HEADER: \usepackage{fontspec,xltxtra,xunicode}
+#+LATEX_HEADER: \setsansfont{Fira Sans}
+#+LATEX_HEADER: \setmainfont[Scale=0.5]{Fira Sans}
+#+LATEX_HEADER: \setmonofont[]{Source Code Pro}
+#+LATEX_HEADER: \usepackage{polyglossia}
+#+LATEX_HEADER: \setmainlanguage{italiano}
+#+LATEX_HEADER: \pagestyle{empty}
+
+#+LATEX_HEADER:
+#+LATEX_HEADER: \makeatother
+#+LATEX_HEADER: \setlength{\parindent}{0pt}
+#+LATEX_HEADER: \setlength{\parskip}{0pt plus 0.5ex}
+#+LATEX_HEADER: \linespread{0.4}
+
+#+LATEX_HEADER: \setlength{\premulticols}{1pt}
+#+LATEX_HEADER: \setlength{\postmulticols}{1pt}
+#+LATEX_HEADER: \setlength{\multicolsep}{1pt}
+#+LATEX_HEADER: \setlength{\columnsep}{2pt}
+
+#+LaTeX_HEADER: \usepackage{xcolor}
+#+LATEX_HEADER: \definecolor{bgl}{rgb}{0.95,0.95,0.95}
