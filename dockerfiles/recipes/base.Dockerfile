@@ -31,6 +31,12 @@ RUN apt-get install -y \
     unzip \
     nodejs \
     build-essential \
+    autoconf \
+    automake \
+    python-dev \
+    libtool \
+    pkg-config \
+    libssl-dev \
     vim
 
 RUN add-apt-repository -y ppa:kelleyk/emacs
@@ -74,3 +80,11 @@ RUN mkdir -p /usr/local/share/fonts               && \
     npm install -g tern js-beautify && \
     git config --global user.email "vittorio.zaccaria@gmail.com" && \
     git config --global user.name "Vittorio Zaccaria"
+
+RUN git clone https://github.com/facebook/watchman.git
+WORKDIR /root/watchman
+RUN ./autogen.sh
+RUN ./configure
+RUN make && make install
+
+WORKDIR /root
