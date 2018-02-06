@@ -1,0 +1,11 @@
+name: dev-todaes-artifact-2018
+root: /Users/zaccaria/development/github/org-crypto/polimi-casca-todaes2018
+
+attach: false
+post: tmux -CC attach
+
+windows:
+  - dev-todaes-artifact-2018:
+      layout: main-vertical
+      panes:
+        - vi README.md
