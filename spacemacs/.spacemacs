@@ -90,6 +90,7 @@
     emacs-lisp
     vimscript
     haskell
+    (haskell-config :location local)
     (c-c++ :variables c-c++-enable-clang-support t)
 
     yaml
