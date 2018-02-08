@@ -1,0 +1,13 @@
+name: stm-liquid-haskell
+root: /Users/zaccaria/development/github/org-crypto/polimi-casca/src/software/arm-binary-verifier/bnrsbv/src
+
+attach: false
+post: tmux -CC attach
+
+windows:
+  - stm-liquid-haskell:
+      layout: main-vertical
+      panes:
+        - cd . && make edit
+        - cd . && make watch
+        - cd .
