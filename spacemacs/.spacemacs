@@ -97,6 +97,7 @@
     csv
     html
     markdown
+    agda
 
     spell-checking
 
