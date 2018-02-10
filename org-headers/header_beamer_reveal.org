@@ -86,14 +86,14 @@
     box-shadow: none;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
+    font-family: "Inconsolata";
     code {
-      font-family: "Hasklig";
       background: @code-color;
       color: black;
     }
   }
   code {
-    font-family: "Hasklig";
+    font-family: "Inconsolata";
     background: @code-color;
     border-radius: 0.2rem;
     font-size: 1.5rem;
@@ -114,6 +114,7 @@
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.js"></script>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inconsolata" />
 #+END_EXPORT
 
 #+MACRO: jsbin   @@html: <a class="vz-link" href="https://jsbin.com/$1/edit?js,console">$1</a>@@
