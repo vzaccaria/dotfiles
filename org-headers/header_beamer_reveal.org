@@ -13,6 +13,20 @@
 @text-color: #222;
 @ftext-color: lighten(@text-color, 30%);
 
+.define-code-style() {
+    & code {
+        font-family: "Inconsolata";
+        font-size: 1.7rem;
+        line-height: 130%;
+
+        background: @code-color;
+        color: black;
+        border-radius: 0.2rem;
+
+        padding: 0.4rem;
+    }
+}
+
 .reveal {
   background-color: @background-color;
 
@@ -42,11 +56,16 @@
   color: @accent-color;
   }
 
+  // internal slide title
+  h3 {
+    color: @accent-color;
+  }
+
   ul, p {
     text-align: left;
     display: block;
     color: @text-color;
-    margin-left: 0px;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     font-size: 2rem;
     &.date {
@@ -81,23 +100,21 @@
   }
 
   pre {
-    font-size: 1.5rem;
-    border: none;
+    font-size: 1rem;
+    border: none;  
+    color: black;
     box-shadow: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
-    font-family: "Inconsolata";
-    code {
-      background: @code-color;
-      color: black;
-    }
+    font-family: "Menlo";
+    .define-code-style();
   }
-  code {
-    font-family: "Inconsolata";
-    background: @code-color;
-    border-radius: 0.2rem;
-    font-size: 1.5rem;
-  }
+
+  .define-code-style();
+
 
   .vz-link {
     padding-bottom: 0.5rem;

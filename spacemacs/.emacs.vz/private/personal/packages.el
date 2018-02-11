@@ -11,6 +11,7 @@
     highlight-chars
     matlab-mode
     (ox-extra :location local)
+    (ox-reveal :location local)
     (prettier-js :location local)
     (org-misc :location local)
     ))
@@ -126,6 +127,9 @@
   )
 
 
+(defun personal/init-ox-reveal ()
+  (use-package ox-reveal)
+  )
 
 (defun personal/init-ox-extra ()
   (use-package ox-extra
