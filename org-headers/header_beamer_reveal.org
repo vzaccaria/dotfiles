@@ -3,6 +3,7 @@
 #+REVEAL_PLUGINS: (highlight)
 #+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
 #+REVEAL_HIGHLIGHT_CSS: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css
+#+REVEAL_TRANS: fade
 
 #+BEGIN_EXPORT html
 
@@ -15,7 +16,7 @@
 
 .define-code-style() {
     & code {
-        font-family: "Inconsolata";
+        font-family: "Menlo";
         font-size: 1.7rem;
         line-height: 130%;
 
@@ -101,7 +102,7 @@
 
   pre {
     font-size: 1rem;
-    border: none;  
+    border: none;
     color: black;
     box-shadow: none;
     width: 100%;
