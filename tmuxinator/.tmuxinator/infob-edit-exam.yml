@@ -1,0 +1,12 @@
+name: infob-edit-exam
+root: /Users/zaccaria/development/github/org-institutional/materiale-corsi/infob/docs/org/esami
+
+attach: false
+post: tmux -CC attach
+
+windows:
+  - infob-edit-exam:
+      layout: main-horizontal
+      panes:
+        - cd . && make edit
+        - cd . && make watch
