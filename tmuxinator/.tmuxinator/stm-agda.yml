@@ -1,0 +1,12 @@
+name: stm-agda
+root: /Users/zaccaria/development/github/org-haskell/play-agda
+
+attach: false
+post: tmux -CC attach
+
+windows:
+  - stm-agda:
+      layout: main-vertical
+      panes:
+        - cd .
+        - cd .
