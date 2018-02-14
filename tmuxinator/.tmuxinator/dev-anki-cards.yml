@@ -8,6 +8,5 @@ windows:
   - dev-anki-cards:
       layout: main-vertical
       panes:
-        - cd . && make watch
         - cd . && make edit
-        - cd .
+        - cd . && make watch
