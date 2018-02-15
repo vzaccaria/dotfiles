@@ -70,7 +70,9 @@
 
 (defun personal/org-init-links ()
   (org-add-link-type "papers3" (lambda (link)  (shell-command (concat "open papers3:" link))))
+  (org-add-link-type "skim" (lambda (link)  (shell-command (concat "skimk open \"skim:" link "\""))))
   )
+
 (defun personal/org-init-display ()
   (setq org-columns-default-format "%40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM")
   ;; Using orgmode as a presentation
