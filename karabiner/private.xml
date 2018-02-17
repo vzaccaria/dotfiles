@@ -1,95 +1,81 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <root>
-	<item>
-		<name>Logitech R800</name>
-
-		<item>
-			<name>Logitech R800 - Keynote</name>
-			<identifier>private.R800.k</identifier>
-			<only>IWORK_KEYNOTE</only>
-			<autogen>
-				--KeyToKey--
-				KeyCode::DOT,
-				KeyCode::B
-			</autogen>
-			<autogen>
-				--KeyToKey--
-				KeyCode::F5,
-				KeyCode::P, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L
-			</autogen>
-		</item>
-
-		<item>
-			<name>Logitech R800 - Preview</name>
-			<identifier>private.R800.p</identifier>
-			<only>PREVIEW</only>
-			<autogen>
-				--KeyToKey--
-				KeyCode::ESCAPE,
-				KeyCode::F, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L
-			</autogen>
-			<autogen>
-				--KeyToKey--
-				KeyCode::F5,
-				KeyCode::F, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L
-			</autogen>
-			<autogen>
-				--KeyToKey--
-				KeyCode::PAGEUP,
-				KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L
-			</autogen>
-			<autogen>
-				--KeyToKey--
-				KeyCode::PAGEDOWN,
-				KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L
-			</autogen>
-		</item>
-
-		<item>
-			<name>Logitech R800 - Chrome </name>
-			<identifier>private.R800.c</identifier>
-			<autogen>
-				--KeyToKey--
-				KeyCode::F5,
-				KeyCode::F, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L
-			</autogen>
-		</item>
-	</item>
-	<item>
-	  <name> Citrix shortcuts </name>
-	  <item>
-		<name> Citrix - Curly Brace Left </name>
-		<identifier>private.citrix.l</identifier>
-		<only>CITRIX_XEN_APP_VIEWER</only>
-		<autogen>
-		    --KeyToKey--
-			KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_L,
-			KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_L
-		</autogen>
-	  </item>
-	</item>
-	<item>
-		<name>My Blender keyboard shortcuts</name>
-		<item>
-			<name>Rotation</name>
-				<identifier>private.blender.rotation</identifier>
-				<only>BLENDER</only>
-				<autogen> 
-						--KeyToKey--
-						KeyCode::X, ModifierFlag::CONTROL_R,  
-						KeyCode::R, KeyCode::X, KeyCode::KEY_9, KeyCode::KEY_0, KeyCode::ENTER
-				</autogen>
-				<autogen> 
-						--KeyToKey--
-						KeyCode::Y, ModifierFlag::CONTROL_R,  
-						KeyCode::R, KeyCode::Y, KeyCode::KEY_9, KeyCode::KEY_0, KeyCode::ENTER
-				</autogen>
-				<autogen> 
-						--KeyToKey--
-						KeyCode::Z, ModifierFlag::CONTROL_R,  
-						KeyCode::R, KeyCode::Z, KeyCode::KEY_9, KeyCode::KEY_0, KeyCode::ENTER
-				</autogen>
-		</item>
-	</item>
-
+    <item>
+        <name>
+            Vittorio Zaccaria's profile
+        </name>
+        <item>
+            <name>
+                General system utilities
+            </name>
+            <identifier>
+                general_system_utilities
+            </identifier>
+            <vkopenurldef>
+                <name>
+                    KeyCode::VK_OPEN_URL_WEB_HTTPS___GITHUB_COM_VZACCARIA
+                </name>
+                <url>
+                    https://github.com/vzaccaria
+                </url>
+            </vkopenurldef>
+            <autogen>
+                --KeyToKey-- KeyCode::G, ModifierFlag::CONTROL_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___GITHUB_COM_VZACCARIA
+            </autogen>
+            <vkopenurldef>
+                <name>
+                    KeyCode::VK_OPEN_URL_WEB_HTTPS___GMAIL_GOOGLE_COM
+                </name>
+                <url>
+                    https://gmail.google.com
+                </url>
+            </vkopenurldef>
+            <autogen>
+                --KeyToKey-- KeyCode::M, ModifierFlag::CONTROL_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___GMAIL_GOOGLE_COM
+            </autogen>
+        </item>
+        <item>
+            <name>
+                Emacs utils (CLI)
+            </name>
+            <identifier>
+                emacs_utils__cli_
+            </identifier>
+            <windownamedef>
+                <name>
+                    emacs
+                </name>
+                <regex>
+                    emacs
+                </regex>
+            </windownamedef>
+            <windowname_only>
+                emacs
+            </windowname_only>
+            <autogen>
+                --KeyToKey-- KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L,KeyCode::BRACKET_LEFT, KeyCode::E
+            </autogen>
+            <autogen>
+                --KeyToKey-- KeyCode::CURSOR_DOWN, ModifierFlag::CONTROL_L,KeyCode::BRACKET_RIGHT, KeyCode::E
+            </autogen>
+        </item>
+        <item>
+            <name>
+                Emacs utils (GUI)
+            </name>
+            <identifier>
+                emacs_utils__gui_
+            </identifier>
+            <only>
+                EMACS
+            </only>
+            <autogen>
+                --KeyToKey-- KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L,KeyCode::BRACKET_LEFT, KeyCode::E
+            </autogen>
+            <autogen>
+                --KeyToKey-- KeyCode::CURSOR_DOWN, ModifierFlag::CONTROL_L,KeyCode::BRACKET_RIGHT, KeyCode::E
+            </autogen>
+        </item>
+    </item>
 </root>
+
