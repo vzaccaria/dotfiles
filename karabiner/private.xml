@@ -6,10 +6,10 @@
         </name>
         <item>
             <name>
-                General system utilities
+                General system utilities (Fn jkli to arrows)
             </name>
             <identifier>
-                general_system_utilities
+                general_system_utilities__fn_jkli_to_arrows_
             </identifier>
             <vkopenurldef>
                 <name>
@@ -20,7 +20,7 @@
                 </url>
             </vkopenurldef>
             <autogen>
-                --KeyToKey-- KeyCode::G, ModifierFlag::CONTROL_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___GITHUB_COM_VZACCARIA
+                --KeyToKey-- KeyCode::G, ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___GITHUB_COM_VZACCARIA
             </autogen>
             <vkopenurldef>
                 <name>
@@ -31,7 +31,30 @@
                 </url>
             </vkopenurldef>
             <autogen>
-                --KeyToKey-- KeyCode::M, ModifierFlag::CONTROL_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___GMAIL_GOOGLE_COM
+                --KeyToKey-- KeyCode::M, ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___GMAIL_GOOGLE_COM
+            </autogen>
+            <vkopenurldef>
+                <name>
+                    KeyCode::VK_OPEN_URL_APP__APPLICATIONS_UTILITIES_ACTIVITY_MONITOR_APP
+                </name>
+                <url type="file">
+                    /Applications/Utilities/Activity Monitor.app
+                </url>
+            </vkopenurldef>
+            <autogen>
+                --KeyToKey-- KeyCode::A, ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,KeyCode::VK_OPEN_URL_APP__APPLICATIONS_UTILITIES_ACTIVITY_MONITOR_APP
+            </autogen>
+            <autogen>
+                --KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L,KeyCode::CURSOR_LEFT
+            </autogen>
+            <autogen>
+                --KeyToKey-- KeyCode::K, ModifierFlag::CONTROL_L,KeyCode::CURSOR_DOWN
+            </autogen>
+            <autogen>
+                --KeyToKey-- KeyCode::L, ModifierFlag::CONTROL_L,KeyCode::CURSOR_RIGHT
+            </autogen>
+            <autogen>
+                --KeyToKey-- KeyCode::I, ModifierFlag::CONTROL_L,KeyCode::CURSOR_UP
             </autogen>
         </item>
         <item>
@@ -74,6 +97,28 @@
             </autogen>
             <autogen>
                 --KeyToKey-- KeyCode::CURSOR_DOWN, ModifierFlag::CONTROL_L,KeyCode::BRACKET_RIGHT, KeyCode::E
+            </autogen>
+        </item>
+        <item>
+            <name>
+                Add shortcut to copy a note in skim through skimk
+            </name>
+            <identifier>
+                add_shortcut_to_copy_a_note_in_skim_through_skimk
+            </identifier>
+            <only>
+                SKIM
+            </only>
+            <vkopenurldef>
+                <name>
+                    KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_NODE__USR_LOCAL_BIN_SKIMK_GET__V___TEE____SKIMK
+                </name>
+                <url type="shell">
+                    /usr/local/bin/node /usr/local/bin/skimk get -v | tee ~/.skimk
+                </url>
+            </vkopenurldef>
+            <autogen>
+                --KeyToKey-- KeyCode::N, ModifierFlag::CONTROL_L,KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_NODE__USR_LOCAL_BIN_SKIMK_GET__V___TEE____SKIMK
             </autogen>
         </item>
     </item>
