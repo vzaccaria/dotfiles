@@ -63,7 +63,7 @@
   (personal/org-init-latex)
   (personal/org-init-pomodoro)
   (personal/org-init-keybindings)
-  (if vz/is-darwin (personal/org-init-links))
+  (personal/org-init-links)
   )
 )
 

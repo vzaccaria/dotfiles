@@ -69,9 +69,13 @@
   )
 
 (defun personal/org-init-links ()
-  (org-add-link-type "papers3" (lambda (link)  (shell-command (concat "open papers3:" link))))
-  (org-add-link-type "skim" (lambda (link)  (shell-command (concat "skimk open \"skim:" link "\""))))
-  (org-add-link-type "zotero" (lambda (link)  (shell-command (concat "skimk open \"zotero:" link "\""))))
+  (when vz/is-darwin
+    (org-add-link-type "papers3" (lambda (link)  (shell-command (concat "open papers3:" link))))
+    (org-add-link-type "skim" (lambda (link)  (shell-command (concat "skimk open \"skim:" link "\""))))
+    (org-add-link-type "zotero" (lambda (link)  (shell-command (concat "skimk open \"zotero:" link "\"")))))
+  (when vz/is-linux
+    (org-add-link-type "zotero" (lambda (link)  (shell-command (concat "/home/admin/.nvm/versions/node/v6.9.5/bin/node /home/admin/.nvm/versions/node/v6.9.5/bin/skimk open \"zotero:" link "\" --zathura"))))
+    )
   )
 
 (defun personal/org-init-display ()
