@@ -71,6 +71,7 @@
 (defun personal/org-init-links ()
   (org-add-link-type "papers3" (lambda (link)  (shell-command (concat "open papers3:" link))))
   (org-add-link-type "skim" (lambda (link)  (shell-command (concat "skimk open \"skim:" link "\""))))
+  (org-add-link-type "zotero" (lambda (link)  (shell-command (concat "skimk open \"zotero:" link "\""))))
   )
 
 (defun personal/org-init-display ()

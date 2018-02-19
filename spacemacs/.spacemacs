@@ -212,8 +212,8 @@
                          solarized-light
                          solarized-dark
                          )
-   dotspacemacs-default-font '("Hasklig"
-                               :size 16
+   dotspacemacs-default-font '("Hack"
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
