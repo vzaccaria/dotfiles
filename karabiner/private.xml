@@ -6,10 +6,10 @@
         </name>
         <item>
             <name>
-                General system utilities (Fn jkli to arrows)
+                ⌃⇧[mga] open (m)ail, (g)ithub or (a)ctivity monitor
             </name>
             <identifier>
-                general_system_utilities__fn_jkli_to_arrows_
+                ___mga__open__m_ail___g_ithub_or__a_ctivity_monitor
             </identifier>
             <vkopenurldef>
                 <name>
@@ -44,6 +44,14 @@
             <autogen>
                 --KeyToKey-- KeyCode::A, ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,KeyCode::VK_OPEN_URL_APP__APPLICATIONS_UTILITIES_ACTIVITY_MONITOR_APP
             </autogen>
+        </item>
+        <item>
+            <name>
+                ⌃[jkli] to arrows, ⌃[ou] to page [up/down]
+            </name>
+            <identifier>
+                __jkli__to_arrows____ou__to_page__up_down_
+            </identifier>
             <autogen>
                 --KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L,KeyCode::CURSOR_LEFT
             </autogen>
@@ -56,69 +64,33 @@
             <autogen>
                 --KeyToKey-- KeyCode::I, ModifierFlag::CONTROL_L,KeyCode::CURSOR_UP
             </autogen>
-        </item>
-        <item>
-            <name>
-                Emacs utils (CLI)
-            </name>
-            <identifier>
-                emacs_utils__cli_
-            </identifier>
-            <windownamedef>
-                <name>
-                    emacs
-                </name>
-                <regex>
-                    emacs
-                </regex>
-            </windownamedef>
-            <windowname_only>
-                emacs
-            </windowname_only>
             <autogen>
-                --KeyToKey-- KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L,KeyCode::BRACKET_LEFT, KeyCode::E
+                --KeyToKey-- KeyCode::O, ModifierFlag::CONTROL_L,KeyCode::PAGE_UP
             </autogen>
             <autogen>
-                --KeyToKey-- KeyCode::CURSOR_DOWN, ModifierFlag::CONTROL_L,KeyCode::BRACKET_RIGHT, KeyCode::E
+                --KeyToKey-- KeyCode::U, ModifierFlag::CONTROL_L,KeyCode::PAGE_DOWN
             </autogen>
         </item>
         <item>
             <name>
-                Emacs utils (GUI)
+                ⌃⇧n Copy a zotero link from Skim
             </name>
             <identifier>
-                emacs_utils__gui_
-            </identifier>
-            <only>
-                EMACS
-            </only>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L,KeyCode::BRACKET_LEFT, KeyCode::E
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_DOWN, ModifierFlag::CONTROL_L,KeyCode::BRACKET_RIGHT, KeyCode::E
-            </autogen>
-        </item>
-        <item>
-            <name>
-                Add shortcut to copy a note in skim through skimk
-            </name>
-            <identifier>
-                add_shortcut_to_copy_a_note_in_skim_through_skimk
+                __n_copy_a_zotero_link_from_skim
             </identifier>
             <only>
                 SKIM
             </only>
             <vkopenurldef>
                 <name>
-                    KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_NODE__USR_LOCAL_BIN_SKIMK_GET__V___TEE____SKIMK
+                    KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_NODE__USR_LOCAL_BIN_SKIMK_GET__Z__O
                 </name>
                 <url type="shell">
-                    /usr/local/bin/node /usr/local/bin/skimk get -v | tee ~/.skimk
+                    /usr/local/bin/node /usr/local/bin/skimk get -z -o
                 </url>
             </vkopenurldef>
             <autogen>
-                --KeyToKey-- KeyCode::N, ModifierFlag::CONTROL_L,KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_NODE__USR_LOCAL_BIN_SKIMK_GET__V___TEE____SKIMK
+                --KeyToKey-- KeyCode::N, ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_NODE__USR_LOCAL_BIN_SKIMK_GET__Z__O
             </autogen>
         </item>
     </item>
