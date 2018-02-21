@@ -136,7 +136,7 @@
                             {
                                 "to": [
                                     {
-                                        "shell_command": "/usr/local/bin/node /usr/local/bin/skimk get"
+                                        "shell_command": "/usr/local/bin/node /usr/local/bin/skimk get -z -o"
                                     }
                                 ],
                                 "from": {

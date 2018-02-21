@@ -8,5 +8,5 @@ windows:
   - dev-anki-cards:
       layout: main-vertical
       panes:
-        - cd . && make edit
+        - vi Algebra.org
         - cd . && make watch
