@@ -31925,11 +31925,11 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>337 136 796 473 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 94 958 1083 0 0 1920 1177 </string>
+	<string>0 83 2108 1094 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>960 622 954 555 0 0 1920 1177 </string>
+	<string>0 622 954 555 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 70 1913 1107 0 0 1920 1177 </string>
+	<string>0 80 954 1094 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>0 604 1220 567 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
@@ -37476,7 +37476,6 @@
 	</dict>
 	<key>ToolbeltTools</key>
 	<array>
-		<string>Profiles</string>
 		<string>Command History</string>
 		<string>Recent Directories</string>
 	</array>
