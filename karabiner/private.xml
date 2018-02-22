@@ -6,6 +6,17 @@
         </name>
         <item>
             <name>
+                ⇪ to ⌃ or escape (if alone) - (works with arrow key remapping below)
+            </name>
+            <identifier>
+                __to___or_escape__if_alone_____works_with_arrow_key_remapping_below_
+            </identifier>
+            <autogen>
+                --KeyOverlaidModifier-- KeyCode::CAPSLOCK,KeyCode::CONTROL_L,KeyCode::ESCAPE
+            </autogen>
+        </item>
+        <item>
+            <name>
                 ⌃⇧[mga] open (m)ail, (g)ithub or (a)ctivity monitor
             </name>
             <identifier>
@@ -20,7 +31,7 @@
                 </url>
             </vkopenurldef>
             <autogen>
-                --KeyToKey-- KeyCode::G, ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___GITHUB_COM_VZACCARIA
+                --KeyToKey-- KeyCode::G, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___GITHUB_COM_VZACCARIA
             </autogen>
             <vkopenurldef>
                 <name>
@@ -31,18 +42,18 @@
                 </url>
             </vkopenurldef>
             <autogen>
-                --KeyToKey-- KeyCode::M, ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___GMAIL_GOOGLE_COM
+                --KeyToKey-- KeyCode::M, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___GMAIL_GOOGLE_COM
             </autogen>
             <vkopenurldef>
                 <name>
-                    KeyCode::VK_OPEN_URL_APP__APPLICATIONS_UTILITIES_ACTIVITY_MONITOR_APP
+                    KeyCode::VK_OPEN_URL_WEB__APPLICATIONS_UTILITIES_ACTIVITY_MONITOR_APP
                 </name>
-                <url type="file">
+                <url>
                     /Applications/Utilities/Activity Monitor.app
                 </url>
             </vkopenurldef>
             <autogen>
-                --KeyToKey-- KeyCode::A, ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,KeyCode::VK_OPEN_URL_APP__APPLICATIONS_UTILITIES_ACTIVITY_MONITOR_APP
+                --KeyToKey-- KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB__APPLICATIONS_UTILITIES_ACTIVITY_MONITOR_APP
             </autogen>
         </item>
         <item>
@@ -65,10 +76,10 @@
                 --KeyToKey-- KeyCode::I, ModifierFlag::CONTROL_L,KeyCode::CURSOR_UP
             </autogen>
             <autogen>
-                --KeyToKey-- KeyCode::O, ModifierFlag::CONTROL_L,KeyCode::PAGE_UP
+                --KeyToKey-- KeyCode::O, ModifierFlag::CONTROL_L,KeyCode::PAGEUP
             </autogen>
             <autogen>
-                --KeyToKey-- KeyCode::U, ModifierFlag::CONTROL_L,KeyCode::PAGE_DOWN
+                --KeyToKey-- KeyCode::U, ModifierFlag::CONTROL_L,KeyCode::PAGEDOWN
             </autogen>
         </item>
         <item>
@@ -78,9 +89,6 @@
             <identifier>
                 __n_copy_a_zotero_link_from_skim
             </identifier>
-            <only>
-                SKIM
-            </only>
             <vkopenurldef>
                 <name>
                     KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_NODE__USR_LOCAL_BIN_SKIMK_GET__Z__O
@@ -90,8 +98,19 @@
                 </url>
             </vkopenurldef>
             <autogen>
-                --KeyToKey-- KeyCode::N, ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_NODE__USR_LOCAL_BIN_SKIMK_GET__Z__O
+                --KeyToKey-- KeyCode::N, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_NODE__USR_LOCAL_BIN_SKIMK_GET__Z__O
             </autogen>
+            <appdef>
+                <appname>
+                    net_sourceforge_skim_app_skim
+                </appname>
+                <equal>
+                    net.sourceforge.skim-app.skim
+                </equal>
+            </appdef>
+            <only>
+                net_sourceforge_skim_app_skim
+            </only>
         </item>
     </item>
 </root>

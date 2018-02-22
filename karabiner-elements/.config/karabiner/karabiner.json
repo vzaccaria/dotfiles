@@ -22,6 +22,7 @@
                                         "key_code": "escape"
                                     }
                                 ],
+                                "conditions": [],
                                 "type": "basic"
                             }
                         ],
@@ -38,12 +39,13 @@
                                 "from": {
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_shift",
-                                            "left_control"
+                                            "left_control",
+                                            "left_shift"
                                         ]
                                     },
                                     "key_code": "g"
                                 },
+                                "conditions": [],
                                 "type": "basic"
                             },
                             {
@@ -55,29 +57,31 @@
                                 "from": {
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_shift",
-                                            "left_control"
+                                            "left_control",
+                                            "left_shift"
                                         ]
                                     },
                                     "key_code": "m"
                                 },
+                                "conditions": [],
                                 "type": "basic"
                             },
                             {
                                 "to": [
                                     {
-                                        "shell_command": "open -a '/Applications/Utilities/Activity Monitor.app'"
+                                        "shell_command": "open '/Applications/Utilities/Activity Monitor.app'"
                                     }
                                 ],
                                 "from": {
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_shift",
-                                            "left_control"
+                                            "left_control",
+                                            "left_shift"
                                         ]
                                     },
                                     "key_code": "a"
                                 },
+                                "conditions": [],
                                 "type": "basic"
                             }
                         ],
@@ -99,6 +103,7 @@
                                     },
                                     "key_code": "j"
                                 },
+                                "conditions": [],
                                 "type": "basic"
                             },
                             {
@@ -115,6 +120,7 @@
                                     },
                                     "key_code": "k"
                                 },
+                                "conditions": [],
                                 "type": "basic"
                             },
                             {
@@ -131,6 +137,7 @@
                                     },
                                     "key_code": "l"
                                 },
+                                "conditions": [],
                                 "type": "basic"
                             },
                             {
@@ -147,6 +154,7 @@
                                     },
                                     "key_code": "i"
                                 },
+                                "conditions": [],
                                 "type": "basic"
                             },
                             {
@@ -163,6 +171,7 @@
                                     },
                                     "key_code": "o"
                                 },
+                                "conditions": [],
                                 "type": "basic"
                             },
                             {
@@ -179,6 +188,7 @@
                                     },
                                     "key_code": "u"
                                 },
+                                "conditions": [],
                                 "type": "basic"
                             }
                         ],
@@ -195,12 +205,22 @@
                                 "from": {
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_shift",
-                                            "left_control"
+                                            "left_control",
+                                            "left_shift"
                                         ]
                                     },
                                     "key_code": "n"
                                 },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            [
+                                                "net.sourceforge.skim-app.skim"
+                                            ]
+                                        ]
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ],
