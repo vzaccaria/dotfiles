@@ -19,7 +19,7 @@
         (find-lisp-find-files "~/Dropbox/org" "_ag\.org$"))
 
   (setq org-todo-keywords
-        '((sequence "TODO" "TODAY" "IMPORTANT" "CHECK" "|" "DONE" "CANCELLED")
+        '((sequence "TODO(t)" "TODAY(d)" "IMPORTANT(i)" "|" "DONE")
           (sequence "TOREIMBURSE" "|" "REIMBURSED"  )))
 
   (add-hook 'org-mode-hook (lambda ()
