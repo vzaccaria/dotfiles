@@ -156,40 +156,6 @@
                                 },
                                 "conditions": [],
                                 "type": "basic"
-                            },
-                            {
-                                "to": [
-                                    {
-                                        "key_code": "page_up"
-                                    }
-                                ],
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ]
-                                    },
-                                    "key_code": "o"
-                                },
-                                "conditions": [],
-                                "type": "basic"
-                            },
-                            {
-                                "to": [
-                                    {
-                                        "key_code": "page_down"
-                                    }
-                                ],
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ]
-                                    },
-                                    "key_code": "u"
-                                },
-                                "conditions": [],
-                                "type": "basic"
                             }
                         ],
                         "description": "⌃[jkli] to arrows, ⌃[ou] to page [up/down]"

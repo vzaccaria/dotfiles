@@ -75,12 +75,6 @@
             <autogen>
                 --KeyToKey-- KeyCode::I, ModifierFlag::CONTROL_L,KeyCode::CURSOR_UP
             </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::O, ModifierFlag::CONTROL_L,KeyCode::PAGEUP
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::U, ModifierFlag::CONTROL_L,KeyCode::PAGEDOWN
-            </autogen>
         </item>
         <item>
             <name>
