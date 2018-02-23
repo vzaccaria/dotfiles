@@ -109,23 +109,6 @@
                             {
                                 "to": [
                                     {
-                                        "key_code": "down_arrow"
-                                    }
-                                ],
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ]
-                                    },
-                                    "key_code": "k"
-                                },
-                                "conditions": [],
-                                "type": "basic"
-                            },
-                            {
-                                "to": [
-                                    {
                                         "key_code": "right_arrow"
                                     }
                                 ],
@@ -136,6 +119,23 @@
                                         ]
                                     },
                                     "key_code": "l"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    },
+                                    "key_code": "k"
                                 },
                                 "conditions": [],
                                 "type": "basic"
@@ -193,6 +193,488 @@
                             }
                         ],
                         "description": "⌃[jkli] to arrows, ⌃[ou] to page [up/down]"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ],
+                                        "key_code": "left_arrow"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_command"
+                                        ]
+                                    },
+                                    "key_code": "j"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ],
+                                        "key_code": "right_arrow"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_command"
+                                        ]
+                                    },
+                                    "key_code": "l"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ],
+                                        "key_code": "down_arrow"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_command"
+                                        ]
+                                    },
+                                    "key_code": "k"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ],
+                                        "key_code": "up_arrow"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_command"
+                                        ]
+                                    },
+                                    "key_code": "i"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ],
+                                        "key_code": "left_arrow"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_command"
+                                        ]
+                                    },
+                                    "key_code": "left_arrow"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ],
+                                        "key_code": "right_arrow"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_command"
+                                        ]
+                                    },
+                                    "key_code": "right_arrow"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ],
+                                        "key_code": "down_arrow"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_command"
+                                        ]
+                                    },
+                                    "key_code": "down_arrow"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ],
+                                        "key_code": "up_arrow"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_command"
+                                        ]
+                                    },
+                                    "key_code": "up_arrow"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "⌃⌘ [jkli] to move in console panes"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ],
+                                        "key_code": "left_arrow"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "j"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "org.gnu.Emacs",
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ],
+                                        "key_code": "right_arrow"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "l"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "org.gnu.Emacs",
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ],
+                                        "key_code": "down_arrow"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "k"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "org.gnu.Emacs",
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ],
+                                        "key_code": "up_arrow"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "i"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "org.gnu.Emacs",
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ],
+                                        "key_code": "left_arrow"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "left_arrow"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "org.gnu.Emacs",
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ],
+                                        "key_code": "right_arrow"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "right_arrow"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "org.gnu.Emacs",
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ],
+                                        "key_code": "down_arrow"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "down_arrow"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "org.gnu.Emacs",
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ],
+                                        "key_code": "up_arrow"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "up_arrow"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "org.gnu.Emacs",
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "⌃⇧ [jkli] to move in Emacs panes"
                     },
                     {
                         "manipulators": [
