@@ -18,6 +18,10 @@
 	<true/>
 	<key>ClosingHotkeySwitchesSpaces</key>
 	<false/>
+	<key>ClosingTmuxTabKillsTmuxWindows</key>
+	<true/>
+	<key>ClosingTmuxTabKillsTmuxWindows_selection</key>
+	<integer>1</integer>
 	<key>ClosingTmuxWindowKillsTmuxWindows</key>
 	<true/>
 	<key>ClosingTmuxWindowKillsTmuxWindows_selection</key>
@@ -31921,17 +31925,17 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1140 185 472 388 0 0 1680 1027 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>329 555 599 502 0 0 1920 1177 </string>
+	<string>329 555 606 456 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>337 136 796 473 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 83 2108 1094 0 0 1920 1177 </string>
+	<string>0 59 1914 1115 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 622 954 555 0 0 1920 1177 </string>
+	<string>0 62 954 1115 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 80 954 1094 0 0 1920 1177 </string>
+	<string>0 94 954 1083 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>0 604 1220 567 0 0 1920 1177 </string>
+	<string>0 78 1914 1099 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>0 53 1220 570 0 0 1920 1177 </string>
 	<key>NeverWarnAboutMeta</key>
