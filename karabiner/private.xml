@@ -2,19 +2,8 @@
 <root>
     <item>
         <name>
-            Vittorio Zaccaria's profile
+            Vittorio Zaccaria's profile (Karabiner)
         </name>
-        <item>
-            <name>
-                ⇪ to ⌃ or escape (if alone) - (works with arrow key remapping below)
-            </name>
-            <identifier>
-                __to___or_escape__if_alone_____works_with_arrow_key_remapping_below_
-            </identifier>
-            <autogen>
-                --KeyOverlaidModifier-- KeyCode::CAPSLOCK,KeyCode::CONTROL_L,KeyCode::ESCAPE
-            </autogen>
-        </item>
         <item>
             <name>
                 ⌃⇧[mga] open (m)ail, (g)ithub or (a)ctivity monitor
@@ -58,97 +47,54 @@
         </item>
         <item>
             <name>
-                ⌃[jkli] to arrows, ⌃[ou] to page [up/down]
-            </name>
-            <identifier>
-                __jkli__to_arrows____ou__to_page__up_down_
-            </identifier>
-            <autogen>
-                --KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L,KeyCode::CURSOR_LEFT
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::L, ModifierFlag::CONTROL_L,KeyCode::CURSOR_RIGHT
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::K, ModifierFlag::CONTROL_L,KeyCode::CURSOR_DOWN
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::I, ModifierFlag::CONTROL_L,KeyCode::CURSOR_UP
-            </autogen>
-        </item>
-        <item>
-            <name>
                 ⌃⌘ [jkli] to move in console panes
             </name>
             <identifier>
                 ____jkli__to_move_in_console_panes
             </identifier>
             <autogen>
-                --KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+                --KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_LEFT, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L
             </autogen>
             <autogen>
-                --KeyToKey-- KeyCode::L, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+                --KeyToKey-- KeyCode::L, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_RIGHT, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L
             </autogen>
             <autogen>
-                --KeyToKey-- KeyCode::K, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+                --KeyToKey-- KeyCode::K, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_DOWN, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L
             </autogen>
             <autogen>
-                --KeyToKey-- KeyCode::I, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+                --KeyToKey-- KeyCode::I, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_UP, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L
             </autogen>
             <autogen>
-                --KeyToKey-- KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+                --KeyToKey-- KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_LEFT, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L
             </autogen>
             <autogen>
-                --KeyToKey-- KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+                --KeyToKey-- KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_RIGHT, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L
             </autogen>
             <autogen>
-                --KeyToKey-- KeyCode::CURSOR_DOWN, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+                --KeyToKey-- KeyCode::CURSOR_DOWN, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_DOWN, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L
             </autogen>
             <autogen>
-                --KeyToKey-- KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+                --KeyToKey-- KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_UP, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L
             </autogen>
-            <appdef>
-                <appname>
-                    com_googlecode_iterm_
-                </appname>
-                <equal>
-                    com.googlecode.iterm2
-                </equal>
-            </appdef>
-            <only>
-                com_googlecode_iterm_
-            </only>
         </item>
         <item>
             <name>
-                ⌃⇧ [jkli] to move in Emacs panes
+                ⌃⌥ [jkli] to move in Emacs panes (Karabiner)
             </name>
             <identifier>
-                ____jkli__to_move_in_emacs_panes
+                ____jkli__to_move_in_emacs_panes__karabiner_
             </identifier>
             <autogen>
-                --KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
+                --KeyToKey-- KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L | ModifierFlag::NUMPAD | ModifierFlag::FN,KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
             </autogen>
             <autogen>
-                --KeyToKey-- KeyCode::L, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
+                --KeyToKey-- KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L | ModifierFlag::NUMPAD | ModifierFlag::FN,KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
             </autogen>
             <autogen>
-                --KeyToKey-- KeyCode::K, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
+                --KeyToKey-- KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_L | ModifierFlag::NUMPAD | ModifierFlag::FN,KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
             </autogen>
             <autogen>
-                --KeyToKey-- KeyCode::I, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::CURSOR_UP, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_DOWN, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::CURSOR_UP, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
+                --KeyToKey-- KeyCode::CURSOR_UP, ModifierFlag::OPTION_L | ModifierFlag::NUMPAD | ModifierFlag::FN,KeyCode::CURSOR_UP, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
             </autogen>
             <appdef>
                 <appname>
@@ -169,6 +115,26 @@
             <only>
                 org_gnu_emacs,com_googlecode_iterm_
             </only>
+        </item>
+        <item>
+            <name>
+                ⌃[jkli] to arrows, ⌃[ou] to page [up/down]
+            </name>
+            <identifier>
+                __jkli__to_arrows____ou__to_page__up_down_
+            </identifier>
+            <autogen>
+                --KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L,KeyCode::CURSOR_LEFT
+            </autogen>
+            <autogen>
+                --KeyToKey-- KeyCode::L, ModifierFlag::CONTROL_L,KeyCode::CURSOR_RIGHT
+            </autogen>
+            <autogen>
+                --KeyToKey-- KeyCode::K, ModifierFlag::CONTROL_L,KeyCode::CURSOR_DOWN
+            </autogen>
+            <autogen>
+                --KeyToKey-- KeyCode::I, ModifierFlag::CONTROL_L,KeyCode::CURSOR_UP
+            </autogen>
         </item>
         <item>
             <name>

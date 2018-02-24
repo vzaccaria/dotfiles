@@ -3,7 +3,7 @@
         {
             "simple_modifications": [],
             "selected": true,
-            "name": "Vittorio Zaccaria's profile",
+            "name": "Vittorio Zaccaria's profile (KarabinerElements)",
             "complex_modifications": {
                 "rules": [
                     {
@@ -640,7 +640,7 @@
                                 "type": "basic"
                             }
                         ],
-                        "description": "⌃⇧ [jkli] to move in Emacs panes"
+                        "description": "⌃⇧ [jkli] to move in Emacs panes (Karabiner-Elements)"
                     },
                     {
                         "manipulators": [
