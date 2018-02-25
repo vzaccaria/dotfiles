@@ -80,8 +80,10 @@
 
   th {
     margin-bottom: 1em;
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: 'League Gothic';
+    text-transform: uppercase;
+    color: black;
   }
 
   td {
