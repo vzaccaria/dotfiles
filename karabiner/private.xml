@@ -35,14 +35,14 @@
             </autogen>
             <vkopenurldef>
                 <name>
-                    KeyCode::VK_OPEN_URL_WEB__APPLICATIONS_UTILITIES_ACTIVITY_MONITOR_APP
+                    KeyCode::VK_OPEN_URL_APP__APPLICATIONS_UTILITIES_ACTIVITY_MONITOR_APP
                 </name>
-                <url>
+                <url type="file">
                     /Applications/Utilities/Activity Monitor.app
                 </url>
             </vkopenurldef>
             <autogen>
-                --KeyToKey-- KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB__APPLICATIONS_UTILITIES_ACTIVITY_MONITOR_APP
+                --KeyToKey-- KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_APP__APPLICATIONS_UTILITIES_ACTIVITY_MONITOR_APP
             </autogen>
         </item>
         <item>
