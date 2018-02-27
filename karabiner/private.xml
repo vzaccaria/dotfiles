@@ -53,30 +53,6 @@
                 consistent_jkli_to_arrows__with_shift__option_and_command_in_iterm_and_emacs
             </identifier>
             <autogen>
-                --KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L,KeyCode::CURSOR_LEFT
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::L, ModifierFlag::CONTROL_L,KeyCode::CURSOR_RIGHT
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::K, ModifierFlag::CONTROL_L,KeyCode::CURSOR_DOWN
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::I, ModifierFlag::CONTROL_L,KeyCode::CURSOR_UP
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L,KeyCode::CURSOR_LEFT
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L,KeyCode::CURSOR_RIGHT
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_DOWN, ModifierFlag::CONTROL_L,KeyCode::CURSOR_DOWN
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L,KeyCode::CURSOR_UP
-            </autogen>
-            <autogen>
                 --KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
             </autogen>
             <autogen>
@@ -87,18 +63,6 @@
             </autogen>
             <autogen>
                 --KeyToKey-- KeyCode::I, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_DOWN, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
             </autogen>
             <autogen>
                 --KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
@@ -113,40 +77,16 @@
                 --KeyToKey-- KeyCode::I, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,KeyCode::CURSOR_UP, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
             </autogen>
             <autogen>
-                --KeyToKey-- KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
+                --KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L,KeyCode::CURSOR_LEFT
             </autogen>
             <autogen>
-                --KeyToKey-- KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
+                --KeyToKey-- KeyCode::L, ModifierFlag::CONTROL_L,KeyCode::CURSOR_RIGHT
             </autogen>
             <autogen>
-                --KeyToKey-- KeyCode::CURSOR_DOWN, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
+                --KeyToKey-- KeyCode::K, ModifierFlag::CONTROL_L,KeyCode::CURSOR_DOWN
             </autogen>
             <autogen>
-                --KeyToKey-- KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,KeyCode::CURSOR_UP, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::J, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::CURSOR_LEFT, ModifierFlag::SHIFT_L
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::L, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::CURSOR_RIGHT, ModifierFlag::SHIFT_L
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::K, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::CURSOR_DOWN, ModifierFlag::SHIFT_L
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::I, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::CURSOR_UP, ModifierFlag::SHIFT_L
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::CURSOR_LEFT, ModifierFlag::SHIFT_L
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::CURSOR_RIGHT, ModifierFlag::SHIFT_L
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_DOWN, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::CURSOR_DOWN, ModifierFlag::SHIFT_L
-            </autogen>
-            <autogen>
-                --KeyToKey-- KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::CURSOR_UP, ModifierFlag::SHIFT_L
+                --KeyToKey-- KeyCode::I, ModifierFlag::CONTROL_L,KeyCode::CURSOR_UP
             </autogen>
         </item>
         <item>
