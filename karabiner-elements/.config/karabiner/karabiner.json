@@ -777,6 +777,38 @@
                             }
                         ],
                         "description": "⌃⇧n Copy a zotero link from Skim"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "key_code": "v"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    },
+                                    "key_code": "v"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "Emacs shortcut"
                     }
                 ],
                 "parameters": {
