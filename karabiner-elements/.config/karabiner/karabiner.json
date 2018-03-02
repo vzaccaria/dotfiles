@@ -69,7 +69,25 @@
                             {
                                 "to": [
                                     {
-                                        "shell_command": "open '/Applications/Utilities/Activity Monitor.app'"
+                                        "shell_command": "open 'https://web.whatsapp.com'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "w"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open -a '/Applications/Utilities/Activity Monitor.app'"
                                     }
                                 ],
                                 "from": {
@@ -80,6 +98,42 @@
                                         ]
                                     },
                                     "key_code": "a"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open -a '/Applications/iTerm.app'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "t"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open facetime-audio://chiara.tenconi72@gmail.com -a Safari"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "c"
                                 },
                                 "conditions": [],
                                 "type": "basic"
