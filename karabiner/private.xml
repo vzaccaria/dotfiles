@@ -35,6 +35,17 @@
             </autogen>
             <vkopenurldef>
                 <name>
+                    KeyCode::VK_OPEN_URL_WEB_HTTPS___WEB_WHATSAPP_COM
+                </name>
+                <url>
+                    https://web.whatsapp.com
+                </url>
+            </vkopenurldef>
+            <autogen>
+                --KeyToKey-- KeyCode::W, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___WEB_WHATSAPP_COM
+            </autogen>
+            <vkopenurldef>
+                <name>
                     KeyCode::VK_OPEN_URL_APP__APPLICATIONS_UTILITIES_ACTIVITY_MONITOR_APP
                 </name>
                 <url type="file">
@@ -43,6 +54,28 @@
             </vkopenurldef>
             <autogen>
                 --KeyToKey-- KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_APP__APPLICATIONS_UTILITIES_ACTIVITY_MONITOR_APP
+            </autogen>
+            <vkopenurldef>
+                <name>
+                    KeyCode::VK_OPEN_URL_APP__APPLICATIONS_ITERM_APP
+                </name>
+                <url type="file">
+                    /Applications/iTerm.app
+                </url>
+            </vkopenurldef>
+            <autogen>
+                --KeyToKey-- KeyCode::T, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_APP__APPLICATIONS_ITERM_APP
+            </autogen>
+            <vkopenurldef>
+                <name>
+                    KeyCode::VK_OPEN_URL_SHELL_OPEN_FACETIME_AUDIO___CHIARA_TENCONI___GMAIL_COM__A_SAFARI
+                </name>
+                <url type="shell">
+                    open facetime-audio://chiara.tenconi72@gmail.com -a Safari
+                </url>
+            </vkopenurldef>
+            <autogen>
+                --KeyToKey-- KeyCode::C, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_SHELL_OPEN_FACETIME_AUDIO___CHIARA_TENCONI___GMAIL_COM__A_SAFARI
             </autogen>
         </item>
         <item>
@@ -117,6 +150,28 @@
             </appdef>
             <only>
                 net_sourceforge_skim_app_skim
+            </only>
+        </item>
+        <item>
+            <name>
+                Emacs shortcut
+            </name>
+            <identifier>
+                emacs_shortcut
+            </identifier>
+            <autogen>
+                --KeyToKey-- KeyCode::V, ModifierFlag::CONTROL_L,KeyCode::V, ModifierFlag::SHIFT_L
+            </autogen>
+            <appdef>
+                <appname>
+                    com_googlecode_iterm_
+                </appname>
+                <equal>
+                    com.googlecode.iterm2
+                </equal>
+            </appdef>
+            <only>
+                com_googlecode_iterm_
             </only>
         </item>
     </item>
