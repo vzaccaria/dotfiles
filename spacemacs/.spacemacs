@@ -206,8 +206,8 @@
 (defun dotspacemacs/init/display ()
   (setq-default
    dotspacemacs-themes '(
-                         spacemacs-light
                          zenburn
+                         spacemacs-light
                          nord
                          solarized-light
                          solarized-dark
@@ -445,7 +445,7 @@ you should place you code here."
  '(cua-normal-cursor-color "#657b83")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
- '(custom-enabled-themes (quote (spacemacs-light)))
+ '(custom-enabled-themes (quote (zenburn)))
  '(custom-safe-themes
    (quote
     ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
