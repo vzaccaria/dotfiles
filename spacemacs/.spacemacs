@@ -304,6 +304,8 @@
     (string-trim (with-output-to-string
                    (call-process "hostname" nil standard-output nil))))
   (defconst vz/is-darwin (eq system-type 'darwin))
+  (defconst vz/is-darwin-gui (eq window-system 'mac))
+  (defconst vz/is-darwin-terminal (and vz/is-darwin (not vz/is-darwin-gui)))
   (defconst vz/is-linux (eq system-type 'gnu/linux))
   (defconst vz/is-linux-station (string-equal vz/hostname "ubuntu_1604"))
   (defconst vz/is-home-mac (string-equal vz/hostname "macbook.local"))

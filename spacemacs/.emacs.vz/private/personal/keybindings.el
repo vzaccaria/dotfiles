@@ -71,7 +71,7 @@
 (cond
 
  ;; -- OSX TERMINAL KEYBINDINGS
- ((eq system-type 'darwin)
+ (vz/is-darwin-terminal
   ;; The following are heavily based on my iTerm2 mappings. Use at your own risk!
   ;; Use 'cat -vte' on the command line to see which keys are received by emacs
 
@@ -85,7 +85,6 @@
   (define-key key-translation-map "\e\e[H" [(shift-right)])
   (define-key key-translation-map "\e\e[I" [(shift-left)])
 
-  ;; Thanks touchbar!
   (global-set-key (kbd "§") 'evil-escape)    ;; 46
 
   ;;  Shift + Arrows
@@ -105,9 +104,13 @@
   (global-set-key (kbd "\e <down>")  'evil-window-down)
   (global-set-key (kbd "\e <right>") 'evil-window-right)
   (global-set-key (kbd "\e <left>")  'evil-window-left)
-
-
+  )
+ (vz/is-darwin-gui
   ;; OSX Gui keybindings                     S + Arrows
+
+  ;; Thanks touchbar!
+  (global-set-key (kbd "§") 'evil-escape)    ;; 46
+
   (global-set-key (kbd "s-<up>")    'evil-window-up)
   (global-set-key (kbd "s-<down>")  'evil-window-down)
   (global-set-key (kbd "s-<right>") 'evil-window-right)
@@ -118,8 +121,13 @@
   (global-set-key (kbd "M-<right>") 'evil-window-right)
   (global-set-key (kbd "M-<left>")  'evil-window-left))
 
+  (global-set-key (kbd "S-<up>") 'evil-backward-paragraph)    ;; 46
+  (global-set-key (kbd "S-<down>") 'evil-forward-paragraph)  ;; 47
+  (global-set-key (kbd "S-<right>") 'evil-forward-word-end) ;; 48
+  (global-set-key (kbd "S-<left>") 'evil-backward-word-end)  ;; 48
+
  ;; Linux keybindings
- ((eq system-type 'gnu/linux)
+ (vz/is-linux
   (global-set-key (kbd "M-<up>")    'evil-window-up)
   (global-set-key (kbd "M-<down>")  'evil-window-down)
   (global-set-key (kbd "M-<right>") 'evil-window-right)
