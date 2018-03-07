@@ -837,6 +837,62 @@
                             {
                                 "to": [
                                     {
+                                        "key_code": "keypad_5"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    },
+                                    "key_code": "i"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "key_code": "keypad_4"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    },
+                                    "key_code": "u"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "key_code": "keypad_6"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    },
+                                    "key_code": "o"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "Remap fn-[jkli] to keypad so as to use slate"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "to": [
+                                    {
                                         "modifiers": [
                                             "left_shift"
                                         ],
