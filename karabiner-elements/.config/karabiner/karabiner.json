@@ -918,7 +918,7 @@
                                 "type": "basic"
                             }
                         ],
-                        "description": "Emacs shortcut"
+                        "description": "Emacs shortcut --- KeyCode::V, ModifierFlag::CONTROL_L"
                     }
                 ],
                 "parameters": {
