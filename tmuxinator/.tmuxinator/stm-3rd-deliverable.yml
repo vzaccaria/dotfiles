@@ -6,7 +6,7 @@ post: tmux -CC attach
 
 windows:
   - stm-3rd-deliverable:
-      layout: main-vertical
+      layout: main-horizontal
       panes:
         - vi deliverable.org
         - make deliverable.pdf && open deliverable.pdf && watchman deliverable.org 'make'
