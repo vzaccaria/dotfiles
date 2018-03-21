@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: ifhname
+# key: ifhname_
+# --
+HNAME_S := $(shell hostname)
+
+ifeq ($(HNAME_S),${1:hname})
+${2:var} := ${3:varvalue-true}
+else
+${2:var} := ${4:varvalue-false}
+endif
