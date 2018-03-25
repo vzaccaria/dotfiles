@@ -15,7 +15,6 @@ alias ga='git add'
 alias gca='git commit -a -m'
 alias gd='git diff --color-words'
 
-alias s='git status'
 alias gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
 alias git-show-last-commit-of="git whatchanged -n 1 -p"
@@ -66,4 +65,3 @@ alias mk='make -f makefile.mk'
 
 # Silver searcher
 alias ag="ag --hidden --ignore '*.map'"
-
