@@ -6,7 +6,7 @@ post: tmux -CC attach
 
 windows:
   - name:
-      layout: main-vertical
+      layout: main-horizontal
       panes:
         - vi symmetric.org
         - cd . && make watch

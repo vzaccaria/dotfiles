@@ -153,6 +153,7 @@ brew install gifsicle
 brew install ChrisPenner/tools/tempered # Shell templates
 brew cask install skim
 
+brew install s-search # type 's' from the terminal to search the web
 
 ##########################
 # Graphics/Diagrams
@@ -202,7 +203,7 @@ brew cask install mactex
 # Mail in Emacs
 #######################
 
-brew install mu --with-emacs 
+brew install mu --with-emacs
 brew install offlineimap
 
 ######################

@@ -260,6 +260,7 @@ prompt the user for a coding system."
   (customize-set-variable 'flycheck-gcc-language-standard "c++11")
   (flycheck-select-checker 'c/c++-gcc))
 
+
 (defun vz/define-checker-for-ghcjs ()
   "Sets the correct checker ghcjs projects"
   (interactive)
