@@ -10,20 +10,6 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias h="history 400"
 
 # Global git aliases
-alias g='git'
-alias ga='git add'
-alias gca='git commit -a -m'
-alias gd='git diff --color-words'
-
-alias gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-
-alias git-show-last-commit-of="git whatchanged -n 1 -p"
-alias p='hub push --all'
-alias gr='git-chdir-into-root'
-
-alias lb='git branch'
-alias sb='git checkout '
-alias git-untrack='git update-index --assume-unchanged '
 
 colorflag=""
 

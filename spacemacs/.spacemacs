@@ -200,7 +200,6 @@
    dotspacemacs-smart-closing-parenthesis nil
    dotspacemacs-highlight-delimiters 'all
    dotspacemacs-line-numbers nil
-   dotspacemacs-whitespace-cleanup 'trailing
    ))
 
 (defun dotspacemacs/init/display ()

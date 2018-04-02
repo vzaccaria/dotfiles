@@ -15,7 +15,7 @@ lift() {
         f)
             find . -iname "*${opts}*" -print0
             ;;
-        fex)
+        fe)
             find . -iname "*\.${opts}" -print0
             ;;
         ag)
@@ -56,4 +56,7 @@ reduce() {
     tr '\0' ' '
 }
 
-
+ag-mdfind() {
+    args=${*:1}
+    mdfind -onlyin $PWD "kMDItemTextContent == \"$args\"cd"
+}

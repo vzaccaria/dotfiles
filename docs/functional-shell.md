@@ -1,15 +1,13 @@
 # Lift command
 
-Lift a command to produce a sequence of 0 ended list of strings,
-example:
-
-     lift cat filenames.txt | map echo ... _ ...
+Lift a command to produce a sequence of 0 ended list of strings. Useful
+for the map command (see below).
 
 Available lift instances:
 
 -   `lift find "<regex>"` : outputs list of file-names matching regex
 -   `lift f <substr>` : smarter find
--   `lift fex <substr>` : smarter find by extension
+-   `lift fe <substr>` : smarter find by extension
 -   `lift ag "<word>"` : search files for word
 -   `lift head/tail/cat <filename>` : trivial
 -   `lift ls <pars>` : trivial
@@ -23,7 +21,7 @@ Maps a command to strings, each substituted into placeholder `{}`:
 Use fmap instead of map to flatten results into a sequence of 0-ended
 file names
 
-# Find by extension (and execute)
+# Find and execute by extension 
 
 If you need to execute based on extension, use
 
