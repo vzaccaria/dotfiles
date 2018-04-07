@@ -1,0 +1,12 @@
+name: write-tcomp-2018
+root: /Users/zaccaria/development/github/org-writing/tcomp2018
+
+attach: false
+post: tmux -CC attach
+
+windows:
+  - name:
+      layout: main-horizontal
+      panes:
+        - vi tcomp2018.org
+        - cd . && make watch
