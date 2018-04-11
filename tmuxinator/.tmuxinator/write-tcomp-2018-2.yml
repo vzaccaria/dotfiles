@@ -1,5 +1,5 @@
 name: write-tcomp-2018-2
-root: /Users/zaccaria/development/github/org-writing/tcomp2018-2
+root: /Users/zaccaria/development/github/org-writing/tcomp-2018-2
 
 attach: false
 post: tmux -CC attach
