@@ -1,0 +1,21 @@
+{
+    "deib": {
+        "calendar": "Vittorio Zaccaria",
+        "title": "Consiglio di Dipartimento",
+        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+        "reminder": "1w",
+        "duration": "2h"
+    },
+    "tirocinio": {
+        "calendar": "Vittorio Zaccaria",
+        "title": "Meeting per tirocinio with <%= parameter %>",
+        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+        "reminder": "1d"
+    },
+    "cycling": {
+        "calendar": "Vittorio e Chiara",
+        "title": "Group cycling",
+        "where": "Eracle sport center, Via Fittavolo, Montano Lucino",
+        "reminder": "1d"
+    }
+}
