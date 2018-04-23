@@ -12,10 +12,22 @@
         "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
         "reminder": "1d"
     },
+    "ricerca": {
+        "calendar": "Vittorio Zaccaria",
+        "title": "Meeting ricerca",
+        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+        "reminder": "1d"
+    },
     "cycling": {
         "calendar": "Vittorio e Chiara",
         "title": "Group cycling",
         "where": "Eracle sport center, Via Fittavolo, Montano Lucino",
         "reminder": "1d"
+    },
+    "tasse": {
+        "calendar": "Vittorio e Chiara",
+        "title": "Pagare tassa: <%= parameter %>",
+        "where": "Online",
+        "reminder": "1w"
     }
 }
