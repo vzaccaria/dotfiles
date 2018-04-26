@@ -29,5 +29,12 @@
         "title": "Pagare tassa: <%= parameter %>",
         "where": "Online",
         "reminder": "1w"
+    },
+    "call": {
+        "calendar": "Vittorio Zaccaria",
+        "title": "Call with <%= parameter %>",
+        "where": "Online",
+        "reminder": "1h"
     }
+
 }
