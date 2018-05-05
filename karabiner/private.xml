@@ -218,6 +218,23 @@
                 com_googlecode_iterm_
             </only>
         </item>
+        <item>
+            <name>
+                Use right cmd + [] for left, right or center window
+            </name>
+            <identifier>
+                use_right_cmd______for_left__right_or_center_window
+            </identifier>
+            <autogen>
+                --KeyToKey-- KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_R,KeyCode::KEYPAD_4
+            </autogen>
+            <autogen>
+                --KeyToKey-- KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_R,KeyCode::KEYPAD_6
+            </autogen>
+            <autogen>
+                --KeyToKey-- KeyCode::BACKSLASH, ModifierFlag::COMMAND_R,KeyCode::KEYPAD_5
+            </autogen>
+        </item>
     </item>
 </root>
 
