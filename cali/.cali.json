@@ -35,6 +35,13 @@
         "title": "Call with <%= parameter %>",
         "where": "Online",
         "reminder": "1h"
+    },
+    "esameinfob": {
+        "calendar": "Vittorio e Chiara",
+        "title": "Esame di Informaica B - Aula <%= parameter %>",
+        "where": "Bovisa",
+        "reminder": "3w"
     }
+
 
 }

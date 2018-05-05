@@ -6,7 +6,7 @@ post: tmux -CC attach
 
 windows:
   - write-todaes-2018:
-      layout: main-vertical
+      layout: main-horizontal
       panes:
         - vi paper.tex
-        - make watch
+        - make watch-trackchange
