@@ -38,7 +38,7 @@
     },
     "esameinfob": {
         "calendar": "Vittorio e Chiara",
-        "title": "Esame di Informaica B - Aula <%= parameter %>",
+        "title": "Esame di Informatica B - Aula <%= parameter %>",
         "where": "Bovisa",
         "reminder": "3w"
     }
