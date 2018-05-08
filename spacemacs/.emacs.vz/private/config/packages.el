@@ -18,6 +18,7 @@
     (config/flycheck-config-verilog)
     (config/flycheck-config-javascript)
     (config/flycheck-config-shell)
+    (config/flycheck-config-orgmode)
     )
   )
 

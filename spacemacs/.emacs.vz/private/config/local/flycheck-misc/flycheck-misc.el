@@ -37,6 +37,18 @@
   (add-hook 'markdown-mode-hook 'flycheck-mode)
   )
 
+(defun config/flycheck-config-orgmode ()
+  (flycheck-define-checker grammar-gramcheck-orgmode
+    "A general purpose grammar checker. "
+
+    :command ("gramchk" "--configfile" "/Users/zaccaria/.gramchk.yml" "check" source-original)
+    :error-parser flycheck-parse-checkstyle
+    :standard-input nil
+    :modes (org-mode))
+  (add-to-list 'flycheck-checkers 'grammar-gramcheck-orgmode)
+  (add-hook 'org-mode-hook 'flycheck-mode)
+  )
+
 (defun config/flycheck-config-verilog ()
   (flycheck-define-checker verilog-check
     "A linter for verilog using verilator."
