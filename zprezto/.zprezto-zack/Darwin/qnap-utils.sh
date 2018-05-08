@@ -128,3 +128,8 @@ de-local() {
 de() {
     open "vnc://192.168.1.120:5901"
 }
+
+writenv-start-languagetool() {
+    echo "Remember to enable gramchk"
+    img=`docker run --rm -p 8010:8010 silviof/docker-languagetool`
+}
