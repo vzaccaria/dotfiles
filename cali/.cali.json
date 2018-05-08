@@ -12,7 +12,13 @@
         "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
         "reminder": "1d"
     },
-    "ricerca": {
+     "tesi": {
+        "calendar": "Vittorio Zaccaria",
+        "title": "Meeting per tesi with <%= parameter %>",
+        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+        "reminder": "30m"
+    },
+   "ricerca": {
         "calendar": "Vittorio Zaccaria",
         "title": "Meeting ricerca",
         "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
