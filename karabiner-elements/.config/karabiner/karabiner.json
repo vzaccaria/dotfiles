@@ -919,6 +919,62 @@
                             }
                         ],
                         "description": "Emacs shortcut --- KeyCode::V, ModifierFlag::CONTROL_L"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "to": [
+                                    {
+                                        "key_code": "keypad_4"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ]
+                                    },
+                                    "key_code": "open_bracket"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "key_code": "keypad_6"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ]
+                                    },
+                                    "key_code": "close_bracket"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "key_code": "keypad_5"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ]
+                                    },
+                                    "key_code": "backslash"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "Use right cmd + [] for left, right or center window"
                     }
                 ],
                 "parameters": {
