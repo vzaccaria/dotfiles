@@ -1,0 +1,12 @@
+name: hyp-live-lecture
+root: /Users/zaccaria/development/github/org-institutional/materiale-corsi/hyp/docs/org
+
+attach: false
+post: tmux -CC attach
+
+windows:
+  - hyp-live-lecture:
+      layout: main-horizontal
+      panes:
+        - cd /Users/zaccaria/development/github/org-bitbucket/polimi-hyp-2018-project
+        - make course.pdf && open course.pdf
