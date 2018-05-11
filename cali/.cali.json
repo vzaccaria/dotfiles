@@ -12,17 +12,23 @@
         "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
         "reminder": "1d"
     },
-     "tesi": {
+    "tesi": {
         "calendar": "Vittorio Zaccaria",
         "title": "Meeting per tesi with <%= parameter %>",
         "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
         "reminder": "30m"
     },
-   "ricerca": {
+    "ricerca": {
         "calendar": "Vittorio Zaccaria",
         "title": "Meeting ricerca",
         "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
         "reminder": "1d"
+    },
+    "trainer": {
+        "calendar": "Vittorio e Chiara",
+        "title": "Personal trainer",
+        "where": "Eracle sport center, Via Fittavolo, Montano Lucino",
+        "reminder": "1w"
     },
     "cycling": {
         "calendar": "Vittorio e Chiara",
