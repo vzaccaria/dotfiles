@@ -336,7 +336,7 @@
                                 "to": [
                                     {
                                         "modifiers": [
-                                            "left_command",
+                                            "left_option",
                                             "left_shift"
                                         ],
                                         "key_code": "left_arrow"
@@ -358,7 +358,7 @@
                                 "to": [
                                     {
                                         "modifiers": [
-                                            "left_command",
+                                            "left_option",
                                             "left_shift"
                                         ],
                                         "key_code": "right_arrow"
@@ -380,7 +380,7 @@
                                 "to": [
                                     {
                                         "modifiers": [
-                                            "left_command",
+                                            "left_option",
                                             "left_shift"
                                         ],
                                         "key_code": "down_arrow"
@@ -402,7 +402,7 @@
                                 "to": [
                                     {
                                         "modifiers": [
-                                            "left_command",
+                                            "left_option",
                                             "left_shift"
                                         ],
                                         "key_code": "up_arrow"
@@ -424,7 +424,7 @@
                                 "to": [
                                     {
                                         "modifiers": [
-                                            "left_command",
+                                            "left_option",
                                             "left_shift"
                                         ],
                                         "key_code": "left_arrow"
@@ -446,7 +446,7 @@
                                 "to": [
                                     {
                                         "modifiers": [
-                                            "left_command",
+                                            "left_option",
                                             "left_shift"
                                         ],
                                         "key_code": "right_arrow"
@@ -468,7 +468,7 @@
                                 "to": [
                                     {
                                         "modifiers": [
-                                            "left_command",
+                                            "left_option",
                                             "left_shift"
                                         ],
                                         "key_code": "down_arrow"
@@ -490,7 +490,7 @@
                                 "to": [
                                     {
                                         "modifiers": [
-                                            "left_command",
+                                            "left_option",
                                             "left_shift"
                                         ],
                                         "key_code": "up_arrow"
@@ -512,7 +512,7 @@
                                 "to": [
                                     {
                                         "modifiers": [
-                                            "left_option",
+                                            "left_command",
                                             "left_shift"
                                         ],
                                         "key_code": "left_arrow"
@@ -534,7 +534,7 @@
                                 "to": [
                                     {
                                         "modifiers": [
-                                            "left_option",
+                                            "left_command",
                                             "left_shift"
                                         ],
                                         "key_code": "right_arrow"
@@ -556,7 +556,7 @@
                                 "to": [
                                     {
                                         "modifiers": [
-                                            "left_option",
+                                            "left_command",
                                             "left_shift"
                                         ],
                                         "key_code": "down_arrow"
@@ -578,7 +578,7 @@
                                 "to": [
                                     {
                                         "modifiers": [
-                                            "left_option",
+                                            "left_command",
                                             "left_shift"
                                         ],
                                         "key_code": "up_arrow"
@@ -600,7 +600,7 @@
                                 "to": [
                                     {
                                         "modifiers": [
-                                            "left_option",
+                                            "left_command",
                                             "left_shift"
                                         ],
                                         "key_code": "left_arrow"
@@ -622,7 +622,7 @@
                                 "to": [
                                     {
                                         "modifiers": [
-                                            "left_option",
+                                            "left_command",
                                             "left_shift"
                                         ],
                                         "key_code": "right_arrow"
@@ -644,7 +644,7 @@
                                 "to": [
                                     {
                                         "modifiers": [
-                                            "left_option",
+                                            "left_command",
                                             "left_shift"
                                         ],
                                         "key_code": "down_arrow"
@@ -666,7 +666,7 @@
                                 "to": [
                                     {
                                         "modifiers": [
-                                            "left_option",
+                                            "left_command",
                                             "left_shift"
                                         ],
                                         "key_code": "up_arrow"
