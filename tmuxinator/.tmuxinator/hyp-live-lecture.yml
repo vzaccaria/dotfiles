@@ -8,5 +8,4 @@ windows:
   - hyp-live-lecture:
       layout: main-horizontal
       panes:
-        - cd /Users/zaccaria/development/github/org-bitbucket/polimi-hyp-2018-project
-        - make course.pdf && open course.pdf
+        - cd /Users/zaccaria/development/github/org-bitbucket/polimi-hyp-live
