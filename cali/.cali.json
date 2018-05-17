@@ -18,7 +18,13 @@
         "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
         "reminder": "30m"
     },
-    "ricerca": {
+     "camus": {
+        "calendar": "Vittorio Zaccaria",
+        "title": "Meeting CAMUS",
+        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+        "reminder": "1d"
+    },
+   "ricerca": {
         "calendar": "Vittorio Zaccaria",
         "title": "Meeting ricerca",
         "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
