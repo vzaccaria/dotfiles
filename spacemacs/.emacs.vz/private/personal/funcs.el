@@ -77,10 +77,10 @@
   (shell-command-on-region b e
                            "pandoc --columns=80 --read org --write org" t t))
 
-(defun beautify-asciidiag (&optional b e)
+(defun beautify-ess (&optional b e)
   (interactive "r")
   (shell-command-on-region (point-min) (point-max)
-                           "/usr/local/bin/org2kf -a" (current-buffer) t))
+                           "beauty -l R" (current-buffer) t))
 
 
 
@@ -147,6 +147,7 @@
         ((derived-mode-p 'emacs-lisp-mode) (call-interactively 'beautify-lisp))
         ((derived-mode-p 'markdown-mode)   (call-interactively 'beautify-markdown))
         ((derived-mode-p 'c-mode)          (call-interactively 'clang-format-buffer))
+        ((derived-mode-p 'ess-mode)        (call-interactively 'beautify-ess))
         ((derived-mode-p 'json-mode)       (call-interactively 'web-beautify-js))
         ((derived-mode-p 'js-mode)         (call-interactively 'prettier))
         ((derived-mode-p 'react-mode)      (call-interactively 'prettier))

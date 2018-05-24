@@ -92,7 +92,7 @@
     haskell
     (haskell-config :location local)
     (c-c++ :variables c-c++-enable-clang-support t)
-
+    ess
     yaml
     csv
     html
