@@ -4,7 +4,13 @@
         "title": "Consiglio di Dipartimento",
         "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
         "reminder": "1w",
-        "duration": "2h"
+        "duration": 60
+    },
+    "ccsmecc": {
+        "calendar": "Vittorio Zaccaria",
+        "title": "CCS Meccanica (Aula: <%= parameter %>)",
+        "where": "Dipartimento di Meccanica, Via La Masa 1, Italy",
+        "reminder": "1d"
     },
     "tirocinio": {
         "calendar": "Vittorio Zaccaria",
