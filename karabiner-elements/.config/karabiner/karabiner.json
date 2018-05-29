@@ -971,7 +971,7 @@
                                 "type": "basic"
                             }
                         ],
-                        "description": "Emacs shortcut --- KeyCode::V, ModifierFlag::CONTROL_L"
+                        "description": "Emacs shortcutKeyCode::V, ModifierFlag::CONTROL_L"
                     },
                     {
                         "manipulators": [
