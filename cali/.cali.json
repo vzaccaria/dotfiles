@@ -65,7 +65,14 @@
         "title": "Esame di Informatica B - Aula <%= parameter %>",
         "where": "Bovisa",
         "reminder": "3w"
+    },
+    "esamehyp": {
+        "calendar": "Vittorio e Chiara",
+        "title": "Esame di Hypermedia - Aula <%= parameter %>",
+        "where": "Politecnico di Milano",
+        "reminder": "1w"
     }
+
 
 
 }
