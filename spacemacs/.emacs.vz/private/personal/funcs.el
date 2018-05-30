@@ -143,6 +143,8 @@
 
 (defun beautify (&optional b e)
   (interactive "r")
+  (save-excursion
+
   (cond ((derived-mode-p 'org-mode)        (call-interactively 'beautify-org))
         ((derived-mode-p 'emacs-lisp-mode) (call-interactively 'beautify-lisp))
         ((derived-mode-p 'markdown-mode)   (call-interactively 'beautify-markdown))
@@ -157,6 +159,7 @@
         ((derived-mode-p 'LaTeX-mode)      (call-interactively 'beautify-latex))
         ((derived-mode-p 'latex-mode)      (call-interactively 'beautify-latex))
         (t "not implemented")))
+  )
 
 (defun beautify-haskell-before-save ()
   "Add this to .emacs to run refmt on the current buffer when saving."
