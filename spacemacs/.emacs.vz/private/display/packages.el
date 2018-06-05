@@ -15,6 +15,7 @@
     :config
     (setq writeroom-restore-window-config t)
     (setq writeroom-width 100)
+    (set-default 'preview-scale-function 2)
     ))
 
 (defun display/init-pretty-fonts ()

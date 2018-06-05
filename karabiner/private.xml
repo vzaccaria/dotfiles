@@ -68,14 +68,14 @@
             </autogen>
             <vkopenurldef>
                 <name>
-                    KeyCode::VK_OPEN_URL_SHELL_OPEN_FACETIME_AUDIO___CHIARA_TENCONI___GMAIL_COM__A_SAFARI
+                    KeyCode::VK_OPEN_URL_WEB_HTTPS___CALENDAR_GOOGLE_COM_CALENDAR_R
                 </name>
-                <url type="shell">
-                    open facetime-audio://chiara.tenconi72@gmail.com -a Safari
+                <url>
+                    https://calendar.google.com/calendar/r
                 </url>
             </vkopenurldef>
             <autogen>
-                --KeyToKey-- KeyCode::C, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_SHELL_OPEN_FACETIME_AUDIO___CHIARA_TENCONI___GMAIL_COM__A_SAFARI
+                --KeyToKey-- KeyCode::C, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___CALENDAR_GOOGLE_COM_CALENDAR_R
             </autogen>
         </item>
         <item>
@@ -154,10 +154,10 @@
         </item>
         <item>
             <name>
-                Emacs shortcut --- KeyCode::V, ModifierFlag::CONTROL_L
+                Emacs shortcutKeyCode::V, ModifierFlag::CONTROL_L
             </name>
             <identifier>
-                emacs_shortcut_____keycode__v__modifierflag__control_l
+                emacs_shortcutkeycode__v__modifierflag__control_l
             </identifier>
             <autogen>
                 --KeyToKey-- KeyCode::V, ModifierFlag::CONTROL_L,KeyCode::V, ModifierFlag::SHIFT_L
@@ -176,10 +176,10 @@
         </item>
         <item>
             <name>
-                Emacs shortcut --- KeyCode::O, ModifierFlag::CONTROL_L
+                Emacs shortcutKeyCode::O, ModifierFlag::CONTROL_L
             </name>
             <identifier>
-                emacs_shortcut_____keycode__o__modifierflag__control_l
+                emacs_shortcutkeycode__o__modifierflag__control_l
             </identifier>
             <autogen>
                 --KeyToKey-- KeyCode::O, ModifierFlag::CONTROL_L,KeyCode::E
@@ -198,10 +198,10 @@
         </item>
         <item>
             <name>
-                Emacs shortcut --- KeyCode::U, ModifierFlag::CONTROL_L
+                Emacs shortcutKeyCode::U, ModifierFlag::CONTROL_L
             </name>
             <identifier>
-                emacs_shortcut_____keycode__u__modifierflag__control_l
+                emacs_shortcutkeycode__u__modifierflag__control_l
             </identifier>
             <autogen>
                 --KeyToKey-- KeyCode::U, ModifierFlag::CONTROL_L,KeyCode::B
