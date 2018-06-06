@@ -176,7 +176,7 @@
                             {
                                 "to": [
                                     {
-                                        "shell_command": "open facetime-audio://chiara.tenconi72@gmail.com -a Safari"
+                                        "shell_command": "open 'https://calendar.google.com/calendar/r'"
                                     }
                                 ],
                                 "from": {
