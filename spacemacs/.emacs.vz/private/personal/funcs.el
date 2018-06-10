@@ -46,6 +46,13 @@
           (select-window first-win)
           (if this-win-2nd (other-window 1))))))
 
+(defun vz-align-ampersand (&optional b e)
+  (interactive)
+  (evil-visual-char)
+  (evil-inner-paragraph)
+  (spacemacs/align-repeat-ampersand)
+  )
+
 (defun figlet-region (&optional b e)
   (interactive "r")
   (shell-command-on-region b e "toilet -d ~/.figlet -f 3d" (current-buffer) t)
