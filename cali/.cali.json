@@ -12,6 +12,12 @@
         "where": "Dipartimento di Meccanica, Via La Masa 1, Italy",
         "reminder": "1d"
     },
+    "ricevimento": {
+        "calendar": "Vittorio Zaccaria",
+        "title": "Ricevimento studente/i (<%= parameter %>)",
+        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+        "reminder": "1d"
+    },
     "tirocinio": {
         "calendar": "Vittorio Zaccaria",
         "title": "Meeting per tirocinio with <%= parameter %>",
