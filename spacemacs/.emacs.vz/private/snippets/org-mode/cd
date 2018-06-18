@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: cd
+# key: cd_
+# --
+#+BEGIN_EXPORT latex
+\begin{tikzcd}
+# Example: A \arrow[r,"x",red] & B \\
+$0
+\end{tikzcd}
+#+END_EXPORT
