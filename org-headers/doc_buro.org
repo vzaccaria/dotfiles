@@ -4,7 +4,7 @@
 #+KEYWORDS:
 
 #+LaTeX_CLASS_OPTIONS: [12pt,a4paper]
-#+LaTeX_CLASS: letter
+# #+LaTeX_CLASS: letter
 #+LaTeX_HEADER: \usepackage{fixltx2e}
 #+LaTeX_HEADER: \usepackage{graphicx}
 #+LaTeX_HEADER: \usepackage{xcolor}
@@ -25,7 +25,6 @@
 #+LATEX_HEADER: \setmainfont[]{Times New Roman}
 #+LATEX_HEADER: \setsansfont{Fira Sans}
 #+LATEX_HEADER: \setmonofont[Scale=0.8]{Source Code Pro}
-#+LATEX_HEADER: \newfontfamily\myunicodefallback{Cambria}
 #+LATEX_HEADER: \usepackage{polyglossia}
 #+LATEX_HEADER: \setmainlanguage{italian}
 #+LATEX_HEADER: \definecolor{links}{HTML}{0086F7}
