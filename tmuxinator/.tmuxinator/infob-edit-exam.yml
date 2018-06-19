@@ -8,5 +8,5 @@ windows:
   - infob-edit-exam:
       layout: main-horizontal
       panes:
-        - cd . && make edit
-        - cd . && make watch
+        - cd . 
+        - cd .
