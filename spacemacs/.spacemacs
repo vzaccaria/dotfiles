@@ -140,7 +140,7 @@
     csv
     html
     markdown
-  ))
+    ))
 
 (defvar dotspacemacs/layers/extra
   '(gnus
@@ -170,11 +170,13 @@
               personal-bind-unix-keys (if vz/is-linux t nil))
     (maxima :variables
             maxima-emacs-installation-path
-            "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/maxima/5.35.1/emacs"
+            (if vz/is-home-mac "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/maxima/5.35.1/emacs" "/usr/local/share/maxima/5.41.0/emacs")
             maxima-emacs-info-path
-            "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/info" )
-    )
-  "Local layers housed in '~/.emacs.vz/private'.")
+            (if vz/is-home-mac
+                "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/info"  "/usr/local/share/info")
+            )
+    "Local layers housed in '~/.emacs.vz/private'.")
+  )
 
 (defvar dotspacemacs/layers/common
 	(append dotspacemacs/layers/core
