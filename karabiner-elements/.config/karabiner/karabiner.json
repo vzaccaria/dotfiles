@@ -11,59 +11,6 @@
                             {
                                 "to": [
                                     {
-                                        "key_code": "right_option"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "right_command"
-                                },
-                                "conditions": [],
-                                "type": "basic"
-                            },
-                            {
-                                "to": [
-                                    {
-                                        "key_code": "left_option"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "left_command"
-                                },
-                                "conditions": [],
-                                "type": "basic"
-                            },
-                            {
-                                "to": [
-                                    {
-                                        "key_code": "right_command"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "right_option"
-                                },
-                                "conditions": [],
-                                "type": "basic"
-                            },
-                            {
-                                "to": [
-                                    {
-                                        "key_code": "left_command"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "left_option"
-                                },
-                                "conditions": [],
-                                "type": "basic"
-                            }
-                        ],
-                        "description": "Swap command and option for Pok3r keyboard"
-                    },
-                    {
-                        "manipulators": [
-                            {
-                                "to": [
-                                    {
                                         "key_code": "left_control"
                                     }
                                 ],
@@ -151,6 +98,24 @@
                                         ]
                                     },
                                     "key_code": "a"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open -a '/Applications/Zotero.app'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "z"
                                 },
                                 "conditions": [],
                                 "type": "basic"
