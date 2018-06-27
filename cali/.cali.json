@@ -30,13 +30,13 @@
         "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
         "reminder": "30m"
     },
-     "camus": {
+    "camus": {
         "calendar": "Vittorio Zaccaria",
         "title": "Meeting CAMUS",
         "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
         "reminder": "1d"
     },
-   "ricerca": {
+    "ricerca": {
         "calendar": "Vittorio Zaccaria",
         "title": "Meeting ricerca",
         "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
@@ -77,8 +77,11 @@
         "title": "Esame di Hypermedia - Aula <%= parameter %>",
         "where": "Politecnico di Milano",
         "reminder": "1w"
+    },
+    "conference": {
+        "calendar": "Vittorio e Chiara",
+        "title": "Conferenza <%= parameter %>",
+        "where": "?",
+        "reminder": "10w"
     }
-
-
-
 }
