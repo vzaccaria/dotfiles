@@ -36,3 +36,6 @@
 #+LATEX_HEADER: \setlength{\parskip}{12pt plus 0.5ex}
 #+LaTeX_HEADER: \usepackage{geometry}
 #+LATEX_HEADER: \geometry{top=3cm,left=2cm,right=2cm,bottom=3cm}
+#+LATEX_HEADER: \newcommand{\checkbox}{$\square$}
+# Use as \fillin[3cm]
+#+LATEX_HEADER: \newcommand\fillin[1][3cm]{\makebox[#1]{\dotfill}}
