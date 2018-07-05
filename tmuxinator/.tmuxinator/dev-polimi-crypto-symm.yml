@@ -1,0 +1,12 @@
+name: dev-polimi-crypto-symm
+root: /Users/zaccaria/development/github/org-crypto/polimi-crypto/symmetric/maxima
+
+attach: false
+post: tmux -CC attach
+
+windows:
+  - dev-polimi-crypto-symm:
+      layout: main-horizontal
+      panes:
+        - cd .
+        - cd .
