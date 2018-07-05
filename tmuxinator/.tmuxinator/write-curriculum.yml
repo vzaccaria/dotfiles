@@ -1,0 +1,12 @@
+name: write-curriculum
+root: /Users/zaccaria/development/github/org-institutional/curriculum
+
+attach: false
+post: tmux -CC attach
+
+windows:
+  - write-curriculum:
+      layout: main-horizontal
+      panes:
+        - cd .
+        - cd .
