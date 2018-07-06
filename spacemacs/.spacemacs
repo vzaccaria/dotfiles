@@ -170,10 +170,14 @@
               personal-bind-unix-keys (if vz/is-linux t nil))
     (maxima :variables
             maxima-emacs-installation-path
-            (if vz/is-home-mac "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/maxima/5.35.1/emacs" "/usr/local/share/maxima/5.41.0/emacs")
+            (if vz/is-home-mac
+                "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/maxima/5.35.1/emacs"
+              ;; remember to apt-get install maxima-emacs
+              (if vz/is-linux-station "/usr/share/emacs/site-lisp/maxima" "/usr/local/share/maxima/5.41.0/emacs"))
             maxima-emacs-info-path
             (if vz/is-home-mac
-                "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/info"  "/usr/local/share/info")
+              "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/info"
+              "/usr/local/share/info")
             )
     "Local layers housed in '~/.emacs.vz/private'.")
   )

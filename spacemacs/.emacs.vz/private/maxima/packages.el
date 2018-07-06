@@ -67,7 +67,7 @@
 
     :config
     (progn
-        (setq maxima-command "sage")
-        (setq maxima-args  '("-maxima"))
+        (setq maxima-command (if vz/is-linux-station "maxima" "sage"))
+        (setq maxima-args  (if vz/is-linux-station '() '("-maxima")))
         ))) 
 
