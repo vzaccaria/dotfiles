@@ -24,14 +24,14 @@
             </autogen>
             <vkopenurldef>
                 <name>
-                    KeyCode::VK_OPEN_URL_WEB_HTTPS___GMAIL_GOOGLE_COM
+                    KeyCode::VK_OPEN_URL_APP__APPLICATIONS_GOOGLE_CHROME_APP
                 </name>
-                <url>
-                    https://gmail.google.com
+                <url type="file">
+                    /Applications/Google Chrome.app
                 </url>
             </vkopenurldef>
             <autogen>
-                --KeyToKey-- KeyCode::M, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___GMAIL_GOOGLE_COM
+                --KeyToKey-- KeyCode::M, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_APP__APPLICATIONS_GOOGLE_CHROME_APP
             </autogen>
             <vkopenurldef>
                 <name>
