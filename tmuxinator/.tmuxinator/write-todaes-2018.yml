@@ -8,5 +8,5 @@ windows:
   - write-todaes-2018:
       layout: main-horizontal
       panes:
-        - vi response.tex
-        - make watch
+        - cd .
+        - cd .

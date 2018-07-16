@@ -30,6 +30,12 @@
         "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
         "reminder": "30m"
     },
+    "reltesi": {
+        "calendar": "Vittorio Zaccaria",
+        "title": "Consegna relazione tesi",
+        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+        "reminder": "3d"
+    },
     "camus": {
         "calendar": "Vittorio Zaccaria",
         "title": "Meeting CAMUS",
