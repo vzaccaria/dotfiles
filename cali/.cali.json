@@ -84,6 +84,12 @@
         "where": "Politecnico di Milano",
         "reminder": "1w"
     },
+    "lauree": {
+        "calendar": "Vittorio e Chiara",
+        "title": "Lauree - Aula <%= parameter %>",
+        "where": "Politecnico di Milano",
+        "reminder": "1w"
+    },
     "conference": {
         "calendar": "Vittorio e Chiara",
         "title": "Conferenza <%= parameter %>",
