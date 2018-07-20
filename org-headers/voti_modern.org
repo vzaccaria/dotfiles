@@ -12,6 +12,8 @@
 #+LaTeX_HEADER: \usepackage{fixltx2e}
 #+LaTeX_HEADER: \usepackage{graphicx}
 #+LaTeX_HEADER: \usepackage{longtable}
+#+LaTeX_HEADER: \usepackage[table]{xcolor}
+#+LaTeX_HEADER: \rowcolors{2}{gray!10}{white}
 #+LaTeX_HEADER: \usepackage{float}
 #+LaTeX_HEADER: \usepackage{wrapfig}
 #+LaTeX_HEADER: \usepackage{geometry}
