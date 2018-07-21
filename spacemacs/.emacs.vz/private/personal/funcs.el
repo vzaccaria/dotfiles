@@ -156,6 +156,7 @@
         ((derived-mode-p 'emacs-lisp-mode) (call-interactively 'beautify-lisp))
         ((derived-mode-p 'markdown-mode)   (call-interactively 'beautify-markdown))
         ((derived-mode-p 'c-mode)          (call-interactively 'clang-format-buffer))
+        ((derived-mode-p 'c++-mode)          (call-interactively 'clang-format-buffer))
         ((derived-mode-p 'ess-mode)        (call-interactively 'beautify-ess))
         ((derived-mode-p 'json-mode)       (call-interactively 'web-beautify-js))
         ((derived-mode-p 'js-mode)         (call-interactively 'prettier))
