@@ -16,7 +16,9 @@
    dotspacemacs-configuration-layer-path '("~/.emacs.vz/private/"))
 
   (cond (vz/is-darwin
-         (setq-default dotspacemacs-configuration-layers (append
+         (setq-default dotspacemacs-configuration-layers (
+                                                          lua
+                                                          luaappend
                                                           dotspacemacs/layers/common
                                                           dotspacemacs/layers/langs-osx
                                                           dotspacemacs/layers/extra
