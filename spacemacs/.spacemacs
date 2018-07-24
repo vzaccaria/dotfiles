@@ -16,9 +16,7 @@
    dotspacemacs-configuration-layer-path '("~/.emacs.vz/private/"))
 
   (cond (vz/is-darwin
-         (setq-default dotspacemacs-configuration-layers (
-                                                          lua
-                                                          luaappend
+         (setq-default dotspacemacs-configuration-layers (append
                                                           dotspacemacs/layers/common
                                                           dotspacemacs/layers/langs-osx
                                                           dotspacemacs/layers/extra
@@ -100,6 +98,7 @@
     html
     markdown
     agda
+    lua
 
     spell-checking
 
