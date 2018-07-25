@@ -9,4 +9,4 @@ windows:
       layout: main-horizontal
       panes:
         - cd .
-        - cd . && echo 'type "make html-watch" or "make old-html-watch"'
+        - cd . && TARGET=lecture0 make html-watch

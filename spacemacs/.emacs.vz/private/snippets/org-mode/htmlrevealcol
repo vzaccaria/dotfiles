@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: htmlrevealcol
+# key: htmlrevealcol_ 
+# --
+#+REVEAL_HTML: <div class="column" style="float:left; width:${1:width}">
+${2:columntext}
+#+REVEAL_HTML: </div>

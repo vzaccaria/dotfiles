@@ -131,6 +131,14 @@
       content: "/edit"
     }
   }
+
+  .figure p {
+     font-size: 1.2rem; 
+  }
+  .figure-number {
+     font-size: 1.2rem;
+     font-weight: bold !important;
+  }
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.js"></script>

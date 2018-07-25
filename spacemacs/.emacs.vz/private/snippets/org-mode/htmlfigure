@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: htmlfigure
+# key: htmlfig_
+# --
+#+CAPTION: ${1:caption}
+#+ATTR_HTML: :width ${2:100px}
+${3:link}
