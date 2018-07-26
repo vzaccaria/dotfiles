@@ -3,14 +3,14 @@
 #+REVEAL_PLUGINS: (highlight)
 #+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
 #+REVEAL_HIGHLIGHT_CSS: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css
-#+REVEAL_TRANS: fade
+#+REVEAL_TRANS:  fade
 
 #+BEGIN_EXPORT html
 
-<style type="text/less">
+<style type="text/less">   
 @background-color: #fafafa;
-@code-color: darken(@background-color, 5%);
-@accent-color: #eb811a;
+@code-color: darken(@background-color, 5%); 
+@accent-color: #eb811a;  
 @text-color: #222;
 @ftext-color: lighten(@text-color, 30%);
 
@@ -30,7 +30,7 @@
 
 .reveal {
   background-color: @background-color;
-
+    
   h1, h2, h3 {
     text-align: left;
     font-size: 2.5rem;
