@@ -72,8 +72,14 @@ qnap-mount-multimedia() {
 }
 
 photoenv-mount-qnap() {
+   echo "WARNING!!!! -> the actual lightroom catalog is on the Macbook Pro!"
+   echo "We need to chmod 777 /Volumes and need your password"
+   sudo chmod 777 /Volumes
+   echo "Creating /Volumes/Multimedia. Remember to chmod 777 /Volumes."
    mkdir -p /Volumes/Multimedia
+   echo "Mounting /Volumes/Multimedia from QNAP, we'll need your QNAP password"
    sshfs -p 21101 admin@192.168.1.120:/share/CACHEDEV1_DATA/Multimedia /Volumes/Multimedia -ovolname=Multimedia
+   echo "Launching Lightroom"
    open /Applications/Adobe\ Lightroom/Adobe\ Lightroom.app
 }
 
