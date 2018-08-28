@@ -8,7 +8,6 @@
     prodigy
     evil-multiedit
     livescript-mode
-    highlight-chars
     matlab-mode
     (ox-extra :location local)
     (ox-reveal :location local)
@@ -19,9 +18,6 @@
 
 
 
-(defun personal/init-highlight-chars ()
-  (use-package highlight-chars)
-  )
 
 (defun personal/init-livescript-mode ()
   (use-package livescript-mode
