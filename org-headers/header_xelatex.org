@@ -1,6 +1,4 @@
 
-#+AUTHOR:    Vittorio Zaccaria
-#+EMAIL:     vittorio.zaccaria@polimi.it
 
 
 #+LaTeX_HEADER: \usepackage{fixltx2e}

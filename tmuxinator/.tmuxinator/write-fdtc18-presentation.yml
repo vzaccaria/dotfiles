@@ -1,0 +1,12 @@
+name: write-fdtc18-presentation
+root: /Users/zaccaria/development/github/org-crypto/polimi-casca-fdtc-2018
+
+attach: false
+post: tmux -CC attach
+
+windows:
+  - write-fdtc18-presentation:
+      layout: main-horizontal
+      panes:
+        - cd ./presentation
+        - cd ./presentation && make watch
