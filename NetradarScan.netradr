@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>IPFrom</key>
+		<string>192.168.1.0</string>
+		<key>IPTo</key>
+		<string>192.168.1.255</string>
+		<key>creationDate</key>
+		<date>2018-08-30T10:18:52Z</date>
+		<key>folderPredicateString</key>
+		<string>(bonjourName = '' AND dnsName = '')</string>
+		<key>hosts</key>
+		<array>
+			<dict>
+				<key>bonjourName</key>
+				<string>ubuntu1604.local</string>
+				<key>dnsNames</key>
+				<array/>
+				<key>imageName</key>
+				<string>PC Tower</string>
+				<key>ip</key>
+				<string>192.168.1.109</string>
+				<key>ipv6Addresses</key>
+				<array/>
+				<key>logs</key>
+				<array>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>New IP address:
+192.168.1.109.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>New MAC address:
+02:00:00:33:A5:56.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:23</string>
+						<key>message</key>
+						<string>New mDNS name:
+ubuntu1604.local.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>First Activity</string>
+					</dict>
+				</array>
+				<key>mac</key>
+				<string>02:00:00:33:A5:56</string>
+				<key>name</key>
+				<string>Ubuntu 16 - Container station</string>
+				<key>pingToolIntervalSeconds</key>
+				<integer>1</integer>
+				<key>pingToolIsLimited</key>
+				<integer>1</integer>
+				<key>pingToolNumberOfPings</key>
+				<integer>10</integer>
+				<key>pings</key>
+				<array>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:25</string>
+						<key>time</key>
+						<real>25.552034378051758</real>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:28</string>
+						<key>time</key>
+						<real>3.0649900436401367</real>
+					</dict>
+				</array>
+				<key>portScanToolFirstPort</key>
+				<integer>1</integer>
+				<key>portScanToolIsLimited</key>
+				<integer>0</integer>
+				<key>portScanToolLastPort</key>
+				<integer>1024</integer>
+				<key>ports</key>
+				<array/>
+				<key>sendViaIPOrDomain</key>
+				<integer>0</integer>
+				<key>sshPort</key>
+				<integer>22</integer>
+				<key>telnetPort</key>
+				<integer>23</integer>
+				<key>willBeMonitored</key>
+				<integer>1</integer>
+				<key>wolPort</key>
+				<integer>7</integer>
+			</dict>
+			<dict>
+				<key>bonjourName</key>
+				<string>Apple-TV.local</string>
+				<key>dnsNames</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>micro-server</string>
+					</dict>
+				</array>
+				<key>imageName</key>
+				<string>com.apple.apple-tv-4</string>
+				<key>ip</key>
+				<string>192.168.1.103</string>
+				<key>ipv6Addresses</key>
+				<array>
+					<dict>
+						<key>address</key>
+						<string>FE80::24:8CC6:56B6:84C0</string>
+					</dict>
+				</array>
+				<key>logs</key>
+				<array>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:23</string>
+						<key>message</key>
+						<string>New IPv6:
+FE80::24:8CC6:56B6:84C0.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:23</string>
+						<key>message</key>
+						<string>New DNS name:
+micro-server.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:23</string>
+						<key>message</key>
+						<string>New mDNS name:
+Apple-TV.local.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>New MAC address:
+AC:BC:32:64:25:81.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>New IP address:
+192.168.1.103.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>First Activity</string>
+					</dict>
+				</array>
+				<key>mac</key>
+				<string>AC:BC:32:64:25:81</string>
+				<key>name</key>
+				<string>Apple TV</string>
+				<key>pingToolIntervalSeconds</key>
+				<integer>1</integer>
+				<key>pingToolIsLimited</key>
+				<integer>1</integer>
+				<key>pingToolNumberOfPings</key>
+				<integer>10</integer>
+				<key>pings</key>
+				<array>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:24</string>
+						<key>time</key>
+						<real>24.129985809326172</real>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:28</string>
+						<key>time</key>
+						<real>0.0</real>
+					</dict>
+				</array>
+				<key>portScanToolFirstPort</key>
+				<integer>1</integer>
+				<key>portScanToolIsLimited</key>
+				<integer>0</integer>
+				<key>portScanToolLastPort</key>
+				<integer>1024</integer>
+				<key>ports</key>
+				<array/>
+				<key>sendViaIPOrDomain</key>
+				<integer>0</integer>
+				<key>sshPort</key>
+				<integer>22</integer>
+				<key>telnetPort</key>
+				<integer>23</integer>
+				<key>willBeMonitored</key>
+				<integer>1</integer>
+				<key>wolPort</key>
+				<integer>7</integer>
+			</dict>
+			<dict>
+				<key>dnsNames</key>
+				<array/>
+				<key>imageName</key>
+				<string>Generic Ink Printer</string>
+				<key>ip</key>
+				<string>192.168.1.104</string>
+				<key>ipv6Addresses</key>
+				<array/>
+				<key>logs</key>
+				<array>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>First Activity</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>New MAC address:
+D8:49:2F:D5:88:62.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>New IP address:
+192.168.1.104.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:19</string>
+						<key>message</key>
+						<string>New Port:
+80.</string>
+					</dict>
+				</array>
+				<key>mac</key>
+				<string>D8:49:2F:D5:88:62</string>
+				<key>name</key>
+				<string>Stampante Cameretta</string>
+				<key>pingToolIntervalSeconds</key>
+				<integer>1</integer>
+				<key>pingToolIsLimited</key>
+				<integer>1</integer>
+				<key>pingToolNumberOfPings</key>
+				<integer>10</integer>
+				<key>pings</key>
+				<array>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:28</string>
+						<key>time</key>
+						<real>40.148971557617188</real>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:25</string>
+						<key>time</key>
+						<real>44.209957122802734</real>
+					</dict>
+				</array>
+				<key>portScanToolFirstPort</key>
+				<integer>1</integer>
+				<key>portScanToolIsLimited</key>
+				<integer>0</integer>
+				<key>portScanToolLastPort</key>
+				<integer>1024</integer>
+				<key>ports</key>
+				<array>
+					<dict>
+						<key>number</key>
+						<integer>80</integer>
+					</dict>
+				</array>
+				<key>sendViaIPOrDomain</key>
+				<integer>0</integer>
+				<key>sshPort</key>
+				<integer>22</integer>
+				<key>telnetPort</key>
+				<integer>23</integer>
+				<key>willBeMonitored</key>
+				<integer>1</integer>
+				<key>wolPort</key>
+				<integer>7</integer>
+			</dict>
+			<dict>
+				<key>bonjourName</key>
+				<string>qnappino.local</string>
+				<key>dnsNames</key>
+				<array/>
+				<key>imageName</key>
+				<string>PC Tower</string>
+				<key>ip</key>
+				<string>192.168.1.120</string>
+				<key>ipv6Addresses</key>
+				<array/>
+				<key>logs</key>
+				<array>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>First Activity</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>New MAC address:
+00:08:9B:F6:33:AD.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>New IP address:
+192.168.1.120.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>New Port:
+445.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:19</string>
+						<key>message</key>
+						<string>New Port:
+548.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>New Port:
+443.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:19</string>
+						<key>message</key>
+						<string>New Port:
+21.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>New Port:
+139.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:24</string>
+						<key>message</key>
+						<string>New mDNS name:
+qnappino.local.</string>
+					</dict>
+				</array>
+				<key>mac</key>
+				<string>00:08:9B:F6:33:AD</string>
+				<key>name</key>
+				<string>Qnappino</string>
+				<key>pingToolIntervalSeconds</key>
+				<integer>1</integer>
+				<key>pingToolIsLimited</key>
+				<integer>1</integer>
+				<key>pingToolNumberOfPings</key>
+				<integer>10</integer>
+				<key>pings</key>
+				<array>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:24</string>
+						<key>time</key>
+						<real>30.32994270324707</real>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:28</string>
+						<key>time</key>
+						<real>3.4819841384887695</real>
+					</dict>
+				</array>
+				<key>portScanToolFirstPort</key>
+				<integer>1</integer>
+				<key>portScanToolIsLimited</key>
+				<integer>0</integer>
+				<key>portScanToolLastPort</key>
+				<integer>1024</integer>
+				<key>ports</key>
+				<array>
+					<dict>
+						<key>number</key>
+						<integer>445</integer>
+					</dict>
+					<dict>
+						<key>number</key>
+						<integer>139</integer>
+					</dict>
+					<dict>
+						<key>number</key>
+						<integer>21</integer>
+					</dict>
+					<dict>
+						<key>number</key>
+						<integer>548</integer>
+					</dict>
+					<dict>
+						<key>number</key>
+						<integer>443</integer>
+					</dict>
+				</array>
+				<key>sendViaIPOrDomain</key>
+				<integer>0</integer>
+				<key>sshPort</key>
+				<integer>22</integer>
+				<key>telnetPort</key>
+				<integer>23</integer>
+				<key>willBeMonitored</key>
+				<integer>1</integer>
+				<key>wolPort</key>
+				<integer>7</integer>
+			</dict>
+			<dict>
+				<key>dnsNames</key>
+				<array/>
+				<key>imageName</key>
+				<string>com.apple.iphone-6s-dadcdb</string>
+				<key>ip</key>
+				<string>192.168.1.112</string>
+				<key>ipv6Addresses</key>
+				<array/>
+				<key>logs</key>
+				<array>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:28</string>
+						<key>message</key>
+						<string>New MAC address:
+70:14:A6:1D:10:4B.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:28</string>
+						<key>message</key>
+						<string>First Activity</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:28</string>
+						<key>message</key>
+						<string>New IP address:
+192.168.1.112.</string>
+					</dict>
+				</array>
+				<key>mac</key>
+				<string>70:14:A6:1D:10:4B</string>
+				<key>name</key>
+				<string>Vittorio's iPhone 6</string>
+				<key>pingToolIntervalSeconds</key>
+				<integer>1</integer>
+				<key>pingToolIsLimited</key>
+				<integer>1</integer>
+				<key>pingToolNumberOfPings</key>
+				<integer>10</integer>
+				<key>pings</key>
+				<array>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:28</string>
+						<key>time</key>
+						<real>86.371063232421875</real>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:28</string>
+						<key>time</key>
+						<real>52.456020355224609</real>
+					</dict>
+				</array>
+				<key>portScanToolFirstPort</key>
+				<integer>1</integer>
+				<key>portScanToolIsLimited</key>
+				<integer>0</integer>
+				<key>portScanToolLastPort</key>
+				<integer>1024</integer>
+				<key>ports</key>
+				<array/>
+				<key>sendViaIPOrDomain</key>
+				<integer>0</integer>
+				<key>sshPort</key>
+				<integer>22</integer>
+				<key>telnetPort</key>
+				<integer>23</integer>
+				<key>willBeMonitored</key>
+				<integer>1</integer>
+				<key>wolPort</key>
+				<integer>7</integer>
+			</dict>
+			<dict>
+				<key>dnsNames</key>
+				<array/>
+				<key>ip</key>
+				<string>192.168.1.254</string>
+				<key>ipv6Addresses</key>
+				<array/>
+				<key>logs</key>
+				<array>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:19</string>
+						<key>message</key>
+						<string>New Port:
+443.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:19</string>
+						<key>message</key>
+						<string>New Port:
+23.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:19</string>
+						<key>message</key>
+						<string>New Port:
+22.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:19</string>
+						<key>message</key>
+						<string>First Activity</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:19</string>
+						<key>message</key>
+						<string>New Port:
+80.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:19</string>
+						<key>message</key>
+						<string>New IP address:
+192.168.1.254.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:19</string>
+						<key>message</key>
+						<string>New MAC address:
+D0:D4:12:D8:CB:0E.</string>
+					</dict>
+				</array>
+				<key>mac</key>
+				<string>D0:D4:12:D8:CB:0E</string>
+				<key>pingToolIntervalSeconds</key>
+				<integer>1</integer>
+				<key>pingToolIsLimited</key>
+				<integer>1</integer>
+				<key>pingToolNumberOfPings</key>
+				<integer>10</integer>
+				<key>pings</key>
+				<array>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:28</string>
+						<key>time</key>
+						<real>8.8009834289550781</real>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:23</string>
+						<key>time</key>
+						<real>46.988010406494141</real>
+					</dict>
+				</array>
+				<key>portScanToolFirstPort</key>
+				<integer>1</integer>
+				<key>portScanToolIsLimited</key>
+				<integer>0</integer>
+				<key>portScanToolLastPort</key>
+				<integer>1024</integer>
+				<key>ports</key>
+				<array>
+					<dict>
+						<key>number</key>
+						<integer>23</integer>
+					</dict>
+					<dict>
+						<key>number</key>
+						<integer>80</integer>
+					</dict>
+					<dict>
+						<key>number</key>
+						<integer>443</integer>
+					</dict>
+					<dict>
+						<key>number</key>
+						<integer>22</integer>
+					</dict>
+				</array>
+				<key>sendViaIPOrDomain</key>
+				<integer>0</integer>
+				<key>sshPort</key>
+				<integer>22</integer>
+				<key>telnetPort</key>
+				<integer>23</integer>
+				<key>type</key>
+				<string>__AUTO_TYPE_DEFAULT_GATEWAY</string>
+				<key>willBeMonitored</key>
+				<integer>1</integer>
+				<key>wolPort</key>
+				<integer>7</integer>
+			</dict>
+			<dict>
+				<key>bonjourName</key>
+				<string>macbook.local</string>
+				<key>dnsNames</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>macbook</string>
+					</dict>
+				</array>
+				<key>ip</key>
+				<string>192.168.1.106</string>
+				<key>ipv6Addresses</key>
+				<array>
+					<dict>
+						<key>address</key>
+						<string>FE80::85C:80CA:B5B1:639D</string>
+					</dict>
+				</array>
+				<key>logs</key>
+				<array>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>New IP address:
+192.168.1.106.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:23</string>
+						<key>message</key>
+						<string>New IPv6:
+FE80::85C:80CA:B5B1:639D.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>New MAC address:
+38:C9:86:F1:8A:DE.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:23</string>
+						<key>message</key>
+						<string>New DNS name:
+macbook.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>New Port:
+548.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>New Model ID:
+MacBookAir4,2.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>New Port:
+5900.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>First Activity</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:23</string>
+						<key>message</key>
+						<string>New mDNS name:
+macbook.local.</string>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:18</string>
+						<key>message</key>
+						<string>New Port:
+22.</string>
+					</dict>
+				</array>
+				<key>mac</key>
+				<string>38:C9:86:F1:8A:DE</string>
+				<key>modelID</key>
+				<string>MacBookAir4,2</string>
+				<key>name</key>
+				<string>Macbook Air</string>
+				<key>pingToolIntervalSeconds</key>
+				<integer>1</integer>
+				<key>pingToolIsLimited</key>
+				<integer>1</integer>
+				<key>pingToolNumberOfPings</key>
+				<integer>10</integer>
+				<key>pings</key>
+				<array>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:28</string>
+						<key>time</key>
+						<real>2.5739669799804688</real>
+					</dict>
+					<dict>
+						<key>date</key>
+						<string>2018-08-30 12:24</string>
+						<key>time</key>
+						<real>33.914924621582031</real>
+					</dict>
+				</array>
+				<key>portScanToolFirstPort</key>
+				<integer>1</integer>
+				<key>portScanToolIsLimited</key>
+				<integer>0</integer>
+				<key>portScanToolLastPort</key>
+				<integer>1024</integer>
+				<key>ports</key>
+				<array>
+					<dict>
+						<key>number</key>
+						<integer>22</integer>
+					</dict>
+					<dict>
+						<key>number</key>
+						<integer>548</integer>
+					</dict>
+					<dict>
+						<key>number</key>
+						<integer>5900</integer>
+					</dict>
+				</array>
+				<key>sendViaIPOrDomain</key>
+				<integer>0</integer>
+				<key>sshPort</key>
+				<integer>22</integer>
+				<key>telnetPort</key>
+				<integer>23</integer>
+				<key>type</key>
+				<string>__AUTO_TYPE_HOST_CREATED_SCAN</string>
+				<key>willBeMonitored</key>
+				<integer>1</integer>
+				<key>wolPort</key>
+				<integer>7</integer>
+			</dict>
+		</array>
+		<key>monitoringIntervall</key>
+		<real>120</real>
+		<key>name</key>
+		<string>Untitled</string>
+		<key>networks</key>
+		<array>
+			<dict>
+				<key>broadcastIP</key>
+				<string>192.168.1.255</string>
+				<key>creationDate</key>
+				<string>2018-08-30 12:18</string>
+				<key>ipAddress</key>
+				<string>192.168.1.254</string>
+				<key>macAddress</key>
+				<string>d0:d4:12:d8:cb:0e</string>
+				<key>networkIP</key>
+				<string>192.168.1.0</string>
+				<key>subnetmask</key>
+				<string>255.255.255.0</string>
+			</dict>
+		</array>
+		<key>type</key>
+		<integer>0</integer>
+	</dict>
+</array>
+</plist>

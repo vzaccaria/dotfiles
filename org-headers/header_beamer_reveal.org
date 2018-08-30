@@ -32,25 +32,31 @@
   background-color: @background-color;
     
   h1, h2, h3 {
+    font-family: 'Lato';
     text-align: left;
-    font-size: 2.5rem;
+    font-size: 1.6rem;
     color: @ftext-color;
 
     &.title {
-      font-size:1.5em;
+      padding-bottom: 3rem;
+      border-bottom: solid @accent-color;
+      b {
+        font-size:1.2em;
+      }
       color: @text-color;
     }
 
     &.author {
-    font-size:1.1em;
-    color: @ftext-color;
-    letter-spacing: 1px;
-    }
-
-    &.date {
     font-size:0.6em;
     color: @ftext-color;
     letter-spacing: 1px;
+    text-transform: none;
+    }
+
+    &.date {
+    font-size:0.5em;
+    color: @ftext-color;  
+    letter-spacing: 1px;  
     }
   }
   h2 {
@@ -62,13 +68,25 @@
     color: @accent-color;
   }
 
+  .slide-header, .slide-footer {
+     font-size: 1rem; 
+     text-align: left;
+  } 
+  .slide-footer {
+   margin-top: 5rem;
+  }   
+
+  .math { 
+    color: @text-color;
+  }
+
   ul, p {
     text-align: left;
     display: block;
     color: @text-color;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    font-size: 2rem;
+    font-size: 1.6rem;  
     &.date {
     font-size:0.5em;
     }
@@ -134,6 +152,11 @@
 
   .figure p {
      font-size: 1.2rem; 
+     margin-top: 0.2rem;
+     margin-bottom: 0.2rem;
+  }
+  .figure img {
+    border: none;
   }
   .figure-number {
      font-size: 1.2rem;
@@ -154,5 +177,8 @@
 # #+MACRO: jsbinho @@html: <a class="vz-link" href="https://jsbin.com/$1/edit">$1</a><a class="jsbin-embed" href="https://jsbin.com/$1/embed?html,js,output&height=15rem">Demo</a><script src="https://static.jsbin.com/js/embed.js"></script>@@
 
 #+MACRO: mmc @@html: <div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"> <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.adafruit.com/#pub:$1" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe> </div> @@
+
+#+MACRO: fig-2col (eval (concat "#+REVEAL_HTML: <div class=\"column\" style=\"float:left; width:49%\"> \n#+CAPTION: $1\n#+ATTR_HTML: :width $3\n$2\n#+REVEAL_HTML: </div>\n")) 
+#+MACRO: fig-3col (eval (concat "#+REVEAL_HTML: <div class=\"column\" style=\"float:left; width:32%\"> \n#+CAPTION: $1\n#+ATTR_HTML: :width $3\n$2\n#+REVEAL_HTML: </div>\n")) 
 
 #+MACRO: if-latex-else (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) "$1" "$2"))
