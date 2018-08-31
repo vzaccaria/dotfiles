@@ -15,19 +15,18 @@ alias lz='cd "/Users/zaccaria/development/github/materiale-corsi/infob/docs/org"
 alias lec='cd "/Users/zaccaria/development/github/materiale-corsi/infob/docs/org"'
 
 alias di='dashboard'
+alias preview="fzf --preview 'bat --color \"always\" {}'"
 
 # JavaScriptCore REPL
 jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc";
 [ -e "${jscbin}" ] && alias jsc="${jscbin}";
 unset jscbin;
 
-# Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
+# # Trim new lines and copy to clipboard
+# alias c="tr -d '\n' | pbcopy"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-
-
 
 # Empty the Trash on all mounted volumes and the main HDD.
 # Also, clear Apple’s System Logs to improve shell startup speed.
@@ -48,7 +47,7 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 # Disable Spotlight
 alias spotlight-off="sudo mdutil -a -i off"
 # Enable Spotlight
-alias spotligh-on="sudo mdutil -a -i on"
+alias spotlight-on="sudo mdutil -a -i on"
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
@@ -83,3 +82,6 @@ alias find_big_node_modules_dir='find . -name "node_modules" -prune -exec du -h 
 alias startanki='/Applications/Anki.app/Contents/MacOS/Anki -b ~/Dropbox/Apps/Anki'
 
 alias tx='tmuxinator'
+
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+

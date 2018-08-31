@@ -43,6 +43,7 @@ echo_ok
 
 echo ""
 echo "Done."
+bat ${srcdir}/tips.md
 
 
 # I dont remember why this is here..
