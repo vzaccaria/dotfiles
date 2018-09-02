@@ -1,0 +1,3 @@
+text/html; open %s
+text/plain; vi %s
+
