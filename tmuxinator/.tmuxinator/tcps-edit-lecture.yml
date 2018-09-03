@@ -9,4 +9,4 @@ windows:
       layout: main-horizontal
       panes:
         - cd .
-        - cd . && TARGET=lecture1_recap_and_tools make html-watch
+        - cd . && TARGET=lecture0_course_intro make html-watch
