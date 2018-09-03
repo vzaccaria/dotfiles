@@ -87,6 +87,9 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
     font-size: 1.6rem;  
+    b {
+      color: @accent-color;
+    }
     &.date {
     font-size:0.5em;
     }
@@ -157,6 +160,7 @@
   }
   .figure img {
     border: none;
+    box-shadow: none !important;
   }
   .figure-number {
      font-size: 1.2rem;
