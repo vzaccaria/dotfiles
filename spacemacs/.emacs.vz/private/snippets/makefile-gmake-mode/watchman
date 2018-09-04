@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: watchman trigger
+# key: watchman_
+# --
+
+watch:
+	watchman -j <<< '["trigger", "${1:folder to watch}", {"name": "${2:name of trigger}", "expression": ["anyof", ["match", "*.org", "wholename"]], "command": ["make", "-C", "$(PWD)"]}]'
+
+watch-debug:
+	tail -f /usr/local/var/run/watchman/zaccaria-state/log
+
+watch-delete-all:
+	watchman watch-del-all

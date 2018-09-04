@@ -51,7 +51,8 @@ alias spotlight-on="sudo mdutil -a -i on"
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
-alias chromekill="ps ux | grep '[C]hrome' | tr -s ' ' | cut -d ' ' -f2 | xargs kill -9"
+alias kill-chrome="ps ux | grep '[C]hrome' | tr -s ' ' | cut -d ' ' -f2 | xargs kill -9"
+alias kill-emacs="ps ux | grep '[e]macs' | tr -s ' ' | cut -d ' ' -f2 | xargs kill -9"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
