@@ -9,4 +9,4 @@ windows:
       layout: main-horizontal
       panes:
         - cd ./presentation
-        - cd ./presentation && make watch-html
+        - cd ./presentation && open 20180913_fdtc18.org 
