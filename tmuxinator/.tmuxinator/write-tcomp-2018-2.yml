@@ -8,5 +8,4 @@ windows:
   - name:
       layout: main-horizontal
       panes:
-        - vi tcomp2018.org
-        - cd . && make watch
+        - make watch && vi tcomp2018.org

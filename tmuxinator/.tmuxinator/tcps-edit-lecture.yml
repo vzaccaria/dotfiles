@@ -8,5 +8,4 @@ windows:
   - tcps-edit-lecture:
       layout: main-horizontal
       panes:
-        - cd .
-        - cd . && TARGET=lecture0_course_intro make html-watch
+        - cd . && TARGET=lecture1 make watch
