@@ -80,6 +80,13 @@
     color: @text-color;
   }
 
+  
+  section.has-dark-background {
+       p {
+       color: white; 
+       }
+  }
+
   ul, p {
     text-align: left;
     display: block;
@@ -95,21 +102,20 @@
     }
   }
 
-  li {
+  li {  
     margin-bottom: 1rem;
-  }
-
+  }  
+   
   th {
     margin-bottom: 1em;
-    font-size: 2rem;
-    font-family: 'League Gothic';
+    font-size: 1rem;
     text-transform: uppercase;
     color: black;
   }
 
   td {
     color: @text-color;
-    font-size: 1.8rem;
+    font-size: 1rem;
   }
 
   blockquote {
