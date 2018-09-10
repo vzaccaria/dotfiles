@@ -6,7 +6,8 @@ post: tmux -CC attach
 
 windows:
   - write-fdtc18-presentation:
-      layout: 032d,105x51,0,0[105x39,0,0,0,105x11,0,40,1]]
+      layout: a4d1,158x37,0,0[158x23,0,0,0,158x13,0,24{79x13,0,24,1,78x13,80,24,2}]
       panes:
         - cd ./presentation && emacsclient ./20180913_fdtc18.org
-        - cd ./presentation && make watch-html 
+        - cd ./presentation && make watch-html
+        - cd ./presentation/key

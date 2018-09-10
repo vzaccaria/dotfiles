@@ -8,4 +8,5 @@ windows:
   - tcps-edit-lecture:
       layout: main-horizontal
       panes:
+        - cd . && TARGET=lecture1 make edit
         - cd . && TARGET=lecture1 make watch
