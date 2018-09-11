@@ -51,3 +51,5 @@ alias mk='make -f makefile.mk'
 
 # Silver searcher
 alias ag="ag --hidden --ignore '*.map'"
+
+alias gen-preview="convert -density 45 -depth 8 -quality 85 -delete 1--1"
