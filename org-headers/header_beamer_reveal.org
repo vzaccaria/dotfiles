@@ -87,13 +87,16 @@
        }
   }
 
-  ul, p {
+  ul, ol, p {
     text-align: left;
     display: block;
     color: @text-color;
     margin-top: 2rem;
     margin-bottom: 2rem;
     font-size: 1.6rem;  
+    li {
+      padding-left: 1rem;
+    }
     b {
       color: @accent-color;
     }
@@ -159,9 +162,9 @@
     }
   }
 
-  img {
-//    display: block;
-//    margin: 0 auto !important;
+  img.center {
+    display: block;
+    margin: 0 auto !important;
   }
 
   .figure {
