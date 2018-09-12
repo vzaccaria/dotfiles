@@ -6,7 +6,6 @@
 #+REVEAL_TRANS:  fade
 
 #+BEGIN_EXPORT html
-
 <style type="text/less">   
 @background-color: #fafafa;
 @code-color: darken(@background-color, 5%); 
@@ -167,12 +166,24 @@
     margin: 0 auto !important;
   }
 
+  .column {
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+
+  .example {
+    background: darken(white,5%);
+    padding: 1rem;
+    border-radius: 1rem;
+    box-sizing: border-box;
+  }
+
   .figure {
-      padding-left: 20px;
       p {
         font-size: 1.2rem; 
         margin-top: 0.2rem;
         margin-bottom: 0.2rem;
+        padding: none;
       }
       img {
         border: none;
@@ -186,8 +197,7 @@
 
 }
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.js"></script>
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inconsolata" />
+<script src="file:///Users/zaccaria/development/github/org-crypto/polimi-casca-fdtc-2018/presentation/assets/less.js/2.7.2/less.js"></script>
 #+END_EXPORT
 
 #+MACRO: jsbin   @@html: <a class="vz-link" href="https://jsbin.com/$1/edit?js,console">$1</a>@@
@@ -202,5 +212,7 @@
 
 #+MACRO: fig-2col (eval (concat "#+REVEAL_HTML: <div class=\"column\" style=\"float:left; width:49%\"> \n#+CAPTION: $1\n#+ATTR_HTML: :width $3\n$2\n#+REVEAL_HTML: </div>\n")) 
 #+MACRO: fig-3col (eval (concat "#+REVEAL_HTML: <div class=\"column\" style=\"float:left; width:32%\"> \n#+CAPTION: $1\n#+ATTR_HTML: :width $3\n$2\n#+REVEAL_HTML: </div>\n")) 
+#+MACRO: fig-3col-example (eval (concat "#+REVEAL_HTML: <div class=\"column example\" style=\"float:left; width:32%\"> \n#+CAPTION: $1\n#+ATTR_HTML: :width $3\n$2\n#+REVEAL_HTML: </div>\n")) 
+#+MACRO: fig-2col-example (eval (concat "#+REVEAL_HTML: <div class=\"column example\" style=\"float:left; width:49%\"> \n#+CAPTION: $1\n#+ATTR_HTML: :width $3\n$2\n#+REVEAL_HTML: </div>\n")) 
 
 #+MACRO: if-latex-else (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) "$1" "$2"))
