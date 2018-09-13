@@ -1,5 +1,5 @@
 name: dev-vzaccaria-github-io
-root: /Users/zaccaria/development/github/org-websites/vzaccaria.github.io
+root: /Users/zaccaria/development/github/org-institutional/vzaccaria.github.io
 
 attach: false
 post: tmux -CC attach
@@ -7,7 +7,8 @@ post: tmux -CC attach
 
 windows:
   - dev-vzaccaria-github-io:
-      layout: main-vertical
+      layout: 86f4,158x37,0,0[158x30,0,0{79x30,0,0,0,78x30,80,0,2},158x6,0,31,1]
       panes:
-        - cd .
-        - cd .
+        - cd . && vi ./src/index.js
+        - cd . && make start-dashboard
+        - cd . && make start-server
