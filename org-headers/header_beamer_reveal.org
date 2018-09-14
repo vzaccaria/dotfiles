@@ -1,8 +1,6 @@
 #+STARTUP: showall indent latexpreview entitiespretty
 #+COLUMNS: %30ITEM %30CUSTOM_ID
 #+REVEAL_PLUGINS: (highlight)
-#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
-#+REVEAL_HIGHLIGHT_CSS: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css
 #+REVEAL_TRANS:  fade
 
 #+BEGIN_EXPORT html
@@ -197,7 +195,6 @@
 
 }
 </style>
-<script src="file:///Users/zaccaria/development/github/org-crypto/polimi-casca-fdtc-2018/presentation/assets/less.js/2.7.2/less.js"></script>
 #+END_EXPORT
 
 #+MACRO: jsbin   @@html: <a class="vz-link" href="https://jsbin.com/$1/edit?js,console">$1</a>@@

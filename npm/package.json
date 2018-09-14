@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "diff-so-fancy": "1.0.0",
+    "highlightjs": "9.10.0",
+    "less": "3.8.1",
+    "mathjax": "2.7.5",
+    "reveal.js": "3.7.0",
+    "serve": "6.5.5",
+    "tern": "0.21.0"
+  }
+}

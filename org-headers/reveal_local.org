@@ -1,0 +1,10 @@
+
+#+BEGIN_EXPORT HTML
+<script src="file:///Users/zaccaria/node_modules/less/dist/less.js"></script>
+#+END_EXPORT
+
+
+#+REVEAL_ROOT:          file:///Users/zaccaria/node_modules/reveal.js
+#+REVEAL_MATHJAX_URL:   file:///Users/zaccaria/node_modules/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+#+REVEAL_HIGHLIGHT_CSS: file:///Users/zaccaria/node_modules/highlightjs/styles/solarized-light.css
+
