@@ -67,3 +67,13 @@ showformula() {
 git-diff-to-html() {
     git diff --color=always $* | diff-so-fancy | aha
 }
+
+live-edit-org-rtd() {
+    org2pdf "$1" --latex-engine html -a /Users/zaccaria/dotfiles/org-headers/header_html_rtd.org -p -w -y 'chromereload' 
+}
+
+live-edit-org() {
+    org2pdf "$1" --latex-engine html -a /Users/zaccaria/dotfiles/org-headers/header_html_simple.org -p -w -y 'chromereload'
+
+    
+}

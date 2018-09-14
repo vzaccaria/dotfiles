@@ -159,7 +159,7 @@
     }
   }
 
-  img.center {
+  .center {
     display: block;
     margin: 0 auto !important;
   }
@@ -212,4 +212,6 @@
 #+MACRO: fig-3col-example (eval (concat "#+REVEAL_HTML: <div class=\"column example\" style=\"float:left; width:32%\"> \n#+CAPTION: $1\n#+ATTR_HTML: :width $3\n$2\n#+REVEAL_HTML: </div>\n")) 
 #+MACRO: fig-2col-example (eval (concat "#+REVEAL_HTML: <div class=\"column example\" style=\"float:left; width:49%\"> \n#+CAPTION: $1\n#+ATTR_HTML: :width $3\n$2\n#+REVEAL_HTML: </div>\n")) 
 
+#+MACRO: video @@html: <video autoplay controls muted loop src="$1" class='center'></video>@@
+#+MACRO: video-2col @@html: <video autoplay controls muted loop src="$1" width="49%"></video>@@
 #+MACRO: if-latex-else (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) "$1" "$2"))

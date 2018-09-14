@@ -1,12 +1,13 @@
 name: tcps-edit-lecture
-root: /Users/zaccaria/development/github/org-institutional/materiale-corsi/tcps/docs/lectures/handson
+root: /Users/zaccaria/development/github/org-institutional/materiale-corsi/tcps/docs/lectures
 
 attach: false
 post: tmux -CC attach
 
 windows:
   - tcps-edit-lecture:
-      layout: main-horizontal
+      layout: 8ecf,212x51,0,0[212x38,0,0,0,212x12,0,39{105x12,0,39,1,106x12,106,39,2}]
       panes:
         - cd . && TARGET=lecture1 make edit
-        - cd . && TARGET=lecture1 make watch
+        - cd . && TARGET=lecture1 make watch-html
+        - cd ./key 
