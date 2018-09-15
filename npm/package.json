@@ -4,8 +4,10 @@
     "highlightjs": "9.10.0",
     "less": "3.8.1",
     "mathjax": "2.7.5",
+    "prettier": "1.14.2",
     "reveal.js": "3.7.0",
     "serve": "6.5.5",
-    "tern": "0.21.0"
+    "tern": "0.21.0",
+    "yamljs": "0.3.0"
   }
 }
