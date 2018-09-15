@@ -86,3 +86,4 @@ alias tx='tmuxinator'
 
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
+alias clipboard-md-to-html='pbpaste | pandoc -f markdown -t html | pbcopy'
