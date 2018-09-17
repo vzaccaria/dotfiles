@@ -18,6 +18,10 @@
         line-height: 130%;
 
         background: @code-color;
+        &.b {
+            background: white !important;
+            width: 100%; height: auto;
+        }
         color: black;
         border-radius: 0.2rem;
 

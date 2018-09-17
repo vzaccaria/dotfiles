@@ -3,7 +3,10 @@
 <script src="file:///Users/zaccaria/node_modules/less/dist/less.js"></script>
 <script src="https://scratchblocks.github.io/js/scratchblocks-v3.1-min.js"></script>
 <script>
-scratchblocks.renderMatching("code.b", {inline: true});
+document.addEventListener('DOMContentLoaded', function() {
+   scratchblocks.renderMatching("code.b");
+});
+
 </script>
 #+END_EXPORT
 
