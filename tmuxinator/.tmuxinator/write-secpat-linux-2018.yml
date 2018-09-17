@@ -1,6 +1,8 @@
 name: write-secpat-linux-2018
 root: /Users/zaccaria/development/github/org-crypto/polimi-secpat/docs/reports/20181001_linux
 
+attach: true
+
 windows:
   - name:
       layout: main-horizontal

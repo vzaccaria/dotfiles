@@ -14,7 +14,7 @@
 .define-code-style() {
     & code {
         font-family: "Menlo";
-        font-size: 1.7rem;
+        font-size: 1.3rem;
         line-height: 130%;
 
         background: @code-color;

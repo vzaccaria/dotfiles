@@ -1,9 +1,6 @@
 name: dev-anki-cards
 root: /Users/zaccaria/development/github/org-institutional/anki-cards
 
-attach: false
-post: tmux -CC attach
-
 windows:
   - dev-anki-cards:
       layout: main-horizontal
