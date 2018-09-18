@@ -19,7 +19,7 @@
 
         background: @code-color;
         &.b {
-            background: white !important;
+            background: @background-color !important;
             width: 100%; height: auto;
         }
         color: black;
