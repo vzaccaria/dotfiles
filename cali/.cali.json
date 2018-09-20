@@ -95,5 +95,12 @@
         "title": "Conferenza <%= parameter %>",
         "where": "?",
         "reminder": "10w"
+    },
+    "esamiss": {
+        "calendar": "Vittorio e Chiara",
+        "title": "Esami del sangue",
+        "where": "?",
+        "reminder": "10h"
     }
+
 }
