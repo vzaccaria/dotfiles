@@ -1,0 +1,41 @@
+[general]
+ui = TTY.TTYUI
+accounts = VittorioZaccaria
+pythonfile=~/.mutt/offlineimap.py
+fsync = False
+
+[Account VittorioZaccaria]
+localrepository = VittorioZaccaria-Local
+remoterepository = VittorioZaccaria-Remote
+status_backend = sqlite
+postsynchook = notmuch new
+
+[Repository VittorioZaccaria-Local]
+type = Maildir
+localfolders = ~/.mail/vittorio.zaccaria@gmail.com
+nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
+                            'sent':    '[Gmail]/Sent Mail',
+                            'flagged': '[Gmail]/Starred',
+                            'trash':   '[Gmail]/Trash',
+                            'archive': '[Gmail]/All Mail',
+                            }.get(folder, folder)
+
+[Repository VittorioZaccaria-Remote]
+maxconnections = 1
+type = Gmail
+remoteuser = steve@VittorioZaccaria.com
+remotepasseval = get_keychain_pass(account="steve@VittorioZaccaria.com", server="imap.gmail.com")
+realdelete = no
+nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
+                            '[Gmail]/Sent Mail': 'sent',
+                            '[Gmail]/Starred':   'flagged',
+                            '[Gmail]/Trash':     'trash',
+                            '[Gmail]/All Mail':  'archive',
+                            }.get(folder, folder)
+folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
+                                             'Nagios',
+                                             'Django',
+                                             'Flask',
+                                             '[Gmail]/Important',
+                                             '[Gmail]/Spam',
+                                             ]
