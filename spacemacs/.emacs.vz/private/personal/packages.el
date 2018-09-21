@@ -52,7 +52,7 @@
 (defun personal/init-org-misc ()
   (use-package org-misc
     :config
-  (if vz/is-darwin (personal/org-init-agenda))
+  (personal/org-init-agenda)
   (personal/org-init-babel)
   (personal/org-init-display)
   (personal/org-init-snippets)
