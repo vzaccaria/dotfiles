@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "chromix-too": "0.0.15",
     "diff-so-fancy": "1.0.0",
     "highlightjs": "9.10.0",
     "less": "3.8.1",
