@@ -31,8 +31,8 @@ set $down k
 set $left j
 set $right semicolon
 
-set gaps inner 15
-set gaps outer 15
+# set gaps inner 15
+# set gaps outer 15
 
 set $mod Mod4
 
