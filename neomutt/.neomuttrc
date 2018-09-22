@@ -5,10 +5,11 @@ set sidebar_format="%B%?F? [%F]?%* %?N?%N/?%S"
 set mail_check_stats
 
 set mbox_type=Maildir
-set folder="~/.mail"
-set mbox="~/.mail"
+set folder=~/.mail/vittorio.zaccaria@gmail.com
+set spoolfile=+/archive
+
 
 source ./.neomutt-config/colors.mutt
-source ./.neomutt-config/bindings.mutt
+# source ./.neomutt-config/bindings.mutt
 
-set mailcap_path     = "$HOME/.neomutt-config/mailcap"
+# set mailcap_path     = "$HOME/.neomutt-config/mailcap"
