@@ -1,18 +1,20 @@
 [general]
 ui = TTY.TTYUI
-accounts = VittorioZaccaria
-pythonfile=~/.mutt/offlineimap.py
+accounts = {{account}}
+# pythonfile=~/.mutt/offlineimap.py
 fsync = False
 
-[Account VittorioZaccaria]
-localrepository = VittorioZaccaria-Local
-remoterepository = VittorioZaccaria-Remote
+[Account {{account}}]
+localrepository = {{account}}-Local
+remoterepository = {{account}}-Remote
 status_backend = sqlite
-postsynchook = notmuch new
 
-[Repository VittorioZaccaria-Local]
+# postsynchook = notmuch new
+
+[Repository {{account}}-Local]
 type = Maildir
-localfolders = ~/.mail/vittorio.zaccaria@gmail.com
+maxage=60
+localfolders = ~/.mail/{{mail}}
 nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
                             'sent':    '[Gmail]/Sent Mail',
                             'flagged': '[Gmail]/Starred',
@@ -20,11 +22,11 @@ nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
                             'archive': '[Gmail]/All Mail',
                             }.get(folder, folder)
 
-[Repository VittorioZaccaria-Remote]
+[Repository {{account}}-Remote]
 maxconnections = 1
 type = Gmail
-remoteuser = steve@VittorioZaccaria.com
-remotepasseval = get_keychain_pass(account="steve@VittorioZaccaria.com", server="imap.gmail.com")
+remoteuser = {{mail}}
+remotepasseval = {{password}}
 realdelete = no
 nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
                             '[Gmail]/Sent Mail': 'sent',
