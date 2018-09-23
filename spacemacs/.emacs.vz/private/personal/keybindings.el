@@ -68,6 +68,9 @@
      ))
 
 
+;; remote usage from iPad keyboard 
+(global-set-key (kbd "§") 'evil-escape)    ;; 46
+
 (cond
 
  ;; -- OSX TERMINAL KEYBINDINGS
