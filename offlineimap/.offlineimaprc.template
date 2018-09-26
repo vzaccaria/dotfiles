@@ -7,7 +7,6 @@ fsync = False
 [Account {{account}}]
 localrepository = {{account}}-Local
 remoterepository = {{account}}-Remote
-status_backend = sqlite
 maxage=15
 
 # postsynchook = notmuch new
@@ -40,3 +39,4 @@ nametrans = lambda folder: {
                             '[Gmail]/All Mail':  'archive',
                             }.get(folder, folder)
 folderfilter = lambda folder: folder in ['INBOX', '[Gmail]/All Mail']
+sslcacertfile = /usr/local/etc/openssl/cert.pem

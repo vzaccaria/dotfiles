@@ -101,6 +101,13 @@
         "title": "Esami del sangue",
         "where": "?",
         "reminder": "10h"
+    },
+        "visita": {
+        "calendar": "Vittorio e Chiara",
+        "title": "<%= parameter %>",
+        "where": "?",
+        "reminder": "10h"
     }
+
 
 }
