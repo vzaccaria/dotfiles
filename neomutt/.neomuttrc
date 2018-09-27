@@ -14,6 +14,8 @@ set nm_default_uri = "notmuch:///home/admin/.mail"
 set virtual_spoolfile=yes
 virtual-mailboxes "poli/tcps" "notmuch://?query=(final NEAR thesis NEAR studio) OR ajovalasit OR ciancia"
 virtual-mailboxes "poli/tirocini" "notmuch://?query=tirocinio OR stage"
+virtual-mailboxes "poli/pd" "notmuch://?query=subject:(lista NEAR pd)"
+virtual-mailboxes "research/secpat" "notmuch://?query=securitypattern"
 
 # s o r t i n g
 set sort=threads
