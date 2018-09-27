@@ -10,8 +10,10 @@ set folder=~/.mail/vittorio.zaccaria@gmail.com
 set spoolfile=+/archive
 mailboxes = +/archive +/inbox
 
-# set nm_default_uri = "notmuch:///home/admin/.mail"
-# virtual-mailboxes "vittorio" "notmuch://?query=vittorio"
+set nm_default_uri = "notmuch:///home/admin/.mail"
+set virtual_spoolfile=yes
+virtual-mailboxes "poli/tcps" "notmuch://?query=(final NEAR thesis NEAR studio) OR ajovalasit OR ciancia"
+virtual-mailboxes "poli/tirocini" "notmuch://?query=tirocinio OR stage"
 
 # s o r t i n g
 set sort=threads
