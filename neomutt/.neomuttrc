@@ -13,10 +13,14 @@ mailboxes = +/archive +/inbox
 set nm_default_uri = "notmuch:///Users/zaccaria/.mail"
 set virtual_spoolfile=yes
 virtual-mailboxes "inbox" "notmuch://?query=tag:inbox"
-virtual-mailboxes "poli/tcps" "notmuch://?query=(final NEAR thesis NEAR studio) OR ajovalasit OR ciancia"
+virtual-mailboxes "poli/studenti" "notmuch://?query=from:mail.polimi.it"
+virtual-mailboxes "poli/corsi/tcps" "notmuch://?query=(final NEAR thesis NEAR studio) OR ajovalasit OR ciancia"
+virtual-mailboxes "poli/corsi/infob" "notmuch://?query=dinitto OR masseroli OR cassano OR trovo1 OR (santambrogio AND NOT necst)"
 virtual-mailboxes "poli/tirocini" "notmuch://?query=tirocini OR tirocinio"
 virtual-mailboxes "poli/pd" "notmuch://?query=lista NEAR pd"
 virtual-mailboxes "research/secpat" "notmuch://?query=securitypattern"
+
+set editor =     "emacsclient"
 
 # s o r t i n g
 set sort=threads
@@ -24,7 +28,7 @@ set sort_browser=reverse-date
 set sort_aux=reverse-last-date-received
 
 # c o l o r s 
-source ./.neomutt-config/color-themes/mutt-colors-solarized-dark-256.muttrc
+source ./.neomutt-config/color-themes/moonshine.mutt
 
 # b i n d i n g s
 source ./.neomutt-config/bindings.mutt
