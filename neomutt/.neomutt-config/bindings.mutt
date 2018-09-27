@@ -9,8 +9,8 @@ bind index <space> collapse-thread
 
 # s i d e b a r
 bind index,pager B sidebar-toggle-visible
-bind index,pager K sidebar-prev
-bind index,pager J sidebar-next
+bind index,pager l sidebar-prev
+bind index,pager h sidebar-next
 bind index,pager <Tab> sidebar-open
 
 # p a g e r
@@ -20,6 +20,15 @@ bind pager  j next-line
 bind pager gg top
 bind pager  G bottom
 bind pager  R group-reply
+
+# reload muttrc!
+macro index,browser \Cr "<enter-command>source ~/.neomuttrc<enter>"
+
+# read entire thread of the current message
+bind index,pager + entire-thread
+
+# generate virtual folder from query
+bind index,pager X vfolder-from-query
 
 # a t t a c h m e n t
 bind attach <return> view-mailcap

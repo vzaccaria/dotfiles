@@ -10,11 +10,12 @@ set folder=~/.mail/vittorio.zaccaria@gmail.com
 set spoolfile=+/archive
 mailboxes = +/archive +/inbox
 
-set nm_default_uri = "notmuch:///home/admin/.mail"
+set nm_default_uri = "notmuch:///Users/zaccaria/.mail"
 set virtual_spoolfile=yes
+virtual-mailboxes "inbox" "notmuch://?query=tag:inbox"
 virtual-mailboxes "poli/tcps" "notmuch://?query=(final NEAR thesis NEAR studio) OR ajovalasit OR ciancia"
-virtual-mailboxes "poli/tirocini" "notmuch://?query=tirocinio OR stage"
-virtual-mailboxes "poli/pd" "notmuch://?query=subject:(lista NEAR pd)"
+virtual-mailboxes "poli/tirocini" "notmuch://?query=tirocini OR tirocinio"
+virtual-mailboxes "poli/pd" "notmuch://?query=lista NEAR pd"
 virtual-mailboxes "research/secpat" "notmuch://?query=securitypattern"
 
 # s o r t i n g
@@ -28,4 +29,4 @@ source ./.neomutt-config/color-themes/mutt-colors-solarized-dark-256.muttrc
 # b i n d i n g s
 source ./.neomutt-config/bindings.mutt
 
-# set mailcap_path     = "$HOME/.neomutt-config/mailcap"
+set mailcap_path     = "$HOME/.neomutt-config/mailcap"
