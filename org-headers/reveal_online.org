@@ -6,6 +6,8 @@
 document.addEventListener('DOMContentLoaded', function() {
    scratchblocks.renderMatching("code.b");
 });
+
+</script>
 #+END_EXPORT
 
 

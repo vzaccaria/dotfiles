@@ -27,7 +27,8 @@ set sort_browser=reverse-date
 set sort_aux=reverse-last-date-received
 
 # c o l o r s 
-source ./.neomutt-config/color-themes/moonshine.mutt
+# source ./.neomutt-config/color-themes/moonshine.mutt
+source ./.neomutt-config/color-themes/mutt-colors-solarized-dark-256.muttrc
 
 # b i n d i n g s
 source ./.neomutt-config/bindings.mutt
