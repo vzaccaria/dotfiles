@@ -11,7 +11,7 @@ set spoolfile=+/archive
 mailboxes = +/archive +/inbox
 
 set virtual_spoolfile=yes
-virtual-mailboxes "inbox" "notmuch://?query=tag:inbox and tag:new"
+virtual-mailboxes "inbox" "notmuch://?query=tag:inbox and tag:unread"
 virtual-mailboxes "poli/studenti" "notmuch://?query=from:mail.polimi.it"
 virtual-mailboxes "poli/corsi/tcps" "notmuch://?query=(final NEAR thesis NEAR studio) OR ajovalasit OR ciancia"
 virtual-mailboxes "poli/corsi/infob" "notmuch://?query=dinitto OR masseroli OR cassano OR trovo1 OR (santambrogio AND NOT necst)"
