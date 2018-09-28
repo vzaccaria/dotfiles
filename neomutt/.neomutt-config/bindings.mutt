@@ -35,3 +35,7 @@ bind attach <return> view-mailcap
 
 bind index,pager V  noop  ## Unbinds V from version
 macro index,pager V "<view-attachments><search>html<enter><view-mailcap><exit>" "Open html email in browser"
+
+macro index A \
+    "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" \
+    "mark all new as read"

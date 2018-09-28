@@ -179,8 +179,8 @@
             (if vz/is-home-mac
               "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/info"
               "/usr/local/share/info")
-            )
-    "Local layers housed in '~/.emacs.vz/private'.")
+            ))
+    "Local layers housed in '~/.emacs.vz/private'."
   )
 
 (defvar dotspacemacs/layers/common
@@ -333,7 +333,10 @@ before packages are loaded. If you are unsure, you should try in setting them in
     (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
     (setq tramp-ssh-controlmaster-options
           "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no"))
-   ))
+   )
+
+
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -343,11 +346,6 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
 
-  ;;; remove from the article class the default packages
-  (add-to-list 'auto-mode-alist '("\\.html" . html-mode))
-  (add-to-list 'auto-mode-alist '("makefile" . makefile-gmake-mode))
-  (add-to-list 'auto-mode-alist '("Makefile" . makefile-gmake-mode))
-  (add-to-list 'auto-mode-alist '("makefile\\.mk" . makefile-gmake-mode))
 
   (global-company-mode)
 
@@ -367,6 +365,12 @@ you should place you code here."
         '("lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
           "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
           "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
+
+  (add-to-list 'auto-mode-alist '("\\.html" . html-mode))
+  (add-to-list 'auto-mode-alist '("makefile" . makefile-gmake-mode))
+  (add-to-list 'auto-mode-alist '("Makefile" . makefile-gmake-mode))
+  (add-to-list 'auto-mode-alist '("makefile\\.mk" . makefile-gmake-mode))
 
   (cond
    ((eq system-type 'darwin)

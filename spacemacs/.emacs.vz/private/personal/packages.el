@@ -9,6 +9,7 @@
     evil-multiedit
     livescript-mode
     matlab-mode
+    markdown-mode
     (ox-extra :location local)
     (ox-reveal :location local)
     (prettier-js :location local)
@@ -47,6 +48,9 @@
   (setq matlab-shell-command "/Applications/MATLAB_R2015b.app/bin/matlab")
   )
 
+(defun personal/post-init-markdown-mode ()
+  (add-to-list 'auto-mode-alist '("neomutt\\-.*" . markdown-mode))
+  )
 
 ;; define initialization here
 (defun personal/init-org-misc ()
