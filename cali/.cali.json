@@ -6,6 +6,13 @@
         "reminder": "1w",
         "duration": 60
     },
+    "sezione": {
+        "calendar": "Vittorio Zaccaria",
+        "title": "Consiglio di Sezione",
+        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+        "reminder": "1w",
+        "duration": 60
+    },
     "ccsmecc": {
         "calendar": "Vittorio Zaccaria",
         "title": "CCS Meccanica (Aula: <%= parameter %>)",

@@ -1,4 +1,5 @@
-set realname="Vittorio Zaccaria"
+source ./.neomutt-setup
+
 set index_format="%4C %Z %{%b %d %R} %-15.15L (%?l?%4l&%4c?) %s"
 set sidebar_visible
 set sidebar_format="%B%?F? [%F]?%* %?N?%N/?%S"
@@ -6,11 +7,9 @@ set mail_check_stats
 
 # m a i l b o x e s
 set mbox_type=Maildir
-set folder=~/.mail/vittorio.zaccaria@gmail.com
 set spoolfile=+/archive
 mailboxes = +/archive +/inbox
 
-set nm_default_uri = "notmuch:///Users/zaccaria/.mail"
 set virtual_spoolfile=yes
 virtual-mailboxes "inbox" "notmuch://?query=tag:inbox"
 virtual-mailboxes "poli/studenti" "notmuch://?query=from:mail.polimi.it"
