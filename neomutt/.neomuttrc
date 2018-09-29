@@ -43,9 +43,9 @@ set editor =     "emacsclient -nw -c"
 
 # c o l o r s 
 # source ./.neomutt-config/color-themes/moonshine.mutt
-source ./.neomutt-config/color-themes/mutt-colors-solarized-dark-256.muttrc
+# source ./.neomutt-config/color-themes/mutt-colors-solarized-light-256.muttrc
+source ./.neomutt-config/color-themes/mutt-colors-css-test.muttrc
 
-color	index_tag			yellow		default		"attachment"
 
 # see here http://wcm1.web.rice.edu/mutt-tips.html
 set text_flowed=yes
