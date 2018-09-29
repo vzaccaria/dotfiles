@@ -1,9 +1,26 @@
 source ./.neomutt-setup
 
-set index_format="%4C %Z %{%b %d %R} %-15.15L (%?l?%4l&%4c?) %s"
+set sort = 'threads'
+set sort_aux = 'last-date-received'
+
+set index_format = " %Z %<[y?%<[m?%<[d?%[     %H:%M]&%[    %a %d]>&%[    %b %d]>&%[%d/%m/%Y]> %-20.20F %<M?(%2M)&    > %?GS?%GS& ?%?GE?%GE& ?%?GA?%GA& ? %g %s"
+set attach_format = "%u%D%I %t%4n %T%.100d%> [%.15m/%.15M, %.6e%?C?, %C?, %s] "
+
+unset help
 set sidebar_visible
 set sidebar_format="%B%?F? [%F]?%* %?N?%N/?%S"
 set mail_check_stats
+
+tag-transforms "attachment" "@" \
+               "encrypted"  "" \
+               "signed"     "✎"
+
+tag-formats "attachment" "GA"
+
+
+auto_view text/html
+alternative_order text/enriched text/plain text/html text
+
 
 # m a i l b o x e s
 set mbox_type=Maildir
@@ -12,25 +29,30 @@ mailboxes = +/archive +/inbox
 
 set virtual_spoolfile=yes
 virtual-mailboxes "inbox" "notmuch://?query=tag:inbox and tag:unread"
-virtual-mailboxes "poli/studenti" "notmuch://?query=from:mail.polimi.it"
+virtual-mailboxes "poli/ricerca" "notmuch://?query=molteni OR bertoni OR melzani"
 virtual-mailboxes "poli/corsi/tcps" "notmuch://?query=(final NEAR thesis NEAR studio) OR ajovalasit OR ciancia"
 virtual-mailboxes "poli/corsi/infob" "notmuch://?query=dinitto OR masseroli OR cassano OR trovo1 OR (santambrogio AND NOT necst)"
 virtual-mailboxes "poli/tirocini" "notmuch://?query=tirocini OR tirocinio"
+virtual-mailboxes "poli/studenti" "notmuch://?query=from:mail.polimi.it"
 virtual-mailboxes "poli/pd" "notmuch://?query=lista NEAR pd"
 virtual-mailboxes "research/secpat" "notmuch://?query=securitypattern"
+virtual-mailboxes "allmail" "notmuch://?query=tag:inbox"
 
 set editor =     "emacsclient -nw -c"
 
-# s o r t i n g
-set sort=threads
-set sort_browser=reverse-date
-set sort_aux=reverse-last-date-received
 
 # c o l o r s 
 # source ./.neomutt-config/color-themes/moonshine.mutt
 source ./.neomutt-config/color-themes/mutt-colors-solarized-dark-256.muttrc
 
+color	index_tag			yellow		default		"attachment"
+
+# see here http://wcm1.web.rice.edu/mutt-tips.html
+set text_flowed=yes
+
+
 # b i n d i n g s
 source ./.neomutt-config/bindings.mutt
+source ./.neomutt-config/aliases.muttrc
 
 set mailcap_path     = "$HOME/.neomutt-config/mailcap"
