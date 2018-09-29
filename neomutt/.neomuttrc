@@ -28,17 +28,25 @@ set spoolfile=+/archive
 mailboxes = +/archive +/inbox
 
 set virtual_spoolfile=yes
+virtual-mailboxes "allmail" "notmuch://?query=tag:inbox"
 virtual-mailboxes "inbox" "notmuch://?query=tag:inbox and tag:unread"
 virtual-mailboxes "poli/ricerca" "notmuch://?query=molteni OR bertoni OR melzani"
 virtual-mailboxes "poli/corsi/tcps" "notmuch://?query=(final NEAR thesis NEAR studio) OR ajovalasit OR ciancia"
 virtual-mailboxes "poli/corsi/infob" "notmuch://?query=dinitto OR masseroli OR cassano OR trovo1 OR (santambrogio AND NOT necst)"
+virtual-mailboxes "poli/corsi/infob/lab" "notmuch://?query=gianenrico.conti OR cannici OR bonomessi OR maninchedda OR gervasoni"
+virtual-mailboxes "poli/institutional" "notmuch://?query=(didattica-deib OR commissione OR laurea OR consiglio OR CCS) AND NOT (lista NEAR pd)"
 virtual-mailboxes "poli/tirocini" "notmuch://?query=tirocini OR tirocinio"
 virtual-mailboxes "poli/studenti" "notmuch://?query=from:mail.polimi.it"
 virtual-mailboxes "poli/pd" "notmuch://?query=lista NEAR pd"
 virtual-mailboxes "research/secpat" "notmuch://?query=securitypattern"
-virtual-mailboxes "allmail" "notmuch://?query=tag:inbox"
 
 set editor =     "emacsclient -nw -c"
+
+# s i d e b a r
+set sidebar_short_path                  # Shorten mailbox names
+set sidebar_delim_chars="/"             # Delete everything up to the last / character
+set sidebar_folder_indent               # Indent folders whose names we've shortened
+set sidebar_indent_string="  "          # Indent with two spaces
 
 
 # c o l o r s 

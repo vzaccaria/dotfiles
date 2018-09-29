@@ -12,9 +12,6 @@ bind index,pager a noop
 bind index,pager z noop 
 
 bind index,pager B sidebar-toggle-visible
-bind index,pager a sidebar-prev
-bind index,pager z sidebar-next
-bind index,pager <Tab> sidebar-open
 
 # p a g e r
 bind pager  k previous-line
@@ -56,3 +53,6 @@ macro index,pager P \
 macro index A \
     "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" \
     "Mark all new as read"
+
+macro index,pager a "<sidebar-prev><sidebar-open>"
+macro index,pager z  "<sidebar-next><sidebar-open>"

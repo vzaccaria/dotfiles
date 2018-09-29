@@ -3,8 +3,12 @@ color normal color236 color253
 
 color index color238 color253       '.*'
 color tree color247 color253 
-color index color240 color253       "~A"                     # all messages
-color index brightcolor28 color253       "~Q"                     # replied
+
+color index color240 color253       "~A"           # all messages
+color index brightcolor28 color253       "~Q"    # replied
+color index brightcolor32 color253       "~N"    # new messages  
+color index brightcolor124 color253       "~F"    # flagged  
+
 color index_tag color202 color253       "attachment" 
 
 
@@ -18,4 +22,14 @@ color signature color241 color253
 color body brightcolor28 color253  "[;:][-o][)/(|]"    # emoticons
 color body brightcolor28 color253  "[;:][-][D]"    # emoticons
 color body brightcolor28 color253  "[;:][)(|]"         # emoticons
+
+color sidebar_divider color247 color253 
+color sidebar_new brightcolor32 color253       
+color sidebar_flagged brightcolor124 color253       
+color sidebar_highlight color253 color241 
+
+color attachment color247 color253 
+color attach_headers color32 color253         "Autoview"
+color attach_headers color247 color253         "^\\[--"
+color attach_headers color247 color253         "--]$"
 

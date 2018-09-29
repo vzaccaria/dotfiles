@@ -3,8 +3,12 @@ color normal        333333     dddddd
 
 color index         444444     dddddd      '.*'
 color tree          999999     dddddd
-color index         555555     dddddd      "~A"                     # all messages
-color index         bright-0b8800     dddddd      "~Q"                     # replied
+
+color index         555555     dddddd      "~A"           # all messages
+color index         bright-0b8800     dddddd      "~Q"    # replied
+color index         bright-008bec     dddddd      "~N"    # new messages  
+color index         bright-bf0020     dddddd      "~F"    # flagged  
+
 color index_tag		orangered  dddddd      "attachment" 
 
 
@@ -18,3 +22,13 @@ color signature     666666     dddddd
 color body          bright-0b8800     dddddd "[;:][-o][)/(|]"    # emoticons
 color body          bright-0b8800     dddddd "[;:][-][D]"    # emoticons
 color body          bright-0b8800     dddddd "[;:][)(|]"         # emoticons
+
+color sidebar_divider 999999 dddddd
+color sidebar_new     bright-008bec     dddddd      
+color sidebar_flagged     bright-bf0020     dddddd      
+color sidebar_highlight     dddddd      666666
+
+color   attachment         999999 dddddd
+color   attach_headers     008bec dddddd        "Autoview"
+color   attach_headers     999999    dddddd        "^\\[--"
+color   attach_headers     999999    dddddd        "--]$"
