@@ -1,0 +1,20 @@
+color normal        333333     dddddd      
+
+
+color index         444444     dddddd      '.*'
+color tree          999999     dddddd
+color index         555555     dddddd      "~A"                     # all messages
+color index         0b8800     dddddd      "~Q"                     # replied
+color index_tag		  orangered  dddddd      "attachment" 
+
+
+color hdrdefault    888888 dddddd
+color header        bright-000000     dddddd      "^(From)"
+color header        bright-000000     dddddd      "^(Subject)"
+
+color quoted        666666     dddddd
+color signature     666666     dddddd
+
+color body          bright-0b8800     dddddd "[;:][-o][)/(|]"    # emoticons
+color body          bright-0b8800     dddddd "[;:][-][D]"    # emoticons
+color body          bright-0b8800     dddddd "[;:][)(|]"         # emoticons
