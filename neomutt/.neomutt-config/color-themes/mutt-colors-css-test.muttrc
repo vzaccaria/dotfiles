@@ -4,7 +4,7 @@ color normal color236 color253
 color index color238 color253       '.*'
 color tree color247 color253 
 color index color240 color253       "~A"                     # all messages
-color index color28 color253       "~Q"                     # replied
+color index brightcolor28 color253       "~Q"                     # replied
 color index_tag color202 color253       "attachment" 
 
 

@@ -4,8 +4,8 @@ color normal        333333     dddddd
 color index         444444     dddddd      '.*'
 color tree          999999     dddddd
 color index         555555     dddddd      "~A"                     # all messages
-color index         0b8800     dddddd      "~Q"                     # replied
-color index_tag		  orangered  dddddd      "attachment" 
+color index         bright-0b8800     dddddd      "~Q"                     # replied
+color index_tag		orangered  dddddd      "attachment" 
 
 
 color hdrdefault    888888 dddddd
