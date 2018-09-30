@@ -1,9 +1,0 @@
-name: stm-patent
-root: /Users/zaccaria/development/stforge/polimi-casca/docs/patents
-
-windows:
-  - stm-patent:
-      layout: main-vertical
-      panes:
-        - open -a "Skim" patent.pdf
-        - vi patent.org 

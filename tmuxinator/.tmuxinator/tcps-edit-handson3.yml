@@ -1,0 +1,9 @@
+name: tcps-edit-handson3
+root: /Users/zaccaria/development/github/org-institutional/materiale-corsi/tcps/docs/lectures/handson
+
+windows:
+  - tcps-edit-lecture:
+      layout: 8ecf,212x51,0,0[212x38,0,0,0,212x12,0,39{105x12,0,39,1,106x12,106,39,2}]
+      panes:
+        - cd . && TARGET=lecture3 make edit
+        - cd . && TARGET=lecture3 make watch

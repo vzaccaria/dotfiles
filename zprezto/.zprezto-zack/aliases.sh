@@ -25,7 +25,8 @@ fi
 # List all files colorized in long format
 alias l="ls -ltrF ${colorflag}"
 
-alias ll="ls -ltrF ${colorflag}"
+# Alphabetic order
+alias ll="ls -lF ${colorflag}"
 
 # List all files colorized in long format, including dot files
 alias la="ls -ltraF ${colorflag}"
