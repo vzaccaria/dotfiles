@@ -82,7 +82,6 @@ alias find_big_node_modules_dir='find . -name "node_modules" -prune -exec du -h 
 
 alias startanki='/Applications/Anki.app/Contents/MacOS/Anki -b ~/Dropbox/Apps/Anki'
 
-alias tx='tmuxinator'
 
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 

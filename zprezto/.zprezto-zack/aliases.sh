@@ -58,3 +58,5 @@ alias this-week-gcal="gcalcli calw 1 -w 15"
 alias next-week-gcal="gcalcli calw 1 'next week' -w 15"
 alias this-month-gcal="gcalcli calm -w 20"
 alias next-month-gcal="gcalcli calm 'next month' -w 20"
+
+alias tx='tmuxinator'

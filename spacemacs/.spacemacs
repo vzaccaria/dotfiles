@@ -96,7 +96,7 @@
     yaml
     csv
     html
-    markdown
+    (markdown :variables markdown-live-preview-engine 'vmd)
     agda
     lua
 
@@ -122,7 +122,7 @@
     yaml
     csv
     html
-    markdown
+    (markdown :variables markdown-live-preview-engine 'vmd)
 
     spell-checking
 

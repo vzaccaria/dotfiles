@@ -49,7 +49,7 @@
   )
 
 (defun personal/post-init-markdown-mode ()
-  (add-to-list 'auto-mode-alist '("neomutt\\-.*" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("/neomutt\\-.*" . markdown-mode))
   )
 
 ;; define initialization here
