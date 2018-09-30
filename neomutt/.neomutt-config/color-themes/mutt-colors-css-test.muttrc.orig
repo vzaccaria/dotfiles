@@ -1,3 +1,6 @@
+# Have a look here: http://www.guckes.net/Setup/mutt.color.body
+# for a bunch of regular expressions
+
 color normal        333333     dddddd
 color search        dddddd     orangered
 
@@ -7,15 +10,14 @@ color tree          999999     dddddd
 
 color index         777777            dddddd "~A"    # all messages
 color index         bright-0b8800     dddddd "~Q"    # replied
-color index         bright-008bec     dddddd "~N"    # new messages  
 color index         bright-bf0020     dddddd "~F"    # flagged  
 
-color index bright-444444 dddddd "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta)\""
+color index         bright-444444     dddddd "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta)\""
 color index         bright-74003f     dddddd "~f\"Chiara Tenconi\""
 color index         000000            dddddd "~f\"(Tanca|Garzotto|Matera|Ajovalasit|Ciancia|Maria Chiara Molteni|Bertoni|Melzani|Zaccaria|Di Nitto|Masseroli|Staff Beep)\""
 color index         bright-bf0020     dddddd "~s\"((u|U)rgent|URGENT)\""  
 
-
+color index         bright-008bec     dddddd "~N"    # new messages  
 
 color index_tag		  orangered  dddddd      "attachment" 
 
