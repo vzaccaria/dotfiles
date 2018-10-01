@@ -4,7 +4,6 @@ bind index g first-entry
 bind index G last-entry
 bind index p recall-message
 bind index R group-reply
-bind index <tab> sync-mailbox
 bind index <space> collapse-thread
 
 # s i d e b a r
@@ -54,5 +53,10 @@ macro index A \
     "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" \
     "Mark all new as read"
 
-macro index,pager a "<sidebar-prev><sidebar-open>"
-macro index,pager z  "<sidebar-next><sidebar-open>"
+# for the lazy ones
+# macro index,pager a "<sidebar-prev><sidebar-open>"
+# macro index,pager z  "<sidebar-next><sidebar-open>"
+
+bind index,pager a sidebar-prev
+bind index,pager z sidebar-next
+bind index,pager <tab> sidebar-open

@@ -20,6 +20,8 @@ tag-transforms "attachment" "@" \
                "signed"     "✎"
 
 tag-formats "attachment" "GA"
+set sendmail = "msmtp -a gmail"
+set sendmail_wait = 0
 
 
 unset help
