@@ -1,0 +1,9 @@
+name: write-curriculum-coverpage
+root: /Users/zaccaria/development/github/org-institutional/curriculum/other-docs/jsx-coverpage
+
+windows:
+  - write-curriculum:
+      layout: 2711,102x57,0,0[102x51,0,0,21,102x5,0,52,22]
+      panes:
+        - cd . && make all -j8 && open build/diff.xelatex.pdf && make edit
+        - cd . && make watch
