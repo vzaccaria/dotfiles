@@ -25,6 +25,12 @@
         "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
         "reminder": "1d"
     },
+    "seminario": {
+        "calendar": "Vittorio Zaccaria",
+        "title": "Seminario - <%= parameter %>",
+        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+        "reminder": "1d"
+    },
     "tirocinio": {
         "calendar": "Vittorio Zaccaria",
         "title": "Meeting per tirocinio with <%= parameter %>",
@@ -109,7 +115,7 @@
         "where": "?",
         "reminder": "10h"
     },
-        "visita": {
+    "visita": {
         "calendar": "Vittorio e Chiara",
         "title": "<%= parameter %>",
         "where": "?",

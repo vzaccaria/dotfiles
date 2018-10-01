@@ -15,7 +15,10 @@ color index         bright-444444     dddddd "~s\"((s|S)ezione|(l|L)aure(a|e)|cc
 color index         bright-74003f     dddddd "~f\"Chiara Tenconi\""
 color index         000000            dddddd "~f\"(Tanca|Garzotto|Matera|Ajovalasit|Ciancia|Maria Chiara Molteni|Bertoni|Melzani|Zaccaria|Di Nitto|Masseroli|Staff Beep)\""
 color index         bright-bf0020     dddddd "~s\"((u|U)rgent|URGENT|(u|U)rgenza)\""  
-color index         bright-bf0020     dddddd "~b\"((u|U)rgent|URGENT|(u|U)rgenza)\""  
+color index         bright-bf0020     dddddd "~b\"((u|U)rgent|URGENT|(u|U)rgenza)\""
+
+color index         444444 ffebc5     "~f\"(annalisa corti)\""  
+color index         444444 ffebc5     "~s\"(bonifico)\""  
 
 color index         bright-008bec     dddddd "~N"    # new messages  
 color index         bright-0b8800     dddddd "~Q"    # replied
