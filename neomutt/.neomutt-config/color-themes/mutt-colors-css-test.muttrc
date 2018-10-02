@@ -17,8 +17,9 @@ color index color0 color253  "~f\"(Tanca|Garzotto|Matera|Ajovalasit|Ciancia|Mari
 color index brightcolor124 color253  "~s\"((u|U)rgent|URGENT|(u|U)rgenza)\""  
 color index brightcolor124 color253  "~b\"((u|U)rgent|URGENT|(u|U)rgenza)\""
 
-color index color238 color223      "~f\"(annalisa corti)\""  
-color index color238 color223      "~s\"(bonifico)\""  
+color index brightcolor202 color253     "~f\"(annalisa corti)\""  
+color index brightcolor202 color253     "~s\"(bonifico)\""  
+color index brightcolor230 color253      "~s\"(ordine Amazon)\""  
 
 color index brightcolor32 color253  "~N"    # new messages  
 color index brightcolor28 color253  "~Q"    # replied

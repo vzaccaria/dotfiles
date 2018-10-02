@@ -1,0 +1,9 @@
+name: infob-beep-upload
+root: /Users/zaccaria/development/github/materiale-corsi/infob/livesetup
+
+windows:
+  - infob-beep-upload:
+      layout: main-horizontal
+      panes:
+        - cd /Users/zaccaria/development/github/org-devtools/vz-clitools-institutional && emacsclient vz-beep-upload.js -c -nw
+        - open "https://beep.metid.polimi.it/web/2018-19-informatica-b-vittorio-zaccaria-/documenti-e-media" && cd /Users/zaccaria/development/github/org-institutional/materiale-corsi/infob/docs/publish
