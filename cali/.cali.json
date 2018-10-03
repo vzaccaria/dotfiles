@@ -120,6 +120,12 @@
         "title": "<%= parameter %>",
         "where": "?",
         "reminder": "10h"
+    },
+    "riunione": {
+        "calendar": "Vittorio Zaccaria",
+        "title": "Riunione con <%= parameter %>",
+        "where": "Ufficio",
+        "reminder": "10h"
     }
 
 
