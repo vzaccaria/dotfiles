@@ -206,7 +206,7 @@
    dotspacemacs-smartparens-strict-mode nil
    dotspacemacs-smart-closing-parenthesis nil
    dotspacemacs-highlight-delimiters 'all
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers 'relative
    ))
 
 (defun dotspacemacs/init/display ()
@@ -327,6 +327,7 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
 
+
   (cond
    ((eq system-type 'darwin)
     (setq org-enable-reveal-js-support t)
@@ -348,6 +349,8 @@ you should place you code here."
 
 
   (global-company-mode)
+
+  (spacemacs/linum-relative-toggle)
 
   (setq org-latex-minted-options
         '(("obeytabs" "true")

@@ -5,4 +5,5 @@
    syntax-checking
    latex
    haskell
+   linum
    ))
