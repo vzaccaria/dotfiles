@@ -60,3 +60,6 @@ macro index A \
 bind index,pager a sidebar-prev
 bind index,pager z sidebar-next
 bind index,pager <tab> sidebar-open
+
+bind index,pager c noop
+bind index,pager c mail
