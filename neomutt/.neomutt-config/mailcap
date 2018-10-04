@@ -5,7 +5,8 @@ text/html; (open %s) || google-chrome %s & sleep 1; test=test -n "$DISPLAY"; nam
 text/html; w3m %s; needsterminal; description=HTML Text; nametemplate=%s.html; copiousoutput
 text/plain;            bat %s; needsterminal
 application/pdf;       (open %s) || zathura %s;
-application/msword;       open %s;
+application/msword;    open %s;
+image/*;      (open %s) || feh %s;
 
 
 # These I've tried but not satisfied with..
