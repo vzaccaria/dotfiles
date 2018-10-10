@@ -43,7 +43,6 @@ virtual-mailboxes "poli/institutional" "notmuch://?query=(didattica-deib OR comm
 virtual-mailboxes "poli/tirocini" "notmuch://?query=tirocini OR tirocinio"
 virtual-mailboxes "poli/studenti" "notmuch://?query=from:mail.polimi.it"
 virtual-mailboxes "poli/pd" "notmuch://?query=lista NEAR pd"
-virtual-mailboxes "research/secpat" "notmuch://?query=securitypattern"
 virtual-mailboxes "other/kickstarter" "notmuch://?query=(project NEAR update)"
 
 set editor =     "emacsclient -nw -c"
