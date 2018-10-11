@@ -1,9 +1,12 @@
-name: mail-dashboard
+name: mail-and-calendar
 root: /Users/zaccaria
 
 windows:
-  - mail-dashboard:
+  - mail:
       layout: 1127,223x65,0,0[223x56,0,0,0,223x8,0,57,1]
       panes:
         - cd . && neomutt 
         - cd . && checkmail check
+  - calendar:
+      panes:
+        - cd . && this-month-gcal
