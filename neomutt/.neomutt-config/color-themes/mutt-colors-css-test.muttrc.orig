@@ -11,9 +11,9 @@ color tree          999999     dddddd
 color index         777777            dddddd "~A"    # all messages
 color index         bright-bf0020     dddddd "~F"    # flagged  
 
-color index         bright-444444     dddddd "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta)\""
 color index         bright-74003f     dddddd "~f\"Chiara Tenconi\""
 color index         000000            dddddd "~f\"(Tanca|Garzotto|Matera|Ajovalasit|Ciancia|Maria Chiara Molteni|Bertoni|Melzani|Zaccaria|Di Nitto|Masseroli|Staff Beep)\""
+color index         bright-444444     dddddd "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta|(c|C)ommissione)\""
 color index         bright-bf0020     dddddd "~s\"((u|U)rgent|URGENT|(u|U)rgenza)\""  
 color index         bright-bf0020     dddddd "~b\"((u|U)rgent|URGENT|(u|U)rgenza)\""
 
