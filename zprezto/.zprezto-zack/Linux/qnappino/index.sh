@@ -10,6 +10,9 @@ alias vi=vim
 alias ln=ln
 alias make=make
 
+export PATH=$PATH:/opt/bin
+export TERM=xterm-256color
+
 sen() {
    docker run -v /var/run/docker.sock:/run/docker.sock -ti -e TERM tomastomecek/sen
 }
