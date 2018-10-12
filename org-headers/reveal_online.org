@@ -1,6 +1,13 @@
 
 #+BEGIN_EXPORT HTML
 <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.8.1/less.min.js"></script>
+<script src="https://scratchblocks.github.io/js/scratchblocks-v3.1-min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+   scratchblocks.renderMatching("code.b");
+});
+
+</script>
 #+END_EXPORT
 
 

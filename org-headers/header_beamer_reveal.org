@@ -19,7 +19,7 @@
 
         background: @code-color;
         &.b {
-            background: @background-color !important;
+            background: @background-color;
             width: 100%; height: auto;
         }
         color: black;
@@ -178,6 +178,12 @@
     padding: 1rem;
     border-radius: 1rem;
     box-sizing: border-box;
+    & code.b {
+      background-color: darken(white,5%);
+    }
+    & p {
+      font-size: 1.3rem;
+    }
   }
 
   .figure {
@@ -211,11 +217,17 @@
 
 #+MACRO: mmc @@html: <div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"> <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.adafruit.com/#pub:$1" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe> </div> @@
 
+
+#+MACRO: fig (eval (concat "#+REVEAL_HTML: <div class=\"column center\" style=\"width:79%\"> \n#+CAPTION: $1\n#+ATTR_HTML: :width $3\n$2\n#+REVEAL_HTML: </div>\n")) 
 #+MACRO: fig-2col (eval (concat "#+REVEAL_HTML: <div class=\"column\" style=\"float:left; width:49%\"> \n#+CAPTION: $1\n#+ATTR_HTML: :width $3\n$2\n#+REVEAL_HTML: </div>\n")) 
 #+MACRO: fig-3col (eval (concat "#+REVEAL_HTML: <div class=\"column\" style=\"float:left; width:32%\"> \n#+CAPTION: $1\n#+ATTR_HTML: :width $3\n$2\n#+REVEAL_HTML: </div>\n")) 
+
+#+MACRO: fig-example (eval (concat "#+REVEAL_HTML: <div class=\"column example center\" style=\"width:79%\"> \n#+CAPTION: $1\n#+ATTR_HTML: :width $3\n$2\n#+REVEAL_HTML: </div>\n")) 
 #+MACRO: fig-3col-example (eval (concat "#+REVEAL_HTML: <div class=\"column example\" style=\"float:left; width:32%\"> \n#+CAPTION: $1\n#+ATTR_HTML: :width $3\n$2\n#+REVEAL_HTML: </div>\n")) 
 #+MACRO: fig-2col-example (eval (concat "#+REVEAL_HTML: <div class=\"column example\" style=\"float:left; width:49%\"> \n#+CAPTION: $1\n#+ATTR_HTML: :width $3\n$2\n#+REVEAL_HTML: </div>\n")) 
 
-#+MACRO: video @@html: <video autoplay controls muted loop src="$1" class='center'></video>@@
+#+MACRO: video @@html: <video autoplay controls muted loop src="$1" class='center' width='70%'></video>@@
 #+MACRO: video-2col @@html: <video autoplay controls muted loop src="$1" width="49%"></video>@@
+#+MACRO: youtube @@html: <iframe width="560" height="315" class="center" src="https://www.youtube.com/embed/$1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>@@
+
 #+MACRO: if-latex-else (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) "$1" "$2"))

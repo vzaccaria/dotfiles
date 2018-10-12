@@ -1,1 +1,11 @@
+#+HTML_HEAD: <style type="text/less">   
+#+HTML_HEAD: 
+#+HTML_HEAD: ol li,ul li {
+#+HTML_HEAD:    margin-top: 1rem !important;
+#+HTML_HEAD: }
+#+HTML_HEAD: ol, ul { padding-bottom: 1rem; }
+#+HTML_HEAD: </style>
+
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://gongzhitaao.org/orgcss/org.css"/>
+#+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.8.1/less.min.js"></script>
+

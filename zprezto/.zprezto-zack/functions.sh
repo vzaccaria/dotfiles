@@ -74,6 +74,8 @@ live-edit-org-rtd() {
 
 live-edit-org() {
     org2pdf "$1" --latex-engine html -a /Users/zaccaria/dotfiles/org-headers/header_html_simple.org -p -w -y 'make chromereload'
+}
 
-    
+start-offlineimap() {
+    mustache .offlineimap.json dotfiles/offlineimap/.offlineimaprc.template > .offlineimaprc
 }

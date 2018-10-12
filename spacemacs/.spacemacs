@@ -96,7 +96,7 @@
     yaml
     csv
     html
-    markdown
+    (markdown :variables markdown-live-preview-engine 'vmd)
     agda
     lua
 
@@ -122,7 +122,7 @@
     yaml
     csv
     html
-    markdown
+    (markdown :variables markdown-live-preview-engine 'vmd)
 
     spell-checking
 
@@ -179,8 +179,8 @@
             (if vz/is-home-mac
               "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/info"
               "/usr/local/share/info")
-            )
-    "Local layers housed in '~/.emacs.vz/private'.")
+            ))
+    "Local layers housed in '~/.emacs.vz/private'."
   )
 
 (defvar dotspacemacs/layers/common
@@ -206,7 +206,7 @@
    dotspacemacs-smartparens-strict-mode nil
    dotspacemacs-smart-closing-parenthesis nil
    dotspacemacs-highlight-delimiters 'all
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers 'relative
    ))
 
 (defun dotspacemacs/init/display ()
@@ -327,13 +327,17 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
 
+
   (cond
    ((eq system-type 'darwin)
     (setq org-enable-reveal-js-support t)
     (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
     (setq tramp-ssh-controlmaster-options
           "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no"))
-   ))
+   )
+
+
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -343,13 +347,10 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
 
-  ;;; remove from the article class the default packages
-  (add-to-list 'auto-mode-alist '("\\.html" . html-mode))
-  (add-to-list 'auto-mode-alist '("makefile" . makefile-gmake-mode))
-  (add-to-list 'auto-mode-alist '("Makefile" . makefile-gmake-mode))
-  (add-to-list 'auto-mode-alist '("makefile\\.mk" . makefile-gmake-mode))
 
   (global-company-mode)
+
+  (spacemacs/linum-relative-toggle)
 
   (setq org-latex-minted-options
         '(("obeytabs" "true")
@@ -367,6 +368,12 @@ you should place you code here."
         '("lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
           "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"
           "lualatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
+
+  (add-to-list 'auto-mode-alist '("\\.html" . html-mode))
+  (add-to-list 'auto-mode-alist '("makefile" . makefile-gmake-mode))
+  (add-to-list 'auto-mode-alist '("Makefile" . makefile-gmake-mode))
+  (add-to-list 'auto-mode-alist '("makefile\\.mk" . makefile-gmake-mode))
 
   (cond
    ((eq system-type 'darwin)
@@ -523,7 +530,7 @@ you should place you code here."
      ("https" . "\\.\\(jpeg\\|jpg\\|png\\|gif\\|svg\\)\\'"))))
  '(package-selected-packages
    (quote
-    (lua-mode org-brain ghub let-alist org-mime nix-mode helm-nixos-options company-nixos-options nixos-options org-ref pdf-tools key-chord helm-bibtex parsebib biblio biblio-core wgrep unfill smex ranger org-category-capture nord-theme mwim ivy-hydra ibuffer-projectile graphviz-dot-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flyspell-correct-ivy diff-hl counsel-projectile counsel swiper ivy define-word powerline spinner alert log4e gntp markdown-mode skewer-mode simple-httpd multiple-cursors js2-mode hydra parent-mode projectile haml-mode flyspell-correct flycheck pkg-info epl flx smartparens iedit anzu evil goto-chg undo-tree highlight json-mode tablist docker-tramp json-snatcher json-reformat diminish web-completion-data dash-functional tern pos-tip ghc haskell-mode company bind-map bind-key yasnippet packed auctex anaconda-mode pythonic f s helm avy helm-core auto-complete popup wolfram-mode thrift stan-mode scad-mode qml-mode matlab-mode arduino-mode smeargle orgit magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit magit-popup git-commit with-editor dash async winum fuzzy monokai-theme writeroom-mode visual-fill-column ess-smart-equals ess-R-object-popup ess-R-data-view ctable ess julia-mode pretty-mode highlight-chars yapfify yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package typo toc-org tagedit spacemacs-theme spaceline solarized-theme slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs request rainbow-delimiters quelpa pyvenv pytest pyenv-mode py-isort pug-mode prodigy popwin pip-requirements persp-mode pcre2el pbcopy paradox ox-reveal osx-trash osx-dictionary org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc macrostep lorem-ipsum livid-mode livescript-mode live-py-mode linum-relative link-hint less-css-mode ledger-mode launchctl js2-refactor js-doc intero insert-shebang info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-hoogle helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio gnuplot gh-md flyspell-correct-helm flycheck-pos-tip flycheck-ledger flycheck-haskell flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-multiedit evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump dockerfile-mode docker disaster deft dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-shell company-quickhelp company-ghci company-ghc company-cabal company-c-headers company-auctex company-anaconda command-log-mode column-enforce-mode coffee-mode cmm-mode cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
+    (vmd-mode lua-mode org-brain ghub let-alist org-mime nix-mode helm-nixos-options company-nixos-options nixos-options org-ref pdf-tools key-chord helm-bibtex parsebib biblio biblio-core wgrep unfill smex ranger org-category-capture nord-theme mwim ivy-hydra ibuffer-projectile graphviz-dot-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flyspell-correct-ivy diff-hl counsel-projectile counsel swiper ivy define-word powerline spinner alert log4e gntp markdown-mode skewer-mode simple-httpd multiple-cursors js2-mode hydra parent-mode projectile haml-mode flyspell-correct flycheck pkg-info epl flx smartparens iedit anzu evil goto-chg undo-tree highlight json-mode tablist docker-tramp json-snatcher json-reformat diminish web-completion-data dash-functional tern pos-tip ghc haskell-mode company bind-map bind-key yasnippet packed auctex anaconda-mode pythonic f s helm avy helm-core auto-complete popup wolfram-mode thrift stan-mode scad-mode qml-mode matlab-mode arduino-mode smeargle orgit magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit magit-popup git-commit with-editor dash async winum fuzzy monokai-theme writeroom-mode visual-fill-column ess-smart-equals ess-R-object-popup ess-R-data-view ctable ess julia-mode pretty-mode highlight-chars yapfify yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package typo toc-org tagedit spacemacs-theme spaceline solarized-theme slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs request rainbow-delimiters quelpa pyvenv pytest pyenv-mode py-isort pug-mode prodigy popwin pip-requirements persp-mode pcre2el pbcopy paradox ox-reveal osx-trash osx-dictionary org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc macrostep lorem-ipsum livid-mode livescript-mode live-py-mode linum-relative link-hint less-css-mode ledger-mode launchctl js2-refactor js-doc intero insert-shebang info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-hoogle helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio gnuplot gh-md flyspell-correct-helm flycheck-pos-tip flycheck-ledger flycheck-haskell flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-multiedit evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump dockerfile-mode docker disaster deft dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-shell company-quickhelp company-ghci company-ghc company-cabal company-c-headers company-auctex company-anaconda command-log-mode column-enforce-mode coffee-mode cmm-mode cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")

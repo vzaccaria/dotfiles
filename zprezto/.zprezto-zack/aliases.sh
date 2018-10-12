@@ -25,7 +25,8 @@ fi
 # List all files colorized in long format
 alias l="ls -ltrF ${colorflag}"
 
-alias ll="ls -ltrF ${colorflag}"
+# Alphabetic order
+alias ll="ls -lF ${colorflag}"
 
 # List all files colorized in long format, including dot files
 alias la="ls -ltraF ${colorflag}"
@@ -53,3 +54,10 @@ alias mk='make -f makefile.mk'
 alias ag="ag --hidden --ignore '*.map'"
 
 alias gen-preview="convert -density 45 -depth 8 -quality 85 -delete 1--1"
+
+alias this-week-gcal="gcalcli calw 1 -w 15"
+alias next-week-gcal="gcalcli calw 1 'next week' -w 15"
+alias this-month-gcal="gcalcli calm -w 20"
+alias next-month-gcal="gcalcli calm 'next month' -w 20"
+
+alias tx='tmuxinator'

@@ -1,9 +1,0 @@
-name: stm-casca
-root: ~/development/stforge/polimi-casca
-
-windows:
-  - stm-casca:
-      layout: main-vertical
-      panes:
-        - cd .
-        - cd .

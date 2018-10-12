@@ -1,0 +1,51 @@
+# Have a look here: http://www.guckes.net/Setup/mutt.color.body
+# for a bunch of regular expressions
+
+color normal color236 color253 
+color search color253 color202 
+
+
+color index color238 color253       '.*'
+color tree color247 color253 
+
+color index color243 color253  "~A"    # all messages
+color index brightcolor124 color253  "~F"    # flagged  
+
+color index brightcolor89 color253  "~f\"Chiara Tenconi\""
+color index color0 color253  "~f\"(Tanca|Garzotto|Matera|Ajovalasit|Ciancia|Maria Chiara Molteni|Bertoni|Melzani|Zaccaria|Di Nitto|Masseroli|Staff Beep)\""
+color index brightcolor238 color253  "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta|(c|C)ommissione)\""
+color index brightcolor124 color253  "~s\"((u|U)rgent|URGENT|(u|U)rgenza)\""  
+color index brightcolor124 color253  "~b\"((u|U)rgent|URGENT|(u|U)rgenza)\""
+
+color index brightcolor202 color253     "~f\"(annalisa corti)\""  
+color index brightcolor202 color253     "~s\"(bonifico|ricevuta|pagamento|verify)\""  
+color index brightcolor230 color253      "~s\"(ordine Amazon|(E|e)stratto conto)\""  
+
+color index brightcolor32 color253  "~N"    # new messages  
+color index brightcolor28 color253  "~Q"    # replied
+
+color index_tag color202 color253       "attachment" 
+
+
+color hdrdefault color102 color253 
+color header brightcolor0 color253       "^(From)"
+color header brightcolor0 color253       "^(Subject)"
+
+color quoted color241 color253 
+color signature color241 color253 
+
+color body brightcolor28 color253  "[;:][-o][)/(|]"    # emoticons
+color body brightcolor28 color253  "[;:][-][D]"    # emoticons
+color body brightcolor28 color253  "[;:][)(|]"         # emoticons
+
+color sidebar_divider color247 color253 
+color sidebar_new brightcolor32 color253       
+color sidebar_flagged brightcolor124 color253       
+color sidebar_highlight color253 color241 
+
+color attachment color247 color253 
+color attach_headers color32 color253         "Autoview"
+color attach_headers color247 color253         "^\\[--"
+color attach_headers color247 color253         "--]$"
+
+

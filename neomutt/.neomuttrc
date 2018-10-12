@@ -1,0 +1,78 @@
+source ./.neomutt-setup
+
+# general information; so far I've consulted the following links:
+# - http://srobb.net/mutt.html
+# - http://wcm1.web.rice.edu/mutt-tips.html
+
+# i n d e x 
+
+set sort = 'threads'
+set sort_aux = 'last-date-received'
+set index_format = "%C %Z %<[y?%<[m?%<[d?%[     %H:%M]&%[    %a %d]>&%[    %b %d]>&%[%d/%m/%Y]> %-20.20F %<M?(%2M)&    > %?GS?%GS& ?%?GE?%GE& ?%?GA?%GA& ? %g %s"
+set attach_format = "%u%D%I %t%4n %T%.100d%> [%.15m/%.15M, %.6e%?C?, %C?, %s] "
+
+set sidebar_visible
+set sidebar_format="%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+
+tag-transforms "attachment" "@" \
+               "encrypted"  "" \
+               "signed"     "✎"
+
+tag-formats "attachment" "GA"
+set sendmail = "msmtp -a gmail"
+set sendmail_wait = 0
+
+
+unset help
+
+
+# m a i l b o x e s
+set mbox_type=Maildir
+set spoolfile=+/archive
+mailboxes = +/archive +/inbox
+set virtual_spoolfile=yes
+virtual-mailboxes "allmail" "notmuch://?query=tag:inbox"
+virtual-mailboxes "inbox" "notmuch://?query=tag:inbox and tag:unread"
+virtual-mailboxes "personal/isalute" "notmuch://?query=insieme NEAR salute"
+virtual-mailboxes "poli/ricerca" "notmuch://?query=molteni OR bertoni OR melzani"
+virtual-mailboxes "poli/corsi/tcps" "notmuch://?query=(final NEAR thesis NEAR studio) OR ajovalasit OR ciancia"
+virtual-mailboxes "poli/corsi/tcps/ho" "notmuch://?query=attachment:handson*.pdf"
+virtual-mailboxes "poli/corsi/infob" "notmuch://?query=dinitto OR masseroli OR cassano OR trovo1 OR (santambrogio AND NOT necst)"
+virtual-mailboxes "poli/corsi/infob/lab" "notmuch://?query=gianenrico.conti OR cannici OR bonomessi OR maninchedda OR gervasoni"
+virtual-mailboxes "poli/institutional" "notmuch://?query=(didattica-deib OR commissione OR laurea OR consiglio OR CCS) AND NOT (lista NEAR pd)"
+virtual-mailboxes "poli/tirocini" "notmuch://?query=tirocini OR tirocinio"
+virtual-mailboxes "poli/studenti" "notmuch://?query=from:mail.polimi.it"
+virtual-mailboxes "poli/pd" "notmuch://?query=lista NEAR pd"
+virtual-mailboxes "other/kickstarter" "notmuch://?query=(project NEAR update)"
+
+set editor =     "emacsclient -nw -c"
+
+# s i d e b a r
+set sidebar_short_path=yes              # Shorten mailbox names
+set sidebar_delim_chars="/"             # Delete everything up to the last / character
+set sidebar_folder_indent=yes           # Indent folders whose names we've shortened
+set sidebar_indent_string="  "          # Indent with two spaces
+
+# p a g e r
+
+# remove those silly <+> 
+set markers=no
+
+# c o m p o s e r 
+
+# see here http://wcm1.web.rice.edu/mutt-tips.html
+set text_flowed=yes
+
+# c o l o r s 
+source ./.neomutt-config/color-themes/mutt-colors-css-test.muttrc
+
+
+# b i n d i n g s
+source ./.neomutt-config/bindings.mutt
+source ./.neomutt-config/aliases.muttrc
+
+# a t t a c h m e n t s
+set mailcap_path     = "$HOME/.neomutt-config/mailcap"
+auto_view text/html
+alternative_order text/enriched text/plain text/html text

@@ -3,6 +3,7 @@
         deft
         ;; Owner of
         (flycheck-misc :location local)
+        linum-mode
         ))
 
 
@@ -26,3 +27,9 @@
   (setq deft-directory "~/Dropbox/org")
   (setq deft-recursive t)
   )
+
+(defun config/post-init-linum-mode ()
+  (linum-mode)
+  (linum-relative-toggle)
+  )
+

@@ -1,0 +1,11 @@
+name: dot-mutt
+root: /Users/zaccaria/dotfiles/neomutt
+
+
+windows:
+  - dot-mutt:
+      panes:
+        - emacsclient /Users/zaccaria/dotfiles/neomutt/.neomuttrc -nw -c
+        - emacsclient /Users/zaccaria/dotfiles/neomutt/.neomutt-config/bindings.mutt -nw -c
+        - emacsclient /Users/zaccaria/dotfiles/neomutt/.neomutt-config/aliases.muttrc -nw -c
+        - emacsclient /Users/zaccaria/dotfiles/neomutt/.neomutt-config/mailcap -nw -c
