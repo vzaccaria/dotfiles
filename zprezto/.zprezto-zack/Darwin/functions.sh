@@ -200,7 +200,7 @@ gvim() {
 }
 
 startemacs() {
-    /usr/local/bin/emacs --daemon
+    /usr/local/bin/emacs --daemon 2>&1 >/dev/null | spacemacsStart
 }
 
 stopemacs() {

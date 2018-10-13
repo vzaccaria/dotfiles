@@ -11,7 +11,7 @@ gvim() {
 }
 
 startemacs() {
-    /usr/bin/emacs --daemon
+    /usr/bin/emacs --daemon 2>&1 >/dev/null | spacemacsStart
 }
 
 stopemacs() {
