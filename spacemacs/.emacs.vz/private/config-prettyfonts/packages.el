@@ -1,5 +1,5 @@
 
-(setq display-packages
+(setq config-prettyfonts-packages
       '(
         (pretty-fonts :location local)
         (pretty-code :location local)
@@ -7,7 +7,7 @@
         writeroom-mode
         ))
 
-(defun display/init-writeroom-mode ()
+(defun config-prettyfonts/init-writeroom-mode ()
   (use-package writeroom-mode
     :commands (writeroom-mode)
     :init
@@ -18,7 +18,7 @@
     (set-default 'preview-scale-function 2)
     ))
 
-(defun display/init-pretty-fonts ()
+(defun config-prettyfonts/init-pretty-fonts ()
   (use-package pretty-fonts
     :config
     (progn
@@ -50,7 +50,7 @@
             #x1d539 #x1d507 #x1d517)))))))
 
 
-(defun display/init-pretty-magit ()
+(defun config-prettyfonts/init-pretty-magit ()
   (use-package pretty-magit
     :config
     (progn
@@ -64,7 +64,7 @@
 
 
 
-(defun display/init-pretty-code ()
+(defun config-prettyfonts/init-pretty-code ()
   (use-package pretty-code
     :config
     (progn
