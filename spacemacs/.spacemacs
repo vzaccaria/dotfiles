@@ -165,7 +165,8 @@
   '(
     (macros :location local)
     (config :location local)
-    (display :location local) ; Pretty-eshell/code/outlines... pkgs
+    (config-prettyfonts :location local) ; Pretty-eshell/code/outlines... pkgs
+    (config-writeroom :location local)
     ;; (langs :location local)     ; Language config
     (personal :location local
               :variables
