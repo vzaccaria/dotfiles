@@ -4,19 +4,8 @@
         (pretty-fonts :location local)
         (pretty-code :location local)
         (pretty-magit :location local)
-        writeroom-mode
         ))
 
-(defun config-prettyfonts/init-writeroom-mode ()
-  (use-package writeroom-mode
-    :commands (writeroom-mode)
-    :init
-    (evil-leader/set-key "Tw" 'writeroom-mode)
-    :config
-    (setq writeroom-restore-window-config t)
-    (setq writeroom-width 100)
-    (set-default 'preview-scale-function 2)
-    ))
 
 (defun config-prettyfonts/init-pretty-fonts ()
   (use-package pretty-fonts
