@@ -66,15 +66,6 @@
                                  (flycheck-select-checker 'verilog-check)))
   )
 
-(defun config/flycheck-config-javascript ()
-  (add-hook 'js-mode-hook '(lambda ()
-                             (flycheck-select-checker 'javascript-eslint)
-                             ))
-
-  (add-hook 'js2-mode-hook '(lambda ()
-                              (flycheck-select-checker 'javascript-eslint)
-                              ))
-  )
 
 (defun config/flycheck-config-shell ()
   (add-hook 'shell-mode-hook  (lambda ()

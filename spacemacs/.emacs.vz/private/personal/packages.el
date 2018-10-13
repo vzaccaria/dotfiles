@@ -12,7 +12,6 @@
     markdown-mode
     (ox-extra :location local)
     (ox-reveal :location local)
-    (prettier-js :location local)
     (org-misc :location local)
     ))
 
@@ -138,18 +137,3 @@
     )
   )
 
-(defun personal/init-prettier-js ()
-  (use-package prettier-js
-    :config
-    (add-hook 'js-mode-hook
-              (lambda ()
-                (add-hook 'before-save-hook 'prettier-before-save)))
-    (add-hook 'js2-mode-hook
-              (lambda ()
-                (add-hook 'before-save-hook 'prettier-before-save)))
-
-    (add-hook 'react-mode-hook
-              (lambda ()
-                (add-hook 'before-save-hook 'prettier-before-save)))
-    )
-  )

@@ -255,15 +255,6 @@ prompt the user for a coding system."
   (set-face-attribute 'default nil :font "Hasklig")
   )
 
-(defun vz/set-prettier-for-javascript-mode ()
-  (interactive)
-  (customize-set-variable 'prettier-target-mode "js-mode")
-  )
-
-(defun vz/set-prettier-for-js2-mode ()
-  (interactive)
-  (customize-set-variable 'prettier-target-mode "js2-mode")
-  )
 
 (defun vz/define-checker-for-stm32 ()
   "Sets the correct checker for the PlatformIO env"

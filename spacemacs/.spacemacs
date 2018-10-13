@@ -84,13 +84,14 @@
 (defvar dotspacemacs/layers/langs-osx
   '(
     javascript
+    (config-javascript :location local)
     react
     python
     octave
     emacs-lisp
     vimscript
     haskell
-    (haskell-config :location local)
+    (config-haskell :location local)
     (c-c++ :variables c-c++-enable-clang-support t)
     ess
     yaml
@@ -111,6 +112,7 @@
 (defvar dotspacemacs/layers/langs-linux-station
   '(
     javascript
+    (config-javascript :location local)
     react
     python
     octave

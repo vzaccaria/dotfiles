@@ -1,19 +1,19 @@
-(setq haskell-config-packages
+(setq config-haskell-packages
       '(
-        (haskell-config-flycheck :location local)
+        (config-haskell-flycheck :location local)
         haskell-mode
         ))
 
 
 
-(defun haskell-config/init-haskell-config-flycheck ()
-  (use-package haskell-config-flycheck
+(defun config-haskell/init-config-haskell-flycheck ()
+  (use-package config-haskell-flycheck
     :config
-    (haskell-config/flycheck-config-haskell)
+    (config-haskell/flycheck-config-haskell)
     )
   )
 
-(defun haskell-config/post-init-haskell-mode ()
+(defun config-haskell/post-init-haskell-mode ()
   (setq haskell-process-args-ghci
         '("-ferror-spans" "-fshow-loaded-modules"))
 
@@ -29,6 +29,6 @@
   )
 
 
-(defun haskell-config/flycheck-config-haskell ()
+(defun config-haskell/flycheck-config-haskell ()
   (when vz/is-linux (config/flycheck-config-haskell-use-haskell-stack-liquid))
   )
