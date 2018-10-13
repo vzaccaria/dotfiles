@@ -158,5 +158,5 @@
 (define-and-bind-text-object "k" "[" "]")
 
 
-(provide 'keybindings)
+;;; (provide 'keybindings)
 ;;; index.el ends here
