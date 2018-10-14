@@ -1,17 +1,24 @@
 (setq config-haskell-packages
       '(
-        (config-haskell-flycheck :location local)
+        ;; (hc-flycheck :location local)
+        ;; (hc-hare :location local)
         haskell-mode
         ))
 
 
 
-(defun config-haskell/init-config-haskell-flycheck ()
-  (use-package config-haskell-flycheck
-    :config
-    (config-haskell/flycheck-config-haskell)
-    )
-  )
+;; (defun config-haskell/init-hc-flycheck ()
+;;   (use-package hc-flycheck
+;;     :config
+;;     (config-haskell/flycheck-config-haskell)
+;;     )
+;;   )
+
+ ;; Hare does not seem to work..
+
+;; (defun config-haskell/init-hc-hare ()
+;;   (use-package hc-hare)
+;;   )
 
 (defun config-haskell/post-init-haskell-mode ()
   (setq haskell-process-args-ghci
@@ -29,6 +36,6 @@
   )
 
 
-(defun config-haskell/flycheck-config-haskell ()
-  (when vz/is-linux (config/flycheck-config-haskell-use-haskell-stack-liquid))
-  )
+;; (defun config-haskell/flycheck-config-haskell ()
+;;   (when vz/is-linux (hc-flycheck/flycheck-config-haskell-use-haskell-stack-liquid))
+;;   )

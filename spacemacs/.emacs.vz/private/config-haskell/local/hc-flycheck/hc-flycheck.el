@@ -45,16 +45,16 @@ See URL 'https://github.com/ucsd-progsys/liquidhaskell'."
 (make-liquid-checker haskell-liquid ("liquid" source-inplace))
 (make-liquid-checker haskell-stack-liquid ("stack" "exec" "--" "liquid" source-inplace))
 
-(defun haskell-config/flycheck-config-haskell-use-haskell-liquid ()
+(defun hc-flycheck/flycheck-config-haskell-use-haskell-liquid ()
   (interactive)
   (add-to-list 'flycheck-checkers 'haskell-liquid)
   (add-hook 'haskell-mode-hook (lambda () (flycheck-select-checker 'haskell-liquid)))
   )
 
-(defun haskell-config/flycheck-config-haskell-use-haskell-stack-liquid ()
+(defun hc-flycheck/flycheck-config-haskell-use-haskell-stack-liquid ()
   (interactive)
   (add-to-list 'flycheck-checkers 'haskell-stack-liquid)
   (add-hook 'haskell-mode-hook (lambda () (flycheck-select-checker 'haskell-stack-liquid)))
   )
 
-(provide 'haskell-config-flycheck)
+(provide 'hc-flycheck)
