@@ -1,12 +1,13 @@
 # Order is important 
-# Needsterminal waits for the other command to finish
+# Needsterminal waits for the other command to finish and writes the file to disk..
+
 
 text/html; (open %s) || google-chrome %s & sleep 1; test=test -n "$DISPLAY"; nametemplate=%s.html; needsterminal
 text/html; w3m %s; needsterminal; description=HTML Text; nametemplate=%s.html; copiousoutput
 text/plain;            bat %s; needsterminal
-application/pdf;       (open %s) || zathura %s;
+application/pdf;       viewattachment %s; needsterminal
 application/msword;    open %s;
-image/*;      (open %s) || feh %s;
+image/*;               viewattachment %s; needsterminal
 
 
 # These I've tried but not satisfied with..
