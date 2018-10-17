@@ -22,7 +22,8 @@ tag-transforms "attachment" "@" \
 tag-formats "attachment" "GA"
 set sendmail = "msmtp -a gmail"
 set sendmail_wait = 0
-
+set fast_reply = yes
+set attribution = "On %d, %n wrote: \n"
 
 unset help
 

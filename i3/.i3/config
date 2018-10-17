@@ -201,5 +201,5 @@ bar {
 # Please remove the following exec line:
 #######################################################################
 exec i3-config-wizard
-exec_always --no-startup-id feh --bg-fill  $HOME/dotfiles/wallpapers/galaxy1.jpg
+exec_always --no-startup-id feh --bg-fill  $HOME/dotfiles/wallpapers/wallpaper.jpg
 exec --no-startup-id compton -b
