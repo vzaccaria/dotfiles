@@ -1,132 +1,151 @@
 {
-    "deib": {
-        "calendar": "Vittorio Zaccaria",
-        "title": "Consiglio di Dipartimento",
-        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
-        "reminder": "1w",
-        "duration": 60
-    },
-    "sezione": {
-        "calendar": "Vittorio Zaccaria",
-        "title": "Consiglio di Sezione",
-        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
-        "reminder": "1w",
-        "duration": 60
-    },
-    "ccsmecc": {
-        "calendar": "Vittorio Zaccaria",
-        "title": "CCS Meccanica (Aula: <%= parameter %>)",
-        "where": "Dipartimento di Meccanica, Via La Masa 1, Italy",
-        "reminder": "1d"
-    },
-    "ricevimento": {
-        "calendar": "Vittorio Zaccaria",
-        "title": "Ricevimento studente/i (<%= parameter %>)",
-        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
-        "reminder": "1d"
-    },
-    "seminario": {
-        "calendar": "Vittorio Zaccaria",
-        "title": "Seminario - <%= parameter %>",
-        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
-        "reminder": "1d"
-    },
-    "tirocinio": {
-        "calendar": "Vittorio Zaccaria",
-        "title": "Meeting per tirocinio with <%= parameter %>",
-        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
-        "reminder": "1d"
-    },
-    "tesi": {
-        "calendar": "Vittorio Zaccaria",
-        "title": "Meeting per tesi with <%= parameter %>",
-        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
-        "reminder": "30m"
-    },
-    "reltesi": {
-        "calendar": "Vittorio Zaccaria",
-        "title": "Consegna relazione tesi",
-        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
-        "reminder": "3d"
-    },
-    "camus": {
-        "calendar": "Vittorio Zaccaria",
-        "title": "Meeting CAMUS",
-        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
-        "reminder": "1d"
-    },
-    "ricerca": {
-        "calendar": "Vittorio Zaccaria",
-        "title": "Meeting ricerca",
-        "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
-        "reminder": "1d"
-    },
-    "trainer": {
-        "calendar": "Vittorio e Chiara",
-        "title": "Personal trainer",
-        "where": "Eracle sport center, Via Fittavolo, Montano Lucino",
-        "reminder": "1w"
-    },
-    "cycling": {
-        "calendar": "Vittorio e Chiara",
-        "title": "Group cycling",
-        "where": "Eracle sport center, Via Fittavolo, Montano Lucino",
-        "reminder": "1d"
-    },
-    "tasse": {
-        "calendar": "Vittorio e Chiara",
-        "title": "Pagare tassa: <%= parameter %>",
-        "where": "Online",
-        "reminder": "1w"
-    },
-    "call": {
-        "calendar": "Vittorio Zaccaria",
-        "title": "Call with <%= parameter %>",
-        "where": "Online",
-        "reminder": "1h"
-    },
-    "esameinfob": {
-        "calendar": "Vittorio e Chiara",
-        "title": "Esame di Informatica B - Aula <%= parameter %>",
-        "where": "Bovisa",
-        "reminder": "3w"
-    },
-    "esamehyp": {
-        "calendar": "Vittorio e Chiara",
-        "title": "Esame di Hypermedia - Aula <%= parameter %>",
-        "where": "Politecnico di Milano",
-        "reminder": "1w"
-    },
-    "lauree": {
-        "calendar": "Vittorio e Chiara",
-        "title": "Lauree - Aula <%= parameter %>",
-        "where": "Politecnico di Milano",
-        "reminder": "1w"
-    },
-    "conference": {
-        "calendar": "Vittorio e Chiara",
-        "title": "Conferenza <%= parameter %>",
-        "where": "?",
-        "reminder": "10w"
-    },
-    "esamiss": {
-        "calendar": "Vittorio e Chiara",
-        "title": "Esami del sangue",
-        "where": "?",
-        "reminder": "10h"
-    },
-    "visita": {
-        "calendar": "Vittorio e Chiara",
-        "title": "<%= parameter %>",
-        "where": "?",
-        "reminder": "10h"
-    },
-    "riunione": {
-        "calendar": "Vittorio Zaccaria",
-        "title": "Riunione con <%= parameter %>",
-        "where": "Ufficio",
-        "reminder": "10h"
-    }
-
-
+  "deib": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Consiglio di Dipartimento",
+    "where":
+      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "reminder": "1w",
+    "duration": 60
+  },
+  "sezione": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Consiglio di Sezione",
+    "where":
+      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "reminder": "1w",
+    "duration": 60
+  },
+  "ccsmecc": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "CCS Meccanica (Aula: <%= parameter %>)",
+    "where": "Dipartimento di Meccanica, Via La Masa 1, Italy",
+    "reminder": "1d"
+  },
+  "ccseng": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "CCS Energetica (Aula: <%= parameter %>)",
+    "where": "Dipartimento di Meccanica, Via La Masa 1, Italy",
+    "reminder": "1d"
+  },
+  "ccsdesign": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "CCS Design (Aula: <%= parameter %>)",
+    "where": "Scuola di Design",
+    "reminder": "1d"
+  },
+  "ricevimento": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Ricevimento studente/i (<%= parameter %>)",
+    "where":
+      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "reminder": "1d"
+  },
+  "seminario": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Seminario - <%= parameter %>",
+    "where":
+      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "reminder": "1d"
+  },
+  "tirocinio": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Meeting per tirocinio with <%= parameter %>",
+    "where":
+      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "reminder": "1d"
+  },
+  "tesi": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Meeting per tesi with <%= parameter %>",
+    "where":
+      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "reminder": "30m"
+  },
+  "reltesi": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Consegna relazione tesi",
+    "where":
+      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "reminder": "3d"
+  },
+  "camus": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Meeting CAMUS",
+    "where":
+      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "reminder": "1d"
+  },
+  "ricerca": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Meeting ricerca",
+    "where":
+      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "reminder": "1d"
+  },
+  "trainer": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Personal trainer",
+    "where": "Eracle sport center, Via Fittavolo, Montano Lucino",
+    "reminder": "1w"
+  },
+  "cycling": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Group cycling",
+    "where": "Eracle sport center, Via Fittavolo, Montano Lucino",
+    "reminder": "1d"
+  },
+  "tasse": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Pagare tassa: <%= parameter %>",
+    "where": "Online",
+    "reminder": "1w"
+  },
+  "call": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Call with <%= parameter %>",
+    "where": "Online",
+    "reminder": "1h"
+  },
+  "esameinfob": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Esame di Informatica B - Aula <%= parameter %>",
+    "where": "Bovisa",
+    "reminder": "3w"
+  },
+  "esamehyp": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Esame di Hypermedia - Aula <%= parameter %>",
+    "where": "Politecnico di Milano",
+    "reminder": "1w"
+  },
+  "lauree": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Lauree - Aula <%= parameter %>",
+    "where": "Politecnico di Milano",
+    "reminder": "1w"
+  },
+  "conference": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Conferenza <%= parameter %>",
+    "where": "?",
+    "reminder": "10w"
+  },
+  "esamiss": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Esami del sangue",
+    "where": "?",
+    "reminder": "10h"
+  },
+  "visita": {
+    "calendar": "Vittorio e Chiara",
+    "title": "<%= parameter %>",
+    "where": "?",
+    "reminder": "10h"
+  },
+  "riunione": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Riunione con <%= parameter %>",
+    "where": "Ufficio",
+    "reminder": "10h"
+  }
 }
