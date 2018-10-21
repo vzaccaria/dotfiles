@@ -13,7 +13,7 @@ color index brightcolor124 color253  "~F"    # flagged
 
 color index brightcolor89 color253  "~f\"Chiara Tenconi\""
 color index color0 color253  "~f\"(Tanca|Garzotto|Matera|Ajovalasit|Ciancia|Maria Chiara Molteni|Bertoni|Melzani|Zaccaria|Di Nitto|Masseroli|Staff Beep)\""
-color index brightcolor238 color253  "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta|(c|C)ommissione)\""
+color index brightcolor238 color253  "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta|(c|C)ommissione|(m|M)issione)\""
 color index brightcolor124 color253  "~s\"((u|U)rgent|URGENT|(u|U)rgenza)\""  
 color index brightcolor124 color253  "~b\"((u|U)rgent|URGENT|(u|U)rgenza)\""
 
