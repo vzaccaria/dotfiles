@@ -61,3 +61,4 @@ alias this-month-gcal="gcalcli calm -w 20"
 alias next-month-gcal="gcalcli calm 'next month' -w 20"
 
 alias tx='tmuxinator'
+alias start-neomutt=' mutt-vmbox -f ~/dotfiles/notmuch-vmbx/mboxes.yml > ~/.neomutt-mboxes && neomutt'
