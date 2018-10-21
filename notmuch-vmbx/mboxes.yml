@@ -1,0 +1,78 @@
+important:
+  all:
+    - NOT from:booking
+    - NOT antarex
+    - NOT (lista NEAR pd)
+    - NOT (cheap NEAR flight)
+    - NOT amazon
+    - NOT lanieri
+    - NOT Uber
+    - NOT researchgate
+    - NOT thefork
+    - NOT ryanair
+    - NOT (google calendar)
+    - NOT publons
+    - NOT boscolo
+    - NOT cral
+    - NOT lizbeth romero
+    - NOT jeff bier
+    - NOT psychometrics
+    - NOT staff picks
+    - NOT call for papers
+    - NOT altracomo.it
+    - NOT necstpizza
+    - NOT wes bos
+    - NOT ian doyle
+    - NOT (from:github AND dependencies)
+    - NOT polihub
+    - NOT refurbme
+    - NOT skylum
+    - NOT cablewholesale
+
+allmail:
+  all:
+    - tag:inbox
+
+inbox:
+  all:
+    - tag:inbox
+    - tag:unread
+
+poli/ricerca:
+  any:
+    - from:bertoni
+    - from:melzani
+    - from:molteni
+
+poli/corsi/tcps:
+  any:
+    - (final NEAR thesis NEAR studio)
+    - ajovalasit
+    - ciancia
+
+
+poli/corsi/tcps/ho:
+  any:
+    - attachment:handson*.pdf
+
+poli/corsi/infob:
+  any:
+    - dinitto
+    - masseroli
+    - cassano
+    - trovo1
+    - (santambrogio and not necst)
+
+poli/institutional:
+  all:
+    - didattica-deib OR commissione OR laurea OR dipartimento OR CCS
+    - NOT (lista NEAR pd)
+
+poli/tirocini:
+  any:
+    - tirocini
+    - tirocinio
+
+other/updates:
+  any:
+    - project NEAR update
