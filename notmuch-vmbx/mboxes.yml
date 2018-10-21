@@ -28,7 +28,21 @@ important:
     - NOT refurbme
     - NOT skylum
     - NOT cablewholesale
-
+    - NOT redazione-deib
+    - NOT javascript weekly
+    - NOT node weekly
+    - NOT haskell weekly
+    - NOT power electronics
+    - NOT enerxenia
+    - NOT amir khella
+    - NOT (lista NEAR pta)
+    - NOT (lista NEAR pd)
+    - NOT chaos group
+    - NOT hockerty
+    - NOT linkedin
+    - NOT atlassian
+    - NOT wahoo fitness
+    - NOT kickstarter
 allmail:
   all:
     - tag:inbox

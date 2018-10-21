@@ -54,7 +54,7 @@ set markers=no
 # c o m p o s e r 
 
 # see here http://wcm1.web.rice.edu/mutt-tips.html
-set text_flowed=yes
+# set text_flowed=yes
 
 # c o l o r s 
 source ./.neomutt-config/color-themes/mutt-colors-css-test.muttrc

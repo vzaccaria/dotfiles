@@ -19,6 +19,7 @@ color index         bright-bf0020     dddddd "~b\"((u|U)rgent|URGENT|(u|U)rgenza
 
 color index         bright-orangered dddddd    "~f\"(annalisa corti)\""  
 color index         bright-orangered dddddd    "~s\"(bonifico|ricevuta|pagamento|verify)\""  
+color index         bright-orangered dddddd    "~s\"(access token)\""  
 color index         bright-fffacd dddddd     "~s\"(ordine Amazon|(E|e)stratto conto)\""  
 
 color index         bright-008bec     dddddd "~N"    # new messages  

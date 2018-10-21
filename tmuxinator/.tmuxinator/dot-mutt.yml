@@ -5,7 +5,9 @@ root: /Users/zaccaria/dotfiles/neomutt
 windows:
   - dot-mutt:
       panes:
-        - emacsclient /Users/zaccaria/dotfiles/neomutt/.neomuttrc -nw -c
-        - emacsclient /Users/zaccaria/dotfiles/neomutt/.neomutt-config/bindings.mutt -nw -c
-        - emacsclient /Users/zaccaria/dotfiles/neomutt/.neomutt-config/aliases.muttrc -nw -c
-        - emacsclient /Users/zaccaria/dotfiles/neomutt/.neomutt-config/mailcap -nw -c
+        - emacsclient ~/dotfiles/neomutt/.neomuttrc -nw -c
+        - emacsclient ~/dotfiles/neomutt/.neomutt-config/color-themes/mutt-colors-css-test.muttrc.orig -nw -c
+        - emacsclient ~/dotfiles/notmuch-vmbx/mboxes.yml -nw -c
+        - emacsclient ~/dotfiles/neomutt/.neomutt-config/bindings.mutt -nw -c
+        - emacsclient ~/dotfiles/neomutt/.neomutt-config/aliases.muttrc -nw -c
+        - emacsclient ~/dotfiles/neomutt/.neomutt-config/mailcap -nw -c

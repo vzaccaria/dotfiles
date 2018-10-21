@@ -1,3 +1,3 @@
 #!/bin/sh
 
-mailer
+mailer dump
