@@ -58,11 +58,17 @@ poli/corsi/tcps/ho:
 
 poli/corsi/infob:
   any:
-    - dinitto
-    - masseroli
-    - cassano
-    - trovo1
-    - (santambrogio and not necst)
+    - from:dinitto
+    - from:masseroli
+    - from:cassano
+    - from:trovo1
+    - (from:santambrogio AND NOT necst)
+
+poli/corsi/infob/lab:
+  any:
+    - gianenrico.conti@mail.polimi.it
+    - marco.cannici@polimi.i
+    - ingconti@ingconti.com
 
 poli/institutional:
   all:
