@@ -49,6 +49,8 @@
 
 (defun personal/post-init-markdown-mode ()
   (add-to-list 'auto-mode-alist '("/neomutt\\-.*" . markdown-mode))
+  (add-hook 'markdown-mode-hook (lambda ()
+                                  (ispell-change-dictionary "italiano")))
   )
 
 ;; define initialization here
