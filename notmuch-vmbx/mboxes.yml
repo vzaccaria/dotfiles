@@ -4,7 +4,7 @@ important:
     - NOT (cheap NEAR flight)
     - NOT (amazon OR lanieri OR uber OR thefork OR ryanair OR booking OR quora OR boscolo OR cral)
     - NOT (google calendar OR publons OR altracomo.it)
-    - NOT lizbeth romero
+    - NOT romero
     - NOT jeff bier
     - NOT psychometrics
     - NOT staff picks
@@ -13,9 +13,7 @@ important:
     - NOT wes bos
     - NOT ian doyle
     - NOT (from:github AND dependencies)
-    - NOT refurbme
-    - NOT skylum
-    - NOT cablewholesale
+    - NOT (refurbme OR skylum OR cablewholesale OR kaggle OR repl.it)
     - NOT redazione-deib
     - NOT javascript weekly
     - NOT node weekly
@@ -56,7 +54,7 @@ poli/corsi/tcps:
 
 poli/corsi/tcps/ho:
   any:
-    - attachment:handson*.pdf
+    - attachment:handson*.*
 
 poli/corsi/infob:
   any:
