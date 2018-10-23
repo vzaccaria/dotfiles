@@ -181,10 +181,10 @@
               (if vz/is-linux-station "/usr/share/emacs/site-lisp/maxima" "/usr/local/share/maxima/5.41.0/emacs"))
             maxima-emacs-info-path
             (if vz/is-home-mac
-              "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/info"
+                "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/info"
               "/usr/local/share/info")
             ))
-    "Local layers housed in '~/.emacs.vz/private'."
+  "Local layers housed in '~/.emacs.vz/private'."
   )
 
 (defvar dotspacemacs/layers/common
@@ -379,6 +379,54 @@ you should place you code here."
   (add-to-list 'auto-mode-alist '("makefile" . makefile-gmake-mode))
   (add-to-list 'auto-mode-alist '("Makefile" . makefile-gmake-mode))
   (add-to-list 'auto-mode-alist '("makefile\\.mk" . makefile-gmake-mode))
+
+  (define-abbrev-table 'global-abbrev-table '(
+	    ("afaict" "as far as I can tell" nil 1)
+	    ("btw" "by the way" nil 3)
+	    ("wether" "whether" nil 5)
+	    ("pov" "point of view" nil 1)
+      ;; net abbrev
+      ("afaik" "as far as i know" )
+      ("atm" "at the moment" )
+      ("dfb" "difference between" )
+      ("ty" "thank you" )
+      ("ui" "user interface" )
+      ("uns" "understand" )
+      ("ur" "you are" )
+      ("btw" "by the way" )
+
+      ("cnt" "can't" )
+      ("ddnt" "didn't" )
+      ("dnt" "don't" )
+      ("isnt" "isn't")
+
+      ;; english word abbrev
+      ("ann" "announcement" )
+      ("arg" "argument" )
+      ("autom" "automatic" )
+      ("bc" "because" )
+      ("bg" "background" )
+      ("bt" "between" )
+      ("math" "mathematics" )
+      ;; unicode
+      ("md" "—" )
+      ;; 
+      ("bacio" "😘")
+
+
+      ;; italian
+      
+      ("perche'" "perché")
+      ("poiche'" "poiché")
+      ("e'" "è")
+      ("puo'" "può")
+      ("nonappena" "non appena")
+      ("ce" "c'è")
+	    ))
+
+  (set-default 'abbrev-mode t)
+
+  (setq save-abbrevs nil)
 
   (cond
    ((eq system-type 'darwin)

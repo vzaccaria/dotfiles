@@ -1,3 +1,3 @@
 #!/bin/sh
 
-mailer dump
+mailer convert | msmtp -t -a "gmail"

@@ -20,8 +20,8 @@ tag-transforms "attachment" "@" \
                "signed"     "✎"
 
 tag-formats "attachment" "GA"
-# set sendmail = "/bin/sh $HOME/dotfiles/neomutt/sendmail.sh"
-set sendmail = "msmtp -a gmail"
+set sendmail = "/bin/sh $HOME/dotfiles/neomutt/sendmail.sh"
+# set sendmail = "msmtp -a gmail"
 set sendmail_wait = 0
 set fast_reply = yes
 set attribution = "On %d, %n wrote: \n"
