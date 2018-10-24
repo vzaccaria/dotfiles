@@ -25,10 +25,7 @@ important:
     - NOT (lista NEAR pd)
     - NOT chaos group
     - NOT hockerty
-    - NOT linkedin
-    - NOT atlassian
-    - NOT wahoo fitness
-    - NOT kickstarter
+    - NOT (linkedin OR atlassian OR wahoo OR kickstarter OR microchip)
 
 allmail:
   all:

@@ -40,6 +40,10 @@ source ./.neomutt-mboxes
 
 set editor =     "emacsclient -nw -c"
 
+set charset = 'utf-8'
+set assumed_charset = 'utf-8'
+set send_charset = 'utf-8'
+
 # s i d e b a r
 set sidebar_short_path=yes              # Shorten mailbox names
 set sidebar_delim_chars="/"             # Delete everything up to the last / character
