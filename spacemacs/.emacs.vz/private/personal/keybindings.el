@@ -120,7 +120,7 @@
   (global-set-key (kbd "M-<up>")    'evil-window-up)
   (global-set-key (kbd "M-<down>")  'evil-window-down)
   (global-set-key (kbd "M-<right>") 'evil-window-right)
-  (global-set-key (kbd "M-<left>")  'evil-window-left))
+  (global-set-key (kbd "M-<left>")  'evil-window-left)
 
   (global-set-key (kbd "S-<up>") 'evil-backward-paragraph)    ;; 46
   (global-set-key (kbd "S-<down>") 'evil-forward-paragraph)  ;; 47
@@ -128,19 +128,19 @@
   (global-set-key (kbd "S-<left>") 'evil-backward-word-end)  ;; 48
 
  ;; Linux keybindings
- (vz/is-linux
-  (global-set-key (kbd "M-<up>")    'evil-window-up)
-  (global-set-key (kbd "M-<down>")  'evil-window-down)
-  (global-set-key (kbd "M-<right>") 'evil-window-right)
-  (global-set-key (kbd "M-<left>")  'evil-window-left)
+ ;; (vz/is-linux
+ ;;  (global-set-key (kbd "M-<up>")    'evil-window-up)
+ ;;  (global-set-key (kbd "M-<down>")  'evil-window-down)
+ ;;  (global-set-key (kbd "M-<right>") 'evil-window-right)
+ ;;  (global-set-key (kbd "M-<left>")  'evil-window-left)
 
-  ;; tmux specific (CTRL + arrowkeys)
-  (global-set-key (kbd "M-[ a") 'evil-window-up)
-  (global-set-key (kbd "M-[ b") 'evil-window-down)
-  (global-set-key (kbd "M-[ c") 'evil-window-right)
-  (global-set-key (kbd "M-[ d") 'evil-window-left)
-  )
- )
+ ;;  ;; tmux specific (CTRL + arrowkeys)
+ ;;  (global-set-key (kbd "M-[ a") 'evil-window-up)
+ ;;  (global-set-key (kbd "M-[ b") 'evil-window-down)
+ ;;  (global-set-key (kbd "M-[ c") 'evil-window-right)
+ ;;  (global-set-key (kbd "M-[ d") 'evil-window-left)
+ ;;  )
+ ))
 
 ;; To define evil text objects and select visually:
 
