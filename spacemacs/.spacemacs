@@ -43,7 +43,7 @@
                                       nord-theme
                                       helm-projectile
                                       )
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(smartparens)
    dotspacemacs-frozen-packages '()
    dotspacemacs-install-packages 'used-but-keep-unused
    ))
@@ -379,6 +379,13 @@ you should place you code here."
   (add-to-list 'auto-mode-alist '("makefile" . makefile-gmake-mode))
   (add-to-list 'auto-mode-alist '("Makefile" . makefile-gmake-mode))
   (add-to-list 'auto-mode-alist '("makefile\\.mk" . makefile-gmake-mode))
+
+   (eval-after-load 'smartparens
+    '(progn
+       (sp-pair "(" nil :actions :rem)
+       (sp-pair "[" nil :actions :rem)
+       (sp-pair "'" nil :actions :rem)
+       (sp-pair "\"" nil :actions :rem)))
 
   (define-abbrev-table 'global-abbrev-table '(
 	    ("afaict" "as far as I can tell" nil 1)
