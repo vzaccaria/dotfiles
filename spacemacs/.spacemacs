@@ -422,7 +422,7 @@ you should place you code here."
 
 
       ;; italian
-      
+
       ("perche'" "perché")
       ("poiche'" "poiché")
       ("e'" "è")
@@ -431,6 +431,11 @@ you should place you code here."
       ("c'e'" "c'è")
       ("gia'" "già")
       ("sara'" "sarà")
+      ("potra'" "potrà")
+      ("avra'" "avrà")
+      ("saro'" "sarò")
+      ("potro'" "potrò")
+      ("avro'" "avrò")
       ("piu'" "più")
       ("lunedi" "lunedì")
       ("martedi" "martedì")

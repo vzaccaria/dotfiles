@@ -2,7 +2,7 @@ important:
   all:
     - NOT (lista NEAR pd OR antarex OR polihub)
     - NOT (cheap NEAR flight)
-    - NOT (amazon OR lanieri OR uber OR thefork OR ryanair OR booking OR quora OR boscolo OR cral)
+    - NOT (amazon OR lanieri OR uber OR thefork OR ryanair OR Booking OR quora OR boscolo OR cral)
     - NOT (google calendar OR publons OR altracomo.it)
     - NOT romero
     - NOT jeff bier
@@ -22,10 +22,9 @@ important:
     - NOT enerxenia
     - NOT amir khella
     - NOT (lista NEAR pta)
-    - NOT (lista NEAR pd)
     - NOT chaos group
     - NOT hockerty
-    - NOT (linkedin OR atlassian OR wahoo OR kickstarter OR microchip OR belight)
+    - NOT (linkedin OR atlassian OR wahoo OR kickstarter OR microchip OR belight OR designcon OR massdrop)
 
 allmail:
   all:
