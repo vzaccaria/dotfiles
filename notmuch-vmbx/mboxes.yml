@@ -71,6 +71,12 @@ poli/institutional:
     - didattica-deib OR commissione OR laurea OR dipartimento OR CCS
     - NOT (lista NEAR pd)
 
+poli/tesi:
+  any:
+    - aecantini OR alessandro cantini
+    - marco redaelli
+    - nicola castaldo
+
 poli/tirocini:
   any:
     - tirocini

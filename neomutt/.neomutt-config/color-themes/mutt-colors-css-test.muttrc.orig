@@ -1,51 +1,69 @@
 # Have a look here: http://www.guckes.net/Setup/mutt.color.body
 # for a bunch of regular expressions
 
-color normal        333333     dddddd
-color search        dddddd     orangered
+# color definitions
+define @white       ffffff
+define @background  e0e0e0
+define @ulight      bdbdbd
+define @light       757575
+define @medium      424242
+define @dark        000000
+
+define @red         bf0020
+define @orange      orangered
+define @blue        008bec
+define @green       388e3c
+define @violet      c51162
+define @yellow      fffacd
+
+# color setup
+
+color normal        @medium         @background
+color search        @background     @orange
+color indicator     @dark           @white
 
 
-color index         444444     dddddd      '.*'
-color tree          999999     dddddd
+color index         @medium         @background '.*'
+color tree          @ulight         @background
 
-color index         777777            dddddd "~A"    # all messages
-color index         bright-bf0020     dddddd "~F"    # flagged  
+color index         @light          @background "~A"    # all messages
+color index         bright-@red     @background "~F"    # flagged  
 
-color index         bright-74003f     dddddd "~f\"Chiara Tenconi\""
-color index         000000            dddddd "~f\"(Tanca|Garzotto|Matera|Ajovalasit|Ciancia|Maria Chiara Molteni|Bertoni|Melzani|Zaccaria|Di Nitto|Masseroli|Staff Beep)\""
-color index         bright-444444     dddddd "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta|(c|C)ommissione|(m|M)issione)\""
-color index         bright-bf0020     dddddd "~s\"((u|U)rgent|URGENT|(u|U)rgenza)\""  
-color index         bright-bf0020     dddddd "~b\"((u|U)rgent|URGENT|(u|U)rgenza)\""
+color index         bright-@violet  @background "~f\"Tenconi\""
+color index         @dark           @background "~f\"(Tanca|Garzotto|Matera|Ajovalasit|Ciancia|Maria Chiara Molteni|Bertoni|Melzani|Zaccaria|Di Nitto|Masseroli|Staff Beep)\""
+color index         @medium         @background "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta|(c|C)ommissione|(m|M)issione)\""
+color index         bright-@red     @background "~s\"((u|U)rgent|URGENT|(u|U)rgenza)\""  
+color index         bright-@red     @background "~b\"((u|U)rgent|URGENT|(u|U)rgenza)\""
 
-color index         bright-orangered dddddd    "~f\"(annalisa corti)\""  
-color index         bright-orangered dddddd    "~s\"(bonifico|ricevuta|pagamento|verify)\""  
-color index         bright-orangered dddddd    "~s\"(access token|password)\""  
-color index         bright-fffacd dddddd     "~s\"(ordine Amazon|(E|e)stratto conto)\""  
+color index         bright-@orange  @background "~f\"(annalisa corti)\""  
+color index         bright-@orange  @background "~s\"(bonifico|ricevuta|pagamento|verify)\""  
+color index         bright-@orange  @background "~s\"(access token|password)\""  
+color index         bright-@yellow  @background "~s\"(ordine Amazon|(E|e)stratto conto)\""  
 
-color index         bright-008bec     dddddd "~N"    # new messages  
-color index         bright-0b8800     dddddd "~Q"    # replied
+color index         bright-@blue    @background "~N"    # new messages  
+color index         bright-@green   @background "~Q"    # replied
 
-color index_tag		  orangered  dddddd      "attachment" 
+color index_tag		  @orange         @background "attachment" 
 
 
-color hdrdefault    888888 dddddd
-color header        bright-000000     dddddd      "^(From)"
-color header        bright-000000     dddddd      "^(Subject)"
+color hdrdefault    @ulight         @background
+color header        bright-@dark    @background "^(From)"
+color header        bright-@dark    @background "^(Subject)"
 
-color quoted        666666     dddddd
-color signature     666666     dddddd
+color quoted        @light          @background
+color signature     @light          @background
 
-color body          bright-0b8800     dddddd "[;:][-o][)/(|]"    # emoticons
-color body          bright-0b8800     dddddd "[;:][-][D]"    # emoticons
-color body          bright-0b8800     dddddd "[;:][)(|]"         # emoticons
+color body          bright-@green   @background "[;:][-o][)/(|]"    # emoticons
+color body          bright-@green   @background "[;:][-][D]"    # emoticons
+color body          bright-@green   @background "[;:][)(|]"         # emoticons
 
-color sidebar_divider 999999 dddddd
-color sidebar_new     bright-008bec     dddddd      
-color sidebar_flagged     bright-bf0020     dddddd      
-color sidebar_highlight     dddddd      666666
+color sidebar_divider               @ulight          @background
+color sidebar_new                   bright-@blue    @background      
+color sidebar_flagged               bright-@red     @background      
+color sidebar_highlight             @background     @light
 
-color   attachment         999999 dddddd
-color   attach_headers     008bec dddddd        "Autoview"
-color   attach_headers     999999    dddddd        "^\\[--"
-color   attach_headers     999999    dddddd        "--]$"
+color   attachment         @ulight   @background
+color   attach_headers     @blue     @background        "Autoview"
+color   attach_headers     @ulight   @background        "^\\[--"
+color   attach_headers     @ulight   @background        "--]$"
 
