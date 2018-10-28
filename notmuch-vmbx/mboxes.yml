@@ -3,7 +3,8 @@ important:
     - NOT (lista NEAR pd OR antarex OR polihub)
     - NOT (cheap NEAR flight)
     - NOT (amazon OR lanieri OR uber OR thefork OR ryanair OR Booking OR quora OR boscolo OR cral)
-    - NOT (google calendar OR publons OR altracomo.it OR researchgate)
+    - NOT (google calendar OR altracomo.it)
+    - NOT (google scholar OR publons OR researchgate)
     - NOT romero
     - NOT jeff bier
     - NOT psychometrics

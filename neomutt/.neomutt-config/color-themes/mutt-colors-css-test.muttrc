@@ -51,7 +51,7 @@ color index brightcolor202 color254  "~s\"(bonifico|ricevuta|pagamento|verify)\"
 color index brightcolor202 color254  "~s\"(access token|password)\""  
 color index brightcolor230 color254  "~s\"(ordine Amazon|(E|e)stratto conto)\""  
 
-color index brightcolor32 color254  "~N"    # new messages  
+color index brightcolor135 color254  "~N"    # new messages  
 
 color index_tag color202 color254  "attachment" 
 
@@ -68,12 +68,12 @@ color body brightcolor22 color254  "[;:][-][D]"    # emoticons
 color body brightcolor22 color254  "[;:][)(|]"         # emoticons
 
 color sidebar_divider color145 color254 
-color sidebar_new brightcolor12 color254       
-color sidebar_flagged brightcolor124 color254       
+color sidebar_new color135 color254       
+color sidebar_flagged color124 color254       
 color sidebar_highlight color254 color8 
 
 color attachment color145 color254 
-color attach_headers color32 color254         "Autoview"
+color attach_headers color135 color254         "Autoview"
 color attach_headers color145 color254         "^\\[--"
 color attach_headers color145 color254         "--]$"
 

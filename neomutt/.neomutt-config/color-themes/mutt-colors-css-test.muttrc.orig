@@ -13,12 +13,12 @@ define @blue0      "chroma('blue').hex()"
 define @blue1      "chroma('blue').darken(1).hex()"
 define @blue2      "chroma('blue').darken(2).hex()"
 define @blue3      "chroma('blue').brighten(1).hex()"
-define @red         bf0020
-define @orange      orangered
-define @blue        008bec
-define @green       "chroma('aad28c').darken(3).hex()"
-define @violet      c51162
-define @yellow      fffacd
+define @red        bf0020
+define @orange     orangered
+define @blue       "chroma('blue').brighten(2).hex()"
+define @green      "chroma('aad28c').darken(3).hex()"
+define @violet     c51162
+define @yellow     fffacd
 
 # color setup
 
@@ -68,8 +68,8 @@ color body          bright-@green   @background "[;:][-][D]"    # emoticons
 color body          bright-@green   @background "[;:][)(|]"         # emoticons
 
 color sidebar_divider               @ulight         @background
-color sidebar_new                   bright-@blue0    @background      
-color sidebar_flagged               bright-@red     @background      
+color sidebar_new                   @blue    @background      
+color sidebar_flagged               @red     @background      
 color sidebar_highlight             @background     @light
 
 color   attachment         @ulight   @background
