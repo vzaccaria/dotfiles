@@ -16,22 +16,33 @@
 
 
 
+
+
+
+
 # color setup
 
-color normal color238 color254 
+color normal color240 color254 
 color search color254 color202 
-color indicator color0 color15 
+color indicator color0 color145 
 
 
-color index color238 color254  '.*'
-color tree color250 color254 
+color index color240 color254  '.*'
+color tree color145 color254 
 
-color index color243 color254  "~A"    # all messages
+color index color8 color254  "~A"    # all messages
 color index brightcolor124 color254  "~F"    # flagged  
 
 color index brightcolor161 color254  "~f\"Tenconi\""
-color index color0 color254  "~f\"(Tanca|Garzotto|Matera|Ajovalasit|Ciancia|Maria Chiara Molteni|Bertoni|Melzani|Zaccaria|Di Nitto|Masseroli|Staff Beep)\""
-color index color238 color254  "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta|(c|C)ommissione|(m|M)issione)\""
+
+color index color12 color254  "~f\"(tanca|matera)\""
+color index color20 color254  "~f\"(Garzotto|Gelsomini)\""
+color index color18 color254  "~f\"(Ajovalasit|Ciancia)\""
+color index color93 color254  "~f\"(Cannici|ingconti|conti)\""
+color index color22 color254  "~f\"(Maria Chiara Molteni|Bertoni|Melzani)\""
+
+color index color0 color254  "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta|(c|C)ommissione|(m|M)issione)\""
+
 color index brightcolor124 color254  "~s\"((u|U)rgent|URGENT|(u|U)rgenza)\""  
 color index brightcolor124 color254  "~b\"((u|U)rgent|URGENT|(u|U)rgenza)\""
 
@@ -41,30 +52,29 @@ color index brightcolor202 color254  "~s\"(access token|password)\""
 color index brightcolor230 color254  "~s\"(ordine Amazon|(E|e)stratto conto)\""  
 
 color index brightcolor32 color254  "~N"    # new messages  
-color index brightcolor28 color254  "~Q"    # replied
 
 color index_tag color202 color254  "attachment" 
 
 
-color hdrdefault color250 color254 
+color hdrdefault color145 color254 
 color header brightcolor0 color254  "^(From)"
 color header brightcolor0 color254  "^(Subject)"
 
-color quoted color243 color254 
-color signature color243 color254 
+color quoted color8 color254 
+color signature color8 color254 
 
-color body brightcolor28 color254  "[;:][-o][)/(|]"    # emoticons
-color body brightcolor28 color254  "[;:][-][D]"    # emoticons
-color body brightcolor28 color254  "[;:][)(|]"         # emoticons
+color body brightcolor22 color254  "[;:][-o][)/(|]"    # emoticons
+color body brightcolor22 color254  "[;:][-][D]"    # emoticons
+color body brightcolor22 color254  "[;:][)(|]"         # emoticons
 
-color sidebar_divider color250 color254 
-color sidebar_new brightcolor32 color254       
+color sidebar_divider color145 color254 
+color sidebar_new brightcolor12 color254       
 color sidebar_flagged brightcolor124 color254       
-color sidebar_highlight color254 color243 
+color sidebar_highlight color254 color8 
 
-color attachment color250 color254 
+color attachment color145 color254 
 color attach_headers color32 color254         "Autoview"
-color attach_headers color250 color254         "^\\[--"
-color attach_headers color250 color254         "--]$"
+color attach_headers color145 color254         "^\\[--"
+color attach_headers color145 color254         "--]$"
 
 

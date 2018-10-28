@@ -2,17 +2,21 @@
 # for a bunch of regular expressions
 
 # color definitions
-define @white       ffffff
-define @background  e0e0e0
-define @ulight      bdbdbd
-define @light       757575
-define @medium      424242
-define @dark        000000
+define @background  "chroma('black').brighten(5).hex()"
+define @ulight      "chroma('black').brighten(4).hex()"
+define @light       "chroma('black').brighten(3).hex()"
+define @medium      "chroma('black').brighten(2).hex()"
+define @dark        "chroma('black').brighten(0).hex()"
 
+
+define @blue0      "chroma('blue').hex()"
+define @blue1      "chroma('blue').darken(1).hex()"
+define @blue2      "chroma('blue').darken(2).hex()"
+define @blue3      "chroma('blue').brighten(1).hex()"
 define @red         bf0020
 define @orange      orangered
 define @blue        008bec
-define @green       388e3c
+define @green       "chroma('aad28c').darken(3).hex()"
 define @violet      c51162
 define @yellow      fffacd
 
@@ -20,7 +24,7 @@ define @yellow      fffacd
 
 color normal        @medium         @background
 color search        @background     @orange
-color indicator     @dark           @white
+color indicator     @dark           @ulight
 
 
 color index         @medium         @background '.*'
@@ -30,8 +34,15 @@ color index         @light          @background "~A"    # all messages
 color index         bright-@red     @background "~F"    # flagged  
 
 color index         bright-@violet  @background "~f\"Tenconi\""
-color index         @dark           @background "~f\"(Tanca|Garzotto|Matera|Ajovalasit|Ciancia|Maria Chiara Molteni|Bertoni|Melzani|Zaccaria|Di Nitto|Masseroli|Staff Beep)\""
-color index         @medium         @background "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta|(c|C)ommissione|(m|M)issione)\""
+
+color index         @blue0         @background "~f\"(tanca|matera)\""
+color index         @blue1         @background "~f\"(Garzotto|Gelsomini)\""
+color index         @blue2         @background "~f\"(Ajovalasit|Ciancia)\""
+color index         @blue3         @background "~f\"(Cannici|ingconti|conti)\""
+color index         @green         @background "~f\"(Maria Chiara Molteni|Bertoni|Melzani)\""
+
+color index         @dark           @background "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta|(c|C)ommissione|(m|M)issione)\""
+
 color index         bright-@red     @background "~s\"((u|U)rgent|URGENT|(u|U)rgenza)\""  
 color index         bright-@red     @background "~b\"((u|U)rgent|URGENT|(u|U)rgenza)\""
 
@@ -41,7 +52,6 @@ color index         bright-@orange  @background "~s\"(access token|password)\""
 color index         bright-@yellow  @background "~s\"(ordine Amazon|(E|e)stratto conto)\""  
 
 color index         bright-@blue    @background "~N"    # new messages  
-color index         bright-@green   @background "~Q"    # replied
 
 color index_tag		  @orange         @background "attachment" 
 
@@ -57,8 +67,8 @@ color body          bright-@green   @background "[;:][-o][)/(|]"    # emoticons
 color body          bright-@green   @background "[;:][-][D]"    # emoticons
 color body          bright-@green   @background "[;:][)(|]"         # emoticons
 
-color sidebar_divider               @ulight          @background
-color sidebar_new                   bright-@blue    @background      
+color sidebar_divider               @ulight         @background
+color sidebar_new                   bright-@blue0    @background      
 color sidebar_flagged               bright-@red     @background      
 color sidebar_highlight             @background     @light
 

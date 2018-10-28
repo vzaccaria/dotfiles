@@ -3,7 +3,7 @@ important:
     - NOT (lista NEAR pd OR antarex OR polihub)
     - NOT (cheap NEAR flight)
     - NOT (amazon OR lanieri OR uber OR thefork OR ryanair OR Booking OR quora OR boscolo OR cral)
-    - NOT (google calendar OR publons OR altracomo.it)
+    - NOT (google calendar OR publons OR altracomo.it OR researchgate)
     - NOT romero
     - NOT jeff bier
     - NOT psychometrics
@@ -73,9 +73,10 @@ poli/institutional:
 
 poli/tesi:
   any:
-    - aecantini OR alessandro cantini
-    - marco redaelli
-    - nicola castaldo
+    - from:aecantini@gmail.com
+    - to:aecantini@gmail.com
+    - from:marco10.redaelli OR to:marco10.redaelli
+    - from:nicola.castaldo OR to:nicola.castaldo
 
 poli/tirocini:
   any:
