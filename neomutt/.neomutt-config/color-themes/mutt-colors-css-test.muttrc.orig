@@ -2,20 +2,20 @@
 # for a bunch of regular expressions
 
 # color definitions
-define @background  "chroma('black').brighten(5).hex()"
+define @background  "chroma('black').brighten(6).hex()"
 define @ulight      "chroma('black').brighten(4).hex()"
 define @light       "chroma('black').brighten(3).hex()"
 define @medium      "chroma('black').brighten(2).hex()"
-define @dark        "chroma('black').brighten(0).hex()"
+define @dark        "chroma('black').hex()"
 
 
-define @blue0      "chroma('blue').hex()"
-define @blue1      "chroma('blue').darken(1).hex()"
-define @blue2      "chroma('blue').darken(2).hex()"
-define @blue3      "chroma('blue').brighten(1).hex()"
+define @blue0      "chroma('139cfe').hex()"
+define @blue1      "chroma('139cfe').darken(1).hex()"
+define @blue2      "chroma('139cfe').darken(2).hex()"
+define @blue3      "chroma('139cfe').darken(3).hex()"
 define @red        bf0020
 define @orange     orangered
-define @blue       "chroma('blue').brighten(2).hex()"
+define @blue       "chroma('139cfe').darken(3).saturate(3).hex()"
 define @green      "chroma('aad28c').darken(3).hex()"
 define @violet     c51162
 define @yellow     fffacd
@@ -57,11 +57,12 @@ color index_tag		  @orange         @background "attachment"
 
 
 color hdrdefault    @ulight         @background
-color header        bright-@dark    @background "^(From)"
-color header        bright-@dark    @background "^(Subject)"
+color header        @dark    @background "^(From)"
+color header        @dark    @background "^(Subject)"
 
-color quoted        @light          @background
 color signature     @light          @background
+color normal        @dark           @background
+color quoted        @light          @background
 
 color body          bright-@green   @background "[;:][-o][)/(|]"    # emoticons
 color body          bright-@green   @background "[;:][-][D]"    # emoticons

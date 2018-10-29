@@ -22,59 +22,60 @@
 
 # color setup
 
-color normal color240 color254 
-color search color254 color202 
+color normal color240 color15 
+color search color15 color202 
 color indicator color0 color145 
 
 
-color index color240 color254  '.*'
-color tree color145 color254 
+color index color240 color15  '.*'
+color tree color145 color15 
 
-color index color8 color254  "~A"    # all messages
-color index brightcolor124 color254  "~F"    # flagged  
+color index color8 color15  "~A"    # all messages
+color index brightcolor124 color15  "~F"    # flagged  
 
-color index brightcolor161 color254  "~f\"Tenconi\""
+color index brightcolor161 color15  "~f\"Tenconi\""
 
-color index color12 color254  "~f\"(tanca|matera)\""
-color index color20 color254  "~f\"(Garzotto|Gelsomini)\""
-color index color18 color254  "~f\"(Ajovalasit|Ciancia)\""
-color index color93 color254  "~f\"(Cannici|ingconti|conti)\""
-color index color22 color254  "~f\"(Maria Chiara Molteni|Bertoni|Melzani)\""
+color index color75 color15  "~f\"(tanca|matera)\""
+color index color25 color15  "~f\"(Garzotto|Gelsomini)\""
+color index color25 color15  "~f\"(Ajovalasit|Ciancia)\""
+color index color4 color15  "~f\"(Cannici|ingconti|conti)\""
+color index color22 color15  "~f\"(Maria Chiara Molteni|Bertoni|Melzani)\""
 
-color index color0 color254  "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta|(c|C)ommissione|(m|M)issione)\""
+color index color0 color15  "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta|(c|C)ommissione|(m|M)issione)\""
 
-color index brightcolor124 color254  "~s\"((u|U)rgent|URGENT|(u|U)rgenza)\""  
-color index brightcolor124 color254  "~b\"((u|U)rgent|URGENT|(u|U)rgenza)\""
+color index brightcolor124 color15  "~s\"((u|U)rgent|URGENT|(u|U)rgenza)\""  
+color index brightcolor124 color15  "~b\"((u|U)rgent|URGENT|(u|U)rgenza)\""
 
-color index brightcolor202 color254  "~f\"(annalisa corti)\""  
-color index brightcolor202 color254  "~s\"(bonifico|ricevuta|pagamento|verify)\""  
-color index brightcolor202 color254  "~s\"(access token|password)\""  
-color index brightcolor230 color254  "~s\"(ordine Amazon|(E|e)stratto conto)\""  
+color index brightcolor202 color15  "~f\"(annalisa corti)\""  
+color index brightcolor202 color15  "~s\"(bonifico|ricevuta|pagamento|verify)\""  
+color index brightcolor202 color15  "~s\"(access token|password)\""  
+color index brightcolor230 color15  "~s\"(ordine Amazon|(E|e)stratto conto)\""  
 
-color index brightcolor135 color254  "~N"    # new messages  
+color index brightcolor19 color15  "~N"    # new messages  
 
-color index_tag color202 color254  "attachment" 
+color index_tag color202 color15  "attachment" 
 
 
-color hdrdefault color145 color254 
-color header brightcolor0 color254  "^(From)"
-color header brightcolor0 color254  "^(Subject)"
+color hdrdefault color145 color15 
+color header color0 color15  "^(From)"
+color header color0 color15  "^(Subject)"
 
-color quoted color8 color254 
-color signature color8 color254 
+color signature color8 color15 
+color normal color0 color15 
+color quoted color8 color15 
 
-color body brightcolor22 color254  "[;:][-o][)/(|]"    # emoticons
-color body brightcolor22 color254  "[;:][-][D]"    # emoticons
-color body brightcolor22 color254  "[;:][)(|]"         # emoticons
+color body brightcolor22 color15  "[;:][-o][)/(|]"    # emoticons
+color body brightcolor22 color15  "[;:][-][D]"    # emoticons
+color body brightcolor22 color15  "[;:][)(|]"         # emoticons
 
-color sidebar_divider color145 color254 
-color sidebar_new color135 color254       
-color sidebar_flagged color124 color254       
-color sidebar_highlight color254 color8 
+color sidebar_divider color145 color15 
+color sidebar_new color19 color15       
+color sidebar_flagged color124 color15       
+color sidebar_highlight color15 color8 
 
-color attachment color145 color254 
-color attach_headers color135 color254         "Autoview"
-color attach_headers color145 color254         "^\\[--"
-color attach_headers color145 color254         "--]$"
+color attachment color145 color15 
+color attach_headers color19 color15         "Autoview"
+color attach_headers color145 color15         "^\\[--"
+color attach_headers color145 color15         "--]$"
 
 

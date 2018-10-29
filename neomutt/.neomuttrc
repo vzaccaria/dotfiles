@@ -23,7 +23,7 @@ tag-formats "attachment" "GA"
 set sendmail = "/bin/sh $HOME/dotfiles/neomutt/sendmail.sh"
 # set sendmail = "msmtp -a gmail"
 set sendmail_wait = -1
-set wait_key = no
+set wait_key = yes
 set fast_reply = yes
 set attribution = "\nOn %d, %n wrote: \n"
 

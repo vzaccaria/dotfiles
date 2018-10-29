@@ -14,7 +14,7 @@ important:
     - NOT wes bos
     - NOT ian doyle
     - NOT (from:github AND dependencies)
-    - NOT (refurbme OR skylum OR cablewholesale OR kaggle OR repl.it)
+    - NOT (refurbme OR skylum OR cablewholesale OR kaggle OR repl.it OR Mentor OR Chocofur)
     - NOT redazione-deib
     - NOT javascript weekly
     - NOT node weekly
