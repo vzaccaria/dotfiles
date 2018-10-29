@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "align-yaml": "0.1.8",
     "chromix-too": "0.0.15",
     "decktape": "2.8.9",
     "diff-so-fancy": "1.0.0",
