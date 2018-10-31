@@ -429,6 +429,8 @@ you should place you code here."
       ("puo'" "può")
       ("nonappena" "non appena")
       ("c'e'" "c'è")
+      ("qual'e'" "qual è")
+      ("qual'era" "qual era")
       ("gia'" "già")
       ("sara'" "sarà")
       ("potra'" "potrà")
