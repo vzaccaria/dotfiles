@@ -63,3 +63,5 @@ bind index,pager <tab> sidebar-open
 
 bind index,pager c noop
 bind index,pager c mail
+bind index,pager S noop
+macro index,pager S "<pipe-message>ripmime -i - -d ~/Downloads<enter>" "Extract attachments to ~/Downloads"

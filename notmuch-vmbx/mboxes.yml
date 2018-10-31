@@ -1,31 +1,13 @@
 important:
   all:
-    - NOT (lista NEAR pd OR antarex OR polihub)
-    - NOT (cheap NEAR flight)
-    - NOT (amazon OR lanieri OR uber OR thefork OR ryanair OR Booking OR quora OR boscolo OR cral)
-    - NOT (google calendar OR altracomo.it)
-    - NOT (google scholar OR publons OR researchgate)
-    - NOT romero
-    - NOT jeff bier
-    - NOT psychometrics
-    - NOT staff picks
-    - NOT call for papers
-    - NOT necstpizza
-    - NOT wes bos
-    - NOT ian doyle
-    - NOT (from:github AND dependencies)
-    - NOT (refurbme OR skylum OR cablewholesale OR kaggle OR repl.it OR Mentor OR Chocofur)
-    - NOT redazione-deib
-    - NOT javascript weekly
-    - NOT node weekly
-    - NOT haskell weekly
-    - NOT power electronics
-    - NOT enerxenia
-    - NOT amir khella
-    - NOT (lista NEAR pta)
-    - NOT chaos group
-    - NOT hockerty
-    - NOT (linkedin OR atlassian OR wahoo OR kickstarter OR microchip OR belight OR designcon OR massdrop)
+    - NOT (subject:Lista Pd OR subject:lista pta)
+    - NOT (from:polihub OR from:redazione-deib OR subject:antarex)
+    - NOT (from:Amazon OR from:Sales OR from:kickstarter OR from:massdrop)
+    - NOT (from:cheap OR from:Ryanair OR from:Booking OR from:Boscolo)
+    - NOT (from:linkedin OR from:researchgate)
+    - NOT (from:google calendar OR from:google scholar)
+    - NOT (from:haskell weekly OR from:javascript weekly)
+    - NOT (from:giunti)
 
 allmail:
   all:
