@@ -8,6 +8,7 @@ important:
     - NOT (from:google calendar OR from:google scholar)
     - NOT (from:haskell weekly OR from:javascript weekly)
     - NOT (from:giunti)
+    - NOT (from:ing.com)
 
 allmail:
   all:
