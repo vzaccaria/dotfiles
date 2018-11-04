@@ -147,5 +147,11 @@
     "title": "Riunione con <%= parameter %>",
     "where": "Ufficio",
     "reminder": "10h"
+  },
+  "appuntamento": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Appuntamento con <%= parameter %>",
+    "where": "",
+    "reminder": "2d"
   }
 }

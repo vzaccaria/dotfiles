@@ -7,8 +7,9 @@ important:
     - NOT (from:linkedin OR from:researchgate)
     - NOT (from:google calendar OR from:google scholar)
     - NOT (from:haskell weekly OR from:javascript weekly)
+    - NOT (from:github AND dependencies)
     - NOT (from:giunti)
-    - NOT (from:ing.com)
+    - NOT (from:ing.com OR from:enerxenia)
 
 allmail:
   all:
