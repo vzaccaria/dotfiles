@@ -168,6 +168,7 @@
     (config :location local)
     (config-prettyfonts :location local) ; Pretty-eshell/code/outlines... pkgs
     (config-writeroom :location local)
+    (config-muttrc :location local)
     ;; (langs :location local)     ; Language config
     (personal :location local
               :variables
@@ -379,6 +380,8 @@ you should place you code here."
   (add-to-list 'auto-mode-alist '("makefile" . makefile-gmake-mode))
   (add-to-list 'auto-mode-alist '("Makefile" . makefile-gmake-mode))
   (add-to-list 'auto-mode-alist '("makefile\\.mk" . makefile-gmake-mode))
+  (add-to-list 'auto-mode-alist '("\\.muttrc" . muttrc-mode))
+  (add-to-list 'auto-mode-alist '("\\.neomuttrc" . muttrc-mode))
 
    (eval-after-load 'smartparens
     '(progn
@@ -426,6 +429,7 @@ you should place you code here."
       ("perche'" "perché")
       ("poiche'" "poiché")
       ("e'" "è")
+      ("cioe'" "cioè")
       ("puo'" "può")
       ("nonappena" "non appena")
       ("c'e'" "c'è")
