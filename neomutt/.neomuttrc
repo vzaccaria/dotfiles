@@ -7,13 +7,16 @@ source ./.neomutt-setup
 # i n d e x 
 
 set sort = 'threads'
-set sort_aux = 'last-date-received'
+set sort_aux = 'reverse-last-date-received'
 set index_format = "%C %Z %<[y?%<[m?%<[d?%[     %H:%M]&%[    %a %d]>&%[    %b %d]>&%[%d/%m/%Y]> %-20.20F %?GS?%GS& ?%?GA?%GA& ? %s"
 set attach_format = "%u%D%I %t%4n %T%.100d%> [%.15m/%.15M, %.6e%?C?, %C?, %s] "
 
 set sidebar_visible
 set sidebar_format="%B%?F? [%F]?%* %?N?%N/?%S"
 set mail_check_stats
+
+# when using pipe-message, just pipe the content
+set pipe_decode = yes
 
 tag-transforms "attachment" "@" \
                "encrypted"  "" \
@@ -56,6 +59,11 @@ set sidebar_indent_string="  "          # Indent with two spaces
 # remove those silly <+> 
 set markers=no
 
+# wrap long lines
+set smart_wrap=yes
+set reflow_text=yes
+set wrap=80
+
 # c o m p o s e r 
 
 # see here http://wcm1.web.rice.edu/mutt-tips.html
@@ -66,10 +74,10 @@ source ./.neomutt-config/color-themes/mutt-colors-css-test.muttrc
 
 
 # b i n d i n g s
-source ./.neomutt-config/bindings.mutt
+source ./.neomutt-config/bindings.muttrc
 source ./.neomutt-config/aliases.muttrc
 
 # a t t a c h m e n t s
 set mailcap_path     = "$HOME/.neomutt-config/mailcap"
 auto_view text/html
-alternative_order text/enriched text/plain text/html text
+alternative_order  text/plain text/enriched text/html text

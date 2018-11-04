@@ -4,7 +4,7 @@
 # color definitions
 define @background  "chroma('black').brighten(6).hex()"
 define @ulight      "chroma('black').brighten(4).hex()"
-define @light       "chroma('black').brighten(3).hex()"
+define @light       "chroma('black').brighten(3.5).hex()"
 define @medium      "chroma('black').brighten(2).hex()"
 define @dark        "chroma('black').hex()"
 
@@ -16,7 +16,7 @@ define @blue3      "chroma('139cfe').darken(3).hex()"
 define @red        bf0020
 define @orange     orangered
 define @blue       "chroma('139cfe').darken(3).saturate(3).hex()"
-define @green      "chroma('aad28c').darken(3).hex()"
+define @green      "chroma('aad28c').darken(0.5).saturate(2).hex()"
 define @violet     c51162
 define @yellow     fffacd
 
