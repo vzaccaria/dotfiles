@@ -38,7 +38,7 @@ color index brightcolor161 color15  "~f\"Tenconi\""
 color index color75 color15  "~f\"(tanca|matera)\""
 color index color25 color15  "~f\"(Garzotto|Gelsomini)\""
 color index color25 color15  "~f\"(Ajovalasit|Ciancia)\""
-color index color4 color15  "~f\"(Cannici|ingconti|conti)\""
+color index color4 color15  "~f\"(Cannici|ingconti|conti|Di Nitto|Trovo'|Masseroli|Santambrogio|Cassano)\""
 color index color70 color15  "~f\"(Maria Chiara Molteni|Bertoni|Melzani)\""
 
 color index color0 color15  "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta|(c|C)ommissione|(m|M)issione)\""

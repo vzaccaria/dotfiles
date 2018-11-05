@@ -38,7 +38,7 @@ color index         bright-@violet  @background "~f\"Tenconi\""
 color index         @blue0         @background "~f\"(tanca|matera)\""
 color index         @blue1         @background "~f\"(Garzotto|Gelsomini)\""
 color index         @blue2         @background "~f\"(Ajovalasit|Ciancia)\""
-color index         @blue3         @background "~f\"(Cannici|ingconti|conti)\""
+color index         @blue3         @background "~f\"(Cannici|ingconti|conti|Di Nitto|Trovo'|Masseroli|Santambrogio|Cassano)\""
 color index         @green         @background "~f\"(Maria Chiara Molteni|Bertoni|Melzani)\""
 
 color index         @dark           @background "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta|(c|C)ommissione|(m|M)issione)\""
