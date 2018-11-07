@@ -3,9 +3,6 @@
 name: dot-spacemacs
 root: ~/.emacs.vz/private/personal
 
-attach: false
-post: tmux -CC attach
-
 windows:
   - dot-spacemacs:
       layout: main-vertical

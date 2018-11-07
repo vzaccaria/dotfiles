@@ -46,7 +46,7 @@ color index         @dark           @background "~s\"((s|S)ezione|(l|L)aure(a|e)
 color index         bright-@red     @background "~s\"((u|U)rgent|URGENT|(u|U)rgenza)\""  
 color index         bright-@red     @background "~b\"((u|U)rgent|URGENT|(u|U)rgenza)\""
 
-color index         bright-@orange  @background "~f\"(annalisa corti)\""  
+color index         bright-@orange  @background "~f\"(annalisa corti|aymerich)\""  
 color index         bright-@orange  @background "~s\"(bonifico|ricevuta|pagamento|verify)\""  
 color index         bright-@orange  @background "~s\"(access token|password)\""  
 color index         bright-@yellow  @background "~s\"(ordine Amazon|(E|e)stratto conto)\""  

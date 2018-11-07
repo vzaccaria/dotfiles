@@ -85,6 +85,6 @@ alias startanki='/Applications/Anki.app/Contents/MacOS/Anki -b ~/Dropbox/Apps/An
 
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
-alias clipboard-md-to-html='pbpaste | pandoc -f markdown -t html | pbcopy'
+alias vz-clipboard-md-to-html='pbpaste | pandoc -f markdown -t html | pbcopy'
 
 alias chromereload="osascript -e 'tell application \"Google Chrome\" to reload active tab of window 1'"

@@ -4,7 +4,7 @@ important:
     - NOT (from:polihub OR from:redazione-deib OR subject:antarex)
     - NOT (from:Amazon OR from:Sales OR from:kickstarter OR from:massdrop OR from:pearson.com)
     - NOT (from:cheap OR from:Ryanair OR from:Booking OR from:Boscolo)
-    - NOT (from:linkedin OR from:researchgate)
+    - NOT (from:linkedin OR from:researchgate OR from:hindawi.com)
     - NOT (from:google calendar OR from:google scholar)
     - NOT (from:haskell weekly OR from:javascript weekly)
     - NOT (from:github AND dependencies)

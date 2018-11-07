@@ -46,7 +46,7 @@ color index color0 color15  "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZION
 color index brightcolor124 color15  "~s\"((u|U)rgent|URGENT|(u|U)rgenza)\""  
 color index brightcolor124 color15  "~b\"((u|U)rgent|URGENT|(u|U)rgenza)\""
 
-color index brightcolor202 color15  "~f\"(annalisa corti)\""  
+color index brightcolor202 color15  "~f\"(annalisa corti|aymerich)\""  
 color index brightcolor202 color15  "~s\"(bonifico|ricevuta|pagamento|verify)\""  
 color index brightcolor202 color15  "~s\"(access token|password)\""  
 color index brightcolor230 color15  "~s\"(ordine Amazon|(E|e)stratto conto)\""  
