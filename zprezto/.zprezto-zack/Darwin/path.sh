@@ -1,4 +1,5 @@
 path=(\
+  /usr/local/anaconda3/bin \
   /usr/local/sbin \
   /usr/local/bin \
   /usr/bin \

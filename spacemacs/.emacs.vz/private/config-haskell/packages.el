@@ -22,13 +22,13 @@
 
 (defun config-haskell/post-init-haskell-mode ()
   (setq haskell-process-args-ghci
-        '("-ferror-spans" "-fshow-loaded-modules"))
+        '("-ferror-spans"))
 
   (setq haskell-process-args-cabal-repl
         '("--ghc-options=-ferror-spans -fshow-loaded-modules"))
 
   (setq haskell-process-args-stack-ghci
-        '("--ghci-options=-ferror-spans -fshow-loaded-modules"
+        '("--ghci-options=-ferror-spans"
           "--no-build" "--no-load"))
 
   (setq haskell-process-args-cabal-new-repl
