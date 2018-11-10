@@ -49,7 +49,7 @@ color index brightcolor124 color15  "~b\"((u|U)rgent|URGENT|(u|U)rgenza)\""
 color index brightcolor202 color15  "~f\"(annalisa corti|aymerich)\""  
 color index brightcolor202 color15  "~s\"(bonifico|ricevuta|pagamento|verify)\""  
 color index brightcolor202 color15  "~s\"(access token|password)\""  
-color index brightcolor230 color15  "~s\"(ordine Amazon|(E|e)stratto conto)\""  
+color index brightcolor136 color15  "~s\"(ordine Amazon|(E|e)stratto conto)\""  
 
 color index brightcolor19 color15  "~N"    # new messages  
 

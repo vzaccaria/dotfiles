@@ -18,7 +18,7 @@ define @orange     orangered
 define @blue       "chroma('139cfe').darken(3).saturate(3).hex()"
 define @green      "chroma('aad28c').darken(0.5).saturate(2).hex()"
 define @violet     c51162
-define @yellow     fffacd
+define @yellow     "chroma('ba9939')"
 
 # color setup
 
