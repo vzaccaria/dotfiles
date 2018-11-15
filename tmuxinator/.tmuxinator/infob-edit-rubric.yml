@@ -1,0 +1,9 @@
+name: infob-edit-rubric
+root: /Users/zaccaria/development/github/org-institutional/materiale-corsi/infob/rubrics
+
+windows:
+  - infob-edit-exercises:
+      layout: 71ea,162x47,0,0[162x39,0,0,4,162x7,0,40,5]
+      panes:
+        - cd . && make edit
+        - cd . && make watch

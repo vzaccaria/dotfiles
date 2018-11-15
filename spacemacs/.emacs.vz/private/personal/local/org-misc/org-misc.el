@@ -2,6 +2,12 @@
 (require 'org-drill)
 (require 'ox)
 
+(defun personal/org-init-super-agenda ()
+  (let ((org-super-agenda-groups
+         '((:auto-group t))))
+    (org-agenda-list))
+  )
+
 (defun personal/org-init-agenda ()
   (setq org-agenda-custom-commands '(("w" "My Agenda"
                                       ((agenda "")

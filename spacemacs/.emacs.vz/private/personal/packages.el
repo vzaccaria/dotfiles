@@ -57,16 +57,16 @@
 (defun personal/init-org-misc ()
   (use-package org-misc
     :config
-  (personal/org-init-agenda)
-  (personal/org-init-babel)
-  (personal/org-init-display)
-  (personal/org-init-snippets)
-  (personal/org-init-latex)
-  (personal/org-init-pomodoro)
-  (personal/org-init-keybindings)
-  (personal/org-init-links)
+    (personal/org-init-agenda)
+    (personal/org-init-babel)
+    (personal/org-init-display)
+    (personal/org-init-snippets)
+    (personal/org-init-latex)
+    (personal/org-init-pomodoro)
+    (personal/org-init-keybindings)
+    (personal/org-init-links)
+    )
   )
-)
 
 
 (defun personal/init-evil-multiedit ()
