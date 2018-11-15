@@ -1,0 +1,10 @@
+name: write-tcomp-2019
+root: /Users/zaccaria/development/github/org-writing/tcomp2019
+
+windows:
+  - name:
+      layout: main-horizontal
+      panes:
+        - vi bare_jrnl.tex
+        
+        

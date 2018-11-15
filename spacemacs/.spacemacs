@@ -250,7 +250,8 @@
    dotspacemacs-enable-paste-transient-state nil
    dotspacemacs-show-transient-state-title t
    dotspacemacs-show-transient-state-color-guide t
-   ))
+   )
+  )
 
 (defun dotspacemacs/init/keys ()
   (setq-default
@@ -510,6 +511,8 @@ you should place you code here."
 
   (setq reftex-plug-into-AUCTeX t)
   (setq reftex-ref-macro-prompt nil)
+  (addhook 'reftex-toc-mode-hook 'disable-evil-mode)
+
 
 
   ;; LaTeX-math-mode http://www.gnu.org/s/auctex/manual/auctex/Mathematics.html
