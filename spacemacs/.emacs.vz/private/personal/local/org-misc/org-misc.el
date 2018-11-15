@@ -86,12 +86,20 @@
     )
   )
 
+(defun nolinum ()
+  (interactive)
+  (message "Deactivated linum mode")
+  (global-linum-mode 0)
+  (linum-mode 0)
+  )
+
 (defun personal/org-init-display ()
-  (setq org-columns-default-format "%40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM")
+  (setq org-columns-default-format "%40ITEM(Task) %20TAGS")
   ;; Using orgmode as a presentation
   (setq org-hide-emphasis-markers t)
   (setq org-hide-leading-stars t)
   (setq org-level-color-stars-only t )
+  (add-hook 'org-mode-hook 'nolinum)
   )
 
 (defun personal/org-init-snippets ()

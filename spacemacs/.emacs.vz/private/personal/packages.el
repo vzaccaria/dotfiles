@@ -3,7 +3,6 @@
 
 (defconst personal-packages
   '(
-    org-bullets
     spell-checking
     prodigy
     evil-multiedit
@@ -80,9 +79,9 @@
 
 
 
-(defun personal/post-init-org-bullets ()
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-  )
+;; (defun personal/post-init-org-bullets ()
+;;   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+;;   )
 
 (defun personal/show-agenda-all ()
   ;; Show agenda and todo list

@@ -43,7 +43,7 @@
                                       nord-theme
                                       helm-projectile
                                       )
-   dotspacemacs-excluded-packages '(smartparens)
+   dotspacemacs-excluded-packages '(smartparens org-bullets)
    dotspacemacs-frozen-packages '()
    dotspacemacs-install-packages 'used-but-keep-unused
    ))
