@@ -99,73 +99,6 @@ killAdobeProcesses() {
     echo '> rm ~/Library/LaunchAgents/*adobe*'
 }
 
-laureaPrimoLivelloCalAdd() {
-    if [ -z "$1"  ]; then
-       echo "cal-add-laurea-primo-livello 'MM/DD/YYYY HH:mm' "
-    else
-        gcalcli \
-            --duration 90 \
-            --calendar "Vittorio Zaccaria" \
-            --description "Laurea di primo livello" \
-            --title "Laurea di primo livello" \
-            --where "Sala conferenze - DEIB - Milano (MI)" \
-            --reminder "60" \
-            add \
-            --nocache \
-            --when "$1";
-    fi
-}
-
-sezioneCalAdd() {
-    if [ -z "$1" ]; then
-        echo "cal-add-sezione 'MM/DD/YYYY HH:mm' "
-    else
-        gcalcli \
-            --duration 90 \
-            --calendar "Vittorio Zaccaria" \
-            --description "Riunione di sezione" \
-            --title "Riunione di sezione" \
-            --where "Sala conferenze - DEIB - Milano (MI)" \
-            --reminder "60" \
-            add \
-            --nocache \
-            --when "$1";
-    fi
-}
-
-ccsMecCalAdd() {
-    if [ -z "$1" ]; then
-        echo "cal-add-sezione 'MM/DD/YYYY HH:mm' "
-    else
-        gcalcli \
-            --duration 90 \
-            --calendar "Vittorio Zaccaria" \
-            --description "CCS Meccanica" \
-            --title "CCS Meccanica" \
-            --where "Bovisa" \
-            --reminder "60" \
-            add \
-            --nocache \
-            --when "$1";
-    fi
-}
-
-consiglioDipartimentoCalAdd() {
-    if [ -z "$1" ]; then
-        echo "consiglio-dipartimento-cal-add 'MM/DD/YYYY HH:mm' "
-    else
-        gcalcli \
-            --duration 90 \
-            --calendar "Vittorio Zaccaria" \
-            --description "Consiglio di Dipartimento" \
-            --title "Consiglio di Dipartimento" \
-            --where "Sala conferenze - DEIB - Milano (MI)" \
-            --reminder "60" \
-            add \
-            --nocache \
-            --when "$1";
-    fi
-}
 
 manmd() {
     pandoc -s -f markdown+all_symbols_escapable -t man "$@" | sed 's/\[C\]/\[B\]/g' | groff -T utf8 -man | less 
@@ -183,7 +116,10 @@ fi
 fi
 }
 
-
+writeroom-edit-tex() {
+    /Applications/Emacs.app/Contents/MacOS/Emacs \
+        --eval="(progn (find-file \"$1\") (vz/writeroom-mode-enable))"
+}
 
 alias emacsclient=/usr/local/bin/emacsclient
 

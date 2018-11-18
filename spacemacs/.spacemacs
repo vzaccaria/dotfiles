@@ -224,7 +224,7 @@
                          solarized-dark
                          )
    dotspacemacs-default-font '("Hack"
-                               :size 14
+                               :size 18
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -341,6 +341,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
     (setq tramp-ssh-controlmaster-options
           "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no"))
    )
+  (setq debug-on-error t)
 
 
   )
@@ -467,7 +468,6 @@ you should place you code here."
 
 
     ;; This works when using emacs --daemon + emacsclient
-    (find-file "~/Dropbox/org/dashboard.org")
     ;; setup latex correlation
     (setq TeX-view-program-selection '((output-pdf "PDF Viewer")))
     (setq TeX-source-correlate-mode t)
@@ -507,11 +507,15 @@ you should place you code here."
   ;; https://www.gnu.org/software/emacs/manual/html_node/reftex/Theorem-and-Axiom.html
   (setq reftex-label-alist
         '(("corollary"   ?a "co:"  "~\\ref{%s}" nil ("corollary"   "cor.") -2)
-          ("theorem" ?h "th:" "~\\ref{%s}" t   ("theorem" "th.") -3)))
+          ("theorem" ?h "th:" "~\\ref{%s}" t   ("theorem" "th.") -3)
+          ("definition" ?h "def:" "~\\ref{%s}" t   ("definition" "def.") -3)
+          ))
 
   (setq reftex-plug-into-AUCTeX t)
   (setq reftex-ref-macro-prompt nil)
-  (addhook 'reftex-toc-mode-hook 'disable-evil-mode)
+  (setq reftex-toc-split-windows-horizontally t)
+  (setq reftex-toc-split-windows-fraction 0.2)
+  ;; (add-hook 'reftex-toc-mode-hook 'disable-evil-mode)
 
 
 
@@ -544,7 +548,7 @@ you should place you code here."
  '(cua-read-only-cursor-color "#859900")
  '(custom-safe-themes
    (quote
-    ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
+    ("2a739405edf418b8581dcd176aaf695d319f99e3488224a3c495cb0f9fd814e3" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
  '(disaster-cc "clang")
  '(disaster-objdump "gobjdump -d -M att -Sl --no-show-raw-insn")
  '(evil-want-Y-yank-to-eol t)
@@ -552,7 +556,7 @@ you should place you code here."
  '(fci-rule-color "#eee8d5" t)
  '(flycheck-python-pycompile-executable
    "/Applications/Blender.app/Contents/MacOS/../Resources/2.78/python/bin/python3.5m")
- '(helm-ag-base-command "ag --nocolor --nogroup --hidden" t)
+ '(helm-ag-base-command "ag --nocolor --nogroup --hidden")
  '(helm-ag-use-agignore t)
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors

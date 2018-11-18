@@ -10,8 +10,7 @@
     :init
     (evil-leader/set-key "Tw" 'writeroom-mode)
     :config
-    (setq writeroom-restore-window-config t)
-    (setq writeroom-width 100)
-    (set-default 'preview-scale-function 2)
+    (with-eval-after-load 'writeroom-mode
+      (progn (vz/writeroom-mode-on-enter))
     ))
-
+)

@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: toggle-state
+# key: toggle-state_
+# --
+(defun ${1:toggle-fun-name} ()
+"Toggle background color between seashell and honeydew.
+URL `http://ergoemacs.org/emacs/elisp_toggle_command.html'
+Version 2015-12-17"
+(interactive)
+;; use a property “state”. Value is t or nil
+(if (get '${1:toggle-fun-name} 'state)
+(progn
+(${2:command-off})
+(put '${1:toggle-fun-name} 'state nil))
+(progn
+(${3:command-on})
+(put '${1:toggle-fun-name} 'state t))))
