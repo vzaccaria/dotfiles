@@ -54,12 +54,12 @@ macro index A \
     "Mark all new as read"
 
 # for the lazy ones
-macro index,pager a "<sidebar-prev-new><sidebar-open>"
-macro index,pager z  "<sidebar-next-new><sidebar-open>"
+# macro index,pager a "<sidebar-prev-new><sidebar-open>"
+# macro index,pager z  "<sidebar-next-new><sidebar-open>"
 
-# bind index,pager a sidebar-prev
-# bind index,pager z sidebar-next
-# bind index,pager <tab> sidebar-open
+bind index,pager a sidebar-prev
+bind index,pager z sidebar-next
+bind index,pager <tab> sidebar-open
 
 bind index,pager c noop
 bind index,pager c mail
