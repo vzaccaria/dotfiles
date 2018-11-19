@@ -27,12 +27,16 @@
   (define-key writeroom-mode-map (kbd "C-M-=") #'writeroom-adjust-width)
   )
 
-
 (defun vz/writeroom-mode-enable ()
+  (interactive)
+  (writeroom-mode t)
+  (spacemacs/toggle-line-numbers-off)
+  )
+
+(defun vz/writeroom-mode-prepare ()
   (interactive)
   (load-theme 'whiteboard)
   (set-face-background 'hl-line "#dddddd")
-  (writeroom-mode t)
   )
 
 

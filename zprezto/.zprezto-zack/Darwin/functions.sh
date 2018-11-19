@@ -118,7 +118,7 @@ fi
 
 writeroom-edit-tex() {
     /Applications/Emacs.app/Contents/MacOS/Emacs \
-        --eval="(progn (find-file \"$1\") (vz/writeroom-mode-enable))"
+        --eval="(progn (find-file \"$1\") (vz/writeroom-mode-prepare))"
 }
 
 alias emacsclient=/usr/local/bin/emacsclient
