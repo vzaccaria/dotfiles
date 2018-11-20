@@ -1,0 +1,11 @@
+name: draw-tcomp-2019
+root: /Users/zaccaria/development/github/org-writing/tcomp2019-diagrams
+
+windows:
+  - name:
+      layout: main-horizontal
+      panes:
+        - vi src/Main.hs
+        - make test.pdf && open test.pdf && make watch
+        
+        
