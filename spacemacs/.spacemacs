@@ -443,6 +443,7 @@ you should place you code here."
       ("avra'" "avrà")
       ("saro'" "sarò")
       ("potro'" "potrò")
+      ("pero'" "però")
       ("avro'" "avrò")
       ("piu'" "più")
       ("lunedi" "lunedì")
