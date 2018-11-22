@@ -428,11 +428,11 @@ you should place you code here."
 
       ;; italian
 
-      ("perche'" "perché")
-      ("poiche'" "poiché")
+      ("perche" "perché")
+      ("poiche" "poiché")
       ("e'" "è")
-      ("cioe'" "cioè")
-      ("puo'" "può")
+      ("cioe" "cioè")
+      ("puo" "può")
       ("nonappena" "non appena")
       ("c'e'" "c'è")
       ("qual'e'" "qual è")
