@@ -447,6 +447,7 @@ you should place you code here."
       ("avro'" "avrò")
       ("piu'" "più")
       ("lunedi" "lunedì")
+      ("cosi" "così")
       ("martedi" "martedì")
       ("mercoledi" "mercoledì")
       ("giovedi" "giovedì")
@@ -557,7 +558,7 @@ you should place you code here."
  '(fci-rule-color "#eee8d5" t)
  '(flycheck-python-pycompile-executable
    "/Applications/Blender.app/Contents/MacOS/../Resources/2.78/python/bin/python3.5m")
- '(helm-ag-base-command "ag --nocolor --nogroup --hidden")
+ '(helm-ag-base-command "ag --nocolor --nogroup --hidden" t)
  '(helm-ag-use-agignore t)
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
@@ -621,7 +622,10 @@ you should place you code here."
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(prettier-target-mode "js2-mode")
- '(safe-local-variable-values (quote ((TeX-command-extra-options . "-shell-escape"))))
+ '(safe-local-variable-values
+   (quote
+    ((reftex-default-bibliography "../biblio.bib")
+     (TeX-command-extra-options . "-shell-escape"))))
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
  '(vc-annotate-background nil)
  '(vc-annotate-background-mode nil)
@@ -667,4 +671,4 @@ you should place you code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:foreground "#DCDCCC" :background "#3F3F3F")))))

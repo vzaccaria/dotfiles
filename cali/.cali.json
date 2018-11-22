@@ -154,6 +154,12 @@
     "where": "",
     "reminder": "2d"
   },
+  "pranzo": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Pranzo con <%= parameter %>",
+    "where": "",
+    "reminder": "1d"
+  },
   "review": {
     "calendar": "Vittorio Zaccaria",
     "title": "Revisione articolo su <%= parameter %>",
