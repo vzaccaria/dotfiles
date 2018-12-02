@@ -20,6 +20,9 @@
 
 
 
+
+
+
 # color setup
 
 color normal color240 color15 
@@ -35,11 +38,11 @@ color index brightcolor124 color15  "~F"    # flagged
 
 color index brightcolor161 color15  "~f\"Tenconi\""
 
-color index color75 color15  "~f\"(tanca|matera)\""
-color index color25 color15  "~f\"(Garzotto|Gelsomini)\""
-color index color25 color15  "~f\"(Ajovalasit|Ciancia)\""
+color index color4 color15  "~f\"(tanca|matera)\""
+color index color4 color15  "~f\"(Garzotto|Gelsomini)\""
+color index color4 color15  "~f\"(Ajovalasit|Ciancia)\""
 color index color4 color15  "~f\"(Cannici|ingconti|conti|Di Nitto|Trovo'|Masseroli|Santambrogio|Cassano)\""
-color index color70 color15  "~f\"(Maria Chiara Molteni|Bertoni|Melzani)\""
+color index color22 color15  "~f\"(Maria Chiara Molteni|Bertoni|Melzani)\""
 
 color index color0 color15  "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta|(c|C)ommissione|(m|M)issione)\""
 
@@ -51,6 +54,8 @@ color index brightcolor202 color15  "~s\"(bonifico|ricevuta|pagamento|verify)\""
 color index brightcolor202 color15  "~s\"(access token|password)\""  
 color index brightcolor202 color15  "~f\"(transactions)\""  
 color index brightcolor136 color15  "~s\"(ordine Amazon|(E|e)stratto conto)\""  
+color index brightcolor75 color15  "~s\"(prenotazione|ordine|message from)\""  
+color index brightcolor70 color15  "~s\"(confermato|confirmed|conferma)\""  
 
 color index brightcolor19 color15  "~N"    # new messages  
 

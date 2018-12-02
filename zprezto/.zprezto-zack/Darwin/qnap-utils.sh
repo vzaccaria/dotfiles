@@ -73,6 +73,7 @@ qnap-mount-multimedia() {
    echo "Creating /Volumes/Multimedia. Remember to chmod 777 /Volumes."
    mkdir -p /Volumes/Multimedia
    echo "Mounting /Volumes/Multimedia from QNAP, we'll need your QNAP password"
+   echo "Remember that QNAP must have both SSH and SFTP connection enabled"
    sshfs -p 21101 admin@192.168.1.120:/share/CACHEDEV1_DATA/Multimedia /Volumes/Multimedia -ovolname=Multimedia
 }
 

@@ -17,6 +17,9 @@ define @red        bf0020
 define @orange     orangered
 define @blue       "chroma('139cfe').darken(3).saturate(3).hex()"
 define @green      "chroma('aad28c').darken(0.5).saturate(2).hex()"
+define @green0     "chroma('aad28c').darken(1).saturate(2).hex()"
+define @green1     "chroma('aad28c').darken(2).saturate(2).hex()"
+define @green2     "chroma('aad28c').darken(3).saturate(2).hex()"
 define @violet     c51162
 define @yellow     "chroma('ba9939')"
 
@@ -35,11 +38,11 @@ color index         bright-@red     @background "~F"    # flagged
 
 color index         bright-@violet  @background "~f\"Tenconi\""
 
-color index         @blue0         @background "~f\"(tanca|matera)\""
-color index         @blue1         @background "~f\"(Garzotto|Gelsomini)\""
-color index         @blue2         @background "~f\"(Ajovalasit|Ciancia)\""
+color index         @blue3         @background "~f\"(tanca|matera)\""
+color index         @blue3         @background "~f\"(Garzotto|Gelsomini)\""
+color index         @blue3         @background "~f\"(Ajovalasit|Ciancia)\""
 color index         @blue3         @background "~f\"(Cannici|ingconti|conti|Di Nitto|Trovo'|Masseroli|Santambrogio|Cassano)\""
-color index         @green         @background "~f\"(Maria Chiara Molteni|Bertoni|Melzani)\""
+color index         @green2         @background "~f\"(Maria Chiara Molteni|Bertoni|Melzani)\""
 
 color index         @dark           @background "~s\"((s|S)ezione|(l|L)aure(a|e)|ccs|CCS|CONVOCAZIONE|Convocazione|Giunta|(c|C)ommissione|(m|M)issione)\""
 
@@ -51,6 +54,8 @@ color index         bright-@orange  @background "~s\"(bonifico|ricevuta|pagament
 color index         bright-@orange  @background "~s\"(access token|password)\""  
 color index         bright-@orange  @background "~f\"(transactions)\""  
 color index         bright-@yellow  @background "~s\"(ordine Amazon|(E|e)stratto conto)\""  
+color index         bright-@blue0   @background "~s\"(prenotazione|ordine|message from)\""  
+color index         bright-@green   @background "~s\"(confermato|confirmed|conferma)\""  
 
 color index         bright-@blue    @background "~N"    # new messages  
 
