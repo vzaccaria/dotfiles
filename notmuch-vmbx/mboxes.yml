@@ -16,11 +16,6 @@ allmail:
   all:
     - tag:inbox
 
-inbox:
-  all:
-    - tag:inbox
-    - tag:unread
-
 poli/ricerca:
   any:
     - from:bertoni

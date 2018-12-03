@@ -2,7 +2,7 @@
 # for a bunch of regular expressions
 
 # color definitions
-define @background  "chroma('black').brighten(6).hex()"
+define @background  "chroma('white').hex()"
 define @ulight      "chroma('black').brighten(4).hex()"
 define @light       "chroma('black').brighten(3.5).hex()"
 define @medium      "chroma('black').brighten(2).hex()"

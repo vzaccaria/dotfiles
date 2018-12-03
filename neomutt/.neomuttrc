@@ -59,6 +59,9 @@ set sidebar_indent_string="  "          # Indent with two spaces
 # remove those silly <+> 
 set markers=no
 
+# show index even in the pager
+set pager_index_lines=8
+
 # wrap long lines
 set smart_wrap=yes
 set reflow_text=yes

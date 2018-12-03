@@ -31955,15 +31955,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>641 184 953 281 0 0 1920 1178 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>539 582 597 401 0 0 1680 1028 </string>
+	<string>539 584 609 401 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>731 628 796 486 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>850 88 802 920 0 0 1680 1028 </string>
+	<string>20 84 1132 924 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>20 84 1638 924 0 0 1680 1028 </string>
+	<string>20 563 1639 445 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>20 84 1638 924 0 0 1680 1028 </string>
+	<string>20 97 1630 911 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>1182 79 478 929 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
@@ -34749,6 +34749,10 @@
 	<false/>
 	<key>iTerm Version</key>
 	<string>3.2.0</string>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
 	<key>kCommandHistoryHasEverBeenUsed</key>
 	<true/>
 </dict>
