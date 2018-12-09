@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: eqs_cases
+# key: eqs_cases_
+# --
+f(n,z)
+\begin{cases}
+1   & n=0\\\\
+n*z & \textrm{otherwise}\\\\
+\end{cases}
+

@@ -421,9 +421,12 @@ you should place you code here."
       ("bt" "between" )
       ("math" "mathematics" )
       ;; unicode
-      ("md" "—" )
+      ("—" "—" )
       ;; 
       ("bacio" "😘")
+      ("eheh" "😁")
+      ("hihi "😊")
+      ("uhm" "🤔")
 
 
       ;; italian
@@ -439,6 +442,9 @@ you should place you code here."
       ("qual'era" "qual era")
       ("gia'" "già")
       ("sara'" "sarà")
+      ("realta'" "realtà")
+      ("disponibilita'" "disponibilità")
+      ("attivita'" "attività")
       ("potra'" "potrà")
       ("avra'" "avrà")
       ("saro'" "sarò")

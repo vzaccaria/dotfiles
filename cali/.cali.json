@@ -100,6 +100,12 @@
     "where": "Online",
     "reminder": "1w"
   },
+  "pagamento": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Pagare <%= parameter %>",
+    "where": "Online",
+    "reminder": "1w"
+  },
   "call": {
     "calendar": "Vittorio Zaccaria",
     "title": "Call with <%= parameter %>",

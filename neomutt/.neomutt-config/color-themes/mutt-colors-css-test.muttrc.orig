@@ -55,7 +55,7 @@ color index         bright-@orange  @background "~s\"(access token|password)\""
 color index         bright-@orange  @background "~f\"(transactions)\""  
 color index         bright-@yellow  @background "~s\"(ordine Amazon|(E|e)stratto conto)\""  
 color index         bright-@blue0   @background "~s\"(prenotazione|ordine|message from)\""  
-color index         bright-@green   @background "~s\"(confermato|confirmed|conferma)\""  
+color index         bright-@green   @background "~s\"(confermato|confirmed|conferma|approvata|approved)\""  
 
 color index         bright-@blue    @background "~N"    # new messages  
 
