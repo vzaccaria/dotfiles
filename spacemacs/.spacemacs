@@ -425,7 +425,6 @@ you should place you code here."
       ;; 
       ("bacio" "😘")
       ("eheh" "😁")
-      ("hihi "😊")
       ("uhm" "🤔")
 
 
@@ -440,8 +439,11 @@ you should place you code here."
       ("c'e'" "c'è")
       ("qual'e'" "qual è")
       ("qual'era" "qual era")
+      ("un'altro" "un altro")
       ("gia'" "già")
       ("sara'" "sarà")
+      ("verra'" "verrà")
+      ("avra'" "avrà")
       ("realta'" "realtà")
       ("disponibilita'" "disponibilità")
       ("attivita'" "attività")

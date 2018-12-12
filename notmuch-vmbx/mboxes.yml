@@ -22,6 +22,11 @@ poli/ricerca:
     - from:melzani
     - from:molteni
 
+poli/ricerca/itn:
+  any:
+    - from:olmos
+    - subject:ITN
+
 poli/corsi/tcps:
   any:
     - (final NEAR thesis NEAR studio)
