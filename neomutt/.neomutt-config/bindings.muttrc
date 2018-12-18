@@ -7,6 +7,7 @@ bind index R group-reply
 bind index <space> collapse-thread
 
 macro index ,n "<limit>~N<enter>"
+macro index ,f "<limit>~F<enter>"
 macro index ,a "<limit>all<enter>"
 
 # s i d e b a r

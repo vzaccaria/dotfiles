@@ -453,6 +453,7 @@ you should place you code here."
       ("potro'" "potrò")
       ("pero'" "però")
       ("avro'" "avrò")
+      ("mandero'" "manderò")
       ("piu'" "più")
       ("lunedi" "lunedì")
       ("cosi" "così")

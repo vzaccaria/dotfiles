@@ -16,16 +16,10 @@ allmail:
   all:
     - tag:inbox
 
-poli/ricerca:
-  any:
-    - from:bertoni
-    - from:melzani
-    - from:molteni
-
 poli/ricerca/itn:
   any:
-    - from:olmos
-    - subject:ITN
+    - olmos
+    - ITN
 
 poli/corsi/tcps:
   any:
@@ -33,10 +27,6 @@ poli/corsi/tcps:
     - ajovalasit
     - ciancia
 
-
-poli/corsi/tcps/ho:
-  any:
-    - attachment:handson*.*
 
 poli/corsi/infob:
   any:
@@ -51,11 +41,6 @@ poli/corsi/infob/lab:
     - gianenrico.conti@mail.polimi.it
     - marco.cannici@polimi.i
     - ingconti@ingconti.com
-
-poli/institutional:
-  all:
-    - didattica-deib OR commissione OR laurea OR dipartimento OR CCS
-    - NOT (lista NEAR pd)
 
 poli/tesi:
   any:
