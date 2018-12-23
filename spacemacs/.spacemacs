@@ -405,12 +405,16 @@ you should place you code here."
       ("ui" "user interface" )
       ("uns" "understand" )
       ("ur" "you are" )
+      ("youre" "you are" )
       ("btw" "by the way" )
 
       ("cnt" "can't" )
       ("ddnt" "didn't" )
       ("dnt" "don't" )
       ("isnt" "isn't")
+      ("shouldnt" "shouldn't")
+      ("doesnt" "doesn't")
+      ("couldnt" "couldn't")
 
       ;; english word abbrev
       ("ann" "announcement" )
