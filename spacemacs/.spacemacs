@@ -409,8 +409,11 @@ you should place you code here."
       ("btw" "by the way" )
 
       ("cnt" "can't" )
+      ("cant" "can't" )
       ("ddnt" "didn't" )
+      ("didnt" "didn't" )
       ("dnt" "don't" )
+      ("dont" "don't" )
       ("isnt" "isn't")
       ("shouldnt" "shouldn't")
       ("doesnt" "doesn't")

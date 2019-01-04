@@ -6,6 +6,11 @@ bind index p recall-message
 bind index R group-reply
 bind index <space> collapse-thread
 
+bind index / search
+bind index ? search-reverse
+bind index n search-next
+bind index N search-opposite
+
 macro index ,n "<limit>~N<enter>"
 macro index ,f "<limit>~F<enter>"
 macro index ,a "<limit>all<enter>"
