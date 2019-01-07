@@ -148,6 +148,14 @@
     "where": "?",
     "reminder": "10h"
   },
+
+  "prenotare": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Prenotare <%= parameter %>",
+    "where": "?",
+    "reminder": "10h"
+  },
+
   "riunione": {
     "calendar": "Vittorio Zaccaria",
     "title": "Riunione con <%= parameter %>",

@@ -1,0 +1,9 @@
+root: /Users/zaccaria/development/github/org-institutional/anki-cards
+name: dev-pandoc-anki
+
+windows:
+  - dev-anki-cards:
+      layout: main-horizontal
+      panes:
+        - vi Algebra.org
+        - cd /Users/zaccaria/development/github/org-haskell/pandoc-anki && vi /Users/zaccaria/development/github/org-haskell/pandoc-anki/src/Backend/CrowdAnki/NoteModel.hs
