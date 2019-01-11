@@ -87,4 +87,6 @@ alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
 alias vz-clipboard-md-to-html='pbpaste | pandoc -f markdown -t html | pbcopy'
 
+alias vz-ocr-my-pdf="ocrmypdf"
+
 alias chromereload="osascript -e 'tell application \"Google Chrome\" to reload active tab of window 1'"

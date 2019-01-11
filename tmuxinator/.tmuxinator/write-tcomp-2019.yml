@@ -5,6 +5,6 @@ windows:
   - name:
       layout: main-horizontal
       panes:
-        - vi bare_jrnl.tex
+        - writeroom-edit-tex main.tex
         
         

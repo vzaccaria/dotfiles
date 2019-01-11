@@ -12,8 +12,6 @@
   (setq org-agenda-custom-commands '(("w" "My Agenda"
                                       ((agenda "")
                                        (tags "TODO=\"TODAY\"")
-                                       (tags "TODO=\"IMPORTANT\"")
-                                       (tags "TODO=\"TOREAD\"")
                                        (tags "DEADLINE={.}-TODO=\"DONE\"")
                                        (tags "TODO=\"TODO\"&-TODO=\"IMPORTANT\"")
                                        ))))
@@ -25,7 +23,7 @@
         (find-lisp-find-files "~/Dropbox/org" "_ag\.org$"))
 
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "TODAY(d)" "IMPORTANT(i)" "TOREAD(r)" "|" "DONE")
+        '((sequence "TODO(t)" "TODAY(d)" "|" "DONE")
           (sequence "TOREIMBURSE" "|" "REIMBURSED"  )))
 
   (add-hook 'org-mode-hook (lambda ()

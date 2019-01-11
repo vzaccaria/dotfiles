@@ -9,4 +9,4 @@ windows:
       layout: main-horizontal
       panes:
         - cd . 
-        - TARGET=19.01.a make watch-copy
+        - TARGET=19.01.b make watch-copy
