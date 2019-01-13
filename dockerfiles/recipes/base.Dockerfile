@@ -11,7 +11,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 RUN apt-get update && apt-get install -y curl
-RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
+RUN curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
 RUN bash ./nodesource_setup.sh
 
 RUN apt-get install -y \
@@ -54,7 +54,7 @@ RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 WORKDIR /root/dotfiles
 
 RUN git clone https://github.com/syl20bnr/spacemacs /root/.emacs.d
-RUN cd /root/.emacs.d && git checkout tags/v0.200.11
+RUN cd /root/.emacs.d && git checkout tags/v0.200.13
 
 WORKDIR /root/dotfiles/zprezto
 RUN git submodule update --init
@@ -66,17 +66,14 @@ RUN stow zprezto linux-tmux spacemacs
 
 WORKDIR /root
 
-ADD https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.zip /tmp/scp.zip
+# ADD https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.zip /tmp/scp.zip
 ADD http://www.ffonts.net/NanumGothic.font.zip /tmp/ng.zip
 
 RUN mkdir -p /usr/local/share/fonts               && \
-    unzip /tmp/scp.zip -d /usr/local/share/fonts  && \
     unzip /tmp/ng.zip -d /usr/local/share/fonts   && \
     chown ${uid}:${gid} -R /usr/local/share/fonts && \
     chmod 777 -R /usr/local/share/fonts           && \
     fc-cache -fv                                  && \
-    emacs --insecure -nw -batch -u "${UNAME}" -q -kill && \
-    emacs --insecure -nw -batch -u "${UNAME}" -q -kill && \
     npm install -g tern js-beautify && \
     git config --global user.email "vittorio.zaccaria@gmail.com" && \
     git config --global user.name "Vittorio Zaccaria"
@@ -87,4 +84,34 @@ RUN ./autogen.sh
 RUN ./configure
 RUN make && make install
 
+RUN echo "Rebuild on Jan 30, 2019, v0"
+RUN emacs --insecure -nw -batch -u "${UNAME}" -q -kill; exit 0
+RUN emacs --insecure -nw -batch -u "${UNAME}" -q -kill; exit 0
+
+RUN apt-get update && \
+  apt-get install -y openssh-server \
+  x11-apps
+
+RUN echo "Rebuild on Jan 30, 2019, v1"
+RUN mkdir -p /var/run/sshd
+RUN echo 'root:root' | chpasswd
+RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
+RUN sed -ri 's/^#AllowTcpForwarding\s+.*/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
+RUN sed -ri 's/^#X11Forwarding\s+.*/X11Forwarding yes/g' /etc/ssh/sshd_config
+RUN sed -ri 's/^#X11UseLocalhost\s+.*/X11UseLocalhost no/g' /etc/ssh/sshd_config
+
+
+RUN  git clone https://github.com/powerline/fonts.git /root/fonts --depth=1
+WORKDIR /root/fonts
+RUN  ./install.sh
 WORKDIR /root
+
+RUN apt-get install -y rxvt-unicode
+WORKDIR /root/dotfiles
+RUN stow -D linux-tmux
+RUN stow osx-tmux
+
+RUN git clone https://github.com/vzaccaria/vz-clitools.git /root/clitools
+WORKDIR /root/clitools
+RUN npm link .
