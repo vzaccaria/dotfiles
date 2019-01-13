@@ -30,6 +30,9 @@ dock-ssh-sysadmin() {
 }
 
 
+dock-remove-all-containers() {
+    docker kill $(docker ps -q)
+}
 
 dock-remove-exited-containers() {
    docker rm $(docker ps -aq)

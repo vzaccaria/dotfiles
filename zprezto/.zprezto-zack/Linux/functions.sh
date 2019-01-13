@@ -14,6 +14,10 @@ startemacs() {
     /usr/bin/emacs --daemon 2>&1 >/dev/null | spacemacsStart
 }
 
+startemacs-safe() {
+    /usr/bin/emacs --daemon 2>&1 >/dev/null
+}
+
 stopemacs() {
     /usr/bin/emacsclient -e "(kill-emacs)"
 }

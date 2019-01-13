@@ -5,14 +5,21 @@
 First, open X11 locally with
 
 ``` shell
-devenv-openx11
+devenv-ssh-start
+devenv-ssh-openx11
 ```
 
-then, paste the output of this cmmand:
+then from anywhere:
 
 ``` shell
-echo "export DISPLAY=`ip-show-all-local | grep 192.168.1`:0" | pbcopy
+ssh -X root@localhost -p 2222
 ```
+
+once connected
+
+    export DISPLAY=192.168.1.X:0
+    
+where X is can be selected with the command `ip-show-all-local`
 
 You can then open any remote GUI program locally.
 
@@ -20,33 +27,7 @@ You can then open any remote GUI program locally.
 
 Run the following command:
 
-    devenv-gui 
+    devenv-vnc-start
 
 It launches the container and runs vnc with `docker exec`. When setup is
-finished then open vnc://192.168.1.120:5901
-
-## Using Docker and VNC / Running
-
-Open the following address: vnc://192.168.1.120:5901
-
-## Running a Docker container with a shared dir
-
-You can run a container by sharing a common qnap directory (1) both
-locally ($dir) (2) and remotely (3):
-
-      +Local---------+   +Qnap-----------------+      
-      |              |   |       +Container--+ |      
-    +->$dir(2)       |   |       |           | |      
-    | |              |   |       |/Data ----+| |(3)   
-    | +--------------+   |       +----------++ |      
-    |                    |                  |  |      
-    |                    |(1)               |  |      
-    +--------------------+./share/.../data<-+  |      
-                         +---------------------+
-
-The following command are provided:
-
-``` shell
-dockshare-mount $dir ## mounts on $dir
-dockshare-run $image ## runs the container with /Data mounted
-```
+finished then open vnc://localhost:5901 or `devenv-vnc-open`

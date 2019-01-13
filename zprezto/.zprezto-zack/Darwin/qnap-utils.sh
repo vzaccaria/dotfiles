@@ -89,7 +89,7 @@ itunesenv-mount-qnap() {
     open /Applications/iTunes.app
 }
 
-devenv-openx11() {
+devenv-ssh-openx11() {
     devenv-help
     open -a "XQuartz"
     socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\"
@@ -99,40 +99,28 @@ devenv-help() {
     manmd ~/dotfiles/docs/devenv.md
 }
 
-devenv-gui-connect-to-running-instance() {
-    echo "Click here: vnc://192.168.1.120:5901"
-}
-
-
-devenv-gui-start-with-tag() {
-    tag=$1
-    img=`docker run -dt \
-           -p 5901:5901 \
-	         -v /etc/localtime:/etc/localtime:ro                     \
-	         -v /share/CACHEDEV1_DATA/homes/admin/projects:/projects \
-	         -e PATH=/root/.local/bin:/opt/bin:/opt/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin \
-	         devenv-gui-${tag}-latest`
-    docker exec -d "$img" /root/startx
-    echo "Click here: vnc://192.168.1.120:5901"
-}
-
-devenv-gui-start-with-tag-local() {
-    tag=$1
+devenv-vnc-start() {
     img=`docker run -dt \
            -p 5901:5901 \
 	         -e PATH=/root/.local/bin:/opt/bin:/opt/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin \
-           -v ~/development/github:/development/github \
-	         devenv-gui-${tag}-latest`
+           -v /Users/zaccaria/Dropbox/org:/root/Dropbox/org \
+           --privileged \
+	         devenv-vnc-latest`
     docker exec -d "$img" /root/startx
     echo "Click here: vnc://127.0.0.1:5901"
 }
 
-de-local() {
-    open "vnc://127.0.0.1:5901"
+devenv-ssh-start() {
+    echo "Connect with another terminal with: ssh -X root@localhost -p 2222"
+    docker run \
+      -p 2222:22 \
+	    -e PATH=/root/.local/bin:/opt/bin:/opt/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin \
+      -v /Users/zaccaria/Dropbox/org:/root/Dropbox/org \
+      -dt devenv-ssh-latest
 }
 
-de() {
-    open "vnc://192.168.1.120:5901"
+devenv-vnc-open() {
+    open "vnc://127.0.0.1:5901"
 }
 
 writenv-start-languagetool() {
