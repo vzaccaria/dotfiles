@@ -21,17 +21,12 @@
                                                           dotspacemacs/layers/langs-osx
                                                           dotspacemacs/layers/extra
                                                           dotspacemacs/layers/osx)))
-        (vz/is-linux-station
+        (t
          (setq-default dotspacemacs-configuration-layers (append
                                                           dotspacemacs/layers/common
                                                           dotspacemacs/layers/langs-linux-station
                                                           dotspacemacs/layers/extra
                                                           )))
-
-        (t ;; when none of the matches above is true
-         (setq-default dotspacemacs-configuration-layers (append
-                                                          dotspacemacs/layers/langs-linux-generic
-                                                          dotspacemacs/layers/common)))
         )
   )
 
