@@ -120,8 +120,10 @@ WORKDIR /root/clitools
 RUN npm link .
 
 WORKDIR /root
-# Fix for spacemacs org-mode. This will give an error on org-projectile only at the first start
-RUN rm -rf .emacs.d/elpa/org-*^
+
+# Fix for spacemacs org-mode. It will be reinstalled at next startup 
+# Unfortunately, this will give an error on org-projectile (only at the first start)
+RUN rm -rf /root/.emacs.d/elpa/org-*
 RUN \
     apt-get update && \
     apt-get install -y \
@@ -183,5 +185,7 @@ RUN chmod +x .vnc/xstartup
 RUN apt-get install -y i3status
 
 RUN sed -ri 's/Mod4/Mod1/' /root/.i3/config
+
+RUN apt-get install zathura texlive-full -y
 
 

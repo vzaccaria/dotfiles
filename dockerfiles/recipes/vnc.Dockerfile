@@ -60,4 +60,6 @@ RUN apt-get install -y i3status
 
 RUN sed -ri 's/Mod4/Mod1/' /root/.i3/config
 
+RUN apt-get install zathura texlive-full -y
+
 
