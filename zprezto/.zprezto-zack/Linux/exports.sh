@@ -5,3 +5,4 @@ export DEFAULT_CHARSET=UTF-8
 export EDITOR=emacsclient
 export GIT_EDITOR=emacsclient
 export SHELL=/bin/zsh
+export TERM=xterm-256color

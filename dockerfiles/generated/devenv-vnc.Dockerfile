@@ -52,6 +52,7 @@ RUN apt-get install -y hub
 RUN hub config --global hub.protocol https
 
 
+RUN echo "Rebuild on Jan 16, 2019, v0"
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 WORKDIR /root/dotfiles
 
@@ -117,6 +118,9 @@ RUN stow osx-tmux
 RUN git clone https://github.com/vzaccaria/vz-clitools.git /root/clitools
 WORKDIR /root/clitools
 RUN npm link .
+
+# Fix for spacemacs org-mode. This will give an error on org-projectile only at the first start
+RUN rm -rf .emacs.d/elpa/org-*^
 RUN \
     apt-get update && \
     apt-get install -y \
@@ -178,4 +182,5 @@ RUN chmod +x .vnc/xstartup
 RUN apt-get install -y i3status
 
 RUN sed -ri 's/Mod4/Mod1/' /root/.i3/config
+
 
