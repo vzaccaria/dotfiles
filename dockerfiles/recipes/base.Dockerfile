@@ -117,5 +117,6 @@ RUN git clone https://github.com/vzaccaria/vz-clitools.git /root/clitools
 WORKDIR /root/clitools
 RUN npm link .
 
+WORKDIR /root
 # Fix for spacemacs org-mode. This will give an error on org-projectile only at the first start
 RUN rm -rf .emacs.d/elpa/org-*^
