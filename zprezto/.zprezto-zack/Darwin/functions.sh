@@ -122,17 +122,14 @@ writeroom-edit-tex() {
 }
 
 alias emacsclient=/usr/local/bin/emacsclient
+alias vi=nvim
 
-vi() {
+em() {
     emacsclient -nw "$@" -c
 }
 
 dashboard() {
-    vi ~/Dropbox/org/dashboard.org
-}
-
-gvim() {
-    /Applications/Emacs.app/Contents/MacOS/bin/emacsclient "$@" -c
+    em ~/Dropbox/org/dashboard.org
 }
 
 startemacs() {

@@ -12,7 +12,7 @@
   (setq org-agenda-custom-commands '(("w" "My Agenda"
                                       ((agenda "")
                                        (tags "TODO=\"TODAY\"")
-                                       (tags "DEADLINE={.}-TODO=\"DONE\"")
+                                       (tags "DEADLINE<=\"<+1w>\"-TODO=\"DONE\"")
                                        (tags "TODO=\"TODO\"&-TODO=\"IMPORTANT\"")
                                        ))))
 

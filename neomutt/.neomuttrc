@@ -28,7 +28,7 @@ set sendmail = "/bin/sh $HOME/dotfiles/neomutt/sendmail.sh"
 set sendmail_wait = -1
 set wait_key = yes
 set fast_reply = yes
-set attribution = "\nOn %d, %n wrote: \n"
+set attribution = "\n\nOn %d, %n wrote: \n"
 
 unset help
 
@@ -42,7 +42,7 @@ set virtual_spoolfile=yes
 # generate with: mutt-vmbox.js -f ~/dotfiles/notmuch-vmbx/mboxes.yml > ~/.neomutt-mboxes
 source ./.neomutt-mboxes
 
-set editor =     "emacsclient -nw -c"
+set editor =     "nvim"
 
 set charset = 'utf-8'
 set assumed_charset = 'utf-8'
