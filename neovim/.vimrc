@@ -1,4 +1,4 @@
-let g:mapleader = "\<Space>"
+let g:mapleader = ","
 
 call plug#begin() 
 Plug 'junegunn/fzf'
@@ -59,10 +59,13 @@ let g:fzf_action = {
 
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
+xnoremap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+nnoremap ga <Plug>(EasyAlign)
+
+" ,ac to realign a paragraph by commas
+vnoremap <silent> <leader>ac :EasyAlign *,<cr>
 
 "search for visually selected text
 vnoremap // y/<C-R>"<CR>
