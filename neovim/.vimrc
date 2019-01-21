@@ -8,11 +8,24 @@ Plug 'vim-airline/vim-airline'
 Plug 'jceb/vim-orgmode'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'lervag/vimtex'
+
+" + to enlarge the visual selection
+" _ to shrink it
 Plug 'terryma/vim-expand-region'
+
+" ysiw] put square parentheses around iw text object
+" cs"'  change surrounding quotes from " to '
+" ds{   delete surrounding {
+" S"    in visual mode, put quotes around selected text
 Plug 'tpope/vim-surround'
 Plug 'stephpy/vim-yaml'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-repeat'
+
+" gc    visual mode to comment out the selection, and 
+" gcc   comment out a line (takes a count), 
+" gc    comment out the target of a motion (for example, gcap to comment out a paragraph), 
+" gc    operator pending mode to target a comment.
 Plug 'tpope/vim-commentary'
 call plug#end()
 
@@ -59,13 +72,15 @@ let g:fzf_action = {
 
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
+vnoremap <Enter> <Plug>(EasyAlign)
+
 xnoremap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nnoremap ga <Plug>(EasyAlign)
 
 " ,ac to realign a paragraph by commas
-vnoremap <silent> <leader>ac :EasyAlign *,<cr>
+nnoremap <leader>ac vip:EasyAlign *,<cr>
 
 "search for visually selected text
 vnoremap // y/<C-R>"<CR>
@@ -76,7 +91,7 @@ cnoremap § <C-c>
 inoremap § <Esc>
 inoremap jk <Esc>
 
-
+" When editing mails from neomutt use markdown
 augroup filetypedetect
     au BufRead,BufNewFile neomutt-* set filetype=markdown
 augroup END
@@ -91,8 +106,9 @@ let g:ale_fixers = {
 \}
 
 let g:ale_javascript_prettier_options = '--prose-wrap always'
-
 let g:ale_fix_on_save = 1
+
+nnoremap <silent> <leader>m :make<cr>
 
 set background=dark
 colorscheme palenight
@@ -100,7 +116,18 @@ set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey30
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
-let g:vimtex_compiler_progname = 'nvr'
+"Remember to open the tex file with nvr
+if has("nvim")
+  let g:vimtex_latexmk_progname = 'nvr'
+  let g:vimtex_compiler_progname = 'nvr'
+endif
+
+autocmd FileType tex nnoremap <silent> <leader>v :VimtexView<CR>
+autocmd FileType tex nnoremap <silent> <leader>b :VimtexCompile<CR>
+
+
+let g:vimtex_view_method = 'skim'
+
 
 " Relative line numbers 
 set rnu
