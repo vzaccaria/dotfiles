@@ -1,4 +1,5 @@
 path=(\
+    /home/admin/.nvm/versions/node/v10.7.0/bin \
     /root/.local/bin \
     /opt/bin \
     /opt/sbin \

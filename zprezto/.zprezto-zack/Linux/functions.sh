@@ -2,11 +2,11 @@
 
 if [ -e /home/admin/.nix-profile/etc/profile.d/nix.sh ]; then . /home/admin/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
-vi() {
+em() {
     /usr/bin/emacsclient -nw "$@" -c
 }
 
-gvim() {
+gem() {
     /usr/bin/emacsclient "$@" -c
 }
 
