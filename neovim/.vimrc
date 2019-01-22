@@ -82,6 +82,9 @@ nnoremap ga <Plug>(EasyAlign)
 " ,ac to realign a paragraph by commas
 nnoremap <leader>ac vip:EasyAlign *,<cr>
 
+" ,ae to realign by ampersands
+nnoremap <leader>ae vip:EasyAlign *&<cr>
+
 "search for visually selected text
 vnoremap // y/<C-R>"<CR>
 
@@ -130,6 +133,9 @@ if has('mac')
 	let g:vimtex_view_method = 'skim'
 elseif has('unix')
 	let g:vimtex_view_method = 'zathura'
+	let g:vimtex_fold_manual = 1
+	let g:tex_fast = "bMpr"
+	let g:tex_conceal = ""
 endif
 
 
