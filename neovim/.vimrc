@@ -126,7 +126,13 @@ autocmd FileType tex nnoremap <silent> <leader>v :VimtexView<CR>
 autocmd FileType tex nnoremap <silent> <leader>b :VimtexCompile<CR>
 
 
-let g:vimtex_view_method = 'skim'
+if has('mac')
+	let g:vimtex_view_method = 'skim'
+elseif has('unix')
+	let g:vimtex_view_method = 'zathura'
+endif
+
+
 
 
 " Relative line numbers 
