@@ -52,7 +52,7 @@ nnoremap <silent> <M-x> :Commands<cr>
 nnoremap <silent> <M-h> :Helptags<cr>
 
 " open fzf for ag in local files,
-nnoremap <silent> <M-f> :call fzf#vim#ag_raw(". --nocolor --hidden -U --ignore '.git*'", {'options': '--delimiter : --nth 4..'}, 1)<cr>
+nnoremap <silent> <M-f> :call fzf#vim#ag_raw(". --nocolor --hidden -U --ignore '.git*' --ignore node_modules", {'options': '--delimiter : --nth 4..'}, 1)<cr>
 
 " set spell language to italian
 nnoremap <silent> <M-o>i :setlocal spell spelllang=it<cr>
