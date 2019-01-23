@@ -10,7 +10,8 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'lervag/vimtex'
 
 " + to enlarge the visual selection
-" _ to shrink it
+" _ to shrink it 
+" gp to refill the paragraph
 Plug 'terryma/vim-expand-region'
 
 " ysiw] put square parentheses around iw text object
@@ -40,6 +41,9 @@ nnoremap <silent> <M-u> :History<cr>
 
 " quit,
 nnoremap <silent> <M-q> :q<cr>
+
+" refill
+noremap <silent> <M-i> gwip<cr>
 
 " open fzf for commands,
 nnoremap <silent> <M-x> :Commands<cr>
@@ -131,6 +135,9 @@ autocmd FileType tex nnoremap <silent> <leader>b :VimtexCompile<CR>
 
 if has('mac')
 	let g:vimtex_view_method = 'skim'
+	let g:vimtex_fold_manual = 1
+	let g:tex_fast = "bMpr"
+	let g:tex_conceal = ""
 elseif has('unix')
 	let g:vimtex_view_method = 'zathura'
 	let g:vimtex_fold_manual = 1
