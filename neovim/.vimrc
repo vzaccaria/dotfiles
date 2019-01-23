@@ -7,26 +7,35 @@ Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'jceb/vim-orgmode'
 Plug 'drewtempelmeyer/palenight.vim'
+
+" text-objects:
+" 
+" ae        LaTeX environments (e.g. \begin{itemize})
+" ac        commands
+" i$        inline math structure
+" a$        whole math structure
+" dse|cse   delete/change the surrounding environment
+" dsc|csc   delete/change the surrounding command
 Plug 'lervag/vimtex'
 
-" + to enlarge the visual selection
-" _ to shrink it 
-" gp to refill the paragraph
+" +         to enlarge the visual selection
+" _         to shrink it 
+" gp        to refill the paragraph
 Plug 'terryma/vim-expand-region'
 
-" ysiw] put square parentheses around iw text object
-" cs"'  change surrounding quotes from " to '
-" ds{   delete surrounding {
-" S"    in visual mode, put quotes around selected text
+" ysiw]     put square parentheses around iw text object
+" cs"'      change surrounding quotes from " to '
+" ds{       delete surrounding {
+" S"        in visual mode, put quotes around selected text
 Plug 'tpope/vim-surround'
 Plug 'stephpy/vim-yaml'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-repeat'
 
-" gc    visual mode to comment out the selection, and 
-" gcc   comment out a line (takes a count), 
-" gc    comment out the target of a motion (for example, gcap to comment out a paragraph), 
-" gc    operator pending mode to target a comment.
+" gc        visual mode to comment out the selection, and 
+" gcc       comment out a line (takes a count), 
+" gc        comment out the target of a motion (for example, gcap to comment out a paragraph), 
+" gc        operator pending mode to target a comment.
 Plug 'tpope/vim-commentary'
 call plug#end()
 
@@ -88,6 +97,11 @@ nnoremap <leader>ac vip:EasyAlign *,<cr>
 
 " ,ae to realign by ampersands
 nnoremap <leader>ae vip:EasyAlign *&<cr>
+			
+" italic, bold and typewriter in latex
+xmap <silent> <M-i> <Plug>VSurround}i\emph<esc>
+xmap <silent> <M-b> <Plug>VSurround}i\textbf<esc>
+xmap <silent> <M-k> <Plug>VSurround}i\texttt<esc>
 
 "search for visually selected text
 vnoremap // y/<C-R>"<CR>
@@ -131,6 +145,7 @@ endif
 
 autocmd FileType tex nnoremap <silent> <leader>v :VimtexView<CR>
 autocmd FileType tex nnoremap <silent> <leader>b :VimtexCompile<CR>
+autocmd FileType tex :ALEToggle
 
 
 if has('mac')
