@@ -1,4 +1,5 @@
 path=(\
+    /home/admin/.local/bin \
     /home/admin/.nvm/versions/node/v10.7.0/bin \
     /root/.local/bin \
     /opt/bin \
@@ -12,5 +13,4 @@ path=(\
     /usr/bin/X11 \
     /usr/local/sbin \
     /usr/local/bin \
-    /home/admin/.local/bin \
     $HOME/node_modules/.bin)
