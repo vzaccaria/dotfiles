@@ -1,5 +1,7 @@
 let g:mapleader = ","
 
+set expandtab
+
 call plug#begin() 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -37,6 +39,11 @@ Plug 'tpope/vim-repeat'
 " gc        comment out the target of a motion (for example, gcap to comment out a paragraph), 
 " gc        operator pending mode to target a comment.
 Plug 'tpope/vim-commentary'
+
+" ,s**      to jump where you want with two characters
+" ,k        to jump to an highlighted line up
+" ,j        to jump to an highlighted line down
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 " when opening fzf look also for hidden files
@@ -76,6 +83,12 @@ nmap <M-o>c [s1z=<c-o>
 " move around tabs
 nnoremap <silent> <C-[> :tabprevious<CR>
 nnoremap <silent> <C-]> :tabnext<CR>
+
+nmap <leader>s <Plug>(easymotion-overwin-f2)
+nmap <Leader>j <Plug>(easymotion-j)
+nmap <Leader>k <Plug>(easymotion-k)
+
+let g:EasyMotion_smartcase = 1
 
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
@@ -133,9 +146,9 @@ nnoremap <silent> <leader>m :make<cr>
 
 set background=dark
 colorscheme palenight
-set cursorline 
-hi CursorLine term=bold cterm=bold guibg=Grey30
-nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+" set cursorline 
+" hi CursorLine term=bold cterm=bold guibg=Grey30
+" nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 "Remember to open the tex file with nvr
 if has("nvim")
@@ -147,24 +160,30 @@ autocmd FileType tex nnoremap <silent> <leader>v :VimtexView<CR>
 autocmd FileType tex nnoremap <silent> <leader>b :VimtexCompile<CR>
 autocmd FileType tex :ALEToggle
 
-
+let g:vimtex_quickfix_enabled = 0
+let g:vimtex_complete_enabled = 1
+let g:vimtex_complete_cites = 1
+let g:vimtex_complete_auto= 1
+let g:vimtex_matchparen_enabled = 0
 if has('mac')
 	let g:vimtex_view_method = 'skim'
 	let g:vimtex_fold_manual = 1
 	let g:tex_fast = "bMpr"
 	let g:tex_conceal = ""
+        let g:matchup_matchparen_deferred = 1
 elseif has('unix')
 	let g:vimtex_view_method = 'zathura'
 	let g:vimtex_fold_manual = 1
 	let g:tex_fast = "bMpr"
 	let g:tex_conceal = ""
+        let g:matchup_matchparen_deferred = 1
 endif
 
 
 
 
 " Relative line numbers 
-set rnu
+" set rnu
 
 " slow motion
 set nolazyredraw
