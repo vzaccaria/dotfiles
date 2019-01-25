@@ -1,5 +1,6 @@
 let g:mapleader = ","
 
+set ignorecase
 set expandtab
 
 call plug#begin() 
@@ -230,4 +231,6 @@ ab venerdi venerdì
 
 " qq to record, Q to replay
 nnoremap Q @q
+" nnoremap <c-q> @q
+" inoremap <c-s> <c-c>/
 
