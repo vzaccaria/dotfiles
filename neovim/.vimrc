@@ -8,7 +8,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
-Plug 'jceb/vim-orgmode'
+" Plug 'jceb/vim-orgmode'
 Plug 'drewtempelmeyer/palenight.vim'
 
 " text-objects:
@@ -109,6 +109,9 @@ nnoremap ga <Plug>(EasyAlign)
 " ,ac to realign a paragraph by commas
 nnoremap <leader>ac vip:EasyAlign *,<cr>
 
+" ,aq to realign a paragraph by double quotes
+nnoremap <leader>aq vip:EasyAlign *"<cr>
+
 " ,ae to realign by ampersands
 nnoremap <leader>ae vip:EasyAlign *&<cr>
 			
@@ -119,6 +122,12 @@ xmap <silent> <M-k> <Plug>VSurround}i\texttt<esc>
 
 "search for visually selected text
 vnoremap // y/<C-R>"<CR>
+
+" Switch windows when in terminal
+tnoremap <C-w>h <C-\><C-n><C-w>h
+tnoremap <C-w>j <C-\><C-n><C-w>j
+tnoremap <C-w>k <C-\><C-n><C-w>k
+tnoremap <C-w>l <C-\><C-n><C-w>l
 
 " touchbar!
 tnoremap § <C-c>
