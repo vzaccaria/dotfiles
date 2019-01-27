@@ -8,6 +8,8 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'alx741/vim-hindent'
 " Plug 'jceb/vim-orgmode'
 Plug 'drewtempelmeyer/palenight.vim'
 
@@ -115,10 +117,6 @@ nnoremap <leader>aq vip:EasyAlign *"<cr>
 " ,ae to realign by ampersands
 nnoremap <leader>ae vip:EasyAlign *&<cr>
 			
-" italic, bold and typewriter in latex
-xmap <silent> <M-i> <Plug>VSurround}i\emph<esc>
-xmap <silent> <M-b> <Plug>VSurround}i\textbf<esc>
-xmap <silent> <M-k> <Plug>VSurround}i\texttt<esc>
 
 "search for visually selected text
 vnoremap // y/<C-R>"<CR>
@@ -141,12 +139,12 @@ augroup filetypedetect
 augroup END
 
 let g:ale_linters = {}
-let g:ale_linters.haskell = ['stack-ghc']
+let g:ale_linters.haskell = ['stack-ghc', 'stack-ghc-mod', 'hlint']
 
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'markdown': ['prettier'],
-\   'css': ['prettier'],
+\   'css': ['prettier']
 \}
 
 let g:ale_javascript_prettier_options = '--prose-wrap always'
@@ -159,38 +157,6 @@ colorscheme palenight
 " set cursorline 
 " hi CursorLine term=bold cterm=bold guibg=Grey30
 " nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
-
-"Remember to open the tex file with nvr
-if has("nvim")
-  let g:vimtex_latexmk_progname = 'nvr'
-  let g:vimtex_compiler_progname = 'nvr'
-endif
-
-autocmd FileType tex nnoremap <silent> <leader>v :VimtexView<CR>
-autocmd FileType tex nnoremap <silent> <leader>b :VimtexCompile<CR>
-autocmd FileType tex :ALEToggle
-
-let g:vimtex_quickfix_enabled = 0
-let g:vimtex_complete_enabled = 1
-let g:vimtex_complete_cites = 1
-let g:vimtex_complete_auto= 1
-let g:vimtex_matchparen_enabled = 0
-if has('mac')
-	let g:vimtex_view_method = 'skim'
-	let g:vimtex_fold_manual = 1
-	let g:tex_fast = "bMpr"
-	let g:tex_conceal = ""
-        let g:matchup_matchparen_deferred = 1
-elseif has('unix')
-	let g:vimtex_view_method = 'zathura'
-	let g:vimtex_fold_manual = 1
-	let g:tex_fast = "bMpr"
-	let g:tex_conceal = ""
-        let g:matchup_matchparen_deferred = 1
-endif
-
-
-
 
 " Relative line numbers 
 " set rnu
