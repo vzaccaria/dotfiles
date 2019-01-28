@@ -28,8 +28,7 @@
 #+LaTeX_HEADER: \usepackage{minted}
 #+LaTeX_HEADER: \usepackage{multicol}
 #+LaTeX_HEADER: \usepackage{fontspec,xltxtra,xunicode}
-#+LATEX_HEADER: \setsansfont{Fira Sans}
-#+LATEX_HEADER: \setmainfont{Fira Sans}
+#+LATEX_HEADER: \setmainfont{Junicode}
 #+LATEX_HEADER: \setmonofont[]{Source Code Pro}
 #+LATEX_HEADER: \usepackage{polyglossia}
 #+LATEX_HEADER: \setmainlanguage{italiano}

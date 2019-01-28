@@ -14,7 +14,11 @@ startemacs() {
     /usr/bin/emacs --daemon 2>&1 >/dev/null | spacemacsStart
 }
 
-startemacs-safe() {
+rp() {
+  realpath "$1" | tr -d '\n' | xclip -selection c
+}
+
+startemacsSafe() {
     /usr/bin/emacs --daemon 2>&1 >/dev/null
 }
 

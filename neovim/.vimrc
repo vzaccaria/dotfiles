@@ -1,33 +1,52 @@
 let g:mapleader = ","
 
+set ignorecase
+set expandtab
+
 call plug#begin() 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
-Plug 'jceb/vim-orgmode'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'alx741/vim-hindent'
+" Plug 'jceb/vim-orgmode'
 Plug 'drewtempelmeyer/palenight.vim'
+
+" text-objects:
+" 
+" ae        LaTeX environments (e.g. \begin{itemize})
+" ac        commands
+" i$        inline math structure
+" a$        whole math structure
+" dse|cse   delete/change the surrounding environment
+" dsc|csc   delete/change the surrounding command
 Plug 'lervag/vimtex'
 
-" + to enlarge the visual selection
-" _ to shrink it 
-" gp to refill the paragraph
+" +         to enlarge the visual selection
+" _         to shrink it 
+" gp        to refill the paragraph
 Plug 'terryma/vim-expand-region'
 
-" ysiw] put square parentheses around iw text object
-" cs"'  change surrounding quotes from " to '
-" ds{   delete surrounding {
-" S"    in visual mode, put quotes around selected text
+" ysiw]     put square parentheses around iw text object
+" cs"'      change surrounding quotes from " to '
+" ds{       delete surrounding {
+" S"        in visual mode, put quotes around selected text
 Plug 'tpope/vim-surround'
 Plug 'stephpy/vim-yaml'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-repeat'
 
-" gc    visual mode to comment out the selection, and 
-" gcc   comment out a line (takes a count), 
-" gc    comment out the target of a motion (for example, gcap to comment out a paragraph), 
-" gc    operator pending mode to target a comment.
+" gc        visual mode to comment out the selection, and 
+" gcc       comment out a line (takes a count), 
+" gc        comment out the target of a motion (for example, gcap to comment out a paragraph), 
+" gc        operator pending mode to target a comment.
 Plug 'tpope/vim-commentary'
+
+" ,s**      to jump where you want with two characters
+" ,k        to jump to an highlighted line up
+" ,j        to jump to an highlighted line down
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 " when opening fzf look also for hidden files
@@ -68,6 +87,12 @@ nmap <M-o>c [s1z=<c-o>
 nnoremap <silent> <C-[> :tabprevious<CR>
 nnoremap <silent> <C-]> :tabnext<CR>
 
+nmap <leader>s <Plug>(easymotion-overwin-f2)
+nmap <Leader>j <Plug>(easymotion-j)
+nmap <Leader>k <Plug>(easymotion-k)
+
+let g:EasyMotion_smartcase = 1
+
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
@@ -86,11 +111,21 @@ nnoremap ga <Plug>(EasyAlign)
 " ,ac to realign a paragraph by commas
 nnoremap <leader>ac vip:EasyAlign *,<cr>
 
+" ,aq to realign a paragraph by double quotes
+nnoremap <leader>aq vip:EasyAlign *"<cr>
+
 " ,ae to realign by ampersands
 nnoremap <leader>ae vip:EasyAlign *&<cr>
+			
 
 "search for visually selected text
 vnoremap // y/<C-R>"<CR>
+
+" Switch windows when in terminal
+tnoremap <C-w>h <C-\><C-n><C-w>h
+tnoremap <C-w>j <C-\><C-n><C-w>j
+tnoremap <C-w>k <C-\><C-n><C-w>k
+tnoremap <C-w>l <C-\><C-n><C-w>l
 
 " touchbar!
 tnoremap § <C-c>
@@ -104,12 +139,12 @@ augroup filetypedetect
 augroup END
 
 let g:ale_linters = {}
-let g:ale_linters.haskell = ['stack-ghc']
+let g:ale_linters.haskell = ['stack-ghc', 'stack-ghc-mod', 'hlint']
 
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'markdown': ['prettier'],
-\   'css': ['prettier'],
+\   'css': ['prettier']
 \}
 
 let g:ale_javascript_prettier_options = '--prose-wrap always'
@@ -119,37 +154,12 @@ nnoremap <silent> <leader>m :make<cr>
 
 set background=dark
 colorscheme palenight
-set cursorline 
-hi CursorLine term=bold cterm=bold guibg=Grey30
-nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
-
-"Remember to open the tex file with nvr
-if has("nvim")
-  let g:vimtex_latexmk_progname = 'nvr'
-  let g:vimtex_compiler_progname = 'nvr'
-endif
-
-autocmd FileType tex nnoremap <silent> <leader>v :VimtexView<CR>
-autocmd FileType tex nnoremap <silent> <leader>b :VimtexCompile<CR>
-
-
-if has('mac')
-	let g:vimtex_view_method = 'skim'
-	let g:vimtex_fold_manual = 1
-	let g:tex_fast = "bMpr"
-	let g:tex_conceal = ""
-elseif has('unix')
-	let g:vimtex_view_method = 'zathura'
-	let g:vimtex_fold_manual = 1
-	let g:tex_fast = "bMpr"
-	let g:tex_conceal = ""
-endif
-
-
-
+" set cursorline 
+" hi CursorLine term=bold cterm=bold guibg=Grey30
+" nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 " Relative line numbers 
-set rnu
+" set rnu
 
 " slow motion
 set nolazyredraw
@@ -196,4 +206,6 @@ ab venerdi venerdì
 
 " qq to record, Q to replay
 nnoremap Q @q
+" nnoremap <c-q> @q
+" inoremap <c-s> <c-c>/
 
