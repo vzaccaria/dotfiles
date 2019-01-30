@@ -61,6 +61,7 @@ nnoremap <silent> <M-u> :History<cr>
 
 " quit,
 nnoremap <silent> <M-q> :q<cr>
+nnoremap <silent> <M-w> :q<cr>
 
 " refill
 noremap <silent> <M-i> gwip<cr>
@@ -91,6 +92,13 @@ nnoremap <silent> <C-]> :tabnext<CR>
 nmap <leader>s <Plug>(easymotion-overwin-f2)
 nmap <Leader>j <Plug>(easymotion-j)
 nmap <Leader>k <Plug>(easymotion-k)
+
+vmap <Leader>j <Plug>(easymotion-j)
+vmap <Leader>k <Plug>(easymotion-k)
+
+nmap <C-a> <C-w>
+
+nnoremap <Leader>d :ALEDetail<cr>
 
 let g:EasyMotion_smartcase = 1
 
@@ -127,6 +135,10 @@ tnoremap <C-w>h <C-\><C-n><C-w>h
 tnoremap <C-w>j <C-\><C-n><C-w>j
 tnoremap <C-w>k <C-\><C-n><C-w>k
 tnoremap <C-w>l <C-\><C-n><C-w>l
+tnoremap <C-w><left> <C-\><C-n><C-w>h
+tnoremap <C-w><down> <C-\><C-n><C-w>j
+tnoremap <C-w><up> <C-\><C-n><C-w>k
+tnoremap <C-w><right> <C-\><C-n><C-w>l
 
 " touchbar!
 tnoremap § <C-c>
