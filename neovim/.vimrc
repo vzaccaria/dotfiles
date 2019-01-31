@@ -96,6 +96,9 @@ nmap <Leader>k <Plug>(easymotion-k)
 vmap <Leader>j <Plug>(easymotion-j)
 vmap <Leader>k <Plug>(easymotion-k)
 
+let g:tex_flavor = 'latex'
+
+
 nmap <C-a> <C-w>
 
 nnoremap <Leader>d :ALEDetail<cr>
@@ -165,7 +168,7 @@ let g:ale_fix_on_save = 1
 
 nnoremap <silent> <leader>m :make<cr>
 
-set background=dark
+"set background=dark
 colorscheme palenight
 " set cursorline 
 " hi CursorLine term=bold cterm=bold guibg=Grey30
@@ -183,11 +186,12 @@ ab eheh 😁
 ab uhm 🤔
 ab perche' perché
 ab poiche' poiché  
+ab finche' finché  
 ab e' è
 ab cioe cioè
 ab puo può
 ab nonappena non appena
-ab c'e' c'è
+ab ce' c'è
 ab qual'e' qual è
 ab gia' già
 ab sara' sarà
@@ -206,6 +210,7 @@ ab pero' però
 ab puo' può
 ab pero' però
 ab avro' avrò
+ab faro' farò
 ab mandero' manderò
 ab vedro' vedrò
 ab rivedro' rivedrò

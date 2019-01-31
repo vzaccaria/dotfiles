@@ -5,8 +5,8 @@ if has("nvim")
   let g:vimtex_compiler_progname = 'nvr'
 endif
 
-nnoremap <buffer> <leader>v :VimtexView<CR>
-nnoremap <buffer> <leader>b :VimtexCompile<CR>
+nnoremap <leader>v :VimtexView<CR>
+nnoremap <leader>b :VimtexCompile<CR>
 xmap <buffer> <M-i> <Plug>VSurround}i\emph<esc>
 xmap <buffer> <M-b> <Plug>VSurround}i\textbf<esc>
 xmap <buffer> <M-k> <Plug>VSurround}i\texttt<esc>

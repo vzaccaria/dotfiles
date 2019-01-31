@@ -13,6 +13,11 @@
     "reveal.js": "3.7.0",
     "serve": "6.5.5",
     "tern": "0.21.0",
+    "themer": "3.1.6",
+    "themer-colors-default": "1.0.10",
+    "themer-gnome-terminal": "1.0.1",
+    "themer-vim": "3.0.2",
+    "themer-wallpaper-block-wave": "3.0.3",
     "vmd": "1.33.1",
     "yamljs": "0.3.0"
   }
