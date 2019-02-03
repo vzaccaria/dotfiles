@@ -25,7 +25,7 @@ vg() {
 
     case "$com" in
         initial)   msg="initial commit" ;;
-        minor)     msg="minor: changes ($mc)" ;;
+        improve)   msg="improve: $msg ($mc)" ;;
         move)      msg="move/delete files";;
         fix)       msg="fix: $msg ($mc)" ;;
         polish)    msg="polish: prettify ($mc)" ;;
@@ -46,12 +46,8 @@ initial()  {
     vg initial $* "noop"
 }
 
-minor()    {
-    vg minor $* "noop"
-}
-
-gitsync()  {
-    vg sync $* "noop"
+improve()    {
+    vg improve $*
 }
 
 polish()   {
@@ -76,19 +72,6 @@ generic()  {
 
 update()  {
     vg update $*
-}
-
-alias u='update'
-ud() {
-    update . "$*"
-}
-
-fx() {
-    fix . "$*"
-}
-
-ft() {
-    feat . "$*"
 }
 
 move()     {
