@@ -90,6 +90,7 @@ nmap <M-o>c [s1z=<c-o>
 nnoremap <silent> <C-[> :tabprevious<CR>
 nnoremap <silent> <C-]> :tabnext<CR>
 
+nmap <leader>. <Plug>(easymotion-overwin-line)
 nmap <leader>s <Plug>(easymotion-overwin-f2)
 nmap <Leader>j <Plug>(easymotion-j)
 nmap <Leader>k <Plug>(easymotion-k)
@@ -157,11 +158,13 @@ augroup END
 
 let g:ale_linters = {}
 let g:ale_linters.haskell = ['stack-ghc', 'stack-ghc-mod', 'hlint']
+let g:ale_linters.yaml = ['yamllint']
 
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'markdown': ['prettier'],
-\   'css': ['prettier']
+\   'css': ['prettier'],
+\   'c': ['clang-format']
 \}
 
 let g:ale_javascript_prettier_options = '--prose-wrap always'
