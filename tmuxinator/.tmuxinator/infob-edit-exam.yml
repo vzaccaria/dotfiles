@@ -7,4 +7,4 @@ windows:
       layout: main-horizontal
       panes:
         - cd . 
-        - TARGET=19.02.a make watch
+        - TARGET=19.02.b make watch

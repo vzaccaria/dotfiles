@@ -49,6 +49,10 @@ Plug 'tpope/vim-commentary'
 " ,k        to jump to an highlighted line up
 " ,j        to jump to an highlighted line down
 Plug 'easymotion/vim-easymotion'
+
+" gt        to set title case
+" gT        to set title case whole line
+Plug 'christoomey/vim-titlecase'
 call plug#end()
 
 " when opening fzf look also for hidden files
