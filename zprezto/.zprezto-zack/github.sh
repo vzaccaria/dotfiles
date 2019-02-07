@@ -50,6 +50,10 @@ improve()    {
     vg improve $*
 }
 
+gsync()    {
+    vg sync $*
+}
+
 polish()   {
     vg polish $* "noop"
 }
