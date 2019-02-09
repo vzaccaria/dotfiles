@@ -23,7 +23,6 @@
 #+LaTeX_HEADER: \usepackage{minted}
 #+LaTeX_HEADER: \usepackage{fontspec,xunicode}
 #+LATEX_HEADER: \setmainfont[]{Times New Roman}
-#+LATEX_HEADER: \setsansfont{Fira Sans}
 #+LATEX_HEADER: \setmonofont[Scale=0.8]{Source Code Pro}
 #+LATEX_HEADER: \usepackage{polyglossia}
 #+LATEX_HEADER: \setmainlanguage{italian}
