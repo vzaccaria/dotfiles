@@ -48,11 +48,15 @@ Plug 'tpope/vim-commentary'
 " ,s**      to jump where you want with two characters
 " ,k        to jump to an highlighted line up
 " ,j        to jump to an highlighted line down
+" ,.        to jump by selecting the line
 Plug 'easymotion/vim-easymotion'
 
 " gt        to set title case
 " gT        to set title case whole line
 Plug 'christoomey/vim-titlecase'
+
+" C-n       multiple times then c, I, A, d
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 " when opening fzf look also for hidden files
