@@ -204,6 +204,27 @@
   }
 
 }
+
+.klipse-snippet {
+  border: solid #92DA55 1px !important;
+}
+
+.klipse-result {
+  border: solid #91B3FB 1px !important;
+}
+
+code {
+  background-color: #F8F8F8;
+}
+
+.CodeMirror-cursor {
+  border-left: 1px solid black !important;
+}
+
+.CodeMirror-scroll {
+  padding-bottom: 30px !important;
+  margin-bottom: -30px !important;
+}
 </style>
 #+END_EXPORT
 

@@ -1,6 +1,6 @@
 #+STARTUP: showall indent latexpreview entitiespretty
 #+COLUMNS: %30ITEM %30CUSTOM_ID
-#+REVEAL_PLUGINS: (highlight)
+# #+REVEAL_PLUGINS: (highlight)
 #+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
 #+REVEAL_HIGHLIGHT_CSS: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css
 
