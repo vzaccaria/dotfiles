@@ -1,32 +1,4 @@
-
-#+BEGIN_EXPORT HTML
-<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.8.1/less.min.js"></script>
-<script src="https://scratchblocks.github.io/js/scratchblocks-v3.1-min.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-   scratchblocks.renderMatching("code.b");
-});
-
-</script>
-<link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
-<script>
-    window.klipse_settings = {
-     selector_eval_js: '.eval-javascript', // css selector for the html elements you want to klipsify
-    };
-</script>
-<script src="https://storage.googleapis.com/app.klipse.tech/plugin_prod/js/klipse_plugin.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-        let x = document.getElementsByClassName('eval-javascript');
-        console.log(x);
-        _.map(x, (e) => klipse.plugin.klipsify(e, window.klipse_settings, 'eval-javascript'))
-});
-</script>
-
-#+END_EXPORT
+# Remember to copy locally reveal-bundle.js and to deploy it in the same folder as your html presentation
 
 #+REVEAL_ROOT:          https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0
 #+REVEAL_MATHJAX_URL:   https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML

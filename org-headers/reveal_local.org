@@ -1,15 +1,4 @@
-
-#+BEGIN_EXPORT HTML
-<script src="file:///Users/zaccaria/node_modules/less/dist/less.js"></script>
-<script src="https://scratchblocks.github.io/js/scratchblocks-v3.1-min.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-   scratchblocks.renderMatching("code.b");
-});
-
-</script>
-#+END_EXPORT
-
+# Remember to copy locally reveal-bundle.js and to deploy it in the same folder as your html presentation
 
 #+REVEAL_ROOT:          file:///Users/zaccaria/node_modules/reveal.js
 #+REVEAL_MATHJAX_URL:   file:///Users/zaccaria/node_modules/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML
