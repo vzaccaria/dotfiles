@@ -237,5 +237,12 @@ ab venerdi venerdì
 " qq to record, Q to replay
 nnoremap Q @q
 " nnoremap <c-q> @q
-" inoremap <c-s> <c-c>/
+
+" Utilities for data entry
+" <c-s> when in insert mode, press c-s to look for next data, then press enter
+inoremap <c-s> <c-c>/
+
+" before we find anything better, jump to the next | after 2 words (first,last
+" name) and append
+nnoremap <c-i> 2wa
 
