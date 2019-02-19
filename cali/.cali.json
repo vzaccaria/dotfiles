@@ -179,5 +179,11 @@
     "title": "Revisione articolo su <%= parameter %>",
     "where": "Ufficio",
     "reminder": "15d"
+  },
+  "visione": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Visione compito di <%= parameter %>",
+    "where": "Ufficio",
+    "reminder": "1d"
   }
 }
