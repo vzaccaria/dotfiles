@@ -23,6 +23,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 " a$        whole math structure
 " dse|cse   delete/change the surrounding environment
 " dsc|csc   delete/change the surrounding command
+" c-x c-o   completion
 Plug 'lervag/vimtex'
 
 " +         to enlarge the visual selection
