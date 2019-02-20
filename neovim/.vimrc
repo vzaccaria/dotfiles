@@ -12,7 +12,7 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'parsonsmatt/intero-neovim'
 Plug 'pangloss/vim-javascript'
 Plug 'alx741/vim-hindent'
-" Plug 'jceb/vim-orgmode'
+Plug 'jceb/vim-orgmode'
 Plug 'drewtempelmeyer/palenight.vim'
 
 " text-objects:
