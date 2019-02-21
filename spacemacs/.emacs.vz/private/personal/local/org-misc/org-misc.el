@@ -302,8 +302,8 @@
 
   (define-key org-mode-map (kbd "M-p")  'org-preview-latex-fragment)
   (define-key org-mode-map (kbd "<f1>") (lambda () (interactive) (org-overview)))
-  (define-key org-mode-map (kbd "<f2>") (lambda () (interactive) (org-content 2)))
-  (define-key org-mode-map (kbd "<f3>") (lambda () (interactive) (org-content 3)))
+  (define-key org-mode-map (kbd "<f2>") (lambda () (interactive) (org-global-cycle 2)))
+  (define-key org-mode-map (kbd "<f3>") (lambda () (interactive) (org-global-cycle 3)))
 
   (evil-define-key 'normal evil-org-mode-map (kbd "M-b")  'spacemacs/org-bold)
   (evil-define-key 'normal evil-org-mode-map (kbd "M-k")  'spacemacs/org-code)

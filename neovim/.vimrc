@@ -99,13 +99,8 @@ nmap <M-o>c [s1z=<c-o>
 nnoremap <silent> <C-[> :tabprevious<CR>
 nnoremap <silent> <C-]> :tabnext<CR>
 
-nmap <leader>. <Plug>(easymotion-overwin-line)
-nmap <leader>s <Plug>(easymotion-overwin-f2)
-nmap <Leader>j <Plug>(easymotion-j)
-nmap <Leader>k <Plug>(easymotion-k)
-
-vmap <Leader>j <Plug>(easymotion-j)
-vmap <Leader>k <Plug>(easymotion-k)
+map <C-l> <Plug>(easymotion-bd-jk)
+nmap <C-l> <Plug>(easymotion-overwin-line)
 
 let g:tex_flavor = 'latex'
 
