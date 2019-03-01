@@ -124,6 +124,12 @@
     "where": "Politecnico di Milano",
     "reminder": "1w"
   },
+  "lezionehyp": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Lezione di Hypermedia - Aula <%= parameter %>",
+    "where": "Politecnico di Milano",
+    "reminder": "2d"
+  },
   "lauree": {
     "calendar": "Vittorio e Chiara",
     "title": "Lauree - Aula <%= parameter %>",
