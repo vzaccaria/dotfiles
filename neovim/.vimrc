@@ -166,6 +166,7 @@ let g:ale_linters.yaml = ['yamllint']
 
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
+\   'html': ['prettier'],
 \   'markdown': ['prettier'],
 \   'css': ['prettier'],
 \   'c': ['clang-format']
