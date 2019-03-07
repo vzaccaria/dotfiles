@@ -68,14 +68,21 @@ git-diff-to-html() {
     git diff --color=always $* | diff-so-fancy | aha
 }
 
-live-edit-org-rtd() {
+vz-live-edit-org-rtd() {
     org2pdf "$1" --latex-engine html -a /Users/zaccaria/dotfiles/org-headers/header_html_rtd.org -p -w -y 'make chromereload' 
 }
 
-live-edit-org() {
+vz-live-edit-org() {
     org2pdf "$1" --latex-engine html -a /Users/zaccaria/dotfiles/org-headers/header_html_simple.org -p -w -y 'make chromereload'
 }
 
-start-offlineimap() {
-    mustache .offlineimap.json dotfiles/offlineimap/.offlineimaprc.template > .offlineimaprc
+vz-edit-html-in-clipboard() {
+    touch ~/temp.md
+    nvim ~/temp.md 
+    pandoc ~/temp.md | pbcopy
 }
+
+vz-rename-currentdir-files-removing-spaces() {
+  find . -depth -name "* *" -execdir rename 's/ /_/g' "{}" \;
+}
+
