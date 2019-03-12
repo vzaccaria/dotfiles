@@ -130,9 +130,15 @@
     "where": "Politecnico di Milano",
     "reminder": "2d"
   },
-  "lauree": {
+  "laureem": {
     "calendar": "Vittorio e Chiara",
-    "title": "Lauree - Aula <%= parameter %>",
+    "title": "Lauree Magistrali - Aula <%= parameter %>",
+    "where": "Politecnico di Milano",
+    "reminder": "1w"
+  },
+  "laureep": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Lauree di Primo Livello - Aula <%= parameter %>",
     "where": "Politecnico di Milano",
     "reminder": "1w"
   },
