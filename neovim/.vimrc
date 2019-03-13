@@ -13,7 +13,10 @@ Plug 'parsonsmatt/intero-neovim'
 Plug 'pangloss/vim-javascript'
 Plug 'alx741/vim-hindent'
 Plug 'jceb/vim-orgmode'
-Plug 'drewtempelmeyer/palenight.vim'
+
+" Themes
+" Plug 'drewtempelmeyer/palenight.vim'
+Plug 'NLKNguyen/papercolor-theme'
 
 " text-objects:
 " 
@@ -180,7 +183,10 @@ let g:ale_fix_on_save = 1
 nnoremap <silent> <leader>m :make<cr>
 
 "set background=dark
-colorscheme palenight
+"colorscheme palenight
+
+set background=light
+colorscheme PaperColor
 " set cursorline 
 " hi CursorLine term=bold cterm=bold guibg=Grey30
 " nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
