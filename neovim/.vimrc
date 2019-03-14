@@ -168,6 +168,7 @@ let g:markdown_folding = 1
 let g:ale_linters = {}
 let g:ale_linters.haskell = ['stack-ghc', 'stack-ghc-mod', 'hlint']
 let g:ale_linters.yaml = ['yamllint']
+let g:ale_linters.verilog = ['iverilog']
 
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
