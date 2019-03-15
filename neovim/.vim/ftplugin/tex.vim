@@ -11,9 +11,9 @@ xmap <buffer> <M-i> <Plug>VSurround}i\emph<esc>
 xmap <buffer> <M-b> <Plug>VSurround}i\textbf<esc>
 xmap <buffer> <M-k> <Plug>VSurround}i\texttt<esc>
 
-let g:ale_pattern_options = {
-\   '.*\.tex$': {'ale_enabled': 0},
-\}
+" let g:ale_pattern_options = {
+" \   '.*\.tex$': {'ale_enabled': 0},
+" \}
 
 let g:vimtex_quickfix_enabled = 0
 let g:vimtex_complete_enabled = 1

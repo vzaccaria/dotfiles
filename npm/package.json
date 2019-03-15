@@ -13,6 +13,8 @@
     "reveal.js": "3.7.0",
     "serve": "6.5.5",
     "tern": "0.21.0",
+    "textlint": "11.2.3",
+    "textlint-rule-rousseau": "1.4.5",
     "themer": "3.1.6",
     "themer-colors-default": "1.0.10",
     "themer-gnome-terminal": "1.0.1",

@@ -13,4 +13,5 @@ path=(\
     /usr/bin/X11 \
     /usr/local/sbin \
     /usr/local/bin \
+    /home/admin/java/bin \
     $HOME/node_modules/.bin)

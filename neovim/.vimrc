@@ -169,12 +169,14 @@ let g:ale_linters = {}
 let g:ale_linters.haskell = ['stack-ghc', 'stack-ghc-mod', 'hlint']
 let g:ale_linters.yaml = ['yamllint']
 let g:ale_linters.verilog = ['iverilog']
+let g:ale_linters.tex = ['proselint', 'write-good', 'redpen']
 
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'html': ['prettier'],
 \   'markdown': ['prettier'],
 \   'css': ['prettier'],
+\   'json': ['prettier'],
 \   'c': ['clang-format']
 \}
 

@@ -180,6 +180,12 @@
     "where": "",
     "reminder": "2d"
   },
+  "shiatzu": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Trattamento Shiatzu",
+    "where": "",
+    "reminder": "2d"
+  },
   "pranzo": {
     "calendar": "Vittorio Zaccaria",
     "title": "Pranzo con <%= parameter %>",
