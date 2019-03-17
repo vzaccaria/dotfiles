@@ -129,6 +129,9 @@ xnoremap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nnoremap ga <Plug>(EasyAlign)
 
+" ,as to realign a paragraph by spaces
+nnoremap <leader>as vip:EasyAlign *\ <cr>
+
 " ,ac to realign a paragraph by commas
 nnoremap <leader>ac vip:EasyAlign *,<cr>
 
@@ -165,11 +168,18 @@ augroup END
 
 let g:markdown_folding = 1
 
+call ale#linter#Define('tex', {
+\   'name': 'vzredpen',
+\   'executable': 'vzredpen',
+\   'command': 'vzredpen -f latex -r json %t',
+\   'callback': 'ale#handlers#redpen#HandleRedpenOutput',
+\})
+
 let g:ale_linters = {}
 let g:ale_linters.haskell = ['stack-ghc', 'stack-ghc-mod', 'hlint']
 let g:ale_linters.yaml = ['yamllint']
 let g:ale_linters.verilog = ['iverilog']
-let g:ale_linters.tex = ['proselint', 'write-good', 'redpen']
+let g:ale_linters.tex = ['proselint', 'write-good', 'vzredpen']
 
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
