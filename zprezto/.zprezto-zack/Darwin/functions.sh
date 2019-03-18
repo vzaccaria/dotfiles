@@ -122,7 +122,7 @@ writeroom-edit-tex() {
 }
 
 alias emacsclient=/usr/local/bin/emacsclient
-alias vi=nvim
+alias vi='NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim'
 
 em() {
     emacsclient -nw "$@" -c

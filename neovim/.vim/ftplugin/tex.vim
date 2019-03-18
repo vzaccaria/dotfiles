@@ -20,6 +20,7 @@ let g:vimtex_complete_enabled = 1
 let g:vimtex_complete_cites = 1
 let g:vimtex_complete_auto= 1
 let g:vimtex_matchparen_enabled = 0
+setlocal spell spelllang=en_US
 if has('mac')
 	let g:vimtex_view_method = 'skim'
 	let g:vimtex_fold_manual = 1
