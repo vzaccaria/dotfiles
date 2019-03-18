@@ -8,7 +8,10 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
-Plug 'neovimhaskell/haskell-vim'
+
+" This has huge problems with cpu hogging
+" Plug 'neovimhaskell/haskell-vim'
+"
 Plug 'parsonsmatt/intero-neovim'
 Plug 'pangloss/vim-javascript'
 Plug 'alx741/vim-hindent'
