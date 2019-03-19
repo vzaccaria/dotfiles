@@ -1,4 +1,5 @@
 let g:mapleader = ","
+set nocompatible
 
 set ignorecase
 set expandtab
@@ -152,6 +153,7 @@ nnoremap <leader>ae vip:EasyAlign *&<cr>
 vnoremap // y/<C-R>"<CR>
 
 " Switch windows when in terminal
+if has('nvim')
 tnoremap <C-w>h <C-\><C-n><C-w>h
 tnoremap <C-w>j <C-\><C-n><C-w>j
 tnoremap <C-w>k <C-\><C-n><C-w>k
@@ -163,6 +165,7 @@ tnoremap <C-w><right> <C-\><C-n><C-w>l
 
 " touchbar!
 tnoremap § <C-c>
+endif
 cnoremap § <C-c>
 inoremap § <Esc>
 inoremap jk <Esc>

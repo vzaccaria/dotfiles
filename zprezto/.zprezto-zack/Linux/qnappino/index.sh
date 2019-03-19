@@ -10,7 +10,7 @@ alias vi=vim
 alias ln=ln
 alias make=make
 
-export PATH=$PATH:/opt/bin
+export PATH=/opt/bin:/share/CACHEDEV1_DATA/.qpkg/container-station/bin:$PATH
 export TERM=xterm-256color
 
 sen() {
