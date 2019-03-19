@@ -3,6 +3,9 @@ let g:mapleader = ","
 set ignorecase
 set expandtab
 
+" use system clipboard
+set clipboard+=unnamedplus
+
 call plug#begin() 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'

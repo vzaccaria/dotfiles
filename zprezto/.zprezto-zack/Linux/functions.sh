@@ -26,6 +26,17 @@ stopemacs() {
     /usr/bin/emacsclient -e "(kill-emacs)"
 }
 
+vz-html-mail-compose() {
+    touch ~/temp.md
+    nvim ~/temp.md 
+    pandoc ~/temp.md | xclip -selection clipboard -in
+}
+
+vz-mail-compose() {
+    touch ~/temp.md
+    nvim ~/temp.md 
+    cat ~/temp.md | xclip -selection clipboard -in 
+}
 
 restartemacs() {
     stopemacs

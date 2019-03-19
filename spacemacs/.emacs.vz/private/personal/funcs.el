@@ -341,7 +341,9 @@ current buffer's, reload dir-locals."
 
 (defun pbcopy ()
   (interactive)
-  (call-process-region (point) (mark) "pbcopy")
+  (if vz/is-darwin 
+    (progn (call-process-region (point) (mark) "pbcopy"))
+    (progn (call-process-region (point) (mark) "xclip"  nil nil nil "-selection clipboard -in")))
   (setq deactivate-mark t))
 
 (defun pbpaste ()

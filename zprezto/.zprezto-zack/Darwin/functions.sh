@@ -176,3 +176,15 @@ stack-docs() {
 stack-docs-dir() {
     cd "$(stack path --local-doc-root)"
 }
+
+vz-html-mail-compose() {
+    touch ~/temp.md
+    nvim ~/temp.md 
+    pandoc ~/temp.md | pbcopy
+}
+
+vz-mail-compose() {
+    touch ~/temp.md
+    nvim ~/temp.md 
+    cat ~/temp.md | pbcopy
+}
