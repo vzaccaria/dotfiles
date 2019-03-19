@@ -1,13 +1,9 @@
 
-qnap-remote-ssh-plain() {
-    ssh -p 21101 admin@vzaccaria.myqnapcloud.com -p 21101
-}
-
-qnap-remote-ssh-zsh() {
-    ssh -p 21101 admin@vzaccaria.myqnapcloud.com -t '/opt/bin/zsh -l'
+qnap-home-ssh-plain() {
+    ssh -p 21101 admin@192.168.1.120 
 }
 
 qnap-home-ssh() {
-    ssh -p 21101 admin@vzaccaria.myqnapcloud.com -t '/opt/bin/zsh -l'
+    ssh -p 21101 admin@192.168.1.120 -t '/opt/bin/zsh -l'
 }
 
