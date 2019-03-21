@@ -618,6 +618,9 @@ you should place you code here."
  '(nrepl-message-colors
    (quote
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
+ '(org-agenda-files
+   (quote
+    ("/Users/zaccaria/Dropbox/org/institutional/corsi/pac/PacOrg_ag.org" "/Users/zaccaria/Dropbox/org/institutional/work_ag.org" "/Users/zaccaria/Dropbox/org/institutional/research/funded/stmicro_ag.org" "/Users/zaccaria/Dropbox/org/institutional/research/planning_ag.org" "/Users/zaccaria/Dropbox/org/institutional/research/topics/webtech_ag.org" "/Users/zaccaria/Dropbox/org/personal/casa_ag.org" "/Users/zaccaria/Dropbox/org/personal/casa_acquisto_ag.org" "/Users/zaccaria/Dropbox/org/personal/life/tasse_ag.org" "/Users/zaccaria/Dropbox/org/personal/life/salute_ag.org")))
  '(org-agenda-prefix-format
    (quote
     ((agenda . " %i %-12:c%?-12t% s")
@@ -687,3 +690,9 @@ you should place you code here."
 ;;  ;; Your init file should contain only one such instance.
 ;;  ;; If there is more than one, they won't work right.
 ;;  '(default ((t (:foreground "#DCDCCC" :background "#3F3F3F")))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
