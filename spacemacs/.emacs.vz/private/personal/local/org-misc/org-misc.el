@@ -68,6 +68,7 @@
      (plantuml . t)
      (latex . t)
      (gnuplot . t)
+     (python . t)
      ))
   (setq org-babel-js-cmd "node")
   (setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/1.2017.16/libexec/plantuml.jar")
