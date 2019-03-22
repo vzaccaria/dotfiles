@@ -2,16 +2,14 @@
   "deib": {
     "calendar": "Vittorio Zaccaria",
     "title": "Consiglio di Dipartimento",
-    "where":
-      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
     "reminder": "1w",
     "duration": 60
   },
   "sezione": {
     "calendar": "Vittorio Zaccaria",
     "title": "Consiglio di Sezione",
-    "where":
-      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
     "reminder": "1w",
     "duration": 60
   },
@@ -36,50 +34,43 @@
   "ricevimento": {
     "calendar": "Vittorio Zaccaria",
     "title": "Ricevimento studente/i (<%= parameter %>)",
-    "where":
-      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
     "reminder": "1d"
   },
   "seminario": {
     "calendar": "Vittorio Zaccaria",
     "title": "Seminario - <%= parameter %>",
-    "where":
-      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
     "reminder": "1d"
   },
   "tirocinio": {
     "calendar": "Vittorio Zaccaria",
     "title": "Meeting per tirocinio with <%= parameter %>",
-    "where":
-      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
     "reminder": "1d"
   },
   "tesi": {
     "calendar": "Vittorio Zaccaria",
     "title": "Meeting per tesi with <%= parameter %>",
-    "where":
-      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
     "reminder": "30m"
   },
   "reltesi": {
     "calendar": "Vittorio Zaccaria",
     "title": "Consegna relazione tesi",
-    "where":
-      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
     "reminder": "3d"
   },
   "camus": {
     "calendar": "Vittorio Zaccaria",
     "title": "Meeting CAMUS",
-    "where":
-      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
     "reminder": "1d"
   },
   "ricerca": {
     "calendar": "Vittorio Zaccaria",
     "title": "Meeting ricerca",
-    "where":
-      "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
+    "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
     "reminder": "1d"
   },
   "trainer": {
@@ -203,5 +194,11 @@
     "title": "Visione compito di <%= parameter %>",
     "where": "Ufficio",
     "reminder": "1d"
+  },
+  "commiss": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Commissione <%= parameter %>",
+    "where": "Ufficio",
+    "reminder": "7d"
   }
 }

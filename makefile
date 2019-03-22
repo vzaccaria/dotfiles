@@ -1,4 +1,6 @@
 
+update: 	
+	git add . && git commit -m "Update" && git push
 build-vimtheme:
 	themer -c themer-colors-default -t themer-vim -o gen
 	mkdir -p neovim/.vim/colors
