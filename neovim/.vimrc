@@ -219,6 +219,13 @@ colorscheme PaperColor
 set nolazyredraw
 set noshowcmd
 
+" Folding shortcut
+nnoremap <S-Right> zo
+inoremap <S-Right> <C-O>zo
+nnoremap <S-Left> zc
+inoremap <S-Left> <C-O>zc
+
+
 ab bacio 😘
 ab eheh 😁
 ab uhm 🤔
