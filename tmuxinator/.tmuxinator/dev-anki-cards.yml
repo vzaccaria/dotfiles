@@ -5,5 +5,5 @@ windows:
   - dev-anki-cards:
       layout: main-horizontal
       panes:
-        - vi Algebra.org
+        - cd .
         - cd . && make watch
