@@ -19,6 +19,7 @@
 #+LATEX_HEADER: \usetikzlibrary{quotes}
 #+LATEX_HEADER: \usetikzlibrary{shapes}
 #+LATEX_HEADER: \usetikzlibrary{matrix}
+#+LATEX_HEADER: \usetikzlibrary{automata}
 #+LATEX_HEADER: \usetikzlibrary{positioning}
 #+LATEX_HEADER: \usetikzlibrary{decorations,decorations.pathmorphing,decorations.pathreplacing}
 #+LaTeX_HEADER: \usegdlibrary{trees}
@@ -46,7 +47,6 @@
 #+LATEX_HEADER: \tikzstyle{none}=[rectangle, minimum size=1cm]
 #+LATEX_HEADER: \tikzstyle{box}=[rectangle, fill=white, draw=black, minimum size=2cm, rounded corners]
 #+LATEX_HEADER: \tikzstyle{sbox}=[rectangle, fill=white, draw=black, minimum width=4cm, rounded corners]
-#+LATEX_HEADER: \tikzstyle{state}=[circle, scale=.5, fill=white, draw=black, minimum size=2cm, rounded corners]
 #+LATEX_HEADER: \tikzstyle{boxes}=[double copy shadow, fill=white, rectangle, draw=black, minimum size=2cm, rounded corners]
 #+LATEX_HEADER:
 #+LATEX_HEADER: \tikzstyle{container} = [blue dotted]
