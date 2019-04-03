@@ -33,9 +33,16 @@
 
   (define-key global-map "\C-ct"
     (lambda () (interactive) (org-capture nil "t")))
+  
+  (define-key global-map "\C-cd"
+    (lambda () (interactive) (org-capture nil "d")))
 
   (setq org-capture-templates
         '(
+          ("d" "Work todo per oggi" entry
+           (file+headline "~/Dropbox/org/institutional/work_ag.org" "Ricordarsi di ...")
+           "* TODAY %?\n  %i\n")
+
           ("t" "Work todo generico" entry
            (file+headline "~/Dropbox/org/institutional/work_ag.org" "Ricordarsi di ...")
            "* TODO %?\n  %i\n")
