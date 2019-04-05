@@ -128,7 +128,7 @@ gitcommutecheck() {
 
 
 gi() {
-    echo "$1" >> ./.gitignore
+    echo "$*" | tr ' ' '\0' | xargs -0 -n 1 -I {} echo {} >> ./.gitignore
 }
 
 gitignoreedit() {
