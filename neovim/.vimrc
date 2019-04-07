@@ -147,6 +147,8 @@ nnoremap <leader>aq vip:EasyAlign *"<cr>
 " ,ae to realign by ampersands
 nnoremap <leader>ae vip:EasyAlign *&<cr>
 			
+" ,al to realign by colons
+nnoremap <leader>al vip:EasyAlign *:<cr>
 
 "search for visually selected text
 vnoremap // y/<C-R>"<CR>
