@@ -1,5 +1,0 @@
-
-#+startup: BEAMER
-#+LaTeX_CLASS:         beamer
-#+LaTeX_CLASS_OPTIONS: [smaller,lualatex]
-
