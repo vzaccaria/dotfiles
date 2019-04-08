@@ -1,0 +1,20 @@
+
+#+LaTeX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usetikzlibrary{mindmap}
+#+LATEX_HEADER: \usetikzlibrary{positioning}
+#+LATEX_HEADER: \usetikzlibrary{snakes}
+#+LATEX_HEADER: \usetikzlibrary{arrows.meta}
+#+LATEX_HEADER: \usetikzlibrary{shadows}
+#+LATEX_HEADER: \usetikzlibrary{calc}
+#+LATEX_HEADER: \usetikzlibrary{fit}
+#+LATEX_HEADER: \usetikzlibrary{chains}
+#+LATEX_HEADER: \usetikzlibrary{quotes}
+#+LATEX_HEADER: \usetikzlibrary{shapes}
+#+LATEX_HEADER: \usetikzlibrary{matrix}
+#+LATEX_HEADER: \usetikzlibrary{automata}
+#+LATEX_HEADER: \usetikzlibrary{positioning}
+#+LATEX_HEADER: \usetikzlibrary{decorations,decorations.pathmorphing,decorations.pathreplacing}
+#+LATEX_HEADER: \usetikzlibrary{circuits.logic.US}
+#+LATEX_HEADER: \usetikzlibrary{circuits.ee.IEC}
+#+LATEX_HEADER: \usepackage{pgfplots}
+

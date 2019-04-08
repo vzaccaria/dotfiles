@@ -14,6 +14,7 @@
                                        (tags "TODO=\"TODAY\"")
                                        (tags "DEADLINE<=\"<+1w>\"-TODO=\"DONE\"")
                                        (tags "TODO=\"TODO\"&-TODO=\"IMPORTANT\"")
+                                       (tags "TODO=\"JAR\"")
                                        ))))
 
   (setq org-agenda-todo-list-sublevels nil)
@@ -23,7 +24,7 @@
         (find-lisp-find-files "~/Dropbox/org" "_ag\.org$"))
 
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "TODAY(d)" "|" "DONE")
+        '((sequence "TODO(t)" "TODAY(d)" "JAR(j)" "|" "DONE")
           (sequence "TOREIMBURSE" "|" "REIMBURSED"  )))
 
   (add-hook 'org-mode-hook (lambda ()

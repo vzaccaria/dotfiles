@@ -1,0 +1,11 @@
+#+LATEX_HEADER: \usepackage{fontawesome}
+#+LaTeX_HEADER: \usepackage{ifplatform}
+#+LATEX_HEADER: \ifmacosx
+#+LATEX_HEADER: \newfontfamily\myunicodefallback{Menlo}
+#+LATEX_HEADER: \newfontfamily\myunicodefallbackb{DejaVu Sans}
+#+LATEX_HEADER: \fi
+#+LATEX_HEADER: \iflinux
+#+LATEX_HEADER: \newfontfamily\myunicodefallback{Menlo-Regular}
+#+LATEX_HEADER: \newfontfamily\myunicodefallbackb{DejaVu Sans}
+#+LATEX_HEADER: \fi
+#+LATEX_HEADER: \newcommand{\uc}[1]{{\myunicodefallbackb #1}}
