@@ -1,4 +1,3 @@
-#+LATEX_HEADER: \usepackage{fontawesome}
 #+LaTeX_HEADER: \usepackage{ifplatform}
 #+LATEX_HEADER: \ifmacosx
 #+LATEX_HEADER: \newfontfamily\myunicodefallback{Menlo}
