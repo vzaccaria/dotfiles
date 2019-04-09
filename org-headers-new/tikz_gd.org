@@ -2,3 +2,4 @@
 #+LaTeX_HEADER: \usetikzlibrary{graphs}
 #+LaTeX_HEADER: \usegdlibrary{trees}
 #+LaTeX_HEADER: \usegdlibrary{layered}
+#+LaTeX_HEADER: \usegdlibrary{force}

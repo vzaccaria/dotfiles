@@ -1,0 +1,10 @@
+
+#+LaTeX_CLASS_OPTIONS: [10pt,a4]
+#+LaTeX_CLASS: memoir
+
+#+LATEX_HEADER: \setlength{\parskip}{0pt plus 0.5ex}
+#+LaTeX_HEADER: \usepackage{geometry}
+#+LATEX_HEADER: \geometry{top=3cm,left=2cm,right=2cm,bottom=3cm}
+
+#+LaTeX_HEADER: \usepackage{etoolbox}
+#+LaTeX_HEADER: \appto\verbatim{\tiny\myunicodefallback\baselineskip=-\maxdimen\lineskip=8pt}
