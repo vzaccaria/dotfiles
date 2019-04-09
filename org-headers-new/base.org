@@ -19,6 +19,4 @@
 #+LaTeX_HEADER: \usepackage{etoolbox}
 #+LaTeX_HEADER: \usepackage{shellesc}
 #+LaTeX_HEADER: \tolerance=1000
-#+LaTeX_HEADER: \usepackage{minted}
-#+LATEX_HEADER: \usemintedstyle{trac}
 

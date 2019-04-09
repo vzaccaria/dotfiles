@@ -1,0 +1,3 @@
+#+LaTeX_HEADER: \usepackage{minted}
+#+LATEX_HEADER: \usemintedstyle{trac}
+
