@@ -343,7 +343,7 @@ current buffer's, reload dir-locals."
   (interactive)
   (if vz/is-darwin 
     (progn (call-process-region (point) (mark) "pbcopy"))
-    (progn (call-process-region (point) (mark) "xclip"  nil nil nil "-selection clipboard -in")))
+    (progn (call-process-region (point) (mark) "bash"  nil nil nil "-c" "xclip -in -selection clipboard")))
   (setq deactivate-mark t))
 
 (defun pbpaste ()
