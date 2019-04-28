@@ -1,0 +1,52 @@
+{
+  "intervals": {
+    "j": {
+      "name": "jump rope regular skip",
+      "description": "",
+      "video": "",
+      "color": 1
+    },
+    "r": {
+      "name": "jump rope run in place",
+      "description": "",
+      "video": "https://www.jumpropedudes.com/workouts/hiit-fat-loss",
+      "color": 1
+    },
+    "f": {
+      "name": "jump rope fast skip",
+      "description": "",
+      "video": "https://www.jumpropedudes.com/workouts/hiit-fat-loss",
+      "color": 1
+    },
+    "s": {
+      "name": "squats",
+      "description": "",
+      "video": "https://www.jumpropedudes.com/workouts/hiit-fat-loss",
+      "color": 2
+    },
+    "as": {
+      "name": "air squats",
+      "description": "",
+      "video": "https://www.jumpropedudes.com/workouts/hiit-fat-loss",
+      "color": 2
+    },
+    "js": {
+      "name": "jump squats",
+      "description": "",
+      "video": "https://www.jumpropedudes.com/workouts/hiit-fat-loss",
+      "color": 2
+    },
+    "bk": {
+      "name": "butt kicks",
+      "description": "",
+      "video": "https://www.jumpropedudes.com/workouts/hiit-fat-loss",
+      "color": 2
+    },
+    "pu": {
+      "name": "push ups",
+      "description": "",
+      "video": "https://www.jumpropedudes.com/workouts/hiit-fat-loss",
+      "color": 3
+    }
+  }
+}

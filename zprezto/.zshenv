@@ -21,3 +21,5 @@ host=`hostname`
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto-zack/${machine}/${host}/path.sh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto-zack/${machine}/${host}/path.sh"
 fi
+
+export HISTSIZE=1000
