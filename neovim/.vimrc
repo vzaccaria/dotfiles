@@ -197,7 +197,8 @@ let g:ale_fixers = {
 \   'markdown': ['prettier'],
 \   'css': ['prettier'],
 \   'json': ['prettier'],
-\   'c': ['clang-format']
+\   'c': ['clang-format'],
+\   'asm': ['gcc']
 \}
 
 let g:ale_javascript_prettier_options = '--prose-wrap always'
