@@ -84,6 +84,11 @@
   (shell-command-on-region b e
                            "pandoc --columns=80 --read org --write org" t t))
 
+(defun beautify-mips (&optional b e)
+  (interactive "r")
+  (shell-command-on-region b e
+                           "vz-spim format" t t))
+
 (defun beautify-ess (&optional b e)
   (interactive "r")
   (shell-command-on-region (point-min) (point-max)
@@ -166,6 +171,7 @@
         ((derived-mode-p 'haskell-mode)    (call-interactively 'beautify-haskell))
         ((derived-mode-p 'LaTeX-mode)      (call-interactively 'beautify-latex))
         ((derived-mode-p 'latex-mode)      (call-interactively 'beautify-latex))
+        ((derived-mode-p 'asm-mode)      (call-interactively 'beautify-mips))
         (t "not implemented")))
   )
 

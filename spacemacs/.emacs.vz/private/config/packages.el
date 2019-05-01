@@ -19,6 +19,7 @@
     (config/flycheck-config-verilog)
     (config/flycheck-config-shell)
     (config/flycheck-config-orgmode)
+    (config/flycheck-config-assembler)
     )
   )
 

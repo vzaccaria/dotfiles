@@ -49,6 +49,18 @@
   (add-hook 'org-mode-hook 'flycheck-mode)
   )
 
+(defun config/flycheck-config-assembler()
+  (flycheck-define-checker mips32-asm-checker
+    "A MIPS checker based on spim. "
+
+    :command ("vz-spim" "check" source-original)
+    :error-parser flycheck-parse-checkstyle
+    :standard-input nil
+    :modes (asm-mode))
+  (add-to-list 'flycheck-checkers 'mips32-asm-checker)
+  (add-hook 'asm-mode-hook 'flycheck-mode)
+  )
+
 (defun config/flycheck-config-verilog ()
   (flycheck-define-checker verilog-check
     "A linter for verilog using verilator."
