@@ -78,6 +78,10 @@ update()  {
     vg update $*
 }
 
+u() {
+    vg update . "$*"
+}
+
 move()     {
     vg move $*
 }
