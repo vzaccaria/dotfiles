@@ -1,11 +1,17 @@
 ---
 name: My workouts
 timers:
-  - name: Fat Loss - HIIT - beginner
+  - name: JRD - Fat Loss - HIIT - beginner
     options: {numberOfSets: 3, setRest: 60, intervalRest: 10}
     intervals: r:20/bk:20/f:20/pu:20/r:20/js:20/f:20/as:20
     link: https://www.jumpropedudes.com/workouts/hiit-fat-loss
-  - name: Fat Loss - HIIT - advanced
+  - name: JRD - Fat Loss - HIIT - advanced
     options: {numberOfSets: 5, setRest: 60, intervalRest: 10}
     intervals: r:20/bk:20/f:20/pu:20/r:20/js:20/f:20/as:20
     link: https://www.jumpropedudes.com/workouts/hiit-fat-loss
+  - name: CR - Beginner fitness jump rope
+    options: {numberOfSets: 3, setRest: 120, intervalRest: 0}
+    intervals: r:60/mcj:30/r:60/pk:30
+  - name: CR - Beginner fitness jump rope TABATA
+    options: {numberOfSets: 3, setRest: 120, intervalRest: 10}
+    intervals: r:20/mcj:20/r:20/mcj:20/r:20/mcj:20/r:20/mcj:20
