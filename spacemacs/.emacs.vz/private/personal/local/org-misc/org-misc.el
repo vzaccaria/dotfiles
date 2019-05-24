@@ -144,25 +144,13 @@
           ("ssgrid" "#+BEGIN_SRC shell :results silent :exports none\ngridpdf 10 10
 \n#+END_SRC \n[[file:./grid_ese_10x10.pdf]] \n ")
 
-     ;;; --- SOURCES: netlist from verilog module (needs mine netlistsvg, ps2pdf, yosys, pdfcrop)
-          ("ssv" "#+NAME: halfadder\n#+BEGIN_SRC verilog :exports none\nmodule singleAdder(\n   input  a,\n   input  b,\n   input  cin,\n   output s,\n   output cout );\n   assign s = a ^ b ^ cin;\n   assign cout = (a & b)  |  (a & cin)  |  (b & cin);\nendmodule\n#+END_SRC\n\n# if you change the verilog module, reevaluate with C-c\n#+BEGIN_SRC sh :results silent :exports none :noweb yes\ncat <<EOF | netlistsvg netlist --verilog | ps2pdf - | pdfcrop - images/bool_half_adder.pdf\n<<halfadder>>\nEOF \n#+END_SRC \n\n#+attr_latex: :width 0.55\\linewidth :float t :placement [h]\n[[file:images/bool_half_adder.pdf]]\n")
-
-     ;;; --- SOURCES: wave files (needs phantomjs)
-          ("ssw" "#+NAME: segnale\n#+BEGIN_SRC js :exports none\n { signal: [\n { name: \"clk\",         wave: \"p.....|...\" },\n { name: \"Data\",        wave: \"x.345x|=.x\", data: [\"head\", \"body\", \"tail\", \"data\"] },\n { name: \"Request\",     wave: \"0.1..0|1.0\" },\n {},\n { name: \"Acknowledge\", wave: \"1.....|01.\" }\n]} \n#+END_SRC\n\n# if you change the verilog module, reevaluate with C-c \n #+BEGIN_SRC shell :results silent :exports none :noweb yes\ncat <<EOF | netlistsvg wave | ps2pdf - | pdfcrop - images/bool_wave.pdf \n<<segnale>>\n #+END_SRC  \n \n #+attr_latex: :width 0.55\\linewidth :float t :placement [h] \n [[file:images/bool_wave.pdf]] \n")
-
      ;;; --- SOURCES: gantt chart with mermaid
-          ("ssdg"  "#+BEGIN_SRC shell :results silent :exports none :noweb yes\n cat <<EOF | mmdc -i /dev/stdin -o ./gantt.pdf \n gantt\n       dateFormat  YYYY-MM-DD\n       title Allocazione tempo su progetti \n       \n       Section\n       First deliverable         :done,    2017-03-29,2017-07-29 \n       Second deliverable        :active,  2017-07-29,2017-11-29 \n       Third  deliverable        :         2017-11-29,2018-03-29 \n\n       section Other\n       (symbolic)            :active,  2017-09-01,2017-12-31 \n EOF \n#+END_SRC\n")
+          ("gantt"  "#+BEGIN_SRC shell :results silent :exports none :noweb yes\n cat <<EOF | mmdc -i /dev/stdin -o ./gantt.pdf \n gantt\n       dateFormat  YYYY-MM-DD\n       title Allocazione tempo su progetti \n       \n       Section\n       First deliverable         :done,    2017-03-29,2017-07-29 \n       Second deliverable        :active,  2017-07-29,2017-11-29 \n       Third  deliverable        :         2017-11-29,2018-03-29 \n\n       section Other\n       (symbolic)            :active,  2017-09-01,2017-12-31 \n EOF \n#+END_SRC\n")
 
-          ("ssmd" "#+BEGIN_SRC shell :results silent :exports none :noweb yes\ncat <<EOF | mmdc -i /dev/stdin -o ./architecture-uc.pdf && pdfcrop ./architecture-uc.pdf /Users/zaccaria/Dropbox/research/webengineering/2017-CAISE/figures/gql-architecture.pdf\n\ngraph TB\n    subgraph backend\n    G[\"GraphQL endpoint\"]\n    QA[\"Context manager\"]\n    SI[\"Query manager\"]\n    RA[\"response aggregator\"]\n    G --> QA\n    QA --> SI\n    SI --> RA\n    end\n\n\n    subgraph app\n    R[\"React\"]-.Graph QL.->G\n    RA -.JSON.-> R\n    end\nEOF\n#+END_SRC")
-
-     ;;; --- SOURCES: data structures
-          ("ssds" "# if you change the verilog module, reevaluate with C-c \n #+BEGIN_SRC shell :results silent :exports none :noweb yes\ncat <<EOF | struct2pdf --output images/struct-twitter.pdf \nvariableName: twitterdb\nvariableContent:\n  type: struct\n  typeName: utenti\n  fields: \n     - name: numero_utenti\n     - name: dati_utente\n       type: array\n       follow: [ iterator ] \n       range: \n          min: 0\n          iterator: u\n          max: 100\n       of: \n          type: struct\n          typeName: utente\n          fields: \n             - name: nome\n             - name: data_iscrizione \n             - name: numero_messaggi\n             - name: messaggi\n               type: array\n               follow: [ iterator ]\n               range: \n                  min: 0\n                  iterator: m \n               of:\n                  type: struct\n                  typeName: tweet\n                  fields: \n                      - name: contenuto\n                      - name: numero_hashtags\n                      - name: hashtags\n                        type: array\n                        range: \n                          min: 0\n                          iterator: h \n                        of:\n                          type: struct\n                          typeName: stringa\n                        \n       \nEOF\n #+END_SRC  \n \n#+attr_latex: :width 0.85\\linewidth \n[[file:images/struct-twitter.pdf]] \n")
 
      ;;; --- FIGURES ---
           ("fe" "#+BEGIN_EXPORT latex\n\\begin{figure}\n\n\\end{figure}\n#+END_EXPORT")
-          ("fc" "#+CAPTION: caption with label \\label{l1}\n#+attr_latex: :width 0.85\\linewidth :float t :placement [h]")
-          ("tg" "\\begin{tikzpicture}\n\\graph[layered layout, level distance=1cm]{ a -> {b, c} };\n\\end{tikzpicture}")
-          ("tc" "\\begin{tikzpicture}[start chain=1 going right,node distance=5mm] \n \\node [draw,on chain=1] {Hello}; \n\\node [draw,on chain] {World}; \n\\end{tikzpicture}")
+          ("fc" "#+CAPTION: caption with label \\label{l1}\n#+attr_latex: :width 0.85\\linewidth :float t :placement [h]\n[[file:images/file.pdf]]")
 
      ;;; --- GENERIC LATEX
 
@@ -170,17 +158,14 @@
           ("al" "#+attr_latex: :font \\footnotesize :width 0.85\\linewidth :float t :placement [h]")
           ("alf" "#+attr_latex: :width 0.85\\linewidth :float t :placement [h]")
 
-     ;;; --- EXAMPLES ---
-          ("ec" "#+begin_center \n #+attr_latex: :options {0.7\\textwidth} \n #+begin_minipage \n #+BEGIN_EXAMPLE \n #+END_EXAMPLE \n #+end_minipage \n #+end_center \n")
-
      ;;; --- EQUATIONS ---
-          ("equ" "#+BEGIN_EXPORT latex\n\\begin{equation}\n\\end{equation}\n#+END_EXPORT")
-          ("eqc" "f(x) = \\begin{cases}\n 1 & \\text{for } n = 0 \\\\ \n \\end{cases}\n")
-          ("eqa" "\\begin{array}{rcl}\n a& = &b \\\\\n\\end{array}\n")
-          ("eql" "#+BEGIN_EXPORT latex\n\\begin{align}\n a& = &b \\\\\n\\end{align}\n#+END_EXPORT")
+          ("equ" "\\begin{equation}\n\\end{equation}\n")
+          ("cases" "f(x) = \\begin{cases}\n 1 & \\text{for } n = 0 \\\\ \n \\end{cases}\n")
+          ("array" "\\begin{array}{rcl}\n a& = &b \\\\\n\\end{array}\n")
+          ("align" "\\begin{align}\n a& = &b \\\\\n\\end{align}\n")
 
      ;;; --- MATRICES ---
-          ("mat" "M = \\left(\\begin{array}{ccc}\n a& = &b \\\\\n\\end{array}\\right)\n")
+          ("pmatrix" "\\begin{pmatrix} a& b \\\\ c & d \\\\\n\\end{parray}\n")
 
      ;;; --- MINI PAGES and COLUMNS
           ("hp" "#+BEGIN_EXPORT latex\n\\begin{minipage}[t]{0.55\\textwidth}\n#+END_EXPORT\n#+BEGIN_EXPORT latex\n\\end{minipage}\n#+END_EXPORT\n\\hspace{0.9cm}\n#+BEGIN_EXPORT latex\n\\begin{minipage}[t]{0.40\\textwidth}\n#+END_EXPORT\n#+BEGIN_EXPORT latex\n\\end{minipage}\n#+END_EXPORT\n"

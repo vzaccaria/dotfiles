@@ -1,6 +1,6 @@
 
 #+LaTeX_CLASS_OPTIONS: [10pt,a4]
-#+LaTeX_CLASS: memoir
+#+LaTeX_CLASS: article
 
 #+LATEX_HEADER: \setlength{\parskip}{0pt plus 0.5ex}
 #+LaTeX_HEADER: \usepackage{geometry}
