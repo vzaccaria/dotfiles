@@ -200,7 +200,7 @@ bar {
 #
 # Please remove the following exec line:
 #######################################################################
-exec i3-config-wizard
+# exec i3-config-wizard
 exec_always --no-startup-id feh --bg-fill  $HOME/dotfiles/wallpapers/wallpaper.jpg
 # exec --no-startup-id compton -b
 # exec --no-startup-id xset r rate 300 35 # Set initial delay 300ms, repeat 35ms
