@@ -1,17 +1,25 @@
 ---
 name: My workouts
 timers:
-  - name: JRD - Fat Loss - HIIT - beginner
-    options: {numberOfSets: 3, setRest: 60, intervalRest: 10}
-    intervals: r:20/bk:20/f:20/pu:20/r:20/js:20/f:20/as:20
-    link: https://www.jumpropedudes.com/workouts/hiit-fat-loss
-  - name: JRD - Fat Loss - HIIT - advanced
+  - name: JRD - Fat Loss - HIIT - (choose 3 or 5 sets)
     options: {numberOfSets: 5, setRest: 60, intervalRest: 10}
-    intervals: r:20/bk:20/f:20/pu:20/r:20/js:20/f:20/as:20
+    intervals: r:20/bk:20/rf:20/pu:20/r:20/js:20/rf:20/as:20
     link: https://www.jumpropedudes.com/workouts/hiit-fat-loss
+
+  - name: JRD - 600 (125 per set) cal workout in 30 minutes
+    options: {numberOfSets: 4, setRest: 60, intervalRest: 10}
+    intervals: fs:60/as:30/r:60/hk:30/fs:60/jl:30/mk:60/hop:30
+    link: https://www.youtube.com/watch?v=TeThU_Xyl0c
+
+  - name: JRD - 500 (100 cal per set) workout in 30 minutes
+    options: {numberOfSets: 5, setRest: 60, intervalRest: 10}
+    intervals: jf:30/r:30/jf:30/r:30/jf:30/r:30/jf:30/r:30
+    link: https://www.youtube.com/watch?v=6jzLLkQTVrQ
+
   - name: CR - Beginner fitness jump rope
     options: {numberOfSets: 3, setRest: 120, intervalRest: 0}
     intervals: r:60/mcj:30/r:60/pk:30
+
   - name: CR - Beginner fitness jump rope TABATA
     options: {numberOfSets: 3, setRest: 120, intervalRest: 10}
     intervals: r:20/mcj:20/r:20/mcj:20/r:20/mcj:20/r:20/mcj:20

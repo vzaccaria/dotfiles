@@ -6,28 +6,40 @@
       "video": "",
       "color": 1
     },
+    "jf": {
+      "name": "jump rope regular skip fast",
+      "description": "",
+      "video": "https://youtu.be/6jzLLkQTVrQ?t=54",
+      "color": 1
+    },
     "r": {
       "name": "jump rope run in place",
       "description": "",
-      "video": "https://www.jumpropedudes.com/workouts/hiit-fat-loss",
+      "video": "https://youtu.be/TeThU_Xyl0c?t=197",
       "color": 1
     },
-    "f": {
-      "name": "jump rope fast skip",
+    "rf": {
+      "name": "jump rope run in place fast",
       "description": "",
       "video": "https://www.jumpropedudes.com/workouts/hiit-fat-loss",
       "color": 1
     },
-    "s": {
-      "name": "squats",
+    "fs": {
+      "name": "jump rope free style",
       "description": "",
-      "video": "https://www.jumpropedudes.com/workouts/hiit-fat-loss",
-      "color": 2
+      "video": "https://youtu.be/TeThU_Xyl0c?t=77",
+      "color": 1
+    },
+    "mk": {
+      "name": "jump rope mummy kicks",
+      "description": "",
+      "video": "https://youtu.be/TeThU_Xyl0c?t=420",
+      "color": 1
     },
     "as": {
       "name": "air squats",
       "description": "",
-      "video": "https://www.jumpropedudes.com/workouts/hiit-fat-loss",
+      "video": "https://youtu.be/TeThU_Xyl0c?t=148",
       "color": 2
     },
     "js": {
@@ -51,7 +63,7 @@
     "mcj": {
       "name": "mountain climbers jump",
       "description": "braccia dritte, salta con entrambi i piedi contemporaneamente",
-      "video": "https://www.youtube.com/watch?v=iHjaVJih6ak",
+      "video": "https://youtu.be/iHjaVJih6ak?t=37",
       "color": 3
     },
     "pk": {
@@ -59,6 +71,30 @@
       "description": "",
       "video": "https://www.youtube.com/watch?v=F-nQ_KJgfCY",
       "color": 3
+    },
+    "jl": {
+      "name": "jumping lounges",
+      "description": "",
+      "video": "https://youtu.be/TeThU_Xyl0c?t=372",
+      "color": 3
+    },
+    "hk": {
+      "name": "high knees",
+      "description": "",
+      "video": "https://youtu.be/TeThU_Xyl0c?t=257",
+      "color": 3
+    },
+    "hop": {
+      "name": "hand over hand pushups",
+      "description": "",
+      "video": "https://youtu.be/TeThU_Xyl0c?t=478",
+      "color": 3
+    },
+    "s": {
+      "name": "squats",
+      "description": "",
+      "video": "https://www.jumpropedudes.com/workouts/hiit-fat-loss",
+      "color": 2
     }
   }
 }
