@@ -33,7 +33,7 @@ vz-html-mail-compose() {
 }
 
 vz-mail-compose() {
-    touch ~/temp.md
+    xclip -selection clipboard -out | sed 's/^/> /' > ~/temp.md
     nvim ~/temp.md 
     cat ~/temp.md | xclip -selection clipboard -in 
 }
