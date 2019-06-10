@@ -2,6 +2,7 @@
   "dependencies": {
     "align-yaml": "0.1.8",
     "chromix-too": "0.0.15",
+    "csvtojson": "^2.0.8",
     "decktape": "2.9.2",
     "diff-so-fancy": "1.0.0",
     "eslint": "5.6.0",
