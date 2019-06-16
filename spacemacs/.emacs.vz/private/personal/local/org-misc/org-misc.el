@@ -152,6 +152,13 @@
           ("fe" "#+BEGIN_EXPORT latex\n\\begin{figure}\n\n\\end{figure}\n#+END_EXPORT")
           ("fc" "#+CAPTION: caption with label \\label{l1}\n#+attr_latex: :width 0.85\\linewidth :float t :placement [h]\n[[file:images/file.pdf]]")
 
+
+     ;;; --- OTHER
+          
+          ("ese" "#+BEGIN_exercise\n#+END_exercise")
+          ("def" "#+ATTR_LATEX: :options [name]\n#+BEGIN_definition\n#+END_definition")
+          ("thm" "#+ATTR_LATEX: :options [name]\n#+BEGIN_theorem\n#+END_theorem")
+
      ;;; --- GENERIC LATEX
 
           ("als" "#+attr_latex: :font \\footnotesize")
