@@ -156,6 +156,8 @@
      ;;; --- OTHER
           
           ("ese" "#+BEGIN_exercise\n#+END_exercise")
+          ("oss" "#+BEGIN_remark\n#+END_remark")
+          ("exa" "#+ATTR_LATEX: :options [name]\n#+BEGIN_esempio\n#+END_esempio")
           ("def" "#+ATTR_LATEX: :options [name]\n#+BEGIN_definition\n#+END_definition")
           ("thm" "#+ATTR_LATEX: :options [name]\n#+BEGIN_theorem\n#+END_theorem")
 
@@ -169,7 +171,7 @@
           ("equ" "\\begin{equation}\n\\end{equation}\n")
           ("cases" "f(x) = \\begin{cases}\n 1 & \\text{for } n = 0 \\\\ \n \\end{cases}\n")
           ("array" "\\begin{array}{rcl}\n a& = &b \\\\\n\\end{array}\n")
-          ("align" "\\begin{align}\n a& = &b \\\\\n\\end{align}\n")
+          ("align" "\\begin{align*}\n a& = &b \\\\\n\\end{align*}\n")
 
      ;;; --- MATRICES ---
           ("pmatrix" "\\begin{pmatrix} a& b \\\\ c & d \\\\\n\\end{parray}\n")
