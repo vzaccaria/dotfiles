@@ -90,3 +90,8 @@ alias vz-clipboard-md-to-html='pbpaste | pandoc -f markdown -t html | pbcopy'
 alias vz-ocr-my-pdf="ocrmypdf"
 
 alias chromereload="osascript -e 'tell application \"Google Chrome\" to reload active tab of window 1'"
+
+# Search commands 
+
+alias sl='S -p lucky'
+alias sa='S -p amazon'
