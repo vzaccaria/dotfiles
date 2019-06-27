@@ -172,9 +172,10 @@
           ("cases" "f(x) = \\begin{cases}\n 1 & \\text{for } n = 0 \\\\ \n \\end{cases}\n")
           ("array" "\\begin{array}{rcl}\n a& = &b \\\\\n\\end{array}\n")
           ("align" "\\begin{align*}\n a& = &b \\\\\n\\end{align*}\n")
+          ("proof" "\\begin{align*}\n = & & \\eqprop{law} \\\\\n\\end{align*}\n")
 
      ;;; --- MATRICES ---
-          ("pmatrix" "\\begin{pmatrix} a& b \\\\ c & d \\\\\n\\end{parray}\n")
+          ("pmatrix" "\\begin{pmatrix} a& b \\\\ c & d \\\\\n\\end{pmatrix}\n")
 
      ;;; --- MINI PAGES and COLUMNS
           ("hp" "#+BEGIN_EXPORT latex\n\\begin{minipage}[t]{0.55\\textwidth}\n#+END_EXPORT\n#+BEGIN_EXPORT latex\n\\end{minipage}\n#+END_EXPORT\n\\hspace{0.9cm}\n#+BEGIN_EXPORT latex\n\\begin{minipage}[t]{0.40\\textwidth}\n#+END_EXPORT\n#+BEGIN_EXPORT latex\n\\end{minipage}\n#+END_EXPORT\n"

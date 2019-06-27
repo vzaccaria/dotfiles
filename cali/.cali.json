@@ -200,5 +200,11 @@
     "title": "Commissione <%= parameter %>",
     "where": "Ufficio",
     "reminder": "7d"
+  },
+  "mail": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Mandare mail <%= parameter %>",
+    "where": "",
+    "reminder": "2d"
   }
 }
