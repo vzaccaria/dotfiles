@@ -185,6 +185,6 @@ vz-html-mail-compose() {
 
 vz-mail-compose() {
     pbpaste | sed 's/^/> /' > ~/temp.md
-    vimr ~/temp.md 
+    vi ~/temp.md 
     cat ~/temp.md | pbcopy
 }
