@@ -23,10 +23,12 @@ if ls -G > /dev/null 2>&1; then
 fi
 
 # List all files colorized in long format
-alias l="ls -ltrF ${colorflag}"
+alias l='exa --long --git'
+#alias l="ls -ltrF ${colorflag}"
 
 # Alphabetic order
 alias ll="ls -lF ${colorflag}"
+
 
 # List all files colorized in long format, including dot files
 alias la="ls -ltraF ${colorflag}"

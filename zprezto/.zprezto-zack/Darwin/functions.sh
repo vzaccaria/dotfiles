@@ -188,3 +188,48 @@ vz-mail-compose() {
     vi ~/temp.md 
     cat ~/temp.md | pbcopy
 }
+
+kp() {
+
+## PROCESS
+# mnemonic: [K]ill [P]rocess
+# show output of "ps -ef", use [tab] to select one or multiple entries
+# press [enter] to kill selected processes and go back to the process list.
+# or press [escape] to go back to the process list. Press [escape] twice to exit completely.
+
+local pid=$(ps -ef | sed 1d | eval "fzf ${FZF_DEFAULT_OPTS} -m --header='[kill:process]'" | awk '{print $2}')
+
+if [ "x$pid" != "x" ]
+then
+  echo $pid | xargs kill -${1:-9}
+  kp
+fi
+}
+
+bcp() {
+### BREW + FZF
+# mnemonic [B]rew [I]nstall [P]lugin
+
+local uninst=$(brew leaves | eval "fzf ${FZF_DEFAULT_OPTS} -m --header='[brew:clean]'")
+
+if [[ $uninst ]]; then
+  for prog in $(echo $uninst)
+  do brew uninstall $prog
+  done
+fi
+}
+
+bip() {
+
+        ### BREW + FZF
+        # update multiple packages at once
+        # mnemonic [B]rew [U]pdate [P]lugin
+
+        local inst=$(brew search | eval "fzf ${FZF_DEFAULT_OPTS} -m --header='[brew:install]'")
+
+        if [[ $inst ]]; then
+          for prog in $(echo $inst)
+          do brew install $prog
+          done
+        fi
+}
