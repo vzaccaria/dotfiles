@@ -78,6 +78,10 @@ update()  {
     vg update $*
 }
 
+m() {
+    vg update . "minor changes"
+}
+
 u() {
     vg update . "$*"
 }
