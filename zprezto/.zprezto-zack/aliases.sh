@@ -64,3 +64,6 @@ alias next-month-gcal="gcalcli -w 20 calm"
 
 alias tx='tmuxinator'
 alias start-neomutt=' mutt-vmbox -f ~/dotfiles/notmuch-vmbx/mboxes.yml > ~/.neomutt-mboxes && mutt-vmbox -f ~/dotfiles/notmuch-vmbx/mboxes.yml > ~/.neomutt-mboxes && termcss ~/dotfiles/neomutt/.neomutt-config/color-themes/mutt-colors-css-test.muttrc.orig > ~/dotfiles/neomutt/.neomutt-config/color-themes/mutt-colors-css-test.muttrc && neomutt'
+
+alias vpi='vz-poli incarichi `pass poli`'
+alias vph='vz-poli home `pass poli`'

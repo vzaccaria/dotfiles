@@ -76,6 +76,10 @@ vz-live-edit-org() {
     org2pdf "$1" --latex-engine html -a /Users/zaccaria/dotfiles/org-headers/header_html_simple.org -p -w -y 'make chromereload'
 }
 
+vz-markdown-to-html() {
+   pandoc -f markdown -t html "$1" | pbcopy
+}
+
 
 vz-rename-currentdir-files-removing-spaces() {
   find . -depth -name "* *" -execdir rename 's/ /_/g' "{}" \;
