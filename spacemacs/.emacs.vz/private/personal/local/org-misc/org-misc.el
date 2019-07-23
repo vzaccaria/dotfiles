@@ -147,6 +147,10 @@
      ;;; --- SOURCES: gantt chart with mermaid
           ("gantt"  "#+BEGIN_SRC shell :results silent :exports none :noweb yes\n cat <<EOF | mmdc -i /dev/stdin -o ./gantt.pdf \n gantt\n       dateFormat  YYYY-MM-DD\n       title Allocazione tempo su progetti \n       \n       Section\n       First deliverable         :done,    2017-03-29,2017-07-29 \n       Second deliverable        :active,  2017-07-29,2017-11-29 \n       Third  deliverable        :         2017-11-29,2018-03-29 \n\n       section Other\n       (symbolic)            :active,  2017-09-01,2017-12-31 \n EOF \n#+END_SRC\n")
 
+     ;;; --- SOURCES: gantt chart with mermaid
+          ("ad"  "#+BEGIN_SRC shell :results silent :exports none :noweb yes\n cat <<EOF | mmdc -i /dev/stdin -o ./file.png \n sequenceDiagram \n
+    Alice->>Bob: Hello Bob, how are you? \n alt is sick \n Bob->>Alice: Not so good :( \n else is well \n Bob->>Alice: Feeling fresh like a daisy \n end \n opt Extra response \n Bob->>Alice: Thanks for asking \n EOF \n#+END_SRC end");
+
 
      ;;; --- FIGURES ---
           ("fe" "#+BEGIN_EXPORT latex\n\\begin{figure}\n\n\\end{figure}\n#+END_EXPORT")
