@@ -109,6 +109,12 @@
     "where": "Bovisa",
     "reminder": "3w"
   },
+  "esamepac": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Esame di Principi di Architetture- Aula <%= parameter %>",
+    "where": "Leonardo",
+    "reminder": "3w"
+  },
   "esamehyp": {
     "calendar": "Vittorio e Chiara",
     "title": "Esame di Hypermedia - Aula <%= parameter %>",
