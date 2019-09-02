@@ -31496,15 +31496,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>641 184 953 281 0 0 1920 1178 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>659 796 597 401 0 0 1920 1200 </string>
+	<string>659 728 606 469 0 0 1920 1200 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>644 517 1016 512 0 0 1680 1050 </string>
+	<string>819 653 796 486 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 21 1661 1029 0 0 1680 1050 </string>
+	<string>0 390 1330 810 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 835 1050 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 213 1660 837 0 0 1680 1050 </string>
+	<string>0 363 1660 837 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>840 0 835 1050 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
@@ -32023,7 +32023,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>DroidSansMonoForPowerline 25</string>
+			<string>mplusForPowerline-1m-regular 18</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prevent Opening in a Tab</key>

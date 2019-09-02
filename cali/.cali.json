@@ -79,6 +79,12 @@
     "where": "Eracle sport center, Via Fittavolo, Montano Lucino",
     "reminder": "1w"
   },
+  "reminder": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Ricordarsi di <%= parameter %>",
+    "where": "Casa",
+    "reminder": "2w"
+  },
   "cycling": {
     "calendar": "Vittorio e Chiara",
     "title": "Group cycling",

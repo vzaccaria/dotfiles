@@ -12,6 +12,7 @@ node_modules
 build
 _site
 .stack-work
+tmp-*
 
 # Workflow artifacts #
 ######################

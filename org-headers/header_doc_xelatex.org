@@ -1,5 +1,5 @@
 
-#+LaTeX_CLASS_OPTIONS: [10pt,a4]
+#+LaTeX_CLASS_OPTIONS: [10pt,a6]
 #+LaTeX_CLASS: article
 
 #+INCLUDE:   ./header_xelatex.org
