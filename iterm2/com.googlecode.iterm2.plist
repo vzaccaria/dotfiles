@@ -31496,27 +31496,27 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>641 184 953 281 0 0 1920 1178 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>659 728 606 469 0 0 1920 1200 </string>
+	<string>539 579 606 469 0 0 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>819 653 796 486 0 0 1920 1200 </string>
+	<string>819 627 918 512 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 390 1330 810 0 0 1920 1200 </string>
+	<string>0 425 1000 621 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 835 1050 0 0 1680 1050 </string>
+	<string>0 0 1920 1200 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 363 1660 837 0 0 1920 1200 </string>
+	<string>0 621 960 579 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>840 0 835 1050 0 0 1680 1050 </string>
+	<string>0 24 955 1176 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>960 1 955 599 0 0 1920 1200 </string>
+	<string>0 0 1920 1200 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>960 7 955 1193 0 0 1920 1200 </string>
+	<string>960 0 955 1200 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
-	<string>0 7 1918 1193 0 0 1920 1200 </string>
+	<string>0 11 1657 1039 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 7</key>
-	<string>0 601 956 599 0 0 1920 1200 </string>
+	<string>0 601 955 599 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 8</key>
-	<string>0 1 955 599 0 0 1920 1200 </string>
+	<string>1042 -10 955 1200 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 9</key>
 	<string>20 81 923 1077 0 0 1920 1178 </string>
 	<key>NSWindowTabbingShoudShowTabBarKey-PTYWindow-PseudoTerminal-PseudoTerminal-VT-FS</key>
@@ -31781,7 +31781,7 @@
 			<key>Custom Command</key>
 			<string>Yes</string>
 			<key>Custom Directory</key>
-			<string>Advanced</string>
+			<string>Recycle</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Disable Smcup Rmcup</key>
@@ -33590,7 +33590,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>SmartPlacement</key>
 	<false/>
 	<key>TabStyle</key>
