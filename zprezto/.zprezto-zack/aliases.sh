@@ -67,3 +67,5 @@ alias start-neomutt=' mutt-vmbox -f ~/dotfiles/notmuch-vmbx/mboxes.yml > ~/.neom
 
 alias vpi='vz-poli incarichi `pass poli`'
 alias vph='vz-poli home `pass poli`'
+
+alias y='stty sane'
