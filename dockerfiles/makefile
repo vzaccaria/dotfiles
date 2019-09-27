@@ -1,25 +1,27 @@
 
 R=./recipes
-G=./generated
 
 all: mac-devenv-vnc
 
-$(G)/devenv.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile $(R)/base.Dockerfile 
+generated/devenv.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile $(R)/base.Dockerfile 
 	cat $^ > $@
 
-$(G)/devenv-ssh.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile $(R)/base.Dockerfile $(R)/ssh.Dockerfile
+generated/devenv-ssh.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile $(R)/base.Dockerfile $(R)/ssh.Dockerfile
 	cat $^ > $@
 
-$(G)/devenv-vnc.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile $(R)/base.Dockerfile $(R)/vnc.Dockerfile
+generated/devenv-vnc.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile $(R)/base.Dockerfile $(R)/vnc.Dockerfile
+	cat $^ > $@
+
+generated/riscenv.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile $(R)/base.Dockerfile $(R)/riscv.Dockerfile
 	cat $^ > $@
 
 clean:
-	rm -rf $(G)/*.Dockerfile
+	rm -rf generated/*.Dockerfile
 
-build-%: $(G)/%.Dockerfile
+build-%: generated/%.Dockerfile
 	docker --tlsverify build -f $< -t $*-latest .
 
-build-mac-%: $(G)/%.Dockerfile
+build-mac-%: generated/%.Dockerfile
 	docker build -f $< -t $*-latest .
 
 mac-devenv-vnc: build-mac-devenv-vnc
