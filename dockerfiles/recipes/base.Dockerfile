@@ -79,11 +79,11 @@ RUN mkdir -p /usr/local/share/fonts               && \
     git config --global user.email "vittorio.zaccaria@gmail.com" && \
     git config --global user.name "Vittorio Zaccaria"
 
-RUN git clone https://github.com/facebook/watchman.git
-WORKDIR /root/watchman
-RUN ./autogen.sh
-RUN ./configure
-RUN make && make install
+# RUN git clone https://github.com/facebook/watchman.git
+# WORKDIR /root/watchman
+# RUN ./autogen.sh
+# RUN ./configure
+# RUN make && make install
 
 RUN echo "Rebuild on Jan 30, 2019, v0"
 RUN emacs --insecure -nw -batch -u "${UNAME}" -q -kill; exit 0
