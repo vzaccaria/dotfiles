@@ -54,8 +54,6 @@ RUN echo "Rebuild on Jan 16, 2019, v1"
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 WORKDIR /root/dotfiles
 
-RUN git clone https://github.com/syl20bnr/spacemacs /root/.emacs.d
-RUN cd /root/.emacs.d && git checkout tags/v0.200.13
 
 WORKDIR /root/dotfiles/zprezto
 RUN git submodule update --init
@@ -63,45 +61,12 @@ WORKDIR /root/dotfiles/zprezto/.zprezto
 RUN git submodule update --init
 WORKDIR /root/dotfiles
 
-RUN stow zprezto linux-tmux spacemacs
+RUN stow zprezto linux-tmux 
 
 WORKDIR /root
 
-# ADD https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.zip /tmp/scp.zip
-ADD http://www.ffonts.net/NanumGothic.font.zip /tmp/ng.zip
-
-RUN mkdir -p /usr/local/share/fonts               && \
-    unzip /tmp/ng.zip -d /usr/local/share/fonts   && \
-    chown ${uid}:${gid} -R /usr/local/share/fonts && \
-    chmod 777 -R /usr/local/share/fonts           && \
-    fc-cache -fv                                  && \
-    npm install -g tern js-beautify && \
-    git config --global user.email "vittorio.zaccaria@gmail.com" && \
+RUN git config --global user.email "vittorio.zaccaria@gmail.com" && \
     git config --global user.name "Vittorio Zaccaria"
-
-# RUN git clone https://github.com/facebook/watchman.git
-# WORKDIR /root/watchman
-# RUN ./autogen.sh
-# RUN ./configure
-# RUN make && make install
-
-RUN echo "Rebuild on Jan 30, 2019, v0"
-RUN emacs --insecure -nw -batch -u "${UNAME}" -q -kill; exit 0
-RUN emacs --insecure -nw -batch -u "${UNAME}" -q -kill; exit 0
-
-RUN apt-get update && \
-  apt-get install -y openssh-server \
-  x11-apps
-
-RUN echo "Rebuild on Jan 30, 2019, v1"
-RUN mkdir -p /var/run/sshd
-RUN echo 'root:root' | chpasswd
-RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
-RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-RUN sed -ri 's/^#AllowTcpForwarding\s+.*/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
-RUN sed -ri 's/^#X11Forwarding\s+.*/X11Forwarding yes/g' /etc/ssh/sshd_config
-RUN sed -ri 's/^#X11UseLocalhost\s+.*/X11UseLocalhost no/g' /etc/ssh/sshd_config
-
 
 RUN  git clone https://github.com/powerline/fonts.git /root/fonts --depth=1
 WORKDIR /root/fonts
