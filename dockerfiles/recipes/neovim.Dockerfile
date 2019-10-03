@@ -4,5 +4,7 @@ RUN apt-get install -y neovim
 RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 WORKDIR /root/dotfiles
 RUN stow neovim
+RUN mkdir -p /root/.config/nvim
+COPY scripts/init.vim /root/.config/nvim
 
 
