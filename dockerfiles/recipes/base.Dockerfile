@@ -37,6 +37,8 @@ RUN apt-get install -y \
     libssl-dev \
     vim
 
+
+RUN echo "Reload n. 1"
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 WORKDIR /root/dotfiles/zprezto
 RUN git submodule update --init
