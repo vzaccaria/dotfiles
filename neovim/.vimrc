@@ -192,12 +192,15 @@ augroup END
 
 let g:markdown_folding = 1
 
+if exists('*ale#linter#Define')
 call ale#linter#Define('tex', {
 \   'name': 'vzredpen',
 \   'executable': 'vzredpen',
 \   'command': 'vzredpen -f latex -r json %t',
 \   'callback': 'ale#handlers#redpen#HandleRedpenOutput',
 \})
+endif
+
 
 let g:ale_linters = {}
 let g:ale_linters.haskell = ['stack-ghc', 'stack-ghc-mod', 'hlint']
@@ -224,7 +227,7 @@ nnoremap <silent> <leader>m :make<cr>
 "colorscheme palenight
 
 set background=light
-colorscheme PaperColor
+" colorscheme PaperColor
 " set cursorline 
 " hi CursorLine term=bold cterm=bold guibg=Grey30
 " nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>

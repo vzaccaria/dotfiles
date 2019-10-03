@@ -3,7 +3,7 @@ R=./recipes
 
 all: mac-devenv-vnc
 
-generated/devenv.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile $(R)/base.Dockerfile 
+generated/devenv.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile $(R)/base.Dockerfile  $(R)/neovim.Dockerfile
 	cat $^ > $@
 
 generated/devenv-ssh.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile $(R)/base.Dockerfile $(R)/ssh.Dockerfile

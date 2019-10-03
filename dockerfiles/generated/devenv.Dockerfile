@@ -4,19 +4,17 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV SHELL /bin/zsh
 ENTRYPOINT /bin/zsh
 
-RUN echo "Rebuild on Jan 30, 2018, v0"
-
 RUN apt-get update && apt-get install -y locales
+
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-RUN apt-get update && apt-get install -y curl
-RUN curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
-RUN bash ./nodesource_setup.sh
+RUN apt-get update 
 
 RUN apt-get install -y \
+    curl \
     wget \
     zsh \
     stow \
@@ -41,81 +39,40 @@ RUN apt-get install -y \
     libssl-dev \
     vim
 
-RUN add-apt-repository -y ppa:kelleyk/emacs
-RUN apt-get update
-RUN apt-get install -y emacs25
-
-RUN echo "Rebuild on Jan 23, 2018, v3"
-RUN add-apt-repository -y ppa:cpick/hub
-RUN apt-get update
-RUN apt-get install -y hub
-RUN hub config --global hub.protocol https
-
-
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
-WORKDIR /root/dotfiles
-
-RUN git clone https://github.com/syl20bnr/spacemacs /root/.emacs.d
-RUN cd /root/.emacs.d && git checkout tags/v0.200.13
-
 WORKDIR /root/dotfiles/zprezto
 RUN git submodule update --init
 WORKDIR /root/dotfiles/zprezto/.zprezto
 RUN git submodule update --init
 WORKDIR /root/dotfiles
-
-RUN stow zprezto linux-tmux spacemacs
+RUN stow zprezto 
+RUN stow osx-tmux
 
 WORKDIR /root
-
-# ADD https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.zip /tmp/scp.zip
-ADD http://www.ffonts.net/NanumGothic.font.zip /tmp/ng.zip
-
-RUN mkdir -p /usr/local/share/fonts               && \
-    unzip /tmp/ng.zip -d /usr/local/share/fonts   && \
-    chown ${uid}:${gid} -R /usr/local/share/fonts && \
-    chmod 777 -R /usr/local/share/fonts           && \
-    fc-cache -fv                                  && \
-    npm install -g tern js-beautify && \
-    git config --global user.email "vittorio.zaccaria@gmail.com" && \
-    git config --global user.name "Vittorio Zaccaria"
-
-RUN git clone https://github.com/facebook/watchman.git
-WORKDIR /root/watchman
-RUN ./autogen.sh
-RUN ./configure
-RUN make && make install
-
-RUN echo "Rebuild on Jan 30, 2019, v0"
-RUN emacs --insecure -nw -batch -u "${UNAME}" -q -kill; exit 0
-RUN emacs --insecure -nw -batch -u "${UNAME}" -q -kill; exit 0
-
-RUN apt-get update && \
-  apt-get install -y openssh-server \
-  x11-apps
-
-RUN echo "Rebuild on Jan 30, 2019, v1"
-RUN mkdir -p /var/run/sshd
-RUN echo 'root:root' | chpasswd
-RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
-RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-RUN sed -ri 's/^#AllowTcpForwarding\s+.*/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
-RUN sed -ri 's/^#X11Forwarding\s+.*/X11Forwarding yes/g' /etc/ssh/sshd_config
-RUN sed -ri 's/^#X11UseLocalhost\s+.*/X11UseLocalhost no/g' /etc/ssh/sshd_config
-
-EXPOSE 22
-
 RUN  git clone https://github.com/powerline/fonts.git /root/fonts --depth=1
 WORKDIR /root/fonts
 RUN  ./install.sh
+
 WORKDIR /root
+RUN wget -c https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64-0.8.0.zip
+RUN unzip exa-linux-x86_64-0.8.0.zip
+RUN mv exa-linux-x86_64 /usr/local/bin/exa
 
-RUN apt-get install -y rxvt-unicode
+
+RUN add-apt-repository -y ppa:neovim-ppa/stable
+RUN apt-get install -y python-software-properties
+RUN apt-get update 
+RUN apt-get install -y neovim
+RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 WORKDIR /root/dotfiles
-RUN stow -D linux-tmux
-RUN stow osx-tmux
-ENTRYPOINT service ssh restart && bash
+RUN stow neovim
+RUN mkdir -p /root/.config/nvim
+COPY scripts/init.vim /root/.config/nvim
 
-RUN git clone https://github.com/vzaccaria/vz-clitools.git /root/clitools
-WORKDIR /root/clitools
-RUN npm link .
+RUN apt-get install -y python-dev python-pip python3-dev
+RUN apt-get install -y python3-setuptools
+RUN easy_install3 pip
+RUN pip3 install pynvim
+RUN nvim +PluginInstall +qall
+
+
