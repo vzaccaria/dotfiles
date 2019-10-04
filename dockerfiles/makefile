@@ -12,7 +12,7 @@ generated/devenv-ssh.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile $(R)/base.Dock
 generated/devenv-vnc.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile $(R)/base.Dockerfile $(R)/vnc.Dockerfile
 	cat $^ > $@
 
-generated/riscenv.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile $(R)/base.Dockerfile $(R)/riscv.Dockerfile
+generated/riscenv.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile $(R)/base.Dockerfile $(R)/riscv.Dockerfile $(R)/neovim.Dockerfile
 	cat $^ > $@
 
 clean:
