@@ -6,7 +6,7 @@ WORKDIR /root
 RUN git clone https://github.com/riscv/riscv-gnu-toolchain.git
 WORKDIR /root/riscv-gnu-toolchain
 RUN git submodule update --init --recursive
-RUN ./configure --prefix=/opt/riscv/toolchain --with-arch=rv32g --with-abi=ilp32d
+RUN ./configure --prefix=/opt/riscv/toolchain
 RUN make
 RUN make install
 WORKDIR /root

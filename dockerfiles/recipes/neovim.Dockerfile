@@ -12,6 +12,6 @@ RUN apt-get install -y python-dev python-pip python3-dev
 RUN apt-get install -y python3-setuptools
 RUN easy_install3 pip
 RUN pip3 install pynvim
-RUN nvim +PluginInstall +qall
+RUN nvim +PlugUpdate +qall
 
 

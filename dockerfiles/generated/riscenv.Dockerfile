@@ -69,7 +69,7 @@ WORKDIR /root
 RUN git clone https://github.com/riscv/riscv-gnu-toolchain.git
 WORKDIR /root/riscv-gnu-toolchain
 RUN git submodule update --init --recursive
-RUN ./configure --prefix=/opt/riscv/toolchain --with-arch=rv32g --with-abi=ilp32d
+RUN ./configure --prefix=/opt/riscv/toolchain
 RUN make
 RUN make install
 WORKDIR /root
@@ -92,6 +92,6 @@ RUN apt-get install -y python-dev python-pip python3-dev
 RUN apt-get install -y python3-setuptools
 RUN easy_install3 pip
 RUN pip3 install pynvim
-RUN nvim +PluginInstall +qall
+RUN nvim +PlugUpdate +qall
 
 
