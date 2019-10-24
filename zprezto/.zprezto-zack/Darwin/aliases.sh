@@ -11,8 +11,7 @@ alias ric='cd "/Users/zaccaria/Dropbox/Commuting/Ricercatore TI 2011"'
 alias chiara='cd "/Users/zaccaria/Dropbox/Commuting/Altro/Personal/Chiara/"'
 alias personal='cd "/Users/zaccaria/Dropbox/Commuting/Altro/Personal/"'
 
-alias lz='cd "/Users/zaccaria/development/github/materiale-corsi/infob/docs/org"'
-alias lec='cd "/Users/zaccaria/development/github/materiale-corsi/infob/docs/org"'
+alias mc='cd "/Users/zaccaria/development/github/org-institutional/materiale-corsi"'
 
 alias di='dashboard'
 alias preview="fzf --preview 'bat --color \"always\" {}'"

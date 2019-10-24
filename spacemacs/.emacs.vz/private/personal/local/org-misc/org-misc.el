@@ -168,6 +168,7 @@
      ;;; --- GENERIC LATEX
 
           ("als" "#+attr_latex: :font \\footnotesize")
+          ("alt" "#+attr_latex: :align |ccc|cc|")
           ("al" "#+attr_latex: :font \\footnotesize :width 0.85\\linewidth :float t :placement [h]")
           ("alf" "#+attr_latex: :width 0.85\\linewidth :float t :placement [h]")
 
