@@ -19,6 +19,12 @@
     "where": "Dipartimento di Meccanica, Via La Masa 1, Italy",
     "reminder": "1d"
   },
+  "ccselett": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "CCS Elettronica (Aula: <%= parameter %>)",
+    "where": "Politecnico di Milano",
+    "reminder": "1d"
+  },
   "ccseng": {
     "calendar": "Vittorio Zaccaria",
     "title": "CCS Energetica (Aula: <%= parameter %>)",
