@@ -309,6 +309,8 @@
   (define-key org-mode-map (kbd "M-<right>") 'evil-window-right)
   (define-key org-mode-map (kbd "M-<left>")  'evil-window-left)
 
+  (define-key org-mode-map (kbd "<f12>") (lambda () (interactive) (flyspell-auto-correct-previous-word))) 
+
   (define-key org-mode-map (kbd "M-p")  'org-preview-latex-fragment)
   (define-key org-mode-map (kbd "<f1>") (lambda () (interactive) (org-overview)))
   (define-key org-mode-map (kbd "<f2>") (lambda () (interactive) (org-global-cycle 2)))
@@ -316,6 +318,7 @@
 
   (evil-define-key 'normal evil-org-mode-map (kbd "M-b")  'spacemacs/org-bold)
   (evil-define-key 'normal evil-org-mode-map (kbd "M-k")  'spacemacs/org-code)
+  (evil-define-key 'normal evil-org-mode-map (kbd "M-l")  'spacemacs/org-italic)
   (evil-define-key 'normal evil-org-mode-map (kbd "M-o")  'vz/switch-dictionary)
   )
 

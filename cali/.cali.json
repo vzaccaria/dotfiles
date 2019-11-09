@@ -37,6 +37,12 @@
     "where": "Scuola di Design",
     "reminder": "1d"
   },
+  "confateneo": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Conferenza di Ateneo (Aula: <%= parameter %>)",
+    "where": "Politecnico di Milano - Italy",
+    "reminder": "1d"
+  },
   "ricevimento": {
     "calendar": "Vittorio Zaccaria",
     "title": "Ricevimento studente/i (<%= parameter %>)",
@@ -224,5 +230,11 @@
     "title": "Mandare mail <%= parameter %>",
     "where": "",
     "reminder": "2d"
+  },
+  "ammin": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Passare in amministrazione - <%= parameter %>",
+    "where": "DEIB",
+    "reminder": "1h"
   }
 }

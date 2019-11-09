@@ -93,4 +93,5 @@ alias chromereload="osascript -e 'tell application \"Google Chrome\" to reload a
 # Search commands 
 
 alias sl='S -p lucky'
+alias sg='S -p github'
 alias sa='S -p amazon'
