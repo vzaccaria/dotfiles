@@ -236,5 +236,11 @@
     "title": "Passare in amministrazione - <%= parameter %>",
     "where": "DEIB",
     "reminder": "1h"
+  },
+  "elez": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Elezioni <%= parameter %>",
+    "where": "Politecnico di Milano",
+    "reminder": "1d"
   }
 }

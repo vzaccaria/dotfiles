@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: latexfig
+# key: latexfig_
+# --
+#+BEGIN_CENTER
+#+BEGIN_EXPORT latex
+\includegraphics[width=3cm]{$0}
+#+END_EXPORT
+#+END_CENTER
+

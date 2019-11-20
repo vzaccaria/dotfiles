@@ -21,8 +21,8 @@ Plug 'alx741/vim-hindent'
 Plug 'jceb/vim-orgmode'
 
 " Themes
-" Plug 'drewtempelmeyer/palenight.vim'
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'drewtempelmeyer/palenight.vim'
+"Plug 'NLKNguyen/papercolor-theme'
 
 " text-objects:
 " 
@@ -73,6 +73,9 @@ Plug 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
+
+" Folds for yaml
+Plug 'pedrohdz/vim-yaml-folds'
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -201,9 +204,20 @@ call ale#linter#Define('tex', {
 \})
 endif
 
+if exists('*ale#linter#Define')
+call ale#linter#Define('lhaskell', {
+\   'name': 'lit-stack-ghc',
+\   'output_stream': 'stderr',
+\   'executable': function('ale#handlers#haskell#GetStackExecutable'),
+\   'command': function('ale_linters#haskell#stack_ghc#GetCommand'),
+\   'callback': 'ale#handlers#haskell#HandleGHCFormat',
+\})
+endif
+
 
 let g:ale_linters = {}
 let g:ale_linters.haskell = ['stack-ghc', 'stack-ghc-mod', 'hlint']
+let g:ale_linters.lhaskell = ['lit-stack-ghc']
 let g:ale_linters.yaml = ['yamllint']
 let g:ale_linters.verilog = ['iverilog']
 let g:ale_linters.tex = ['proselint', 'write-good', 'vzredpen']
@@ -224,7 +238,7 @@ let g:ale_fix_on_save = 1
 nnoremap <silent> <leader>m :make<cr>
 
 "set background=dark
-"colorscheme palenight
+colorscheme palenight
 
 set background=light
 " colorscheme PaperColor
@@ -240,10 +254,12 @@ set nolazyredraw
 set noshowcmd
 
 " Folding shortcut
-nnoremap <S-Right> zo
-inoremap <S-Right> <C-O>zo
-nnoremap <S-Left> zc
-inoremap <S-Left> <C-O>zc
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
+" nnoremap <S-Right> zo
+" inoremap <S-Right> <C-O>zo
+" nnoremap <S-Left> zc
+" inoremap <S-Left> <C-O>zc
 
 
 ab bacio 😘
