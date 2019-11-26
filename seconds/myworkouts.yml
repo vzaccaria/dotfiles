@@ -1,6 +1,16 @@
 ---
 name: My workouts
 timers:
+  - name: JRD - All rope - (3 sets = 23 minutes)
+    options: {numberOfSets: 3, setRest: 60, intervalRest: 10}
+    intervals: r:60/bs:60/fsk:60/r:60/bs:60/fsk:60/r:60
+    link: https://youtu.be/k-rjjob4Tt8 
+
+  - name: JRD - Fat Loss - HIIT - (10 minutes)
+    options: {numberOfSets: 2, setRest: 60, intervalRest: 10}
+    intervals: jt:30/pu:30/as:30/jt:30/jj:30/jt:30/pk:30/ss:30
+    link: https://youtu.be/1-JDg3z9FeA 
+
   - name: JRD - Fat Loss - HIIT - (choose 3 or 5 sets)
     options: {numberOfSets: 5, setRest: 60, intervalRest: 10}
     intervals: r:20/bk:20/rf:20/pu:20/r:20/js:20/rf:20/as:20

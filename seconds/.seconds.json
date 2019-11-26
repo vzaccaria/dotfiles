@@ -1,5 +1,11 @@
 {
   "intervals": {
+    "jt": {
+      "name": "Jump rope reg/boxer/run",
+      "description": "",
+      "video": "",
+      "color": 1
+    },
     "j": {
       "name": "jump rope regular skip",
       "description": "",
@@ -34,6 +40,18 @@
       "name": "jump rope mummy kicks",
       "description": "",
       "video": "https://youtu.be/TeThU_Xyl0c?t=420",
+      "color": 1
+    },
+    "bs": {
+      "name": "boxer skip",
+      "description": "",
+      "video": "https://youtu.be/k-rjjob4Tt8?t=196",
+      "color": 1
+    },
+    "fsk": {
+      "name": "fast skip",
+      "description": "avanti medio e indietro",
+      "video": "https://youtu.be/k-rjjob4Tt8?t=234",
       "color": 1
     },
     "as": {
@@ -72,6 +90,12 @@
       "video": "https://www.youtube.com/watch?v=F-nQ_KJgfCY",
       "color": 3
     },
+    "jj": {
+      "name": "jumping jacks",
+      "description": "",
+      "video": "",
+      "color": 3
+    },
     "jl": {
       "name": "jumping lounges",
       "description": "",
@@ -94,6 +118,12 @@
       "name": "squats",
       "description": "",
       "video": "https://www.jumpropedudes.com/workouts/hiit-fat-loss",
+      "color": 2
+    },
+    "ss": {
+      "name": "speed skaters",
+      "description": "",
+      "video": "https://youtu.be/1-JDg3z9FeA",
       "color": 2
     }
   }
