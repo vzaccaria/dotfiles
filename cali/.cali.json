@@ -175,7 +175,12 @@
     "where": "?",
     "reminder": "10h"
   },
-
+  "cena": {
+    "calendar": "Vittorio e Chiara",
+    "title": "<%= parameter %>",
+    "where": "?",
+    "reminder": "4d"
+  },
   "prenotare": {
     "calendar": "Vittorio Zaccaria",
     "title": "Prenotare <%= parameter %>",
