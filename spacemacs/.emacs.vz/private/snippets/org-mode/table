@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: aligned table
+# key: table_
+# --
+#+attr_latex: :align c|cc
+|a | b | c |
+|--|---|---|
