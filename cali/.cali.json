@@ -129,7 +129,7 @@
   },
   "esamepac": {
     "calendar": "Vittorio e Chiara",
-    "title": "Esame di Principi di Architetture- Aula <%= parameter %>",
+    "title": "Esame di Principi di Architetture - Aula <%= parameter %>",
     "where": "Leonardo",
     "reminder": "3w"
   },
