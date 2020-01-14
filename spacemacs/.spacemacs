@@ -444,6 +444,7 @@ you should place you code here."
       ("un'altro" "un altro")
       ("gia'" "già")
       ("sara'" "sarà")
+      ("dovra'" "dovrà")
       ("verra'" "verrà")
       ("avra'" "avrà")
       ("realta'" "realtà")

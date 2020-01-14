@@ -239,7 +239,7 @@ let g:ale_fix_on_save = 1
 nnoremap <silent> <leader>m :make<cr>
 
 "set background=dark
-colorscheme palenight
+"colorscheme palenight
 
 set background=light
 " colorscheme PaperColor
@@ -282,6 +282,7 @@ ab avra' avrà
 ab realta' realtà
 ab verita' verità
 ab citta' città
+ab unita' unità
 ab disponibilita' disponibilità
 ab attivita' attività
 ab potra' potrà
