@@ -13,8 +13,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 
-" This has huge problems with cpu hogging
 Plug 'neovimhaskell/haskell-vim'
+" This has huge problems with cpu hogging
 " Plug 'parsonsmatt/intero-neovim'
 Plug 'pangloss/vim-javascript'
 Plug 'alx741/vim-hindent'
@@ -55,10 +55,6 @@ Plug 'tpope/vim-repeat'
 " gc        operator pending mode to target a comment.
 Plug 'tpope/vim-commentary'
 
-" ,s**      to jump where you want with two characters
-" ,k        to jump to an highlighted line up
-" ,j        to jump to an highlighted line down
-" ,.        to jump by selecting the line
 Plug 'easymotion/vim-easymotion'
 
 " gt        to set title case
@@ -101,21 +97,16 @@ nnoremap <silent> <M-w> :q<cr>
 
 " refill
 noremap <silent> <M-i> gwip<cr>
-
-" open fzf for commands,
 nnoremap <silent> <M-x> :Commands<cr>
-
-" open fzf for help,
 nnoremap <silent> <M-h> :Helptags<cr>
+nnoremap <silent> <M-y> :Snippets<cr>
 
 " open fzf for ag in local files,
 nnoremap <silent> <M-f> :call fzf#vim#ag_raw(". --nocolor --hidden -U --ignore '.git*' --ignore node_modules", {'options': '--delimiter : --nth 4..'}, 1)<cr>
 
-" set spell language to italian
-nnoremap <silent> <M-o>i :setlocal spell spelllang=it<cr>
-
-" set spell language to english
-nnoremap <silent> <M-o>u :setlocal spell spelllang=en_US<cr>
+" set spell language to italian or english
+nnoremap <silent> <leader>si :setlocal spell spelllang=it<cr>
+nnoremap <silent> <leader>se :setlocal spell spelllang=en_US<cr>
 
 " <M-o> correct last word with the first one from the vocabulary
 imap <M-o>c <c-g>u<Esc>[s1z=`]a<c-g>u
@@ -204,20 +195,30 @@ call ale#linter#Define('tex', {
 \})
 endif
 
-if exists('*ale#linter#Define')
-call ale#linter#Define('lhaskell', {
-\   'name': 'lit-stack-ghc',
+" if exists('*ale#linter#Define')
+" call ale#linter#Define('lhaskell', {
+" \   'name': 'lit-stack-ghc',
+" \   'output_stream': 'stderr',
+" \   'executable': function('ale#handlers#haskell#GetStackExecutable'),
+" \   'command': function('ale_linters#haskell#stack_ghc#GetCommand'),
+" \   'callback': 'ale#handlers#haskell#HandleGHCFormat',
+" \})
+" endif
+
+call ale#linter#Define('haskell', {
+\   'name': 'stack_ghc_local',
+\   'aliases': ['stack-ghc-local'],
 \   'output_stream': 'stderr',
-\   'executable': function('ale#handlers#haskell#GetStackExecutable'),
-\   'command': function('ale_linters#haskell#stack_ghc#GetCommand'),
+\   'executable': 'stack',
+\   'command': 'stack ghc -- -fno-code -v0 %t',
 \   'callback': 'ale#handlers#haskell#HandleGHCFormat',
 \})
-endif
 
 
 let g:ale_linters = {}
-let g:ale_linters.haskell = [ 'stack-build', 'hlint']
-let g:ale_linters.lhaskell = ['lit-stack-ghc']
+
+" See here https://blog.jez.io/haskell-development-with-neovim/
+let g:ale_linters.haskell = [ 'stack-ghc-local', 'hlint']
 let g:ale_linters.yaml = ['yamllint']
 let g:ale_linters.verilog = ['iverilog']
 let g:ale_linters.tex = ['proselint', 'write-good', 'vzredpen']
@@ -239,9 +240,9 @@ let g:ale_fix_on_save = 1
 nnoremap <silent> <leader>m :make<cr>
 
 "set background=dark
-"colorscheme palenight
+colorscheme palenight
 
-set background=light
+"set background=light
 " colorscheme PaperColor
 " set cursorline 
 " hi CursorLine term=bold cterm=bold guibg=Grey30
@@ -279,6 +280,7 @@ ab gia' già
 ab sara' sarà
 ab verra' verrà
 ab avra' avrà
+ab dovra' dovrà
 ab realta' realtà
 ab verita' verità
 ab citta' città
@@ -286,7 +288,7 @@ ab unita' unità
 ab disponibilita' disponibilità
 ab attivita' attività
 ab potra' potrà
-ab avra' avrà
+ab avro' avrò
 ab saro' sarò
 ab potro' potrò
 ab pero' però
@@ -294,6 +296,7 @@ ab puo' può
 ab pero' però
 ab avro' avrò
 ab faro' farò
+ab dovro' dovrò
 ab mandero' manderò
 ab vedro' vedrò
 ab rivedro' rivedrò

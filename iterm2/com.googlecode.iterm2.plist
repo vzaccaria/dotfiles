@@ -31496,21 +31496,21 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>641 184 953 281 0 0 1920 1178 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>659 728 606 469 0 0 1920 1200 </string>
+	<string>539 579 606 469 0 0 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>819 661 918 452 0 0 1920 1200 </string>
+	<string>644 523 796 486 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>720 0 955 1050 0 0 1680 1050 </string>
+	<string>0 0 1680 1050 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 429 1000 621 0 0 1680 1050 </string>
+	<string>0 34 835 1016 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 0 955 1200 0 0 1920 1200 </string>
+	<string>0 0 1680 1050 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>0 11 1675 1039 0 0 1680 1050 </string>
+	<string>0 24 1920 1176 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>0 1 937 599 0 0 1920 1200 </string>
+	<string>960 1 955 599 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>0 579 1000 621 0 0 1920 1200 </string>
+	<string>0 0 1920 1200 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
 	<string>920 579 1000 621 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 7</key>
@@ -32023,7 +32023,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>mplusForPowerline-1m-regular 18</string>
+			<string>HasklugNerdFontComplete-Regular 18</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prevent Opening in a Tab</key>

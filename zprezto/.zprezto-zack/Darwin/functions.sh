@@ -8,7 +8,6 @@
 . /usr/local/etc/profile.d/z.sh
 
 
-alias vim=/usr/local/bin/vim
 
 
 towerthis() {
