@@ -171,13 +171,13 @@ tnoremap <C-w><left> <C-\><C-n><C-w>h
 tnoremap <C-w><down> <C-\><C-n><C-w>j
 tnoremap <C-w><up> <C-\><C-n><C-w>k
 tnoremap <C-w><right> <C-\><C-n><C-w>l
-
 " touchbar!
 tnoremap § <C-c>
 endif
-cnoremap § <C-c>
-inoremap § <Esc>
-inoremap jk <Esc>
+
+" cnoremap § <C-c>
+" inoremap § <Esc>
+" inoremap jk <Esc>
 
 " When editing mails from neomutt use markdown
 augroup filetypedetect
