@@ -11,6 +11,7 @@
     "mathjax": "2.7.5",
     "mustache": "3.0.0",
     "nomnoml": "0.6.1",
+    "pm2": "4.2.3",
     "prettier": "1.16.1",
     "reveal.js": "3.7.0",
     "serve": "6.5.5",

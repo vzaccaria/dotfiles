@@ -271,6 +271,7 @@ ab perche' perché
 ab poiche' poiché  
 ab finche' finché  
 ab e' è
+ab E' È
 ab cioe cioè
 ab puo può
 ab nonappena non appena
@@ -287,6 +288,7 @@ ab citta' città
 ab unita' unità
 ab disponibilita' disponibilità
 ab attivita' attività
+ab Attivita' Attività
 ab potra' potrà
 ab avro' avrò
 ab saro' sarò
