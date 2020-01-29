@@ -1,0 +1,9 @@
+name: local-server
+root: /Users/zaccaria
+
+windows:
+  - server:
+      layout: main-vertical
+      panes:
+        - serverino
+        - gotty top 
