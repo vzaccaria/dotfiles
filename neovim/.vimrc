@@ -71,7 +71,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Folds for yaml
-Plug 'pedrohdz/vim-yaml-folds'
+" Plug 'pedrohdz/vim-yaml-folds'
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -175,9 +175,9 @@ tnoremap <C-w><right> <C-\><C-n><C-w>l
 tnoremap § <C-c>
 endif
 
-" cnoremap § <C-c>
-" inoremap § <Esc>
-" inoremap jk <Esc>
+cnoremap § <C-c>
+inoremap § <Esc>
+inoremap jk <Esc>
 
 " When editing mails from neomutt use markdown
 augroup filetypedetect

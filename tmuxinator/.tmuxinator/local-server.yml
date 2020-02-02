@@ -6,5 +6,5 @@ windows:
       layout: main-vertical
       panes:
         - serverino
-        - gotty -p 3005 -w zsh --permit-arguments
+        - gotty --permit-arguments -p 3005 -w zsh 
         - /usr/local/bin/emacs --daemon
