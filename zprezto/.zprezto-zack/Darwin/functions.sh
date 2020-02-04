@@ -16,6 +16,22 @@ towerthis() {
 
 # Use coreutils' grealpath
 
+nedit() {
+        realname=$(grealpath "$1" | tr -d '\n\')
+        echo "http://localhost:3005/?arg=-c&arg=(/usr/local/bin/emacsclient%20$realname)" | pbcopy
+}
+
+ntmux() {
+        realname=$(grealpath "$1" | tr -d '\n\')
+        echo "http://localhost:3005/?arg=-c&arg=(tmux%20new-session%20-c%20$realname)" | pbcopy
+}
+
+ntmuxc() {
+        realname=$(grealpath "$1" | tr -d '\n\')
+        command="${@:2}"
+        echo "http://localhost:3005/?arg=-c&arg=(tmux%20new-session%20-c%20$realname $command)" | pbcopy
+}
+
 rp() {
   grealpath "$1" | tr -d '\n' | pbcopy
 }
