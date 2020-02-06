@@ -450,6 +450,7 @@ you should place you code here."
       ("realta'" "realtà")
       ("localita'" "località")
       ("parita'" "parità")
+      ("unita'" "unità")
       ("verita'" "verità")
       ("citta'" "città")
       ("disponibilita'" "disponibilità")
