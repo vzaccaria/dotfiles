@@ -624,7 +624,7 @@ you should place you code here."
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(org-agenda-files
    (quote
-    ("/Users/zaccaria/Dropbox/org/institutional/corsi/pac/PacOrg_ag.org" "/Users/zaccaria/Dropbox/org/institutional/work_ag.org" "/Users/zaccaria/Dropbox/org/institutional/research/funded/stmicro_ag.org" "/Users/zaccaria/Dropbox/org/institutional/research/planning_ag.org" "/Users/zaccaria/Dropbox/org/institutional/research/topics/webtech_ag.org" "/Users/zaccaria/Dropbox/org/personal/casa_ag.org" "/Users/zaccaria/Dropbox/org/personal/casa_acquisto_ag.org" "/Users/zaccaria/Dropbox/org/personal/life/tasse_ag.org" "/Users/zaccaria/Dropbox/org/personal/life/salute_ag.org")))
+    ("/Users/zaccaria/Dropbox/org/institutional/tesisti_ag.org" "/Users/zaccaria/Dropbox/org/institutional/corsi/hyp/HypOrg_ag.org" "/Users/zaccaria/Dropbox/org/institutional/corsi/pac/PacOrg_ag.org" "/Users/zaccaria/Dropbox/org/institutional/corsi/phd/HaskellCourse_ag.org" "/Users/zaccaria/Dropbox/org/institutional/corsi/tfcp/TfcpOrg_ag.org" "/Users/zaccaria/Dropbox/org/institutional/corsi/infob/InfoBOrg_ag.org" "/Users/zaccaria/Dropbox/org/institutional/corsi/infob/InfoBMat_ag.org" "/Users/zaccaria/Dropbox/org/institutional/work_ag.org" "/Users/zaccaria/Dropbox/org/institutional/curriculum_ag.org" "/Users/zaccaria/Dropbox/org/institutional/research/funded/stmicro_ag.org" "/Users/zaccaria/Dropbox/org/institutional/research/planning_ag.org" "/Users/zaccaria/Dropbox/org/institutional/research/topics/webtech_ag.org")))
  '(org-agenda-prefix-format
    (quote
     ((agenda . " %i %-12:c%?-12t% s")
