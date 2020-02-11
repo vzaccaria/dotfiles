@@ -210,7 +210,7 @@ call ale#linter#Define('haskell', {
 \   'aliases': ['stack-ghc-local'],
 \   'output_stream': 'stderr',
 \   'executable': 'stack',
-\   'command': 'stack ghc -- -fno-code -v0 %t',
+\   'command': 'stack ghc -- -fno-code -v0 %t -hide-package cryptonite',
 \   'callback': 'ale#handlers#haskell#HandleGHCFormat',
 \})
 
