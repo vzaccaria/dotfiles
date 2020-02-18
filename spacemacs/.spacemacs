@@ -606,9 +606,7 @@ you should place you code here."
     ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
  '(ledger-reports
    (quote
-    (("FRA" "ledger -f /Users/zaccaria/Dropbox/org/institutional/administration/finance/fondi.ledger reg Assets\\:Fondi\\:Ateneo\\:Fondo\\ Ricerca\\ Ateneo")
-     ("STMicroelectronics" "ledger -f /Users/zaccaria/Dropbox/org/institutional/administration/finance/fondi.ledger reg Assets\\:Fondi\\:STMicroelectronics")
-     ("fondi esercitazioni" "ledger -f /Users/zaccaria/Dropbox/org/institutional/administration/finance/fondi.ledger reg Assets\\:Fondi\\:Ateneo\\:Esercitazioni")
+    (
      ("bal" "%(binary) -f %(ledger-file) bal")
      ("reg" "%(binary) -f %(ledger-file) reg")
      ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")
