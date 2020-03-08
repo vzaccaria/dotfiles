@@ -85,3 +85,4 @@ vz-rename-currentdir-files-removing-spaces() {
   find . -depth -name "* *" -execdir rename 's/ /_/g' "{}" \;
 }
 
+

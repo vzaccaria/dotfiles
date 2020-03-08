@@ -25,25 +25,25 @@ echo_ok
 #echo " * setting up local python environment in ~/local-python"
 #source ~/local-python/bin/activate
 
-if [[ -s "${srcdir}/docker.sh" ]]; then
-  source "${srcdir}/docker.sh"
-fi
+# if [[ -s "${srcdir}/docker.sh" ]]; then
+#   source "${srcdir}/docker.sh"
+# fi
+# 
+# echo "libvirt"
+# if [[ -s "${srcdir}/libvirt.sh" ]]; then
+#   source "${srcdir}/libvirt.sh"
+# fi
+# echo_ok
+# 
+# echo "qnap utils"
+# if [[ -s "${srcdir}/qnap-utils.sh" ]]; then
+#     source "${srcdir}/qnap-utils.sh"
+# fi
+# echo_ok
 
-echo "libvirt"
-if [[ -s "${srcdir}/libvirt.sh" ]]; then
-  source "${srcdir}/libvirt.sh"
-fi
-echo_ok
-
-echo "qnap utils"
-if [[ -s "${srcdir}/qnap-utils.sh" ]]; then
-    source "${srcdir}/qnap-utils.sh"
-fi
-echo_ok
-
-echo ""
-echo "Done."
-bat --decorations never --paging never ${srcdir}/tips.md
+# echo ""
+# echo "Done."
+# bat --decorations never --paging never ${srcdir}/tips.md
 
 
 # I dont remember why this is here..

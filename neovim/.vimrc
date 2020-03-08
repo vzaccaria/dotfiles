@@ -65,21 +65,21 @@ Plug 'christoomey/vim-titlecase'
 Plug 'terryma/vim-multiple-cursors'
 
 " Track the engine.
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
-Plug 'honza/vim-snippets'
+"Plug 'honza/vim-snippets'
 
 " Folds for yaml
 " Plug 'pedrohdz/vim-yaml-folds'
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"
+"" If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsEditSplit="vertical"
 call plug#end()
 
 " when opening fzf look also for hidden files
@@ -219,6 +219,7 @@ let g:ale_linters = {}
 
 " See here https://blog.jez.io/haskell-development-with-neovim/
 let g:ale_linters.haskell = [ 'stack-ghc-local', 'hlint']
+" let g:ale_linters.haskell = [ 'stack-ghc', 'hlint']
 let g:ale_linters.yaml = ['yamllint']
 let g:ale_linters.verilog = ['iverilog']
 let g:ale_linters.tex = ['proselint', 'write-good', 'vzredpen']

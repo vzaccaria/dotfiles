@@ -69,4 +69,4 @@ alias vpi='vz-poli incarichi `pass poli`'
 alias vph='vz-poli home `pass poli`'
 
 alias y='stty sane'
-alias wk='pkill -f watchman org2pdf jslatex'
+alias wk='pkill -f watchman org2pdf jslatex tikz2pdf'

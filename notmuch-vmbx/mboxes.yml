@@ -16,18 +16,6 @@ allmail:
   all:
     - tag:inbox
 
-poli/ricerca/itn:
-  any:
-    - olmos
-    - ITN
-
-poli/corsi/tcps:
-  any:
-    - (final NEAR thesis NEAR studio)
-    - ajovalasit
-    - ciancia
-
-
 poli/corsi/infob:
   any:
     - from:dinitto
@@ -41,6 +29,10 @@ poli/corsi/infob/lab:
     - gianenrico.conti@mail.polimi.it
     - marco.cannici@polimi.i
     - ingconti@ingconti.com
+
+poli/corsi/studenti:
+  any:
+    - mail.polimi.it
 
 poli/tesi:
   any:

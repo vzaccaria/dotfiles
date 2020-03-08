@@ -8,3 +8,4 @@ export NODE_PATH=/usr/local/lib/node_modules
 export EDITOR=nvim
 export GIT_EDITOR=nvim
 export GROFF_TMAC_PATH="$HOME/groff"
+export LEDGER_FILE="./bank-current.ledger"

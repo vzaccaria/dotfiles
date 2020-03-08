@@ -14,23 +14,33 @@ towerthis() {
     /Applications/Tower.app/Contents/MacOS/gittower "$(git rev-parse --show-toplevel)"
 }
 
-# Use coreutils' grealpath
 
-nedit() {
-        realname=$(grealpath "$1" | tr -d '\n\')
-        echo "http://localhost:3005/?arg=-c&arg=(/usr/local/bin/emacsclient%20$realname)" | pbcopy
+ntmuxc() {
+        directory=$(grealpath "$1" | tr -d '\n\')
+        shellcomm="${@:2}"
+        command="tmux new-session -c $directory '$shellcomm'"
+        ecommand=$(echo $command | jq -sRr @uri)
+        echo "http://localhost:3005/?arg=-c&arg=($ecommand)"  | pbcopy
+}
+
+nemacs() {
+        currentdir=$(pwd)
+        file=$(grealpath "$1" | tr -d '\n\')
+        command="/usr/local/bin/emacsclient -nw "$file" -c"
+        ntmuxc $currentdir $command
+}
+
+nvi() {
+        currentdir=$(pwd)
+        file=$(grealpath "$1" | tr -d '\n\')
+        command="nvim $file"
+        ntmuxc $currentdir $command
 }
 
 ntmux() {
-        realname=$(grealpath "$1" | tr -d '\n\')
-        echo "http://localhost:3005/?arg=-c&arg=(tmux%20new-session%20-c%20$realname)" | pbcopy
+        ntmuxc $1 ""
 }
 
-ntmuxc() {
-        realname=$(grealpath "$1" | tr -d '\n\')
-        command="${@:2}"
-        echo "http://localhost:3005/?arg=-c&arg=(tmux%20new-session%20-c%20$realname $command)" | pbcopy
-}
 
 rp() {
   grealpath "$1" | tr -d '\n' | pbcopy
@@ -247,4 +257,37 @@ bip() {
           do brew install $prog
           done
         fi
+}
+
+fo() {
+  local out file key
+  IFS=$'\n' out=("$(fzf-tmux --query="$1" --exit-0 --expect=ctrl-o,ctrl-e)")
+  key=$(head -1 <<< "$out")
+  file=$(head -2 <<< "$out" | tail -1)
+  if [ -n "$file" ]; then
+    [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
+  fi
+}
+
+fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  open "$dir"
+}
+
+keynote2pdf() {
+FILE_INPUT=`grealpath "$1"`
+FILE_OUTPUT=`echo $FILE_INPUT | sed "s/\.key$/\.pdf/"`
+    echo Exporting $FILE_INPUT to pdf
+osascript << EOF
+      tell application "System Events"
+        tell application "Keynote"
+          activate
+          open POSIX file "${FILE_INPUT}"
+          export front document to POSIX file "${FILE_OUTPUT}" as PDF
+        end tell
+        do shell script "killall Keynote"
+      end tell
+EOF
 }
