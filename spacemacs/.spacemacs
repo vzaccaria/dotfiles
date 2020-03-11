@@ -606,8 +606,7 @@ you should place you code here."
     ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
  '(ledger-reports
    (quote
-    (
-     ("bal" "%(binary) -f %(ledger-file) bal")
+    (("bal" "%(binary) -f %(ledger-file) bal")
      ("reg" "%(binary) -f %(ledger-file) reg")
      ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")
      ("account" "%(binary) -f %(ledger-file) reg %(account)"))))
@@ -644,7 +643,8 @@ you should place you code here."
  '(prettier-target-mode "js2-mode")
  '(safe-local-variable-values
    (quote
-    ((reftex-default-bibliography "../biblio.bib")
+    ((org-ref-default-bibliography "biblio.bib")
+     (reftex-default-bibliography "../biblio.bib")
      (TeX-command-extra-options . "-shell-escape"))))
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
  '(vc-annotate-background nil)

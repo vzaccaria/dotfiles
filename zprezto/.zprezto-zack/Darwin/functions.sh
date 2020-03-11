@@ -276,6 +276,20 @@ fd() {
   open "$dir"
 }
 
+fe() (
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+)
+
+
+# fda - including hidden directories
+fda() {
+  local dir
+  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
+}
+
+
+
 keynote2pdf() {
 FILE_INPUT=`grealpath "$1"`
 FILE_OUTPUT=`echo $FILE_INPUT | sed "s/\.key$/\.pdf/"`
