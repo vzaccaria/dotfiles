@@ -1,0 +1,12 @@
+customProviders [
+  {
+    name: lucky
+    url: "http://google.com/search?q=%s&btnI"
+    tags: [custom]
+  },
+  {
+    name: hoogle
+    url: "https://hoogle.haskell.org/?hoogle=%s"
+    tags: [custom]
+  }
+]
