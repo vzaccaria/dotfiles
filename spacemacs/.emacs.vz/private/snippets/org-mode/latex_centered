@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# name: latex_centered
-# key: latexc_
-# --
-#+BEGIN_EXPORT latex
-\begin{center}
-$0
-\end{center}
-#+END_EXPORT
