@@ -9,4 +9,4 @@
 \tikzstyle{new style 0}=[fill=white, draw=black, shape=circle]
 
 % Edge styles
-\tikzstyle{arrow}=[-stealth', tikzit draw=arrow]
+\tikzstyle{arrow}=[->]
