@@ -1,0 +1,599 @@
+{
+    "profiles": [
+        {
+            "simple_modifications": [],
+            "selected": true,
+            "name": "Vittorio Zaccaria's profile (KarabinerElements)",
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "manipulators": [
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "/usr/local/bin/kitty --single-instance zsh --interactive -c 'cd ~/GDrive && fd'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "g"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "/usr/local/bin/kitty --single-instance zsh --interactive -c 'cd ~/dotfiles && fe'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "f"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "/usr/local/bin/kitty --single-instance zsh --interactive -c 'vz-mail-compose'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "r"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "/usr/local/bin/kitty --single-instance zsh --interactive -c 'startanki'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "keypad_6"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open 'file:///Users/zaccaria/GDrive/Inbox'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "i"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open 'file:///Users/zaccaria/Downloads'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "d"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open 'https://gmail.google.com'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "m"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open 'http://localhost:3005/?arg=-c&arg=(tmux%20new-session%20-c%20%2FUsers%2Fzaccaria%2Fdevelopment%2Fgithub%2Forg-institutional%2Fanki-cards%20%27make%20watch%27%0A)'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "keypad_9"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open 'https://www.notion.so/Ricerca-eb4abbd2d620465a9325ae2e9f539d12'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "keypad_8"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open 'https://www.notion.so/Dashboard-5b4f689559b74cc0a7fd3e5a33a70a07'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "keypad_7"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open 'http://localhost:3005/?arg=-c&arg=(tmux%20new-session%20-c%20%2FUsers%2Fzaccaria%2Fdevelopment%2Fgithub%2Forg-institutional%2Fmateriale-corsi%2Fphd%2Fadvanced_topics_fp%2Fdocs%2Fnotes%20'make%20watch'%0A)'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "keypad_6"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open 'https://www.notion.so/2019-Principi-di-Architetture-pac-3105ddb4b07541678f9550f64eeb37f8'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "keypad_5"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open 'https://www.notion.so/2019-Hyp-0178106f135443ce912ccc228579da1a'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "keypad_4"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open 'http://localhost:3005/?arg=-c&arg=(tmux%20new-session%20-c%20%2FUsers%2Fzaccaria%2Fdevelopment%2Fgithub%2Forg-writing%2F202001---TCAD---Hazard-Algebras%20%27export%20NVIM_LISTEN_ADDRESS%3D%2Ftmp%2Fnvimsocket%3B%20nvim%20main.tex%27%0A)'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "keypad_3"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open 'https://www.theguardian.com/international'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "u"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open 'https://www.notion.so/Acquisto-casa-112f0b30da0b46f99b824705cb7ab485'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "a"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open 'https://calendar.google.com/calendar/r'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "c"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "open -a '/Applications/Zotero.app'"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "z"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "/usr/local/bin/kitty -d=~ --single-instance zsh --interactive"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "t"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "⌃⇧[mga] open (m)ail, (g)ithub or (a)ctivity monitor"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "/usr/local/bin/node /usr/local/bin/skimk get -s -z"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "n"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "net.sourceforge.skim-app.skim"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "/usr/local/bin/node /usr/local/bin/skimk get -s -z -m "
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "b"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "net.sourceforge.skim-app.skim"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "shell_command": "/usr/local/bin/node /usr/local/bin/skimk iframe"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    "key_code": "keypad_asterisk"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "net.sourceforge.skim-app.skim"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "⌃⇧n Copy a zotero link from Skim"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "to": [
+                                    {
+                                        "key_code": "keypad_5"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    },
+                                    "key_code": "i"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "key_code": "keypad_4"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    },
+                                    "key_code": "u"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "key_code": "keypad_6"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    },
+                                    "key_code": "o"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "Remap fn-[jkli] to keypad so as to use slate"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "key_code": "v"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    },
+                                    "key_code": "v"
+                                },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "Emacs shortcutKeyCode::V, ModifierFlag::CONTROL_L"
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "to": [
+                                    {
+                                        "key_code": "keypad_4"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ]
+                                    },
+                                    "key_code": "open_bracket"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "key_code": "keypad_6"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ]
+                                    },
+                                    "key_code": "close_bracket"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            },
+                            {
+                                "to": [
+                                    {
+                                        "key_code": "keypad_5"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ]
+                                    },
+                                    "key_code": "backslash"
+                                },
+                                "conditions": [],
+                                "type": "basic"
+                            }
+                        ],
+                        "description": "Use right cmd + [] for left, right or center window"
+                    }
+                ],
+                "parameters": {
+                    "basic.to_if_alone_timeout_milliseconds": 1000,
+                    "basic.to_delayed_action_delay_milliseconds": 500,
+                    "basic.to_if_held_down_threshold_milliseconds": 500
+                }
+            },
+            "devices": [],
+            "virtual_hid_keyboard": {
+                "keyboard_type": "ansi",
+                "caps_lock_delay_milliseconds": 0
+            }
+        }
+    ],
+    "global": {
+        "show_profile_name_in_menu_bar": false,
+        "check_for_updates_on_startup": true,
+        "show_in_menu_bar": true
+    }
+}

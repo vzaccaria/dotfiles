@@ -1,6 +1,7 @@
 (setq config-packages
       '(
         deft
+        zetteldeft
         ;; Owner of
         (flycheck-misc :location local)
         linum-mode
@@ -22,9 +23,13 @@
     )
   )
 
+(defun config/init-zetteldeft ()
+  (use-package zetteldeft :after deft))
+
 (defun config/post-init-deft ()
-  (setq deft-directory "~/Dropbox/org")
+  (setq deft-directory "~/development/github/org-institutional/vz-personal-store/braindump")
   (setq deft-recursive t)
+  (setq deft-extensions '("org" "md" "txt"))
   )
 
 (defun config/post-init-linum-mode ()

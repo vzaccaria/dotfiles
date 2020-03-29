@@ -67,6 +67,12 @@ alias start-neomutt=' mutt-vmbox -f ~/dotfiles/notmuch-vmbx/mboxes.yml > ~/.neom
 
 alias vpi='vz-poli incarichi `pass poli`'
 alias vph='vz-poli home `pass poli`'
+alias vz-fineco-mov-cc='vz-bank-mov fineco-movimenti `pass fineco-comune`'
+alias vz-popso-mov-cc='vz-bank-mov popso-movimenti `pass popso-comune`'
+alias vz-fineco-mov-pers='vz-bank-mov fineco-movimenti `pass fineco-personal`'
+
+alias vz-fineco-carte-cc='vz-bank-mov fineco-carte `pass fineco-comune`'
+alias vz-fineco-carte-pers='vz-bank-mov fineco-carte `pass fineco-personal`'
 
 alias y='stty sane'
 alias wk='pkill -f watchman org2pdf jslatex tikz2pdf'

@@ -63,7 +63,7 @@ refactor() {
 }
 
 fix()      {
-    vg fix $*
+    vg fix . "$*"
 }
 
 feat()     {

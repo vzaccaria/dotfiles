@@ -96,7 +96,10 @@ alias vo='vimr -n'
 alias sl='S -p lucky'
 alias sg='S -p github'
 alias sa='S -p amazon'
+alias so='S -p hoogle'
 alias sk='skimk get -m -s -l'
 alias sz='skimk get -z -m -s -l'
+
+alias hl='hledger -f bank-current.ledger'
 
 

@@ -14,11 +14,18 @@ towerthis() {
     /Applications/Tower.app/Contents/MacOS/gittower "$(git rev-parse --show-toplevel)"
 }
 
+ntmuxz() {
+        directory=$(grealpath "$1" | tr -d '\n\')
+        shellcomm="${@:2}"
+        command="tmux new-session -c $directory zsh --interactive -c '$shellcomm'"
+        ecommand=$(echo $command | jq -sRr @uri)
+        echo "http://localhost:3005/?arg=-c&arg=($ecommand)"  | pbcopy
+}
 
 ntmuxc() {
         directory=$(grealpath "$1" | tr -d '\n\')
         shellcomm="${@:2}"
-        command="tmux new-session -c $directory '$shellcomm'"
+        command="tmux new-session -c $directory $shellcomm"
         ecommand=$(echo $command | jq -sRr @uri)
         echo "http://localhost:3005/?arg=-c&arg=($ecommand)"  | pbcopy
 }
@@ -208,6 +215,12 @@ vz-html-mail-compose() {
     pandoc ~/temp.md | pbcopy
 }
 
+vz-edit-and-copy-html() {
+    finput=`grealpath "$1"`
+    emacsclient -nw ${finput} -c
+    pandoc ${finput} | pbcopy
+}
+
 vz-mail-compose() {
     pbpaste | sed 's/^/> /' > ~/temp.md
     vi ~/temp.md 
@@ -257,6 +270,16 @@ bip() {
           do brew install $prog
           done
         fi
+}
+
+# alternative using ripgrep-all (rga) combined with fzf-tmux preview
+# implementation below makes use of "open" on macOS, which can be replaced by other commands if needed.
+# allows to search in PDFs, E-Books, Office documents, zip, tar.gz, etc. (see https://github.com/phiresky/ripgrep-all)
+# find-in-file - usage: fif <searchTerm> or fif "string with spaces" or fif "regex"
+fif() {
+    if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+    local file
+    file="$(rga --max-count=1 --ignore-case --files-with-matches --no-messages "$@" | fzf-tmux +m --preview="rga --ignore-case --pretty --context 10 '"$@"' {}")" && open "$file"
 }
 
 fo() {

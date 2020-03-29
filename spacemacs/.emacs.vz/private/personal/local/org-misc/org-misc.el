@@ -195,6 +195,8 @@
   (setf org-latex-default-packages-alist
         (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
 
+  (add-to-list 'org-latex-packages-alist '("" "tikz-cd"))
+
 
   (setq bibtex-completion-display-formats
         '((article       . "${=has-notes=:1}${=has-pdf=:1} ${=type=:3} ${year:4} ${author:24}  ${title:*} ${journal:16}")

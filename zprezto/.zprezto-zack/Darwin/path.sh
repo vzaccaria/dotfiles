@@ -1,5 +1,5 @@
 path=(\
-  /usr/local/anaconda3/bin \
+  /Users/zaccaria/.local/bin \
   /usr/local/sbin \
   /usr/local/bin \
   /usr/bin \
@@ -14,7 +14,6 @@ path=(\
   /Users/zaccaria/.bin \
   /Users/zaccaria/bin/oclint/bin \
   /Users/zaccaria/development/github/data-science-toolbox \
-  /Users/zaccaria/.local/bin \
   /Users/zaccaria/.platformio/packages/toolchain-gccarmnoneeabi/bin \
   /Users/zaccaria/node_modules/.bin \
   $GOPATH/bin)
