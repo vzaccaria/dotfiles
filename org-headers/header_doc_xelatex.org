@@ -1,8 +1,8 @@
 
-#+LaTeX_CLASS_OPTIONS: [10pt,a6]
+#+LaTeX_CLASS_OPTIONS: [10pt,a4paper]
 #+LaTeX_CLASS: article
 
-#+INCLUDE:   ./header_xelatex.org
+#+INCLUDE:   ./header_universal.org
 
 #+LATEX_HEADER: \setmainfont[]{Minion Pro}
 #+LATEX_HEADER: \setmonofont[Scale=0.75]{FiraCode-Regular}
