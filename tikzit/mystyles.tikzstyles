@@ -6,7 +6,8 @@
 % Node styles
 \tikzstyle{smallblock}=[fill=white, draw=black, shape=rectangle, minimum width=1cm, minimum height=1cm, tikzit shape=rectangle, tikzit fill=white, tikzit draw=black]
 \tikzstyle{bigblock}=[fill=white, draw=black, shape=rectangle, minimum width=1cm, minimum height=2cm, tikzit shape=rectangle, tikzit fill=white, tikzit draw=black]
-\tikzstyle{new style 0}=[fill=white, draw=black, shape=circle]
+\tikzstyle{circle}=[fill=white, draw=black, shape=circle]
+\tikzstyle{and}=[and gate US, draw=black, fill=white, minimum width=1cm, minimum height=1cm, tikzit fill={rgb,255: red,255; green,128; blue,0}]
 
 % Edge styles
-\tikzstyle{arrow}=[->]
+\tikzstyle{arrow}=[->, >=stealth']
