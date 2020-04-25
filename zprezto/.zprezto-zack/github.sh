@@ -90,101 +90,48 @@ move()     {
     vg move $*
 }
 
-alias gg='generic'
 
-gitSyncForCommuting() {
-    gitchdirintoroot && git add . && git commit -m 'periodic sync' && git push
-}
-
-amend() {
+,git-amend() {
     git commit --amend --no-edit
 }
 
-gitcommutedown() {
-    TYPE=$(uname)
-    if [ "${TYPE}" = "Linux" ]; then
-        git-verify fdown ~/dotfiles/git-verify-sync-linux.json --pull
-    elif [ "${TYPE}" = "Darwin" ]; then
-        git-verify fdown ~/dotfiles/git-verify-sync-mac.json --pull
-    else
-        echo "Unsupported OS - ${TYPE}";
-    fi
-}
-
-gitcommuteup() {
-    TYPE=$(uname)
-    if [ "${TYPE}" = "Linux" ]; then
-        git-verify fup ~/dotfiles/git-verify-sync-linux.json --push
-    elif [ "${TYPE}" = "Darwin" ]; then
-        git-verify fup ~/dotfiles/git-verify-sync-mac.json --push
-    else
-        echo "Unsupported OS - ${TYPE}";
-    fi
-}
-
-gitcommutecheck() {
-    TYPE=$(uname)
-    if [ "${TYPE}" = "Linux" ]; then
-        git-verify fup ~/dotfiles/git-verify-sync-linux.json
-    elif [ "${TYPE}" = "Darwin" ]; then
-        git-verify fup ~/dotfiles/git-verify-sync-mac.json
-    else
-        echo "Unsupported OS - ${TYPE}";
+,git-sync-commute() {
+    if [ "$1" = "-h" ]; then
+            echo "Options: "
+            echo " --push,        push changes to remote (suggested) "
+            echo " --pull,        pull changes from remote "
+            echo " (none),        just check"
+    else 
+            TYPE=$(uname)
+            if [ "${TYPE}" = "Linux" ]; then
+                JSONNAME="/Users/zaccaria/dotfiles/git-verify-sync-linux.json"
+            elif [ "${TYPE}" = "Darwin" ]; then
+                JSONNAME="/Users/zaccaria/dotfiles/git-verify-sync-mac.json"
+            else
+                echo "Unsupported OS - ${TYPE}";
+            fi
+            git-verify fup ${JSONNAME} $1
     fi
 }
 
 
-
-gi() {
+,gi() {
     echo "$*" | tr ' ' '\0' | xargs -0 -n 1 -I {} echo {} >> ./.gitignore
 }
 
-gitignoreedit() {
-    vi "$(git root)/.gitignore"
-}
+alias ,ga='git add'
+alias ,gca='git commit -a -m'
+alias ,gd='git diff --color-words'
+alias ,gs='git status'
+alias ,gb='git branch'
+alias ,gsb='git checkout '
+alias ,gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
-gitchdirintoroot() {
-    pushd "$(git rev-parse --show-toplevel)"
-}
+alias ,git-untrack='git update-index --assume-unchanged '
+alias ,git-show-last-commit-of="git whatchanged -n 1 -p"
+alias ,git-grep-all-commits='git log --source --all -S '
+alias ,git-show-when-file-added='git log --diff-filter=A --'
 
-git-track-origin-master-as-master() {
-    git branch --set-upstream-to=origin/master master
-}
-
-overleafstartedit() {
-    echo "We are now going to fetch the current version of the paper from the overleaf repository."
-    echo "to finish type: overleafstopedit"
-    git pull overleaf master
-}
-
-overleafstopedit() {
-    echo "Pushing towards private github repo"
-    git push
-    echo "Pushing towards overleaf"
-    git push overleaf master
-}
-
-alias g='git'
-alias ga='git add'
-alias gca='git commit -a -m'
-alias gd='git diff --color-words'
-alias s='git status'
-
-alias gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-
-alias p='hub push --all'
-alias gr='git-chdir-into-root'
-
-alias lb='git branch'
-alias sb='git checkout '
-
-
-alias vz-git-untrack='git update-index --assume-unchanged '
-alias vz-git-show-last-commit-of="git whatchanged -n 1 -p"
-alias vz-git-grep-all-commits='git log --source --all -S '
-alias vz-git-show-when-file-added='git log --diff-filter=A --'
-
-
-vz-git-show-commit() {
+,git-browse-commit-id() {
     hub browse -- commit/$1
 }

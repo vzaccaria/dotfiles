@@ -42,12 +42,12 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 
 
 # IP addresses
-alias ip-show-remote="dig +short myip.opendns.com @resolver1.opendns.com"
-alias ip-show-local="ipconfig getifaddr en0"
-alias ip-show-all-local="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+alias ,net-ip-show-remote="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ,net-ip-show-local="ipconfig getifaddr en0"
+alias ,net-ip-show-all-local="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # View HTTP traffic
-alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
+alias ,net-sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
 
 # Make
 alias mk='make -f makefile.mk'
@@ -55,24 +55,30 @@ alias mk='make -f makefile.mk'
 # Silver searcher
 alias ag="ag --hidden --ignore '*.map'"
 
-alias gen-preview="convert -density 45 -depth 8 -quality 85 -delete 1--1"
+alias ,gcal-this-week="gcalcli calw 1 -w 15"
+alias ,gcal-next-week="gcalcli calw 2 -w 15"
+alias ,gcal-this-month="gcalcli calm -w 20"
+alias ,gcal-next-month="gcalcli -w 20 calm"
 
-alias this-week-gcal="gcalcli calw 1 -w 15"
-alias next-week-gcal="gcalcli calw 2 -w 15"
-alias this-month-gcal="gcalcli calm -w 20"
-alias next-month-gcal="gcalcli -w 20 calm"
+alias ,tx='tmuxinator'
+alias ,neomutt-start=' mutt-vmbox -f ~/dotfiles/notmuch-vmbx/mboxes.yml > ~/.neomutt-mboxes && mutt-vmbox -f ~/dotfiles/notmuch-vmbx/mboxes.yml > ~/.neomutt-mboxes && termcss ~/dotfiles/neomutt/.neomutt-config/color-themes/mutt-colors-css-test.muttrc.orig > ~/dotfiles/neomutt/.neomutt-config/color-themes/mutt-colors-css-test.muttrc && neomutt'
 
-alias tx='tmuxinator'
-alias start-neomutt=' mutt-vmbox -f ~/dotfiles/notmuch-vmbx/mboxes.yml > ~/.neomutt-mboxes && mutt-vmbox -f ~/dotfiles/notmuch-vmbx/mboxes.yml > ~/.neomutt-mboxes && termcss ~/dotfiles/neomutt/.neomutt-config/color-themes/mutt-colors-css-test.muttrc.orig > ~/dotfiles/neomutt/.neomutt-config/color-themes/mutt-colors-css-test.muttrc && neomutt'
+alias ,poli-incarichi='vz-poli incarichi `pass poli`'
+alias ,poli-home='vz-poli home `pass poli`'
+alias ,fineco-mov-cc='vz-bank-mov fineco-movimenti `pass fineco-comune`'
+alias ,popso-mov-cc='vz-bank-mov popso-movimenti `pass popso-comune`'
+alias ,fineco-mov-pers='vz-bank-mov fineco-movimenti `pass fineco-personal`'
 
-alias vpi='vz-poli incarichi `pass poli`'
-alias vph='vz-poli home `pass poli`'
-alias vz-fineco-mov-cc='vz-bank-mov fineco-movimenti `pass fineco-comune`'
-alias vz-popso-mov-cc='vz-bank-mov popso-movimenti `pass popso-comune`'
-alias vz-fineco-mov-pers='vz-bank-mov fineco-movimenti `pass fineco-personal`'
-
-alias vz-fineco-carte-cc='vz-bank-mov fineco-carte `pass fineco-comune`'
-alias vz-fineco-carte-pers='vz-bank-mov fineco-carte `pass fineco-personal`'
+alias ,fineco-carte-cc='vz-bank-mov fineco-carte `pass fineco-comune`'
+alias ,fineco-carte-pers='vz-bank-mov fineco-carte `pass fineco-personal`'
 
 alias y='stty sane'
-alias wk='pkill -f watchman org2pdf jslatex tikz2pdf'
+alias ,tty-restore='stty sane'
+
+alias wk='pkill -f watchman org2pdf jslatex tikz2pdf chromix'
+alias ,watchers-kill='pkill -f watchman org2pdf jslatex tikz2pdf chromix'
+
+alias ,yabai-start='brew services start yabai'
+alias ,yabai-restart='brew services restart yabai'
+alias ,yabai-stop='brew services stop yabai'
+

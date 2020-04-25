@@ -1,13 +1,12 @@
 
-alias lifthelp='manmd ~/dotfiles/docs/functional-shell.md'
-alias functionalshellhelp='manmd ~/dotfiles/docs/functional-shell.md'
+alias ,functional-shell-help='manmd ~/dotfiles/docs/functional-shell.md'
 
 lift() {
     arg=$1
     opts=${*:2}
     case "${arg}" in
         help)
-            lifthelp
+            ,functional-shell-help
             ;;
         find)
             find . -name "${opts}" -print0
@@ -37,23 +36,19 @@ lift() {
             "$@" -1 | tr '\n' '\0'
             ;;
         *)
-            echo "Sorry no lift instance available for $1"
+            echo "Sorry no lift instance available for $1; use 'help' or '-h'"
             ;;
     esac
 }
 
 
 
-alias map='xargs -0 -n 1 -I {}'
+alias ,map='xargs -0 -n 1 -I {}'
 
-fmap() {
+,fmap() {
     command=$1
     args=${*:2}
     xargs -0 -n 1 -I {} $command $args | tr '\n' '\0'
-}
-
-reduce() {
-    tr '\0' ' '
 }
 
 ag-mdfind() {
