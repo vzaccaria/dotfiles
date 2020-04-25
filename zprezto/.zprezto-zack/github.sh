@@ -135,3 +135,7 @@ alias ,git-show-when-file-added='git log --diff-filter=A --'
 ,git-browse-commit-id() {
     hub browse -- commit/$1
 }
+
+,git-diff-to-html() {
+    git diff --color=always $* | diff-so-fancy | aha
+}
