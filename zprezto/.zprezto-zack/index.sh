@@ -15,6 +15,10 @@ if [[ -s "${srcdir}/functions.sh" ]]; then
   source "${srcdir}/functions.sh"
 fi
 
+if [[ -s "${srcdir}/text.sh" ]]; then
+  source "${srcdir}/text.sh"
+fi
+
 if [[ -s "${srcdir}/github.sh" ]]; then
     source "${srcdir}/github.sh"
 fi

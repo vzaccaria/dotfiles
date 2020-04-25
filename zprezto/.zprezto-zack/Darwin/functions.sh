@@ -7,9 +7,6 @@
 # from here: https://github.com/rupa/z
 . /usr/local/etc/profile.d/z.sh
 
-
-
-
 ,tower-this() {
     /Applications/Tower.app/Contents/MacOS/gittower "$(git rev-parse --show-toplevel)"
 }
@@ -52,6 +49,8 @@ ntmux() {
 ,path-real() {
   grealpath "$1" | tr -d '\n' | pbcopy
 }
+
+alias rp=',path-real'
 
 # Change working directory to the top-most Finder window location
 ,cd-to-finder() { # short for `cdfinder`
@@ -110,25 +109,6 @@ manmd() {
 
 alias emacsclient=/usr/local/bin/emacsclient
 alias vi='NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim'
-
-em() {
-    emacsclient -nw "$@" -c
-}
-
-startemacs() {
-    /usr/local/bin/emacs --daemon 2>&1 >/dev/null | spacemacsStart
-}
-
-stopemacs() {
-    emacsclient -e "(kill-emacs)"
-}
-
-
-restartemacs() {
-    stopemacs
-    sleep 2
-    startemacs
-}
 
 resetemacs() {
     rm -rf /Users/zaccaria/.emacs.d/elpa

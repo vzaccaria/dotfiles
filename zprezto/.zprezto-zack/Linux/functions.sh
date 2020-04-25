@@ -2,29 +2,10 @@
 
 if [ -e /home/admin/.nix-profile/etc/profile.d/nix.sh ]; then . /home/admin/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
-em() {
-    /usr/bin/emacsclient -nw "$@" -c
-}
-
-gem() {
-    /usr/bin/emacsclient "$@" -c
-}
-
-startemacs() {
-    /usr/bin/emacs --daemon 2>&1 >/dev/null | spacemacsStart
-}
-
 rp() {
   realpath "$1" | tr -d '\n' | xclip -selection c
 }
 
-startemacsSafe() {
-    /usr/bin/emacs --daemon 2>&1 >/dev/null
-}
-
-stopemacs() {
-    /usr/bin/emacsclient -e "(kill-emacs)"
-}
 
 vz-html-mail-compose() {
     touch ~/temp.md
@@ -36,12 +17,6 @@ vz-mail-compose() {
     xclip -selection clipboard -out | sed 's/^/> /' > ~/temp.md
     nvim ~/temp.md 
     cat ~/temp.md | xclip -selection clipboard -in 
-}
-
-restartemacs() {
-    stopemacs
-    sleep 2
-    startemacs
 }
 
 wallpaperrefresh() {
