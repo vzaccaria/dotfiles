@@ -1,32 +1,10 @@
-,f() {
-    name=$1
-    find . -iname "*${name}*"
-}
 
-,fe() {
-    ext=$1
-    find . -iname "*\.${ext}"
-}
-
-,fex() {
-    ext=$1
-    other=${*:2} 
-    find . -iname "*\.${ext}" -exec sh -c "${other}" \;
-}
-
-
-,pcat() {
+,cat() {
   pygmentize -f terminal256 -O style=monokai -g
 }
-,pless() {
+,less() {
   pygmentize -f terminal256 -O style=monokai -g "$1" | less -r
 }
-
-# read markdown files like manpages
-,mandown() {
-    pandoc -s -f markdown -t man "$*" | man -l -
-}
-
 
 
 ,git-diff-to-html() {

@@ -10,7 +10,7 @@
 
 
 
-towerthis() {
+,tower-this() {
     /Applications/Tower.app/Contents/MacOS/gittower "$(git rev-parse --show-toplevel)"
 }
 
@@ -49,32 +49,16 @@ ntmux() {
 }
 
 
-rp() {
+,path-real() {
   grealpath "$1" | tr -d '\n' | pbcopy
 }
 
-islink() {
-  grealpath -e "/usr/local/bin/$1"
-}
-
 # Change working directory to the top-most Finder window location
-cdf() { # short for `cdfinder`
+,cd-to-finder() { # short for `cdfinder`
   cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || exit
 }
 
-scopusgetfromeid() {
-    open "http://www.scopus.com/record/display.url?eid=$1&origin=resultslist"
-}
 
-
-# Compare original and gzipped file size
-gz() {
-  origsize=$(wc -c < "$1");
-  gzipsize=$(gzip -c "$1" | wc -c);
-  ratio=$(echo "$gzipsize * 100 / $origsize" | bc -l);
-  printf "orig: %d bytes\n" "$origsize";
-  printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio";
-}
 
 # `o` with no arguments opens the current directory, otherwise opens the given
 # location
@@ -86,18 +70,6 @@ o() {
   fi;
 }
 
-# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
-# the `.git` directory, listing directories first. The output gets piped into
-# `less` with options to preserve color and line numbers, unless the output is
-# small enough for one screen.
-tre() {
-  tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
-}
-
-
-#
-# generate pdf from org (needs a running emacs daemon)
-#
 
 setUsDictionary() {
     defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -136,32 +108,11 @@ manmd() {
     pandoc -s -f markdown+all_symbols_escapable -t man "$@" | sed 's/\[C\]/\[B\]/g' | groff -T utf8 -man | less 
 }
 
-help() {
-if [ -f ./help.md ]
-then
-    manmd ./help.md
-    else 
-    if [ -f ./readme.md ]
-    then 
-    manmd ./readme.md
-fi
-fi
-}
-
-writeroom-edit-tex() {
-    /Applications/Emacs.app/Contents/MacOS/Emacs \
-        --eval="(progn (find-file \"$1\") (vz/writeroom-mode-prepare))"
-}
-
 alias emacsclient=/usr/local/bin/emacsclient
 alias vi='NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim'
 
 em() {
     emacsclient -nw "$@" -c
-}
-
-dashboard() {
-    em ~/Dropbox/org/dashboard.org
 }
 
 startemacs() {
@@ -193,6 +144,7 @@ mov2gif() {
         echo "Open Quicktime Player"
         echo "Go to File -> New Screen Recording"
         echo "Go to File -> Export -> As Movie"
+        echo "Then launch this script with the name of that file"
     else
         input=$(basename "$1" .mov)
         rm -f "$input.gif"
@@ -201,27 +153,19 @@ mov2gif() {
 }
 
 
-stack-docs() {
-    open "$(stack path --local-doc-root)"
-}
-
-stack-docs-dir() {
-    cd "$(stack path --local-doc-root)"
-}
-
-vz-html-mail-compose() {
+,mail-compose-html() {
     touch ~/temp.md
     nvim ~/temp.md 
     pandoc ~/temp.md | pbcopy
 }
 
-vz-edit-and-copy-html() {
+,edit-and-copy-html() {
     finput=`grealpath "$1"`
     emacsclient -nw ${finput} -c
     pandoc ${finput} | pbcopy
 }
 
-vz-mail-compose() {
+,mail-compose() {
     pbpaste | sed 's/^/> /' > ~/temp.md
     vi ~/temp.md 
     cat ~/temp.md | pbcopy

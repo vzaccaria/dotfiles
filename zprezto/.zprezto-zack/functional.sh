@@ -1,7 +1,7 @@
 
 alias ,functional-shell-help='manmd ~/dotfiles/docs/functional-shell.md'
 
-lift() {
+,,lift() {
     arg=$1
     opts=${*:2}
     case "${arg}" in
@@ -36,11 +36,27 @@ lift() {
             "$@" -1 | tr '\n' '\0'
             ;;
         *)
-            echo "Sorry no lift instance available for $1; use 'help' or '-h'"
+            echo "Sorry no ,lift instance available for $1; use 'help' or '-h'"
             ;;
     esac
 }
 
+
+,f() {
+    name=$1
+    find . -iname "*${name}*"
+}
+
+,fe() {
+    ext=$1
+    find . -iname "*\.${ext}"
+}
+
+,fexec() {
+    ext=$1
+    other=${*:2} 
+    find . -iname "*\.${ext}" -exec sh -c "${other}" \;
+}
 
 
 alias ,map='xargs -0 -n 1 -I {}'
