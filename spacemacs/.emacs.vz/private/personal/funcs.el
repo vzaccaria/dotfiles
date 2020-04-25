@@ -153,6 +153,57 @@
       (when add-node-modules-path-debug
         (message (concat "node_modules not found in " root))))))
 
+(defun tag-word-or-region (text-begin text-end)
+  "Surround current word or region with given text."
+  (interactive "sStart tag: \nsEnd tag: ")
+  (let (pos1 pos2 bds)
+    (if (and transient-mark-mode mark-active)
+        (progn
+          (goto-char (region-end))
+          (insert text-end)
+          (goto-char (region-beginning))
+          (insert text-begin))
+      (progn
+        (setq bds (bounds-of-thing-at-point 'symbol))
+        (goto-char (cdr bds))
+        (insert text-end)
+        (goto-char (car bds))
+        (insert text-begin)))))
+
+(defun tag-wk0 ()
+  (interactive)
+  (tag-word-or-region "# wk0 @ \n" "# @"))
+
+(defun tag-wk1 ()
+  (interactive)
+  (tag-word-or-region "# wk1 @ \n" "# @"))
+
+(defun tag-wk2 ()
+  (interactive)
+  (tag-word-or-region "# wk2 @ \n" "# @"))
+
+(defun tag-wk3 ()
+  (interactive)
+  (tag-word-or-region "# wk3 @ \n" "# @"))
+
+(defun tag-wk4 ()
+  (interactive)
+  (tag-word-or-region "# wk4 @ \n" "# @"))
+
+(defun tag-wk5 ()
+  (interactive)
+  (tag-word-or-region "# wk5 @ \n" "# @"))
+
+(defun tag-wk6 ()
+  (interactive)
+  (tag-word-or-region "# wk6 @ \n" "# @"))
+
+(defun org-latex-two-columns()
+  (interactive)
+  (tag-word-or-region "#+ATTR_LATEX: :options {2} \n#+BEGIN_multicols\n"
+                      "#+END_multicols"))
+
+
 (defun beautify (&optional b e)
   (interactive "r")
   (save-excursion

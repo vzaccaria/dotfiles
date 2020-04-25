@@ -3,46 +3,46 @@
 
 (setq config-javascript-packages
       '(
-        (prettier-js :location local)
-        js2-mode
-        flycheck
+        ;; (prettier-js :location local)
+        ;; js2-mode
+        ;; flycheck
         ))
 
-(defun config-javascript/init-prettier-js ()
-  (use-package prettier-js
-    :config
+;; (defun config-javascript/init-prettier-js ()
+;;   (use-package prettier-js
+;;     :config
 
-    (add-hook 'js-mode-hook
-              (lambda ()
-                (add-hook 'before-save-hook 'prettier-before-save)))
+;;     (add-hook 'js-mode-hook
+;;               (lambda ()
+;;                 (add-hook 'before-save-hook 'prettier-before-save)))
 
-    (add-hook 'js2-mode-hook
-              (lambda ()
-                (add-hook 'before-save-hook 'prettier-before-save)))
+;;     (add-hook 'js2-mode-hook
+;;               (lambda ()
+;;                 (add-hook 'before-save-hook 'prettier-before-save)))
 
-    (add-hook 'react-mode-hook
-              (lambda ()
-                (add-hook 'before-save-hook 'prettier-before-save)))
-    )
-  )
+;;     (add-hook 'react-mode-hook
+;;               (lambda ()
+;;                 (add-hook 'before-save-hook 'prettier-before-save)))
+;;     )
+;;   )
 
-(defun config-javascript/post-init-js2-mode ()
-  (setq js2-include-node-externs t)
-  (setq js2-mode-show-parse-errors nil)
-  (setq js2-mode-show-strict-warnings nil)
-  )
+;; (defun config-javascript/post-init-js2-mode ()
+;;   (setq js2-include-node-externs t)
+;;   (setq js2-mode-show-parse-errors nil)
+;;   (setq js2-mode-show-strict-warnings nil)
+;;   )
 
 
-(defun config-javascript/post-init-flycheck ()
-  (add-hook 'js-mode-hook '(lambda ()
-                             (flycheck-select-checker 'javascript-eslint)
-                             (setq next-error-function 'flycheck-next-error)
-                             ))
+;; (defun config-javascript/post-init-flycheck ()
+;;   (add-hook 'js-mode-hook '(lambda ()
+;;                              (flycheck-select-checker 'javascript-eslint)
+;;                              (setq next-error-function 'flycheck-next-error)
+;;                              ))
 
-  (add-hook 'js2-mode-hook '(lambda ()
-                              (flycheck-select-checker 'javascript-eslint)
-                              (setq next-error-function 'flycheck-next-error)
-                              ))
-  )
+;;   (add-hook 'js2-mode-hook '(lambda ()
+;;                               (flycheck-select-checker 'javascript-eslint)
+;;                               (setq next-error-function 'flycheck-next-error)
+;;                               ))
+;;   )
 
 
