@@ -1,38 +1,32 @@
-f() {
+,f() {
     name=$1
     find . -iname "*${name}*"
 }
 
-fe() {
+,fe() {
     ext=$1
     find . -iname "*\.${ext}"
 }
 
-fex() {
+,fex() {
     ext=$1
     other=${*:2} 
     find . -iname "*\.${ext}" -exec sh -c "${other}" \;
 }
 
 
-pcat() {
+,pcat() {
   pygmentize -f terminal256 -O style=monokai -g
 }
-pless() {
+,pless() {
   pygmentize -f terminal256 -O style=monokai -g "$1" | less -r
 }
 
 # read markdown files like manpages
-mandown() {
+,mandown() {
     pandoc -s -f markdown -t man "$*" | man -l -
 }
 
-
-
-
-ediff() {
-    emacsclient -t --eval "(ediff \"$1\" \"$2\")"
-}
 
 
 ,git-diff-to-html() {
