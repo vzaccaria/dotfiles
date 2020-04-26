@@ -40,7 +40,7 @@ RUN apt-get install -y \
     vim
 
 
-RUN echo "Reload n. 1"
+RUN echo "Reload n. 2"
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 WORKDIR /root/dotfiles/zprezto
 RUN git submodule update --init
@@ -126,12 +126,6 @@ RUN sed -ri 's/Mod4/Mod1/' /root/.i3/config
 RUN apt-get install zathura texlive-full -y
 
 
-RUN curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin ; exit 0
-RUN git clone --depth 1 https://github.com/harfbuzz/harfbuzz.git /tmp/harfbuzz
-WORKDIR /tmp/harfbuzz/ 
-RUN ./autogen.sh && ./configure && make
-RUN mkdir -p /root/.local/kitty.app/lib
-RUN cp src/.libs/libharfbuzz.so ~/.local/kitty.app/lib/libharfbuzz.so.0
 RUN add-apt-repository -y ppa:neovim-ppa/stable
 RUN apt-get install -y python-software-properties
 RUN apt-get update 
@@ -148,4 +142,13 @@ RUN easy_install3 pip
 RUN pip3 install pynvim
 RUN nvim +PlugUpdate +qall
 
+
+RUN curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin ; exit 0
+RUN git clone --depth 1 https://github.com/harfbuzz/harfbuzz.git /tmp/harfbuzz
+WORKDIR /tmp/harfbuzz/ 
+RUN ./autogen.sh && ./configure && make
+RUN mkdir -p /root/.local/kitty.app/lib
+RUN cp src/.libs/libharfbuzz.so ~/.local/kitty.app/lib/libharfbuzz.so.0
+RUN mkdir -p ~/.local/bin
+RUN ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
 

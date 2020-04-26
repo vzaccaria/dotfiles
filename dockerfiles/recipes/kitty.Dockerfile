@@ -4,3 +4,6 @@ WORKDIR /tmp/harfbuzz/
 RUN ./autogen.sh && ./configure && make
 RUN mkdir -p /root/.local/kitty.app/lib
 RUN cp src/.libs/libharfbuzz.so ~/.local/kitty.app/lib/libharfbuzz.so.0
+RUN mkdir -p ~/.local/bin
+RUN ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
+
