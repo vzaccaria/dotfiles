@@ -40,7 +40,7 @@ RUN apt-get install -y \
     vim
 
 
-RUN echo "Reload n. 2"
+RUN echo "Reload n. 3"
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 WORKDIR /root/dotfiles/zprezto
 RUN git submodule update --init
@@ -123,7 +123,6 @@ RUN apt-get install -y i3status
 
 RUN sed -ri 's/Mod4/Mod1/' /root/.i3/config
 
-RUN apt-get install zathura texlive-full -y
 
 
 RUN add-apt-repository -y ppa:neovim-ppa/stable

@@ -38,7 +38,7 @@ RUN apt-get install -y \
     vim
 
 
-RUN echo "Reload n. 2"
+RUN echo "Reload n. 3"
 RUN git clone https://github.com/vzaccaria/dotfiles.git /root/dotfiles
 WORKDIR /root/dotfiles/zprezto
 RUN git submodule update --init

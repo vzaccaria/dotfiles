@@ -103,7 +103,6 @@ devenv-vnc-start() {
     img=`docker run -dt \
            -p 5901:5901 \
 	         -e PATH=/root/.local/bin:/opt/bin:/opt/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin \
-           -v /Users/zaccaria/Dropbox/org:/root/Dropbox/org \
            --privileged \
 	         devenv-vnc-latest`
     docker exec -d "$img" /root/startx
