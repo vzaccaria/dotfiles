@@ -1,7 +1,7 @@
 
 alias ,functional-shell-help='manmd ~/dotfiles/docs/functional-shell.md'
 
-,,lift() {
+,lift() {
     arg=$1
     opts=${*:2}
     case "${arg}" in

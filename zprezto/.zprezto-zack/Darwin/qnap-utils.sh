@@ -123,6 +123,9 @@ devenv-vnc-open() {
     open "vnc://127.0.0.1:5901"
 }
 
+alias ,dvs='devenv-vnc-start'
+alias ,dvo='devenv-vnc-open'
+
 writenv-start-languagetool() {
     echo "Remember to enable gramchk"
     img=`docker run --rm -p 8010:8010 silviof/docker-languagetool`
