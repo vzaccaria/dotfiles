@@ -151,3 +151,7 @@ RUN cp src/.libs/libharfbuzz.so ~/.local/kitty.app/lib/libharfbuzz.so.0
 RUN mkdir -p ~/.local/bin
 RUN ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
 
+RUN echo "Reload n. 29/4 10:30"
+WORKDIR /root/dotfiles
+RUN git fetch && git pull 
+
