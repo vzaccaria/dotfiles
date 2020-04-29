@@ -1,27 +1,27 @@
 
 # Maybe add an help for all these commands
 
-imap() {
+_imap() {
     xargs -0 -n 1 -I {} $*
 }
 
-gitchanged() {
+_gitchanged() {
     TYPE=$(uname)
     if [ "${TYPE}" = "Linux" ]; then
-        git diff --numstat --diff-filter=M "$*" | awk '{printf("%s\0", $3)}' | imap basename {} | paste -s -d, - | sed 's/,/, /g';
+        git diff --numstat --diff-filter=M "$*" | awk '{printf("%s\0", $3)}' | _imap basename {} | paste -s -d, - | sed 's/,/, /g';
     elif [ "${TYPE}" = "Darwin" ]; then
-        git diff --numstat --diff-filter=M "$*" | cut -f3 | tr '\n' '\0' | imap basename {} | paste -s -d, - | sed 's/,/, /g';
+        git diff --numstat --diff-filter=M "$*" | cut -f3 | tr '\n' '\0' | _imap basename {} | paste -s -d, - | sed 's/,/, /g';
     else
         echo "Unsupported OS - ${TYPE}";
     fi
 }
 
-vg() {
+_vg() {
     com="$1"
     tgt="${@:2: -1}"
     msg="${@: -1}"
 
-    mc=$(gitchanged "$tgt")
+    mc=$(_gitchanged "$tgt")
 
     case "$com" in
         initial)   msg="initial commit" ;;
@@ -42,52 +42,44 @@ vg() {
     eval "$command"
 }
 
-initial()  {
-    vg initial $* "noop"
+,git-initial()  {
+    _vg initial $* "noop"
 }
 
-improve()    {
-    vg improve $*
+,git-improve()    {
+    _vg improve $*
 }
 
-gsync()    {
-    vg sync $*
+,git-sync()    {
+    _vg sync $*
 }
 
-polish()   {
-    vg polish $* "noop"
+,git-polish()   {
+    _vg polish $* "noop"
 }
 
-refactor() {
-    vg refactor $* "noop"
+,git-refactor() {
+    _vg refactor $* "noop"
 }
 
-fix()      {
-    vg fix . "$*"
+,git-fix()      {
+    _vg fix . "$*"
 }
 
-feat()     {
-    vg feat $*
+,git-feature()     {
+    _vg feat $*
 }
 
-generic()  {
-    vg generic $*
+,git-update()  {
+    _vg update . "$*"
 }
 
-update()  {
-    vg update $*
+,m() {
+    _vg update . "minor changes"
 }
 
-m() {
-    vg update . "minor changes"
-}
-
-u() {
-    vg update . "$*"
-}
-
-move()     {
-    vg move $*
+,u() {
+    _vg update . "$*"
 }
 
 
@@ -114,13 +106,13 @@ move()     {
     fi
 }
 
+alias ,gcu=',git-sync-commute --push'
 
 ,gi() {
     echo "$*" | tr ' ' '\0' | xargs -0 -n 1 -I {} echo {} >> ./.gitignore
 }
 
 alias ,ga='git add'
-alias ,gcu=',git-sync-commute --push'
 alias ,gd='git diff --color-words'
 alias ,gs='git status'
 alias ,s='git status'
