@@ -25,6 +25,7 @@
     "themer-wallpaper-block-wave": "3.0.3",
     "vmd": "1.33.1",
     "write-good": "1.0.1",
+    "xml2json": "0.12.0",
     "yamljs": "0.3.0"
   }
 }

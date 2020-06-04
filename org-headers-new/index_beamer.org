@@ -1,6 +1,6 @@
 
 #+LaTeX_CLASS:         beamer
-#+LaTeX_CLASS_OPTIONS: [smaller]
+#+LaTeX_CLASS_OPTIONS: [smaller,aspectratio=169]
 #+BEAMER_THEME: metropolis
 
 #+OPTIONS:   H:2 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t ':t

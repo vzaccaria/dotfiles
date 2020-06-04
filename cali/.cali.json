@@ -97,6 +97,12 @@
     "where": "Eracle sport center, Via Fittavolo, Montano Lucino",
     "reminder": "1w"
   },
+  "bolletta": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Pagare bolletta <%= parameter %>",
+    "where": "Online",
+    "reminder": "1w"
+  },
   "reminder": {
     "calendar": "Vittorio e Chiara",
     "title": "Ricordarsi di <%= parameter %>",

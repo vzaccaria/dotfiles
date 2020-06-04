@@ -210,6 +210,18 @@
   (interactive)
   (tag-word-or-region "# wk9 @ \n" "# @"))
 
+(defun tag-wk10 ()
+  (interactive)
+  (tag-word-or-region "# wk10 @ \n" "# @"))
+
+(defun tag-wk11 ()
+  (interactive)
+  (tag-word-or-region "# wk11 @ \n" "# @"))
+
+(defun tag-wk12 ()
+  (interactive)
+  (tag-word-or-region "# wk12 @ \n" "# @"))
+
 (defun org-latex-two-columns()
   (interactive)
   (tag-word-or-region "#+ATTR_LATEX: :options {2} \n#+BEGIN_multicols\n"
