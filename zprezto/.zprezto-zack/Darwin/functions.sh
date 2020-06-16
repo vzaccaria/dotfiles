@@ -41,6 +41,11 @@ nvi() {
         ntmuxc $currentdir $command
 }
 
+ntmux-session() {
+        ntmuxc $1 ""
+}
+
+
 ntmux() {
         ntmuxc $1 ""
 }
