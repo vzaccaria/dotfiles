@@ -115,6 +115,12 @@
     "where": "Eracle sport center, Via Fittavolo, Montano Lucino",
     "reminder": "1d"
   },
+  "scadenza": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Scadenza: <%= parameter %>",
+    "where": "Online",
+    "reminder": "1w"
+  },
   "tasse": {
     "calendar": "Vittorio e Chiara",
     "title": "Pagare tassa: <%= parameter %>",

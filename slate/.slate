@@ -1,4 +1,4 @@
-# bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN # use whatever keys you want
+bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN # use whatever keys you want
 config defaultToCurrentScreen true
 # Shows app icons and background apps, spreads icons in the same place.
 config windowHintsShowIcons true
@@ -16,27 +16,30 @@ config resizePercentOf screenSize
 # Abstract positions
 
 alias full        move  screenOriginX;screenOriginY                 screenSizeX;screenSizeY
+alias full0       move  screenOriginX;screenOriginY                 screenSizeX;screenSizeY 0
+alias full1       move  screenOriginX;screenOriginY                 screenSizeX;screenSizeY 1 
+alias full2       move  screenOriginX;screenOriginY                 screenSizeX;screenSizeY 2
+
 alias lefthalf    move  screenOriginX;screenOriginY                 screenSizeX/2;screenSizeY
 alias leftq       move  screenOriginX;screenOriginY                 screenSizeX/2;screenSizeY
 alias righthalf   move  screenOriginX+screenSizeX/2;screenOriginY   screenSizeX/2;screenSizeY
 alias rightiq     move  screenOriginX+screenSizeX/2;screenOriginY   screenSizeX/2;screenSizeY
 alias qhalf       move  screenOriginX;screenOriginY                 screenSizeX/2;screenSizeY
 
-alias leftq1		move  screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY/2
-alias leftq2		move  screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY/2
-alias leftq3		move  screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX/2;screenSizeY/2
-alias leftq4		move  screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2		screenSizeX/2;screenSizeY/2
+alias leftq1      move  screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY/2
+alias leftq2      move  screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY/2
+alias leftq3      move  screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX/2;screenSizeY/2
+alias leftq4      move  screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2		screenSizeX/2;screenSizeY/2
 
 alias topleft     corner  top-left                  resize:screenSizeX/2;screenSizeY/2
 alias topright    corner  top-right                 resize:screenSizeX/2;screenSizeY/2
 alias bottomleft  corner  bottom-left               resize:screenSizeX/2;screenSizeY/2
 alias bottomright   corner  bottom-right            resize:screenSizeX/2;screenSizeY/2
 
-# Lecture layout
-alias lectureLeft  move 0;0 800;600
-alias lectureCtrl  move 1088;0 350;800
-bind m:cmd ${lectureCtrl} 0
-bind ,:cmd ${lectureLeft} 0
+bind ,:cmd ${full0}
+bind .:cmd ${full1}
+bind ,:cmd;alt ${leftq}
+bind .:cmd;alt ${rightiq}
 
 # Resize Bindings
 # bind right:alt       resize +10% +0
@@ -84,6 +87,9 @@ bind pad6 ${rightiq}
 bind pad7 ${topleft}
 bind pad8 push top bar-resize:screenSizeY/2
 bind pad9 ${topright}
+bind pad0 ${full0}
+bind pad. ${full1}
+
 # bind k:cmd ${full}
 # bind j:cmd ${leftq}
 # bind l:cmd ${rightiq}
