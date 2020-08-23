@@ -10,6 +10,7 @@ alias h='/usr/local/bin/hub'
 alias ric='cd "/Users/zaccaria/Dropbox/Commuting/Ricercatore TI 2011"'
 alias chiara='cd "/Users/zaccaria/Dropbox/Commuting/Altro/Personal/Chiara/"'
 alias personal='cd "/Users/zaccaria/Dropbox/Commuting/Altro/Personal/"'
+alias l='exa --long --git'
 
 alias mc='cd "/Users/zaccaria/development/github/org-institutional/materiale-corsi"'
 
