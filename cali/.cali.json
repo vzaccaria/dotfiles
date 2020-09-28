@@ -53,7 +53,7 @@
     "calendar": "Vittorio Zaccaria",
     "title": "Ricevimento studente/i (<%= parameter %>)",
     "where": "Dipartimento di Elettronica e Informazione, Politecnico di Milano, Italy",
-    "reminder": "1d"
+    "reminder": "30m"
   },
   "seminario": {
     "calendar": "Vittorio Zaccaria",
@@ -157,6 +157,12 @@
     "where": "Politecnico di Milano",
     "reminder": "1w"
   },
+  "esameorale": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Esame orale <%= parameter %>",
+    "where": "Politecnico di Milano",
+    "reminder": "10m"
+  },
   "lezionehyp": {
     "calendar": "Vittorio e Chiara",
     "title": "Lezione di Hypermedia - Aula <%= parameter %>",
@@ -210,7 +216,7 @@
     "calendar": "Vittorio Zaccaria",
     "title": "Riunione con <%= parameter %>",
     "where": "Ufficio",
-    "reminder": "10h"
+    "reminder": "10m"
   },
   "appuntamento": {
     "calendar": "Vittorio e Chiara",
@@ -264,6 +270,25 @@
     "calendar": "Vittorio Zaccaria",
     "title": "Elezioni <%= parameter %>",
     "where": "Politecnico di Milano",
+    "reminder": "1d"
+  },
+  "eracle": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "Eracle sport - <%= parameter %>",
+    "where": "",
+    "duration": 45,
+    "reminder": "1d"
+  },
+  "infob": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Lezione di Informatica B",
+    "where": "Online/Presenza",
+    "reminder": "1d"
+  },
+  "secdev": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "IEEE SecDev - Sessione <%= parameter %>",
+    "where": "Online",
     "reminder": "1d"
   }
 }

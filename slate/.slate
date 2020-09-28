@@ -41,6 +41,7 @@ bind 2:cmd;alt ${full1}
 bind 3:cmd;alt ${full2}
 bind ,:cmd ${full0}
 bind .:cmd ${full1}
+bind /:cmd ${full2}
 bind ,:cmd;alt ${leftq}
 bind .:cmd;alt ${rightiq}
 

@@ -156,6 +156,14 @@ mov2gif() {
     cat ~/temp.md | pbcopy
 }
 
+
+,attach-id-scan() {
+    # link docs to ids.pdf
+    pfx=$(basename "$1" .pdf)
+    pdftk $1 ~/ids.pdf cat output $pfx.signed.pdf
+    open $pfx.signed.pdf -a "Preview"
+}
+
 kp() {
 
 ## PROCESS

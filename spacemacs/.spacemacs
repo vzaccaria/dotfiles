@@ -61,14 +61,10 @@
                      auto-completion-enable-help-tooltip t
                      auto-completion-enable-sort-by-usage t
                      auto-completion-private-snippets-directory "~/dotfiles/spacemacs/.emacs.vz/private/snippets"
-                     spacemacs-default-company-backends '(company-files company-yasnippet)
                      )
     (org :variables org-enable-reveal-js-support t)
     (shell :variables
            shell-default-shell 'eshell)
-    (version-control :variables
-                     version-control-global-margin t
-                     version-control-diff-tool 'git-gutter+)
     )
   "Layers I consider core to Spacemacs. Loaded for all OSes")
 
@@ -351,7 +347,6 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
 
 
-  (global-company-mode)
 
   (setq org-latex-minted-options
         '(("obeytabs" "true")
