@@ -64,6 +64,10 @@ Plug 'christoomey/vim-titlecase'
 " C-n       multiple times then c, I, A, d
 Plug 'terryma/vim-multiple-cursors'
 
+" For using vim in the browser
+" Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+
+
 " Track the engine.
 "Plug 'SirVer/ultisnips'
 
