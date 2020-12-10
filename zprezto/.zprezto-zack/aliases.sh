@@ -81,3 +81,7 @@ alias ,yabai-start='brew services start yabai'
 alias ,yabai-restart='brew services restart yabai'
 alias ,yabai-stop='brew services stop yabai'
 
+alias ,csv2md='pbpaste | tr "\\t" "," |csv2md |pbcopy'
+alias ,pdfsig='pdfsig'
+alias ,pdf-check-signature='pdfsig'
+
