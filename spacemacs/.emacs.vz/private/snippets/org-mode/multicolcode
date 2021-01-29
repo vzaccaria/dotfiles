@@ -1,0 +1,17 @@
+# -*- mode: snippet -*- 
+# name: multicolcode
+# key: multicolcode_
+# --
+#+ATTR_LATEX: :options {2} 
+#+BEGIN_multicols
+#+ATTR_LaTeX: :options linenos=false
+#+BEGIN_SRC asm
+$0
+#+END_SRC
+
+#+ATTR_LaTeX: :options linenos=false
+#+BEGIN_SRC asm
+$1
+#+END_SRC
+#+END_multicols
+
