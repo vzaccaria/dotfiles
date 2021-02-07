@@ -23,7 +23,7 @@ if ls -G > /dev/null 2>&1; then
 fi
 
 # List all files colorized in long format
-alias l="ls -ltrF ${colorflag}"
+alias l='exa --long --git'
 
 # Alphabetic order
 alias ll="ls -lF ${colorflag}"
@@ -80,4 +80,8 @@ alias ,watchers-kill='pkill -f watchman org2pdf jslatex tikz2pdf chromix'
 alias ,yabai-start='brew services start yabai'
 alias ,yabai-restart='brew services restart yabai'
 alias ,yabai-stop='brew services stop yabai'
+
+alias ,csv2md='pbpaste | tr "\\t" "," |csv2md |pbcopy'
+alias ,pdfsig='pdfsig'
+alias ,pdf-check-signature='pdfsig'
 

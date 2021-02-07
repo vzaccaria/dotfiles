@@ -4,11 +4,11 @@ qnap-mosh() {
 }
 
 qnap-ssh-plain() {
-    ssh -p 21101 admin@qnappino
+    ssh admin@192.168.188.39
 }
 
 qnap-ssh() {
-    ssh -p 21101 admin@qnappino -t '/opt/bin/zsh -l'
+    ssh admin@192.168.188.39 -t '/opt/bin/zsh -l'
 }
 
 dock-setup-qnappino() {

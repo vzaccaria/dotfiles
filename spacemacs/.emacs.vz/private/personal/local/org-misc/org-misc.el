@@ -318,6 +318,7 @@
   (define-key org-mode-map (kbd "<f1>") (lambda () (interactive) (org-overview)))
   (define-key org-mode-map (kbd "<f2>") (lambda () (interactive) (org-global-cycle 2)))
   (define-key org-mode-map (kbd "<f3>") (lambda () (interactive) (org-global-cycle 3)))
+  (define-key org-mode-map (kbd "<f4>") (lambda () (interactive) (org-global-cycle 4)))
 
   (evil-define-key 'normal evil-org-mode-map (kbd "M-b")  'spacemacs/org-bold)
   (evil-define-key 'normal evil-org-mode-map (kbd "M-k")  'spacemacs/org-code)

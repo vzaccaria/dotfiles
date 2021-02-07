@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
+<<<<<<< HEAD
 HADMIN=/share/CACHEDEV1_DATA/homes/admin
+=======
+HADMIN=/share/CACHEDEV1_DATA/homes/admin/
+>>>>>>> a698b31e650863c8d7191da33f192552362d60a0
 
 if [[ -x /opt/bin/opkg ]]; then
     echo "Installing Entware Packages"
@@ -52,9 +56,5 @@ fi
 #ln -s /share/CACHEDEV1_DATA/homes/admin/dotfiles/neovim/.vim /root/.vim
 #curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 #    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-
-
-
 
 
