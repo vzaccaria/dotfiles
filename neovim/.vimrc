@@ -221,9 +221,10 @@ call ale#linter#Define('haskell', {
 
 let g:ale_linters = {}
 
+"hide cryptonite for relation calculus
+let g:ale_linters.haskell = [ 'stack-ghc-local', 'hlint']
 " See here https://blog.jez.io/haskell-development-with-neovim/
-"let g:ale_linters.haskell = [ 'stack-ghc-local', 'hlint']
-let g:ale_linters.haskell = [ 'stack-ghc', 'hlint']
+"let g:ale_linters.haskell = [ 'stack-ghc', 'hlint']
 let g:ale_linters.yaml = ['yamllint']
 let g:ale_linters.verilog = ['iverilog']
 let g:ale_linters.tex = ['proselint', 'write-good', 'vzredpen']
