@@ -16,6 +16,7 @@ if [[ -x /opt/bin/opkg ]]; then
     /opt/bin/opkg install node
     /opt/bin/opkg install node-npm
     /opt/bin/opkg install grep
+    /opt/bin/opkg install coreutils-realpath
     /opt/bin/opkg install python3-pip
     /opt/bin/opkg install python3-psutil
     /opt/bin/opkg install vim-full
@@ -35,7 +36,7 @@ fi
 
 echo "ZDOTDIR=$HADMIN/dotfiles/zprezto" > /root/.zshenv
 rm -f /root/.z && touch $HADMIN/.z && ln -s $HADMIN/.z /root/.z
-rm -f .tmux.conf && ln -s $HADMIN/dotfiles/osx-tmux/.tmux.conf /root/.tmux.conf
+rm -f .tmux.conf && ln -s $HADMIN/dotfiles/lean-tmux/.tmux.conf /root/.tmux.conf
 rm -f dotfiles && ln -s $HADMIN/dotfiles .
 
 if [[ ! -x /opt/bin/exa ]]; then
