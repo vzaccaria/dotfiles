@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
-<<<<<<< HEAD
 HADMIN=/share/CACHEDEV1_DATA/homes/admin
-=======
-HADMIN=/share/CACHEDEV1_DATA/homes/admin/
->>>>>>> a698b31e650863c8d7191da33f192552362d60a0
 
 if [[ -x /opt/bin/opkg ]]; then
     echo "Installing Entware Packages"
@@ -25,6 +21,7 @@ if [[ -x /opt/bin/opkg ]]; then
     /opt/bin/opkg install vim-full
     pip install glances
     /opt/bin/opkg install unzip
+    /opt/bin/opkg install tmux
 else
     echo "Please install Entware"
     exit 1
@@ -37,8 +34,9 @@ if [[ ! -d $HADMIN/dotfiles ]]; then
 fi
 
 echo "ZDOTDIR=$HADMIN/dotfiles/zprezto" > /root/.zshenv
-touch $HADMIN/.z && ln -s $HADMIN/.z /root/.z
-ln -s $HADMIN/dotfiles/osx-tmux/.tmux.conf /root/.tmux.conf
+rm -f /root/.z && touch $HADMIN/.z && ln -s $HADMIN/.z /root/.z
+rm -f .tmux.conf && ln -s $HADMIN/dotfiles/osx-tmux/.tmux.conf /root/.tmux.conf
+rm -f dotfiles && ln -s $HADMIN/dotfiles .
 
 if [[ ! -x /opt/bin/exa ]]; then
    wget -c https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64-0.8.0.zip
@@ -47,14 +45,5 @@ if [[ ! -x /opt/bin/exa ]]; then
 fi
 
 
-#
-#
-#
-#
-#rm -f /root/.vimrc
-#ln -s /share/CACHEDEV1_DATA/homes/admin/dotfiles/neovim/.vimrc /root/.vimrc
-#ln -s /share/CACHEDEV1_DATA/homes/admin/dotfiles/neovim/.vim /root/.vim
-#curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-#    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
