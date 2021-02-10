@@ -215,6 +215,10 @@
   (interactive)
   (tag-word-or-region "# swk14v @ \n" "# @"))
 
+(defun tag-wksp1 ()
+  (interactive)
+  (tag-word-or-region "# swksp1 @ \n" "# @"))
+
 (defun org-latex-two-columns()
   (interactive)
   (tag-word-or-region "#+ATTR_LATEX: :options {2} \n#+BEGIN_multicols\n"
