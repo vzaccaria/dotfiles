@@ -246,7 +246,7 @@
     "calendar": "Vittorio Zaccaria",
     "title": "Visione compito di <%= parameter %>",
     "where": "Ufficio",
-    "reminder": "1d"
+    "reminder": "1h"
   },
   "commiss": {
     "calendar": "Vittorio Zaccaria",
