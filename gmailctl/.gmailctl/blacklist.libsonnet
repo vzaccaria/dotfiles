@@ -1,5 +1,5 @@
 local blacklistedSites = [
-  // Dont want to see mails from these guys
+  // Dont want to see mails from these guys who are impossible to unsubscribe from
   [
     'maryanne.baynes@overleaf.com',
     'vistaprint@email.vistaprint.it',
@@ -18,6 +18,7 @@ local blacklistedSites = [
     'jason.crawford@fieldbook-2.intercom-mail.com',
     'aws-marketing-email-replies@amazon.com',
     'info@vonfloerke.com',
+    'hpe.com',
   ],
 
 
@@ -48,6 +49,7 @@ local blacklistedSites = [
   ],
   // Unsubscribe sooner or later, news o case editrici
   [
+    'saiconference.com',
     'nowfestival.it',
     'piccoloteatro.org',
     'brainpickings.org',
@@ -83,10 +85,6 @@ local blacklistedSites = [
     'deliver@ieee.org',
   ],
 
-  // Conferenze
-  [
-    'saiconference.com',
-  ],
   // Compagnie aeree e viaggi
   [
     'mailing@offerte.alitalia.it',
@@ -111,7 +109,6 @@ local blacklistedSites = [
     'propercloth.com',
     'guitarcenter.com',
     'macys.com',
-    'service@pixquadro.com',
     'dzone.com',
     'support@macpaw.com',
     'ingenio-web.it',
@@ -158,7 +155,6 @@ local blacklistedSites = [
     'smart2zero.com',
     'mixergy.com',
     'bloc.io',
-    'hpe.com',
     'info.adobesystems.com',
     'melarossa.it',
     'snapfish.com',
@@ -231,9 +227,9 @@ local deleteSites = [{
 } for l in blacklistedSites];
 
 local deleteLists = [{
-  filter: { query: l },
+  filter: { or: [{ query: l } for l in blacklistedLists] },
   actions: { delete: true },
-} for l in blacklistedLists];
+}];
 
 {
   rules: deleteSites + deleteLists,
