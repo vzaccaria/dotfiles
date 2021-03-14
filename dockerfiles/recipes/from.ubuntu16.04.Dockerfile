@@ -1,2 +1,2 @@
-FROM    ubuntu:xenial
+FROM    archlinux:base-devel
 

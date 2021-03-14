@@ -12,6 +12,9 @@ generated/devenv-vnc.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile $(R)/base.Dock
 generated/riscenv.Dockerfile: $(R)/from.ubuntu16.04.Dockerfile $(R)/base.Dockerfile $(R)/riscv.Dockerfile $(R)/neovim.Dockerfile
 	cat $^ > $@
 
+generated/vnc-alpine.Dockerfile: $(R)/from.alpine.Dockerfile $(R)/vnc-alpine.Dockerfile
+	cat $^ > $@
+
 clean:
 	rm -rf generated/*.Dockerfile
 
