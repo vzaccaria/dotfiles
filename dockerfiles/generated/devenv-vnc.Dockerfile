@@ -1,4 +1,4 @@
-FROM    ubuntu:xenial
+FROM    archlinux:base-devel
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV SHELL /bin/zsh
