@@ -41,10 +41,6 @@ nvi() {
         ntmuxc $currentdir $command
 }
 
-ntmux-session() {
-        ntmuxc $1 ""
-}
-
 
 ntmux() {
         ntmuxc $1 ""
@@ -124,17 +120,22 @@ resetemacs() {
     echo "2. restartemacs"
 }
 
-mov2gif() {
+,video-convert-to-gif() {
     if [ -z "$1" ]; then
-        echo "Open Quicktime Player"
-        echo "Go to File -> New Screen Recording"
-        echo "Go to File -> Export -> As Movie"
-        echo "Then launch this script with the name of that file"
+        echo "$0 inputfile # must be a .mov"
     else
         input=$(basename "$1" .mov)
         rm -f "$input.gif"
         ffmpeg -i "$1" -s 600x400 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > "$input.gif"
     fi
+}
+
+,video-convert-to-whatsapp-mp4() {
+  if [ -z "$1" ]; then
+        echo "$0 inputfilename outputfilename"
+  else
+        ffmpeg -i "$1" -vcodec libx264 -crf 24 -vf "scale=iw/2:ih/2" $2
+  fi
 }
 
 
@@ -248,6 +249,30 @@ fda() {
   dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
 }
 
+,cd-gdrive() {
+  local dir
+  dir=$(find ~/GDrive -type d 2> /dev/null | fzf +m) && cd "$dir"
+}
+
+
+,cd-to-dev() {
+  local dir
+  dir=$(find ~/development/github -type d -name "node_modules" -prune -o -type d -print 2> /dev/null | fzf +m) && cd "$dir"
+}
+
+,cd-to-dot() {
+  local dir
+  dir=$(find ~/dotfiles -type d 2> /dev/null | fzf +m) && cd "$dir"
+}
+
+,cd-to-zprezto() {
+  local dir
+  dir=$(find ~/dotfiles/zprezto/.zprezto-zack -type d 2> /dev/null | fzf +m) && cd "$dir"
+}
+
+alias cdg=',cd-gdrive'
+alias cdd=',cd-to-dot'
+alias cdz=',cd-to-zprezto'
 
 
 keynote2pdf() {

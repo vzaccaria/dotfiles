@@ -52,7 +52,7 @@ alias ,net-sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
 alias mk='make -f makefile.mk'
 
 # Silver searcher
-alias ag="ag --hidden --ignore '*.map'"
+alias ag="ag --hidden --ignore '*.map' --ignore .git"
 
 alias ,gcal-this-week="gcalcli calw 1 -w 15"
 alias ,gcal-next-week="gcalcli calw 2 -w 15"

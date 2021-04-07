@@ -117,11 +117,13 @@ alias ,gd='git diff --color-words'
 alias ,gs='git status'
 alias ,s='git status'
 alias ,gb='git branch'
+alias gd='git checkout'
 alias ,gsb='git checkout '
 alias ,gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
 alias ,git-untrack='git update-index --assume-unchanged '
 alias ,git-show-last-commit-of="git whatchanged -n 1 -p"
+alias ,git-show-all-commits-to="git whatchanged -p"
 alias ,git-grep-all-commits='git log --source --all -S '
 alias ,git-show-when-file-added='git log --diff-filter=A --'
 
