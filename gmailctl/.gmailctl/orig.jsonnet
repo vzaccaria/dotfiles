@@ -29,6 +29,7 @@ local me = {
     { filter: { query: 'pedraglio' }, actions: { labels: ['Acquisto V. Innocenzo'] } },
     { filter: { from: 'info@drdcostruzioni.com' }, actions: { labels: ['Acquisto V. Innocenzo'] } },
     { filter: { from: 'prendin' }, actions: { labels: ['Commercialista'] } },
+    { filter: { from: 'teams.microsoft.com' }, actions: { labels: ['teams'] } },
     {
       filter: {
         and: [

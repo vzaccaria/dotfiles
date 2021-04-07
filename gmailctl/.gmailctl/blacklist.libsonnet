@@ -19,6 +19,8 @@ local blacklistedSites = [
     'aws-marketing-email-replies@amazon.com',
     'info@vonfloerke.com',
     'hpe.com',
+    'blackhat.com',
+    'ieomsociety.org'
   ],
 
 

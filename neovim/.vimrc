@@ -64,6 +64,10 @@ Plug 'christoomey/vim-titlecase'
 " C-n       multiple times then c, I, A, d
 Plug 'terryma/vim-multiple-cursors'
 
+
+Plug 'google/vim-jsonnet'
+                        
+
 " For using vim in the browser
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
@@ -123,10 +127,18 @@ nnoremap <silent> <C-]> :tabnext<CR>
 map <C-l> <Plug>(easymotion-bd-jk)
 nmap <C-l> <Plug>(easymotion-overwin-line)
 
+" wrap current word or selection with textbf/textit (need surround.vim)
+nmap <leader>xb ysiw}i\textbf<ESC>
+nmap <leader>xi ysiw}i\textit<ESC>
+nmap <leader>xu ysiw}i\underline<ESC>
+vmap <leader>xb S}i\textbf<ESC>
+vmap <leader>xi S}i\textit<ESC>
+vmap <leader>xu S}i\underline<ESC>
+
 let g:tex_flavor = 'latex'
 
 
-nmap <C-a> <C-w>
+" nmap <C-a> <C-w>
 
 nnoremap <Leader>d :ALEDetail<cr>
 
@@ -222,9 +234,9 @@ call ale#linter#Define('haskell', {
 let g:ale_linters = {}
 
 "hide cryptonite for relation calculus
-let g:ale_linters.haskell = [ 'stack-ghc-local', 'hlint']
+"let g:ale_linters.haskell = [ 'stack-ghc-local', 'hlint']
 " See here https://blog.jez.io/haskell-development-with-neovim/
-"let g:ale_linters.haskell = [ 'stack-ghc', 'hlint']
+let g:ale_linters.haskell = [ 'stack-ghc', 'hlint']
 let g:ale_linters.yaml = ['yamllint']
 let g:ale_linters.verilog = ['iverilog']
 let g:ale_linters.tex = ['proselint', 'write-good', 'vzredpen']
