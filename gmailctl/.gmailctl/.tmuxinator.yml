@@ -1,0 +1,9 @@
+name: working
+root: .
+
+windows:
+  - name:
+      layout: main-vertical
+      panes:
+        - cd .
+        - cd . 
