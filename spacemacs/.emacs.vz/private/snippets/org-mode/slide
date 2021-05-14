@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: slide
+# key: slide_
+# --
+
+# slide: $0 @
+
+# @

@@ -1,5 +1,6 @@
 path=(\
   /Users/zaccaria/.local/bin \
+  /Users/zaccaria/.cargo/bin \
   /usr/local/sbin \
   /usr/local/bin \
   /usr/bin \

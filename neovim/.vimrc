@@ -7,6 +7,14 @@ set expandtab
 " use system clipboard
 set clipboard+=unnamedplus
 
+" Add to .vimrc to enable project-specific vimrc
+
+set exrc
+set secure
+
+" exrc allows loading local executing local rc files.
+" secure disallows the use of :autocmd, shell and write commands in local .vimrc files.
+
 call plug#begin() 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -195,6 +203,11 @@ cnoremap § <C-c>
 inoremap § <Esc>
 inoremap jk <Esc>
 
+" ALE keybindings
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <C-h> <Plug>(ale_detail)
+
 " When editing mails from neomutt use markdown
 augroup filetypedetect
     au BufRead,BufNewFile neomutt-* set filetype=markdown
@@ -234,11 +247,12 @@ call ale#linter#Define('haskell', {
 let g:ale_linters = {}
 
 "hide cryptonite for relation calculus
-"let g:ale_linters.haskell = [ 'stack-ghc-local', 'hlint']
+let g:ale_linters.haskell = [ 'stack-ghc-local', 'hlint']
 " See here https://blog.jez.io/haskell-development-with-neovim/
-let g:ale_linters.haskell = [ 'stack-ghc', 'hlint']
+"let g:ale_linters.haskell = [ 'stack-ghc', 'hlint']
 let g:ale_linters.yaml = ['yamllint']
 let g:ale_linters.verilog = ['iverilog']
+let g:ale_linters.rust= ['cargo']
 let g:ale_linters.tex = ['proselint', 'write-good', 'vzredpen']
 
 let g:ale_fixers = {
@@ -249,8 +263,11 @@ let g:ale_fixers = {
 \   'css': ['prettier'],
 \   'json': ['prettier'],
 \   'c': ['clang-format'],
-\   'asm': ['gcc']
+\   'asm': ['gcc'],
+\   'cpp': ['clang-format'],
+\   'rust': ['rustfmt']
 \}
+
 
 let g:ale_javascript_prettier_options = '--prose-wrap always'
 let g:ale_fix_on_save = 1

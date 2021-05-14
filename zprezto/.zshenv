@@ -23,3 +23,4 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto-zack/${machine}/${host}/path.sh" ]]; then
 fi
 
 export HISTSIZE=1000
+source "$HOME/.cargo/env"

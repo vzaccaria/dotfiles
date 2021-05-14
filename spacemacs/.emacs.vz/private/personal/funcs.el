@@ -219,6 +219,10 @@
   (interactive)
   (tag-word-or-region "# swksp1 @ \n" "# @"))
 
+(defun tag-slide ()
+  (interactive)
+  (tag-word-or-region "# slide: @ \n" "# @"))
+
 (defun org-latex-two-columns()
   (interactive)
   (tag-word-or-region "#+ATTR_LATEX: :options {2} \n#+BEGIN_multicols\n"
