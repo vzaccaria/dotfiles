@@ -1,0 +1,12 @@
+# -*- mode: snippet -*- 
+# name: sliden
+# key: sliden_
+# --
+
+# slide: $0 @
+
+# @
+
+# !slide: @
+
+# @

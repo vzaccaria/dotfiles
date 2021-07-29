@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: slideh
+# key: slideh_ 
+# --
+
+# *slide: $0 @
+# @
+

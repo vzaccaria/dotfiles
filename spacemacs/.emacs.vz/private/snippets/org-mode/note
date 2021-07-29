@@ -1,0 +1,11 @@
+# -*- mode: snippet -*- 
+# name: note
+# key: note_
+# --
+
+**** Note
+    :PROPERTIES:
+    :BEAMER_ENV: note
+    :END:
+
+

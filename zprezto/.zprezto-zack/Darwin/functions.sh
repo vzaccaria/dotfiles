@@ -230,6 +230,14 @@ fo() {
   fi
 }
 
+fs() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
+
+
 fd() {
   local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune \
@@ -249,6 +257,18 @@ fda() {
   dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
 }
 
+,cd-oned() {
+  local dir
+  dir=$(find ~/OneDrive -type d 2> /dev/null | fzf +m) && cd "$dir"
+}
+
+,cd-materiale-corsi() {
+  local dir
+  dir=$(find ~/development/github/org-institutional/materiale-corsi -type d -name "node_modules" -prune -o -type d 2> /dev/null | fzf +m) && cd "$dir"
+}
+
+
+
 ,cd-gdrive() {
   local dir
   dir=$(find ~/GDrive -type d 2> /dev/null | fzf +m) && cd "$dir"
@@ -265,6 +285,12 @@ fda() {
   dir=$(find ~/dotfiles -type d 2> /dev/null | fzf +m) && cd "$dir"
 }
 
+,edot() (
+  local dir
+  dir=$(find ~/dotfiles 2> /dev/null | fzf +m) &&  ${EDITOR:-vim} "$dir"
+)
+
+
 ,cd-to-zprezto() {
   local dir
   dir=$(find ~/dotfiles/zprezto/.zprezto-zack -type d 2> /dev/null | fzf +m) && cd "$dir"
@@ -273,6 +299,8 @@ fda() {
 alias cdg=',cd-gdrive'
 alias cdd=',cd-to-dot'
 alias cdz=',cd-to-zprezto'
+alias cdmc=',cd-materiale-corsi'
+alias cdo=',cd-odrive'
 
 
 keynote2pdf() {

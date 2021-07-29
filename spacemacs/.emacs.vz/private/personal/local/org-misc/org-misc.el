@@ -184,7 +184,7 @@
           ("pmatrix" "\\begin{pmatrix} a& b \\\\ c & d \\\\\n\\end{pmatrix}\n")
 
      ;;; --- MINI PAGES and COLUMNS
-          ("hp" "#+BEGIN_EXPORT latex\n\\begin{minipage}[t]{0.45\\textwidth}\n#+END_EXPORT\n<<<COL1>>>\n#+BEGIN_EXPORT latex\n\\end{minipage}\n#+END_EXPORT\n\\hspace{0.5cm}\n#+BEGIN_EXPORT latex\n\\begin{minipage}[t]{0.45\\textwidth}\n#+END_EXPORT\n<<<COL2>>>\n#+BEGIN_EXPORT latex\n\\end{minipage}\n#+END_EXPORT\n"
+          ("hp" "#+BEGIN_EXPORT latex\n\\begin{minipage}{0.45\\textwidth}\n#+END_EXPORT\n<<<COL1>>>\n#+BEGIN_EXPORT latex\n\\end{minipage}\n#+END_EXPORT\n\\hspace{0.5cm}\n#+BEGIN_EXPORT latex\n\\begin{minipage}{0.45\\textwidth}\n#+END_EXPORT\n<<<COL2>>>\n#+BEGIN_EXPORT latex\n\\end{minipage}\n#+END_EXPORT\n"
            )
           ("btc" "***\n :PROPERTIES:\n :BEAMER_env: column\n :BEAMER_col: 0.5\n :END:\n  #+BEGIN_footnotesize \n\n #+END_footnotesize \n")
           ("brc" "***\n :PROPERTIES:\n :BEAMER_env: column\n :BEAMER_col: 0.32\n :END:\n #+BEGIN_footnotesize \n\n #+END_footnotesize \n"))

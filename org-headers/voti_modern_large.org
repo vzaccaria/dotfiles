@@ -16,7 +16,7 @@
 #+LaTeX_HEADER: \rowcolors{2}{gray!10}{white}
 #+LaTeX_HEADER: \usepackage{float}
 #+LaTeX_HEADER: \usepackage{wrapfig}
-#+LaTeX_HEADER: \usepackage[paperheight=50cm,paperwidth=30cm]{geometry}
+#+LaTeX_HEADER: \usepackage[paperheight=50cm,paperwidth=80cm]{geometry}
 #+LaTeX_HEADER: \usepackage{rotating}
 #+LaTeX_HEADER: \usepackage[normalem]{ulem}
 #+LaTeX_HEADER: \usepackage{amsmath}

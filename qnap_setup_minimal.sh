@@ -45,6 +45,8 @@ if [[ ! -x /opt/bin/exa ]]; then
    mv exa-linux-x86_64 /opt/bin/exa
 fi
 
+git config --global user.email "vittorio.zaccaria@gmail.com"
+git config --global user.name "Vittorio Zaccaria"
 
 
 
