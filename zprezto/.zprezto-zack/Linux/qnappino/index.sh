@@ -57,3 +57,7 @@ modelsim() {
 	/bin/zsh
 }
 
+sendtoinbox() {
+        scp $1 zaccaria@192.168.188.49:/Users/zaccaria/GDrive/Inbox
+}
+
