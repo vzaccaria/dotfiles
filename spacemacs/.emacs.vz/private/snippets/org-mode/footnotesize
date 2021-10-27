@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: footnote
+# key: footnote_
+# --
+#+BEGIN_footnotesize
+
+#+END_footnotesize

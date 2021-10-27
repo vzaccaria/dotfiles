@@ -27,6 +27,8 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'alx741/vim-hindent'
 Plug 'jceb/vim-orgmode'
+Plug 'rust-lang/rust.vim'
+
 
 " Themes
 Plug 'drewtempelmeyer/palenight.vim'
@@ -145,6 +147,18 @@ vmap <leader>xu S}i\underline<ESC>
 
 let g:tex_flavor = 'latex'
 
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-pdf',
+    \   '-shell-escape',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
+
+
 
 " nmap <C-a> <C-w>
 
@@ -213,7 +227,7 @@ augroup filetypedetect
     au BufRead,BufNewFile neomutt-* set filetype=markdown
 augroup END
 
-let g:markdown_folding = 1
+" let g:markdown_folding = 1
 
 if exists('*ale#linter#Define')
 call ale#linter#Define('tex', {
@@ -252,7 +266,6 @@ let g:ale_linters.haskell = [ 'stack-ghc-local', 'hlint']
 "let g:ale_linters.haskell = [ 'stack-ghc', 'hlint']
 let g:ale_linters.yaml = ['yamllint']
 let g:ale_linters.verilog = ['iverilog']
-let g:ale_linters.rust= ['cargo']
 let g:ale_linters.tex = ['proselint', 'write-good', 'vzredpen']
 
 let g:ale_fixers = {
@@ -265,10 +278,9 @@ let g:ale_fixers = {
 \   'c': ['clang-format'],
 \   'asm': ['gcc'],
 \   'cpp': ['clang-format'],
-\   'rust': ['rustfmt']
 \}
 
-
+let g:rustfmt_autosave = 1
 let g:ale_javascript_prettier_options = '--prose-wrap always'
 let g:ale_fix_on_save = 1
 

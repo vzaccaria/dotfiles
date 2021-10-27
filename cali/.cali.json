@@ -290,5 +290,11 @@
     "title": "IEEE SecDev - Sessione <%= parameter %>",
     "where": "Online",
     "reminder": "1d"
+  },
+  "aos": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Lezione di AOS",
+    "where": "Presenza",
+    "reminder": "1d"
   }
 }
