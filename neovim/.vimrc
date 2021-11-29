@@ -112,12 +112,15 @@ nnoremap <silent> <M-u> :History<cr>
 " quit,
 nnoremap <silent> <M-q> :q<cr>
 nnoremap <silent> <M-w> :q<cr>
+nmap <leader>Q :qall!<CR>
+nmap <leader>W :wqall<CR>
 
 " refill
 noremap <silent> <M-i> gwip<cr>
 nnoremap <silent> <M-x> :Commands<cr>
 nnoremap <silent> <M-h> :Helptags<cr>
 nnoremap <silent> <M-y> :Snippets<cr>
+
 
 " open fzf for ag in local files,
 nnoremap <silent> <M-f> :call fzf#vim#ag_raw(". --nocolor --hidden -U --ignore '.git*' --ignore node_modules", {'options': '--delimiter : --nth 4..'}, 1)<cr>
@@ -130,9 +133,11 @@ nnoremap <silent> <leader>se :setlocal spell spelllang=en_US<cr>
 imap <M-o>c <c-g>u<Esc>[s1z=`]a<c-g>u
 nmap <M-o>c [s1z=<c-o>
 
-" move around tabs
+" move around buffers and tabs
 nnoremap <silent> <C-[> :tabprevious<CR>
 nnoremap <silent> <C-]> :tabnext<CR>
+nnoremap <leader>n :bnext <CR>
+nnoremap <leader>p :bprev <CR>
 
 map <C-l> <Plug>(easymotion-bd-jk)
 nmap <C-l> <Plug>(easymotion-overwin-line)
@@ -144,6 +149,14 @@ nmap <leader>xu ysiw}i\underline<ESC>
 vmap <leader>xb S}i\textbf<ESC>
 vmap <leader>xi S}i\textit<ESC>
 vmap <leader>xu S}i\underline<ESC>
+
+vmap <leader>" S"<ESC>
+vmap <leader>' S'<ESC>
+
+
+"replace word under cursor
+nnoremap <leader>sr :%s/<C-R><C-W>//gI<left><left><left>
+
 
 let g:tex_flavor = 'latex'
 

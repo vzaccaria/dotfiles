@@ -9,3 +9,5 @@ export EDITOR=nvim
 export GIT_EDITOR=nvim
 export GROFF_TMAC_PATH="$HOME/groff"
 export LEDGER_FILE="./bank-current.ledger"
+export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
+

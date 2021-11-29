@@ -24,3 +24,4 @@ fi
 
 export HISTSIZE=1000
 source "$HOME/.cargo/env"
+if [ -e /Users/zaccaria/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/zaccaria/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

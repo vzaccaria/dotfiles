@@ -226,7 +226,7 @@ fo() {
   key=$(head -1 <<< "$out")
   file=$(head -2 <<< "$out" | tail -1)
   if [ -n "$file" ]; then
-    [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
+    [ "$key" = ctrl-o ] && ${EDITOR:-vim} "$file" ||  open "$file" 
   fi
 }
 
