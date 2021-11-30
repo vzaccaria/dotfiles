@@ -1,5 +1,6 @@
 let g:mapleader = ","
 set nocompatible
+set statusline+=%{get(b:,'gitsigns_status','')}
 
 set ignorecase
 set expandtab
@@ -98,7 +99,16 @@ Plug 'google/vim-jsonnet'
 "
 "" If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
+
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+
+" Plug 'nvim-lua/plenary'
+" Plug 'lewis6991/gitsigns'
+
+
 call plug#end()
+
 
 " when opening fzf look also for hidden files
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
