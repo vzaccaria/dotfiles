@@ -170,10 +170,14 @@
         (goto-char (car bds))
         (insert text-begin)))))
 
-(defun tag-wk9v ()
-  (interactive)
-  (tag-word-or-region "# swk9v @ \n" "# @"))
 
+(defun tag-wk0m ()
+  (interactive)
+  (tag-word-or-region "# swk0m @ \n" "# @"))
+
+(defun tag-wk0v ()
+  (interactive)
+  (tag-word-or-region "# swk0v @ \n" "# @"))
 
 (defun tag-wk10m ()
   (interactive)
