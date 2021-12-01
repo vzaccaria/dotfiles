@@ -17,4 +17,5 @@ path=(\
   /Users/zaccaria/development/github/data-science-toolbox \
   /Users/zaccaria/.platformio/packages/toolchain-gccarmnoneeabi/bin \
   /Users/zaccaria/node_modules/.bin \
+  /usr/local/opt/llvm/bin/ \
   $GOPATH/bin)
