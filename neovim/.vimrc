@@ -34,7 +34,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
-
 " Themes
 Plug 'morhetz/gruvbox'
 "Plug 'NLKNguyen/papercolor-theme'
@@ -110,6 +109,9 @@ Plug 'airblade/vim-gitgutter'
 
 " Plug 'nvim-lua/plenary'
 " Plug 'lewis6991/gitsigns'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
 
 Plug 'mbbill/undotree'
 call plug#end()
@@ -373,6 +375,9 @@ let g:gitgutter_override_sign_column_highlight = 1
 highlight SignColumn guibg=bg 
 highlight SignColumn ctermbg=bg
 
+let g:coc_global_extensions = ['coc-clangd']
+
+
 " Update sign column every quarter second
 set updatetime=250
 
@@ -614,6 +619,11 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+" nnoremap <C-t> :NERDTreeToggle<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
 
 
 
