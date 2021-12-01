@@ -346,7 +346,7 @@ nnoremap [fugitive] <Nop>
 nmap <leader>g [fugitive]
 nnoremap <silent> [fugitive]s  :Git status<CR>
 nnoremap <silent> [fugitive]b  :Git blame<CR>
-nnoremap <silent> [fugitive]B  :Git browse<CR>
+nnoremap <silent> [fugitive]B  :GBrowse<CR>
 
 " Current staged changes are added to last commit
 nnoremap <silent> [fugitive]m :Git commit --amend<CR>
@@ -362,6 +362,7 @@ nnoremap <F5> :UndotreeToggle<CR>
 nnoremap <F1> :Gwrite<CR>
 nnoremap <F2> :Git commit -v -q<CR>
 nnoremap <F3> :Git commit --amend<CR>
+nnoremap <F12> :GBrowse<CR>
 
 
 " Use fontawesome icons as signs
