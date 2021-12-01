@@ -1,6 +1,0 @@
---type-set=live:ext:ls
---type-set=less:ext:less
---type-set=jade:ext:jade
---type-set=idr:ext:idr
---ignore-dir=.build
-
