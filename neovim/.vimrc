@@ -1,6 +1,6 @@
 let g:mapleader = ","
 set nocompatible
-set statusline+=%{get(b:,'gitsigns_status','')}
+" set statusline+=%{get(b:,'gitsigns_status','')}
 
 set ignorecase
 set expandtab
@@ -32,7 +32,7 @@ Plug 'rust-lang/rust.vim'
 
 
 " Themes
-Plug 'drewtempelmeyer/palenight.vim'
+Plug 'morhetz/gruvbox'
 "Plug 'NLKNguyen/papercolor-theme'
 
 " text-objects:
@@ -311,7 +311,7 @@ let g:ale_fix_on_save = 1
 nnoremap <silent> <leader>m :make<cr>
 
 "set background=dark
-colorscheme palenight
+colorscheme gruvbox
 
 "set background=light
 " colorscheme PaperColor
