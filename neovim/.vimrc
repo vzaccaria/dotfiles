@@ -376,7 +376,7 @@ let g:gitgutter_override_sign_column_highlight = 1
 highlight SignColumn guibg=bg 
 highlight SignColumn ctermbg=bg
 
-let g:coc_global_extensions = ['coc-clangd']
+let g:coc_global_extensions = ['coc-clangd', 'coc-docker']
 
 
 " Update sign column every quarter second
