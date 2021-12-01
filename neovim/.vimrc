@@ -107,7 +107,7 @@ Plug 'airblade/vim-gitgutter'
 " Plug 'nvim-lua/plenary'
 " Plug 'lewis6991/gitsigns'
 
-
+Plug 'mbbill/undotree'
 call plug#end()
 
 
@@ -351,6 +351,12 @@ nnoremap <silent> [fugitive]r  :Gread<CR>
 nnoremap <silent> [fugitive]p  :Git push<CR>
 nnoremap <silent> [fugitive]l  :Git log -- %<CR>
 nnoremap <silent> [fugitive]h :GitGutterStageHunk<CR>
+
+nnoremap <F5> :UndotreeToggle<CR>
+nnoremap <F1> :Gwrite<CR>
+nnoremap <F2> :GitGutterStageHunk<CR>
+nnoremap <F3> :Git commit -v -q<CR>
+
 
 " Use fontawesome icons as signs
 let g:gitgutter_sign_added = '+'
