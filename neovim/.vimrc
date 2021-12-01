@@ -76,7 +76,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'christoomey/vim-titlecase'
 
 " C-n       multiple times then c, I, A, d
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
 
 
 Plug 'google/vim-jsonnet'
@@ -107,10 +107,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
-" Plug 'nvim-lua/plenary'
-" Plug 'lewis6991/gitsigns'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
+
 
 
 Plug 'mbbill/undotree'
@@ -360,8 +360,8 @@ nnoremap <silent> [fugitive]h :GitGutterStageHunk<CR>
 
 nnoremap <F5> :UndotreeToggle<CR>
 nnoremap <F1> :Gwrite<CR>
-nnoremap <F2> :GitGutterStageHunk<CR>
-nnoremap <F3> :Git commit -v -q<CR>
+nnoremap <F2> :Git commit -v -q<CR>
+nnoremap <F3> :Git commit --amend<CR>
 
 
 " Use fontawesome icons as signs
@@ -621,8 +621,8 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-" nnoremap <C-t> :NERDTreeToggle<CR>
+" nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
 " nnoremap <C-f> :NERDTreeFind<CR>
 
 
