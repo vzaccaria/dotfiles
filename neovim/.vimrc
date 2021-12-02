@@ -8,6 +8,9 @@ set expandtab
 " use system clipboard
 set clipboard+=unnamedplus
 
+"change directory into the file we are editing
+set autochdir
+
 " Add to .vimrc to enable project-specific vimrc
 
 set exrc
