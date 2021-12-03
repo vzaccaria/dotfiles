@@ -627,6 +627,9 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " nnoremap <leader>n :NERDTreeFocus<CR>
 " nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+let NERDTreeMapActivateNode='<tab>'
+
 " nnoremap <C-f> :NERDTreeFind<CR>
 
 
