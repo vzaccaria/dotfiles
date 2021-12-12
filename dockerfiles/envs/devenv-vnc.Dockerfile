@@ -21,17 +21,33 @@ RUN apt-get install -y \
     ttf-dejavu
 
 
+RUN apt-get install -y expect
 
-WORKDIR /root
+
+
+RUN addgroup --system nixbld && \
+  adduser --home /home/nix --disabled-password --gecos "" --shell /bin/bash nix && \
+  adduser nix nixbld && \
+  mkdir -m 0755 /nix && chown nix /nix && \
+  mkdir -p /etc/nix && echo 'sandbox = false' > /etc/nix/nix.conf
+
+USER nix
+ENV USER nix
+WORKDIR /home/nix
+
+RUN curl -L https://nixos.org/nix/install | sh
+
 COPY scripts/startx ./
+USER root 
+RUN chown nix /home/nix/startx
+USER nix
 
 RUN mkdir Desktop .vnc && \
-	  echo "startlxde" > .vnc/xstartup && \
-    chmod +x startx .vnc/xstartup
-RUN apt-get install -y expect
-CMD ["/root/startx"]
+    echo "startlxde" > .vnc/xstartup 
 
 RUN git clone https://github.com/vzaccaria/filesdot.git
+WORKDIR /home/nix/filesdot 
+RUN /bin/bash -c ./install.sh
 
 # WORKDIR /root/dotfiles
 # RUN stow urxvt
