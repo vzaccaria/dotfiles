@@ -179,6 +179,78 @@
   (interactive)
   (tag-word-or-region "# swk0v @ \n" "# @"))
 
+(defun tag-wk1m ()
+  (interactive)
+  (tag-word-or-region "# swk1m @ \n" "# @"))
+
+(defun tag-wk1v ()
+  (interactive)
+  (tag-word-or-region "# swk1v @ \n" "# @"))
+
+;; (defun tag-wk2m ()
+;;   (interactive)
+;;   (tag-word-or-region "# swk2m @ \n" "# @"))
+
+(defun tag-wk2v ()
+  (interactive)
+  (tag-word-or-region "# swk2v @ \n" "# @"))
+
+(defun tag-wk3m ()
+  (interactive)
+  (tag-word-or-region "# swk3m @ \n" "# @"))
+
+(defun tag-wk3v ()
+  (interactive)
+  (tag-word-or-region "# swk3v @ \n" "# @"))
+
+(defun tag-wk4m ()
+  (interactive)
+  (tag-word-or-region "# swk4m @ \n" "# @"))
+
+(defun tag-wk4v ()
+  (interactive)
+  (tag-word-or-region "# swk4v @ \n" "# @"))
+
+(defun tag-wk5m ()
+  (interactive)
+  (tag-word-or-region "# swk5m @ \n" "# @"))
+
+(defun tag-wk5v ()
+  (interactive)
+  (tag-word-or-region "# swk5v @ \n" "# @"))
+
+(defun tag-wk6m ()
+  (interactive)
+  (tag-word-or-region "# swk6m @ \n" "# @"))
+
+(defun tag-wk6v ()
+  (interactive)
+  (tag-word-or-region "# swk6v @ \n" "# @"))
+
+;; (defun tag-wk7m ()
+;;   (interactive)
+;;   (tag-word-or-region "# swk7m @ \n" "# @"))
+
+;; (defun tag-wk7v ()
+;;   (interactive)
+;;   (tag-word-or-region "# swk7v @ \n" "# @"))
+
+(defun tag-wk8m ()
+  (interactive)
+  (tag-word-or-region "# swk8m @ \n" "# @"))
+
+(defun tag-wk8v ()
+  (interactive)
+  (tag-word-or-region "# swk8v @ \n" "# @"))
+
+;; (defun tag-wk9m ()
+;;   (interactive)
+;;   (tag-word-or-region "# swk9m @ \n" "# @"))
+
+(defun tag-wk9v ()
+  (interactive)
+  (tag-word-or-region "# swk9v @ \n" "# @"))
+
 (defun tag-wk10m ()
   (interactive)
   (tag-word-or-region "# swk10m @ \n" "# @"))

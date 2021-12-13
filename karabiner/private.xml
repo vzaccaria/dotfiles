@@ -2,7 +2,7 @@
 <root>
     <item>
         <name>
-            Vittorio Zaccaria's profile (Karabiner)
+            Vittorio Zaccaria&#39;s profile (Karabiner)
         </name>
         <item>
             <name>
@@ -13,58 +13,58 @@
             </identifier>
             <vkopenurldef>
                 <name>
-                    KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_KITTY___SINGLE_INSTANCE_ZSH___INTERACTIVE__C__CD___GDRIVE____FD_
+                    KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_KITTY___SINGLE_INSTANCE_ZSH___INTERACTIVE__C__CD___GDRIVE____FZD_
                 </name>
                 <url type="shell">
-                    /usr/local/bin/kitty --single-instance zsh --interactive -c 'cd ~/GDrive &amp;&amp; fd'
+                    /usr/local/bin/kitty --single-instance zsh --interactive -c &#39;cd ~/GDrive &amp;&amp; fzd&#39;
                 </url>
             </vkopenurldef>
             <autogen>
-                --KeyToKey-- KeyCode::G, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_KITTY___SINGLE_INSTANCE_ZSH___INTERACTIVE__C__CD___GDRIVE____FD_
+                --KeyToKey-- KeyCode::G, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_KITTY___SINGLE_INSTANCE_ZSH___INTERACTIVE__C__CD___GDRIVE____FZD_
             </autogen>
             <vkopenurldef>
                 <name>
-                    KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_KITTY___SINGLE_INSTANCE_ZSH___INTERACTIVE__C__CD___DOTFILES____FE_
+                    KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_KITTY___SINGLE_INSTANCE_ZSH___INTERACTIVE__C__CD___ONEDRIVE____FZD_
                 </name>
                 <url type="shell">
-                    /usr/local/bin/kitty --single-instance zsh --interactive -c 'cd ~/dotfiles &amp;&amp; fe'
+                    /usr/local/bin/kitty --single-instance zsh --interactive -c &#39;cd ~/OneDrive &amp;&amp; fzd&#39;
                 </url>
             </vkopenurldef>
             <autogen>
-                --KeyToKey-- KeyCode::F, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_KITTY___SINGLE_INSTANCE_ZSH___INTERACTIVE__C__CD___DOTFILES____FE_
+                --KeyToKey-- KeyCode::O, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_KITTY___SINGLE_INSTANCE_ZSH___INTERACTIVE__C__CD___ONEDRIVE____FZD_
             </autogen>
             <vkopenurldef>
                 <name>
-                    KeyCode::VK_OPEN_URL_WEB_HTTPS___WWW_NOTION_SO_MAIL_SCRATCHPAD_F_____DA_F_C____BC__E__CBC_____B
+                    KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_KITTY___SINGLE_INSTANCE_ZSH___INTERACTIVE__C__CD___GDRIVE____FZO_
                 </name>
-                <url>
-                    https://www.notion.so/Mail-scratchpad-f71352da0f6c4242bc00e37cbc26707b
+                <url type="shell">
+                    /usr/local/bin/kitty --single-instance zsh --interactive -c &#39;cd ~/GDrive &amp;&amp; fzo&#39;
                 </url>
             </vkopenurldef>
             <autogen>
-                --KeyToKey-- KeyCode::R, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___WWW_NOTION_SO_MAIL_SCRATCHPAD_F_____DA_F_C____BC__E__CBC_____B
+                --KeyToKey-- KeyCode::F, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_KITTY___SINGLE_INSTANCE_ZSH___INTERACTIVE__C__CD___GDRIVE____FZO_
+            </autogen>
+            <vkopenurldef>
+                <name>
+                    KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_KITTY___SINGLE_INSTANCE_ZSH___INTERACTIVE__C___MAIL_COMPOSE_
+                </name>
+                <url type="shell">
+                    /usr/local/bin/kitty --single-instance zsh --interactive -c &#39;,mail-compose&#39;
+                </url>
+            </vkopenurldef>
+            <autogen>
+                --KeyToKey-- KeyCode::R, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_KITTY___SINGLE_INSTANCE_ZSH___INTERACTIVE__C___MAIL_COMPOSE_
             </autogen>
             <vkopenurldef>
                 <name>
                     KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_KITTY___SINGLE_INSTANCE_ZSH___INTERACTIVE__C__STARTANKI_
                 </name>
                 <url type="shell">
-                    /usr/local/bin/kitty --single-instance zsh --interactive -c 'startanki'
+                    /usr/local/bin/kitty --single-instance zsh --interactive -c &#39;startanki&#39;
                 </url>
             </vkopenurldef>
             <autogen>
                 --KeyToKey-- KeyCode::KEYPAD_6, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_SHELL__USR_LOCAL_BIN_KITTY___SINGLE_INSTANCE_ZSH___INTERACTIVE__C__STARTANKI_
-            </autogen>
-            <vkopenurldef>
-                <name>
-                    KeyCode::VK_OPEN_URL_WEB_HTTPS___SPIKENOW_COM_WEB__VER_WIP_REF_WEBSITE_DIRECT
-                </name>
-                <url>
-                    https://spikenow.com/web/?ver=wip&amp;ref=website-direct
-                </url>
-            </vkopenurldef>
-            <autogen>
-                --KeyToKey-- KeyCode::S, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___SPIKENOW_COM_WEB__VER_WIP_REF_WEBSITE_DIRECT
             </autogen>
             <vkopenurldef>
                 <name>
@@ -90,14 +90,14 @@
             </autogen>
             <vkopenurldef>
                 <name>
-                    KeyCode::VK_OPEN_URL_WEB_HTTPS___GMAIL_GOOGLE_COM
+                    KeyCode::VK_OPEN_URL_WEB_HTTPS___MAIL_GOOGLE_COM
                 </name>
                 <url>
-                    https://gmail.google.com
+                    https://mail.google.com
                 </url>
             </vkopenurldef>
             <autogen>
-                --KeyToKey-- KeyCode::M, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___GMAIL_GOOGLE_COM
+                --KeyToKey-- KeyCode::M, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___MAIL_GOOGLE_COM
             </autogen>
             <vkopenurldef>
                 <name>
@@ -119,7 +119,7 @@
                 </url>
             </vkopenurldef>
             <autogen>
-                --KeyToKey-- KeyCode::O, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___WWW_NOTION_SO_DASHBOARD__B_F______B__CC_A_FD_E_A__A__A__
+                --KeyToKey-- KeyCode::S, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___WWW_NOTION_SO_DASHBOARD__B_F______B__CC_A_FD_E_A__A__A__
             </autogen>
             <vkopenurldef>
                 <name>
@@ -159,7 +159,7 @@
                     KeyCode::VK_OPEN_URL_WEB_HTTP___LOCALHOST_______ARG__C_ARG__TMUX___NEW_SESSION____C_____FUSERS__FZACCARIA__FDEVELOPMENT__FGITHUB__FORG_INSTITUTIONAL__FMATERIALE_CORSI__FPHD__FADVANCED_TOPICS_FP__FDOCS__FNOTES____MAKE___WATCH___A_
                 </name>
                 <url>
-                    http://localhost:3005/?arg=-c&amp;arg=(tmux%20new-session%20-c%20%2FUsers%2Fzaccaria%2Fdevelopment%2Fgithub%2Forg-institutional%2Fmateriale-corsi%2Fphd%2Fadvanced_topics_fp%2Fdocs%2Fnotes%20'make%20watch'%0A)
+                    http://localhost:3005/?arg=-c&amp;arg=(tmux%20new-session%20-c%20%2FUsers%2Fzaccaria%2Fdevelopment%2Fgithub%2Forg-institutional%2Fmateriale-corsi%2Fphd%2Fadvanced_topics_fp%2Fdocs%2Fnotes%20&#39;make%20watch&#39;%0A)
                 </url>
             </vkopenurldef>
             <autogen>
@@ -178,25 +178,14 @@
             </autogen>
             <vkopenurldef>
                 <name>
-                    KeyCode::VK_OPEN_URL_WEB_HTTPS___WWW_NOTION_SO______INFORMATICA_B_INFOB____E_EE_B______________DF_BE____
+                    KeyCode::VK_OPEN_URL_WEB_HTTPS___WWW_NOTION_SO_ADVANCED_OPERATING_SYSTEMS_A__D_____D____ABA_B_D__D_F_F_EEC
                 </name>
                 <url>
-                    https://www.notion.so/2020-Informatica-B-infob-906e4ee3b67840418582581df5be3360
+                    https://www.notion.so/Advanced-Operating-Systems-a66d79701d3343aba2b0d04d0f3f5eec
                 </url>
             </vkopenurldef>
             <autogen>
-                --KeyToKey-- KeyCode::KEYPAD_4, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___WWW_NOTION_SO______INFORMATICA_B_INFOB____E_EE_B______________DF_BE____
-            </autogen>
-            <vkopenurldef>
-                <name>
-                    KeyCode::VK_OPEN_URL_WEB_HTTPS___DRIVE_GOOGLE_COM_DRIVE_MY_DRIVE
-                </name>
-                <url>
-                    https://drive.google.com/drive/my-drive
-                </url>
-            </vkopenurldef>
-            <autogen>
-                --KeyToKey-- KeyCode::V, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___DRIVE_GOOGLE_COM_DRIVE_MY_DRIVE
+                --KeyToKey-- KeyCode::KEYPAD_4, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___WWW_NOTION_SO_ADVANCED_OPERATING_SYSTEMS_A__D_____D____ABA_B_D__D_F_F_EEC
             </autogen>
             <vkopenurldef>
                 <name>
@@ -208,6 +197,28 @@
             </vkopenurldef>
             <autogen>
                 --KeyToKey-- KeyCode::KEYPAD_1, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___WWW_NOTION_SO_POLITECNICO____A_F_F_D_____B___A_B_E_ECDF_D_
+            </autogen>
+            <vkopenurldef>
+                <name>
+                    KeyCode::VK_OPEN_URL_WEB_HTTPS___POLIMI____MY_SHAREPOINT_COM_PERSONAL__________POLIMI_IT__LAYOUTS____ONEDRIVE_ASPX_ID___FPERSONAL__F__________FPOLIMI__FIT__FDOCUMENTS__FINSTITUTIONAL__FCORSI__F______DAOS__FSHARED__FNOTES
+                </name>
+                <url>
+                    https://polimi365-my.sharepoint.com/personal/10173412_polimi_it/_layouts/15/onedrive.aspx?id=%2Fpersonal%2F10173412%5Fpolimi%5Fit%2FDocuments%2FInstitutional%2FCorsi%2F2021%2Daos%2Fshared%2Fnotes
+                </url>
+            </vkopenurldef>
+            <autogen>
+                --KeyToKey-- KeyCode::KEYPAD_2, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___POLIMI____MY_SHAREPOINT_COM_PERSONAL__________POLIMI_IT__LAYOUTS____ONEDRIVE_ASPX_ID___FPERSONAL__F__________FPOLIMI__FIT__FDOCUMENTS__FINSTITUTIONAL__FCORSI__F______DAOS__FSHARED__FNOTES
+            </autogen>
+            <vkopenurldef>
+                <name>
+                    KeyCode::VK_OPEN_URL_WEB_HTTPS___WWW_NOTION_SO_VZACCARIA_ADVANCED_OPERATING_SYSTEMS_A_A___________POLIMI_F__B_FB_C_EA__EA___F__C__B_____A
+                </name>
+                <url>
+                    https://www.notion.so/vzaccaria/Advanced-Operating-Systems-A-A-2021-2022-Polimi-f77b9fb8c9ea43ea953f40c35b84593a
+                </url>
+            </vkopenurldef>
+            <autogen>
+                --KeyToKey-- KeyCode::KEYPAD_3, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,KeyCode::VK_OPEN_URL_WEB_HTTPS___WWW_NOTION_SO_VZACCARIA_ADVANCED_OPERATING_SYSTEMS_A_A___________POLIMI_F__B_FB_C_EA__EA___F__C__B_____A
             </autogen>
             <vkopenurldef>
                 <name>

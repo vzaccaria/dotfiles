@@ -47,7 +47,7 @@ _vg() {
 }
 
 ,git-improve()    {
-    _vg improve $*
+    _vg improve . "$*"
 }
 
 ,git-sync()    {
@@ -117,7 +117,7 @@ alias ,gd='git diff --color-words'
 alias ,gs='git status'
 alias ,s='git status'
 alias ,gb='git branch'
-alias gd='git checkout'
+alias ,gco='git checkout'
 alias ,gsb='git checkout '
 alias ,gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
