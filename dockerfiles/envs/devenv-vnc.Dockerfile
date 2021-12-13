@@ -1,28 +1,18 @@
 FROM    ubuntu:focal
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV SHELL /bin/zsh
-ENTRYPOINT /bin/zsh
 
-RUN apt-get update && apt-get install -y locales
-
-RUN locale-gen en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
+RUN apt-get update 
 
 RUN apt-get install -y \
     curl \ 
     git \ 
-    zsh \
     tigervnc-standalone-server \
     tigervnc-common \ 
     lxde \ 
+    i3 \
+    expect \
     ttf-dejavu
-
-
-RUN apt-get install -y expect
-
 
 
 RUN addgroup --system nixbld && \
@@ -47,7 +37,10 @@ RUN mkdir Desktop .vnc && \
 
 RUN git clone https://github.com/vzaccaria/filesdot.git
 WORKDIR /home/nix/filesdot 
-RUN /bin/bash -c ./install.sh
+
+RUN apt-get install -y \
+        zsh \
+        stow 
 
 # WORKDIR /root/dotfiles
 # RUN stow urxvt
