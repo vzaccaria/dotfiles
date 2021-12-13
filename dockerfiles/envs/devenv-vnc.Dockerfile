@@ -27,6 +27,7 @@ WORKDIR /home/nix
 
 RUN curl -L https://nixos.org/nix/install | sh
 
+
 COPY scripts/startx ./
 USER root 
 RUN chown nix /home/nix/startx
@@ -38,10 +39,17 @@ RUN mkdir Desktop .vnc && \
 RUN git clone https://github.com/vzaccaria/filesdot.git
 WORKDIR /home/nix/filesdot 
 
-RUN apt-get install -y \
-        zsh \
-        stow 
+RUN /home/nix/.nix-profile/bin/nix-channel --add https://nixos.org/channels/nixos-21.05 nixpkgs
+RUN /home/nix/.nix-profile/bin/nix-channel --update
 
+RUN /usr/bin/bash ./install.sh 
+
+ENV POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD true
+
+
+WORKDIR /home/nix
+RUN chmod +x ./startx
+RUN echo "i3" > .vnc/xstartup 
 # WORKDIR /root/dotfiles
 # RUN stow urxvt
 
