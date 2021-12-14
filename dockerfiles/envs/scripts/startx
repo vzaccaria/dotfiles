@@ -16,4 +16,4 @@ expect <<EOF
 	}
 EOF
 
-vncserver -name LXDE -rfbport $PORT -depth 16 -geometry 1900x1200 -shmem -autokill -fg -localhost no
+vncserver -name LXDE -rfbport $PORT -depth 24 -geometry 1024x768 -shmem -autokill -fg -localhost no

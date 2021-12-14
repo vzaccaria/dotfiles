@@ -33,9 +33,9 @@ set $right l
 
 # These 3 lines need a specific version of i3 available at
 # https://github.com/Airblader/i3
-gaps inner 10
-gaps outer 10 
-for_window [class="^.*"] border pixel 0
+# gaps inner 10
+# gaps outer 10 
+# for_window [class="^.*"] border pixel 0
 
 set $mod Mod1
 

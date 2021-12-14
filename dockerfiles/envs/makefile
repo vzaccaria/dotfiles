@@ -6,7 +6,9 @@ r:
 	$(eval $IMG:= $(shell $CMD))
 	docker exec -d "$IMG" /root/startx
 c: 
-	docker run -ti -p 5900:5900 --privileged devenv-vnc-latest /home/nix/.nix-profile/bin/zsh
+	docker run -ti -p 5900:5900 --privileged devenv-vnc-latest
+
+# /home/nix/.nix-profile/bin/zsh
 
 build-%: %.Dockerfile
 	docker build -f $< -t $*-latest .
