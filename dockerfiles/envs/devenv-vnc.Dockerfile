@@ -50,11 +50,15 @@ ENV POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD true
 WORKDIR /home/nix
 RUN chmod +x ./startx
 RUN echo "i3" > .vnc/xstartup 
+RUN mkdir /home/nix/.i3
+USER root 
+RUN apt-get install -y terminator dmenu
+USER nix
+COPY scripts/i3-config /home/nix/.i3/config
 # WORKDIR /root/dotfiles
 # RUN stow urxvt
 
 # WORKDIR /root
-# RUN apt-get install -y terminator dmenu
 
 # RUN mkdir -p temp
 # WORKDIR /root/temp
