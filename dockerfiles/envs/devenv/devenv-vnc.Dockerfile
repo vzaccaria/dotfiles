@@ -51,3 +51,5 @@ RUN apt-get install -y wget
 RUN wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip && mv FiraCode.zip .fonts && cd .fonts && unzip FiraCode.zip && fc-cache -fv .
 
 
+RUN mkdir -p /root/.config/lxterminal
+COPY scripts/lxterminal.conf /root/.config/lxterminal
