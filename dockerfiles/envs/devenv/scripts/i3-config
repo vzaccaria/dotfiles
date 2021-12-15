@@ -43,7 +43,7 @@ set $mod Mod1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty zsh
+bindsym $mod+Return exec lxterminal -e zsh
 bindsym $mod+r exec i3-sensible-terminal -e '/bin/zsh -i -c "vz-mail-compose"'
 # bindsym $mod+Return exec i3-sensible-terminal -x tmux
 
