@@ -46,5 +46,8 @@ COPY scripts/gruvbox.conf /root/gruvbox.conf
 
 CMD ["./startx"]
 
+RUN mkdir /root/.fonts
+RUN apt-get install -y wget 
+RUN wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip && mv FiraCode.zip .fonts && cd .fonts && unzip FiraCode.zip && fc-cache -fv .
 
 
