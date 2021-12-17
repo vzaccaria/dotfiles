@@ -21,7 +21,7 @@ RUN mkdir Desktop .vnc && \
     echo "startlxde" > .vnc/xstartup && \ 
     chmod +x .vnc/xstartup
 
-RUN echo "4" 
+RUN echo "5" 
 RUN git clone https://github.com/vzaccaria/filesdot.git
 WORKDIR /root/filesdot 
 

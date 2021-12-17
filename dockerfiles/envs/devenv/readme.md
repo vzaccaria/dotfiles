@@ -1,3 +1,13 @@
+# To start a container
+
+```
+source shell.shell 
+start-container 5901
+```
+
+This will mount the cwd in the /local directory
+
+
 # On a mac 
 
 Use:
