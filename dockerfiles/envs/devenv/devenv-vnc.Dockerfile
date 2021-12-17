@@ -37,12 +37,6 @@ RUN echo "i3" > .vnc/xstartup
 
 RUN apt-get install -y terminator dmenu kitty npm
 
-RUN mkdir /root/.i3
-COPY scripts/i3-config /root/.i3/config
-
-RUN mkdir -p /root/.config/kitty
-COPY scripts/kitty.conf /root/.config/kitty
-COPY scripts/gruvbox.conf /root/gruvbox.conf
 
 CMD ["./startx"]
 
@@ -51,5 +45,13 @@ RUN apt-get install -y wget
 RUN wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip && mv FiraCode.zip .fonts && cd .fonts && unzip FiraCode.zip && fc-cache -fv .
 
 
-RUN mkdir -p /root/.config/lxterminal
-COPY scripts/lxterminal.conf /root/.config/lxterminal
+RUN mkdir /root/.i3
+COPY scripts/i3-config /root/.i3/config
+
+RUN mkdir -p /root/.config/kitty
+COPY scripts/kitty.conf /root/.config/kitty
+
+COPY scripts/gruvbox.conf /root/gruvbox.conf
+
+# RUN mkdir -p /root/.config/lxterminal
+# COPY scripts/lxterminal.conf /root/.config/lxterminal
