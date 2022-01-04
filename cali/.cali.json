@@ -151,6 +151,13 @@
     "where": "Leonardo",
     "reminder": "3w"
   },
+  "esameaos": {
+    "calendar": "Vittorio e Chiara",
+    "title": "Esame di Advanced Operating Systems - Aula <%= parameter %>",
+    "where": "Leonardo",
+    "reminder": "3w"
+  },
+
   "esamehyp": {
     "calendar": "Vittorio e Chiara",
     "title": "Esame di Hypermedia - Aula <%= parameter %>",
