@@ -36,4 +36,23 @@ RUN apt-get install -y libgsl-dev
 COPY ./overrides/most /root
 RUN apt-get install -y clang-format
 
+WORKDIR /local
 
+RUN apt-get install -y python2
+RUN ln -s /usr/bin/python2 /usr/bin/python
+RUN apt-get install -y libxml2-utils
+
+WORKDIR /root
+RUN git clone https://github.com/libfann/fann.git
+WORKDIR /root/fann
+RUN cmake .
+RUN make install
+
+WORKDIR /root
+RUN apt-get install -y wget
+RUN apt-get install -y r-base r-cran-hmisc
+RUN apt-get install -y gnuplot
+
+
+
+WORKDIR /local
