@@ -1,5 +1,5 @@
 (require 'org-protocol)
-(require 'org-drill)
+; (require 'org-drill)
 (require 'ox)
 
 (defun personal/org-init-super-agenda ()
@@ -20,8 +20,8 @@
   (setq org-agenda-todo-list-sublevels nil)
   (load-library "find-lisp")
 
-  (setq org-agenda-files
-        (find-lisp-find-files "~/Dropbox/org" "_ag\.org$"))
+  ; (setq org-agenda-files
+  ;       (find-lisp-find-files "~/Dropbox/org" "_ag\.org$"))
 
   (setq org-todo-keywords
         '((sequence "TODO(t)" "TODAY(d)" "JAR(j)" "|" "DONE")
