@@ -103,54 +103,55 @@
 
 (defvar dotspacemacs/layers/langs-linux-station
   '(
-    javascript
-    (config-javascript :location local)
-    react
-    python
-    octave
-    emacs-lisp
-    vimscript
-    haskell
-    (config-haskell :location local)
-    (c-c++ :variables c-c++-enable-clang-support t)
+    ; javascript
+    ; (config-javascript :location local)
+    ; react
+    ; python
+    ; octave
+    ; emacs-lisp
+    ; vimscript
+    ; haskell
+    ; (config-haskell :location local)
+    ; (c-c++ :variables c-c++-enable-clang-support t)
 
-    yaml
-    csv
-    html
-    (markdown :variables markdown-live-preview-engine 'vmd)
+    ; yaml
+    ; csv
+    ; html
+    ; (markdown :variables markdown-live-preview-engine 'vmd)
 
     spell-checking
 
-    (latex :variables
-           latex-enable-auto-fill t
-           latex-enable-folding t)
-    )
+    ; (latex :variables
+    ;        latex-enable-auto-fill t
+    ;        latex-enable-folding t)
+    ; )
   )
 
 (defvar dotspacemacs/layers/langs-linux-generic
   '(
-    haskell
-    (c-c++ :variables c-c++-enable-clang-support t)
+    ; haskell
+    ; (c-c++ :variables c-c++-enable-clang-support t)
 
-    yaml
-    csv
-    html
-    markdown
+    ; yaml
+    ; csv
+    ; html
+    ; markdown
     ))
 
 (defvar dotspacemacs/layers/extra
-  '(gnus
-    graphviz
-    ranger
-    (ibuffer :variables
-             ibuffer-group-buffers-by 'projects)
-    docker
+  '(
+    ; gnus
+    ; graphviz
+    ; ranger
+    ; (ibuffer :variables
+    ;          ibuffer-group-buffers-by 'projects)
+    ; docker
     finance
-    (deft :variables deft-zetteldeft t)
-    prodigy
-    command-log
-    typography
-    osx
+    ; (deft :variables deft-zetteldeft t)
+    ; prodigy
+    ; command-log
+    ; typography
+    ; osx
     )
   "Miscellaneous layers")
 
@@ -159,24 +160,25 @@
     (macros :location local)
     (config :location local)
     ;; (config-prettyfonts :location local) ; Pretty-eshell/code/outlines... pkgs
-    (config-writeroom :location local)
-    (config-muttrc :location local)
+    ; (config-writeroom :location local)
+    ; (config-muttrc :location local)
     ;; (langs :location local)     ; Language config
     (personal :location local
               :variables
               personal-bind-osx-keys (if vz/is-linux nil t)
               personal-bind-unix-keys (if vz/is-linux t nil))
-    (maxima :variables
-            maxima-emacs-installation-path
-            (if vz/is-home-mac
-                "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/maxima/5.35.1/emacs"
-              ;; remember to apt-get install maxima-emacs
-              (if vz/is-linux-station "/usr/share/emacs/site-lisp/maxima" "/usr/local/share/maxima/5.41.0/emacs"))
-            maxima-emacs-info-path
-            (if vz/is-home-mac
-                "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/info"
-              "/usr/local/share/info")
-            ))
+    ; (maxima :variables
+    ;         maxima-emacs-installation-path
+    ;         (if vz/is-home-mac
+    ;             "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/maxima/5.35.1/emacs"
+    ;           ;; remember to apt-get install maxima-emacs
+    ;           (if vz/is-linux-station "/usr/share/emacs/site-lisp/maxima" "/usr/local/share/maxima/5.41.0/emacs"))
+    ;         maxima-emacs-info-path
+    ;         (if vz/is-home-mac
+    ;             "/opt/homebrew-cask/Caskroom/sage/6.9/Sage-6.9.app/Contents/Resources/sage/local/share/info"
+    ;           "/usr/local/share/info")
+    ;         )
+    )
   "Local layers housed in '~/.emacs.vz/private'."
   )
 
