@@ -32,7 +32,6 @@
 #+LATEX_HEADER: \setmainfont{Junicode}
 #+LATEX_HEADER: \setmonofont[]{Source Code Pro}
 #+LATEX_HEADER: \usepackage{polyglossia}
-#+LATEX_HEADER: \setmainlanguage{italiano}
 #+LATEX_HEADER: \pagestyle{empty}
 
 #+LATEX_HEADER:

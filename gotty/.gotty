@@ -1,3 +1,3 @@
 preferences {
-font_family = "'DejaVu Sans Mono for Powerline', 'Everson Mono', FreeMono, 'Menlo', 'Terminal', monospace"
+font_family = "'Hasklug Nerd Font', 'Everson Mono', FreeMono, 'Menlo', 'Terminal', monospace"
 }
