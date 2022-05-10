@@ -1,0 +1,1 @@
+- spacemacs. 28.2 broke everything. Decommissioning orgmode to vi.
