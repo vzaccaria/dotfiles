@@ -124,7 +124,7 @@
     ; (latex :variables
     ;        latex-enable-auto-fill t
     ;        latex-enable-folding t)
-    ; )
+    )
   )
 
 (defvar dotspacemacs/layers/langs-linux-generic
@@ -210,10 +210,10 @@
 (defun dotspacemacs/init/display ()
   (setq-default
    dotspacemacs-themes '(
-                         zenburn
-                         spacemacs-light
-                         nord
-                         solarized-light
+                         ; zenburn
+                         ; spacemacs-light
+                         ; nord
+                         ; solarized-light
                          solarized-dark
                          )
    dotspacemacs-default-font '("Hack"
