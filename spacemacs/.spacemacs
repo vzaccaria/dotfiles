@@ -48,7 +48,6 @@
 
 (defvar dotspacemacs/layers/core
   '(better-defaults
-    git
     syntax-checking
     helm
     shell-scripts
