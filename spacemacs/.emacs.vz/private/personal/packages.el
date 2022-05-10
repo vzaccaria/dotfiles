@@ -3,12 +3,12 @@
 
 (defconst personal-packages
   '(
-    spell-checking
-    prodigy
-    evil-multiedit
-    livescript-mode
-    matlab-mode
-    markdown-mode
+    ; spell-checking
+    ; prodigy
+    ; evil-multiedit
+    ; livescript-mode
+    ; matlab-mode
+    ; markdown-mode
     (ox-extra :location local)
     (ox-reveal :location local)
     (org-misc :location local)
