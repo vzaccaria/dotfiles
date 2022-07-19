@@ -31,6 +31,12 @@
     "where": "Politecnico di Milano",
     "reminder": "1d"
   },
+  "ccsinf": {
+    "calendar": "Vittorio Zaccaria",
+    "title": "CCS Informatica (Aula: <%= parameter %>)",
+    "where": "Politecnico di Milano",
+    "reminder": "1d"
+  },
   "ccseng": {
     "calendar": "Vittorio Zaccaria",
     "title": "CCS Energetica (Aula: <%= parameter %>)",

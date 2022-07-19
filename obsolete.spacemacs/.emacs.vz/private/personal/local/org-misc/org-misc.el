@@ -320,8 +320,8 @@
   (define-key org-mode-map (kbd "<f3>") (lambda () (interactive) (org-global-cycle 3)))
   (define-key org-mode-map (kbd "<f4>") (lambda () (interactive) (org-global-cycle 4)))
 
-  ;; (evil-define-key 'normal evil-org-mode-map (kbd "M-b")  'spacemacs/org-bold)
-  (evil-define-key 'normal evil-org-mode-map (kbd "M-k")  'spacemacs/org-bold)
+  (evil-define-key 'normal evil-org-mode-map (kbd "M-b")  'spacemacs/org-bold)
+  (evil-define-key 'normal evil-org-mode-map (kbd "M-k")  'spacemacs/org-verbatim)
   (evil-define-key 'normal evil-org-mode-map (kbd "M-l")  'spacemacs/org-italic)
   (evil-define-key 'normal evil-org-mode-map (kbd "M-o")  'vz/switch-dictionary)
   )
